@@ -12,6 +12,7 @@ Setup flask Project
 ----
 > $ mkdir flaskapp
 
+```
 flaskWeb/
 ├─ newFlaskApp/
 │  ├─ static/
@@ -29,6 +30,7 @@ flaskWeb/
 │  ├─ templates/
 │  │  ├─ index.html
 │  ├─ server.py
+```
 
 한 project를 모은 directory를 Web context라고 부르고,
 Web context를 전부 모은 directory를 Web Application Server라고 부른다. 

@@ -9,11 +9,12 @@ Computer가 web app에서 server, cilent와 같은 role를 가진다.
 한 computer가 server의 역할을 하고 있으면, 다른 computer가 cilent가 되어 이 server에 접근할 수 있다.
 server computer는 정보를 저장하여 제공하고, cilent computer는 정보를 받는다.
 
+```
       1.request       2.request
 Client -------> Server ------>  Database
        <-------        <------
       4.response      3.get data
-
+```
 
 Web Application Server vs Web Server vs Server
 ----
@@ -147,14 +148,14 @@ pull request: main branch에 merge하기 전에 내가 고친 코드를 다른 �
 
 Git 사용법:
 1. 소스 코드를 다운 받기  
-$ git clone https:...
+> $ git clone https:...
 
 2. Always start your branch with what is in the remote/main, so after you have cloned the repository locally
 모든 branch를 출력
-$ git branch 
+> $ git branch 
 
 branchName brannch로 이동
-$ git checkout branchName
+> $ git checkout branchName
 
 > Your branch is up to date with 'origin/main'.
 

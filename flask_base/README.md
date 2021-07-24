@@ -42,3 +42,7 @@ Web context = newFlaskApp, flaskapp
 templates은 html files을 모아두는 곳이다.
 static은 정적이라는 의미로 서비스를 운영하는 데 변하지 않는 것, 
 server에 요청하면 연산이 없이 바로 나가는 것들, images, css, js등이 해당된다.
+
+여기서 중요한 점은 flask를 사용할 때 "templates", "static" 이라는 이름을 변경해선 안된다. 
+
+python source code link: https://github.com/pallets/flask/

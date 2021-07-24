@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>flask lab7 password Exercise</title>
+		<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+	</head>
+	<body>
+		<span class="home"> 
+		<h1><a href= "/">Home Page</a></h1>	
+		</span>
+		<div class="mainBox">
+			<h1>Welcome to password check</h1>
+			<p> Let's see if your Password is secure! </p>
+			<ul>
+				<li>Must have an upper case letter somewhere.</li>
+				<li>Must have a lower case letter somewhere.</li>
+				<li>Must have a number at the end.</li>
+			</ul>
+			<form method="POST">
+			{{ form.hidden_tag()}}
+			{{ form.username.label}} {{form.username}}
+			{{ form.password.label }} {{form.password}}
+	                <br>
+			<br>
+			{{form.submit()}}
+		</form> 
+	</div>	
+	</body>
+		
+</html>

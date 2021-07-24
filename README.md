@@ -10,10 +10,10 @@ Computer가 web app에서 server, cilent와 같은 role를 가진다.
 server computer는 정보를 저장하여 제공하고, cilent computer는 정보를 받는다.
 
 ```
-      1.request       2.request
-Client -------> Server ------>  Database
-       <-------        <------
-      4.response      3.get data
+      1.request (Web Application)       2.request
+Client ------->      Server     ------>  Database
+       <-------                 <------
+      4.response                3.get data
 ```
 
 Web Application Server vs Web Server vs Server
@@ -36,6 +36,9 @@ Ruby on Rails등 다양한 Web application framework이 존재한다.
 
 이 Web application framework은 사용방법이 거의 비슷하기 때문에 하나만 잘 이해하면,
 나머지는 쉽게 사용할 수 있다.
+
+basic directory는 그 framework의 기본적인 사용법을 익히고,
+project directory는 그 framework를 사용하여 실제 web application server를 만들어 본다.
 
 
 Web Application Server 운영 방식에 차이 이해하기

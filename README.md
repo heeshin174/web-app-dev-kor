@@ -142,12 +142,12 @@ local computer에 이 이미지가 존재하지 않으면, Dockerhub에서 image
 
 % 부록2 git으로 다른 programmer와 coller 하기 %
 ----
-Git의 "main" branch는 항상 완전환 코드이어야 한다.
+Git의 "master" branch는 항상 완전환 코드이어야 한다.
 다른 사람이랑 협업을 할 경우에 issues, pull request를 잘 활용하여,
 프로젝트를 성공적으로 완성해 보자.
 
 issus: 코드에서 고쳐야 할 부분 
-pull request: main branch에 merge하기 전에 내가 고친 코드를 다른 협업자가 관찰하고 이상이 없는 지 확인하는 단계
+pull request: master branch에 merge하기 전에 내가 고친 코드를 다른 협업자가 관찰하고 이상이 없는 지 확인하는 단계
 
 Git 사용법:
 1. 소스 코드를 다운 받기  
@@ -183,4 +183,19 @@ Push your commit to a remote branch (probably want to use your same local branch
 맨 처음 아무 소스 코드가 없을 경우, 맨 처음 main branch에 push하는 것이다.
 main은 항상 완벽한 코드이어야 함으로 main에 직접적으로 push하는 것은 맨 처음이 마지막이다.
 나중에는 위에 서술된 새로운 branch를 만들어서 pull request를 한다.
-> $ git push -u origin master 
+> $ git push -u origin master
+
+
+% 부록3 Amazon사의 clouod service인 AWS (Amazon Web Service)을 사용하기 %
+----
+1. AWS IAM - User를 생성하고, create access key를 사용하여, API에 접근하기
+
+2. AWS S3 - bucket을 만들어 파일 저장하기 
+
+3. AWS SES (Simple Email Service) - email 보내기
+
+4. AWS EC2 가상환경 - virtualBox와 같이 가상 환경을 제공
+
+5. AWS Lambda - 함수 
+
+6. AWS Elastic Beanstalk - 간단히 코드를 배포할 때 사용 

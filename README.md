@@ -107,15 +107,17 @@ MVC (Model / View / Controll)
 
 ![This is an image](./img/server_side_web_framework.png)
 
-`Frontend framework` 은 **Single Page Application (SPA)**로 body가 비어있는 하나의 HTML을 가지고
+`Frontend framework` 은 **Single Page Application** (SPA)로 body가 비어있는 하나의 HTML을 가지고
 Javascript를 이용해서 그 안에 Data만 변경하는 것을 말한다.
 Server가 Client에 자료를 넘겨주면, Client computer가 그 정보를 가지고 HTML를 완성하기 때문에
 `CSR (Client Side Rendering)`이라고 부른다. CSR은 HTMl이 비어있기 때문에 검색 엔진에 노출되어 검색되기 쉽지 않다.
 SEO (Search Engine Optimization)에 약점을 가진다.
+
 ⭐ `React JS`: React는 Meta사에서 만든 Javascript frontend framework로 computer에 최신 버전의 `node js`를 설치하면 누구나
 쉽게 사용할 수 있다.
 
 그 밖에도 google사에서 만든 `Angular JS`,
+
 `Vue JS`등 다양한 Web Application Frontend framework이 존재한다.
 이 Web application framework은 사용방법이 거의 비슷하기 때문에 하나만 잘 이해하면, 나머지는 쉽게 사용할 수 있다.
 
@@ -127,18 +129,21 @@ SSD는 CSD가 가진 검색 엔진에 대한 보완을 위해 등장한 개념�
 ## Database
 
 Database와 web app을 연결하여 쉽고 간단하게 data를 읽고 쓸 수 있다.
-Database는 크게 Relational database (sql)와 Non Relational database (Nosql)로 나눌 수 있다.
+Database는 크게 Relational database (sql)와 Not only Relational database (Nosql)로 나눌 수 있다.
 `sql (Structured Query Language)`
-⭐ `postgresql` -
-⭐ `Mongo Database`
+
+⭐ `postgresql` - Relational database의 대표주자
+
+⭐ `Mongo Database` - Not only Relational database의 대표주자
 ![This is an image](./img/Database.png)
 
 ## Deploy Frontend Projects
 
 ⭐ `Netlify` - https://www.netlify.com/
+
 `heroku`,
-`Github`,
-등을 이용해 내가 만든 웹사이트를 배포할 수 있다.
+
+`Github`등을 이용해 내가 만든 웹사이트를 배포할 수 있다.
 
 ## APIS (Application Programming Interface)
 

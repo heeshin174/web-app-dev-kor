@@ -195,9 +195,9 @@ Postman: Great program to build an RESTful web services.
 - 기계들의 대화법 REST API - https://www.youtube.com/watch?v=PmY3dWcCxXI&list=PLg8KC9DusHl8zGjAWYGGJygm3rWoEahJQ&index=31&ab_channel=%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9
 - 서버사이드 렌더링 - https://www.youtube.com/watch?v=iZ9csAfU5Os&list=PLg8KC9DusHl8zGjAWYGGJygm3rWoEahJQ&index=32&ab_channel=%EB%93%9C%EB%A6%BC%EC%BD%94%EB%94%A9by%EC%97%98%EB%A6%AC
 - 웹개발 개념정리 - https://www.youtube.com/watch?v=ED2rOHM1od0&list=PLg8KC9DusHl8zGjAWYGGJygm3rWoEahJQ&index=33&ab_channel=%EA%B0%9C%EB%B0%9C%ED%95%98%EB%8A%94%EC%A0%95%EB%8C%80%EB%A6%AC
-- JavaScript 모듈 시스템: https://it-eldorado.tistory.com/92
 - Async Await: https://kiwanjung.medium.com/%EB%B2%88%EC%97%AD-async-await-%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-%EC%A0%84%EC%97%90-promise%EB%A5%BC-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-955dbac2c4a4
 - Closure & Hoisting: https://dongmin-jang.medium.com/javascript-closure-hoisting-7bf8eb5062b9
+- Javascript closure: https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures
 
 ## % 부록1 Docker 이해하기 %
 
@@ -391,7 +391,8 @@ mongoose
   .catch((err) => console.log(err.massage));
 ```
 
-### 💥 Async & Await  
+### 💥 Async & Await
+
 Await is basically syntactic sugar (사람이 이해하기 쉽게 만든 것) for Promises. It makes your asynchronous code look more like synchronous/procedural code, which is easier for humans to understand.
 
 async와 await는 자바스크립트의 비동기 처리 패턴 중 가장 최근에 나온 문법입니다. 기존의 비동기 처리 방식인 콜백 함수와 프로미스의 단점을 보완하고 개발자가 읽기 좋은 코드를 작성할 수 있게 도와주죠. 여기서 개발자가 읽기 좋은 코드란 code를 위에서 아래로 순차대로 실행할 수 있는 코드를 의미합니다. 우리는 위에서부터 아래로 한 줄 한 줄 차근히 읽으면서 사고하는 것이 편합니다. 그렇게 프로그래밍을 배웠으니까요.
@@ -522,8 +523,6 @@ var getID = () => {
 };
 ```
 
-
-
 간단한 예시 (var 변수 vs let/const 변수)
 
 ```
@@ -572,10 +571,10 @@ console.log("hello2");
 }
 ```
 
-호이스팅은 함수선언문과 함수표현식에서 서로 다르게 동작하기 때문에 주의해야 한다.
+Hoisting 함수선언문과 함수표현식에서 서로 다르게 동작하기 때문에 주의해야 한다.
 변수에 할당된 함수표현식은 끌어 올려지지 않기 때문에 이때는 변수의 스코프 규칙을 그대로 따른다.
 
-**호이스팅 우선순위:**
+**Hoisting 우선순위:**
 
 - 같은 이름의 var 변수 선언과 함수 선언에서의 호이스팅
 - 변수 선언이 함수 선언보다 위로 끌어올려진다.
@@ -598,7 +597,7 @@ console.log(typeof yourName);
 ```
 
 ```
-// 호이스팅(Hoisting)의 결과
+// Hoisting의 결과
 // 1. [Hoisting] 변수값 선언
 var myName;
 var yourName;
@@ -639,10 +638,10 @@ console.log(typeof yourName); // > "function"
 - 값이 할당되어 있지 않은 변수의 경우, 함수선언문이 변수를 덮어쓴다.
 - 값이 할당되어 있는 변수의 경우, 변수가 함수선언문을 덮어쓴다.
 
-TIP 호이스팅 사용 시 주의:
+TIP Hoisting 사용 시 주의:
 
-- 코드의 가독성과 유지보수를 위해 호이스팅이 일어나지 않도록 한다.
-  호이스팅을 제대로 모르더라도 함수와 변수를 가급적 코드 상단부에서 선언하면, 호이스팅으로 인한 스코프 꼬임 현상은 방지할 수 있다.
+- 코드의 가독성과 유지보수를 위해 Hoisting이 일어나지 않도록 한다.
+  호이스팅을 제대로 모르더라도 함수와 변수를 가급적 코드 상단부에서 선언하면, Hoisting 인한 스코프 꼬임 현상은 방지할 수 있다.
   let/const를 사용한다.
   
 - var를 쓰면 혼란스럽고 쓸모없는 코드가 생길 수 있다. 그럼 왜 var와 호이스팅을 이해해야 할까?
@@ -652,11 +651,167 @@ TIP 호이스팅 사용 시 주의:
 
 ## JavaScript 모듈 시스템
 
-Node.js의 module 시스템: CommonJS (module.exports, require)
-Javascript ES6부터는 브라우저 단에서도 쉽게 JavaScript의 모듈화가 가능하도록 모듈 시스템이 추가되었다. (export, import)
-ES6 fashion을 사용하려면 ES6를 ES5로 바꿔주는 babel complier가 필요하다.
+1. Node.js의 module 시스템: CommonJS (module.exports, require)
+2. Javascript ES6부터는 브라우저 단에서도 쉽게 JavaScript의 모듈화가 가능하도록 모듈 시스템이 추가되었다. (export, import)
+   ES6 fashion을 사용하려면 ES6를 ES5로 바꿔주는 babel complier가 필요하다.
 
-CommonJS:
+### CommonJS (module.exports, require)
+
+Node.js 환경에서 실행되는 JavaScript는 모듈 시스템으로서 CommonJS 방식을 지원한다. 이 방식에서는 `module.exports` 객체를 이용하여 자신의 데이터를 외부로 내보낼 수 있고, `require()` 함수를 이용하여 외부 모듈의 데이터를 불러올 수 있다. 만약 Babel 등의 컴파일러를 사용한다면 뒤에서 설명할 ES6 기반의 모듈 내보내기 및 불러오기 방식을 사용해도 알아서 module.exports 객체 및 require() 함수 기반의 방식으로 변환될 것이다.
+
+자신의 데이터를 외부로 내보내려면 module.exports 변수에 내보내고자 하는 데이터들을 담은 객체를 지정해주면 된다.
+
+```
+// Item.js file
+const Item = mongoose.model("item", ItemSchema);
+
+// export Item variable, so that other files can access Item variable.
+module.exports = Item;
+```
+
+외부 모듈의 데이터를 불러오려면 require("경로") 함수의 반환 값을 변수에 대입하면 된다. require() 함수가 반환하는 것은 해당 모듈의 module.exports 객체이다.
+
+```
+// Items.js file
+const Item = require(".models/Item");
+```
+
+### ES6 with babel complier (export, import)
+
+이는 브라우저 단에서도 쉽게 JavaScript의 모듈화가 가능하도록 ES6부터 도입된 방식이다. 모듈화 시스템답게 각각의 모듈(파일)마다 독립적인 파일 스코프를 가지고 있어서, 모듈 내에 var로 선언한 변수는 더 이상 window 객체의 프로퍼티가 아닌 파일 스코프의 변수로 존재하게 된다. 즉 기본적으로는 다른 모듈의 데이터를 참조할 수 없기 때문에 충돌도 발생하지 않는다.
+
+이때 다른 모듈의 데이터를 참조하거나 자신의 데이터를 노출시키고 싶을 때 사용하는 것이 바로 export, import 키워드이다.
+
+```
+이러한 모듈 시스템을 브라우저에서 사용하려면 <script> 태그에 type="module" 어트리뷰트를 추가해야 한다.
+그러면 그 안에 작성된 JavaScript 코드들은 ES6 기반의 모듈 내보내기 및 불러오기 방식을 지원하게 된다.
+이때 불러오는 파일이 모듈임을 명확히 하기 위해 <script type="module"> 태그로 불러오는 JavaScript 파일의 확장자는 mjs로 설정하도록 권장되고 있다.
+```
+
+ES6 기반의 모듈 시스템은 CommonJS 방식에 비해 코드의 직관성이 좋고, 비동기 방식으로 작동하면서 불러오는 모듈의 실제로 사용되는 부분들만 로드하기 때문에 성능적으로도 효율적이라고 할 수 있다. 그러나 이는 아래와 같은 단점들을 가지고 있어서 아직까지는 Webpack 등의 모듈 번들러를 이용하여 미리 의존성이 해결된 형태의 번들 JavaScript 파일을 제공하는 방식이 더 선호되는 경향이 있다.
+
+- IE(인터넷 익스플로러)를 포함한 몇몇 구형 브라우저는 ES6 모듈 시스템을 지원하지 않는다.
+- 브라우저의 ES6 모듈 시스템을 사용하더라도 어차피 트랜스파일링이나 번들링은 필요하다.
+  = 아직 지원하지 않는 기능(Bare import 등)들이 꽤 있다. (ECMAScript modules in browsers 참고)
+- 점차 해결되고는 있지만 아직 몇 가지 이슈가 있다. (ECMAScript modules in browsers 참고)
+
+모듈 내보내기 (export)
+
+```
+// Named Export : 정해진 이름으로 내보내기
+export 변수/함수/클래스 선언문;
+export { 변수명/함수명/클래스명 };
+export { 변수명/함수명/클래스명 as 다른 이름 };
+
+// Default Export : 기본 내보내기 (이름을 정하지 않음. 최대 하나만 가능.)
+export default 선언문 또는 값;
+export { 변수명/함수명/클래스명 as default };
+```
+
+모듈 불러오기 (import)
+
+```
+import A, { B, C } from 경로; // A는 Default Export, B와 C는 Named Export
+
+import { B as b, C as c } from 경로; // 원하는 이름으로 로드
+
+import \* as obj from 경로; // Export 된 모든 것들을 하나의 객체 형태로 로드 (불필요한 것도 가져오면 번들링 시 비효율을 야기)
+
+import { default as A } from 경로; // "import A from 경로"와 동일 (default)
+```
+
+### ReactJS에서 NPM 패키지 모듈 불러오기
+
+NPM 패키지 모듈들은 **CommonJS**를 기본 모듈 시스템으로 채택한다.
+
+즉, 모듈을 내보내고 불러오는 것에 있어 require, module.exports 등을 사용한다는 말이다.
+
+그러나 실제로 ReactJS 등의 라이브러리를 활용하여 Frontend 개발을 할 때는 NPM 패키지 모듈을 불러오기 위해 ES6 문법의 코드를 작성하는 경우가 많다(import, export 등). 
+
+그런데 왜 문제가 발생하지 않을까? 이는 Babel 등의 컴파일러가 import, export 등의 코드를 CommonJS 기반의 코드로 변환해주기 때문이다. 
+그러고 나면 Webpack에 의해 JavaScript 모듈들의 번들링이 가능해진다. 변환 규칙은 대략 다음과 같다(실제로는 더 복잡할 수 있다).
 
 
-ES6 with babel complier:
+### ES6 import 사용법
+
+Node has experimental support for ES modules. To enable them we need to make some changes to the package.json file. Before following the steps make sure that Node is installed. Below are the steps to achieve the same.
+
+CommonJS를 모듈 시스템을 채택했던 Node.js에서는 import, export와 같은 ES 모듈을 사용하려면 Babel과 같은 트랜스파일러(transpiler)를 사용했어야 했는데요. 
+
+ode.js 버전 13.2부터 ES 모듈 시스템에 대한 정식 지원이 시작됨에 따라 다른 도구 없이 Node.js에서 손쉽게 ES 모듈을 사용할 수 있게 되었습니다. 🎉
+
+1. 프로젝트 단위로 ES 모듈 적용: 
+
+In the package.json file add **“type” : “module”**. Adding this enables ES6 modules.
+The package.json file should look like this:
+
+Node.js에서 ES 모듈을 사용하는 두번째 방법은 package.json 파일 설정을 통해 전체 파일에 적용하는 것입니다. 모든 파일의 확장자를 일일이 바꾸지 않고, 프로젝트 전체에 ES 모듈을 적용하고 싶을 때 적합한 방법입니다.
+
+먼저 프로젝트의 package.json 파일을 열고, 최상위에 type 항목을 module로 설정합니다.
+
+package.json 생성
+
+> `npm init`
+
+```
+//package.json
+{
+  "name": "index",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+```
+
+2. 파일 단위로 ES 모듈 적용:
+
+Node.js에서 ES 모듈을 사용하는 방법은 파일의 확장자를 js 대신에 mjs를 사용하는 것입니다. 프로젝트에서 부분적으로 ES 모듈을 사용할 때 가장 쉽고 빠르게 적용할 수 있는 방법입니다.
+
+time.js와 time.test.js 파일의 확장자를 mjs 바꾸고, ES 모듈의 import와 export 키워드를 사용하도록 코드를 수정합니다.
+
+```
+// time.mjs
+import moment from "moment";
+
+export function now() {
+return moment().format();
+}
+```
+
+```
+// time.test.mjs
+import { now } from "./time";
+
+console.log("Now:", now());
+```
+
+time.test.mjs 파일을 실행을 해보면 Node.js가 time 모듈을 찾지 못하는 현상을 보게 되실 겁니다.
+
+$ node src/time.test.mjs
+internal/modules/run_main.js:54
+internalBinding('errors').triggerUncaughtException(
+^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module 
+
+이 부분이 Node.js에서 ES 모듈울 처음 사용할 때 가장 많이 실수를 하게되는 부분인데요. Node.js에서 import 키워드로 프로젝트 내부 모듈을 불러올 때는 반드시 **확장자까지 포함**해서 경로를 명시를 해줘야 합니다. 이는 브라우저에서 import가 작동하는 방식과 맞추기 위해서 의도적으로 설계된 부분이라고 합니다.
+
+확장자를 포함해서 경로를 명시해주면 정상적으로 작동합니다.
+
+```
+// time.test.mjs
+import { now } from "./time.mjs";
+
+console.log("Now:", now());
+$ node src/time.test.mjs
+Now: 2020-05-23T18:10:20-04:00
+```
+
+이상으로 Node.js에서 ES 모듈의 import와 export 키워드를 사용하는 2가지 방법에 대해서 알아보았습니다. 참고로 Node.js 버전 13.2 미만에서도 버전 12 이상에서는 Node.js를 실행할 때 --experimental-module 옵션을 넘기면 동일한 방법으로 ES 모듈을 사용할 수 있으니 참고바라겠습니다.

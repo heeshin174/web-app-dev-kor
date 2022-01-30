@@ -2,6 +2,20 @@
 
 목표: Web Application Server을 이해하고 나만의 web app을 만들어보자.
 
+## Before Start
+
+Download following in your local (working) computer:
+
+- **node.js** [node.js](https://nodejs.org/en/) (Javascript: Programming Language)
+- **Postman** [Postman](https://www.postman.com/downloads/)
+- **VSCode** [VSCode](https://code.visualstudio.com/) (IDE: Code editor)
+
+Create an account for these services if you don't have one:
+
+- **github** [github](https://github.com/) (version control and source code management functionality)
+- **Heroku** [Heroku](https://www.heroku.com/) (Deploy website)
+- **mongoDB** (Database)
+
 ## Server vs Cilent
 
 server와 cilent는 web application에서 computer가 하는 역할을 의미한다.
@@ -17,12 +31,10 @@ Client ------->      Server     ------>  Database
       4.response                3.get data
 ```
 
-## Web Application Server vs Web Server vs Server
-
 Server는 한 computer가 맡는 role이다.
 Web server는 한 computer를 web을 담당하는 server로 만드는 software를 의미한다.
 Web Server는 program을 실행하는 것이 아니라 기본적인 html을 제공한다.
-Web Application Server에서 Application이 붙으면 program이 실행된다는 의미이다.
+Web Server에 Application이 붙어 `Web Application Server`가 되면 program이 실행되고 server에서 어떤 연산이 이루어 진다는 의미이다.
 
 ## Web Application Server 운영 방식에 차이 이해하기
 
@@ -37,19 +49,18 @@ Web Application Server에서 Application이 붙으면 program이 실행된다는
 인원수에 맞게
 대신, 내가 모든 것을 관리하기 때문에 보안 문제에 더 안전하게 대처할 수 있다.
 
-앞서 말했듯이 server는 한 computer가 맡는 role이다.
 회사가 server를 운영하는 방식인 On-premise방식과 Cloud computing service 방식을 각 각
 건물을 빌리는 것과 호텔을 이용하는 것에 비유할 수 있다.
 
 1. On-premise 방식:
    회사가 집적 물리적인 computer를 사서, 그 computer를 server로 만든다.
-   이 방법은 computer를 직접 사야함으로 Cloud computing service보다 더 많은 돈이 요구된다.
+   이 방법은 computer를 직접 사야함으로 Cloud Computing service보다 더 많은 돈이 요구된다.
    black friday와 같이, 특정날에 사용자가 많아져 server를 늘리려면, 새로운 computer를 또 사야하고
    이 시즌이 지나면 그 computer는 다시 사용되지 않는다.
    server를 사용자에 맞게 scale-up, scale-down하기 쉽지 않아 자원에 낭비가 생긴다.
    대신, 회사가 집적 관리하기 떄문에 보안 문제에 더 안전하다.
 
-2. Cloud computing service 방식:
+2. Cloud Computing Service 방식:
    위에서 호텔이 여려 방을 제공한다고 했는데,
    cloud computing에서는 virtualization을 이용하여 한 물리적 computer에 여러대의 가상 computer를 만들 수 있다
    (virtualBox에 ubuntu를 설치하는 것을 생각하면 된다).
@@ -65,29 +76,29 @@ Microsoft사의 Azure,
 Google사의 GCP (Google cloud platform)등이 cloud computing service를 제공하는 대표적인 사이트이다.
 ```
 
-요약: 각 방식의 장점
+각 방식의 장점 요약:
 On-premise: security
-Cloud computing service: money, scale-up & down, fast set up
+Cloud Computing service: money, scale-up & down, fast set up
 
-Cloud computing service가 어디까지 service해주는 가에 따라 service를 세 가지로 나눌 수 있다.
+Cloud Computing service가 어디까지 service해주는 가에 따라 service를 세 가지로 나눌 수 있다.
 Iaas (Infrastructure as a service): AWS EC2 가상 머신,
 Paas (platform as a service): AWS Elastic Beanstalk,
 Saas (Software as a service): youtube, evernote, dropbox, Amazon Web Services (AWS)
 
-이런 Cloud computing service의 엄청난 장점 덕분에 Cloud computing service이 대세로 떠오르고 있다.
-예로 brainless machine을 생각할 수 있다. 기존에 machine을 만드려먼 그 machine에 들어갈 비싼 computer 부품들을
-직접사서 조립해야 했지만, 이젠 machine이 network에 연결만 되어 있으면 Cloud computing service의 computer를 가져다
+이런 cloud computing service의 엄청난 장점 덕분에 대세로 떠오르고 있다.
+예로, brainless machine을 생각할 수 있다. 기존에 machine을 만드려먼 그 machine에 들어갈 비싼 computer 부품들을
+직접사서 조립해야 했지만, 이젠 machine이 network에 연결만 되어 있으면 cloud Computing service의 computer를 가져다
 사용하면 된다.
 
 기존 machine: 실제 computer 부품 구매, 200만원
 brainless machine: network를 사용하여 더 좋은 computer를 더 싸게 이용, 50만원
 
-## framework와 library 차이 이해하기
+## Framework vs Library
 
-- framework를 한국어로 하면 frame (틀), work (작업), 즉 기본적인 틀을 만드는 작업이다.
+- Framework를 한국어로 하면 frame (틀), work (작업), 즉 기본적인 틀을 만드는 작업이다.
   framework는 기본적인 사용방법이 존재하기 때문에 우리는 이 기본적인 뼈대에다가 살을 붙이면 된다.
 
-- library는 특정 기능에 대한 도구 or 함수들을 모은 집합입니다.
+- Library는 특정 기능에 대한 도구 or 함수들을 모은 집합입니다.
   즉, 프로그래머가 개발하는데 필요한 것들을 모아둔 것입니다.
   library는 단순 활용이 가능한 도구들의 집합
 
@@ -95,9 +106,15 @@ brainless machine: network를 사용하여 더 좋은 computer를 더 싸게 이
 framework는 집의 기본 구조를 제공하여, 우리는 그 구조에 더하면 되고,
 library는 침대, 소파와 같은 가구로, 우리는 이 가구들로 집을 만들어야 한다.
 
-## Frontend framework vs Server-Side Web Framework
+## ⭐ Frontend framework vs Server-Side Web Framework
+Web App dev는 크게 Frontend, Backend, Database로 나눌 수 있고, 이 세가지를 합쳐 Fullstack dev라고 한다.
+이는 MVC (Model / View / Controll) software design pattern 라고도 불린다. 
+Model–view–controller is a software design pattern commonly used for developing user interfaces that divide the related program logic into three interconnected elements.
 
-MVC (Model / View / Controll)
+- Model은 View와 Controll을 연결하는 연결고리 역할을 한다.
+- View은 client가 웹사이트에 방문하여 실제로 보게되는 회면을 의미한다. HTML (HyperText Markup Language), CSS (Cascading Style Sheets), Javascript를 이용하여 View를 작성할 수 있다. 여기서 programming language는 오직 Javascript이다.
+- Controll은 app의 functionalities를 의미한다.  
+
 각각의 programming language마다 Web Application Server를 만드는 web app framework를 제공한다.
 
 1. python: Django, Flask, FastAPI
@@ -107,10 +124,11 @@ MVC (Model / View / Controll)
 
 ![This is an image](./img/server_side_web_framework.png)
 
-`Frontend framework` 은 **Single Page Application** (SPA)로 body가 비어있는 하나의 HTML을 가지고
-Javascript를 이용해서 그 안에 Data만 변경하는 것을 말한다.
+`Frontend framework`은 pure Javascript, HTML이 아닌 web view를 더 쉽게 작성할 수 있게 만드는 framework이다.
+SPA를 제공하는 frontend framework에는 크게 React JS, Vue JS, Angular JS가 있다.
+**Single Page Application** (SPA)는 body가 비어있는 하나의 HTML을 가지고 Javascript를 이용해서 그 안에 Data만 변경하는 것을 말한다.
 Server가 Client에 자료를 넘겨주면, Client computer가 그 정보를 가지고 HTML를 완성하기 때문에
-`CSR (Client Side Rendering)`이라고 부른다. CSR은 HTMl이 비어있기 때문에 검색 엔진에 노출되어 검색되기 쉽지 않다.
+CSR (Client Side Rendering)이라고 부른다. CSR은 HTMl이 비어있기 때문에 검색 엔진에 노출되어 검색되기 쉽지 않다.
 SEO (Search Engine Optimization)에 약점을 가진다.
 
 ⭐ `React JS`: React는 Meta사에서 만든 Javascript frontend framework로 computer에 최신 버전의 `node js`를 설치하면 누구나
@@ -120,6 +138,8 @@ SEO (Search Engine Optimization)에 약점을 가진다.
 
 `Vue JS`등 다양한 Web Application Frontend framework이 존재한다.
 이 Web application framework은 사용방법이 거의 비슷하기 때문에 하나만 잘 이해하면, 나머지는 쉽게 사용할 수 있다.
+
+`Figma`, `Adobe photoshop` 등 다양한 Moderm UI/UX (web view)를 실질적으로 코드를 작성하기 전에 디자인할 수 있는 program들이 많이 존재하므로, 이를 이용하여 웹사이트를 미리 디자인 해 볼 수도 있다. 
 
 ## Server-Side Rendering (SSD)
 
@@ -145,21 +165,29 @@ Database는 크게 Relational database (sql)와 Not only Relational database (No
 
 `Github`등을 이용해 내가 만든 웹사이트를 배포할 수 있다.
 
-## APIS (Application Programming Interface)
+## APIs (Application Programming Interface)
 
 API는 식당에서의 종업원과 같은 역할을 한다고 이해하면 쉽다.
 Server는 음식을 만드는 요리사, Client는 음식을 주문하는 손님이다.
 종업원은 손님에게 주문을 받아 요리사에게 넘겨주고, 요리사가 만든 요리를 손님에게 내어주는 역할을 한다.  
 Programming에서 API는 Server와 Client을 연결해주는 역할을 한다.
 
-## REST APIs
+## ⭐ REST APIs
 
 APIs that conform to the REST architectural style and interacts with RESTful service
-CRUD CRUD in REST API
-Create - GET
-Read - POST
-Update - PUT
-Delete - DELETE
+REST: Representational State Transfer
+
+Below is a table summarizing recommended return values of the primary HTTP methods in combination with the resource URIs:
+
+| HTTP Verb | CRUD   | Entire Collection (e.g. /customers) | Specific Item (e.g. /customers/{id})                                       |
+| --------- | ------ | ----------------------------------- | -------------------------------------------------------------------------- |
+| POST      | Create | 201 (Created)                       | 404 (Not Found), 409 (Conflict) if resource already exists..               |
+| GET       | READ   | 200 (OK)                            | 404 (Not Found), if ID not found or invalid.                               |
+| PUT/PATCH | UPDATE | 405 (Method Not Allowed)            | 200 (OK) or 204 (No Content). 404 (Not Found), if ID not found or invalid. |
+| DELETE    | DELETE | 405 (Method Not Allowed)            | 200 (OK). 404 (Not Found), if ID not found or invalid.                     |
+
+Postman: Great program to build an RESTful web services.
+- **Postman** [Postman](https://www.postman.com/downloads/)  
 
 ### 기타 Links
 
@@ -167,6 +195,9 @@ Delete - DELETE
 - 기계들의 대화법 REST API - https://www.youtube.com/watch?v=PmY3dWcCxXI&list=PLg8KC9DusHl8zGjAWYGGJygm3rWoEahJQ&index=31&ab_channel=%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9
 - 서버사이드 렌더링 - https://www.youtube.com/watch?v=iZ9csAfU5Os&list=PLg8KC9DusHl8zGjAWYGGJygm3rWoEahJQ&index=32&ab_channel=%EB%93%9C%EB%A6%BC%EC%BD%94%EB%94%A9by%EC%97%98%EB%A6%AC
 - 웹개발 개념정리 - https://www.youtube.com/watch?v=ED2rOHM1od0&list=PLg8KC9DusHl8zGjAWYGGJygm3rWoEahJQ&index=33&ab_channel=%EA%B0%9C%EB%B0%9C%ED%95%98%EB%8A%94%EC%A0%95%EB%8C%80%EB%A6%AC
+- JavaScript 모듈 시스템: https://it-eldorado.tistory.com/92
+- Async Await: https://kiwanjung.medium.com/%EB%B2%88%EC%97%AD-async-await-%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-%EC%A0%84%EC%97%90-promise%EB%A5%BC-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-955dbac2c4a4
+- Closure & Hoisting: https://dongmin-jang.medium.com/javascript-closure-hoisting-7bf8eb5062b9
 
 ## % 부록1 Docker 이해하기 %
 
@@ -258,3 +289,374 @@ main은 항상 완벽한 코드이어야 함으로 main에 직접적으로 push�
 5. AWS Lambda - 함수
 
 6. AWS Elastic Beanstalk - 간단히 코드를 배포할 때 사용
+
+
+# Javascript
+
+Javascript는 web browser를 위해 등장한 programming language이기 때문에 다른 프로그래밍 언어들과는 차별점을 가진다.
+
+1. Javascript는 비동기 프로그래밍언어(asynchronous programming) 이다.
+자바스크립트의 비동기 처리란 특정 코드의 연산이 끝날 때까지 코드의 실행을 멈추지 않고 다음 코드를 먼저 실행하는 자바스크립트의 특성을 의미합니다.
+데이터를 불러오는데 오래걸리는 것들을 기다리지 않는다.
+
+2. variable을 지정했는데 값을 아직 assign 안한 경우, 이 변수의 값은 undefined이 된다.
+
+- Javascript에서 string안에 값을 변경하려면 back tic `${variable}`을 사용해야 한다.
+
+```
+const name = "Shin";
+console.log(`Hello ${name}!`);
+```
+
+- object는 **{} curly braces**를 이용해서 정의한다.
+
+
+
+## 💥 Callback vs Promises vs Async Await:
+
+Javascript는 asynchronous programming로 데이터를 요청하는 데 시간이 많이 걸리는 line이 있으면, 그 code의 값을 기다리지 않고 다음 code를 시작한다.
+
+비동기 처리 사례는 setTimeout()입니다. setTimeout()은 Web API의 한 종류입니다. 코드를 바로 실행하지 않고 지정한 시간만큼 기다렸다가 로직을 실행합니다. 아래 코드를 보겠습니다.
+
+```
+// #1
+console.log('Hello');
+// #2
+setTimeout(function() {
+	console.log('Bye');
+}, 3000);
+// #3
+console.log('Hello Again');
+```
+
+비동기 처리에 대한 이해가 없는 상태에서 위 코드를 보면 아마 다음과 같은 결과값이 나올 거라고 생각할 겁니다.
+
+```
+‘Hello’ 출력
+3초 있다가 ‘Bye’ 출력
+‘Hello Again’ 출력
+```
+
+그런데 실제 결과 값은 아래와 같이 나오죠.
+
+```
+‘Hello’ 출력
+‘Hello Again’ 출력
+3초 있다가 ‘Bye’ 출력
+```
+
+setTimeout() 역시 비동기 방식으로 실행되기 때문에 3초를 기다렸다가 다음 코드를 수행하는 것이 아니라 일단 setTimeout()을 실행하고 나서 바로 다음 코드인 console.log('Hello Again');으로 넘어갔습니다. 따라서, ‘Hello’, ‘Hello Again’를 먼저 출력하고 3초가 지나면 ‘Bye’가 출력됩니다.
+
+### Call Back Function으로 비동기 프로그램이 가진 문제 해결하기
+
+콜백 함수의 동작 방식은 일종의 식당 자리 예약과 같습니다. 일반적으로 맛집을 가면 사람이 많아 자리가 없습니다. 그래서 대기자 명단에 이름을 쓴 다음에 자리가 날 때까지 주변 식당을 돌아다니죠. 만약 식당에서 자리가 생기면 전화로 자리가 났다고 연락이 옵니다. 그 전화를 받는 시점이 여기서의 콜백 함수가 호출되는 시점과 같습니다. 손님 입장에서는 자리가 날 때까지 식당에서 기다리지 않고 근처 가게에서 잠깐 쇼핑을 할 수도 있고 아니면 다른 식당 자리를 알아볼 수도 있습니다.
+
+자리가 났을 때만 연락이 오기 때문에 미리 가서 기다릴 필요도 없고, 직접 식당 안에 들어가서 자리가 비어 있는지 확인할 필요도 없습니다. 자리가 준비된 시점, 즉 데이터가 준비된 시점에서만 저희가 원하는 동작(자리에 앉는다, 특정 값을 출력한다 등)을 수행할 수 있습니다.
+
+### Promise
+
+“A promise is an object that may produce a single value some time in the future”
+
+Promise가 왜 필요한가요?
+프로미스는 주로 서버에서 받아온 데이터를 화면에 표시할 때 사용합니다. 
+일반적으로 웹 애플리케이션을 구현할 때 서버에서 데이터를 요청하고 받아오기 위해 아래와 같은 API를 사용합니다.
+
+```
+app.get('url 주소/products/1', function(response) {
+  // ...
+});
+```
+
+위 API가 실행되면 서버에다가 ‘데이터 하나 보내주세요’ 라는 요청을 보내죠. 그런데 여기서 데이터를 받아오기도 전에 마치 데이터를 다 받아온 것 마냥 화면에 데이터를 표시하려고 하면 오류가 발생하거나 빈 화면이 뜹니다. 이와 같은 문제점을 해결하기 위한 방법 중 하나가 Promise이다.
+
+There are 3 states of the Promise object:
+
+프로미스를 사용할 때 알아야 하는 가장 기본적인 개념이 바로 Promise의 상태(states)입니다. 여기서 말하는 상태란 프로미스의 처리 과정을 의미합니다. new Promise()로 프로미스를 생성하고 종료될 때까지 3가지 상태를 갖습니다.
+
+- Pending(대기) : Initial State, before the Promise succeeds or fails. 비동기 처리 로직이 아직 완료되지 않은 상태
+- Fulfilled(이행) : Completed Promise. 비동기 처리가 완료되어 프로미스가 결과 값을 반환해준 상태
+- Rejected(실패) : Failed Promise, throw an error. 비동기 처리가 실패하거나 오류가 발생한 상태
+
+The Promise object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+If the promise gets rejected, it will jump to the catch() method.
+
+프로미스 에러 처리는 가급적 catch()를 사용한다.
+
+`mongoose.connect()`는 Promise를 return한다. Promise가 성공적으로 return되면, .then()에 정의된 callback function을 Promise가 reject되면 에러가 발생하여 .catch()에 정의된 callback function을 실행한다.
+
+```
+mongoose
+  .connect()
+  .then(() => console.log("MongoDB Connected..."))
+  .catch((err) => console.log(err.massage));
+```
+
+### 💥 Async & Await  
+Await is basically syntactic sugar (사람이 이해하기 쉽게 만든 것) for Promises. It makes your asynchronous code look more like synchronous/procedural code, which is easier for humans to understand.
+
+async와 await는 자바스크립트의 비동기 처리 패턴 중 가장 최근에 나온 문법입니다. 기존의 비동기 처리 방식인 콜백 함수와 프로미스의 단점을 보완하고 개발자가 읽기 좋은 코드를 작성할 수 있게 도와주죠. 여기서 개발자가 읽기 좋은 코드란 code를 위에서 아래로 순차대로 실행할 수 있는 코드를 의미합니다. 우리는 위에서부터 아래로 한 줄 한 줄 차근히 읽으면서 사고하는 것이 편합니다. 그렇게 프로그래밍을 배웠으니까요.
+async/await의 기반은 promise라는 사실은 매우 중요하다. 사실, 우리가 쓰는 모든 async 함수는 promise를 리턴하고, 모든 await 함수는 일반적으로 promise가 됩니다.
+
+The await keyword is used in an async function to ensure that all promises returned in the async function are synchronized. Await eliminates the use of callbacks in .then() and .catch(). In using async and await, async is prepended when returning a promise, await is prepended when calling a promise. try and catch are also used to get the rejection value of an async function.
+
+async & await 기본 문법:
+
+이제 async await의 기본 문법을 알아보겠습니다.
+
+```
+async function 함수명() {
+  await 비동기_처리_메서드_명();
+}
+```
+
+먼저 함수의 앞에 async 라는 예약어를 붙입니다. 그러고 나서 함수의 내부 로직 중 HTTP 통신을 하는 비동기 처리 코드 앞에 await를 붙입니다. 여기서 주의하셔야 할 점은 **비동기 처리 메서드가 꼭 프로미스 객체를 반환**해야 await가 의도한 대로 동작합니다.
+
+일반적으로 await의 대상이 되는 비동기 처리 코드는 Axios 등 프로미스를 반환하는 **API 호출 함수**입니다.
+
+async & await 예외 처리:
+
+async & await에서 예외를 처리하는 방법은 바로 try catch입니다. 프로미스에서 에러 처리를 위해 .catch()를 사용했던 것처럼 async에서는 catch {} 를 사용하시면 됩니다.
+
+```
+app.get("/", async (req, res) => {
+  try {
+    const items = await Item.find().sort({ date: -1 });
+    if (!items) throw Error("No items");
+
+    res.status(200).json(items);
+  } catch (err) {
+    console.error(err.message);
+  }
+});
+```
+
+### Promise를 Async/Await으로 변환하기
+
+Promise 방식:
+```
+function getFirstUser() {
+    return getUsers()
+       .then(function(users) {
+          return users[0].name;})
+       .catch(function(err) {
+        return {
+          name: 'default user'
+        };
+    });
+}
+```
+
+Async/Await 방식:
+```
+async function getFirstUser() {
+    try {
+        let users = await getUsers();
+        return users[0].name;
+    } catch (err) {
+        return {
+            name: 'default user'
+        };
+    }
+}
+```
+
+자, 이제 promise로 구현하는 법과 async/await로 구현하는 법이 있다는 걸 알았습니다. 그럼 왜 promise를 알아야 하는걸까요?
+
+1. 기다리지(await) 않는 상황
+   만약 그냥 호출한다면,
+   
+   `let users = getFirstUser();`
+   
+   기다리지(await) 않았지만, 자동으로 error를 뿜지 않습니다!
+   사실, await를 써야하는 의무는 없어요. 단지 쓰지 않는다면, user는 resolved 값이 아니라 promise 객체를 가리킬거에요. 그리고 많은 것들을 할 수 없게 되겠죠.
+   javascript는 엄격한 타입선언을 하지 않기 때문에, user 변수로 무언가를 할때까지 드러나지 않을거고 아마 내가 원하는 곳에서 null 값을 줄거에요.
+   비동기 함수가 저절로 wait 하지 않는다는 사실을 잊지 마세요.
+   당신이 반드시 await 해야합니다. 하지 않는다면 예상한 값 대신에 promise 객체를 받게 될거에요.
+   물론 promise 객체를 받아오도록 의도한거라면 괜찮아요. 그러면 promise 객체로 더 많은 것을 컨트롤 할 수 있습니다. 예를 들면 memoizing promises 같은 것들이요.
+
+이 글의 중요한 점은 
+💥 **promise를 이해하지 못하면 async/await를 사용하면서 진짜 진짜 이해하기 어려운 케이스와 버그를 만나게 된다**
+
+
+## 💥 Javascript Closure & Hoisting
+
+호이스팅(Hoisting)의 개념: 함수 안에 있는 선언들을 모두 끌어올려서 해당 함수 유효 범위의 최상단에 선언하는 것을 말한다.
+
+- 자바스크립트 함수는 실행되기 전에 함수 안에 필요한 변수값들을 모두 모아서 유효 범위의 최상단에 선언한다.
+  자바스크립트 Parser가 함수 실행 전 해당 함수를 한 번 훑는다.
+  함수 안에 존재하는 변수/함수선언에 대한 정보를 기억하고 있다가 실행시킨다.
+  유효 범위: 함수 블록 {} 안에서 유효
+
+- 즉, 함수 내에서 아래쪽에 존재하는 내용 중 필요한 값들을 끌어올리는 것이다.
+  실제로 코드가 끌어올려지는 건 아니며, 자바스크립트 Parser 내부적으로 끌어올려서 처리하는 것이다.
+  실제 메모리에서는 변화가 없다.
+
+Hoisting 대상:
+
+**var 변수 선언**과 **function 함수선언문**에서만 호이스팅이 일어난다.
+  var 변수/함수의 **선언**만 위로 끌어 올려지며, **할당**은 끌어 올려지지 않는다.
+  let/const 변수 선언과 함수표현식에서는 호이스팅이 발생하지 않는다.
+
+```
+// Javascript에서는 변수/함수가 program에 정의되어 있으면, program내에 어느 곳에서도 접근이 가능하다.
+// getName()의 호출보다 getName()의 정의가 더 늦게 되지만, 함수선언문으로 정의된 함수는 접근가능하다. 
+getName();  // Shin
+
+// x는 정의되어 있지만, 7이란 값을 받기 전이므로, x의 값은 undefined이다.
+console.log(x); // undefined
+// y는 program에 정의되어 있지 않기 때문에, error가 발생한다.
+console.log(y); // uncaught referenceError: y is not defined
+
+// arrow function이나 함수표현식으로 작성한 함수는 var변수에 담겨있기 때문에, 
+// 함수를 assign하기 전에는 위의 x처럼 variable로 다뤄진다.
+getID(); // uncaught typeError: getID is not a function
+getID; // undefined
+
+var x = 7;
+function getName() {
+    console.log("Shin");
+}
+
+var getID = () => {
+    console.log("ID1");
+};
+```
+
+
+
+간단한 예시 (var 변수 vs let/const 변수)
+
+```
+console.log("hello");
+var myname = "HEEE"; // var 변수
+let myname2 = "HEEE2"; // let 변수
+```
+
+```
+// 위의 결과와 동일하다.
+// 이처럼 var로 정의된 변수들은 값을 assign하기 전에 프로그램의 맨 위로 올라오게 된다.
+var myname; // [Hoisting] "선언"
+console.log("hello");
+myname = "HEEE"; // "할당"
+let myname2 = "HEEE2"; // [Hoisting] 발생 X
+```
+
+
+간단한 예시 (함수선언문 vs 함수표현식)
+
+```
+foo();
+foo2();
+
+function foo() { // 함수선언문
+console.log("hello");
+}
+var foo2 = function() { // 함수표현식
+console.log("hello2");
+}
+```
+
+```
+// 위와 동일
+var foo2; // [Hoisting] 함수표현식의 변수값 "선언"
+
+function foo() { // [Hoisting] 함수선언문
+console.log("hello");
+}
+
+foo();
+foo2(); // undefined
+
+foo2 = function() {
+console.log("hello2");
+}
+```
+
+호이스팅은 함수선언문과 함수표현식에서 서로 다르게 동작하기 때문에 주의해야 한다.
+변수에 할당된 함수표현식은 끌어 올려지지 않기 때문에 이때는 변수의 스코프 규칙을 그대로 따른다.
+
+**호이스팅 우선순위:**
+
+- 같은 이름의 var 변수 선언과 함수 선언에서의 호이스팅
+- 변수 선언이 함수 선언보다 위로 끌어올려진다.
+
+```
+var myName = "hi";
+
+function myName() {
+console.log("yuddomack");
+}
+
+function yourName() {
+console.log("everyone");
+}
+
+var yourName = "bye";
+
+console.log(typeof myName);
+console.log(typeof yourName);
+```
+
+```
+// 호이스팅(Hoisting)의 결과
+// 1. [Hoisting] 변수값 선언
+var myName;
+var yourName;
+
+// 2. [Hoisting] 함수선언문
+function myName() {
+console.log("yuddomack");
+}
+function yourName() {
+console.log("everyone");
+}
+
+// 3. 변수값 할당
+myName = "hi";
+yourName = "bye";
+
+console.log(typeof myName); // > "string"
+console.log(typeof yourName); // > "string"
+```
+
+값이 할당되어 있지 않은 변수와 값이 할당되어 있는 변수에서의 호이스팅
+
+```
+var myName = "Heee"; // 값 할당
+var yourName; // 값 할당 X
+
+function myName() { // 같은 이름의 함수 선언
+console.log("myName Function");
+}
+function yourName() { // 같은 이름의 함수 선언
+console.log("yourName Function");
+}
+
+console.log(typeof myName); // > "string"
+console.log(typeof yourName); // > "function"
+```
+
+- 값이 할당되어 있지 않은 변수의 경우, 함수선언문이 변수를 덮어쓴다.
+- 값이 할당되어 있는 변수의 경우, 변수가 함수선언문을 덮어쓴다.
+
+TIP 호이스팅 사용 시 주의:
+
+- 코드의 가독성과 유지보수를 위해 호이스팅이 일어나지 않도록 한다.
+  호이스팅을 제대로 모르더라도 함수와 변수를 가급적 코드 상단부에서 선언하면, 호이스팅으로 인한 스코프 꼬임 현상은 방지할 수 있다.
+  let/const를 사용한다.
+  
+- var를 쓰면 혼란스럽고 쓸모없는 코드가 생길 수 있다. 그럼 왜 var와 호이스팅을 이해해야 할까?
+  ES6를 어디에서든 쓸 수 있으려면 아직 시간이 더 필요하므로 ES5로 트랜스컴파일을 해야한다.
+  따라서 아직은 var가 어떻게 동작하는지 이해하고 있어야 한다.
+
+
+## JavaScript 모듈 시스템
+
+Node.js의 module 시스템: CommonJS (module.exports, require)
+Javascript ES6부터는 브라우저 단에서도 쉽게 JavaScript의 모듈화가 가능하도록 모듈 시스템이 추가되었다. (export, import)
+ES6 fashion을 사용하려면 ES6를 ES5로 바꿔주는 babel complier가 필요하다.
+
+CommonJS:
+
+
+ES6 with babel complier:

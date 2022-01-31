@@ -815,3 +815,88 @@ Now: 2020-05-23T18:10:20-04:00
 ```
 
 이상으로 Node.js에서 ES 모듈의 import와 export 키워드를 사용하는 2가지 방법에 대해서 알아보았습니다. 참고로 Node.js 버전 13.2 미만에서도 버전 12 이상에서는 Node.js를 실행할 때 --experimental-module 옵션을 넘기면 동일한 방법으로 ES 모듈을 사용할 수 있으니 참고바라겠습니다.
+
+## JSX에 대해 
+
+react js는 js 대신 jsx라는 특수한 extension을 사용한다. 하지만 js를 사용해도 아무런 문제는 없다.
+
+아래 변수 선언을 살펴봅시다.
+
+> `const element = <h1>Hello, world!</h1>;`
+
+위에 희한한 태그 문법은 문자열도, HTML도 아닙니다.
+
+JSX라 하며 JavaScript를 확장한 문법입니다. UI가 어떻게 생겨야 하는지 설명하기 위해 React와 함께 사용할 것을 권장합니다. JSX라고 하면 템플릿 언어가 떠오를 수도 있지만, JavaScript의 모든 기능이 포함되어 있습니다.
+
+JSX는 React “엘리먼트(element)” 를 생성합니다.
+
+React는 JSX 사용이 필수가 아니지만, 대부분의 사람은 JavaScript 코드 안에서 UI 관련 작업을 할 때 시각적으로 더 도움이 된다고 생각합니다. 또한 React가 더욱 도움이 되는 에러 및 경고 메시지를 표시할 수 있게 해줍니다.
+
+아래 예시에서는 name이라는 변수를 선언한 후 중괄호로 감싸 JSX 안에 사용하였습니다.
+
+```
+const name = 'Josh Perez';
+const element = <h1>Hello, {name}</h1>;
+
+ReactDOM.render(
+  element,
+  document.getElementById('root')
+);
+```
+
+JSX의 중괄호 안에는 유효한 모든 JavaScript 표현식을 넣을 수 있습니다. 예를 들어 2 + 2, user.firstName 또는 formatName(user) 등은 모두 유효한 JavaScript 표현식입니다.
+
+컴파일이 끝나면, JSX 표현식이 정규 JavaScript 함수 호출이 되고 JavaScript 객체로 인식됩니다.
+
+즉, JSX를 if 구문 및 for loop 안에 사용하고, 변수에 할당하고, 인자로서 받아들이고, 함수로부터 반환할 수 있습니다.
+
+### ES7+ React/Redux/React-Native snippets
+
+VScode extension인 `ES7+ React/Redux/React-Native snippets`을 download하면 `rafce`만 code에 입력하면 arrow function이 자동적으로 완성된다.
+
+이는 React Js 코드 특히 components를 작성할 떄, 매우 간편하게 사용할 수 있다.
+
+```
+// rafc
+import React from 'react';
+
+export const $1 = () => {
+  return <div>$0</div>;
+};
+
+// rafce
+import React from 'react';
+
+const $1 = () => {
+  return <div>$0</div>;
+};
+
+export default $1;
+```
+
+## Bootstrap and Reactstrap  or Material-Ui
+
+`bootstrap`은 frontend dev에 대한 구조를 미리 만들어둔 프레임워크로 UI stlye에 대한 기본적인 css, js를 제공합니다.
+react js 뿐만 아니라 frontend dev 전체에 사용할 수 있는 매우 유용한 프레임워크입니다.
+
+1. client/public에 있는 index.html에 bootstrap homepage에 있는 css link tag, js script tag을 copy & paste해서 bootstrap을 사용하는 방법이 있고,
+2. source code를 copy & paste하는 방법이 있고,
+3. npm package manager를 이용해 `npm install bootstrap`을 이용하여 사용할 수 있다.
+
+bootstrap: https://getbootstrap.com/docs/5.1/getting-started/download/
+
+`reactstrap`은 bootstrap component를 react component로 사용할 수 있게 만들어 주는 framework이다.
+
+`material-ui`은 `reactstrap`처럼 다른 프로그래머가 미리 만들어둔 react component를 가져다 쓸 수 있기 떄문에 매우 편하다.
+이처럼 다른 사람이 만들어둔 source code를 찾아 copy & paste만 잘해도 된다.
+
+reactstrap: https://reactstrap.github.io/?path=/docs/components-navbar--navbar
+
+material-ui는 react js에서 쓸 수 있는 react components을 모아둔 framework이다.
+
+material-ui가 2022년 기준 react js에서 가장 많이 쓰이는 framework이다.
+
+`material-ui`은 `reactstrap`처럼 다른 프로그래머가 미리 만들어둔 react component를 가져다 쓸 수 있기 떄문에 매우 편하다.
+이처럼 다른 사람이 만들어둔 source code를 찾아 copy & paste만 잘해도 된다.
+
+material-ui: https://mui.com/

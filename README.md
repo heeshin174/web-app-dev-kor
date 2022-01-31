@@ -903,13 +903,19 @@ material-ui: https://mui.com/
 
 ## Curly brackets  {} vs Parentheses () in Javascript Arrow Function
 
-In Javascript:
+### In Javascript:
 
 - Curly brackets: after an arrow function they represent a code block, which consists of zero or more grouped statements within the curly brackets.
 
+arrow function에서 body부분에 Curly brackets가 쓰이면 이는 code block, 즉 여러개의 code를 묶어 놓은 것으로 인식하기 떄문에 `return` keyword가 다른 function들 처럼
+반드시 필요하다.
+
+`return`이 없으면, 이 함수는 local variable만 생성할 뿐 값을 만들어 내지 않기 떄문에, 값이 `undefined`가 된다.
+
 ```
 const jsBrackets = x => {
-return x > 3 ? true : false}
+return x > 3 ? true : false
+}
 ```
 
 If the function can be written on one line (as the example above can, it can be shortened to exclude both the curly brackets and the return word, as below.
@@ -922,10 +928,21 @@ For example, they are used in map, filter, and reduce functions.
 
 ```
 const numbers = [1,2,3,4]
+// OKAY
 numbers.map(number => number \* 2)
+numbers.map(number => (number \* 2))
+numbers.map(number => {return number \* 2})
+
+// 위의 세 경우와 다르게 return keyword가 없는 code block은 반환값이 없어 undefined값이 된다.
+const newnumbers = numbers.map(number => {number \* 2});
+console.log("newnumbers");
 ```
 
-Using JSX in React:
+이를 확인하려면, browser에서 F12를 열거나, 마우스 오른쪽 클릭 후 inspect를 클릭해 개발자 모드로 들어간다.
+
+Source tab에서 js파일에 breakpoint를 걸고 실행시켜보면, scope/global scope을 통해 값을 볼 수 있다.
+
+### Using JSX in React:
 
 - Curly brackets: are a special syntax to let the JSX parser know that it needs to interpret the contents between them as javascript instead of text.
 

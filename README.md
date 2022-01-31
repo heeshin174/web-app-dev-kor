@@ -900,3 +900,69 @@ material-ui가 2022년 기준 react js에서 가장 많이 쓰이는 framework�
 이처럼 다른 사람이 만들어둔 source code를 찾아 copy & paste만 잘해도 된다.
 
 material-ui: https://mui.com/
+
+## Curly brackets  {} vs Parentheses () in Javascript Arrow Function
+
+In Javascript:
+
+- Curly brackets: after an arrow function they represent a code block, which consists of zero or more grouped statements within the curly brackets.
+
+```
+const jsBrackets = x => {
+return x > 3 ? true : false}
+```
+
+If the function can be written on one line (as the example above can, it can be shortened to exclude both the curly brackets and the return word, as below.
+
+`const jsBrackets = x => x > 3 ? true : false`
+
+- Parentheses: are used instead of curly brackets after an arrow function to return an object. 
+
+For example, they are used in map, filter, and reduce functions.
+
+```
+const numbers = [1,2,3,4]
+numbers.map(number => number \* 2)
+```
+
+Using JSX in React:
+
+- Curly brackets: are a special syntax to let the JSX parser know that it needs to interpret the contents between them as javascript instead of text.
+
+`const items =this.state.toDoList.map((item) => <li>{item}</li> )`
+
+Since {item} is in curly brackets JSX interprets that as to find the variable item back in javascript land and to insert it within the `<li></li>`s.
+
+- Parentheses: are used to wrap multiline codes of Javascript after the return statement in order for your code to compile.
+
+```
+render () {
+return ( <li> {item}</li>,
+<SomeComponent /> )
+}
+```
+
+If you only have one line of code, you don’t need the parentheses.
+
+```
+render () {
+return <li> {item}</li>
+}
+```
+
+```
+// jsx syntax
+const items = { {id: 1, name: eggs}, {id: 2, name: milk} }
+{ items.map(item => (
+ <tr key={items.id}>
+    <td>{ items.name }</td>
+ <tr>
+)) }
+```
+
+react js를 이용할 때, javascript 코드를 jsx syntax에서 사용하고 싶으면 curly brackets {} 안에서 정의하면 된다.
+react js에서 array를 하나씩 iterate해야할 경우 `array.map()` 함수를 이용하고, 그 안에 callback함수인 arrow function을 정의한다.
+
+react js는 jsx이기 때문에 `array.map((param) => {body})`가 아니라 `array.map((param) => (body))`처럼 body에도 parentheses를 사용해야 한다.
+
+`map()`은 javascript code이기 때문에 `{ array.map((param) => (body))}`과 같이 curly brackets {} 안에서 정의하면 된다.

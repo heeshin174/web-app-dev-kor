@@ -14,18 +14,22 @@
 2. Sytling (client side)
 
 - Bootstrap: https://getbootstrap.com/docs/5.0
-- React-Bootstrap (Reactjs framework: components): https://react-bootstrap.github.io/getting-started/introduction
-- Material-UI (Reactjs framework: components): https://mui.com/
-- React-icons (Reactjs framework: icons): https://react-icons.github.io/react-icons
+- Devicon (icons representing programming languages, designing & development tools) https://devicon.dev/
 - Tailwindcss: https://tailwindcss.com/
 - Google Font (text type) : https://fonts.google.com/
-- React-transition-group (Reactjs framework): https://reactcommunity.org/react-transition-group/
-- Redux js : https://redux.js.org/introduction/getting-started
-- react-redux (Reactjs framework): https://react-redux.js.org/
-- redux-thunk: https://github.com/reduxjs/redux-thunk
-- react-beautiful-dnd (Reactjs framework: drag and drop): https://github.com/atlassian/react-beautiful-dnd
 - styled-components: https://styled-components.com/docs
-- react-typed (Reactjs framework: Dynanic text) https://github.com/ssbeefeater/react-typed
+
+
+ReactJS Framework (ReactJS Only):
+- react-bootstrap (components): https://react-bootstrap.github.io/getting-started/introduction
+- Material-UI (components): https://mui.com/
+- React-icons (icons): https://react-icons.github.io/react-icons
+- react-typed (Dynanic text): https://github.com/ssbeefeater/react-typed
+- redux: https://redux.js.org/introduction/getting-started
+- react-transition-group (Reactjs framework): https://reactcommunity.org/react-transition-group/
+- react-redux: https://react-redux.js.org/
+- redux-thunk: https://github.com/reduxjs/redux-thunk
+- react-beautiful-dnd (drag and drop): https://github.com/atlassian/react-beautiful-dnd
 
 3. Backend Framework (server side)
 

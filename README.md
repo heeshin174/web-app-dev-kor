@@ -286,54 +286,70 @@ Dockerhub에서 공식적인 image을 다운 받을 수도 있고, 내가 custom
 ## % 부록2 git으로 다른 programmer와 collaboration 하기 %
 
 Git의 "master" branch는 항상 완전환 코드이어야 한다.
-다른 사람이랑 협업을 할 경우에 issues, pull request를 잘 활용하여,
-프로젝트를 성공적으로 완성해 보자.
 
-issus: 코드에서 고쳐야 할 부분
-pull request: master branch에 merge하기 전에 내가 고친 코드를 다른 협업자가 관찰하고 이상이 없는 지 확인하는 단계
+다른 사람이랑 협업을 할 경우에 issues, pull request를 잘 활용하여, 프로젝트를 성공적으로 완성해 보자.
+
+- issues: 코드에서 고쳐야 할 부분
+- pull request: master branch에 merge하기 전에 내가 고친 코드를 다른 협업자가 관찰하고 이상이 없는 지 확인하는 단계
 
 Git 사용법:
 
 1. 소스 코드를 다운 받기
 
-   > $ git clone https:...
+   > $ `git clone https:...` or Download zip file
 
-2. Always start your branch with what is in the remote/main, so after you have cloned the repository locally
-   모든 branch를 출력
-   > $ git branch
+2. Always start your branch with what is in the remote/main, so after you have cloned the repository locally 
+ 
+모든 branch를 출력
+   
+  > $ `git branch`
 
 branchName brannch로 이동
 
-> $ git checkout branchName
+> $ `git checkout -b branchName`
 
 > Your branch is up to date with 'origin/main'.
 
 3. 새로운 branch를 만들어서 main branch 에서 만든 branch로 이동하기
    now that your local matched the most up to date stuff, switch to a branch for your own work.
 
-> $ git switch -c branchName
+> $ `git switch -c branchName`
 
 4. 소스 코드에 변화를 만든 후, pull request하여 다른 협업자가 볼 수 있게 하기
-   Do your thing, make some cool stuff, then when your ready to push, open terminal back up and make sure your in the base directory for the project:
+   
+Do your thing, then when your ready to push, open terminal back up and make sure your in the base directory for the project:
 
 Stage all your changes for commit
 
-> $ git add .
+> $ `git add .`
 
 Commit your changes
 
-> $ git commit -m "My Commit Message, what did I do today?"
+> $ `git commit -m "My Commit Message, what did I do today?"`
 
 Push your commit to a remote branch (probably want to use your same local branch name)
 
-> $ git push --set-upstream origin branchName
+> $ `git push --set-upstream origin branchName`
 
-이 커멘드는 내가 main branch에 있을 때 사용이 가능한 경우로,
-맨 처음 아무 소스 코드가 없을 경우, 맨 처음 main branch에 push하는 것이다.
-main은 항상 완벽한 코드이어야 함으로 main에 직접적으로 push하는 것은 맨 처음이 마지막이다.
-나중에는 위에 서술된 새로운 branch를 만들어서 pull request를 한다.
+ `git push -u origin master` command는 main branch에 code를 push 하는 것입니다.
 
-> $ git push -u origin master
+main은 항상 완벽한 완결된 코드이어야 함으로 main에 직접적으로 push하는 것은 지양해야 합니다.
+
+위에 서술된 방법으로, 새로운 branch를 만들어서 pull request를 하면된다.
+
+> $ `git push -u origin master`
+
+요약:
+```
+1. In terminal type: `git clone https:...`
+2. Make changes to the code
+3. Once you finish, type: `git add .`
+4. Commit your work: `git commit -m "what i did"`
+5. Create new branch or Move to the existing branch
+- Create and move to new branch: `git checkout -b <branchName>`
+- Move to the existing branch: `git switch -c <branchName>`
+6. push your work to that branch: `git push -u origin <branchName>`
+```
 
 ## % 부록3 Amazon사의 cloud service인 AWS (Amazon Web Service) 사용하기 %
 

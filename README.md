@@ -2,19 +2,86 @@
 
 목표: Web Application Server을 이해하고 나만의 web app을 만들어보자.
 
-## Before Start
+## Documentations
 
-Download following in your local (working) computer:
+1. Frontend Framework (client side)
 
-- **node.js** [node.js](https://nodejs.org/en/) (Javascript: Programming Language)
-- **Postman** [Postman](https://www.postman.com/downloads/)
-- **VSCode** [VSCode](https://code.visualstudio.com/) (IDE: Code editor)
+- React JS (Meta): https://reactjs.org/
+- Angular jS (Google): https://angularjs.org/
+- Vue JS: https://vuejs.org/
 
-Create an account for these services if you don't have one:
+2. Sytling (client side)
 
-- **github** [github](https://github.com/) (version control and source code management functionality)
-- **Heroku** [Heroku](https://www.heroku.com/) (Deploy website)
-- **mongoDB** (Database)
+- Bootstrap: https://getbootstrap.com/docs/5.0
+- React-Bootstrap (Reactjs framework): https://react-bootstrap.netlify.app/
+- Material-UI (Reactjs framework): https://mui.com/
+- React-icons (Reactjs framework): https://react-icons.github.io/react-icons
+- Tailwindcss: https://tailwindcss.com/
+- Google Font : https://fonts.google.com/
+- React-transition-group (Reactjs framework): https://reactcommunity.org/react-transition-group/
+- Redux js : https://redux.js.org/introduction/getting-started
+- react-redux (Reactjs framework): https://react-redux.js.org/
+- redux-thunk: https://github.com/reduxjs/redux-thunk
+
+3. Backend Framework (server side)
+
+- Express js: https://expressjs.com/
+- Flask (python framework): https://flask.palletsprojects.com/en/2.0.x/
+- Django (python framework): https://docs.djangoproject.com/en/4.0/
+- nodemon (javascript framework): https://www.npmjs.com/package/nodemon)
+- dotenv (javascript framework): https://github.com/motdotla/dotenv
+- concurrently (javascript framework): https://github.com/open-cli-tools/concurrently
+
+4. Databases (server side)
+
+- Mongodb: https://www.mongodb.com/cloud
+- Mongoose js (Mongodb framework): https://mongoosejs.com/
+- Postgresql: https://www.postgresql.org/download/
+- PG-Pool js (Postgresql framework) : https://node-postgres.com/api/pool
+
+5. Cloud Services
+
+- AWS (Amazon Web Services): https://aws.amazon.com/
+- Azure (Microsoft): https://azure.microsoft.com/en-us/
+- GCP (Google Cloud Platform): https://cloud.google.com/
+
+6. APIs
+
+- RapidApi: https://rapidapi.com/
+
+7. Deployment
+
+- github: https://github.com/
+- Netlify: https://www.netlify.com/
+- Heroku: https://www.heroku.com/
+
+7. ETC
+
+- Node js (Programming Language): https://nodejs.org/en/docs/
+- Python (Programming Language): https://docs.python.org/3/
+- Java (Programming Language): https://docs.oracle.com/en/java/javase/15/docs/api/index.html
+- Docker (Container based development): https://www.docker.com/ & https://docs.docker.com/
+- Postman (RESTful API): https://www.postman.com/downloads/
+- VSCode (Microsoft IDE: Code Editor): https://code.visualstudio.com/
+- Eclipse (Java IDE): https://www.eclipse.org/documentation/
+- Goorm (Docker based Cloud IDE): https://www.goorm.io/
+- Pythontutor (code visulaization): https://pythontutor.com/
+- Figma (Design UI/UX): https://www.figma.com/
+- Adobe photoshop (Design UI): https://www.adobe.com/products/photoshop
+- Diagram.io (Design UI): https://app.diagrams.net/
+
+8. Education
+
+- Web Development In 2022 - https://www.youtube.com/watch?v=EqzUcMzfV1w&list=PLg8KC9DusHl8zGjAWYGGJygm3rWoEahJQ&index=30&ab_channel=TraversyMedia
+- 기계들의 대화법 REST API - https://www.youtube.com/watch?v=PmY3dWcCxXI&list=PLg8KC9DusHl8zGjAWYGGJygm3rWoEahJQ&index=31&ab_channel=%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9
+- 서버사이드 렌더링 - https://www.youtube.com/watch?v=iZ9csAfU5Os&list=PLg8KC9DusHl8zGjAWYGGJygm3rWoEahJQ&index=32&ab_channel=%EB%93%9C%EB%A6%BC%EC%BD%94%EB%94%A9by%EC%97%98%EB%A6%AC
+- 웹개발 개념정리 - https://www.youtube.com/watch?v=ED2rOHM1od0&list=PLg8KC9DusHl8zGjAWYGGJygm3rWoEahJQ&index=33&ab_channel=%EA%B0%9C%EB%B0%9C%ED%95%98%EB%8A%94%EC%A0%95%EB%8C%80%EB%A6%AC
+- Async Await: https://kiwanjung.medium.com/%EB%B2%88%EC%97%AD-async-await-%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-%EC%A0%84%EC%97%90-promise%EB%A5%BC-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-955dbac2c4a4
+- Closure & Hoisting: https://dongmin-jang.medium.com/javascript-closure-hoisting-7bf8eb5062b9
+- Javascript closure: https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures
+- w3school: https://www.w3schools.com/
+- Leetcode: https://leetcode.com/
+- redux 설명글: https://hwan1001.tistory.com/38
 
 ## Server vs Cilent
 

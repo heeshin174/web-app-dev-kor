@@ -28,6 +28,7 @@
 3. Backend Framework (server side)
 
 - Express js: https://expressjs.com/
+- Next js (Server side rendering): https://nextjs.org/docs/getting-started
 - Flask (python framework): https://flask.palletsprojects.com/en/2.0.x/
 - Django (python framework): https://docs.djangoproject.com/en/4.0/
 - nodemon (javascript framework: auto reload server): https://www.npmjs.com/package/nodemon)

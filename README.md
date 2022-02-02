@@ -14,17 +14,18 @@
 2. Sytling (client side)
 
 - Bootstrap: https://getbootstrap.com/docs/5.0
-- React-Bootstrap (Reactjs framework): https://react-bootstrap.github.io/getting-started/introduction
-- Material-UI (Reactjs framework): https://mui.com/
-- React-icons (Reactjs framework): https://react-icons.github.io/react-icons
+- React-Bootstrap (Reactjs framework: components): https://react-bootstrap.github.io/getting-started/introduction
+- Material-UI (Reactjs framework: components): https://mui.com/
+- React-icons (Reactjs framework: icons): https://react-icons.github.io/react-icons
 - Tailwindcss: https://tailwindcss.com/
-- Google Font : https://fonts.google.com/
+- Google Font (text type) : https://fonts.google.com/
 - React-transition-group (Reactjs framework): https://reactcommunity.org/react-transition-group/
 - Redux js : https://redux.js.org/introduction/getting-started
 - react-redux (Reactjs framework): https://react-redux.js.org/
 - redux-thunk: https://github.com/reduxjs/redux-thunk
-- react-beautiful-dnd (Reactjs framework for drag and drop): https://github.com/atlassian/react-beautiful-dnd
+- react-beautiful-dnd (Reactjs framework: drag and drop): https://github.com/atlassian/react-beautiful-dnd
 - styled-components: https://styled-components.com/docs
+- react-typed (Reactjs framework: Dynanic text) https://github.com/ssbeefeater/react-typed
 
 3. Backend Framework (server side)
 

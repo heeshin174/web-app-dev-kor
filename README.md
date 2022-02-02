@@ -14,7 +14,7 @@
 2. Sytling (client side)
 
 - Bootstrap: https://getbootstrap.com/docs/5.0
-- React-Bootstrap (Reactjs framework): https://react-bootstrap.netlify.app/
+- React-Bootstrap (Reactjs framework): https://react-bootstrap.github.io/getting-started/introduction
 - Material-UI (Reactjs framework): https://mui.com/
 - React-icons (Reactjs framework): https://react-icons.github.io/react-icons
 - Tailwindcss: https://tailwindcss.com/

@@ -24,6 +24,7 @@
 - react-redux (Reactjs framework): https://react-redux.js.org/
 - redux-thunk: https://github.com/reduxjs/redux-thunk
 - react-beautiful-dnd (Reactjs framework for drag and drop): https://github.com/atlassian/react-beautiful-dnd
+- styled-components: https://styled-components.com/docs
 
 3. Backend Framework (server side)
 

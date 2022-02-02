@@ -9,6 +9,7 @@
 - React JS (Meta): https://reactjs.org/
 - Angular jS (Google): https://angularjs.org/
 - Vue JS: https://vuejs.org/
+- React JS with Typescript: https://create-react-app.dev/docs/adding-typescript/
 
 2. Sytling (client side)
 
@@ -22,15 +23,17 @@
 - Redux js : https://redux.js.org/introduction/getting-started
 - react-redux (Reactjs framework): https://react-redux.js.org/
 - redux-thunk: https://github.com/reduxjs/redux-thunk
+- react-beautiful-dnd (Reactjs framework for drag and drop): https://github.com/atlassian/react-beautiful-dnd
 
 3. Backend Framework (server side)
 
 - Express js: https://expressjs.com/
 - Flask (python framework): https://flask.palletsprojects.com/en/2.0.x/
 - Django (python framework): https://docs.djangoproject.com/en/4.0/
-- nodemon (javascript framework): https://www.npmjs.com/package/nodemon)
-- dotenv (javascript framework): https://github.com/motdotla/dotenv
-- concurrently (javascript framework): https://github.com/open-cli-tools/concurrently
+- nodemon (javascript framework: auto reload server): https://www.npmjs.com/package/nodemon)
+- dotenv (javascript framework: set environmental variables): https://github.com/motdotla/dotenv
+- concurrently (javascript framework: start client and server together): https://github.com/open-cli-tools/concurrently
+- Axios (javascript framework: XMLHttpRequests): https://axios-http.com/docs/intro
 
 4. Databases (server side)
 
@@ -60,6 +63,7 @@
 - Node js (Programming Language): https://nodejs.org/en/docs/
 - Python (Programming Language): https://docs.python.org/3/
 - Java (Programming Language): https://docs.oracle.com/en/java/javase/15/docs/api/index.html
+- Typescript (Programming Language): https://www.typescriptlang.org/
 - Docker (Container based development): https://www.docker.com/ & https://docs.docker.com/
 - Postman (RESTful API): https://www.postman.com/downloads/
 - VSCode (Microsoft IDE: Code Editor): https://code.visualstudio.com/
@@ -226,11 +230,7 @@ Database는 크게 Relational database (sql)와 Not only Relational database (No
 
 ## Deploy Frontend Projects
 
-⭐ `Netlify` - https://www.netlify.com/
-
-`heroku`,
-
-`Github`등을 이용해 내가 만든 웹사이트를 배포할 수 있다.
+⭐ `Netlify`, `heroku`, `Github`등을 이용해 내가 만든 웹사이트를 배포할 수 있다.
 
 ## APIs (Application Programming Interface)
 
@@ -255,16 +255,6 @@ Below is a table summarizing recommended return values of the primary HTTP metho
 
 Postman: Great program to build an RESTful web services.
 - **Postman** [Postman](https://www.postman.com/downloads/)  
-
-### 기타 Links
-
-- Web Development In 2022 - https://www.youtube.com/watch?v=EqzUcMzfV1w&list=PLg8KC9DusHl8zGjAWYGGJygm3rWoEahJQ&index=30&ab_channel=TraversyMedia
-- 기계들의 대화법 REST API - https://www.youtube.com/watch?v=PmY3dWcCxXI&list=PLg8KC9DusHl8zGjAWYGGJygm3rWoEahJQ&index=31&ab_channel=%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9
-- 서버사이드 렌더링 - https://www.youtube.com/watch?v=iZ9csAfU5Os&list=PLg8KC9DusHl8zGjAWYGGJygm3rWoEahJQ&index=32&ab_channel=%EB%93%9C%EB%A6%BC%EC%BD%94%EB%94%A9by%EC%97%98%EB%A6%AC
-- 웹개발 개념정리 - https://www.youtube.com/watch?v=ED2rOHM1od0&list=PLg8KC9DusHl8zGjAWYGGJygm3rWoEahJQ&index=33&ab_channel=%EA%B0%9C%EB%B0%9C%ED%95%98%EB%8A%94%EC%A0%95%EB%8C%80%EB%A6%AC
-- Async Await: https://kiwanjung.medium.com/%EB%B2%88%EC%97%AD-async-await-%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-%EC%A0%84%EC%97%90-promise%EB%A5%BC-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-955dbac2c4a4
-- Closure & Hoisting: https://dongmin-jang.medium.com/javascript-closure-hoisting-7bf8eb5062b9
-- Javascript closure: https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures
 
 ## % 부록1 Docker 이해하기 %
 
@@ -376,8 +366,6 @@ console.log(`Hello ${name}!`);
 ```
 
 - object는 **{} curly braces**를 이용해서 정의한다.
-
-
 
 ## 💥 Callback vs Promises vs Async Await:
 
@@ -885,7 +873,9 @@ Now: 2020-05-23T18:10:20-04:00
 
 ## JSX에 대해 
 
-react js는 js 대신 jsx라는 특수한 extension을 사용한다. 하지만 js를 사용해도 아무런 문제는 없다.
+react js는 js 대신 jsx 라는 특수한 extension을 사용한다. 하지만 js를 사용해도 아무런 문제는 없다.
+
+JSX stands for JavaScript XML. It is simply a syntax extension of JavaScript.
 
 아래 변수 선언을 살펴봅시다.
 
@@ -941,7 +931,7 @@ const $1 = () => {
 export default $1;
 ```
 
-## Bootstrap and Reactstrap  or Material-Ui
+## Bootstrap and Reactstrap or Material-Ui
 
 `bootstrap`은 frontend dev에 대한 구조를 미리 만들어둔 프레임워크로 UI stlye에 대한 기본적인 css, js를 제공합니다.
 react js 뿐만 아니라 frontend dev 전체에 사용할 수 있는 매우 유용한 프레임워크입니다.
@@ -1050,3 +1040,295 @@ react js에서 array를 하나씩 iterate해야할 경우 `array.map()` 함수�
 react js는 jsx이기 때문에 `array.map((param) => {body})`가 아니라 `array.map((param) => (body))`처럼 body에도 parentheses를 사용해야 한다.
 
 `map()`은 javascript code이기 때문에 `{ array.map((param) => (body))}`과 같이 curly brackets {} 안에서 정의하면 된다.
+
+## Typescript
+
+TypeScript is a programming language developed and maintained by Microsoft. It is a strict syntactical superset of JavaScript and adds optional static typing to the language.
+
+Javascript의 superset으로 Java와 같이 변수를 선언할 때, 그 변수의 type을 지정해 주어야만 한다.
+
+
+# Fullstack App development Example
+
+Learn the MERN Stack
+
+M: MongoDB (Database)
+E: Express (Backend)
+R: React JS (Frontend)
+N: Node JS
+
+## Beginning from scratch
+
+First we will start with the server side and database.
+
+### 1. Create empty folder and create `package.json`
+
+Open Terminal (CMD in window) and type the following command:
+
+> `mkdir MERN_SHOPPING_LIST ; cd MERN_SHOPPING_LIST`
+
+이는 MERN_SHOPPING_LIST라는 새로운 folder를 만드는 command `mkdir MERN_SHOPPING_LIST` 와
+그 folder로 이동하는 command `cd MERN_SHOPPING_LIST`가 동시에 실행됩니다.
+
+- `mkdir <foldername>`: make directory. folder 생성
+- `cd <fodlername>`: change directory. folder로 이동
+- `ls`: 현재 folder에 있는 files을 반환
+
+> `npm init`
+
+- description: Shopping List built with the MERN stack
+- entry point (index.js) server.js
+- type: "module"
+- author: Heechul Shin
+- license: (ISC) MIT
+
+이는 새로운 package.json을 만들어 냅니다.
+
+package.json에 "type": "module"을 추가 해야지만 file을 내보내고/가져올 때, module.export/require을 사용하는 CommonJS 대신
+**import/export**의 형식을 지원하는 ES6을 사용할 수 있습니다.
+
+### 2. Install Dependencies for Backend and Database:
+
+- `express`: Backend (Server) framework
+- `mongoose`: mongodb api
+- `concurrently`: run more than one `npm` scripts at a time, sos that we are able to run the server and the client at a same time.
+- `nodemon`: constantly watch our backend and reload once we save (auto refresh).
+- `-D`: stands for development dependency because it's not needed for production.
+- `dotenv`: set the environment variable so that hide all of our secret information.
+
+  > `npm i express mongoose concurrently dotenv`
+
+  nodemon은 개발할 때만 사용할 dependency이기 때문에, -D를 붙혀 실제 production에서는 설치하지 않는다.
+
+  > `npm i -D nodemon`
+
+### 3. Add { "start", "server" } in `package.json` script & Create { app.js & server.js & .gitignore & .env } files
+
+```
+// package.json
+"scripts": {
+  "start": "node server.js",
+  "server": "nodemon server.js"
+},
+```
+
+- start: start the server. but need to restart the server after every server-side change.
+- server: start the server. nodemon continuously watch the server, and we won't have to keep updating it.
+
+server는 개발할 때만 사용할 command이다.
+
+To use these command, type:
+
+> `npm start`
+
+run the command that is defined in "start" key.
+This is same as `node server.js`
+
+> `npm run server`
+
+we put our database connection configuration in the .env file. So, we don't want .env to deploy.
+
+- Add `.env` to .gitignore.
+- Add `node_modules` and `package-lock.json` to .gitignore
+
+create a folder called `config` and inside create a file called `index.js`
+
+```
+// ./config/index.js
+import dotenv from "dotenv";
+
+// allow to use configurations in .env file with `process.env.${name}`
+// dotenv.config({ silent: process.env.NODE_ENV === "production" });
+dotenv.config();
+
+export default {
+  PORT: process.env.PORT || 5000,
+  MONGO_URI: process.env.MONGO_URI // MONGO_URI is environment variable and is defined in .env file
+};
+```
+
+- In `app.js`, define our basic application.
+- In `server.js`, it simply listen the connections on the specified host and port in app.js
+
+### 4. Create Mongo DataBase in the cloud storage and Create Database schemas
+
+We need a MongoDB URL to be able to connect to.
+
+- Create Database = { Cluster Tier: M0 Sandbox (Free),
+  Cloud Provider: AWS
+  }
+
+- Set User name & User password, Network access IP Address
+- Connect => "Connet your application" => DRIVER: Node.js
+- Get mongoDBURI
+
+- MongoDB URL (MongoDB Atlas): https://www.mongodb.com/cloud/atlas/lp/try2?utm_content=1217adtest_pmcopy_control&utm_source=google&utm_campaign=gs_americas_united_states_search_core_brand_atlas_desktop&utm_term=mongodb%20atlas&utm_medium=cpc_paid_search&utm_ad=e&utm_ad_campaign_id=12212624338&adgroup=115749704063&gclid=Cj0KCQiAxc6PBhCEARIsAH8Hff0GkAMWkv-SOoaFSdMgxQaEshcIGIyDHAaSqp-B-yPgW03BbW9DxxQaAhi8EALw_wcB
+
+- Using this MongoDB URI, connect to the Database in app.js
+- Define a database schemas in the seperate folder class models
+- In models folder, define `Item.js` that returns Item table
+
+### 5. Create routers
+
+- create new folder 'routes' and inside create new folder 'api'.
+- In api folder, create a file `items.js` and define rest api. (GET, POST, DELETE)
+- We use Postman program to test our rest api.
+
+now our basic server structure is done. we are going to work in the client side
+
+### 6. Create client folder
+
+- create new folder 'client'
+
+> `mkdir client; cd client`
+
+inside the client folder, create new react app
+
+> `npx create-react-app .`
+
+create-react-app은 기존의 package.json과는 다른 새로운 package.json을 만들어 내는데, 이 package.json에 "proxy" value를 적어놓는 것이 중요하다. proxy는 개발할 때만 쓰이기 때문에 나중에는 신경쓰지 않아도 된다.
+
+예를 들어 `axios.get('http://localhost:5000/api/items')`와 같은 긴 주소명을
+`axios.get('api/items')`와 같이 짧게 쓰는 것을 가능하게 만들어 준다.
+
+```
+// package.json in client folder
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  ...
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "proxy": "http://localhost:5000/"
+}
+```
+
+우리는 두 개의 package.json이 있기 때문에 client folder에서 `npm start`를 입력하면 react가 실행되고,
+MERN_SHOPPING_LIST folder에서 `npm start`를 입력하면 server.js가 실행된다.
+
+우리는 이런 두 개의 command를 MERN_SHOPPING_LIST folder에서 동시에 사용하고 싶다.
+
+이때, 우리가 설치한 dependency `concurrently`가 역할을 해준다.
+
+- MERN_SHOPPING_LIST folder의 package.json에 "client": "cd client && npm start" 또는 "client": "npm start --prefix client"를 적는다.
+
+  이는 사용자가 client folder를 들어가지 않고도 client folder의 react app을 실행시킨다.
+
+Run the React client only
+
+> `npm run client`
+
+- MERN_SHOPPING_LIST folder의 package.json에 "client": "client-install": "npm install --prefix client" 또는 "client": "cd client && npm install"를 적는다.
+
+  이는 사용자가 client folder를 들어가지 않고도 client folder의 dependencies를 install할 수 있게 해준다.
+
+Install dependencies for client
+
+> `npm run client-install`
+
+server side의 dependencies를 설치하려면, MERN_SHOPPING_LIST folder에서 다음을 입력한다.
+
+> `npm install`
+
+concurrently 사용법:
+
+Remember to surround separate commands with quotes:
+
+> `concurrently "command1 arg" "command2 arg"`
+
+Otherwise concurrently would try to run 4 separate commands: command1, arg, command2, arg.
+
+In package.json, escape quotes:
+
+> `"start": "concurrently \"command1 arg\" \"command2 arg\""`
+
+- MERN_SHOPPING_LIST folder의 package.json에 "dev": "concurrently \"npm run server\" \"npm run client\""를 적는다.
+
+  이는 concurrently를 이용하여 사용자가 client와 server를 동시에 실행할 수 있게 해준다.
+
+Run the client & server with concurrently
+
+Server runs on http://localhost:5000 and client on http://localhost:3000
+
+> `npm run dev`
+
+```
+// package.json in mern_shopping_list folder
+{
+  "name": "mern_shopping_list",
+  "version": "1.0.0",
+  "description": "Shopping List built with the MERN stack",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "client-install": "npm install --prefix client"
+  },
+  ...
+}
+```
+
+### 7. Install dependencies for client
+
+Go to the client folder and install dependencies.
+
+> `cd client`
+
+- `bootstrap`: frontend dev에 대한 구조를 미리 만들어둔 프레임워크입니다. 기본적인 css, js를 제공합니다.
+- `reactstrap`: bootstrap component를 react component로 사용할 수 있게 만들어 준다.
+- `uuid`: generate random ID
+- `react-transition-group`: exposes simple components useful for defining entering and exiting transitions.
+
+> `npm i bootstrap reactstrap uuid react-transition-group`
+
+### 8. src folder에 component folder를 만들기
+
+- src folder에 component folder를 만든다.
+- component folder에 AppNavbar.js를 만든다.
+
+VScode extension인 `ES7+ React/Redux/React-Native snippets`을 download하면 `rafce`만 code에 입력하면 arrow function이 자동적으로 완성된다.
+
+AppNavbar.js는 reactstrap의 Navbar Toggler component를 사용할 것이다.
+이 Navbar를 클락하면 그 안에 있는 links가 보이는 형식이다.
+
+reactstrap: https://reactstrap.github.io/?path=/docs/components-navbar--navbar
+
+위의 링크로 가서 `component/navbar`를 가져온다.
+
+### 9. Create src/components/ShoppingList.jsx
+
+reactstrap: https://reactstrap.github.io/?path=/docs/components-listgroup--list-group
+
+위의 링크로 가서 `component/ListGroup`를 가져온다.
+
+server에 있는 data를 client에서 Get/Post/Delete하도록 간단히 만들어 준다.
+
+### 10. Implementing Redux
+
+client fodler에서 dependencies를 install한다.
+
+> `cd client`
+
+- `redux`:
+- `react-redux`:
+- `redux-thunk`:
+
+> `npm i redux react-redux redux-thunk`
+
+- client/src에 store.js 만들기
+- App.js에 Provider 추가
+

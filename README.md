@@ -95,6 +95,7 @@ ReactJS Framework (ReactJS Only):
 - w3school: https://www.w3schools.com/
 - Leetcode: https://leetcode.com/
 - redux 설명글: https://hwan1001.tistory.com/38
+- react로 만든 웹 github로 deploy하기: https://codingapple.com/unit/react-build-deploy-github-pages/
 
 ## Server vs Cilent
 

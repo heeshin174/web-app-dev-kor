@@ -15,8 +15,8 @@
 
 - Bootstrap: https://getbootstrap.com/docs/5.0
 - Devicon (icons representing programming languages, designing & development tools) https://devicon.dev/
-- Tailwindcss: https://tailwindcss.com/
-- Google Font (text type) : https://fonts.google.com/
+- Tailwindcss: https://tailwindcss.com/docs/installation
+- Google Font (text style) : https://fonts.google.com/
 - styled-components: https://styled-components.com/docs
 
 
@@ -26,10 +26,12 @@ ReactJS Framework (ReactJS Only):
 - React-icons (icons): https://react-icons.github.io/react-icons
 - react-typed (Dynanic text): https://github.com/ssbeefeater/react-typed
 - redux: https://redux.js.org/introduction/getting-started
-- react-transition-group (Reactjs framework): https://reactcommunity.org/react-transition-group/
+- react-transition-group: https://reactcommunity.org/react-transition-group/
 - react-redux: https://react-redux.js.org/
 - redux-thunk: https://github.com/reduxjs/redux-thunk
 - react-beautiful-dnd (drag and drop): https://github.com/atlassian/react-beautiful-dnd
+- react-scroll (smooth scroll): https://github.com/fisshy/react-scroll
+- react-router: https://reactrouter.com/docs/en/v6
 
 3. Backend Framework (server side)
 

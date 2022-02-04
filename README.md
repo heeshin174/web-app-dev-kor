@@ -1,6 +1,12 @@
-# Web Application Server
+# Web Application Development Korean ver
 
-목표: Web Application Server을 이해하고 나만의 web app을 만들어보자.
+목표: Web Application Development을 이해하고 나만의 web app을 만들어보자.
+
+## Table of Contents
+
+1. [Documentations](https://github.com/heeshin174/Web_App_Dev_Kor/edit/master/README.md#documentations)
+2. [Web Application에서 Server와 Cilent의 이해](https://github.com/heeshin174/Web_App_Dev_Kor/edit/master/README.md#web-application%EC%97%90%EC%84%9C-server%EC%99%80-cilent%EC%9D%98-%EC%9D%B4%ED%95%B4)
+3. [JavaScript](https://github.com/heeshin174/Web_App_Dev_Kor/edit/master/README.md#javascript)
 
 ## Documentations
 
@@ -14,13 +20,14 @@
 2. Sytling (client side)
 
 - Bootstrap: https://getbootstrap.com/docs/5.0
-- Devicon (icons representing programming languages, designing & development tools) https://devicon.dev/
 - Tailwindcss: https://tailwindcss.com/docs/installation
+- FontAwesome (icons): https://fontawesome.com/
+- Devicon (icons representing programming languages, designing & development tools) https://devicon.dev/
 - Google Font (text style) : https://fonts.google.com/
 - styled-components: https://styled-components.com/docs
 
 
-ReactJS Framework (ReactJS Only):
+💥 ReactJS Framework (ReactJS Only):
 - react-bootstrap (components): https://react-bootstrap.github.io/getting-started/introduction
 - Material-UI (components): https://mui.com/
 - React-icons (icons): https://react-icons.github.io/react-icons
@@ -63,11 +70,11 @@ ReactJS Framework (ReactJS Only):
 
 7. Deployment
 
-- github: https://github.com/
+- Github: https://github.com/
 - Netlify: https://www.netlify.com/
 - Heroku: https://www.heroku.com/
 
-7. ETC
+8. ETC
 
 - Node js (Programming Language): https://nodejs.org/en/docs/
 - Python (Programming Language): https://docs.python.org/3/
@@ -83,7 +90,7 @@ ReactJS Framework (ReactJS Only):
 - Adobe photoshop (Design UI): https://www.adobe.com/products/photoshop
 - Diagram.io (Design UI): https://app.diagrams.net/
 
-8. Education
+9. Education
 
 - Web Development In 2022 - https://www.youtube.com/watch?v=EqzUcMzfV1w&list=PLg8KC9DusHl8zGjAWYGGJygm3rWoEahJQ&index=30&ab_channel=TraversyMedia
 - 기계들의 대화법 REST API - https://www.youtube.com/watch?v=PmY3dWcCxXI&list=PLg8KC9DusHl8zGjAWYGGJygm3rWoEahJQ&index=31&ab_channel=%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9
@@ -97,27 +104,130 @@ ReactJS Framework (ReactJS Only):
 - redux 설명글: https://hwan1001.tistory.com/38
 - react로 만든 웹 github로 deploy하기: https://codingapple.com/unit/react-build-deploy-github-pages/
 
-## Server vs Cilent
+## Web Application에서 Server와 Cilent의 이해
 
-server와 cilent는 web application에서 computer가 하는 역할을 의미한다.
-사람이 학교에서 학생, 선생님, 청소부와 같은 role를 맡는 것처럼,
-Computer가 web app에서 server, cilent와 같은 role를 가진다.
-한 computer가 server의 역할을 하고 있으면, 다른 computer가 cilent가 되어 이 server에 접근할 수 있다.
-server computer는 정보를 저장하여 제공하고, cilent computer는 정보를 받는다.
+### 1. What is SERVER?
+
+**Server는 Client에게 Network를 통해 http요청을 받아서 정보, data, 서비스등을 전달하는 Computer이다.**
+
+Server와 cilent는 web application에서 computer가 하는 역할을 의미한다. 사람이 학교에서 학생, 선생님, 청소부와 같은 role를 맡는 것처럼,
+Computer가 web app에서 server, cilent와 같은 role를 가진다. 한 computer가 server의 역할을 하고 있으면, 다른 computer가 cilent가 되어 이 server에 데이터를 요청할 수 있다.
+
+Server는 한 computer가 맡는 role로, 식당에서 종업원이 하는 일이랑 똑같은 일을 한다. 종업원이 손님이 메뉴판에 있는 음식을 주문하면, 그 음식을 가져다 주는 것처럼, Server는 Client가 요청하면 요청한 것을 가져다 주는 역할을 한다. 
+
+- **Server: 요청을 받으면 요청한 내용을 보내주는 program이 실행중인 Computer**
+- Server 개발자: 요청을 받으면 요청한 내용을 보내주는 program을 만드는 사람.
+- 네이버웹툰 Server 개발자가 만드는 code: 어떤 사람이 `comic.naver.com`으로 접속하면, 네이버웹툰 메인 html파일을 전송해주셈
+
+
+위의 Server에 대한 정의를 쉽게 이야기하면, **Server는 요청을 받아 그 요청을 처리하는 기계이다.** 우리가 계속 이야기한 요청은 `http 요청 (request)`을 의미한다.
+
+Client가 Server에게 할 수 있는 http요청은 크게 4가지이다:
+
+1. GET요청: 읽기
+2. POST요청: 쓰기
+3. PUT요청: 수정
+4. DELETE요청: 삭제
+
+설명: 여기서 알아야 할 점은 사용자도 http request를 보내는 code를 작성해야지만 server와 정보를 주고 받을 수가 있다는 점이다. 사용자는 GET 요청같은 경우, code는 browser의 URL 창에서 쉽게 작성이 가능하고, 다른 POST/PUT/DELETE 요청들은 Server 개발자가 웹페이지에 Button을 만들어 놓아서 사용자가 code창에 code를 작성하는 것이 아니라 웹페이지에서 쉽게 http request를 할 수 있도록 만들어 놓아야 한다.  
+
+- 즉, 웹 개발자가 http요청을 하는 버튼들을 웹페이지에 잘 만들어 놓으면, 사용자는 그냥 클릭만으로 http요청을 할 수 있다.
+
+1. GET요청은 읽기 요청으로 서버에 "나 이런 URI을 가진 페이지를 읽고 싶음"이라는 요청을 보낼 수 있다. 우리가 Server에 가장 많이 하는 요청으로 Chrome, dge와 같은 browser로 URL만 검색하면 GET요청을 할 수 있다.
+
+2. POST요청은 생성 요청으로 서버에 "내가 작성한 블로그 포스트, 글, 댓글등을 생성해 주세요"라는 요청을 보낼 수 있다.
+
+3. PUT요청은 수정 요청으로 서버에 "기존에 작성한 블로그 포스트, 글, 댓글등을 수정해 주세요"라는 요청을 보낼 수 있다.
+
+4. DELETE요청은 수정 요청으로 서버에 "기존에 작성한 블로그 포스트, 글, 댓글등을 삭제해 주세요"라는 요청을 보낼 수 있다.
+
+⭐ 요약:
+
+1. **SERVER: Client로 부터 http요청을 받으면 정의된 대로 요청을 처리하는 program이 실행중인 computer**
+2. **CLIENT: Server에 정의된 대로 GET/POST/PUT/DELETE요청가능한 computer**
+
+### 2. What is APIs (Application Programming Interface)
+
+**API는 한 program에서 다른 program으로 data를 주고받기 위한 방법을 의미한다.**
+
+API는 식당에서의 메뉴판과 같은 역할을 한다고 이해하면 쉽다. 식당의 API는 메뉴판으로, 식당과 손님이 음식을 주고받기 위한 방법이다. 
+식당은 메뉴판을 만들어 놓고, 손님이 음식을 주문 하기 전까지는 아무것도 하지 않는다.
+또한 손님이 메뉴판에 정의되지 않은 음식을 주문하면, 그 주문은 받을 수가 없다.
+
+이와 마찬가지로, Server 역시 메뉴판, 즉 API를 만들어 놓아야지만 그 API를 가지고 Client와 data를 주고 받을 수 있다.
+Server는 Client에게 **http요청**을 받지 않으면, 아무것도 하지 않는다. 또한, 손님은 메뉴판에 없는 요리는 주문할 수 없는 것처럼, Client는 Server에 정의되지 않은 API를 가지고 http요청은 할 수 없다.
 
 ```
-      1.request (Web Application)       2.request
+// 식당에서의 Server와 Client
+1. 손님이 식당에 있는 메뉴판을 보고 종업원에게 주문 요청
+2. 종업원은 손님의 주문을 받아 요리사에게 전달
+3. 종업원은 요리사의 음식을 받아 손님에게 전달
+
+      1                    2
+손님    ------->   종업원   ------>   요리사
+       <-------            <------
+      4                    3
+
+// Web application에서의 Server와 Client
+1. Client는 Server가 보여주는 API을 보고 Server에게 HTTP 요청 (http request)
+2. Server는 Client의 http요청을 받아 Database에게 전달
+3. Server는 Database의 data를 받아 Client에게 전달 (response)
+
+       1.http request          2.request
 Client ------->      Server     ------>  Database
        <-------                 <------
       4.response                3.get data
 ```
 
-Server는 한 computer가 맡는 role이다.
-Web server는 한 computer를 web을 담당하는 server로 만드는 software를 의미한다.
-Web Server는 program을 실행하는 것이 아니라 기본적인 html을 제공한다.
-Web Server에 Application이 붙어 `Web Application Server`가 되면 program이 실행되고 server에서 어떤 연산이 이루어 진다는 의미이다.
+위에서 API는 서버와 사용자가 데이터를 주고 받기 위한 방법이라고 했는데, 여기서 방법이란 그냥 개발자가 만들어 놓은 코드를 의미한다.
+웹 서버의 경우, 서버 개발자가 사용자의 http요청을 받았을 때 Server가 할 행동들을 미리 정의해 둔다. 그 후 만들어 놓은 Server의 행동들, 즉 API을 메뉴판처럼 사용자에게 보여주면 된다. 
 
-## Web Application Server 운영 방식에 차이 이해하기
+```
+// API 예시
+// 어떤 사용자가 "https://~/detail"로 GET요청을 하면 이 코드를 실행해 주세요
+app.get('/detail', (request,response) => {
+//code to perform particular action (API).
+//To access GET variable use req.query() and req.params() methods.
+});
+```
+
+Server의 API를 성공적으로 작동하기 위해서는 다음이 필요하다.
+
+1. 요청방식 (http request method): 어떤 요청을 할 것인지 
+2. URL (endpoint): 어떤 자료를 요청할지
+3. Parameter: 자료요청에 필요한 추가 정보
+
+예시: `(GET request) https://comic.naver.com/webtoon/detail?id=318995`
+
+1. 요청방식: GET request 
+2. Endpoint: `https://comic.naver.com/webtoon/detail`
+3. Parameter: `id=318995`
+
+Web Server의 경우 `REST API`라는 방법론의 원칙에 따라 작성하면 좋다.
+
+⭐ 요약:
+
+1. **API: 한 program에서 다른 program으로 data를 주고 받는 요청을 처리하는 code**
+2. **Web Server에서의 API: Client로 부터 http요청을 받았을 때, 그 요청을 처리하는 code**
+
+
+### ⭐ 3. REST (Representational State Transfer) APIs
+
+APIs that conform to the REST architectural style and interacts with RESTful service
+
+Below is a table summarizing recommended return values of the primary HTTP methods in combination with the resource URIs:
+
+| HTTP Verb | CRUD   | Entire Collection (e.g. /customers) | Specific Item (e.g. /customers/{id})                                       |
+| --------- | ------ | ----------------------------------- | -------------------------------------------------------------------------- |
+| POST      | Create | 201 (Created)                       | 404 (Not Found), 409 (Conflict) if resource already exists..               |
+| GET       | READ   | 200 (OK)                            | 404 (Not Found), if ID not found or invalid.                               |
+| PUT/PATCH | UPDATE | 405 (Method Not Allowed)            | 200 (OK) or 204 (No Content). 404 (Not Found), if ID not found or invalid. |
+| DELETE    | DELETE | 405 (Method Not Allowed)            | 200 (OK). 404 (Not Found), if ID not found or invalid.                     |
+
+Postman: Great program to build an RESTful web services.
+- **Postman** [Postman](https://www.postman.com/downloads/)  
+
+## Server 운영 방식에 차이 이해하기
 
 우리가 다른 해외로 파견을 나가 작업을 해야할 때, 큰 회사의 호텔을 이용하거나, 건물을 빌려 사용할 수 있다.
 
@@ -241,30 +351,6 @@ Database는 크게 Relational database (sql)와 Not only Relational database (No
 ## Deploy Frontend Projects
 
 ⭐ `Netlify`, `heroku`, `Github`등을 이용해 내가 만든 웹사이트를 배포할 수 있다.
-
-## APIs (Application Programming Interface)
-
-API는 식당에서의 종업원과 같은 역할을 한다고 이해하면 쉽다.
-Server는 음식을 만드는 요리사, Client는 음식을 주문하는 손님이다.
-종업원은 손님에게 주문을 받아 요리사에게 넘겨주고, 요리사가 만든 요리를 손님에게 내어주는 역할을 한다.  
-Programming에서 API는 Server와 Client을 연결해주는 역할을 한다.
-
-## ⭐ REST APIs
-
-APIs that conform to the REST architectural style and interacts with RESTful service
-REST: Representational State Transfer
-
-Below is a table summarizing recommended return values of the primary HTTP methods in combination with the resource URIs:
-
-| HTTP Verb | CRUD   | Entire Collection (e.g. /customers) | Specific Item (e.g. /customers/{id})                                       |
-| --------- | ------ | ----------------------------------- | -------------------------------------------------------------------------- |
-| POST      | Create | 201 (Created)                       | 404 (Not Found), 409 (Conflict) if resource already exists..               |
-| GET       | READ   | 200 (OK)                            | 404 (Not Found), if ID not found or invalid.                               |
-| PUT/PATCH | UPDATE | 405 (Method Not Allowed)            | 200 (OK) or 204 (No Content). 404 (Not Found), if ID not found or invalid. |
-| DELETE    | DELETE | 405 (Method Not Allowed)            | 200 (OK). 404 (Not Found), if ID not found or invalid.                     |
-
-Postman: Great program to build an RESTful web services.
-- **Postman** [Postman](https://www.postman.com/downloads/)  
 
 ## % 부록1 Docker 이해하기 %
 

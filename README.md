@@ -301,13 +301,14 @@ Below is a table summarizing recommended return values of the primary HTTP metho
 | DELETE    | DELETE | 405 (Method Not Allowed)            | 200 (OK). 404 (Not Found), if ID not found or invalid.                     |
 
 Postman is great program to build an RESTful web services.
-- Postman GET요청 사용법:
- 
-![GET](./img/postman1.png)
-
 - Postman POST요청 사용법:
+
+1. POST의 Header에서 `Content-Type:application/json`을 선택한다.
+2. POST의 Body에서 row 선택후, Post하고자 하는 데이터를 Json 형식으로 입력한다.
  
-![POST](./img/postman2.png)
+![POST1](./img/postman1.png)
+ 
+![POST2](./img/postman2.png)
 
 ⭐ 요약:
 

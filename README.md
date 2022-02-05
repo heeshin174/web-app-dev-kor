@@ -4,9 +4,21 @@
 
 ## Table of Contents
 
-1. [Documentations](https://github.com/heeshin174/Web_App_Dev_Kor#documentations)
-2. [Web Application에서 Server와 Cilent의 이해](https://github.com/heeshin174/Web_App_Dev_Kor#web-application%EC%97%90%EC%84%9C-server%EC%99%80-cilent%EC%9D%98-%EC%9D%B4%ED%95%B4)
-3. [JavaScript](https://github.com/heeshin174/Web_App_Dev_Kor#javascript)
+- [Documentations](https://github.com/heeshin174/Web_App_Dev_Kor#documentations)
+
+1. [Web Application에서 Server와 Cilent의 이해](https://github.com/heeshin174/Web_App_Dev_Kor#1-web-application%EC%97%90%EC%84%9C-server%EC%99%80-cilent%EC%9D%98-%EC%9D%B4%ED%95%B4)
+2. [JavaScript](https://github.com/heeshin174/Web_App_Dev_Kor#javascript)
+3. [TypeScript](https://github.com/heeshin174/Web_App_Dev_Kor#typescript)
+4. [Web Application Development의 이해]
+5. [ReactJs](https://github.com/heeshin174/Web_App_Dev_Kor#typescript)
+6. [VueJs](https://github.com/heeshin174/Web_App_Dev_Kor#vuejs)
+7. [ExpressJs](https://github.com/heeshin174/Web_App_Dev_Kor#expressjs)
+8. [Flask](https://github.com/heeshin174/Web_App_Dev_Kor#flask)
+9. [Postgresql](https://github.com/heeshin174/Web_App_Dev_Kor#postgresql)
+10. [Mongodb](https://github.com/heeshin174/Web_App_Dev_Kor#mongodb)
+11. [Remix] (https://github.com/heeshin174/Web_App_Dev_Kor#remix)
+12. [NextJs](https://github.com/heeshin174/Web_App_Dev_Kor#nextjs)
+13. [Redux](https://github.com/heeshin174/Web_App_Dev_Kor#redux)
 
 ## Documentations
 
@@ -25,7 +37,6 @@
 - Devicon (icons representing programming languages, designing & development tools) https://devicon.dev/
 - Google Font (text style) : https://fonts.google.com/
 - styled-components: https://styled-components.com/docs
-
 
 💥 ReactJS Framework (ReactJS Only):
 - react-bootstrap (components): https://react-bootstrap.github.io/getting-started/introduction
@@ -85,7 +96,7 @@
 - Postman (RESTful API): https://www.postman.com/downloads/
 - VSCode (Microsoft IDE: Code Editor): https://code.visualstudio.com/
 - Eclipse (Java IDE): https://www.eclipse.org/documentation/
-- Goorm (Docker based Cloud IDE): https://www.goorm.io/
+- GoormIDE (Docker based Cloud IDE): https://www.goorm.io/
 - Pythontutor (code visulaization): https://pythontutor.com/
 - Figma (Design UI/UX): https://www.figma.com/
 - Adobe photoshop (Design UI): https://www.adobe.com/products/photoshop
@@ -94,7 +105,6 @@
 9. Education
 
 - Web Development In 2022 - https://www.youtube.com/watch?v=EqzUcMzfV1w&list=PLg8KC9DusHl8zGjAWYGGJygm3rWoEahJQ&index=30&ab_channel=TraversyMedia
-- 기계들의 대화법 REST API - https://www.youtube.com/watch?v=PmY3dWcCxXI&list=PLg8KC9DusHl8zGjAWYGGJygm3rWoEahJQ&index=31&ab_channel=%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9
 - 서버사이드 렌더링 - https://www.youtube.com/watch?v=iZ9csAfU5Os&list=PLg8KC9DusHl8zGjAWYGGJygm3rWoEahJQ&index=32&ab_channel=%EB%93%9C%EB%A6%BC%EC%BD%94%EB%94%A9by%EC%97%98%EB%A6%AC
 - 웹개발 개념정리 - https://www.youtube.com/watch?v=ED2rOHM1od0&list=PLg8KC9DusHl8zGjAWYGGJygm3rWoEahJQ&index=33&ab_channel=%EA%B0%9C%EB%B0%9C%ED%95%98%EB%8A%94%EC%A0%95%EB%8C%80%EB%A6%AC
 - Async Await: https://kiwanjung.medium.com/%EB%B2%88%EC%97%AD-async-await-%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-%EC%A0%84%EC%97%90-promise%EB%A5%BC-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-955dbac2c4a4
@@ -105,8 +115,7 @@
 - redux 설명글: https://hwan1001.tistory.com/38
 - react로 만든 웹 github로 deploy하기: https://codingapple.com/unit/react-build-deploy-github-pages/
 
-## Web Application에서 Server와 Cilent의 이해
-
+## 1. Web Application에서 Server와 Cilent의 이해
 ### 1. What is SERVER?
 
 **Server는 Client에게 Network를 통해 http요청을 받아서 정보, data, 서비스등을 전달하는 Computer이다.**
@@ -147,7 +156,6 @@ Client가 Server에게 할 수 있는 http요청은 크게 4가지이다:
 1. **SERVER: Client의 요청을 처리하는 computer**
 1. **WEB SERVER: Client로 부터 http요청을 받으면 요청을 처리하는 program이 실행중인 computer**
 2. **CLIENT: Server에 정의된 대로 GET/POST/PUT/DELETE요청을 보내는 computer**
-
 
 ### 2. What is APIs (Application Programming Interface)?
 
@@ -214,7 +222,6 @@ API는 상업적으로 팔 수 있다. API hosting service를 이용하여 정�
 
 1. **API: 한 program에서 다른 program으로 data를 주고 받는 요청을 처리하는 code**
 2. **Web Server에서의 API: Client로 부터 http요청을 받았을 때, 그 요청을 처리하는 code**
-
 
 ### ⭐ 3. REST (Representational State Transfer) APIs
 
@@ -312,7 +319,6 @@ Postman is great program to build an RESTful web services.
 1. **REST API: Web 통신에서 사용자로 부터 http요청을 받을 URI를 설계할 때 지켜야 되는 방법론을 기반으로 만든 API**
 2. **REST API를 사용하면, 사용자는 URI 주소만 가지고도 내가 무슨 Data를 다루고 있는지 쉽게 알 수 있다.**
 
-
 ### 4. What is Node JS?
 
 **Node Js는 Javascript runtime이다.**
@@ -323,7 +329,7 @@ HTML: 웹페이지에 글쓰고, 그림을 넣은 언어로, 프로그래밍언�
 
 Javascript가 HTML을 조작하여 웹페이지를 동적 (dynamic)으로 바꿔준다. 예): 버튼을 클릭하면 어떤 동작이 실행됨.
 
-Javascript는 Chrome, Edge와 같은 browser가 해석한다. 각 browser마다 Jvascript를 해석하는 방법이 다른데, 그 중 Chrome이 만든 `V8`이라는 javascript 해석엔진이 너무 유용해 Chrome browser안에서만 사용하기에는 아까워서 `Node Js`라는 이름을 가지고 browser와 독립되서 나왔다. 
+Javascript는 Chrome, Edge와 같은 browser가 해석한다. 각 browser마다 Javascript를 해석하는 방법이 다른데, 그 중 Chrome이 만든 `V8`이라는 javascript 해석엔진이 너무 유용해 Chrome browser안에서만 사용하기에는 아까워서 `Node Js`라는 이름을 가지고 browser와 독립되서 나왔다. 
 
 즉, `Node Js` 자체로는 프로그래밍 언어가 아니라 Javascript를 실행하게 해주는 실행 환경을 의미한다. `Node Js`덕분에 Javascript를 browser밖에서 Programming Language처럼 사용할 수 있게 되었다.
 
@@ -417,7 +423,7 @@ app.get('/pet', function (req, res) {
 // Browser에서 `http://localhost:8080/pet`에 Get 요청을 보내면, "This is pet page"라는 문구를 확인할 수 있다.
 ```
 
-이는 내 컴퓨터의 8080port이므로, 다른 컴퓨터로 위의 localhost URI를 검색하면, 그 컴퓨터의 8080 port에 접근하기 때문에 이 Server에는 접근할 수 없다.
+이는 내 컴퓨터의 8080 port이므로, 다른 컴퓨터로 위의 localhost URI를 검색하면, 그 컴퓨터의 8080 port에 접근하기 때문에 이 Server에는 접근할 수 없다.
 
 8. nodemon js library로 코드 수정시 서버 재시작을 자동화하기
 
@@ -445,11 +451,12 @@ server는 개발할 때만 사용할 command이다.
 To use these command, type:
 
 > `npm start`
+
 > `npm run server`
 
 우리는 이제 `node server.js` 대신 `npm start`로 웹서버를 실행시킬 수 있고, `npm run server`로 nodemon을 이용하여 server를 개발할 수 있다.
 
-9. Get 요청시 html file을 주는 code 작성하기
+9. Get 요청시 HTML file을 주는 code 작성하기
 
 ```
 // 사용자가 '/'으로 Get 요청을 보내면, index.html file 보여주기
@@ -528,7 +535,6 @@ app.get('/',function (req,res) {
 
 1. **Node js와 Express Js framework를 사용하면, 아주 쉽고 간편하게 web server를 만들 수 있다.**
 2. **Computer에는 외부와 네트워크로 소통할 수 있는 port (구멍)들이 존재하고, localhost:{port}를 browser에 검색하면 내 컴퓨터의 특정 port에 접근할 수 있다.**
-
 
 ### 6. Server 운영 방식에 차이 이해하기
 
@@ -703,181 +709,10 @@ const $1 = () => {
 export default $1;
 ``` 
 
-## Framework vs Library
 
-- Framework를 한국어로 하면 frame (틀), work (작업), 즉 기본적인 틀을 만드는 작업이다.
-  framework는 기본적인 사용방법이 존재하기 때문에 우리는 이 기본적인 뼈대에다가 살을 붙이면 된다.
+## 2. Javascript
 
-- Library는 특정 기능에 대한 도구 or 함수들을 모은 집합입니다.
-  즉, 프로그래머가 개발하는데 필요한 것들을 모아둔 것입니다.
-  library는 단순 활용이 가능한 도구들의 집합
-
-집을 만드는 작업이라고 하면,
-framework는 집의 기본 구조를 제공하여, 우리는 그 구조에 더하면 되고,
-library는 침대, 소파와 같은 가구로, 우리는 이 가구들로 집을 만들어야 한다.
-
-## ⭐ Frontend framework vs Server-Side Web Framework
-Web App dev는 크게 Frontend, Backend, Database로 나눌 수 있고, 이 세가지를 합쳐 Fullstack dev라고 한다.
-이는 MVC (Model / View / Controll) software design pattern 라고도 불린다. 
-Model–view–controller is a software design pattern commonly used for developing user interfaces that divide the related program logic into three interconnected elements.
-
-- Model은 View와 Controll을 연결하는 연결고리 역할을 한다.
-- View은 client가 웹사이트에 방문하여 실제로 보게되는 회면을 의미한다. HTML (HyperText Markup Language), CSS (Cascading Style Sheets), Javascript를 이용하여 View를 작성할 수 있다. 여기서 programming language는 오직 Javascript이다.
-- Controll은 app의 functionalities를 의미한다.  
-
-각각의 programming language마다 Web Application Server를 만드는 web app framework를 제공한다.
-
-1. python: Django, Flask, FastAPI
-2. Java: spring, spring boot, play
-3. Javascript: Express, Fastify
-4. php: Laravel
-
-![This is an image](./img/server_side_web_framework.png)
-
-`Frontend framework`은 pure Javascript, HTML이 아닌 web view를 더 쉽게 작성할 수 있게 만드는 framework이다.
-SPA를 제공하는 frontend framework에는 크게 React JS, Vue JS, Angular JS가 있다.
-**Single Page Application** (SPA)는 body가 비어있는 하나의 HTML을 가지고 Javascript를 이용해서 그 안에 Data만 변경하는 것을 말한다.
-Server가 Client에 자료를 넘겨주면, Client computer가 그 정보를 가지고 HTML를 완성하기 때문에
-CSR (Client Side Rendering)이라고 부른다. CSR은 HTMl이 비어있기 때문에 검색 엔진에 노출되어 검색되기 쉽지 않다.
-SEO (Search Engine Optimization)에 약점을 가진다.
-
-⭐ `React JS`: React는 Meta사에서 만든 Javascript frontend framework로 computer에 최신 버전의 `node js`를 설치하면 누구나
-쉽게 사용할 수 있다.
-
-그 밖에도 google사에서 만든 `Angular JS`,
-
-`Vue JS`등 다양한 Web Application Frontend framework이 존재한다.
-이 Web application framework은 사용방법이 거의 비슷하기 때문에 하나만 잘 이해하면, 나머지는 쉽게 사용할 수 있다.
-
-`Figma`, `Adobe photoshop` 등 다양한 Moderm UI/UX (web view)를 실질적으로 코드를 작성하기 전에 디자인할 수 있는 program들이 많이 존재하므로, 이를 이용하여 웹사이트를 미리 디자인 해 볼 수도 있다. 
-
-## Server-Side Rendering (SSD)
-
-SSD는 CSD가 가진 검색 엔진에 대한 보완을 위해 등장한 개념으로, CSD와는 다르게 Server에서 HTML을 전부 완성한 후에 Client에게 보내준다.
-이로 인해 이용자가 많을 경우 Server에 과부화가 걸릴 수도 있다.
-
-## Database
-
-Database와 web app을 연결하여 쉽고 간단하게 data를 읽고 쓸 수 있다.
-Database는 크게 Relational database (sql)와 Not only Relational database (Nosql)로 나눌 수 있다.
-`sql (Structured Query Language)`
-
-⭐ `postgresql` - Relational database의 대표주자
-
-⭐ `Mongo Database` - Not only Relational database의 대표주자
-![This is an image](./img/Database.png)
-
-## Deploy Frontend Projects
-
-⭐ `Netlify`, `heroku`, `Github`등을 이용해 내가 만든 웹사이트를 배포할 수 있다.
-
-## % 부록1: Docker 이해하기 %
-
-local computer에 다운되어 있는 environment와 server computer에 다운되어 있는 environment가 다르면, local에서 작성된 code는 server에서 호환성 문제로 작동이 안될 수도 있다. 이 문제를 해결하기 위해 container라는 개념이 등장하였고, Docker가 container를 제공하는 가장 큰 platform이다.
-
-Docker는 서비스를 제공할 때, 아주 쉽고, 빠르고, 간단하게 같은 environment의 container를 만드는 것을 도와준다.
-
-Dockerfile로 image를 만들고 (build),
-image로 container를 실행한다 (run).
-
-Dockerhub에서 공식적인 image을 다운 받을 수도 있고, 내가 customized한 image도 upload할 수 있다.
-
-기본 구조: Dockerfile -build> Dokcer image -run> Docker container
-
-- Dockerfile로 image를 build하는 commend
-
-  > $ docker bulid -t imageName
-  > local computer에 이 이미지가 존재하지 않으면, Dockerhub에서 image을 다운 받는다.
-
-- image로 container를 run하는 commend
-  > $ docker run -it imageName
-  > $ docker run -b imageName
-  > (d는 daemon의 약자로 뒤에서 작동한다.)
-
-## % 부록2: git으로 다른 programmer와 collaboration 하기 %
-
-Git의 `master` branch는 항상 완전환 코드이어야 한다.
-
-다른 사람이랑 협업을 할 경우에 issues, pull request를 잘 활용하여, 프로젝트를 성공적으로 완성해 보자.
-
-- issues: 코드에서 고쳐야 할 부분
-- pull request: master branch에 merge하기 전에 내가 고친 코드를 다른 협업자가 관찰하고 이상이 없는 지 확인하는 단계
-
-Git 사용법:
-
-1. 소스 코드를 다운 받기
-
-   > $ `git clone https:...` or `Download zip file`
-
-2. Always start your branch with what is in the remote/main, so after you have cloned the repository locally 
- 
-모든 branch를 출력
-   
-  > $ `git branch`
-
-branchName brannch로 이동
-
-> $ `git checkout -b branchName`
-
-> Your branch is up to date with 'origin/main'.
-
-3. 새로운 branch를 만들어서 main branch 에서 만든 branch로 이동하기
-   now that your local matched the most up to date stuff, switch to a branch for your own work.
-
-> $ `git switch -c branchName`
-
-4. 소스 코드에 변화를 만든 후, pull request하여 다른 협업자가 볼 수 있게 하기
-   
-Do your thing, then when your ready to push, open terminal back up and make sure your in the base directory for the project:
-
-Stage all your changes for commit
-
-> $ `git add .`
-
-Commit your changes
-
-> $ `git commit -m "My Commit Message, what did I do today?"`
-
-Push your commit to a remote branch (probably want to use your same local branch name)
-
-> $ `git push --set-upstream origin branchName`
-
- `git push -u origin master` command는 main branch에 code를 push 하는 것입니다.
-
-main은 항상 완벽한 완결된 코드이어야 함으로 main에 직접적으로 push하는 것은 지양해야 합니다.
-
-위에 서술된 방법으로, 새로운 branch를 만들어서 pull request를 하면된다.
-
-> $ `git push -u origin master`
-
-요약:
-```
-1. In terminal type: `git clone https:...`
-2. Make changes to the code
-3. Once you finish, type: `git add .`
-4. Commit your work: `git commit -m "what i did"`
-5. Create new branch or Move to the existing branch
-- Create and move to new branch: `git checkout -b <branchName>`
-- Move to the existing branch: `git switch -c <branchName>`
-6. push your work to that branch: `git push -u origin <branchName>`
-```
-
-## % 부록3: Amazon사의 cloud service인 AWS (Amazon Web Service) 사용하기 %
-
-1. AWS IAM - User를 생성하고, create access key를 사용하여, API에 접근하기
-
-2. AWS S3 - bucket을 만들어 파일 저장하기
-
-3. AWS SES (Simple Email Service) - email 보내기
-
-4. AWS EC2 가상환경 - virtualBox와 같이 가상 환경을 제공
-
-5. AWS Lambda - 함수
-
-6. AWS Elastic Beanstalk - 간단히 코드를 배포할 때 사용
-
-
-# Javascript
+### 1. What is Javascript?
 
 Javascript는 web browser를 위해 등장한 programming language이기 때문에 다른 프로그래밍 언어들과는 차별점을 가진다.
 
@@ -896,7 +731,9 @@ console.log(`Hello ${name}!`);
 
 - object는 **{} curly braces**를 이용해서 정의한다.
 
-## 💥 Callback vs Promises vs Async Await:
+### 2. Basic Javascript syntax 
+
+### 3. 💥 Callback vs Promises vs Async Await:
 
 Javascript는 asynchronous programming로 데이터를 요청하는 데 시간이 많이 걸리는 line이 있으면, 그 code의 값을 기다리지 않고 다음 code를 시작한다.
 
@@ -1063,7 +900,7 @@ async function getFirstUser() {
 💥 **promise를 이해하지 못하면 async/await를 사용하면서 진짜 진짜 이해하기 어려운 케이스와 버그를 만나게 된다**
 
 
-## 💥 Javascript Closure & Hoisting
+### 💥 Javascript Closure & Hoisting
 
 호이스팅(Hoisting)의 개념: 함수 안에 있는 선언들을 모두 끌어올려서 해당 함수 유효 범위의 최상단에 선언하는 것을 말한다.
 
@@ -1232,8 +1069,7 @@ TIP Hoisting 사용 시 주의:
   ES6를 어디에서든 쓸 수 있으려면 아직 시간이 더 필요하므로 ES5로 트랜스컴파일을 해야한다.
   따라서 아직은 var가 어떻게 동작하는지 이해하고 있어야 한다.
 
-
-## JavaScript 모듈 시스템
+### JavaScript 모듈 시스템
 
 1. Node.js의 module 시스템: CommonJS (module.exports, require)
 2. Javascript ES6부터는 브라우저 단에서도 쉽게 JavaScript의 모듈화가 가능하도록 모듈 시스템이 추가되었다. (export, import)
@@ -1399,44 +1235,193 @@ Now: 2020-05-23T18:10:20-04:00
 
 이상으로 Node.js에서 ES 모듈의 import와 export 키워드를 사용하는 2가지 방법에 대해서 알아보았습니다. 참고로 Node.js 버전 13.2 미만에서도 버전 12 이상에서는 Node.js를 실행할 때 --experimental-module 옵션을 넘기면 동일한 방법으로 ES 모듈을 사용할 수 있으니 참고바라겠습니다.
 
-## JSX에 대해 
+## % 부록1: git으로 다른 programmer와 collaboration 하기 %
 
-react js는 js 대신 jsx 라는 특수한 extension을 사용한다. 하지만 js를 사용해도 react가 알아서 jsx로 인식하기 때문에 아무런 문제는 없다. (Button.js === Button.jsx)
-보통은 component를 만들때, jsx 확장자를 이용하여 다른 js files과 차별점을 둘 때 사용하면 좋다.
+Git의 `master` branch는 항상 완전환 코드이어야 한다.
 
-JSX stands for JavaScript XML. It is simply a syntax extension of JavaScript.
+다른 사람이랑 협업을 할 경우에 issues, pull request를 잘 활용하여, 프로젝트를 성공적으로 완성해 보자.
 
-아래 변수 선언을 살펴봅시다.
+- issues: 코드에서 고쳐야 할 부분
+- pull request: master branch에 merge하기 전에 내가 고친 코드를 다른 협업자가 관찰하고 이상이 없는 지 확인하는 단계
 
-> `const element = <h1>Hello, world!</h1>;`
+Git 사용법:
 
-위에 희한한 태그 문법은 문자열도, HTML도 아닙니다.
+1. 소스 코드를 다운 받기
 
-JSX라 하며 JavaScript를 확장한 문법입니다. UI가 어떻게 생겨야 하는지 설명하기 위해 React와 함께 사용할 것을 권장합니다. JSX라고 하면 템플릿 언어가 떠오를 수도 있지만, JavaScript의 모든 기능이 포함되어 있습니다.
+   > $ `git clone https:...` or `Download zip file`
 
-JSX는 React “엘리먼트(element)” 를 생성합니다.
+2. Always start your branch with what is in the remote/main, so after you have cloned the repository locally 
+ 
+모든 branch를 출력
+   
+  > $ `git branch`
 
-React는 JSX 사용이 필수가 아니지만, 대부분의 사람은 JavaScript 코드 안에서 UI 관련 작업을 할 때 시각적으로 더 도움이 된다고 생각합니다. 또한 React가 더욱 도움이 되는 에러 및 경고 메시지를 표시할 수 있게 해줍니다.
+branchName brannch로 이동
 
-아래 예시에서는 name이라는 변수를 선언한 후 중괄호로 감싸 JSX 안에 사용하였습니다.
+> $ `git checkout -b branchName`
 
+> Your branch is up to date with 'origin/main'.
+
+3. 새로운 branch를 만들어서 main branch 에서 만든 branch로 이동하기
+   now that your local matched the most up to date stuff, switch to a branch for your own work.
+
+> $ `git switch -c branchName`
+
+4. 소스 코드에 변화를 만든 후, pull request하여 다른 협업자가 볼 수 있게 하기
+   
+Do your thing, then when your ready to push, open terminal back up and make sure your in the base directory for the project:
+
+Stage all your changes for commit
+
+> $ `git add .`
+
+Commit your changes
+
+> $ `git commit -m "My Commit Message, what did I do today?"`
+
+Push your commit to a remote branch (probably want to use your same local branch name)
+
+> $ `git push --set-upstream origin branchName`
+
+ `git push -u origin master` command는 main branch에 code를 push 하는 것입니다.
+
+main은 항상 완벽한 완결된 코드이어야 함으로 main에 직접적으로 push하는 것은 지양해야 합니다.
+
+위에 서술된 방법으로, 새로운 branch를 만들어서 pull request를 하면된다.
+
+> $ `git push -u origin master`
+
+요약:
 ```
-const name = 'Josh Perez';
-const element = <h1>Hello, {name}</h1>;
-
-ReactDOM.render(
-  element,
-  document.getElementById('root')
-);
+1. In terminal type: `git clone https:...`
+2. Make changes to the code
+3. Once you finish, type: `git add .`
+4. Commit your work: `git commit -m "what i did"`
+5. Create new branch or Move to the existing branch
+- Create and move to new branch: `git checkout -b <branchName>`
+- Move to the existing branch: `git switch -c <branchName>`
+6. push your work to that branch: `git push -u origin <branchName>`
 ```
 
-JSX의 중괄호 안에는 유효한 모든 JavaScript 표현식을 넣을 수 있습니다. 예를 들어 2 + 2, user.firstName 또는 formatName(user) 등은 모두 유효한 JavaScript 표현식입니다.
+## 3. Typescript
 
-컴파일이 끝나면, JSX 표현식이 정규 JavaScript 함수 호출이 되고 JavaScript 객체로 인식됩니다.
+### 1. What is Typescript
+TypeScript is a programming language developed and maintained by Microsoft. It is a strict syntactical superset of JavaScript and adds optional static typing to the language.
 
-즉, JSX를 if 구문 및 for loop 안에 사용하고, 변수에 할당하고, 인자로서 받아들이고, 함수로부터 반환할 수 있습니다.
+Javascript의 superset으로 Java와 같이 변수를 선언할 때, 그 변수의 type을 지정해 주어야만 한다.
 
-## Bootstrap and Reactstrap or Material-Ui
+### 2. Basic Typescript syntax
+
+
+## % 부록2: Amazon사의 cloud service인 AWS (Amazon Web Service) 사용하기 %
+
+1. AWS IAM - User를 생성하고, create access key를 사용하여, API에 접근하기
+
+2. AWS S3 - bucket을 만들어 파일 저장하기
+
+3. AWS SES (Simple Email Service) - email 보내기
+
+4. AWS EC2 가상환경 - virtualBox와 같이 가상 환경을 제공
+
+5. AWS Lambda - 함수
+
+6. AWS Elastic Beanstalk - 간단히 코드를 배포할 때 사용
+
+
+## 4. Web Application Development의 이해
+
+### 1. Framework vs Library
+
+- Framework를 한국어로 하면 frame (틀), work (작업), 즉 기본적인 틀을 만드는 작업이다.
+  framework는 기본적인 사용방법이 존재하기 때문에 우리는 이 기본적인 뼈대에다가 살을 붙이면 된다.
+
+- Library는 특정 기능에 대한 도구 or 함수들을 모은 집합입니다.
+  즉, 프로그래머가 개발하는데 필요한 것들을 모아둔 것입니다.
+  library는 단순 활용이 가능한 도구들의 집합
+
+집을 만드는 작업이라고 하면,
+framework는 집의 기본 구조를 제공하여, 우리는 그 구조에 더하면 되고,
+library는 침대, 소파와 같은 가구로, 우리는 이 가구들로 집을 만들어야 한다.
+
+### 2. ⭐ Frontend framework vs Server-Side Web Framework
+Web App dev는 크게 Frontend, Backend, Database로 나눌 수 있고, 이 세가지를 합쳐 Fullstack dev라고 한다.
+이는 MVC (Model / View / Controll) software design pattern 라고도 불린다. 
+Model–view–controller is a software design pattern commonly used for developing user interfaces that divide the related program logic into three interconnected elements.
+
+- Model은 View와 Controll을 연결하는 연결고리 역할을 한다.
+- View은 client가 웹사이트에 방문하여 실제로 보게되는 회면을 의미한다. HTML (HyperText Markup Language), CSS (Cascading Style Sheets), Javascript를 이용하여 View를 작성할 수 있다. 여기서 programming language는 오직 Javascript이다.
+- Controll은 app의 functionalities를 의미한다.  
+
+각각의 programming language마다 Web Application Server를 만드는 web app framework를 제공한다.
+
+1. python: Django, Flask, FastAPI
+2. Java: spring, spring boot, play
+3. Javascript: Express, Fastify
+4. php: Laravel
+
+![This is an image](./img/server_side_web_framework.png)
+
+`Frontend framework`은 pure Javascript, HTML이 아닌 web view를 더 쉽게 작성할 수 있게 만드는 framework이다.
+SPA를 제공하는 frontend framework에는 크게 React JS, Vue JS, Angular JS가 있다.
+**Single Page Application** (SPA)는 body가 비어있는 하나의 HTML을 가지고 Javascript를 이용해서 그 안에 Data만 변경하는 것을 말한다.
+Server가 Client에 자료를 넘겨주면, Client computer가 그 정보를 가지고 HTML를 완성하기 때문에
+CSR (Client Side Rendering)이라고 부른다. CSR은 HTMl이 비어있기 때문에 검색 엔진에 노출되어 검색되기 쉽지 않다.
+SEO (Search Engine Optimization)에 약점을 가진다.
+
+⭐ `React JS`: React는 Meta사에서 만든 Javascript frontend framework로 computer에 최신 버전의 `node js`를 설치하면 누구나
+쉽게 사용할 수 있다.
+
+그 밖에도 google사에서 만든 `Angular JS`,
+
+`Vue JS`등 다양한 Web Application Frontend framework이 존재한다.
+이 Web application framework은 사용방법이 거의 비슷하기 때문에 하나만 잘 이해하면, 나머지는 쉽게 사용할 수 있다.
+
+`Figma`, `Adobe photoshop` 등 다양한 Moderm UI/UX (web view)를 실질적으로 코드를 작성하기 전에 디자인할 수 있는 program들이 많이 존재하므로, 이를 이용하여 웹사이트를 미리 디자인 해 볼 수도 있다. 
+
+### 3. Server-Side Rendering (SSD)
+
+SSD는 CSD가 가진 검색 엔진에 대한 보완을 위해 등장한 개념으로, CSD와는 다르게 Server에서 HTML을 전부 완성한 후에 Client에게 보내준다.
+이로 인해 이용자가 많을 경우 Server에 과부화가 걸릴 수도 있다.
+
+### 4. Database
+
+Database와 web app을 연결하여 쉽고 간단하게 data를 읽고 쓸 수 있다.
+Database는 크게 Relational database (sql)와 Not only Relational database (Nosql)로 나눌 수 있다.
+`sql (Structured Query Language)`
+
+⭐ `postgresql` - Relational database의 대표주자
+
+⭐ `Mongo Database` - Not only Relational database의 대표주자
+![This is an image](./img/Database.png)
+
+### 5. Deploy Frontend Projects
+
+⭐ `Netlify`, `heroku`, `Github`등을 이용해 내가 만든 웹사이트를 배포할 수 있다.
+
+## % 부록3: Docker 이해하기 %
+
+local computer에 다운되어 있는 environment와 server computer에 다운되어 있는 environment가 다르면, local에서 작성된 code는 server에서 호환성 문제로 작동이 안될 수도 있다. 이 문제를 해결하기 위해 container라는 개념이 등장하였고, Docker가 container를 제공하는 가장 큰 platform이다.
+
+Docker는 서비스를 제공할 때, 아주 쉽고, 빠르고, 간단하게 같은 environment의 container를 만드는 것을 도와준다.
+
+Dockerfile로 image를 만들고 (build),
+image로 container를 실행한다 (run).
+
+Dockerhub에서 공식적인 image을 다운 받을 수도 있고, 내가 customized한 image도 upload할 수 있다.
+
+기본 구조: Dockerfile -build> Dokcer image -run> Docker container
+
+- Dockerfile로 image를 build하는 commend
+
+  > $ docker bulid -t imageName
+  > local computer에 이 이미지가 존재하지 않으면, Dockerhub에서 image을 다운 받는다.
+
+- image로 container를 run하는 commend
+  > $ docker run -it imageName
+  > $ docker run -b imageName
+  > (d는 daemon의 약자로 뒤에서 작동한다.)
+
+### Bootstrap and Reactstrap or Material-Ui
 
 `bootstrap`은 frontend dev에 대한 구조를 미리 만들어둔 프레임워크로 UI stlye에 대한 기본적인 css, js를 제공합니다.
 react js 뿐만 아니라 frontend dev 전체에 사용할 수 있는 매우 유용한 프레임워크입니다.
@@ -1546,294 +1531,54 @@ react js는 jsx이기 때문에 `array.map((param) => {body})`가 아니라 `arr
 
 `map()`은 javascript code이기 때문에 `{ array.map((param) => (body))}`과 같이 curly brackets {} 안에서 정의하면 된다.
 
-## Typescript
+## 5. ReactJs
+### 1. What is ReactJs
 
-TypeScript is a programming language developed and maintained by Microsoft. It is a strict syntactical superset of JavaScript and adds optional static typing to the language.
+### 2. JSX에 대해 
 
-Javascript의 superset으로 Java와 같이 변수를 선언할 때, 그 변수의 type을 지정해 주어야만 한다.
+React js는 js 대신 jsx 라는 특수한 extension을 사용한다. 하지만 js를 사용해도 react가 알아서 jsx로 인식하기 때문에 아무런 문제는 없다. (Button.js === Button.jsx)
+보통은 component를 만들때, jsx 확장자를 이용하여 다른 js files과 차별점을 둘 때 사용하면 좋다.
 
+JSX stands for JavaScript XML. It is simply a syntax extension of JavaScript.
 
-# Fullstack App development Example
+아래 변수 선언을 살펴봅시다.
 
-Learn the MERN Stack
+> `const element = <h1>Hello, world!</h1>;`
 
-M: MongoDB (Database)
-E: Express (Backend)
-R: React JS (Frontend)
-N: Node JS
+위에 희한한 태그 문법은 문자열도, HTML도 아닙니다.
 
-## Beginning from scratch
+JSX라 하며 JavaScript를 확장한 문법입니다. UI가 어떻게 생겨야 하는지 설명하기 위해 React와 함께 사용할 것을 권장합니다. JSX라고 하면 템플릿 언어가 떠오를 수도 있지만, JavaScript의 모든 기능이 포함되어 있습니다.
 
-First we will start with the server side and database.
+JSX는 React “엘리먼트(element)” 를 생성합니다.
 
-### 1. Create empty folder and create `package.json`
+React는 JSX 사용이 필수가 아니지만, 대부분의 사람은 JavaScript 코드 안에서 UI 관련 작업을 할 때 시각적으로 더 도움이 된다고 생각합니다. 또한 React가 더욱 도움이 되는 에러 및 경고 메시지를 표시할 수 있게 해줍니다.
 
-Open Terminal (CMD in window) and type the following command:
-
-> `mkdir MERN_SHOPPING_LIST ; cd MERN_SHOPPING_LIST`
-
-이는 MERN_SHOPPING_LIST라는 새로운 folder를 만드는 command `mkdir MERN_SHOPPING_LIST` 와
-그 folder로 이동하는 command `cd MERN_SHOPPING_LIST`가 동시에 실행됩니다.
-
-- `mkdir <foldername>`: make directory. folder 생성
-- `cd <fodlername>`: change directory. folder로 이동
-- `ls`: 현재 folder에 있는 files을 반환
-
-> `npm init`
-
-- description: Shopping List built with the MERN stack
-- entry point (index.js) server.js
-- type: "module"
-- author: Heechul Shin
-- license: (ISC) MIT
-
-이는 새로운 package.json을 만들어 냅니다.
-
-package.json에 "type": "module"을 추가 해야지만 file을 내보내고/가져올 때, module.export/require을 사용하는 CommonJS 대신
-**import/export**의 형식을 지원하는 ES6을 사용할 수 있습니다.
-
-### 2. Install Dependencies for Backend and Database:
-
-- `express`: Backend (Server) framework
-- `mongoose`: mongodb api
-- `concurrently`: run more than one `npm` scripts at a time, sos that we are able to run the server and the client at a same time.
-- `nodemon`: constantly watch our backend and reload once we save (auto refresh).
-- `-D`: stands for development dependency because it's not needed for production.
-- `dotenv`: set the environment variable so that hide all of our secret information.
-
-  > `npm i express mongoose concurrently dotenv`
-
-  nodemon은 개발할 때만 사용할 dependency이기 때문에, -D를 붙혀 실제 production에서는 설치하지 않는다.
-
-  > `npm i -D nodemon`
-
-### 3. Add { "start", "server" } in `package.json` script & Create { app.js & server.js & .gitignore & .env } files
+아래 예시에서는 name이라는 변수를 선언한 후 중괄호로 감싸 JSX 안에 사용하였습니다.
 
 ```
-// package.json
-"scripts": {
-  "start": "node server.js",
-  "server": "nodemon server.js"
-},
+const name = 'Josh Perez';
+const element = <h1>Hello, {name}</h1>;
+
+ReactDOM.render(
+  element,
+  document.getElementById('root')
+);
 ```
 
-- start: start the server. but need to restart the server after every server-side change.
-- server: start the server. nodemon continuously watch the server, and we won't have to keep updating it.
+JSX의 중괄호 안에는 유효한 모든 JavaScript 표현식을 넣을 수 있습니다. 예를 들어 2 + 2, user.firstName 또는 formatName(user) 등은 모두 유효한 JavaScript 표현식입니다.
 
-server는 개발할 때만 사용할 command이다.
+컴파일이 끝나면, JSX 표현식이 정규 JavaScript 함수 호출이 되고 JavaScript 객체로 인식됩니다.
 
-To use these command, type:
+즉, JSX를 if 구문 및 for loop 안에 사용하고, 변수에 할당하고, 인자로서 받아들이고, 함수로부터 반환할 수 있습니다.
 
-> `npm start`
 
-run the command that is defined in "start" key.
-This is same as `node server.js`
 
-> `npm run server`
-
-we put our database connection configuration in the .env file. So, we don't want .env to deploy.
-
-- Add `.env` to .gitignore.
-- Add `node_modules` and `package-lock.json` to .gitignore
-
-create a folder called `config` and inside create a file called `index.js`
-
-```
-// ./config/index.js
-import dotenv from "dotenv";
-
-// allow to use configurations in .env file with `process.env.${name}`
-// dotenv.config({ silent: process.env.NODE_ENV === "production" });
-dotenv.config();
-
-export default {
-  PORT: process.env.PORT || 5000,
-  MONGO_URI: process.env.MONGO_URI // MONGO_URI is environment variable and is defined in .env file
-};
-```
-
-- In `app.js`, define our basic application.
-- In `server.js`, it simply listen the connections on the specified host and port in app.js
-
-### 4. Create Mongo DataBase in the cloud storage and Create Database schemas
-
-We need a MongoDB URL to be able to connect to.
-
-- Create Database = { Cluster Tier: M0 Sandbox (Free),
-  Cloud Provider: AWS
-  }
-
-- Set User name & User password, Network access IP Address
-- Connect => "Connet your application" => DRIVER: Node.js
-- Get mongoDBURI
-
-- MongoDB URL (MongoDB Atlas): https://www.mongodb.com/cloud/atlas/lp/try2?utm_content=1217adtest_pmcopy_control&utm_source=google&utm_campaign=gs_americas_united_states_search_core_brand_atlas_desktop&utm_term=mongodb%20atlas&utm_medium=cpc_paid_search&utm_ad=e&utm_ad_campaign_id=12212624338&adgroup=115749704063&gclid=Cj0KCQiAxc6PBhCEARIsAH8Hff0GkAMWkv-SOoaFSdMgxQaEshcIGIyDHAaSqp-B-yPgW03BbW9DxxQaAhi8EALw_wcB
-
-- Using this MongoDB URI, connect to the Database in app.js
-- Define a database schemas in the seperate folder class models
-- In models folder, define `Item.js` that returns Item table
-
-### 5. Create routers
-
-- create new folder 'routes' and inside create new folder 'api'.
-- In api folder, create a file `items.js` and define rest api. (GET, POST, DELETE)
-- We use Postman program to test our rest api.
-
-now our basic server structure is done. we are going to work in the client side
-
-### 6. Create client folder
-
-- create new folder 'client'
-
-> `mkdir client; cd client`
-
-inside the client folder, create new react app
-
-> `npx create-react-app .`
-
-create-react-app은 기존의 package.json과는 다른 새로운 package.json을 만들어 내는데, 이 package.json에 "proxy" value를 적어놓는 것이 중요하다. proxy는 개발할 때만 쓰이기 때문에 나중에는 신경쓰지 않아도 된다.
-
-예를 들어 `axios.get('http://localhost:5000/api/items')`와 같은 긴 주소명을
-`axios.get('api/items')`와 같이 짧게 쓰는 것을 가능하게 만들어 준다.
-
-```
-// package.json in client folder
-{
-  "name": "client",
-  "version": "0.1.0",
-  "private": true,
-  ...
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "proxy": "http://localhost:5000/"
-}
-```
-
-우리는 두 개의 package.json이 있기 때문에 client folder에서 `npm start`를 입력하면 react가 실행되고,
-MERN_SHOPPING_LIST folder에서 `npm start`를 입력하면 server.js가 실행된다.
-
-우리는 이런 두 개의 command를 MERN_SHOPPING_LIST folder에서 동시에 사용하고 싶다.
-
-이때, 우리가 설치한 dependency `concurrently`가 역할을 해준다.
-
-- MERN_SHOPPING_LIST folder의 package.json에 "client": "cd client && npm start" 또는 "client": "npm start --prefix client"를 적는다.
-
-  이는 사용자가 client folder를 들어가지 않고도 client folder의 react app을 실행시킨다.
-
-Run the React client only
-
-> `npm run client`
-
-- MERN_SHOPPING_LIST folder의 package.json에 "client": "client-install": "npm install --prefix client" 또는 "client": "cd client && npm install"를 적는다.
-
-  이는 사용자가 client folder를 들어가지 않고도 client folder의 dependencies를 install할 수 있게 해준다.
-
-Install dependencies for client
-
-> `npm run client-install`
-
-server side의 dependencies를 설치하려면, MERN_SHOPPING_LIST folder에서 다음을 입력한다.
-
-> `npm install`
-
-concurrently 사용법:
-
-Remember to surround separate commands with quotes:
-
-> `concurrently "command1 arg" "command2 arg"`
-
-Otherwise concurrently would try to run 4 separate commands: command1, arg, command2, arg.
-
-In package.json, escape quotes:
-
-> `"start": "concurrently \"command1 arg\" \"command2 arg\""`
-
-- MERN_SHOPPING_LIST folder의 package.json에 "dev": "concurrently \"npm run server\" \"npm run client\""를 적는다.
-
-  이는 concurrently를 이용하여 사용자가 client와 server를 동시에 실행할 수 있게 해준다.
-
-Run the client & server with concurrently
-
-Server runs on http://localhost:5000 and client on http://localhost:3000
-
-> `npm run dev`
-
-```
-// package.json in mern_shopping_list folder
-{
-  "name": "mern_shopping_list",
-  "version": "1.0.0",
-  "description": "Shopping List built with the MERN stack",
-  "main": "server.js",
-  "type": "module",
-  "scripts": {
-    "start": "node server.js",
-    "server": "nodemon server.js",
-    "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "client-install": "npm install --prefix client"
-  },
-  ...
-}
-```
-
-### 7. Install dependencies for client
-
-Go to the client folder and install dependencies.
-
-> `cd client`
-
-- `bootstrap`: frontend dev에 대한 구조를 미리 만들어둔 프레임워크입니다. 기본적인 css, js를 제공합니다.
-- `reactstrap`: bootstrap component를 react component로 사용할 수 있게 만들어 준다.
-- `uuid`: generate random ID
-- `react-transition-group`: exposes simple components useful for defining entering and exiting transitions.
-
-> `npm i bootstrap reactstrap uuid react-transition-group`
-
-### 8. src folder에 component folder를 만들기
-
-- src folder에 component folder를 만든다.
-- component folder에 AppNavbar.js를 만든다.
-
-VScode extension인 `ES7+ React/Redux/React-Native snippets`을 download하면 `rafce`만 code에 입력하면 arrow function이 자동적으로 완성된다.
-
-AppNavbar.js는 reactstrap의 Navbar Toggler component를 사용할 것이다.
-이 Navbar를 클락하면 그 안에 있는 links가 보이는 형식이다.
-
-reactstrap: https://reactstrap.github.io/?path=/docs/components-navbar--navbar
-
-위의 링크로 가서 `component/navbar`를 가져온다.
-
-### 9. Create src/components/ShoppingList.jsx
-
-reactstrap: https://reactstrap.github.io/?path=/docs/components-listgroup--list-group
-
-위의 링크로 가서 `component/ListGroup`를 가져온다.
-
-server에 있는 data를 client에서 Get/Post/Delete하도록 간단히 만들어 준다.
-
-### 10. Implementing Redux
-
-client fodler에서 dependencies를 install한다.
-
-> `cd client`
-
-- `redux`:
-- `react-redux`:
-- `redux-thunk`:
-
-> `npm i redux react-redux redux-thunk`
-
-- client/src에 store.js 만들기
-- App.js에 Provider 추가
-
+## 6. VueJs
+### 1. What is VueJs
+## 7. ExpressJs
+## 8. Flask
+## 9. Postgresql
+## 10. Mongodb
+## 11. Remix 
+## 12. NextJs
+## 13. Redux

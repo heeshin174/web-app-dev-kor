@@ -4,9 +4,9 @@
 
 ## Table of Contents
 
-1. [Documentations](https://github.com/heeshin174/Web_App_Dev_Kor/edit/master/README.md#documentations)
-2. [Web Application에서 Server와 Cilent의 이해](https://github.com/heeshin174/Web_App_Dev_Kor/edit/master/README.md#web-application%EC%97%90%EC%84%9C-server%EC%99%80-cilent%EC%9D%98-%EC%9D%B4%ED%95%B4)
-3. [JavaScript](https://github.com/heeshin174/Web_App_Dev_Kor/edit/master/README.md#javascript)
+1. [Documentations](https://github.com/heeshin174/Web_App_Dev_Kor#documentations)
+2. [Web Application에서 Server와 Cilent의 이해](https://github.com/heeshin174/Web_App_Dev_Kor#web-application%EC%97%90%EC%84%9C-server%EC%99%80-cilent%EC%9D%98-%EC%9D%B4%ED%95%B4)
+3. [JavaScript](https://github.com/heeshin174/Web_App_Dev_Kor#javascript)
 
 ## Documentations
 
@@ -146,7 +146,7 @@ Client가 Server에게 할 수 있는 http요청은 크게 4가지이다:
 1. **SERVER: Client로 부터 http요청을 받으면 정의된 대로 요청을 처리하는 program이 실행중인 computer**
 2. **CLIENT: Server에 정의된 대로 GET/POST/PUT/DELETE요청가능한 computer**
 
-### 2. What is APIs (Application Programming Interface)
+### 2. What is APIs (Application Programming Interface)?
 
 **API는 한 program에서 다른 program으로 data를 주고받기 위한 방법을 의미한다.**
 
@@ -194,7 +194,7 @@ app.get('/detail', (request,response) => {
 Server의 API를 성공적으로 작동하기 위해서는 다음이 필요하다.
 
 1. 요청방식 (http request method): 어떤 요청을 할 것인지 
-2. URL (endpoint): 어떤 자료를 요청할지
+2. URI (endpoint): 어떤 자료를 요청할지
 3. Parameter: 자료요청에 필요한 추가 정보
 
 예시: `(GET request) https://comic.naver.com/webtoon/detail?id=318995`
@@ -205,6 +205,8 @@ Server의 API를 성공적으로 작동하기 위해서는 다음이 필요하�
 
 Web Server의 경우 `REST API`라는 방법론의 원칙에 따라 작성하면 좋다.
 
+API는 상업적으로 팔 수 있다. API hosting service를 이용하여 정해진 횟수 이상의 데이터 요청이 발생하면, 돈을 지불하게 만들 수 있다. 
+
 ⭐ 요약:
 
 1. **API: 한 program에서 다른 program으로 data를 주고 받는 요청을 처리하는 code**
@@ -213,7 +215,81 @@ Web Server의 경우 `REST API`라는 방법론의 원칙에 따라 작성하면
 
 ### ⭐ 3. REST (Representational State Transfer) APIs
 
-APIs that conform to the REST architectural style and interacts with RESTful service
+**REST (REpresentational State Transfer): "분산 시스템"을 위한 HTTP 기반 software architecture**
+
+즉, 웹 어플리케이션, 다양한 언어, 모바일 어플리케이션, 다른 서버 (전부 HTTP 기반) 등 끼리 서로 통신할 수 있도록, 통역 역할을 해주는 API.
+
+분산시스템은 하나의 시스템으로 보이는 독립된 컴퓨터들의 집합으로, 이를 위해 네트워크를 통한 컴퓨터 간의 통신이 필요하다.
+
+REST는 Representational State Transfer라는 용어의 약자로서 2000년도에 로이 필딩 (Roy Fielding)의 박사학위 논문에서 최초로 소개되었습니다. 로이 필딩은 HTTP의 주요 저자 중 한 사람으로 그 당시 웹(HTTP) 설계의 우수성에 비해 제대로 사용되어지지 못하는 모습에 안타까워하며 웹의 장점을 최대한 활용할 수 있는 아키텍처로써 REST를 발표했다고 합니다.
+
+REST API는 크게 세가지로 구성으로 이루어져있습니다:
+
+1. 자원(RESOURCE) - URI 접근할 대상
+2. 행위(Verb) - HTTP METHOD: GET(조회), POST(생성), PUT(수정), DELELTE(삭제)
+3. 표현(Representations) - Message
+
+REST API 디자인 가이드
+
+REST API 설계 시 가장 중요한 항목은 다음의 2가지로 요약할 수 있습니다.
+
+1. **URI는 정보의 자원을 표현해야 한다.**
+2. **자원에 대한 행위는 HTTP Method(GET, POST, PUT, DELETE)로 표현한다.**
+
+다른 것은 다 잊어도 위 내용은 꼭 기억하시길 바랍니다.
+
+```
+1. 회원을 삭제하는 URI
+GET /members/delete/1   (x)
+DELETE /members/1       (o)
+
+2. 회원정보를 가져오는 URI
+GET /members/show/1     (x)
+GET /members/1          (o)
+
+3. 회원을 추가하는 URI
+GET /members/insert/2 (x)  - GET 메서드는 리소스 생성에 맞지 않습니다.
+POST /members/2       (o)
+```
+
+URI를 설계할 때 주의할 점:
+
+1. 슬래쉬 구분자(/)는 계층 관계를 나타내는 데 사용
+
+```
+http://restapi.example.com/houses/apartments
+http://restapi.example.com/animals/mammals/whales
+```
+
+2. URI 마지막 문자로 슬래시(/)를 포함하지 않는다.
+URI에 포함되는 모든 글자는 리소스의 유일한 식별자로 사용되어야 하며 URI가 다르다는 것은 리소스가 다르다는 것이고, 역으로 리소스가 다르면 URI도 달라져야 합니다. REST API는 분명한 URI를 만들어 통신을 해야 하기 때문에 혼동을 주지 않도록 URI 경로의 마지막에는 슬래시(/)를 사용하지 않습니다.
+
+```
+http://restapi.example.com/houses/apartments/ (X)
+http://restapi.example.com/houses/apartments  (0)
+```
+
+3. 하이픈(-)은 URI 가독성을 높이는데 사용
+URI를 쉽게 읽고 해석하기 위해, 불가피하게 긴 URI경로를 사용하게 된다면 하이픈을 사용해 가독성을 높일 수 있습니다.
+
+4. 밑줄(_)은 URI에 사용하지 않는다.
+글꼴에 따라 다르긴 하지만 밑줄은 보기 어렵거나 밑줄 때문에 문자가 가려지기도 합니다. 이런 문제를 피하기 위해 밑줄 대신 하이픈(-)을 사용하는 것이 좋습니다.(가독성)
+
+5. URI 경로에는 소문자가 적합하다.
+URI 경로에 대문자 사용은 피하도록 해야 합니다. 대소문자에 따라 다른 리소스로 인식하게 되기 때문입니다. RFC 3986(URI 문법 형식)은 URI 스키마와 호스트를 제외하고는 대소문자를 구별하도록 규정하기 때문이지요.
+
+```
+RFC 3986 is the URI (Unified Resource Identifier) Syntax document
+```
+
+6. 파일 확장자는 URI에 포함시키지 않는다.
+
+```
+http://restapi.example.com/members/soccer/345/photo.jpg (X)
+
+// REST API에서는 메시지 바디 내용의 포맷을 나타내기 위한 파일 확장자를 URI 안에 포함시키지 않습니다. Accept header를 사용하도록 합시다.
+GET / members/soccer/345/photo HTTP/1.1 Host: restapi.example.com Accept: image/jpg
+```
 
 Below is a table summarizing recommended return values of the primary HTTP methods in combination with the resource URIs:
 
@@ -227,17 +303,48 @@ Below is a table summarizing recommended return values of the primary HTTP metho
 Postman: Great program to build an RESTful web services.
 - **Postman** [Postman](https://www.postman.com/downloads/)  
 
-## Server 운영 방식에 차이 이해하기
+⭐ 요약:
 
-우리가 다른 해외로 파견을 나가 작업을 해야할 때, 큰 회사의 호텔을 이용하거나, 건물을 빌려 사용할 수 있다.
+1. **REST API: Web 통신에서 사용자로 터 http요청을 받을 URI를 설계할 때 지켜야 되는 방법론**
+2. **REST API를 사용하면 사용자는 URI 주소만 가지고도 내가 무슨 Data를 다루고 있는지 쉽게 알 수 있다.**
+
+### 4. Node JS로 SERVER 만들기
+
+**Node Js는 Javascript runtime이다.**
+
+Javascript는 HTML에 종속된 programming language이다. 즉, 1 + 1과 같은 연산을 위해 만든 것이 아니라 HTML을 조작하기 위해서 만들어진 script이다.
+
+HTML: 웹페이지에 글쓰고, 그림을 넣은 언어로, 프로그래밍언어가 아니기 때문에 정적인 (static: 안움직이는) 웹사이트만 보여줄 수 있다.
+
+Javascript가 HTML을 조작하여 웹페이지를 동적 (dynamic)으로 바꿔준다. 예): 버튼을 클릭하면 어떤 동작이 실행됨.
+
+Javascript는 Chrome, Edge와 같은 browser가 해석한다. 각 browser마다 Jvascript를 해석하는 방법이 다른데, 그 중 Chrome이 만든 `V8`이라는 javascript 해석엔진이 너무 유용해서 Chrome browser안에서만 사용하기에는 아까워서 `Node Js`라는 이름을 가지고 browser와 독립되서 나왔다. 
+
+즉, `Node Js` 자체로는 프로그래밍 언어가 아니라 Javascript를 실행하게 해주는 실행 환경을 의미한다. `Node Js`덕분에 Javascript를 browser밖에서 Programming Language처럼 사용할 수 있게 되었다.
+
+Node Js로 할 수 있는 대표적인 것은 **Server를 만드는 것**이다.
+
+Node Js를 사용하면 Server를 쉽게 만들 수 있고, 왜 하필 Node Js를 이용하여 Server를 만드는 것이 좋냐하면 Node Js의 특징인 **Non-blocking I/O** 때문이다.
+
+
+
+
+⭐ 요약:
+
+1. **Node Js: browser내에서만 사용가능한 Javascript를 browser 밖에서도 사용가능하게 만든 Javascript 실행환경**
+2. **Node Js는 다른 프로그래밍 언어와 달리 시간이 오래걸리는 code는 나중에 실행한다.**
+
+
+### 5. Server 운영 방식에 차이 이해하기
+
+우리가 해외로 파견을 나가 작업을 해야할 때, 큰 회사의 호텔을 이용하거나, 건물을 빌려 사용할 수 있다.
 
 호텔을 이용하면, 빨래, 청소, 식사등 많은 것을 호텔 측에서 해주기 때문에, 나는 내가 할 작업에만 집중할 수 있다.
 작업을 같이하는 인원에 변동이 생겨도, 호텔의 방을 더 빌리거나, 줄일 수 있기 때문에 인원수에 맞게 이용할 수 있다.
-호텔이 모든 것을 관리하기 때문에 보안에 민감한 작업팀에게는 맞지 않다.
+호텔이 보안에 모든 것을 관리하기 때문에 보안에 민감한 작업팀에게는 맞지 않다.
 
 건물을 빌리면, 빨래, 청소, 식사등 많은 것을 직접해야 하기 때문에, 내가 할 작업에만 집중할 수 없다.
-작업을 같이하는 인원에 변동이 생기면, 새로운 건물을 빌려야 한다.
-인원수에 맞게
+작업을 같이하는 인원에 변동이 생기면, 인원수에 맞게 새로운 건물을 빌려야 한다.
 대신, 내가 모든 것을 관리하기 때문에 보안 문제에 더 안전하게 대처할 수 있다.
 
 회사가 server를 운영하는 방식인 On-premise방식과 Cloud computing service 방식을 각 각

@@ -592,14 +592,16 @@ brainless machine: network를 사용하여 더 좋은 computer를 더 싸게 이
 2. **Cloud Computing Services로 Server를 운영하면 money, scale-up & down, fast set up에 엄청난 강점이 존재한다.**
 
 
-## % 부록0 유용한 VSCode 기능 알아보기 %
+## % 부록0: 유용한 VSCode 기능 알아보기 %
 
-1. snippets를 이용하여 자동완성 기능을 적극활용한다. (tab)
-2. debug tool를 이용하여 프로그램을 디버깅할 수 있다 (내가 확인하고 싶은 코드 옆에 breakpoint 생성 후 debug 실행).
-3. VScode extension인 `Prettier`을 download하면, save시 code formatting을 자동으로 해준다.
+- Snippets를 이용하여 자동완성 기능을 적극활용한다. (tab)
+- Debug tool를 이용하여 프로그램을 디버깅할 수 있다 (내가 확인하고 싶은 코드 옆에 breakpoint 생성 후 debug 실행).
+- VScode extension인 `Prettier`을 download하면, save시 code formatting을 자동으로 해준다.
 
 우리는 코드를 짤 때, 최대한 마우스를 사용하지 않도록 해야 된다. keyboard snippets을 이용하면, 키보트만으로도 우리가 하고 싶은 것을 빠르게 할 수 있다.
-4. 기타 keyboard snippets
+
+### keyboard snippets
+
 - tab: 자동완성 (현재치고 있는 코드를 자동완성해준다.)
 - F12: peek (선택된 코드가 정의된 file로 워프)
 - Alt + F12: peek (현재 file에서 확인)
@@ -621,7 +623,11 @@ brainless machine: network를 사용하여 더 좋은 computer를 더 싸게 이
 - Ctrl + P: 이 폴더 내에 다른 file name을 입력 후, 그 file로 이동
 - Terminal에서 (Up/Down): 이전에 Terminal에 입력했었던 command 보기
 
-### 5. Emmets
+### Emmets
+
+에밋(Emmet)은 HTML, XML, XSL 문서 등을 편집할 때 빠른 코딩을 위해 사용하는 플러그인이다. 원래 젠코딩(Zen Coding)으로 부르다가 에밋(Emmet)으로 이름을 변경했다. 매우 간단한 몇 가지 코드만 입력하면, 자동으로 완전한 HTML 코드를 생성해 준다. Emmet은 Visual Studio Code에 내장되어 있으며 확장이 필요하지 않습니다 
+
+예시:
 
 ul box안에 li tag를 5개 만들고 싶다.
 
@@ -673,7 +679,7 @@ We will add the following lines anywhere in this setting:
 
 이제 HTML, CSS뿐만 아니라 react js 개발환경에서도 Emmet을 사용할 수 있다.
 
-### 6. ES7+ React/Redux/React-Native snippets
+### ES7+ React/Redux/React-Native snippets
 
 VScode extension인 `ES7+ React/Redux/React-Native snippets`을 download하면 `rafce`만 code에 입력하면 arrow function이 자동적으로 완성된다.
 
@@ -765,12 +771,10 @@ Database는 크게 Relational database (sql)와 Not only Relational database (No
 
 ⭐ `Netlify`, `heroku`, `Github`등을 이용해 내가 만든 웹사이트를 배포할 수 있다.
 
-## % 부록1 Docker 이해하기 %
+## % 부록1: Docker 이해하기 %
 
-local computer에 다운되어 있는 environment와 server computer에 다운되어 있는 environment가 다르면
-local에서 작성된 code는 server에서 호환성 문제로 작동이 안될 수도 있다.
-이 문제를 해결하기 위해 container라는 개념이 등장하였고,
-Docker가 container를 제공하는 가장 큰 platform이다.
+local computer에 다운되어 있는 environment와 server computer에 다운되어 있는 environment가 다르면, local에서 작성된 code는 server에서 호환성 문제로 작동이 안될 수도 있다. 이 문제를 해결하기 위해 container라는 개념이 등장하였고, Docker가 container를 제공하는 가장 큰 platform이다.
+
 Docker는 서비스를 제공할 때, 아주 쉽고, 빠르고, 간단하게 같은 environment의 container를 만드는 것을 도와준다.
 
 Dockerfile로 image를 만들고 (build),
@@ -790,9 +794,9 @@ Dockerhub에서 공식적인 image을 다운 받을 수도 있고, 내가 custom
   > $ docker run -b imageName
   > (d는 daemon의 약자로 뒤에서 작동한다.)
 
-## % 부록2 git으로 다른 programmer와 collaboration 하기 %
+## % 부록2: git으로 다른 programmer와 collaboration 하기 %
 
-Git의 "master" branch는 항상 완전환 코드이어야 한다.
+Git의 `master` branch는 항상 완전환 코드이어야 한다.
 
 다른 사람이랑 협업을 할 경우에 issues, pull request를 잘 활용하여, 프로젝트를 성공적으로 완성해 보자.
 
@@ -803,7 +807,7 @@ Git 사용법:
 
 1. 소스 코드를 다운 받기
 
-   > $ `git clone https:...` or Download zip file
+   > $ `git clone https:...` or `Download zip file`
 
 2. Always start your branch with what is in the remote/main, so after you have cloned the repository locally 
  
@@ -858,7 +862,7 @@ main은 항상 완벽한 완결된 코드이어야 함으로 main에 직접적�
 6. push your work to that branch: `git push -u origin <branchName>`
 ```
 
-## % 부록3 Amazon사의 cloud service인 AWS (Amazon Web Service) 사용하기 %
+## % 부록3: Amazon사의 cloud service인 AWS (Amazon Web Service) 사용하기 %
 
 1. AWS IAM - User를 생성하고, create access key를 사용하여, API에 접근하기
 
@@ -1309,8 +1313,7 @@ NPM 패키지 모듈들은 **CommonJS**를 기본 모듈 시스템으로 채택�
 그러나 실제로 ReactJS 등의 라이브러리를 활용하여 Frontend 개발을 할 때는 NPM 패키지 모듈을 불러오기 위해 ES6 문법의 코드를 작성하는 경우가 많다(import, export 등). 
 
 그런데 왜 문제가 발생하지 않을까? 이는 Babel 등의 컴파일러가 import, export 등의 코드를 CommonJS 기반의 코드로 변환해주기 때문이다. 
-그러고 나면 Webpack에 의해 JavaScript 모듈들의 번들링이 가능해진다. 변환 규칙은 대략 다음과 같다(실제로는 더 복잡할 수 있다).
-
+그러고 나면 Webpack에 의해 JavaScript 모듈들의 번들링이 가능해진다.
 
 ### ES6 import 사용법
 
@@ -1318,7 +1321,7 @@ Node has experimental support for ES modules. To enable them we need to make som
 
 CommonJS를 모듈 시스템을 채택했던 Node.js에서는 import, export와 같은 ES 모듈을 사용하려면 Babel과 같은 트랜스파일러(transpiler)를 사용했어야 했는데요. 
 
-ode.js 버전 13.2부터 ES 모듈 시스템에 대한 정식 지원이 시작됨에 따라 다른 도구 없이 Node.js에서 손쉽게 ES 모듈을 사용할 수 있게 되었습니다. 🎉
+Node.js 버전 13.2부터 ES 모듈 시스템에 대한 정식 지원이 시작됨에 따라 다른 도구 없이 Node.js에서 손쉽게 ES 모듈을 사용할 수 있게 되었습니다. 🎉
 
 1. 프로젝트 단위로 ES 모듈 적용: 
 

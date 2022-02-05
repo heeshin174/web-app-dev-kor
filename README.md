@@ -143,9 +143,10 @@ Client가 Server에게 할 수 있는 http요청은 크게 4가지이다:
 
 ⭐ 요약:
 
-1. **SERVER: 요청을 처리하는 computer**
+1. **SERVER: Client의 요청을 처리하는 computer**
 1. **WEB SERVER: Client로 부터 http요청을 받으면 정의된 대로 요청을 처리하는 program이 실행중인 computer**
 2. **CLIENT: Server에 정의된 대로 GET/POST/PUT/DELETE요청을 보내는 computer**
+
 
 ### 2. What is APIs (Application Programming Interface)?
 
@@ -299,15 +300,22 @@ Below is a table summarizing recommended return values of the primary HTTP metho
 | PUT/PATCH | UPDATE | 405 (Method Not Allowed)            | 200 (OK) or 204 (No Content). 404 (Not Found), if ID not found or invalid. |
 | DELETE    | DELETE | 405 (Method Not Allowed)            | 200 (OK). 404 (Not Found), if ID not found or invalid.                     |
 
-Postman: Great program to build an RESTful web services.
-- **Postman** [Postman](https://www.postman.com/downloads/)  
+Postman is great program to build an RESTful web services.
+- Postman GET요청 사용법:
+ 
+![GET](./img/postman1.png)
+
+- Postman POST요청 사용법:
+ 
+![POST](./img/postman2.png)
 
 ⭐ 요약:
 
-1. **REST API: Web 통신에서 사용자로 터 http요청을 받을 URI를 설계할 때 지켜야 되는 방법론**
-2. **REST API를 사용하면 사용자는 URI 주소만 가지고도 내가 무슨 Data를 다루고 있는지 쉽게 알 수 있다.**
+1. **REST API: Web 통신에서 사용자로 부터 http요청을 받을 URI를 설계할 때 지켜야 되는 방법론**
+2. **REST API를 사용하면, 사용자는 URI 주소만 가지고도 내가 무슨 Data를 다루고 있는지 쉽게 알 수 있다.**
 
-### 4. Node JS로 SERVER 만들기
+
+### 4. What is Node JS?
 
 **Node Js는 Javascript runtime이다.**
 
@@ -321,24 +329,211 @@ Javascript는 Chrome, Edge와 같은 browser가 해석한다. 각 browser마다 
 
 즉, `Node Js` 자체로는 프로그래밍 언어가 아니라 Javascript를 실행하게 해주는 실행 환경을 의미한다. `Node Js`덕분에 Javascript를 browser밖에서 Programming Language처럼 사용할 수 있게 되었다.
 
-Node Js로 할 수 있는 대표적인 것은 **Server를 만드는 것**이다.
+Node Js로 할 수 있는 대표적인 것은 **Server를 만드는 것**이다. Node Js를 사용하면 Server를 쉽게 만들 수 있다.
 
-Node Js를 사용하면 Server를 쉽게 만들 수 있고, 왜 하필 Node Js를 이용하여 Server를 만드는 것이 좋냐하면 Node Js의 특징인 **Non-blocking I/O** 때문이다.
+왜 하필 Node Js를 이용하여 Server를 만드는 것이 좋냐하면 Node Js의 특징인 **Non-blocking I/O** 때문이다.
 
 Node Js의 특징:
 1. **Non-blocking I/O**
 2. **Event-driven**
 
+설명: Non-blocking I/O operations allow a single process to serve multiple requests at the same time. Instead of the process being blocked and waiting for I/O operations to complete, the I/O operations are delegated to the system, so that the process can execute the next piece of code.
+즉, Non-blocking I/O은 Server가 버거운 요청을 받아도, 그 요청이 끝날 때까지 기다리지 않고 더 빨리 끝나는 요청을 먼저 처리한다.
 
+```
+예시: 사용자의 요청에 따라 영화를 예매하주는 서버
 
+1. 일반 프로그래밍 언어로 만든 서버
+사용자가 티켓한장, 두장과 같이 적은 수을 요청하면 문제가 없지만, 
+사용자가 시간이 오래걸리는 요청, 티겟 200장을 예매하면, 서버는 그 요청을 다 완료할 때까지 멈추게 된다.
+이렇게 되면, 티겟 200장 예매한 사람 뒤에 있는 티켓 1장을 예매한 사람 역시 티켓 200장이 예매가 완료될 때 까지 서버를 기다려야 한다.
+
+2. Node Js로 만든 서버
+사용자가 시간이 오래걸리는 요청, 티겟 200장을 예매해도 서버는 그 요청을 다 완료할 때까지 멈추지 않고, 
+티겟 200장 예매한 사람 뒤에 있는 티켓 1장을 예매한 사람 먼저 처리를 한 다음에 티켓 200장을 처리한다.
+```
+
+Node JS는 이벤트를 적극 활용하여 처리가 빠른 것 부터 실행하기 때문에 요청이 매우 많이 오는 채팅, SNS Web server를 만들 때 적극 선호됩니다.
+물론 다른 언어들도 이런 식으로 서버를 짤 수 있기 때문에 요즘은 장점이 희석되긴 했지만, 또 하나 극강의 장점 덕분에 서버 개발 입문자에게 선호도가 높습니다.
+바로 코드가 매우 짧고 쉽다는 점이다.
+
+하지만, 만약 필요한 서버가 웹 서버가 아니라면, Node js보다는 Python과 C같은 언어들을 사용하는 것이 좋다.
 
 ⭐ 요약:
 
 1. **Node Js: browser내에서만 사용가능한 Javascript를 browser 밖에서도 사용가능하게 만든 Javascript 실행환경**
-2. **Node Js는 다른 프로그래밍 언어와 달리 시간이 오래걸리는 code는 나중에 실행한다.**
+2. **Node Js는 다른 프로그래밍 언어와 다르게 Non-blocking I/O의 특징을 가져, 시간이 오래걸리는 code들을 기다리지 않고, 다음 code를 실행한다.**
+3. **Node Js를 이용하면 쉽고, 빠르게 웹서버를 만들 수 있다**
+
+### 5. Node Js와 Express Js framework를 이용하여 실제 Server 만들기
+
+Express Js framework은 the most popular Node web framework으로, 아주 간단하게 Server를 만들 수 있도록 도와주는 package이다.
+
+환경설정:
+
+1. Node Js 설치: 구글에 Node Js 검색 후, 가장 최신버전 설치
+2. VSCode 설치: 구글에 VSCode 검색 후, 가장 최신버전 설치
+3. VSCode에 Terminal (CMD)을 열어 folder 생성 후, 그 안에 express js 설치
+
+npm stands for node package manager. npm은 프로그램의 dependencies (packages)를 설치하는 것을 도와준다.
+
+package.json 생성 (이 프로그램이 사용하는 dependencies (packages)을 모아둔 파일)
+> `npm init
+
+이러면, node_modules란 folder가 생성되는 데, 이 folder에는 다운 받은 packages의 실제 source code가 담겨있다.
+
+Express Js을 이 프로그램에 설치
+> `npm i express`
+
+4 .server.js file을 생성 후, express js 가져오기
+
+```
+// server.js
+const express = require('express'); // import express js framework
+const app = express();
+
+// app.listen(서버를 띄울 port number, 서버를 띄운 후 실행할 코드)
+// 8080 port에 웹서버를 생성 후, 서버가 잘 생성이 되면 "Listening on 8080"을 출력한다.
+// 여기서 port란: Copmuter에는 외부와 Network 통신을 하기 위해 60000개의 구멍이 존재하고, 각각의 구멍이 하나의 port가 된다.
+// 8080 port는 8080 구멍으로 들어오는 통신만, 이 서버를 띄운다.
+app.listen(8080, function() {
+    console.log("Listening on 8080");
+})
+```
+
+5. server를 실행하기
+
+> `node server.js`
+
+6. 내 컴퓨터의 8080 port에 진입하기
+
+Browser에서 `http://localhost:8080`에 Get 요청을 보내면, 내 컴퓨터의 8080 port에 접근할 수 있다.
+
+7. Get 요청에 응답할 code 작성하기
+
+```
+// 사용자가 '/pet'으로 Get 요청을 보내면, pet과 관련된 안내문을 띄우기  
+app.get('/pet', function (req, res) {
+    res.send("This is pet page")
+});
+
+// Browser에서 `http://localhost:8080/pet`에 Get 요청을 보내면, "This is pet page"라는 문구를 확인할 수 있다.
+```
+
+이는 내 컴퓨터의 8080port이므로, 다른 컴퓨터로 위의 localhost URI를 검색하면, 그 컴퓨터의 8080 port에 접근하기 때문에 이 Server에는 접근할 수 없다.
+
+8. nodemon js library로 코드 수정시 서버 재시작을 자동화하기
+
+우리가 코드를 수정하면, 수정할 때마다 서버를 `CTRL + C`로 종료하고 `node server.js`로 서버를 다시 시작해야 한다. 
+
+그럼으로 nodemon js library로 코드 수정시 서버 재시작을 자동화한다.
+
+nodemon은 개발할 때만 사용할 dependency이기 때문에, -D를 붙혀 실제 production에서는 설치하지 않는다.
+
+> `npm i -D nodemon`
+
+```
+// package.json의 scripts에 다음의 코드를 추가한다.
+"scripts": {
+  "start": "node server.js",
+  "server": "nodemon server.js"
+},
+```
+
+- start: start the server. but need to restart the server after every server-side change.
+- server: start the server. nodemon continuously watch the server, and we won't have to keep updating it.
+
+server는 개발할 때만 사용할 command이다.
+
+To use these command, type:
+
+> `npm start`
+> `npm run server`
+
+우리는 이제 `node server.js` 대신 `npm start`로 웹서버를 실행시킬 수 있고, `npm run server`로 nodemon을 이용하여 server를 개발할 수 있다.
+
+9. Get 요청시 html file을 주는 code 작성하기
+
+```
+// 사용자가 '/'으로 Get 요청을 보내면, index.html file 보여주기
+app.get('/', function (req, res) {
+    res.sendFile(__dirname + "/index.html"); // __dirname은 current directory를 반환한다. 
+});
+
+// Browser에서 `http://localhost:8080`에 Get 요청을 보내면, index.html file을 확인할 수 있다.
+```
+
+10. Node Js의 common Js syntax를 ES6 syntax로 변경하기 (Optional)
+
+Node Js는 common Js의 syntax을 채용하였다. 그래서, 다른 files을 불러오거나 내보낼 때 (import/export), common Js syntax인 `require('module_name')`와 `module.export "module_name"`을 사용한다.
+
+이는 다른 Java와 같은 programming language에서는 볼 수 없는 방식으로, 우리는 ES6 syntax인 `import`과 `export`이 편하기 때문에 Server를 ES6 syntax로 바꾸어 볼 것이다.
+
+In order to enable Node support for ES modules we need to tweak the package.json file. In the package.json file add "type": "module" to the root of the file.
+
+```
+// package.json에 "type": "module" 추가하기
+{
+  "name": "index",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+  "dependencies": {
+    "express": "~4.16.1",
+  } "devDependencies" : {
+    "nodemon": "~2.0.15"
+  }
+}
+```
+
+Then run the following command to update changes to package.json
+
+> `npm i`
+
+Once we have updated our package file we have to make the relevant changes to our app's code as follows:
+
+```
+import express from 'express';
+
+const app = express();
+
+app.get('/',(req,res) => {
+    res.send('ES6 is the Node way to go');
+})
+
+app.listen(3000,() => {
+    console.log(`App listening on port 3000!`);
+})
+```
+
+```
+// arrow function
+app.get('/',(req,res) => {
+    res.send('ES6 is the Node way to go');
+})
+
+// regular function
+app.get('/',function (req,res) {
+    res.send('ES6 is the Node way to go');
+})
+// 함수를 정의하는 데에는 function keyword를 사용하거나 arrow function을 사용하는 방법이 있다.
+```
+
+⭐ 요약:
+
+1. **Node js와 Express Js framework를 사용하면, 아주 쉽고 간편하게 web server를 만들 수 있다.**
+2. **Computer에는 외부와 네트워크로 소통할 수 있는 port (구멍)들이 존재하고, localhost:{port}를 browser에 검색하면 내 컴퓨터의 특정 port에 접근할 수 있다.**
 
 
-### 5. Server 운영 방식에 차이 이해하기
+### 6. Server 운영 방식에 차이 이해하기
 
 우리가 해외로 파견을 나가 작업을 해야할 때, 큰 회사의 호텔을 이용하거나, 건물을 빌려 사용할 수 있다.
 
@@ -361,7 +556,7 @@ Node Js의 특징:
    server를 사용자에 맞게 scale-up, scale-down하기 쉽지 않아 자원에 낭비가 생긴다.
    대신, 회사가 집적 관리하기 떄문에 보안 문제에 더 안전하다.
 
-2. Cloud Computing Service 방식:
+2. **Cloud Computing Service** 방식:
    위에서 호텔이 여려 방을 제공한다고 했는데,
    cloud computing에서는 virtualization을 이용하여 한 물리적 computer에 여러대의 가상 computer를 만들 수 있다
    (virtualBox에 ubuntu를 설치하는 것을 생각하면 된다).
@@ -393,6 +588,11 @@ Saas (Software as a service): youtube, evernote, dropbox, Amazon Web Services (A
 
 기존 machine: 실제 computer 부품 구매, 200만원
 brainless machine: network를 사용하여 더 좋은 computer를 더 싸게 이용, 50만원
+
+⭐ 요약:
+
+1. **Cloud Computing Services는 내 컴퓨터가 아닌 각 Cloud computing service의 데이터베이스에 있는 computer들로 Server를 운영하기 때문에, 내가 직접 컴퓨터를 안사도 인터넷만 있으면 더 싼 가격에 더 좋은 컴퓨터로 나의 Server를 운영할 수 있다.**
+2. **Cloud Computing Services로 Server를 운영하면 money, scale-up & down, fast set up에 엄청난 강점이 존재한다.**
 
 ## Framework vs Library
 

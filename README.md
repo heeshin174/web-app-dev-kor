@@ -143,8 +143,9 @@ Client가 Server에게 할 수 있는 http요청은 크게 4가지이다:
 
 ⭐ 요약:
 
-1. **SERVER: Client로 부터 http요청을 받으면 정의된 대로 요청을 처리하는 program이 실행중인 computer**
-2. **CLIENT: Server에 정의된 대로 GET/POST/PUT/DELETE요청가능한 computer**
+1. **SERVER: 요청을 처리하는 computer**
+1. **WEB SERVER: Client로 부터 http요청을 받으면 정의된 대로 요청을 처리하는 program이 실행중인 computer**
+2. **CLIENT: Server에 정의된 대로 GET/POST/PUT/DELETE요청을 보내는 computer**
 
 ### 2. What is APIs (Application Programming Interface)?
 
@@ -203,7 +204,7 @@ Server의 API를 성공적으로 작동하기 위해서는 다음이 필요하�
 2. Endpoint: `https://comic.naver.com/webtoon/detail`
 3. Parameter: `id=318995`
 
-Web Server의 경우 `REST API`라는 방법론의 원칙에 따라 작성하면 좋다.
+Web Server의 경우 `REST API`라는 방법론의 원칙에 따라 API를 작성하면 좋다.
 
 API는 상업적으로 팔 수 있다. API hosting service를 이용하여 정해진 횟수 이상의 데이터 요청이 발생하면, 돈을 지불하게 만들 수 있다. 
 
@@ -225,7 +226,7 @@ REST는 Representational State Transfer라는 용어의 약자로서 2000년도�
 
 REST API는 크게 세가지로 구성으로 이루어져있습니다:
 
-1. 자원(RESOURCE) - URI 접근할 대상
+1. 자원(RESOURCE) - URI (접근할 대상)
 2. 행위(Verb) - HTTP METHOD: GET(조회), POST(생성), PUT(수정), DELELTE(삭제)
 3. 표현(Representations) - Message
 
@@ -235,8 +236,6 @@ REST API 설계 시 가장 중요한 항목은 다음의 2가지로 요약할 �
 
 1. **URI는 정보의 자원을 표현해야 한다.**
 2. **자원에 대한 행위는 HTTP Method(GET, POST, PUT, DELETE)로 표현한다.**
-
-다른 것은 다 잊어도 위 내용은 꼭 기억하시길 바랍니다.
 
 ```
 1. 회원을 삭제하는 URI
@@ -325,6 +324,10 @@ Javascript는 Chrome, Edge와 같은 browser가 해석한다. 각 browser마다 
 Node Js로 할 수 있는 대표적인 것은 **Server를 만드는 것**이다.
 
 Node Js를 사용하면 Server를 쉽게 만들 수 있고, 왜 하필 Node Js를 이용하여 Server를 만드는 것이 좋냐하면 Node Js의 특징인 **Non-blocking I/O** 때문이다.
+
+Node Js의 특징:
+1. **Non-blocking I/O**
+2. **Event-driven**
 
 
 

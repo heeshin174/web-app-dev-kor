@@ -7,18 +7,19 @@
 - [Documentations](https://github.com/heeshin174/Web_App_Dev_Kor#documentations)
 
 1. [Web Application에서 Server와 Cilent의 이해](https://github.com/heeshin174/Web_App_Dev_Kor#1-web-application%EC%97%90%EC%84%9C-server%EC%99%80-cilent%EC%9D%98-%EC%9D%B4%ED%95%B4)
-2. [JavaScript](https://github.com/heeshin174/Web_App_Dev_Kor#javascript)
-3. [TypeScript](https://github.com/heeshin174/Web_App_Dev_Kor#typescript)
-4. [Web Application Development의 이해]
-5. [ReactJs](https://github.com/heeshin174/Web_App_Dev_Kor#typescript)
-6. [VueJs](https://github.com/heeshin174/Web_App_Dev_Kor#vuejs)
-7. [ExpressJs](https://github.com/heeshin174/Web_App_Dev_Kor#expressjs)
-8. [Flask](https://github.com/heeshin174/Web_App_Dev_Kor#flask)
-9. [Postgresql](https://github.com/heeshin174/Web_App_Dev_Kor#postgresql)
-10. [Mongodb](https://github.com/heeshin174/Web_App_Dev_Kor#mongodb)
-11. [Remix] (https://github.com/heeshin174/Web_App_Dev_Kor#remix)
-12. [NextJs](https://github.com/heeshin174/Web_App_Dev_Kor#nextjs)
-13. [Redux](https://github.com/heeshin174/Web_App_Dev_Kor#redux)
+2. [JavaScript](https://github.com/heeshin174/Web_App_Dev_Kor#2-javascript)
+3. [TypeScript](https://github.com/heeshin174/Web_App_Dev_Kor#3-typescript)
+4. [Web Application Development의 이해](https://github.com/heeshin174/Web_App_Dev_Kor#4-web-application-development%EC%9D%98-%EC%9D%B4%ED%95%B4)
+5. [ReactJs](https://github.com/heeshin174/Web_App_Dev_Kor#5-reactjs)
+6. [VueJs](https://github.com/heeshin174/Web_App_Dev_Kor#6-vuejs)
+7. [ExpressJs](https://github.com/heeshin174/Web_App_Dev_Kor#7-expressjs)
+8. [Flask](https://github.com/heeshin174/Web_App_Dev_Kor#8-flask)
+9. [Postgresql](https://github.com/heeshin174/Web_App_Dev_Kor#9-postgresql)
+10. [Mongodb](https://github.com/heeshin174/Web_App_Dev_Kor#10-mongodb)
+11. [Remix](https://github.com/heeshin174/Web_App_Dev_Kor#11-remix)
+12. [NextJs](https://github.com/heeshin174/Web_App_Dev_Kor#12-nextjs)
+13. [Redux](https://github.com/heeshin174/Web_App_Dev_Kor#13-redux)
+14. [CSS](https://github.com/heeshin174/Web_App_Dev_Kor#14-css)
 
 ## Documentations
 
@@ -39,17 +40,23 @@
 - styled-components: https://styled-components.com/docs
 
 💥 ReactJS Framework (ReactJS Only):
+
 - react-bootstrap (components): https://react-bootstrap.github.io/getting-started/introduction
 - Material-UI (components): https://mui.com/
 - React-icons (icons): https://react-icons.github.io/react-icons
 - react-typed (Dynanic text): https://github.com/ssbeefeater/react-typed
 - redux: https://redux.js.org/introduction/getting-started
-- react-transition-group: https://reactcommunity.org/react-transition-group/
+- redux-toolkit: https://redux-toolkit.js.org/
+- react-transition-group: https://reactcommunity.org/react-transition-group
 - react-redux: https://react-redux.js.org/
 - redux-thunk: https://github.com/reduxjs/redux-thunk
 - react-beautiful-dnd (drag and drop): https://github.com/atlassian/react-beautiful-dnd
 - react-scroll (smooth scroll): https://github.com/fisshy/react-scroll
 - react-router: https://reactrouter.com/docs/en/v6
+
+💥 VueJs Framework (VueJS Only):
+
+- Vuetify: https://next.vuetifyjs.com
 
 3. Backend Framework (server side)
 
@@ -62,6 +69,8 @@
 - dotenv (javascript framework: set environmental variables): https://github.com/motdotla/dotenv
 - concurrently (javascript framework: start client and server together): https://github.com/open-cli-tools/concurrently
 - Axios (javascript framework: XMLHttpRequests): https://axios-http.com/docs/intro
+- JWS (Json Web Token): https://jwt.io/
+- bcryptjs (hashing password): https://www.npmjs.com/package/bcryptjs
 
 4. Databases (server side)
 
@@ -116,57 +125,53 @@
 - react로 만든 웹 github로 deploy하기: https://codingapple.com/unit/react-build-deploy-github-pages/
 
 ## 1. Web Application에서 Server와 Cilent의 이해
+
 ### 1. What is SERVER?
 
 **Server는 Client에게 Network를 통해 http요청을 받아서 정보, data, 서비스등을 전달하는 Computer이다.**
 
-Server와 cilent는 web application에서 computer가 하는 역할을 의미한다. 사람이 학교에서 학생, 선생님, 청소부와 같은 role를 맡는 것처럼,
-Computer가 web app에서 server, cilent와 같은 role를 가진다. 한 computer가 server의 역할을 하고 있으면, 다른 computer가 cilent가 되어 이 server에 데이터를 요청할 수 있다.
-
-Server는 한 computer가 맡는 role로, 식당에서 종업원이 하는 일이랑 똑같은 일을 한다. 종업원이 손님이 메뉴판에 있는 음식을 주문하면, 그 음식을 가져다 주는 것처럼, Server는 Client가 요청하면 요청한 것을 가져다 주는 역할을 한다. 
-
-- **Server: 요청을 받으면 요청한 내용을 보내주는 program이 실행중인 Computer**
-- Server 개발자: 요청을 받으면 요청한 내용을 보내주는 program을 만드는 사람.
-- 네이버웹툰 Server 개발자가 만드는 code: 어떤 사람이 `comic.naver.com`으로 접속하면, 네이버웹툰 메인 html파일을 전송해주셈
-
-
 위의 Server에 대한 정의를 쉽게 이야기하면, **Server는 요청을 받아 그 요청을 처리하는 기계이다.** Web Server에서 요청은 `http 요청 (request)`을 의미한다.
 
-Client가 Server에게 할 수 있는 http요청은 크게 4가지이다:
+- **Server: Client의 요청을 받으면 요청한 내용을 보내주는 program이 실행중인 Computer**
+- **Web Server: Client의 http요청을 받으면 요청한 내용을 보내주는 program이 실행중인 Computer**
+- **Client: 서버에게 요청을 보내는 Computer**
+- Server 개발자: 요청을 받으면 요청한 내용을 보내주는 program을 만드는 사람.
+- 네이버웹툰 Web Server 개발자가 만드는 code: 어떤 사람이 `comic.naver.com`으로 접속하면, 네이버웹툰 메인 html파일을 전송해주셈
+
+Server와 Client는 web application에서 computer가 하는 역할을 의미한다. 사람이 학교에서 학생, 선생님, 청소부와 같은 role를 맡는 것처럼,
+Computer가 web app에서 server, cilent와 같은 role를 가진다. 한 computer가 server의 역할을 하고 있으면, 다른 computer가 cilent가 되어 이 server에 데이터를 요청할 수 있다.
+
+Server는 식당에서 종업원이 하는 일이랑 똑같은 일을 한다. 종업원이 손님이 메뉴판에 있는 음식을 주문하면, 그 음식을 가져다 주는 것처럼, Server는 Client가 요청하면 요청한 것을 가져다 주는 역할을 한다.
+
+Client가 Web Server에게 할 수 있는 http요청은 크게 4가지이다:
 
 1. GET요청: 읽기
 2. POST요청: 쓰기
 3. PUT요청: 수정
 4. DELETE요청: 삭제
 
-설명: 여기서 알아야 할 점은 사용자도 http request를 보내는 code를 작성해야지만 server와 정보를 주고 받을 수가 있다는 점이다. 사용자는, GET요청같은 경우, code는 browser의 URL 창에서 쉽게 작성이 가능하고, 다른 POST/PUT/DELETE 요청들은 Server 개발자가 웹페이지에 Button을 만들어 놓아서 사용자가 웹페이지에서 쉽게 http request를 할 수 있도록 만들어 놓아야 한다.  
+설명: 여기서 알아야 할 점은 사용자도 http request를 보내는 code를 작성해야지만 server와 정보를 주고 받을 수가 있다는 점이다. 사용자는 GET요청 code를 browser의 URL 창에서 쉽게 작성이 가능하다. 다른 POST/PUT/DELETE 요청들은 Server 개발자가 웹페이지에 Button을 만들어 놓아서 사용자가 웹페이지에서 쉽게 http request를 할 수 있도록 만들어 놓아야 한다.
 
-- 즉, 웹 개발자가 http요청을 하는 버튼들을 웹페이지에 잘 만들어 놓으면, 사용자는 그냥 클릭만으로 http요청을 할 수 있다.
+- 즉, 웹 서버개발자가 http요청을 하는 버튼들을 웹페이지에 잘 만들어 놓으면, 사용자는 그냥 클릭만으로 http요청을 할 수 있다.
 
-1. GET요청은 읽기 요청으로 서버에 "나 이런 URI을 가진 페이지를 읽고 싶음"이라는 요청을 보낼 수 있다. 우리가 Server에 가장 많이 하는 요청으로 Chrome, dge와 같은 browser로 URL만 검색하면 GET요청을 할 수 있다.
+1. GET요청은 읽기 요청으로 서버에 "나 이런 URI을 가진 페이지를 읽고 싶음"이라는 요청을 보낼 수 있다. 우리가 Server에 가장 많이 하는 요청으로 Chrome, Edge와 같은 browser로 URI만 검색하면 GET요청을 할 수 있다.
 
-2. POST요청은 생성 요청으로 서버에 "내가 작성한 블로그 포스트, 글, 댓글등을 생성해 주세요"라는 요청을 보낼 수 있다.
+2. POST요청은 생성 요청으로 서버에 "서버에 내가 작성한 블로그 포스트, 글, 댓글등을 생성해 주세요"라는 요청을 보낼 수 있다.
 
-3. PUT요청은 수정 요청으로 서버에 "기존에 작성한 블로그 포스트, 글, 댓글등을 수정해 주세요"라는 요청을 보낼 수 있다.
+3. PUT요청은 수정 요청으로 서버에 "서버에 있는 블로그 포스트, 글, 댓글등을 수정해 주세요"라는 요청을 보낼 수 있다.
 
-4. DELETE요청은 수정 요청으로 서버에 "기존에 작성한 블로그 포스트, 글, 댓글등을 삭제해 주세요"라는 요청을 보낼 수 있다.
-
-⭐ 요약:
-
-1. **SERVER: Client의 요청을 처리하는 computer**
-1. **WEB SERVER: Client로 부터 http요청을 받으면 요청을 처리하는 program이 실행중인 computer**
-2. **CLIENT: Server에 정의된 대로 GET/POST/PUT/DELETE요청을 보내는 computer**
+4. DELETE요청은 수정 요청으로 서버에 "서버에 있는 블로그 포스트, 글, 댓글등을 삭제해 주세요"라는 요청을 보낼 수 있다.
 
 ### 2. What is APIs (Application Programming Interface)?
 
 **API는 한 program에서 다른 program으로 data를 주고받기 위한 방법을 의미한다.**
 
-API는 식당에서의 메뉴판과 같은 역할을 한다고 이해하면 쉽다. 식당의 API는 메뉴판으로, 식당과 손님이 음식을 주고받기 위한 방법이다. 
+API는 식당에서의 메뉴판과 같은 역할을 한다고 이해하면 쉽다. 식당의 API는 메뉴판으로, 식당과 손님이 음식을 주고받기 위한 방법이다.
 식당은 메뉴판을 만들어 놓고, 손님이 음식을 주문 하기 전까지는 아무것도 하지 않는다.
 또한 손님이 메뉴판에 정의되지 않은 음식을 주문하면, 그 주문은 받을 수가 없다.
 
 이와 마찬가지로, Server 역시 메뉴판, 즉 API를 만들어 놓아야지만 그 API를 가지고 Client와 data를 주고 받을 수 있다.
-Server는 Client에게 **http요청**을 받지 않으면, 아무것도 하지 않는다. 또한, 손님은 메뉴판에 없는 요리는 주문할 수 없는 것처럼, Client는 Server에 정의되지 않은 API를 가지고 http요청은 할 수 없다.
+Server는 Client에게 **요청 (request)**을 받지 않으면, 아무것도 하지 않는다. 또한, 손님은 메뉴판에 없는 요리는 주문할 수 없는 것처럼, Client는 Server에 정의되지 않은 API를 가지고 요청은 할 수 없다.
 
 ```
 // 식당에서의 Server와 Client
@@ -184,6 +189,8 @@ Server는 Client에게 **http요청**을 받지 않으면, 아무것도 하지 �
 2. Server는 Client의 http요청을 받아 Database에게 전달
 3. Server는 Database의 data를 받아 Client에게 전달 (response)
 
+// Database가 필요없는 web server의 경우, 서버 내에서 요청을 처리한다.
+
        1.http request          2.request
 Client ------->      Server     ------>  Database
        <-------                 <------
@@ -191,68 +198,71 @@ Client ------->      Server     ------>  Database
 ```
 
 위에서 API는 서버와 사용자가 데이터를 주고 받기 위한 방법이라고 했는데, 여기서 방법이란 그냥 개발자가 만들어 놓은 코드를 의미한다.
-웹 서버의 경우, 서버 개발자가 사용자의 http요청을 받았을 때 Server가 할 행동들을 미리 정의해 둔다. 그 후 만들어 놓은 Server의 행동들, 즉 API을 메뉴판처럼 사용자에게 보여주면 된다. 
+웹 서버의 경우, 서버 개발자가 사용자의 http요청을 받았을 때 Server가 할 행동들을 미리 정의해 둔다. 그 후 만들어 놓은 Server의 행동들, 즉 API을 메뉴판처럼 사용자에게 보여주면 된다.
 
 ```
 // API 예시
 // 어떤 사용자가 "https://~/detail"로 GET요청을 하면 이 코드를 실행해 주세요
 app.get('/detail', (request,response) => {
-//code to perform particular action (API).
-//To access GET variable use req.query() and req.params() methods.
+    // code to perform particular action (API).
+    // To access GET variable use req.query() and req.params() methods.
 });
 ```
 
-Server의 API를 성공적으로 작동하기 위해서는 다음이 필요하다.
+WEb Server의 API를 성공적으로 작동하기 위해서는 다음이 필요하다.
 
-1. 요청방식 (http request method): 어떤 요청을 할 것인지 
+1. 요청방식 (http request method): 어떤 요청을 할 것인지
 2. URI (endpoint): 어떤 자료를 요청할지
 3. Parameter: 자료요청에 필요한 추가 정보
 
 예시: `(GET request) https://comic.naver.com/webtoon/detail?id=318995`
 
-1. 요청방식: GET request 
+1. 요청방식: GET request
 2. Endpoint: `https://comic.naver.com/webtoon/detail`
 3. Parameter: `id=318995`
 
 Web Server의 경우 `REST API`라는 방법론의 원칙에 따라 API를 작성하면 좋다.
 
-API는 상업적으로 팔 수 있다. API hosting service를 이용하여 정해진 횟수 이상의 데이터 요청이 발생하면, 돈을 지불하게 만들 수 있다. 
+API는 상업적으로 팔 수 있다. API hosting service를 이용하여 정해진 횟수 이상의 데이터 요청이 발생하면, 돈을 지불하게 만들 수 있다.
 
 ⭐ 요약:
 
-1. **API: 한 program에서 다른 program으로 data를 주고 받는 요청을 처리하는 code**
-2. **Web Server에서의 API: Client로 부터 http요청을 받았을 때, 그 요청을 처리하는 code**
+1. API가 무엇인지?
 
-### ⭐ 3. REST (Representational State Transfer) APIs
+**API: 한 program에서 다른 program으로 data를 주고 받기 위한 서버의 메뉴판**
+
+2. Web Server에서 API가 무엇인지?
+
+**Web Server에서의 API: 서버 개발자가 사용자에게 어떤 data를 얻기 위해서는 어떤 URI로 http요청을 보내라고 알려주는 서버의 메뉴판**
+
+### 3. REST (Representational State Transfer) APIs
 
 **REST (REpresentational State Transfer): HTTP URI(Uniform Resource Identifier)를 통해 자원(Resource)을 명시하고, HTTP Method(POST, GET, PUT, DELETE)를 통해 해당 자원에 대한 CRUD (CREATE, READ, UPDATE, DELETE) Operation을 적용하는 것을 의미한다.**
 
-REST는 Representational State Transfer라는 용어의 약자로서 2000년도에 로이 필딩 (Roy Fielding)의 박사학위 논문에서 최초로 소개되었습니다. 로이 필딩은 HTTP의 주요 저자 중 한 사람으로 그 당시 웹(HTTP) 설계의 우수성에 비해 제대로 사용되어지지 못하는 모습에 안타까워하며 웹의 장점을 최대한 활용할 수 있는 아키텍처로써 REST를 발표했다고 합니다.
+REST는 Representational State Transfer라는 용어의 약자로서 2000년도에 로이 필딩 (Roy Fielding)의 박사학위 논문에서 최초로 소개되었다. 로이 필딩은 HTTP의 주요 저자 중 한 사람으로 그 당시 웹(HTTP) 설계의 우수성에 비해 제대로 사용되어지지 못하는 모습에 안타까워하며 웹의 장점을 최대한 활용할 수 있는 아키텍처로써 REST를 발표했다고 합니다.
 
-REST API는 크게 세가지로 구성으로 이루어져있습니다:
+- REST API는 크게 세가지로 구성으로 있다:
 
-1. 자원(RESOURCE) - URI (접근할 대상)
-2. 행위(Verb) - HTTP METHOD: GET(조회), POST(생성), PUT(수정), DELELTE(삭제)
-3. 표현(Representations) - Message
+1. 자원(RESOURCE): URI (접근할 대상)
+2. 행위(Verb): HTTP METHOD: GET(조회), POST(생성), PUT(수정), DELELTE(삭제)
+3. 표현(Representations): Message
 
-REST API 디자인 가이드
-
-REST API 설계 시 가장 중요한 항목은 다음의 2가지로 요약할 수 있습니다.
+- REST API를 설계할 때, 다음의 2가지를 만족해야 한다.
 
 1. **URI는 정보의 자원을 표현해야 한다.**
 2. **자원에 대한 행위는 HTTP Method(GET, POST, PUT, DELETE)로 표현한다.**
 
 ```
 1. 회원을 삭제하는 URI
-GET /members/delete/1   (x)
-DELETE /members/1       (o)
+GET /members/delete/1 (x)
+DELETE /members/1     (o)
 
 2. 회원정보를 가져오는 URI
-GET /members/show/1     (x)
-GET /members/1          (o)
+GET /members/show/1 (x)
+GET /members/1      (o)
 
 3. 회원을 추가하는 URI
-GET /members/insert/2 (x)  - GET 메서드는 리소스 생성에 맞지 않습니다.
+GET /members/insert/2 (x)
 POST /members/2       (o)
 ```
 
@@ -266,7 +276,7 @@ http://restapi.example.com/animals/mammals/whales
 ```
 
 2. URI 마지막 문자로 슬래시(/)를 포함하지 않는다.
-URI에 포함되는 모든 글자는 리소스의 유일한 식별자로 사용되어야 하며 URI가 다르다는 것은 리소스가 다르다는 것이고, 역으로 리소스가 다르면 URI도 달라져야 합니다. REST API는 분명한 URI를 만들어 통신을 해야 하기 때문에 혼동을 주지 않도록 URI 경로의 마지막에는 슬래시(/)를 사용하지 않습니다.
+   URI에 포함되는 모든 글자는 리소스의 유일한 식별자로 사용되어야 하며 URI가 다르다는 것은 리소스가 다르다는 것이고, 역으로 리소스가 다르면 URI도 달라져야 합니다. REST API는 분명한 URI를 만들어 통신을 해야 하기 때문에 혼동을 주지 않도록 URI 경로의 마지막에는 슬래시(/)를 사용하지 않습니다.
 
 ```
 http://restapi.example.com/houses/apartments/ (X)
@@ -274,17 +284,13 @@ http://restapi.example.com/houses/apartments  (0)
 ```
 
 3. 하이픈(-)은 URI 가독성을 높이는데 사용
-URI를 쉽게 읽고 해석하기 위해, 불가피하게 긴 URI경로를 사용하게 된다면 하이픈을 사용해 가독성을 높일 수 있습니다.
+   URI를 쉽게 읽고 해석하기 위해, 불가피하게 긴 URI경로를 사용하게 된다면 하이픈 (hyphen: -)을 사용해 가독성을 높일 수 있습니다.
 
-4. 밑줄(_)은 URI에 사용하지 않는다.
-글꼴에 따라 다르긴 하지만 밑줄은 보기 어렵거나 밑줄 때문에 문자가 가려지기도 합니다. 이런 문제를 피하기 위해 밑줄 대신 하이픈(-)을 사용하는 것이 좋습니다.(가독성)
+4. 밑줄(\_)은 URI에 사용하지 않는다.
+   글꼴에 따라 다르긴 하지만 밑줄은 보기 어렵거나 밑줄 때문에 문자가 가려지기도 합니다. 가독성을 위해 밑줄 대신 하이픈(-)을 사용하는 것이 좋습니다.
 
 5. URI 경로에는 소문자가 적합하다.
-URI 경로에 대문자 사용은 피하도록 해야 합니다. 대소문자에 따라 다른 리소스로 인식하게 되기 때문입니다. RFC 3986(URI 문법 형식)은 URI 스키마와 호스트를 제외하고는 대소문자를 구별하도록 규정하기 때문이지요.
-
-```
-RFC 3986 is the URI (Unified Resource Identifier) Syntax document
-```
+   URI 경로에 대문자 사용은 피하도록 해야 합니다. 대소문자에 따라 다른 리소스로 인식하게 되기 때문입니다. RFC 3986(URI 문법 형식)은 URI 스키마와 호스트를 제외하고는 대소문자를 구별하도록 규정하기 때문이지요.
 
 6. 파일 확장자는 URI에 포함시키지 않는다.
 
@@ -305,19 +311,25 @@ Below is a table summarizing recommended return values of the primary HTTP metho
 | DELETE    | DELETE | 405 (Method Not Allowed)            | 200 (OK). 404 (Not Found), if ID not found or invalid.                     |
 
 Postman is great program to build an RESTful web services.
+
 - Postman POST요청 사용법:
 
 1. POST의 Header에서 `Content-Type:application/json`을 선택한다.
 2. POST의 Body에서 row 선택후, Post하고자 하는 데이터를 Json 형식으로 입력한다.
- 
+
 ![POST1](./img/postman1.png)
- 
+
 ![POST2](./img/postman2.png)
 
 ⭐ 요약:
 
-1. **REST API: Web 통신에서 사용자로 부터 http요청을 받을 URI를 설계할 때 지켜야 되는 방법론을 기반으로 만든 API**
-2. **REST API를 사용하면, 사용자는 URI 주소만 가지고도 내가 무슨 Data를 다루고 있는지 쉽게 알 수 있다.**
+1. REST API가 무엇인지?
+
+**REST API: Web 통신에서 사용자로 부터 http요청을 받을 URI를 설계할 때 지켜야 되는 방법론을 기반으로 만든 API**
+
+2. REST API를 왜 사용하는지?
+
+**REST API를 사용하면, 사용자는 URI 주소만 가지고도 내가 무슨 Data를 다루고 있는지 쉽게 알 수 있다.**
 
 ### 4. What is Node JS?
 
@@ -329,107 +341,124 @@ HTML: 웹페이지에 글쓰고, 그림을 넣은 언어로, 프로그래밍언�
 
 Javascript가 HTML을 조작하여 웹페이지를 동적 (dynamic)으로 바꿔준다. 예): 버튼을 클릭하면 어떤 동작이 실행됨.
 
-Javascript는 Chrome, Edge와 같은 browser가 해석한다. 각 browser마다 Javascript를 해석하는 방법이 다른데, 그 중 Chrome이 만든 `V8`이라는 javascript 해석엔진이 너무 유용해 Chrome browser안에서만 사용하기에는 아까워서 `Node Js`라는 이름을 가지고 browser와 독립되서 나왔다. 
+Javascript는 Chrome, Edge와 같은 browser가 해석한다. 각 browser마다 Javascript를 해석하는 방법이 다른데, 그 중 Chrome이 만든 `V8`이라는 javascript 해석엔진이 너무 유용해 Chrome browser안에서만 사용하기에는 아까워서 `Node Js`라는 이름을 가지고 browser와 독립되서 나왔다.
 
 즉, `Node Js` 자체로는 프로그래밍 언어가 아니라 Javascript를 실행하게 해주는 실행 환경을 의미한다. `Node Js`덕분에 Javascript를 browser밖에서 Programming Language처럼 사용할 수 있게 되었다.
 
-Node Js로 할 수 있는 대표적인 것은 **Server를 만드는 것**이다. Node Js를 사용하면 Server를 쉽게 만들 수 있다.
+Node Js로 할 수 있는 대표적인 것은 **Web Server를 만드는 것**이다. Node Js를 사용하면 Web Server를 쉽게 만들 수 있다.
 
 왜 하필 Node Js를 이용하여 Server를 만드는 것이 좋냐하면 Node Js의 특징인 **Non-blocking I/O** 때문이다.
 
-Node Js의 특징:
+- Node Js의 특징:
+
 1. **Non-blocking I/O**
 2. **Event-driven**
 
-설명: Non-blocking I/O operations allow a single process to serve multiple requests at the same time. Instead of the process being blocked and waiting for I/O operations to complete, the I/O operations are delegated to the system, so that the process can execute the next piece of code.
-즉, Non-blocking I/O은 Server가 버거운 요청을 받아도, 그 요청이 끝날 때까지 기다리지 않고 더 빨리 끝나는 요청을 먼저 처리한다.
+- 설명: Non-blocking I/O operations allow a single process to serve multiple requests at the same time. Instead of the process being blocked and waiting for I/O operations to complete, the I/O operations are delegated to the system, so that the process can execute the next piece of code.
+  즉, Non-blocking I/O은 Server가 버거운 요청을 받아도, 그 요청이 끝날 때까지 기다리지 않고 더 빨리 끝나는 요청을 먼저 처리한다.
 
 ```
 예시: 사용자의 요청에 따라 영화를 예매하주는 서버
 1. 일반 프로그래밍 언어로 만든 서버
-사용자가 티켓한장, 두장과 같이 적은 수을 요청하면 문제가 없지만, 
+사용자가 티켓한장, 두장과 같이 적은 수을 요청하면 문제가 없지만,
 사용자가 시간이 오래걸리는 요청, 티겟 200장을 예매하면, 서버는 그 요청을 다 완료할 때까지 다른 작업을 하지 못하게 된다.
 이렇게 되면, 티겟 200장 예매한 사람 뒤에 있는 티켓 1장을 예매한 사람 역시 티켓 200장이 예매가 완료될 때 까지 서버를 기다려야 한다.
 
 2. Node Js로 만든 서버
-사용자가 시간이 오래걸리는 요청, 티겟 200장을 예매해도 서버는 그 요청을 다 완료할 때까지 기다리지 않고, 
+사용자가 시간이 오래걸리는 요청, 티겟 200장을 예매해도 서버는 무거운 요청을 다 완료할 때까지 기다리지 않고,
 티겟 200장 예매한 사람 뒤에 있는 티켓 1장을 예매한 사람 먼저 처리를 한 다음에 티켓 200장을 처리한다.
 ```
 
 Node JS는 이벤트를 적극 활용하여 처리가 빠른 것 부터 실행하기 때문에, 요청이 매우 많이 오는 채팅, SNS Web server를 만들 때 적극 선호됩니다.
-물론 다른 언어들도 이런 식으로 서버를 짤 수 있기 때문에 요즘은 장점이 희석되긴 했지만, 또 하나 극강의 장점 덕분에 서버 개발 입문자에게 선호도가 높습니다.
-바로 코드가 매우 짧고 쉽다는 점이다.
-
-하지만, 만약 필요한 서버가 웹 서버가 아니라면, Node js보다는 Python과 C같은 언어들을 사용하는 것이 좋다.
+물론 다른 언어들도 이런 식으로 서버를 짤 수 있기 때문에 요즘은 장점이 희석되긴 했지만, 코드가 매우 짧고 쉽다는 극강의 장점 덕분에 서버 개발 입문자에게 선호도가 높습니다. 하지만, 만약 필요한 서버가 웹 서버가 아니라면, Node js보다는 Python과 C같은 언어들을 사용하는 것이 좋다.
 
 ⭐ 요약:
 
-1. **Node Js: browser내에서만 사용가능한 Javascript를 browser 밖에서도 사용가능하게 만든 Javascript 실행환경**
-2. **Node Js는 다른 프로그래밍 언어와 다르게 Non-blocking I/O의 특징을 가져, 시간이 오래걸리는 code들을 기다리지 않고, 다음 code를 실행한다.**
-3. **요청이 매우 많이 오는 프로그램들은 Node Js를 이용하여 web server를 만들면 된다.**
+1. Node Js가 무엇인지?
 
-### 5. Node Js와 Express Js framework를 이용하여 실제 Server 만들기
+**Node Js: browser내에서만 사용가능한 Javascript를 browser 밖에서도 사용가능하게 만든 Javascript 실행환경**
+
+2. Node Js를 왜 사용하는지?
+
+**Node Js는 Web Server를 만드는 데 특화되어 있다. Node Js는 다른 프로그래밍 언어와 다르게 Non-blocking I/O의 특징을 가져, 시간이 오래걸리는 code들을 기다리지 않고, 다음 code를 실행한다. 그럼으로, 요청이 매우 많이 오는 프로그램들은 Node Js를 이용하여 web server를 만들면 된다.**
+
+3. Node Js를 설치하는 이유
+
+npm과 Javascript를 사용하기 위해서는 nodde js를 설치해야한다. npm stands for `node package manager`. npm은 프로그램의 dependencies (packages)를 설치하는 것을 도와준다.
+
+### 5. Express Js를 이용하여 실제 Server 만들기
 
 Express Js framework은 the most popular Node web framework으로, 아주 간단하게 Server를 만들 수 있도록 도와주는 package이다.
 
-환경설정:
+- 환경설정:
 
 1. Node Js 설치: 구글에 Node Js 검색 후, 가장 최신버전 설치
 2. VSCode 설치: 구글에 VSCode 검색 후, 가장 최신버전 설치
-3. VSCode에 Terminal (CMD)을 열어 folder 생성 후, 그 안에 express js 설치
-
-npm stands for node package manager. npm은 프로그램의 dependencies (packages)를 설치하는 것을 도와준다.
+3. VSCode에 Terminal을 열어 folder 생성 후, 그 안에 Express js 설치
 
 package.json 생성 (이 프로그램이 사용하는 dependencies (packages)을 모아둔 파일)
-> `npm init
+
+> `npm init`
 
 이러면, node_modules란 folder가 생성되는 데, 이 folder에는 다운 받은 packages의 실제 source code가 담겨있다.
 
-Express Js을 이 프로그램에 설치
+Express Js을 이 project에 설치
+
 > `npm i express`
 
-4 .server.js file을 생성 후, express js 가져오기
+4. `server.js`, `app.js` file을 생성 후, express js 가져오기
+
+- `server.js` file
 
 ```
-// server.js
-const express = require('express'); // import express js framework
-const app = express();
+const app = require("./app");
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server started on PORT ${PORT}`));
 
 // app.listen(서버를 띄울 port number, 서버를 띄운 후 실행할 코드)
 // 8080 port에 웹서버를 생성 후, 서버가 잘 생성이 되면 "Listening on 8080"을 출력한다.
 // 여기서 port란: Copmuter에는 외부와 Network 통신을 하기 위해 60000개의 구멍이 존재하고, 각각의 구멍이 하나의 port가 된다.
-// 8080 port는 8080 구멍으로 들어오는 통신만, 이 서버를 띄운다.
-app.listen(8080, function() {
-    console.log("Listening on 8080");
-})
+// 8080 port는 8080 구멍으로 들어오는 통신에만 반응한다.
 ```
 
-5. server를 실행하기
+- `app.js` file
 
-> `node server.js`
+```
+const express = require('express'); // import express js framework
+const app = express();
 
-6. 내 컴퓨터의 8080 port에 진입하기
+// Bodyparser Middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
-Browser에서 `http://localhost:8080`에 Get 요청을 보내면, 내 컴퓨터의 8080 port에 접근할 수 있다.
+module.export = app;
+```
+
+5. server를 실행하기: Terminal에 `node server.js`을 입력
+
+6. 내 컴퓨터의 5000 port에 진입하기
+
+Browser에서 `http://localhost:5000`에 Get 요청을 보내면, 내 컴퓨터의 5000 port에 접근할 수 있다.
 
 7. Get 요청에 응답할 code 작성하기
 
 ```
-// 사용자가 '/pet'으로 Get 요청을 보내면, pet과 관련된 안내문을 띄우기  
+// 사용자가 '/pet'으로 Get 요청을 보내면, pet과 관련된 안내문을 띄우기
 app.get('/pet', function (req, res) {
     res.send("This is pet page")
+    // 또는
+    res.status(200).json({ message: "This is pet page" });
 });
 
-// Browser에서 `http://localhost:8080/pet`에 Get 요청을 보내면, "This is pet page"라는 문구를 확인할 수 있다.
+// Browser에서 `http://localhost:5000/pet`에 Get 요청을 보내면, "This is pet page"라는 문구를 확인할 수 있다.
 ```
 
-이는 내 컴퓨터의 8080 port이므로, 다른 컴퓨터로 위의 localhost URI를 검색하면, 그 컴퓨터의 8080 port에 접근하기 때문에 이 Server에는 접근할 수 없다.
+이는 내 컴퓨터의 5000 port이므로, 다른 컴퓨터로 위의 localhost URI를 검색하면, 그 컴퓨터의 5000 port에 접근하기 때문에 이 Server에는 접근할 수 없다.
 
 8. nodemon js library로 코드 수정시 서버 재시작을 자동화하기
 
-우리가 코드를 수정하면, 수정할 때마다 서버를 `CTRL + C`로 종료하고 `node server.js`로 서버를 다시 시작해야 한다. 
-
-그럼으로 nodemon js library로 코드 수정시 서버 재시작을 자동화한다.
+우리가 코드를 수정하면, 수정할 때마다 서버를 `CTRL + C`로 종료하고 `node server.js`로 서버를 다시 시작해야 한다. 그럼으로 nodemon js library로 코드 수정시 서버 재시작을 자동화한다.
 
 nodemon은 개발할 때만 사용할 dependency이기 때문에, -D를 붙혀 실제 production에서는 설치하지 않는다.
 
@@ -460,20 +489,23 @@ To use these command, type:
 
 ```
 // 사용자가 '/'으로 Get 요청을 보내면, index.html file 보여주기
+// __dirname을 사용하기 위해, Include path module
+var path = require("path");
+
 app.get('/', function (req, res) {
-    res.sendFile(__dirname + "/index.html"); // __dirname은 current directory를 반환한다. 
+    res.sendFile(__dirname + "/index.html"); // __dirname은 current directory를 반환한다.
 });
 
-// Browser에서 `http://localhost:8080`에 Get 요청을 보내면, index.html file을 확인할 수 있다.
+// Browser에서 `http://localhost:5000`에 Get 요청을 보내면, `index.html` file을 확인할 수 있다.
 ```
 
 10. Node Js의 common Js syntax를 ES6 syntax로 변경하기 (Optional)
 
-Node Js는 common Js의 syntax을 채용하였다. 그래서, 다른 files을 불러오거나 내보낼 때 (import/export), common Js syntax인 `require('module_name')`와 `module.export "module_name"`을 사용한다.
+Node Js는 common Js의 syntax을 채용하였다. 그래서, 다른 files을 불러오거나 내보낼 때 (import/export), common Js syntax인 `require('module_name')`와 `module.export = "module_name"`을 사용한다.
 
-이는 다른 Java와 같은 programming language에서는 볼 수 없는 방식으로, 우리는 ES6 syntax인 `import`과 `export`이 편하기 때문에 Server를 ES6 syntax로 바꾸어 볼 것이다.
+이는 다른 programming language에서는 볼 수 없는 방식으로, 우리는 ES6 syntax인 `import`과 `export`이 편하기 때문에 Server를 ES6 syntax로 바꾸어 볼 것이다.
 
-In order to enable Node support for ES modules we need to tweak the package.json file. In the package.json file add "type": "module" to the root of the file.
+In order to enable Node support for ES modules we need to tweak the package.json file. In the package.json file add `"type": "module"` to the root of the file.
 
 ```
 // package.json에 "type": "module" 추가하기
@@ -518,6 +550,12 @@ app.listen(3000,() => {
 })
 ```
 
+Callback function을 정의하는 세가지 방법:
+
+1. Arrow function으로 함수의 이름 없이 함수를 정의
+2. Function keyword를 사용해 regular function을 정의
+3. 함수를 따로 정의해 그 함수의 이름을 parameter로 전달
+
 ```
 // arrow function
 app.get('/',(req,res) => {
@@ -528,27 +566,38 @@ app.get('/',(req,res) => {
 app.get('/',function (req,res) {
     res.send('ES6 is the Node way to go');
 })
-// 함수를 정의하는 데에는 function keyword를 사용하거나 arrow function을 사용하는 방법이 있다.
+
+// function을 parameter로 전달
+const getGoals = (req, res) => {
+  try {
+    res.status(200).json({ message: "Get goal" });
+  } catch (err) {
+    console.error(err.message);
+  }
+};
+
+app.get('/', getGoals)
 ```
 
 ⭐ 요약:
 
-1. **Node js와 Express Js framework를 사용하면, 아주 쉽고 간편하게 web server를 만들 수 있다.**
-2. **Computer에는 외부와 네트워크로 소통할 수 있는 port (구멍)들이 존재하고, localhost:{port}를 browser에 검색하면 내 컴퓨터의 특정 port에 접근할 수 있다.**
+1. Express Js가 무엇이고, 왜 사용하는지?
+
+**Express Js는 Javascript backend framework로 Web server를 아주 쉽고 간편하게 만들게 해준다.**
+
+2. 컴퓨터에서 port가 무엇인지?
+
+**ports는 computer가 외부와 네트워크로 소통할 수 있는 구멍들을 의미하고, localhost:{port}를 browser에 검색하면 내 컴퓨터의 특정 port에 접근할 수 있다.**
 
 ### 6. Server 운영 방식에 차이 이해하기
 
 우리가 해외로 파견을 나가 작업을 해야할 때, 큰 회사의 호텔을 이용하거나, 건물을 빌려 사용할 수 있다.
 
-호텔을 이용하면, 빨래, 청소, 식사등 많은 것을 호텔 측에서 해주기 때문에, 나는 내가 할 작업에만 집중할 수 있다.
-작업을 같이하는 인원에 변동이 생겨도, 호텔의 방을 더 빌리거나, 줄일 수 있기 때문에 인원수에 맞게 이용할 수 있다.
-호텔이 보안에 모든 것을 관리하기 때문에 보안에 민감한 작업팀에게는 맞지 않다.
+호텔을 이용하면, 빨래, 청소, 식사등 많은 것을 호텔 측에서 해주기 때문에, 나는 내가 할 작업에만 집중할 수 있다. 작업을 같이하는 인원에 변동이 생겨도, 호텔의 방을 더 빌리거나, 줄일 수 있기 때문에 인원수에 맞게 이용할 수 있다. 호텔이 보안에 모든 것을 관리하기 때문에 보안에 민감한 작업팀에게는 맞지 않다.
 
-건물을 빌리면, 빨래, 청소, 식사등 많은 것을 직접해야 하기 때문에, 내가 할 작업에만 집중할 수 없다.
-작업을 같이하는 인원에 변동이 생기면, 인원수에 맞게 새로운 건물을 빌려야 한다.
-대신, 내가 모든 것을 관리하기 때문에 보안 문제에 더 안전하게 대처할 수 있다.
+건물을 빌리면, 빨래, 청소, 식사등 많은 것을 직접해야 하기 때문에, 내가 할 작업에만 집중할 수 없다. 작업을 같이하는 인원에 변동이 생기면, 인원수에 맞게 새로운 건물을 빌려야 한다. 대신, 내가 모든 것을 관리하기 때문에 보안 문제에 더 안전하게 대처할 수 있다.
 
-회사가 server를 운영하는 방식인 On-premise방식과 Cloud computing service 방식을 각 각
+회사가 server를 운영하는 방식인 `On-premise`방식과 `Cloud computing service` 방식을 각 각
 건물을 빌리는 것과 호텔을 이용하는 것에 비유할 수 있다.
 
 1. On-premise 방식:
@@ -580,64 +629,277 @@ On-premise: security
 Cloud Computing service: money, scale-up & down, fast set up
 
 Cloud Computing service가 어디까지 service해주는 가에 따라 service를 세 가지로 나눌 수 있다.
-Iaas (Infrastructure as a service): AWS EC2 가상 머신,
-Paas (platform as a service): AWS Elastic Beanstalk,
-Saas (Software as a service): youtube, evernote, dropbox, Amazon Web Services (AWS)
+
+1. Iaas (Infrastructure as a service): AWS EC2 가상 머신,
+2. Paas (platform as a service): AWS Elastic Beanstalk,
+3. Saas (Software as a service): youtube, evernote, dropbox, Amazon Web Services (AWS)
 
 이런 cloud computing service의 엄청난 장점 덕분에 대세로 떠오르고 있다.
+
 예로, brainless machine을 생각할 수 있다. 기존에 machine을 만드려먼 그 machine에 들어갈 비싼 computer 부품들을
 직접사서 조립해야 했지만, 이젠 machine이 network에 연결만 되어 있으면 cloud Computing service의 computer를 가져다
 사용하면 된다.
 
-기존 machine: 실제 computer 부품 구매, 200만원
-brainless machine: network를 사용하여 더 좋은 computer를 더 싸게 이용, 50만원
+- 기존 machine: 실제 computer 부품 구매, 200만원
+- brainless machine: network를 사용하여 더 좋은 computer를 더 싸게 이용, 50만원
 
 ⭐ 요약:
 
-1. **Cloud Computing Services는 내 컴퓨터가 아닌 각 Cloud computing service의 데이터베이스에 있는 computer들로 Server를 운영하기 때문에, 내가 직접 컴퓨터를 안사도 인터넷만 있으면 더 싼 가격에 더 좋은 컴퓨터로 나의 Server를 운영할 수 있다.**
-2. **Cloud Computing Services로 Server를 운영하면 money, scale-up & down, fast set up에 엄청난 강점이 존재한다.**
+1. Cloud Computing Services가 무엇인지?
 
+**Cloud Computing Services는 내 컴퓨터가 아닌 각 Cloud computing service의 데이터베이스에 있는 computer들로 Server를 운영하기 때문에, 내가 직접 컴퓨터를 안사도 인터넷만 있으면 더 싼 가격에 더 좋은 컴퓨터로 나의 Server를 운영할 수 있다.**
+
+2. Cloud Computing Services를 왜 사용하는지?
+
+**Cloud Computing Services로 Server를 운영하면 money, scale-up & down, fast set up에 엄청난 강점이 존재한다.**
+
+### 7. CORS (Cross-Origin Resource Sharing) 이해하기
+
+#### CORS가 무엇인가
+
+**CORS는 다른 출처간에 resource를 공유할 수 있도록, browser내에서 다른 URI사이의 API등의 데이터 접근이 가능하도록 허용하는 것을 의미한다.**
+
+`교차 출처 리소스 공유(Cross-Origin Resource Sharing, CORS)`는 추가 HTTP Header를 사용하여, 한 출처에서 실행 중인 웹 애플리케이션이 다른 출처의 선택한 자원에 접근할 수 있는 권한을 부여하도록 브라우저에 알려주는 체제입니다.
+
+CORS란 주소가 어쩌구닷컴인 주소에서 다른 주소로 API로 데이터를 받아오기 위해 **Frontend에서** HTTP request를 보냈을 때 발생하는 에러를 없에기 위한 것이다. Postman이나 baecked에서 http요청을 하면 잘 작동하는 http Request가 웹브라우저에서는 CORS 문제로 막히게 된다.
+
+이는 크롬, 엣지같은 browser가 내가 data를 얻기위해 방문하는 웹사이트를 믿지 못하기 때문에 발생하는 에러이다. Browser로 내가 웹사이트에 login한 사이트들은 다음번에 이 사이트를 방문하면, log-in한 것이 유지되고 있는 경우가 많다. 이는 browser가 token등의 로그인 정보를 cookie로 저장해서, 그 사이트를 다시 접속하면, 그 http request에다가 로그인 정보가 있는 cookie를 같이 보내, 웹사이트가 내가 로그인이 되어있다는 것을 알게하기 때문에 가능하다.
+
+그럼으로, 브라우저에서는 보안적인 이유로 `cross-origin` HTTP 요청들을 제한한다. 그래서 `cross-origin` 요청을 하려면 서버의 동의가 필요합니다. 만약 서버가 동의한다면 브라우저에서는 요청을 허락하고, 동의하지 않는다면 브라우저에서 거절합니다.
+
+이러한 허락을 구하고 거절하는 메커니즘을 HTTP-header를 이용해서 가능한데, 이를 `CORS(Cross-Origin Resource Sharing)`라고 부릅니다.
+
+그래서 브라우저에서 `cross-origin` 요청을 안전하게 할 수 있도록 하는 메커니즘입니다.
+
+`cross-origin`이란 다음 중 한 가지라도 다른 경우를 말합니다.
+
+- **Protocal** (scheme): http와 https는 프로토콜이 다르다.
+- **Domain**: domain.com과 other-domain.com은 다르다.
+- **port**: 8080포트와 3000포트는 다르다.
+
+즉, Origin이란 출처를 의미하며 `Protocol + Host + Port` 를 합친 것을 말한다. Origin이 같으면 CORS가 필요하지 않고, 에러는 발생하지 않는다.
+
+#### CORS가 왜 필요한가?
+
+CORS가 없이 모든 곳에서 데이터를 요청할 수 있게 되면, 다른 사이트에서 원래 사이트를 흉내낼 수 있게 됩니다. 악성웹사이트들은 악성사이트로 나를 유인하여 내 크롬에 저장된 일반 웹사이트에 대한 인증정보를 훔쳐 그 웹사이트를 내 개인정보를 이용하여 접속하면, 내 아이디로 다른 사이트에 로그인이 가능하다. 그래서 이를 막기위해 broswer는 `SOP (Same-Origin Policy)`, 동일 출처 정책,으로 동일한 Origin사이에서만 API등의 data 접근이 가능하고, 다른 cross origin으로의 요청을 막는 것을 의미한다.
+
+원래는 Browser는 서로 다른 출처끼리의 요청을 주고받는 건 금지되어있다. 하지만, 웹 생태계가 다양해 지면서, 여러 서비스들간에 보다 자유롭게 데이터가 주고 받아질 필요가 생기면서 합의된 출처들간에 데이터를 주고받는 것을 합법적으로 허용하기 위해 CORS가 등징했다. CORS를 사용하려면 요청을 받는 backend쪽에서 이걸 허락할 다른 출처들을 미리 명시해 두면 된다.
+
+- 예시: 음식점 홈페이지에서 Google map API로 데이터를 요청한다. 다른 주소로의 요청이니까 `Cross-Origin API`이다. Broswer는 다른 주소로의 요청에는 Origin이라는 HEADER를 추가해서 보낸다. Header의 Origin 항목에는 요청하는 쪽의 scheme (Protocol), domain, port가 담겨있다. 이 요청을 받은 Google map API는 답장 HEADER에 지정된 `Access-Control-Allow-Origin` 정보를 실어서 보낸다. 만약 음식점 홈페이지 URI가 CORS에 등록된 상태면, 답장 HEADER에 이 URI도 들어있다. 크롬이 Origin애서 보낸 출처값이 Googlde Map server의 답장 HEADER에 담긴 `Access-Control-Allow-Origin`에 똑같이 있으면 안전한 웹사이트로 간주하고, response data를 받아온다. 만약 없다면, 크름은 "data를 받으려면 CORS를 사용하던지 해라"라는 error를 발생시킨다.
+
+```
+https://naver.com/id=3:3000
+
+Scheme(Protocol) : https
+Domain : naver.com
+port : 3000
+```
+
+#### CORS는 어떻게 동작하는가?
+
+- `Simple requests`인 경우
+
+1. 서버로 요청을 합니다.
+2. 서버의 응답이 왔을 때 브라우저가 요청한 Origin과 응답한 헤더 `Access-Control-Request-Headers`의 값을 비교하여 유효한 요청이라면 리소스를 응답합니다.
+3. 만약 유효하지 않은 요청이라면 브라우저에서 이를 막고 에러가 발생합니다.
+
+- Simple requests란?
+
+1. HTTP method가 GET, HEAD, POST 중 하나이면서
+2. 자동으로 설정되는 헤더는 제외하고, 설정할 수 있는 다음 헤더들만 변경하면서
+
+```
+Accept
+Accept-Language
+Content-Language
+```
+
+3. `Content-Type`이 다음과 같은 경우
+
+```
+application/x-www-form-urlencoded
+multipart/form-data
+text/plain
+```
+
+Simple requqets라고 부릅니다. 이 요청은 추가적으로 확인하지 않고 바로 본 요청을 보냅니다.
+
+- `preflight` 요청일 경우
+
+Origin헤더에 현재 요청하는 origin과, Access-Control-Request-Method헤더에 요청하는 HTTP method와 Access-Control-Request-Headers요청 시 사용할 헤더를 OPTIONS 메서드로 서버로 요청합니다. 이때 내용물은 없이 헤더만 전송합니다.
+브라우저가 서버에서 응답한 헤더를 보고 유효한 요청인지 확인합니다. 만약 유효하지 않은 요청이라면 요청은 중단되고 에러가 발생합니다. 만약 유효한 요청이라면 원래 요청으로 보내려던 요청을 다시 요청하여 리소스를 응답받습니다.
+
+- preflight 요청이란?
+
+사용자 인증정보가 담긴 token이 담긴 요청에 대해서는 token이 나쁜용도로 사용될 수 있기 때문에 더욱 엄격하다. 요청을 보내는 쪽에서는 요청의 옵션에 `credential = true`로 설정해야 되고, 요청을 받는 쪽에서는 아무 출처나 다 허용하는 `와일드 카드 (*)`가 아니라 보내는 쪽의 출처와 웹페이지 주소를 정확히 명시한 다음 `Access-Control-Allow-Credential = true`로 설정해야지만 한다. PUT이나 DELETE 요청은 서버 데이터에 직접 영향을 주기 때문에 `Preflight` 요청이란 걸 먼저 보내서 요청이 안전한 지 확인하고, 그 후에 본격적으로 요청을 보낼 수 있다. Simple requests가 아닌 cross-origin요청은 모두 preflight 요청을 하게 되는데, 실제 요청을 보내는 것이 안전한지 확인하기 위해 먼저 OPTIONS 메서드를 사용하여 cross-origin HTTP 요청을 보냅니다. 이렇게 하는 이유는 사용자 데이터에 영향을 미칠 수 있는 요청이므로 사전에 확인 후 본 요청을 보냅니다.
+
+- 요청 헤더 목록
+
+```
+Origin
+Access-Control-Request-Method: preflight 요청을 할 때 실제 요청에서 어떤 메서드를 사용할 것인지 서버에게 알리기 위해 사용됩니다.
+Access-Control-Request-Headers: preflight요청을 할 때 실제 요청에서 어떤 header를 사용할 것인지 서버에게 알리기 위해 사용됩니다.
+```
+
+- 응답 헤더 목록
+
+```
+Access-Control-Allow-Origin: 브라우저가 해당 origin이 자원에 접근할 수 있도록 허용합니다. 혹은 와일드 카드 (*)는 credentials이 없는 요청에 한해서 모든 origin에서 접근이 가능하도록 허용합니다.
+Access-Control-Expose-Headers:  브라우저가 액세스할 수 있는 서버 화이트리스트 헤더를 허용합니다.
+Access-Control-Max-Age: 얼마나 오랫동안 preflight요청이 캐싱 될 수 있는지를 나타낸다.
+Access-Control-Allow-Credentials:
+- Credentials가 true 일 때 요청에 대한 응답이 노출될 수 있는지를 나타냅니다.
+- preflight요청에 대한 응답의 일부로 사용되는 경우 실제 자격 증명을 사용하여 실제 요청을 수행할 수 있는지를 나타냅니다.
+- 간단한 GET 요청은 preflight되지 않으므로 자격 증명이 있는 리소스를 요청하면 헤더가 리소스와 함께 반환되지 않으면 브라우저에서 응답을 무시하고 웹 콘텐츠로 반환하지 않습니다.
+Access-Control-Allow-Methods: preflight`요청에 대한 대한 응답으로 허용되는 메서드들을 나타냅니다.
+Access-Control-Allow-Headers: preflight요청에 대한 대한 응답으로 실제 요청 시 사용할 수 있는 HTTP 헤더를 나타냅니다.
+```
+
+⭐ 요약:
+
+1. CORS (Cross-Origin Resource Sharing)가 무엇인지?
+
+**CORS는 다른 출처간에 resource를 공유할 수 있도록, web browser내에서 다른 URI사이에 데이터를 주고 받는 것을 합법적으로 허용하는 것을 의미한다.**
+즉, 서로 다른 Origin간에 자원을 공유하는 것을 가능하게 해주며 기본적으로 차단되어있습니다.
+
+2. SOP (Same-Origin Policy)가 무엇인지?
+
+**Web browser의 동일 출처 정책,으로 동일한 URI사이에서만 API등의 data 접근이 가능하도록, 다른 URI의 data접근을 막는 것을 의미한다.** Web browser는 default값으로 SOP를 유지한다.
+
+### 8. Express Js에서 CORS를 이용해보기
+
+Installation is done using the npm install command:
+
+> $ `npm i express cors`
+
+- Simple Usage (Enable All CORS Requests)
+
+```
+var express = require('express')
+var cors = require('cors')
+var app = express()
+
+app.use(cors())
+
+app.get('/products/:id', (req, res, next) => {
+  res.json({msg: 'This is CORS-enabled for all origins!'})
+})
+
+app.listen(80, function () {
+  console.log('CORS-enabled web server listening on port 80')
+})
+```
+
+- Configuring CORS
+
+```
+var express = require('express')
+var cors = require('cors')
+var app = express()
+
+var corsOptions = {
+  origin: 'http://example.com',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+
+app.get('/products/:id', cors(corsOptions), function (req, res, next) {
+  res.json({msg: 'This is CORS-enabled for only example.com.'})
+})
+
+app.listen(80, function () {
+  console.log('CORS-enabled web server listening on port 80')
+})
+```
+
+다른 기타 사용법은 구글에 express cors 검색후 공식문서를 확인한다.
 
 ## % 부록0: 유용한 VSCode 기능 알아보기 %
 
-- Snippets를 이용하여 자동완성 기능을 적극활용한다. (tab)
+- `단어 + tab`: Snippets를 이용하여 자동완성 기능을 적극활용한다.
 - Debug tool를 이용하여 프로그램을 디버깅할 수 있다 (내가 확인하고 싶은 코드 옆에 breakpoint 생성 후 debug 실행).
 - VScode extension인 `Prettier`을 download하면, save시 code formatting을 자동으로 해준다.
 
-우리는 코드를 짤 때, 최대한 마우스를 사용하지 않도록 해야 된다. keyboard snippets을 이용하면, 키보트만으로도 우리가 하고 싶은 것을 빠르게 할 수 있다.
-
 ### keyboard snippets
 
-- tab: 자동완성 (현재치고 있는 코드를 자동완성해준다.)
-- F12: peek (선택된 코드가 정의된 file로 워프)
-- Alt + F12: peek (현재 file에서 확인)
-- Ctrl + click: Go to definition
-- Ctrl + C: Copy
-- Ctrl + v: Paste
-- Ctrl + ` (back tic): Open terminal 
-- Ctrl + shift + R: Refactoring (drag된 코드를 변수로 만들기, 함수로 만들기, 새로운 file로 옮기기, ...)
-- F2: Renaming (변수 이름 변경하기: 이 변수와 연관된 모든 다른 file에서 사용중인 변수명도 함께 바꿔준다.)
-- Ctrl + F: Renaming (F2를 사용하는 것이 더 편리하다). 
-- Ctrl + H: Renaming (F2를 사용하는 것이 더 편리하다).
-- Alt + click: Multi-cursor (Alt + Click를 여러 군데 찍으면, 한번에 여러 곳에 typing할 수 있다).
-- Ctrl + L: 한 줄 선택
-- Alt + (Up/Down): 한 줄을 위/아래로 옮기기
-- shift + alt + (Up/Down): 한 줄을 아래줄에 복사후 붙여넣기 
-- Ctrl + (Left/Right): 단어 단위로 왼쪽/오른쪽으로 이동  
-- shift + (Arrow): Arrow로 움직인 영역만큼만 drag
-- shift + Ctrl + (Left/Right): 단어 단위로 왼쪽/오른쪽 움직인 영역만큼만 drag
-- Ctrl + P: 이 폴더 내에 다른 file name을 입력 후, 그 file로 이동
-- Terminal에서 (Up/Down): 이전에 Terminal에 입력했었던 command 보기
+우리는 코드를 짤 때, 최대한 마우스를 사용하지 않도록 해야 된다. keyboard snippets을 이용하면, 키보트만으로도 우리가 하고 싶은 것을 빠르게 할 수 있다.
+
+In VScode, go to `Help > Keyboard Shortcuts References`. 우리가 사용가능한 유용한 키보드 단축기들을 볼 수 있다.
+
+#### Navigation
+
+- `Ctrl + P`: 이 폴더 내에 다른 file name을 입력 후, 그 file로 이동 (파일간 이동)
+- `Ctrl + G`: 이 파일 내에 Line 이동 (파일 내 이동)
+- `pageUp/pageDown`: Move to (next/previous) page in file
+- `Alt + (pageUP/pageDown)`: Scroll page up/down
+- `F12`: Go to Definition (선택된 코드가 정의된 file로 워프)
+- `Alt + F12`: peek Definition (현재 file에서 확인)
+- `Ctrl + (Left/Right)`: 단어 단위로 왼쪽/오른쪽으로 이동
+- `Ctrl + (Up/Down)`: Scroll line up/down
+- `Home/End`: Go to beginning/end of line
+- `Ctrl + (Home/End)`: Go to beginning/end of file
+- `Ctrl + (1/2/3)`: 새로운 split editor 생성 후, 그곳으로 cursor이동
+- `Ctrl + F4`: 현재 split editor 종료
+
+- `Ctrl + click`: Go to definition
+
+#### Basic editing
+
+- `tab`: 자동완성 (현재치고 있는 코드를 자동완성해준다.)
+- `Ctrl + X`: Cut line (empty selection)
+- `Ctrl+ shift + k`: Delete Line
+- `Ctrl + L => DEL`: Delete Line -` Ctrl + C`: Copy
+- `Ctrl + V`: Paste
+- `Ctrl + Z`: Undo
+- `Ctrl + S`: Save
+- `Ctrl + ` (back tic)`: Open terminal
+- `Ctrl + Shift + `(back tic)`: Create new terminal
+- `Ctrl + shift + R`: Refactoring (drag된 코드를 변수로 만들기, 함수로 만들기, 새로운 file로 옮기기, ...)
+- `F2`: Renaming (변수 이름 변경하기: 이 변수와 연관된 모든 다른 file에서 사용중인 변수명도 함께 바꿔준다.)
+- `Ctrl + F`: Find (F2를 사용하는 것이 더 편리하다).
+- `Ctrl + H`: Renaming (F2를 사용하는 것이 더 편리하다).
+- `Ctrl + L`: 한 줄 선택
+- `Alt + (Up/Down)`: 한 줄을 위/아래로 옮기기
+- `shift + alt + (Up/Down)`: 한 줄을 아래줄에 복사후 붙여넣기 (Copy & Paste)
+- `shift + (Arrow)`: Arrow로 움직인 영역만큼만 drag
+- `shift + Ctrl + (Arrow)`: 단어 단위로 Arrow로 움직인 영역만큼만 drag
+- `Ctrl+ /`: Toggle line comment
+- `Ctrl+ (]/[)`: Indent/outdent line
+- `Terminal에서 (Up/Down)`: 이전에 Terminal에 입력했었던 command 보기
+- `Del`: 커서 뒤의 한 캐릭터 삭제
+- `Ctrl + Del`: 커서 뒤의 한 단어 삭제
+- `Ctrl + A`: 현재 파일의 모든 문장 drag
+
+- `Alt + click`: Multi-cursor (Alt + Click를 여러 군데 찍으면, 한번에 여러 곳에 typing할 수 있다).
+
+### Terminal Command
+
+- `ls`: list files in current directory
+- `ls -l`: list all files in current directory
+- `ls -a`: list all files in current directory
+- `mkdir`: make directory
+- `cd`: change directory
+- `chmod +x fileName` : make it executable
+- `cd dirName`: change directory
+- `cd ..` - change directory backword
+- `rm fileName`: remove file
+- `rm -r dirName`: remove directory
+- `rm -f fileName`: force to remove file
+- `rm- rf dirName`: force to remove directory
+- `./executableFile.exe` -> execute the file
+- `mv oldName newName` -> rename the file
+- `cat fileName`: see the whole text file in terminal
+- `pwd`: show current path you are in
+- `man (1/2/3) malloc`: show manual page for malloc
 
 ### Emmets
 
-에밋(Emmet)은 HTML, XML, XSL 문서 등을 편집할 때 빠른 코딩을 위해 사용하는 플러그인이다. 원래 젠코딩(Zen Coding)으로 부르다가 에밋(Emmet)으로 이름을 변경했다. 매우 간단한 몇 가지 코드만 입력하면, 자동으로 완전한 HTML 코드를 생성해 준다. Emmet은 Visual Studio Code에 내장되어 있으며 확장이 필요하지 않습니다 
+에밋(Emmet)은 HTML, XML, XSL 문서 등을 편집할 때 빠른 코딩을 위해 사용하는 플러그인이다. 원래 젠코딩(Zen Coding)으로 부르다가 에밋(Emmet)으로 이름을 변경했다. 매우 간단한 몇 가지 코드만 입력하면, 자동으로 완전한 HTML 코드를 생성해 준다. Emmet은 Visual Studio Code에 내장되어 있으며 확장이 필요하지 않습니다.
 
 예시:
 
 ul box안에 li tag를 5개 만들고 싶다.
 
-- `ul>li*5` +  tab
+- `ul>li*5` + tab
 
 ```
 <ul>
@@ -676,6 +938,7 @@ Enable Emmet support for JSX:
 1. In VScode, go to `File > Preferences > Settings > Open setting (setting.json) `
 
 We will add the following lines anywhere in this setting:
+
 ```
 "emmet.includeLanguages": {
   "javascript": "javascriptreact",
@@ -707,37 +970,439 @@ const $1 = () => {
 };
 
 export default $1;
-``` 
-
+```
 
 ## 2. Javascript
 
-### 1. What is Javascript?
+### Q1. What is Javascript?
 
-Javascript는 web browser를 위해 등장한 programming language이기 때문에 다른 프로그래밍 언어들과는 차별점을 가진다.
+**JavaScript, often abbreviated JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS.**
 
-1. Javascript는 비동기 프로그래밍언어(asynchronous programming) 이다.
-자바스크립트의 비동기 처리란 특정 코드의 연산이 끝날 때까지 코드의 실행을 멈추지 않고 다음 코드를 먼저 실행하는 자바스크립트의 특성을 의미합니다.
-데이터를 불러오는데 오래걸리는 것들을 기다리지 않는다.
+맨 처음 Javascript는 web browser에 귀속된 programming language이였다. 각 browser마다 Javascript 해석엔진이 달랐는데, Chrome에서 사용하는 해석엔진인 'v8'이 browser와 독립적으로 출시되면서, programming language로서 급부상했다.
 
-2. variable을 지정했는데 값을 아직 assign 안한 경우, 이 변수의 값은 undefined이 된다.
+Javascript를 이용하여 웹서버, 모바일앱, mechine learning 등을 할 수 있지만, Javascript의 근본은 웹개발을 할 때 사용하는 것이다.
 
-- Javascript에서 string안에 값을 변경하려면 back tic `${variable}`을 사용해야 한다.
+Web 환경에서 JavaScript를 사용하는 가장 큰 이유는 **HTML 조작과 변경**이다. HTML을 조작하고, 변경하면서 우리는 이쁘고, 실용적인 웹페이지를 만들 수 있다.
+
+Javascript는 web browser를 위해 등장한 언어이기 때문에 다른 프로그래밍 언어들과는 차별점을 가진다.
+
+- Javascript는 비동기 프로그래밍 (asynchronous programming) 언어이다.
+  자바스크립트의 비동기 처리란 특정 코드의 연산이 끝날 때까지 코드의 실행을 멈추지 않고 다음 코드를 먼저 실행하는 자바스크립트의 특성을 의미합니다.
+  코드를 한줄 씩 실행하기는 하지만, 데이터를 불러오는데 오래걸리는 것들을 기다리지 않는다.
+
+- JavaScript is a `dynamically typed language`이다.
+
+It means that JS does not require the explicit declaration of the variables before they're used. 변수의 타입을 직접 지정해주지 않아도, JavaScript가 알아서 변수의 타입을 정해준다. 이는 한 variable에 여러 타입이 assign되는 상황을 가능하게 만든다. 작은 project를 만들 때에는 편리하지만, 큰 project를 만들고, team 단위로 만들게 되면 이런 높은 자유도는 오히려 독이 되어 어디서 어떻게 잘 못 되었는 지 알기 어렵게 만든다.
+
+```
+// static typing in Java
+int age = 10; // age의 타입을 정해놨기 때문에 다른 type은 age에 올 수 없다.
+
+age = "Hello"; (x) // error를 만든다.
+age = 20;  (o)
+
+// dynamic typing in Javascript
+let age; // 현재 age의 타입은 없다.
+age = 10; // age에 정수형 (Integer)값이 들어오면서, age의 타입이 int로 변환된다.
+
+age = "Hello"; // age에 문자형 (String)값이 들어오면서, age의 타입이 string로 변환된다.
+```
+
+왜 web browser를 위해 Javascript가 비동기적인지 생각을 해보면, 만약에 Javascript가 동기 프로그래밍(synchronous programming) 언어이면, 우리는 서버가 모든 데이터를 불러올 때까지 아무 버튼도 누를수 없다.
+
+⭐ 요약:
+
+1. Javascript가 무엇인지?
+
+**Javascript는 웹환경에서 가장 많이 쓰이는 프로그래밍언어이다.**
+
+**JavaScript is a `dynamically typed language`로 변수타입의 지정이 필요없이 알아서 타입을 정해준다.**
+
+2. Javascript를 왜 사용하는지?
+
+**Javascript는 HTML 조작과 변경에 사용된다.**
+
+### Q2. Basic Javascript syntax
+
+Javascript syntax를 배울 때 중요한 점은 **if, for, var, let, function, array, object등 Javascript에서 사용하는 문법은 HTML을 조작하고, 변경하기 위해 등장했다는 것이다.**
+
+JavaScript Data Type
+
+- number, string, boolean, object(function, array, data, regexp), null, undefined
+
+자바스크립트는 null과 undefined 타입을 제외하고 모든 것을 object로 다룬다.
+
+#### Javascript로 HTML 조작하기
+
+**바꾸고 싶은 HTMl 요소 선택 (Selector) + 그 요소의 뭘 바꾸고 싶은지 선택 + 어떤 값으로 바꿀지**
+
+요소의 뭘 바꾸고 싶은지는 매우 많기 때문에, 전부 다 외울 수는 없고, 구글에 검색해서 사용한다.
+
+```
+// index.html
+// 1. 웹문서에서 id가 "hello"인 Element를 얻어, 그 안에 값을 "안녕"으로 변경하기.
+// 2. 웹문서에서 id가 "hi"인 Element를 얻어, 그 안에 색상을 "red"로 변경하기.
+// 3. 웹문서에서 id가 "hi"인 Element를 얻어, 그 안에 크기을 "30px"로 변경하기.
+<body>
+ <h2 id="hello">안녕하세요</h2>
+ <h3 id="hi">하이</h3>
+<script>
+ document.getElementById('hello').innerHTML = "안녕";
+ document.getElementById('hi').style.color = "red";
+ document.getElementById('hi').style.fontSize = '30px';
+</script>
+</body>
+```
+
+- `variable = value;`에서 `=`은 assgin (대입)이다. `<=`로 생각하면 이해하기 쉽다.
+
+`age = 10; // age라는 variable에 숫자 10을 assgin한다.`
+
+- variable을 지정했는데 값을 아직 assign 안한 경우, 이 변수의 값은 undefined이 된다.
+
+- `//`는 single-line comment `/* */`는 multi-line comment로 컴퓨터는 인식하지 못하고, 사람간에 설명이 필요할 때 사용한다.
+
+```
+console.log(name); // name is not defined here. name를 변수가 선언되기도 전에 사용하면 error가 발생한다.
+let name; // name is undefined here. name = undefined
+name = "Shin"; // name is "Shin" here.
+```
+
+- 문자는 `""` (double quote), `''` (single quote), `` (back tic) 사이에 넣는다.
+- 위의 기호들 사이에 있으면, 문자 자료형 `String`이 된다.
+- double quote와 single quote는 아무런 차이가 없고, back tic의 경우 `${variable}`을 사용해서 다른 곳에서 정의한 값을 문자열 사이에 넣을 수 있다.
 
 ```
 const name = "Shin";
-console.log(`Hello ${name}!`);
+console.log(`Hello ${name}!`); // Hello Shin
 ```
 
-- object는 **{} curly braces**를 이용해서 정의한다.
+#### If statement
 
-### 2. Basic Javascript syntax 
+```
+if (condition1) {
+   // if condition1 is true
+   // do this code
+} else if (condition2){
+   // if condition2 is true
+   // do this code
+} else {
+  // otherwise
+}
+```
 
-### 3. 💥 Callback vs Promises vs Async Await:
+또는
 
-Javascript는 asynchronous programming로 데이터를 요청하는 데 시간이 많이 걸리는 line이 있으면, 그 code의 값을 기다리지 않고 다음 code를 시작한다.
+```
+{ x> 5 ? tb : fb }
+```
 
-비동기 처리 사례는 setTimeout()입니다. setTimeout()은 Web API의 한 종류입니다. 코드를 바로 실행하지 않고 지정한 시간만큼 기다렸다가 로직을 실행합니다. 아래 코드를 보겠습니다.
+#### Function
+
+**Function은 긴 코드를 한 단어로 압축하고 싶을 때 사용한다.**
+
+Function은 parameters를 받아 값을 return한다. `return`은 함수를 종료시키기 때문에 return 뒤에는 아무것도 올 수 가 없다.
+
+Javascript에서 function을 정의하는 방법에는 3가지가 있다.
+
+```
+// 1. 함수 선언식: Function Declarations
+function add(x, y) {
+     return x + y;
+}
+
+// 2. 함수 표현식: Function Expressions
+const add = function(x, y) {
+  return x + y;
+}
+
+// 3. 함수 표현식에서 Arrow Function
+const add = (x, y) => {
+   return x + y;
+}
+```
+
+함수 선언식과 표현식의 차이점은 함수 선언식은 호이스팅에 영향을 받지만, 함수 표현식은 호이스팅에 영향을 받지 않는다.
+
+함수 표현식: 코드에 도달하면 생성. 변수의 생성과 같다.
+함수 선언식: 코드에 도달하기전, 어디서든 호출이 가능하다.
+
+함수 선언식은 코드를 구현한 위치와 관계없이 자바스크립트의 특징인 호이스팅에 따라 브라우저가 자바스크립트를 해석할 때 맨 위로 끌어 올려진다.
+이 말은 함수 선언식은 어디서든 호출이 가능하고, function이 선언 되기 전에 function을 사용할 수 있다는 의미이다.
+
+```
+// 함수 표현식은 함수가 선언되기 전 코드에서도 함수를 호출할 수 있다.
+console.log(add(1,2)); // 3
+
+function add(x, y) {
+     return x + y;
+}
+
+//  함수 선언식은 함수가 선언되기 전 코드에서는 함수를 호출할 수 없다.
+// 그 이유는 함수 선언식에서는 함수를 변수랑 똑같이 대하기 때문이다.
+console.log(add(1,2)); // error. add is not a function.
+
+const add = function (x, y) {
+     return x + y;
+}
+```
+
+더 자세한 내용은 Hoiesting부분을 참고하자.
+
+함수 표현식의 장점:
+
+1. 함수 표현식이 호이스팅에 영향을 받지 않는다.
+2. 클로져 (Closure) 로 사용 가능하다. 클로져는 함수를 실행하기 전에 해당 함수에 변수를 넘기고 싶을 때 사용된다.
+3. 콜백 (callback function)으로 사용 (다른 함수의 인자로 넘길 수 있음) 가능하다.
+
+그럼으로 함수 선언식보다는 함수 표현식을 지향하는 것이 좋다.
+
+#### Arrow Function
+
+Arrow Function은 함수를 더욱 간결하게 만들기 위해 등장한 개념이다.
+
+- Curly brackets: after an arrow function they represent a code block, which consists of zero or more grouped statements within the curly brackets.
+
+Arrow function에서 body부분에 Curly brackets가 쓰이면 이는 code block, 즉 여러개의 code를 묶어 놓은 것으로 인식하기 떄문에 `return` keyword가 다른 function들 처럼
+반드시 필요하다.
+
+`return`이 없으면, 이 함수는 local variable만 생성할 뿐 값을 만들어 내지 않기 떄문에, 값이 `undefined`가 된다.
+
+```
+// return이 있는 code block (o)
+const jsBrackets = x => {
+return x > 3 ? true : false
+}
+jsBrackets(5); // true
+
+// return이 없는 code block (x)
+const jsBrackets = x => {
+ x > 3 ? true : false
+}
+jsBrackets(5); // undefined
+
+// return이 없는 괄호 (o)
+// return문이 없으면 대괄호를 일반괄호로 바꾼다.
+const jsBrackets = x => (
+ x > 3 ? true : false
+)
+```
+
+If the function can be written on one line (as the example above can, it can be shortened to exclude both the curly brackets and the return word, as below.
+
+`const jsBrackets = x => x > 3 ? true : false`
+
+- Parentheses: are used instead of curly brackets after an arrow function to return an object.
+
+For example, they are used in map, filter, and reduce functions.
+
+```
+const numbers = [1,2,3,4]
+// OKAY
+numbers.map(number => number \* 2);
+numbers.map(number => (number \* 2 ));
+numbers.map(number => {return number \* 2 });
+
+// 위의 세 경우와 다르게 return keyword가 없는 code block은 반환값이 없어 undefined값이 된다.
+const newnumbers = numbers.map(number => {number \* 2});
+console.log("newnumbers"); // newnumbers = [undefined, undefined, ...]
+```
+
+이를 확인하려면, browser에서 F12를 열거나, 마우스 오른쪽 클릭 후 inspect를 클릭해 개발자 모드로 들어간다.
+
+Source tab에서 js파일에 breakpoint를 걸고 실행시켜보면, scope/global scope을 통해 값을 볼 수 있다.
+
+요약:
+
+1. parameter가 하나인 경우 일반 괄호 생략가능
+2. parameter가 없거나, 두 개 이상인 경우 일반 괄호 생략 불가능
+3. 함수 본문이 한 줄일 경우 return과 대괄호 생략가능
+4. 본문이 object를 return할 경우, return을 생략 후 일반괄호 사용가능. 대괄호는 사용불가.
+5. 함수 본문이 한 줄 이상일 경우, 일반괄호 사용 불가능, return과 대괄호 생략 불가능
+
+```
+const x = a => {
+  return a + 1;
+}
+const add = (x, y) => {
+  return x + y;
+}
+const sayHello = (name) =>  `Hello ${name}`;
+const add = (x, y) => ( x + y );
+const add = (x, y) => {
+  const result = x + y;
+return result };
+```
+
+#### Array (배열)
+
+**Array는 여러 변수들을 하나로 묶어놓은 묶음이다.**
+
+Array을 만들 때, Javascript의 안좋은 점이 들어난다. Javascript는 array내에도 같은 type만 담을 수 있는 것이 아니라, 다른 type들도 섞어서 담을 수가 있다. 이렇게 되면, error을 일으킬 확률이 높으니 array 내에는 같은 type만 담을 수 있도록 한다.
+
+- Object는 **{} curly braces**를 이용해서 정의한다.
+- Array는 **[] square brackets**를 이용해서 정의한다.
+
+Array인 객체에는 `map()`, `filter()`, `forEach()` 등 다양한 함수들을 사용할 수 있다.
+
+- `Array.length`는 현재 배열의 길이를 반환
+
+1. `Array.push("name")`: 배열 끝에 요소 추가
+
+2. `Array.pop()`: 배열 끝에 요소 제거
+
+3. `Array.unshift("name")`: 배열 앞에 요소 추가
+
+4. `Array.shift()`: 배열 앞에 요소 제거
+
+5. `Array.slice(n, m)`: n부터 m까지의 index에 있는 값 반환
+
+```
+let arr = [0,1,2,3,4,5];
+arr.slice(1,4); // [2,3,4]
+```
+
+Python의 Array[n:m+1]과 동일하다.
+
+6. `Array.concat(arr1, ...)`: 두개 이상의 배열을 합쳐 새배열을 반환
+
+```
+let arr = [1,2];
+arr.concat([3,4]); // [1,2,3,4]
+```
+
+7. `Array.includes(args)`: 배열이 특정 값을 포함하는 지 boolean 값을 반환
+
+```
+let arr = [1,2];
+arr.includes(2); // true
+arr.includes(6); // false
+```
+
+8. `Array.map(callbackFunction(currentValue, index, array), thisArg)`
+
+- currentValue: 배열 내 현재 값
+- index: 배열 내 현재 index 값
+- array: 원본 배열
+- thisArg: callbackFunctoin 내에서 this로 사용될 값
+
+`Array.map()`은 Array내의 모든 요소를 돌면서 주어진 함수의 결과를 모아 **같은 길이의 새로운 배열을 return**합니다. 만약 return 값이 없으면 error를 일으키니 사용시 return 값이 무엇인지 항상 체크한다.
+
+map함수는 콜백 함수의 리턴을 모아서 새로운 배열을 만드는 것이 목적
+
+```
+const numbers = [1,2,3,4,5];
+const numbersMap = numbers.map(num => num *2); // [2, 4, 6, 8, 10]
+
+//학생과 해당 학생의 점수
+const testArray = [
+  {name: '김학생', score: 100},
+  {name: '윤학생', score: 90},
+  {name: '나학생', score: 80},
+];
+
+//맵을 활용하여 점수만 가져와 새로운 배열 생성
+const ResultMap = testArray.map((x)=> {
+  if(x.score >= 90) {
+    return x.name;
+  }
+});
+
+console.log(ResultMap); // ['김학생', '윤학생', undefined]
+```
+
+조건을 이용해서 원하는 데이터를 가져오고 싶었지만, map은 해당 조건이 안 맞을 경우 return 없기 때문에 undefined가 들어간 결과 배열을 가져왔다.
+
+9. `Array.filter(callbackFunction(currentValue, index, array), thisArg)`
+
+- currentValue: 배열 내 현재 값
+- index: 배열 내 현재 index 값
+- array: 원본 배열
+- thisArg: callbackFunctoin 내에서 this로 사용될 값
+
+filter와 map의 가장 큰 차이가 있는 게 바로 반환 결과이다.
+
+map의 경우 return 값을 지정하지 않았을 경우, 강제로 undefined를 넣어주는 반면, filter의 경우 retrun 값을 지정하지 않거나, 지정한 조건에 모든 값이 해당하지 않을 경우 빈 배열이 반환된다.
+
+```
+// 배열 내 원하는 숫자 데이터만 가져오고 싶을 경우
+const numberList = [1,11,3,25,9,10,15];
+const numberResultMap = numberList.filter((x) =>
+{
+  return x <= 10;
+});
+
+console.log(numberResultMap); // [1, 3, 9, 10]
+```
+
+```
+// 배열 내 특정 단어를 포함하는 데이터만 가져오고 싶을 경우
+const List = ['김사원','윤대리','한주임','윤상무','김주임','최사장','황차장', '김과장'];
+
+//indexOf는 해당 글자를 포함하지 않을 경우 -1을 반환한다.
+//주임직급을 가진 사람만 가져오기
+const ListResultMap = List.filter((x) => {
+   return x.indexOf('주임') !== -1;
+});
+
+console.log(ListResultMap); // ["한주임", "김주임"]
+```
+
+```
+//학생과 해당 학생의 점수
+const testArray = [
+  {name: '김학생', score: 100},
+  {name: '윤학생', score: 90},
+  {name: '나학생', score: 80},
+];
+
+//맵을 활용하여 점수만 가지와 새로운 배열 생성
+const ResultMap = testArray.filter((x) => {
+  if(x.score >= 90)
+  {
+    return x.name;
+}});
+console.log(ResultMap); // [{name: '김학생', score: 100}, {name: '윤학생', score: 90}]
+```
+
+filter를 이용해 해당 배열의 결과를 가져와보니 undefined는 사라지고, 90점이 넘는 데이터를 가지고 오는 것을 확인할 수 있었다. 하지만, 또다른 문제로 이름만 가지고 오는 것이 내가 원하는 결과였지만, filter를 이용해 return 되는 건 해당 조건이 만족하는 object 전체가 들어오는 문제가 있다.
+
+즉, filter는 object 전체를 가져온다. (x.name이라고 해당 object에 name만 가져오라는 조건을 주었지만, 객체 전체를 return 해버린다. 🙄)
+
+```
+// Filter와 map을 동시에 활용한 예시
+//학생과 해당 학생의 점수
+const testArray = [ {name: '김학생', score: 100}, {name: '윤학생', score: 90}, {name: '나학생', score: 80}, ];
+
+// 1. filter를 이용해 90점 이상한 객체를 가져온다.
+// 2. map을 이용하여 해당 객체에 이름을 가져온다.
+const ResultMap = testArray.filter((x)=> x.score >= 90).map((x)=> x.name);
+console.log(ResultMap); // ['김학생', '윤학생']
+```
+
+이처럼 filter와 map을 동시에 활용해서 조건에 부합하는 object를 가져온 뒤, object의 특정 key의 value값을 가져와 새로운 배열을 만드는 것이 가능한 걸 알 수 있었다.
+
+### 3. Javascript에서 synchronous programming 이해하기 (💥 Callback/Promises/Async Await)
+
+**Javascript는 asynchronous programming로 데이터를 요청하는 데 시간이 많이 걸리는 line이 있으면, 그 code의 값을 기다리지 않고 다음 code를 시작한다.**
+
+위의 말을 이해하려면, 동기 (Synchronous)와 비동기(Asynchronous)가 무엇인지 부터 알아야 한다.
+
+- **동기** 방식은 서버에서 요청을 보냈을 때 응답이 돌아와야 다음 동작을 수행할 수 있다. 기존의 프로그래밍 언어들처럼 code를 위에서 아래로 차근차근 실행하는 것을 말한다.
+
+- **비동기** 방식은 반대로 요청을 보냈을 때 응답 상태와 상관없이 다음 동작을 수행 할 수 있다. 즉 A작업이 시작하면 동시에 B작업이 실행된다. A작업은 결과값이 나오는대로 출력된다.
+
+비동기적인 프로그래밍의 문제는 아직 데이터가 다 불러오지 못해 값이 undefined인 변수를 그 다음 code에서 가져다 쓰는 것이다.
+
+```
+// http://comics.naver.com로 가서 webtoon 데이터 좀 가져다 주세요!
+const webtoon = fetch('http://comics.naver.com');
+
+// ... 아직 데이터가 도착 안했어.
+console.log(webtoon) // undefined
+```
+
+비동기 처리 사례는 setTimeout()입니다. setTimeout()은 Web API의 한 종류입니다. 코드를 바로 실행하지 않고 지정한 시간만큼 기다렸다가 로직을 실행합니다.
 
 ```
 // #1
@@ -768,18 +1433,99 @@ console.log('Hello Again');
 
 setTimeout() 역시 비동기 방식으로 실행되기 때문에 3초를 기다렸다가 다음 코드를 수행하는 것이 아니라 일단 setTimeout()을 실행하고 나서 바로 다음 코드인 console.log('Hello Again');으로 넘어갔습니다. 따라서, ‘Hello’, ‘Hello Again’를 먼저 출력하고 3초가 지나면 ‘Bye’가 출력됩니다.
 
-### Call Back Function으로 비동기 프로그램이 가진 문제 해결하기
+그러면, Javascript에서 동기적인 프로그래밍을 하는 방법은 무엇이 있을까?
 
-콜백 함수의 동작 방식은 일종의 식당 자리 예약과 같습니다. 일반적으로 맛집을 가면 사람이 많아 자리가 없습니다. 그래서 대기자 명단에 이름을 쓴 다음에 자리가 날 때까지 주변 식당을 돌아다니죠. 만약 식당에서 자리가 생기면 전화로 자리가 났다고 연락이 옵니다. 그 전화를 받는 시점이 여기서의 콜백 함수가 호출되는 시점과 같습니다. 손님 입장에서는 자리가 날 때까지 식당에서 기다리지 않고 근처 가게에서 잠깐 쇼핑을 할 수도 있고 아니면 다른 식당 자리를 알아볼 수도 있습니다.
+동기적인 프로그래밍을 하는 방법에는 크게 3가지가 존재한다.
 
-자리가 났을 때만 연락이 오기 때문에 미리 가서 기다릴 필요도 없고, 직접 식당 안에 들어가서 자리가 비어 있는지 확인할 필요도 없습니다. 자리가 준비된 시점, 즉 데이터가 준비된 시점에서만 저희가 원하는 동작(자리에 앉는다, 특정 값을 출력한다 등)을 수행할 수 있습니다.
+1. Callback Function
+2. Promise object
+3. Async and Await
 
-### Promise
+### 4. CallBack Function으로 비동기 프로그램이 가진 문제 해결하기
 
-“A promise is an object that may produce a single value some time in the future”
+**콜백함수(Callback Function)란 파라미터로 함수를 전달받아, 함수의 내부에서 실행하는 함수이다.**
 
-Promise가 왜 필요한가요?
-프로미스는 주로 서버에서 받아온 데이터를 화면에 표시할 때 사용합니다. 
+콜백함수를 이용하면, 코드를 위에서 부터 차례로 시작하는 동기적 프로그래밍을 할 수 있습니다.
+
+콜백함수 정의: 함수에 parameter로 들어가는 함수
+콜백함수 용도: 코드를 위에서 부터 순차적으로 실행하고 싶을 때 사용
+
+```
+// 콜백함수는 이미 우리의 코드 속에서 자주 사용되고 있다.
+// 예를 들어, forEach 함수의 경우 함수 안에 익명의 함수를 넣어서 forEach 문을 동작시킨다
+let number = [1, 2, 3, 4, 5];
+
+number.forEach(x => {
+    console.log(x * 2);
+});
+```
+
+콜백함수 사용원칙:
+
+1. 익명 함수(anonymous function) 사용
+
+함수의 내부에서 실행되기 때문에 이름을 붙이지 않아도 된다.
+
+2. 다른 곳에 정의된 함수를 콜백함수로 사용할수 있다.
+
+함수를 변수 or 다른 함수의 변수처럼 사용할 수 있다. 함수를 콜백함수로 사용할 경우, 함수의 이름만 넘겨주면 된다.
+
+```
+function first() {
+  console.log("first");
+}
+
+function second() {
+  console.log("second");
+}
+
+// 위의 함수를 first 먼저 실행하고, second를 그 후에 실행하고 싶은 경우
+// fist 함수에 callback function을 만들면 된다.
+function first(callback) {
+  console.log("first");
+  callback();
+}
+
+// first 함수 실행해주세요. 근데 parameter에 second를 집어 넣어서요.
+first(second);
+// "first"
+// "second"
+```
+
+콜백함수 사용시 주의사항:
+
+- 콜백함수를 너무 많이 사용하면 코드가 지저분해진다. (callback hell)
+
+```
+function add(x, callback) {
+    let sum = x + x;
+    console.log(sum);
+    callback(sum);
+}
+
+add(2, function(result) {
+    add(result, function(result) {
+        add(result, function(result) {
+            console.log('finish!!');
+        })
+    })
+})
+
+// 4
+// 8
+// 16
+// finish!!
+```
+
+콜백지옥 해결 방안 : Promise의 return 사용하여 Promise Hell을 탈출할 수 있다.
+
+### 5. Promise
+
+**A promise is an object that may produce a single value some time in the future**
+
+Promise가 왜 필요한가요? 프로미스를 사용하면 비동기 메서드에서 마치 동기 메서드처럼 값을 반환할 수 있습니다. 다만 최종 결과를 반환하지는 않고, 대신 프로미스를 반환해서 미래의 어떤 시점에 결과를 제공합니다.
+
+프로미스는 주로 데이터를 받는데 오래걸리는 코드를 동기 프로그래밍처럼 사용하고 싶을 때 사용합니다.
 일반적으로 웹 애플리케이션을 구현할 때 서버에서 데이터를 요청하고 받아오기 위해 아래와 같은 API를 사용합니다.
 
 ```
@@ -801,18 +1547,18 @@ There are 3 states of the Promise object:
 The Promise object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
 If the promise gets rejected, it will jump to the catch() method.
 
-프로미스 에러 처리는 가급적 catch()를 사용한다.
-
-`mongoose.connect()`는 Promise를 return한다. Promise가 성공적으로 return되면, .then()에 정의된 callback function을 Promise가 reject되면 에러가 발생하여 .catch()에 정의된 callback function을 실행한다.
+프로미스 에러 처리는 가급적 `catch()`를 사용한다.
 
 ```
+// `mongoose.connect()`는 Promise를 return한다.
+// Promise가 성공적으로 return되면, .then()에 정의된 callback function을 Promise가 reject되면 에러가 발생하여 .catch()에 정의된 callback function을 실행한다.
 mongoose
   .connect()
   .then(() => console.log("MongoDB Connected..."))
   .catch((err) => console.log(err.massage));
 ```
 
-### 💥 Async & Await
+### 6. 💥 Async & Await
 
 Await is basically syntactic sugar (사람이 이해하기 쉽게 만든 것) for Promises. It makes your asynchronous code look more like synchronous/procedural code, which is easier for humans to understand.
 
@@ -852,9 +1598,10 @@ app.get("/", async (req, res) => {
 });
 ```
 
-### Promise를 Async/Await으로 변환하기
+#### Promise를 Async/Await으로 변환하기
 
 Promise 방식:
+
 ```
 function getFirstUser() {
     return getUsers()
@@ -869,6 +1616,7 @@ function getFirstUser() {
 ```
 
 Async/Await 방식:
+
 ```
 async function getFirstUser() {
     try {
@@ -886,9 +1634,9 @@ async function getFirstUser() {
 
 1. 기다리지(await) 않는 상황
    만약 그냥 호출한다면,
-   
+
    `let users = getFirstUser();`
-   
+
    기다리지(await) 않았지만, 자동으로 error를 뿜지 않습니다!
    사실, await를 써야하는 의무는 없어요. 단지 쓰지 않는다면, user는 resolved 값이 아니라 promise 객체를 가리킬거에요. 그리고 많은 것들을 할 수 없게 되겠죠.
    javascript는 엄격한 타입선언을 하지 않기 때문에, user 변수로 무언가를 할때까지 드러나지 않을거고 아마 내가 원하는 곳에서 null 값을 줄거에요.
@@ -896,11 +1644,10 @@ async function getFirstUser() {
    당신이 반드시 await 해야합니다. 하지 않는다면 예상한 값 대신에 promise 객체를 받게 될거에요.
    물론 promise 객체를 받아오도록 의도한거라면 괜찮아요. 그러면 promise 객체로 더 많은 것을 컨트롤 할 수 있습니다. 예를 들면 memoizing promises 같은 것들이요.
 
-이 글의 중요한 점은 
+이 글의 중요한 점은
 💥 **promise를 이해하지 못하면 async/await를 사용하면서 진짜 진짜 이해하기 어려운 케이스와 버그를 만나게 된다**
 
-
-### 💥 Javascript Closure & Hoisting
+### 7. Javascript의 Hoisting 이해하기
 
 호이스팅(Hoisting)의 개념: 함수 안에 있는 선언들을 모두 끌어올려서 해당 함수 유효 범위의 최상단에 선언하는 것을 말한다.
 
@@ -916,12 +1663,12 @@ async function getFirstUser() {
 Hoisting 대상:
 
 **var 변수 선언**과 **function 함수선언문**에서만 호이스팅이 일어난다.
-  var 변수/함수의 **선언**만 위로 끌어 올려지며, **할당**은 끌어 올려지지 않는다.
-  let/const 변수 선언과 함수표현식에서는 호이스팅이 발생하지 않는다.
+var 변수/함수의 **선언**만 위로 끌어 올려지며, **할당**은 끌어 올려지지 않는다.
+let/const 변수 선언과 함수표현식에서는 호이스팅이 발생하지 않는다.
 
 ```
 // Javascript에서는 변수/함수가 program에 정의되어 있으면, program내에 어느 곳에서도 접근이 가능하다.
-// getName()의 호출보다 getName()의 정의가 더 늦게 되지만, 함수선언문으로 정의된 함수는 접근가능하다. 
+// getName()의 호출보다 getName()의 정의가 더 늦게 되지만, 함수선언문으로 정의된 함수는 접근가능하다.
 getName();  // Shin
 
 // x는 정의되어 있지만, 7이란 값을 받기 전이므로, x의 값은 undefined이다.
@@ -929,7 +1676,7 @@ console.log(x); // undefined
 // y는 program에 정의되어 있지 않기 때문에, error가 발생한다.
 console.log(y); // uncaught referenceError: y is not defined
 
-// arrow function이나 함수표현식으로 작성한 함수는 var변수에 담겨있기 때문에, 
+// arrow function이나 함수표현식으로 작성한 함수는 var변수에 담겨있기 때문에,
 // 함수를 assign하기 전에는 위의 x처럼 variable로 다뤄진다.
 getID(); // uncaught typeError: getID is not a function
 getID; // undefined
@@ -960,7 +1707,6 @@ console.log("hello");
 myname = "HEEE"; // "할당"
 let myname2 = "HEEE2"; // [Hoisting] 발생 X
 ```
-
 
 간단한 예시 (함수선언문 vs 함수표현식)
 
@@ -1064,22 +1810,25 @@ TIP Hoisting 사용 시 주의:
 - 코드의 가독성과 유지보수를 위해 Hoisting이 일어나지 않도록 한다.
   호이스팅을 제대로 모르더라도 함수와 변수를 가급적 코드 상단부에서 선언하면, Hoisting 인한 스코프 꼬임 현상은 방지할 수 있다.
   let/const를 사용한다.
-  
 - var를 쓰면 혼란스럽고 쓸모없는 코드가 생길 수 있다. 그럼 왜 var와 호이스팅을 이해해야 할까?
   ES6를 어디에서든 쓸 수 있으려면 아직 시간이 더 필요하므로 ES5로 트랜스컴파일을 해야한다.
   따라서 아직은 var가 어떻게 동작하는지 이해하고 있어야 한다.
 
-### JavaScript 모듈 시스템
+### 8. Javascript의 Closure 이해하기
+
+### 9. JavaScript 모듈 시스템
 
 1. Node.js의 module 시스템: CommonJS (module.exports, require)
 2. Javascript ES6부터는 브라우저 단에서도 쉽게 JavaScript의 모듈화가 가능하도록 모듈 시스템이 추가되었다. (export, import)
    ES6 fashion을 사용하려면 ES6를 ES5로 바꿔주는 babel complier가 필요하다.
 
-### CommonJS (module.exports, require)
+#### CommonJS (module.exports, require)
+
+**NPM 패키지 모듈들은 CommonJS를 기본 모듈 시스템으로 채택헀다.**
 
 Node.js 환경에서 실행되는 JavaScript는 모듈 시스템으로서 CommonJS 방식을 지원한다. 이 방식에서는 `module.exports` 객체를 이용하여 자신의 데이터를 외부로 내보낼 수 있고, `require()` 함수를 이용하여 외부 모듈의 데이터를 불러올 수 있다. 만약 Babel 등의 컴파일러를 사용한다면 뒤에서 설명할 ES6 기반의 모듈 내보내기 및 불러오기 방식을 사용해도 알아서 module.exports 객체 및 require() 함수 기반의 방식으로 변환될 것이다.
 
-자신의 데이터를 외부로 내보내려면 module.exports 변수에 내보내고자 하는 데이터들을 담은 객체를 지정해주면 된다.
+자신의 데이터를 외부로 내보내려면 `module.exports` 변수에 내보내고자 하는 데이터들을 담은 객체를 지정해주면 된다.
 
 ```
 // Item.js file
@@ -1096,75 +1845,19 @@ module.exports = Item;
 const Item = require(".models/Item");
 ```
 
-### ES6 with babel complier (export, import)
+#### ES6 import/export 사용법
 
 이는 브라우저 단에서도 쉽게 JavaScript의 모듈화가 가능하도록 ES6부터 도입된 방식이다. 모듈화 시스템답게 각각의 모듈(파일)마다 독립적인 파일 스코프를 가지고 있어서, 모듈 내에 var로 선언한 변수는 더 이상 window 객체의 프로퍼티가 아닌 파일 스코프의 변수로 존재하게 된다. 즉 기본적으로는 다른 모듈의 데이터를 참조할 수 없기 때문에 충돌도 발생하지 않는다.
 
 이때 다른 모듈의 데이터를 참조하거나 자신의 데이터를 노출시키고 싶을 때 사용하는 것이 바로 export, import 키워드이다.
 
-```
-이러한 모듈 시스템을 브라우저에서 사용하려면 <script> 태그에 type="module" 어트리뷰트를 추가해야 한다.
-그러면 그 안에 작성된 JavaScript 코드들은 ES6 기반의 모듈 내보내기 및 불러오기 방식을 지원하게 된다.
-이때 불러오는 파일이 모듈임을 명확히 하기 위해 <script type="module"> 태그로 불러오는 JavaScript 파일의 확장자는 mjs로 설정하도록 권장되고 있다.
-```
-
-ES6 기반의 모듈 시스템은 CommonJS 방식에 비해 코드의 직관성이 좋고, 비동기 방식으로 작동하면서 불러오는 모듈의 실제로 사용되는 부분들만 로드하기 때문에 성능적으로도 효율적이라고 할 수 있다. 그러나 이는 아래와 같은 단점들을 가지고 있어서 아직까지는 Webpack 등의 모듈 번들러를 이용하여 미리 의존성이 해결된 형태의 번들 JavaScript 파일을 제공하는 방식이 더 선호되는 경향이 있다.
-
-- IE(인터넷 익스플로러)를 포함한 몇몇 구형 브라우저는 ES6 모듈 시스템을 지원하지 않는다.
-- 브라우저의 ES6 모듈 시스템을 사용하더라도 어차피 트랜스파일링이나 번들링은 필요하다.
-  = 아직 지원하지 않는 기능(Bare import 등)들이 꽤 있다. (ECMAScript modules in browsers 참고)
-- 점차 해결되고는 있지만 아직 몇 가지 이슈가 있다. (ECMAScript modules in browsers 참고)
-
-모듈 내보내기 (export)
-
-```
-// Named Export : 정해진 이름으로 내보내기
-export 변수/함수/클래스 선언문;
-export { 변수명/함수명/클래스명 };
-export { 변수명/함수명/클래스명 as 다른 이름 };
-
-// Default Export : 기본 내보내기 (이름을 정하지 않음. 최대 하나만 가능.)
-export default 선언문 또는 값;
-export { 변수명/함수명/클래스명 as default };
-```
-
-모듈 불러오기 (import)
-
-```
-import A, { B, C } from 경로; // A는 Default Export, B와 C는 Named Export
-
-import { B as b, C as c } from 경로; // 원하는 이름으로 로드
-
-import \* as obj from 경로; // Export 된 모든 것들을 하나의 객체 형태로 로드 (불필요한 것도 가져오면 번들링 시 비효율을 야기)
-
-import { default as A } from 경로; // "import A from 경로"와 동일 (default)
-```
-
-### ReactJS에서 NPM 패키지 모듈 불러오기
-
-NPM 패키지 모듈들은 **CommonJS**를 기본 모듈 시스템으로 채택한다.
-
-즉, 모듈을 내보내고 불러오는 것에 있어 require, module.exports 등을 사용한다는 말이다.
-
-그러나 실제로 ReactJS 등의 라이브러리를 활용하여 Frontend 개발을 할 때는 NPM 패키지 모듈을 불러오기 위해 ES6 문법의 코드를 작성하는 경우가 많다(import, export 등). 
-
-그런데 왜 문제가 발생하지 않을까? 이는 Babel 등의 컴파일러가 import, export 등의 코드를 CommonJS 기반의 코드로 변환해주기 때문이다. 
-그러고 나면 Webpack에 의해 JavaScript 모듈들의 번들링이 가능해진다.
-
-### ES6 import 사용법
-
-Node has experimental support for ES modules. To enable them we need to make some changes to the package.json file. Before following the steps make sure that Node is installed. Below are the steps to achieve the same.
-
-CommonJS를 모듈 시스템을 채택했던 Node.js에서는 import, export와 같은 ES 모듈을 사용하려면 Babel과 같은 트랜스파일러(transpiler)를 사용했어야 했는데요. 
+CommonJS를 모듈 시스템을 채택했던 Node.js에서는 import, export와 같은 ES 모듈을 사용하려면 Babel과 같은 트랜스파일러(transpiler)를 사용했어야 했는데요.
 
 Node.js 버전 13.2부터 ES 모듈 시스템에 대한 정식 지원이 시작됨에 따라 다른 도구 없이 Node.js에서 손쉽게 ES 모듈을 사용할 수 있게 되었습니다. 🎉
 
-1. 프로젝트 단위로 ES 모듈 적용: 
+1. 프로젝트 단위로 ES6 모듈 적용:
 
-In the package.json file add **“type” : “module”**. Adding this enables ES6 modules.
-The package.json file should look like this:
-
-Node.js에서 ES 모듈을 사용하는 두번째 방법은 package.json 파일 설정을 통해 전체 파일에 적용하는 것입니다. 모든 파일의 확장자를 일일이 바꾸지 않고, 프로젝트 전체에 ES 모듈을 적용하고 싶을 때 적합한 방법입니다.
+Node.js에서 ES6 모듈을 사용하는 방법은 package.json 파일 설정을 통해 전체 파일에 적용하는 것입니다. 모든 파일의 확장자를 일일이 바꾸지 않고, 프로젝트 전체에 ES 모듈을 적용하고 싶을 때 적합한 방법입니다.
 
 먼저 프로젝트의 package.json 파일을 열고, 최상위에 type 항목을 module로 설정합니다.
 
@@ -1187,6 +1880,28 @@ package.json 생성
   "author": "",
   "license": "ISC"
 }
+```
+
+```
+// 모듈 내보내기 (export)
+// Named Export : 정해진 이름으로 내보내기
+export 변수/함수/클래스 선언문;
+export { 변수명/함수명/클래스명 };
+export { 변수명/함수명/클래스명 as 다른 이름 };
+
+// Default Export : 기본 내보내기 (이름을 정하지 않음. 최대 하나만 가능.)
+export default 선언문 또는 값;
+export { 변수명/함수명/클래스명 as default };
+
+// 모듈 불러오기 (import)
+
+import A, { B, C } from 경로; // A는 Default Export, B와 C는 Named Export
+
+import { B as b, C as c } from 경로; // 원하는 이름으로 로드
+
+import \* as obj from 경로; // Export 된 모든 것들을 하나의 객체 형태로 로드 (불필요한 것도 가져오면 번들링 시 비효율을 야기)
+
+import { default as A } from 경로; // "import A from 경로"와 동일 (default)
 ```
 
 2. 파일 단위로 ES 모듈 적용:
@@ -1213,12 +1928,14 @@ console.log("Now:", now());
 
 time.test.mjs 파일을 실행을 해보면 Node.js가 time 모듈을 찾지 못하는 현상을 보게 되실 겁니다.
 
+```
 $ node src/time.test.mjs
 internal/modules/run_main.js:54
 internalBinding('errors').triggerUncaughtException(
 ^
 
-Error [ERR_MODULE_NOT_FOUND]: Cannot find module 
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module
+```
 
 이 부분이 Node.js에서 ES 모듈울 처음 사용할 때 가장 많이 실수를 하게되는 부분인데요. Node.js에서 import 키워드로 프로젝트 내부 모듈을 불러올 때는 반드시 **확장자까지 포함**해서 경로를 명시를 해줘야 합니다. 이는 브라우저에서 import가 작동하는 방식과 맞추기 위해서 의도적으로 설계된 부분이라고 합니다.
 
@@ -1233,32 +1950,74 @@ $ node src/time.test.mjs
 Now: 2020-05-23T18:10:20-04:00
 ```
 
-이상으로 Node.js에서 ES 모듈의 import와 export 키워드를 사용하는 2가지 방법에 대해서 알아보았습니다. 참고로 Node.js 버전 13.2 미만에서도 버전 12 이상에서는 Node.js를 실행할 때 --experimental-module 옵션을 넘기면 동일한 방법으로 ES 모듈을 사용할 수 있으니 참고바라겠습니다.
+ES6 기반의 모듈 시스템은 CommonJS 방식에 비해 코드의 직관성이 좋고, 비동기 방식으로 작동하면서 불러오는 모듈의 실제로 사용되는 부분들만 로드하기 때문에 성능적으로도 효율적이라고 할 수 있다. 그러나 이는 아래와 같은 단점들을 가지고 있어서 아직까지는 Webpack 등의 모듈 번들러를 이용하여 미리 의존성이 해결된 형태의 번들 JavaScript 파일을 제공하는 방식이 더 선호되는 경향이 있다.
+
+- IE(인터넷 익스플로러)를 포함한 몇몇 구형 브라우저는 ES6 모듈 시스템을 지원하지 않는다.
+- 브라우저의 ES6 모듈 시스템을 사용하더라도 어차피 트랜스파일링이나 번들링은 필요하다.
+  = 아직 지원하지 않는 기능(Bare import 등)들이 꽤 있다. (ECMAScript modules in browsers 참고)
+- 점차 해결되고는 있지만 아직 몇 가지 이슈가 있다. (ECMAScript modules in browsers 참고)
+
+참고로 Node.js 버전 13.2 미만에서도 버전 12 이상에서는 Node.js를 실행할 때 `--experimental-module` 옵션을 넘기면 동일한 방법으로 ES 모듈을 사용할 수 있으니 참고바라겠습니다.
 
 ## % 부록1: git으로 다른 programmer와 collaboration 하기 %
 
-Git의 `master` branch는 항상 완전환 코드이어야 한다.
+### 1. Git이 무엇이고, 왜 사용하는지
 
-다른 사람이랑 협업을 할 경우에 issues, pull request를 잘 활용하여, 프로젝트를 성공적으로 완성해 보자.
+깃(Git)은 software의 변경사항을 추적하고 여러 명의 사용자들 간에 해당 파일들의 작업을 조율하기 위한 분산 버전 관리 시스템이다.
 
-- issues: 코드에서 고쳐야 할 부분
+1. 프로젝트의 버젼들을 쉽게 관리하려고
+2. source code를 저장하고, 다른 programmer와 공유하고, 협업하기 위해서
+
+### 2. Git 환경설정: Git를 사용하기 위해서는 Git을 local computer에 다운받아야 한다.
+
+Git을 다운받은후 Terminal에 `git config --global user.name "my_name"`, `git config --global user.email "myEmail@example.com"`을 입력해 설정한다.
+
+### 3. Git 시작하기: git을 사용할 project folder에서 terminal에 `git init`을 입력
+
+### 4. Git의 `master` branch는 항상 완전환 코드이어야 한다.
+
+다른 사람이랑 협업을 할 경우에 git의 `issues`, `pull request` 탭을 잘 활용하여, 프로젝트를 성공적으로 완성해 보자.
+
+- issues: 코드에서 고쳐야 할 부분들을 우리팀 전체가 볼 수 있게 만들어, 추후에 고칠 수 있게 하는 것. 이 프로젝트가 public이라면, 아무나 issues에 코드의 문제점을 제시할 수 있다.
 - pull request: master branch에 merge하기 전에 내가 고친 코드를 다른 협업자가 관찰하고 이상이 없는 지 확인하는 단계
 
-Git 사용법:
+### 4. Git Command:
+
+Initialize repository
+
+> $ `git init`
+
+모든 branch를 출력
+
+> $ `git branch`
+
+Create branch called v1
+
+> $ `git branch v1`
+
+기존의 branchName brannch로 이동
+
+> $ `git checkout branchName`
+
+새로운 branchName brannch를 생성 후, 바로 그 branch로 이동
+
+> $ `git checkout -b branchName`
+
+Create branch called fix-19 based on the code in the fix-18 branch
+
+> $ `git checkout -b fix-18 fix-19`
+
+### 5. Git 사용법
 
 1. 소스 코드를 다운 받기
 
    > $ `git clone https:...` or `Download zip file`
 
-2. Always start your branch with what is in the remote/main, so after you have cloned the repository locally 
- 
-모든 branch를 출력
-   
-  > $ `git branch`
+2. Always start your branch with what is in the remote/main, so after you have cloned the repository locally
 
-branchName brannch로 이동
+branchName brannch를 생성 후 바로 이동
 
-> $ `git checkout -b branchName`
+> $ `git checkout branchName`
 
 > Your branch is up to date with 'origin/main'.
 
@@ -1268,7 +2027,7 @@ branchName brannch로 이동
 > $ `git switch -c branchName`
 
 4. 소스 코드에 변화를 만든 후, pull request하여 다른 협업자가 볼 수 있게 하기
-   
+
 Do your thing, then when your ready to push, open terminal back up and make sure your in the base directory for the project:
 
 Stage all your changes for commit
@@ -1283,7 +2042,11 @@ Push your commit to a remote branch (probably want to use your same local branch
 
 > $ `git push --set-upstream origin branchName`
 
- `git push -u origin master` command는 main branch에 code를 push 하는 것입니다.
+또는
+
+> $ `git push -u orgin branchName`
+
+`git push -u origin master` command는 main branch에 code를 push 하는 것입니다.
 
 main은 항상 완벽한 완결된 코드이어야 함으로 main에 직접적으로 push하는 것은 지양해야 합니다.
 
@@ -1292,6 +2055,7 @@ main은 항상 완벽한 완결된 코드이어야 함으로 main에 직접적�
 > $ `git push -u origin master`
 
 요약:
+
 ```
 1. In terminal type: `git clone https:...`
 2. Make changes to the code
@@ -1306,12 +2070,25 @@ main은 항상 완벽한 완결된 코드이어야 함으로 main에 직접적�
 ## 3. Typescript
 
 ### 1. What is Typescript
+
 TypeScript is a programming language developed and maintained by Microsoft. It is a strict syntactical superset of JavaScript and adds optional static typing to the language.
 
-Javascript의 superset으로 Java와 같이 변수를 선언할 때, 그 변수의 type을 지정해 주어야만 한다.
+여기서 알 수 있듯이, Typescript는 Javascript의 superset으로 Java와 같이 변수를 선언할 때, 그 변수의 type을 지정해 주어야만 한다. 그럼 그냥 Javascript를 쓰면 되는 데, 왜 browser가 인식도 못하는 Typescript를 사용하는 가?에 대한 의문이 든다.
+
+여기서 우리는 Javascript에 대한 이해가 필요하다.
+
+- JavaScript is a `dynamically typed language`이다. JavaScript에서는 변수의 타입을 직접 지정해주지 않아도, JavaScript가 알아서 변수의 타입을 정해준다. 그럼으로 한 variable의 type이 여러 코드가 실행됨에 따라 계속 변화하는 것이 가능하다.
+
+- 작은 project를 만들 때에는 편리하지만, 큰 project를 만들고, team 단위로 만들게 되면 이런 높은 자유도는 오히려 독이 되어 어디서 어떻게 잘 못 되었는 지 알기 어렵게 만든다.
+
+이때, Typescript를 이용하면, 변수의 type을 지정해 주어야만 하기 떄문에, 어디선가 error가 발생하면 꽤 자세하게 무엇이 잘 못 되었는 지를 알려준다.
+
+```
+let decimal: number = 6; // decimal에는 정수 타입만 오는 것이 가능하고, 6이란 정수를 assign한다.
+decimal = "Hello"; // error. decimal은 정수라니까...
+```
 
 ### 2. Basic Typescript syntax
-
 
 ## % 부록2: Amazon사의 cloud service인 AWS (Amazon Web Service) 사용하기 %
 
@@ -1326,7 +2103,6 @@ Javascript의 superset으로 Java와 같이 변수를 선언할 때, 그 변수�
 5. AWS Lambda - 함수
 
 6. AWS Elastic Beanstalk - 간단히 코드를 배포할 때 사용
-
 
 ## 4. Web Application Development의 이해
 
@@ -1344,13 +2120,14 @@ framework는 집의 기본 구조를 제공하여, 우리는 그 구조에 더�
 library는 침대, 소파와 같은 가구로, 우리는 이 가구들로 집을 만들어야 한다.
 
 ### 2. ⭐ Frontend framework vs Server-Side Web Framework
+
 Web App dev는 크게 Frontend, Backend, Database로 나눌 수 있고, 이 세가지를 합쳐 Fullstack dev라고 한다.
-이는 MVC (Model / View / Controll) software design pattern 라고도 불린다. 
+이는 MVC (Model / View / Controll) software design pattern 라고도 불린다.
 Model–view–controller is a software design pattern commonly used for developing user interfaces that divide the related program logic into three interconnected elements.
 
 - Model은 View와 Controll을 연결하는 연결고리 역할을 한다.
 - View은 client가 웹사이트에 방문하여 실제로 보게되는 회면을 의미한다. HTML (HyperText Markup Language), CSS (Cascading Style Sheets), Javascript를 이용하여 View를 작성할 수 있다. 여기서 programming language는 오직 Javascript이다.
-- Controll은 app의 functionalities를 의미한다.  
+- Controll은 app의 functionalities를 의미한다.
 
 각각의 programming language마다 Web Application Server를 만드는 web app framework를 제공한다.
 
@@ -1376,7 +2153,7 @@ SEO (Search Engine Optimization)에 약점을 가진다.
 `Vue JS`등 다양한 Web Application Frontend framework이 존재한다.
 이 Web application framework은 사용방법이 거의 비슷하기 때문에 하나만 잘 이해하면, 나머지는 쉽게 사용할 수 있다.
 
-`Figma`, `Adobe photoshop` 등 다양한 Moderm UI/UX (web view)를 실질적으로 코드를 작성하기 전에 디자인할 수 있는 program들이 많이 존재하므로, 이를 이용하여 웹사이트를 미리 디자인 해 볼 수도 있다. 
+`Figma`, `Adobe photoshop` 등 다양한 Moderm UI/UX (web view)를 실질적으로 코드를 작성하기 전에 디자인할 수 있는 program들이 많이 존재하므로, 이를 이용하여 웹사이트를 미리 디자인 해 볼 수도 있다.
 
 ### 3. Server-Side Rendering (SSD)
 
@@ -1448,46 +2225,7 @@ material-ui가 2022년 기준 react js에서 가장 많이 쓰이는 framework�
 
 material-ui: https://mui.com/
 
-## Curly brackets  {} vs Parentheses () in Javascript Arrow Function
-
-### In Javascript:
-
-- Curly brackets: after an arrow function they represent a code block, which consists of zero or more grouped statements within the curly brackets.
-
-arrow function에서 body부분에 Curly brackets가 쓰이면 이는 code block, 즉 여러개의 code를 묶어 놓은 것으로 인식하기 떄문에 `return` keyword가 다른 function들 처럼
-반드시 필요하다.
-
-`return`이 없으면, 이 함수는 local variable만 생성할 뿐 값을 만들어 내지 않기 떄문에, 값이 `undefined`가 된다.
-
-```
-const jsBrackets = x => {
-return x > 3 ? true : false
-}
-```
-
-If the function can be written on one line (as the example above can, it can be shortened to exclude both the curly brackets and the return word, as below.
-
-`const jsBrackets = x => x > 3 ? true : false`
-
-- Parentheses: are used instead of curly brackets after an arrow function to return an object. 
-
-For example, they are used in map, filter, and reduce functions.
-
-```
-const numbers = [1,2,3,4]
-// OKAY
-numbers.map(number => number \* 2)
-numbers.map(number => (number \* 2))
-numbers.map(number => {return number \* 2})
-
-// 위의 세 경우와 다르게 return keyword가 없는 code block은 반환값이 없어 undefined값이 된다.
-const newnumbers = numbers.map(number => {number \* 2});
-console.log("newnumbers");
-```
-
-이를 확인하려면, browser에서 F12를 열거나, 마우스 오른쪽 클릭 후 inspect를 클릭해 개발자 모드로 들어간다.
-
-Source tab에서 js파일에 breakpoint를 걸고 실행시켜보면, scope/global scope을 통해 값을 볼 수 있다.
+## Curly brackets {} vs Parentheses () in Javascript Arrow Function
 
 ### Using JSX in React:
 
@@ -1532,9 +2270,84 @@ react js는 jsx이기 때문에 `array.map((param) => {body})`가 아니라 `arr
 `map()`은 javascript code이기 때문에 `{ array.map((param) => (body))}`과 같이 curly brackets {} 안에서 정의하면 된다.
 
 ## 5. ReactJs
+
 ### 1. What is ReactJs
 
-### 2. JSX에 대해 
+#### Q1. React Js가 무엇이고, 왜 사용하는가
+
+React Js는 Web app을 만들 수 있는 Javascript Front-end Framework이다.
+
+#### Q2. Web app은 무엇이고, 왜 사용하는가
+
+A. **page간 이동에 새로고침이 필요없이 부드럽게 넘어가기 때문에**
+
+Web-app은 Single Page Application (SPA)이라고 불리는 웹페이지로, 하나의 html을 가지고, 그 안에 내용물만을 변경하여 사용자에게 보여준다. 웹사이트 내에서 page loading이 덜 걸리고, page간 이동에 새로고침이 필요없이 부드럽게 넘어가기 때문에 사용한다.
+
+Web app를 만들 수 있는 frontend framework에는 React 말고도 Vue/Angular등 다른 tools도 많이 있다.
+
+#### Q3. Web app을 만드는데 굳이 React를 사용하는 이유는 무엇인가
+
+- A1. **React는 사용자가 가장 많은 framework이기 때문에 교육자료도 많고, 참고할 자료도 매우 많다.**
+- A2. **다른 framework와 마찬가지로, React는 component단위로 Element를 관리하기 때문에, 이를 함수처럼 사용할 수 있고 재사용(reusable)이 쉽다.**
+
+1. React가 사용자가 가장 많아, react를 배운다면 취업시장에서 유리하고 교육용 자료들을 쉽게 찾을 수 있다.
+
+2. 자유도가 높은 코드는 특정 행동을 수행하는 코드를 여러 방법으로 작성할 수 있기 때문에,
+
+```
+// Q. <HTML>을 여러개 만들고 싶다.
+// React
+1. { map }
+2. forEach
+3. for | for in | for of
+
+// Vue
+1. v-for
+```
+
+```
+// Q. <HTML>을 조건부로 보여주고 싶다.
+// React
+1. if | else
+2. tenary operator
+3. && ||
+4. enum
+
+// Vue
+1. v-if | v-else
+```
+
+### 2. React 개발환경
+
+- React의 If문: If문은 condition이 true면 truebranch, false면 falsebranch를 실행한다.
+
+```
+// React if (1)
+const condition = () => {
+  if (true) {
+    return <p>truebranch</p>
+  } else {
+    return <p>falsebrance</p>
+  }
+}
+
+// React if (2)
+{ condition ? <p>truebranch</p> : <p>falsebrance</p> }
+```
+
+- React의 for문: `<ul>{ todos.map(todo => <li key={todo}>{todo}</li>) }</ul>`
+
+- React의 state 변경
+
+```
+const [human, setHuman] = useState(['Park', 18, 'male'])
+
+let humanCopy = [...human];
+humanCopy[0] = 'Kim';
+setHuman(humanCopy);
+```
+
+### 2. JSX에 대해
 
 React js는 js 대신 jsx 라는 특수한 extension을 사용한다. 하지만 js를 사용해도 react가 알아서 jsx로 인식하기 때문에 아무런 문제는 없다. (Button.js === Button.jsx)
 보통은 component를 만들때, jsx 확장자를 이용하여 다른 js files과 차별점을 둘 때 사용하면 좋다.
@@ -1571,14 +2384,682 @@ JSX의 중괄호 안에는 유효한 모든 JavaScript 표현식을 넣을 수 �
 
 즉, JSX를 if 구문 및 for loop 안에 사용하고, 변수에 할당하고, 인자로서 받아들이고, 함수로부터 반환할 수 있습니다.
 
+### 3. ReactJS에서 NPM 패키지 모듈 불러오기
 
+NPM 패키지 모듈들은 **CommonJS**를 기본 모듈 시스템으로 채택한다.
+
+즉, 모듈을 내보내고 불러오는 것에 있어 require, module.exports 등을 사용한다는 의미이다.
+
+그러나 실제로 ReactJS 등의 라이브러리를 활용하여 Frontend 개발을 할 때는 NPM 패키지 모듈을 불러오기 위해 ES6 문법의 코드를 작성하는 경우가 많다(import/export).
+
+그런데 왜 문제가 발생하지 않을까? 이는 Babel 등의 컴파일러가 import, export 등의 코드를 CommonJS 기반의 코드로 변환해주기 때문이다.
+그러고 나면 Webpack에 의해 JavaScript 모듈들의 번들링이 가능해진다.
+
+### 4. Basic ReactJs Syntax
+
+#### List와 Key
+
+먼저 JavaScript에서 리스트를 어떻게 변환하는지 살펴봅시다.
+
+아래는 map()함수를 이용하여 numbers 배열의 값을 두배로 만든 후 map()에서 반환하는 새 배열을 doubled 변수에 할당하고 로그를 확인하는 코드입니다.
+
+```
+const numbers = [1, 2, 3, 4, 5];
+const doubled = numbers.map((number) => number \* 2);
+console.log(doubled); // [2, 4, 6, 8, 10]
+```
+
+React에서 배열을 Element List로 만드는 방식은 이와 거의 동일 합니다.
+
+- 여러개의 컴포넌트 렌더링 하기
+
+엘리먼트 모음을 만들고 중괄호 {}를 이용하여 JSX에 포함 시킬 수 있습니다.
+
+아래의 JavaScript map() 함수를 사용하여 numbers 배열을 반복 실행합니다. 각 항목에 대해 `<li>` Element를 반환하고 엘리먼트 배열의 결과를 listItems에 저장합니다.
+
+```
+const numbers = [1, 2, 3, 4, 5];
+const listItems = numbers.map((number) =>
+  <li>{number}</li>
+);
+
+// listItems 배열을 <ul>엘리먼트 안에 포함하고 DOM에 렌더링합니다.
+ReactDOM.render(
+
+  <ul>{listItems}</ul>,
+  document.getElementById('root')
+);
+
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+```
+
+- 기본 리스트 컴포넌트
+
+일반적으로 컴포넌트 안에서 리스트를 렌더링합니다.
+
+이전 예시를 numbers 배열을 받아서 순서 없는 엘리먼트 리스트를 출력하는 컴포넌트로 리팩토링할 수 있습니다.
+
+```
+function NumberList(props) {
+    const numbers = props.numbers;
+    const listItems = numbers.map((number) =>
+        <li>{number}</li>
+    );
+
+    return (
+        <ul>{listItems}</ul>
+    );
+}
+
+const numbers = [1, 2, 3, 4, 5];
+ReactDOM.render(
+    <NumberList numbers={numbers} />,
+    document.getElementById('root')
+);
+```
+
+이 코드를 실행하면 리스트의 각 항목에 `key`를 넣어야 한다는 경고가 표시됩니다. `key`는 엘리먼트 리스트를 만들 때 포함해야 하는 특수한 문자열 attribute입니다. 다음 섹션에서 key의 중요성에 대해서 더 설명하겠습니다. 이제 `numbers.map()` 안에서 리스트의 각 항목에 key를 할당하여 키 누락 문제를 해결하겠습니다.
+
+```
+function NumberList(props) {
+    const numbers = props.numbers;
+    const listItems = numbers.map((number) =>
+          <li key={number.toString()}>
+               {number}
+          </li>
+    );
+
+    return (
+       <ul>{listItems}</ul>
+);
+}
+
+const numbers = [1, 2, 3, 4, 5];
+ReactDOM.render(
+     <NumberList numbers={numbers} />,
+     document.getElementById('root')
+);
+```
+
+- Key
+
+Key는 React가 어떤 항목을 변경, 추가 또는 삭제할지 식별하는 것을 돕습니다. key는 엘리먼트에 안정적인 고유성을 부여하기 위해 배열 내부의 엘리먼트에 지정해야 합니다.
+
+```
+const numbers = [1, 2, 3, 4, 5];
+const listItems = numbers.map((number) =>
+
+  <li key={number.toString()}>
+    {number}
+  </li>
+);
+```
+
+Key를 선택하는 가장 좋은 방법은 리스트의 다른 항목들 사이에서 해당 항목을 고유하게 식별할 수 있는 문자열을 사용하는 것입니다. 대부분의 경우 데이터의 ID를 key로 사용합니다.
+
+```
+const todoItems = todos.map((todo) =>
+
+  <li key={todo.id}>
+    {todo.text}
+  </li>
+);
+```
+
+렌더링 한 항목에 대한 안정적인 ID가 없다면 최후의 수단으로 항목의 인덱스를 key로 사용할 수 있습니다.
+
+```
+const todoItems = todos.map((todo, index) =>
+// Only do this if items have no stable IDs
+
+  <li key={index}>
+    {todo.text}
+  </li>
+);
+```
+
+항목의 순서가 바뀔 수 있는 경우 key에 인덱스를 사용하는 것은 권장하지 않습니다. 이로 인해 성능이 저하되거나 컴포넌트의 state와 관련된 문제가 발생할 수 있습니다. Robin Pokorny’s가 작성한 글인 인덱스를 key로 사용할 경우 부정적인 영향에 대한 상세 설명을 참고하시길 바랍니다. 리스트 항목에 명시적으로 key를 지정하지 않으면 React는 기본적으로 인덱스를 key로 사용합니다.
+
+Key로 컴포넌트 추출하기
+키는 주변 배열의 context에서만 의미가 있습니다.
+
+예를 들어 ListItem 컴포넌트를 추출 한 경우 ListItem 안에 있는 `<li>` 엘리먼트가 아니라 배열의 `<ListItem />` 엘리먼트가 key를 가져야 합니다.
+
+예시: 잘못된 Key 사용법
+
+```
+function ListItem(props) {
+const value = props.value;
+return (
+// 틀렸습니다! 여기에는 key를 지정할 필요가 없습니다.
+
+<li key={value.toString()}>
+{value}
+</li>
+);
+}
+
+function NumberList(props) {
+const numbers = props.numbers;
+const listItems = numbers.map((number) =>
+// 틀렸습니다! 여기에 key를 지정해야 합니다.
+<ListItem value={number} />
+);
+return (
+
+<ul>
+{listItems}
+</ul>
+);
+}
+
+const numbers = [1, 2, 3, 4, 5];
+ReactDOM.render(
+<NumberList numbers={numbers} />,
+document.getElementById('root')
+);
+예시: 올바른 Key 사용법
+
+function ListItem(props) {
+// 맞습니다! 여기에는 key를 지정할 필요가 없습니다.
+return <li>{props.value}</li>;
+}
+
+function NumberList(props) {
+const numbers = props.numbers;
+const listItems = numbers.map((number) =>
+// 맞습니다! 배열 안에 key를 지정해야 합니다.
+<ListItem key={number.toString()} value={number} />
+);
+return (
+
+<ul>
+{listItems}
+</ul>
+);
+}
+
+const numbers = [1, 2, 3, 4, 5];
+ReactDOM.render(
+<NumberList numbers={numbers} />,
+document.getElementById('root')
+);
+```
+
+경험상 map() 함수 내부에 있는 엘리먼트에 key를 넣어 주는 게 좋습니다.
+
+Key는 형제 사이에서만 고유한 값이어야 한다.
+Key는 배열 안에서 형제 사이에서 고유해야 하고 전체 범위에서 고유할 필요는 없습니다. 두 개의 다른 배열을 만들 때 동일한 key를 사용할 수 있습니다.
+
+```
+function Blog(props) {
+const sidebar = (
+
+<ul>
+{props.posts.map((post) =>
+<li key={post.id}>
+{post.title}
+</li>
+)}
+</ul>
+);
+const content = props.posts.map((post) =>
+<div key={post.id}>
+<h3>{post.title}</h3>
+<p>{post.content}</p>
+</div>
+);
+return (
+<div>
+{sidebar}
+<hr />
+{content}
+</div>
+);
+}
+
+const posts = [
+{id: 1, title: 'Hello World', content: 'Welcome to learning React!'},
+{id: 2, title: 'Installation', content: 'You can install React from npm.'}
+];
+ReactDOM.render(
+<Blog posts={posts} />,
+document.getElementById('root')
+);
+```
+
+React에서 key는 힌트를 제공하지만 컴포넌트로 전달하지는 않습니다. 컴포넌트에서 key와 동일한 값이 필요하면 다른 이름의 prop으로 명시적으로 전달합니다.
+
+```
+const content = posts.map((post) =>
+<Post
+    key={post.id}
+    id={post.id}
+    title={post.title} />
+);
+```
+
+위 예시에서 Post 컴포넌트는 props.id를 읽을 수 있지만 props.key는 읽을 수 없습니다.
+
+JSX에 map() 포함시키기
+위 예시에서 별도의 listItems 변수를 선언하고 이를 JSX에 포함했습니다.
+
+```
+function NumberList(props) {
+const numbers = props.numbers;
+const listItems = numbers.map((number) =>
+<ListItem key={number.toString()}
+              value={number} />
+);
+return (
+
+<ul>
+{listItems}
+</ul>
+);
+}
+```
+
+JSX를 사용하면 중괄호 안에 모든 표현식을 포함 시킬 수 있으므로 map() 함수의 결과를 인라인으로 처리할 수 있습니다.
+
+```
+function NumberList(props) {
+const numbers = props.numbers;
+return (
+
+<ul>
+{numbers.map((number) =>
+<ListItem key={number.toString()}
+                  value={number} />
+)}
+</ul>
+);
+}
+```
+
+이 방식을 사용하면 코드가 더 깔끔해 지지만, 이 방식을 남발하는 것은 좋지 않습니다. JavaScript와 마찬가지로 가독성을 위해 변수로 추출해야 할지 아니면 인라인으로 넣을지는 개발자가 직접 판단해야 합니다. map() 함수가 너무 중첩된다면 컴포넌트로 추출 하는 것이 좋습니다.
 
 ## 6. VueJs
+
 ### 1. What is VueJs
+
+#### Q1. Vue Js가 무엇이고, 왜 사용하는가
+
+Vue Js는 Web app을 만들 수 있는 Javascript Front-end Framework이다.
+
+#### Q2. Web app은 무엇이고, 왜 사용하는가
+
+A. **page간 이동에 새로고침이 필요없이 부드럽게 넘어가기 때문에**
+
+Web-app은 Single Page Application (SPA)이라고 불리는 웹페이지로, 하나의 html을 가지고, 그 안에 내용물만을 변경하여 사용자에게 보여준다. 웹사이트 내에서 page loading이 덜 걸리고, page간 이동에 새로고침이 필요없이 부드럽게 넘어가기 때문에 사용한다.
+
+Web app를 만들 수 있는 frontend framework에는 Vue 말고도 React/Angular등 다른 tools도 많이 있다.
+
+#### Q3. Web app을 만드는데 굳이 Vue를 사용하는 이유는 무엇인가
+
+A. **Vue는 문법이 쉽고 하나로 정해져 있기 떄문에, 문법 몇개만 외워주면 초보도 쉽게 output를 낼 수 있다.**
+
+- A1. Vue가 더 쉽기 때문이다. React나 Vue 중 본인에게 맞는 거 사용하면 되는데, Javascript를 잘 하지 못한다면 Vue를 먼저 사용해본다.
+- A2. Vue는 문법이 하나로 정해져 있기 때문에 여러 개발자사이의 코딩 스타일을 통일시킨다. 다른 개발자가 나와 같은 방법만을 사용해야 함으로 한 눈에 이해하기 쉽다.
+
+1. React가 사용자가 Vue보다 더 많음에도, 굳이 Vue를 배우는 이유는 Vue의 문법이 더 쉽기 때문이다. Vue는 사용법이 쉬운데 다른 어려운 frameworks와 동일하게 좋은 웹앱을 만들 수 있기 때문에, 웹앱 입문자라면 React보다는 Vue를 추천한다.
+
+```
+// if문은 condition이 true면 truebranch, false면 falsebranch를 실행한다.
+// React if (1)
+const condition = () => {
+  if (true) {
+    return <p>truebranch</p>
+  } else {
+    return <p>falsebrance</p>
+  }
+}
+
+// React if (2)
+{ condition ? <p>truebranch</p> : <p>falsebrance</p> }
+
+// Vue if
+<template>
+  <div>
+    <p v-if="condition">truebranch</p>
+    <p v-else>falsebranch</p>
+  </div>
+</template>
+```
+
+```
+// React for
+<ul>{ todos.map(todo => <li key={todo}>{todo}</li>) }</ul>
+
+// Vue for
+<template>
+  <ul>
+    <li v-for="todo in todos" :key="todo">{{ todo }}}/li>
+  </ul>
+</template>
+```
+
+```
+// React의 state 변경
+const [human, setHuman] = useState(['Park', 18, 'male'])
+
+let humanCopy = [...human];
+humanCopy[0] = 'Kim';
+setHuman(humanCopy);
+
+// Vue의 state 변경
+return {
+  human: ['Park', 18, 'Male'],
+}
+
+this.human[0] = 'Kim'
+```
+
+2. 자유도가 높은 코드는 특정 행동을 수행하는 코드를 여러 방법으로 작성할 수 있기 때문에, 다른 개발자가 나와 다른 방법을 사용하면 한 눈에 이해하기 어렵다. 그럼으로, 여러 개발자와 협업할 때, error를 만들어 내기 쉽다. Vue는 자유도가 낮기 때문에 다른 개발자의 코드라도 이해하기가 쉽다. Vue는 코드를 짤때 맞는 방법이 정해져 있어, 여러 개발자사이의 코딩 스타일을 통일시킨다.
+
+Vue를 사용하면, 특정 행동을 수행하는 코드를 다른 개발자가 나와 같은 방법만을 사용해야 함으로 한 눈에 이해하기 쉽다.
+
+Vue는 문법이 쉽고 하나로 정해져 있기 떄문에, 문법 몇개만 외워주면 초보도 쉽게 output를 낼 수 있다.
+
+```
+// Q. <HTML>을 여러개 만들고 싶다.
+// React
+1. { map }
+2. forEach
+3. for | for in | for of
+
+// Vue
+1. v-for
+```
+
+```
+// Q. <HTML>을 조건부로 보여주고 싶다.
+// React
+1. if | else
+2. tenary operator
+3. && ||
+4. enum
+
+// Vue
+1. v-if | v-else
+```
+
+### 2. Vue 개발환경
+
+Vue로 Project를 만들면서, Vue의 문법들을 공부해보자.
+
+1. 최신 버젼의 Node js 설치 (`npm`을 사용하기 위해)
+2. VScode code editor와 VScode extension 설치 (`Vue` code를 쉽게 입력하기 위해)
+
+- `Vue Language Features (Volar)`
+- `html css support`
+  (`ctrl + space`: view a list of id and class attribute suggestions )
+- `TypeScript Vue Plugin (Volar)`
+
+3. 기본적인 HTML, CSS and JavaScript 개념
+4. [Vue 문법 몇가지](https://vuejs.org/guide/introduction.html)
+
+#### Q1. Vue로 project 만드는 방법은
+
+A. **project 1. 생성 => 2. 개발 => 3. 배포**
+
+1. Vue의 최신버전으로 프로젝트 생성
+
+Terminal에 다음의 코드를 입력
+
+This command will install and execute `create-vue`, the official Vue project scaffolding tool.
+
+> $ `npm init vue@latest`
+
+```
+✔ Project name: … <your-project-name>
+✔ Add TypeScript? … No / Yes
+✔ Add JSX Support? … No / Yes
+✔ Add Vue Router for Single Page Application development? … No / Yes
+✔ Add Pinia for state management? … No / Yes
+✔ Add Cypress for testing? … No / Yes
+
+Scaffolding project in ./<your-project-name>...
+Done.
+```
+
+아직 익숙하지 않으면 전부 `No`을 선택
+
+2. 개발
+
+Install dependencies and start the dev server
+
+your-project-name로 이동
+
+> $ `cd <your-project-name>`
+
+dependencies 설치
+
+> $ `npm install` 또는 `npm i`
+
+> $ `npm run dev` 또는 VSCode에서 Open Editor 및에 `NPM SCRIPTS`에서 `dev` 실행 버튼 클릭
+
+- web browser에 `localhost:{{port}}` 입력
+- dev server를 종료하려면 terminal에서 `Ctrl + C` 입력
+- `src/App.vue` 가 우리의 메인 웹페이지이다.
+- 현재 project에 맞게, src directory의 files 수정 & 추가하면 된다.
+
+```
+// App.vue
+<template></tempalte> // HTML Code
+<script></script> // Javascript Code
+<style></style> // CSS Code
+```
+
+- `src` directory: source code 저장
+- `public` directory: HTML file 및 기타 파일 저장
+- `package.json`: 이 project에 사용되는 dependencies의 이름 저장
+- `node_modules` directory: 실제 설치된 dependencies 저장
+
+3. 배포
+
+When you are ready to ship your app to production, run the following:
+
+> `npm run build`
+
+This will create a production-ready build of your app in the project's `./dist` directory.
+Vue files을 웹 broswer가 이해할 수 있는 HTML, CSS, Javascript로 변환 후 `./dist` 폴더에 생성
+
+`./dist` 폴더의 files만 있으면 웹사이트 생성가능.
+
+### 3. Databinding in Vue js
+
+#### Q1. Databinding이 무엇이고, 왜 사용하는가
+
+- A1. **Databinding은 Javascript data를 HTML에 꽃아 넣는 문법이다.**
+- A2. **Databinding은 Javascript로 HTML을 조작하고, 변경하기 위해 사용한다.**
+- A3. **Vue의 실시간 자동 rendering을 쓰기 위해서 사용한다.**
+- A4. **안바뀔꺼 같은 data는 databinding할 필요없이 HTML에 hardcoding하고, 자주 변하는 데이터들은 script tag에 저장한 후 HTML에 꽂아 넣는다.**
+
+계속 변하는 data를 hardcoding해놓으면, 그 값을 변경하기 어렵다. 하지만 Databinding을 이용하면, 계속 변하는 데이터에 대해 값을 쉽게 변경할 수 있다.
+
+실시간 자동 rendering: script tag에 정의된 data를 변경하면, 그 data와 연결된 HTML에도 실시간으로 변경된다.
+
+#### Q2. Vue에서 Databinding 사용하는 방법은
+
+A. Element의 text content을 Databinding할 경우 `{{데이터이름}}`, HTML Attribute를 Databinding할 경우 `:속성="데이터이름"`
+
+- script tag에 Javascript형식으로 변수에 data를 assign한 후, template tag에 `{{}}` double curly braces을 사용하여 그 변수의 값을 사용할 수 있다.
+
+`{{데이터이름}}`
+
+```
+<script>
+const name = "Shin";
+</script>
+
+<template>
+<p>Hello My name is {{name}}<p>
+</template>
+
+// Hello My name is Shin
+```
+
+- HTML Attribute 역시 binding이 가능하다. `:` colon을 HTML Attribute 앞에 붙인 후, 변수명을 `""`을 사용하면 된다.
+
+`:속성="데이터이름"`
+
+```
+<script>
+const blueColor = 'color : blue';
+</script>
+
+<template>
+<p :style="blueColor">This is blue color<p>
+</template>
+```
+
+기존 Javascript에서 databinding을 사용할려면 `document.getElementById("name").innerHTML = "이름"`과 같은 긴 문법을 사용해야 했지만, Vue에서는 databinding을 아주 쉽게 할 수 있다. `{{}}` 안에 변수명을 집어넣으면 끝이다.
+
+안바뀔꺼 같은 data는 databinding할 필요없이 HTML에 hardcoding하고, 자주 변하는 데이터들은 script tag에 저장한 후 HTML에 꽂아 넣는다.
+
+⭐ 기타 다른 Vue 문법은 vuejs.org 공식 문서를 참고하자!
+
+### Vuetify
+
+#### Q1. What is Vuetify?
+
+A. **Vuetify is a complete UI framework built on top of Vue.js.**
+
+Vuetify는 React의 Material-UI/React-bootstrap과 같은 UI framework로, 미리 만들어진 component를 가져다가 웹페이지를 꾸밀 수 있다. 그냥 원하는 component를 복사, 붙여넣기해서 쓰면 되기 때문에 아주 쉽고 간편하다.
+
 ## 7. ExpressJs
-## 8. Flask
+
+### Q1. What is Express js?
+
+Express Js는 Javascript Back-end Framework로, Web Server을 만들 때 사용한다.
+
+## 8. Flask (Python)
+
+### Q1. What is Flask?
+
+Flask is a micro web framework written in Python. Flask는 Python으로 구동되는 Web Framework로, 간단하게 기능을 설명하면 내가 만든 program에 web server를 구동시켜주는 편한 코드 모음이라고 할 수 있다. 다른 python Web Framework인 Django 보다 라이트한 특성때문에 간단한 API서버 구축에 적합하다. By default, Flask runs on port 5000 in development mode.
+
+### Q2. Setup flask Project
+
+Install Flask module
+
+> $ pip install Flask
+
+> $ mkdir flaskapp
+
+```
+flaskWeb/
+├─ newFlaskApp/
+│  ├─ static/
+│  │  ├─ css/
+│  |  ├─ images
+│  |  ├─ js
+│  ├─ templates/
+│  │  ├─ index.html
+│  ├─ server.py
+├─ flaskapp/
+│  ├─ static/
+│  │  ├─ css/
+│  |  ├─ images
+│  |  ├─ js
+│  ├─ templates/
+│  │  ├─ index.html
+│  ├─ server.py
+```
+
+한 project를 모은 directory를 Web context라고 부르고,
+Web context를 전부 모은 directory를 `Web Application Server`라고 부른다.
+
+위의 tree 구조에서:
+Web Application Server = `flaskWeb`
+Web context = `newFlaskApp`, `flaskapp`
+
+`templates` folder는 HTML files을 모아두는 곳이다.
+`static` folder는 정적이라는 의미로 서비스를 운영하는 데 변하지 않는 것,
+server에 요청하면 연산이 없이 바로 나가는 것들, images, css, js등이 해당된다.
+
+여기서 중요한 점은 flask를 사용할 때 `"templates"`, `"static"` 이라는 이름을 변경해선 안된다.
+
 ## 9. Postgresql
+
 ## 10. Mongodb
-## 11. Remix 
+
+### 1. What is Mongodb
+
+#### Q1. Mongodb가 무엇이고, 왜 사용하는지?
+
+MongoDB is a source-available cross-platform document-oriented database program.
+
+MongoDB is Classified as a NoSQL database program, MongoDB uses JSON-like documents with optional schemas.
+
+#### Q2. Nosql가 무엇이고, 왜 사용하는지?
+
+NoSQL은 Not Only SQL, SQL 뿐만 아니다라는 의미를 지니고있다. 즉, SQL을 사용하는 관계형 데이터베이스가 아닌 데이터베이스를 의미한다. 대표적인 관계형 데이터베이스로는 MySQL, Oracle, PostgreSQL이 있고, NoSQL 진영에는 이 포스트에서 다루는 MongoDB와 Redis, HBase 등이 있다.
+
+#### Q3. Collections이 무엇인지
+
+If you aren't failiar with nosql, think `Collectoins` as `Table of row and column` in sql.
+In nosql, you have collection of Document.
+
+Document is just json object.
+
+### 2. Mongodb 개발환경
+
+We need a MongoDB URL to be able to connect to.
+
+- Go to Mongodb website (Mongodb Atlas) and create database
+- Mongodb Atlas: cloud baesd
+- Mongodb compass: local computer based
+- MongoDB URL (MongoDB Atlas): https://www.mongodb.com/cloud/atlas/lp/try2?utm_content=1217adtest_pmcopy_control&utm_source=google&utm_campaign=gs_americas_united_states_search_core_brand_atlas_desktop&utm_term=mongodb%20atlas&utm_medium=cpc_paid_search&utm_ad=e&utm_ad_campaign_id=12212624338&adgroup=115749704063&gclid=Cj0KCQiAxc6PBhCEARIsAH8Hff0GkAMWkv-SOoaFSdMgxQaEshcIGIyDHAaSqp-B-yPgW03BbW9DxxQaAhi8EALw_wcB
+
+```
+Create Project => Create Database => Cluster Tier: M0 Sandbox (Free) => Cloud Provider: AWS
+Set User name & User password => Network access IP Address => Connect => "Connet your application" => DRIVER: Node.js => Get mongoDBURI
+```
+
+"Connect using MongoDB Compass" => Get mongoDBURI => 이 mongodbURI을 mongo compass에 복사하면, 로컬 컴퓨터에서 mongodb를 이용할 수 있ㄷ.
+
+"Connet your application" => DRIVER: Node.js => Get mongoDBURI => 이 mongodbURI을 code에 복사하면, project에서 mongodb를 이용할 수 있다.
+
+- add `MONGO_URI` to `.env` file
+
+`MONGO_URI = mongodb+srv://Shin:<password>@cluster0.sjhvl.mongodb.net/<myfirstDatabase>?retryWrites=true&w=majority`
+
+## 11. Remix
+
 ## 12. NextJs
+
 ## 13. Redux
+
+### 1. What is Redux
+
+#### Q1. Redux가 무엇이고, 왜 사용하는지?
+
+redux는 redux toolkit으로 쓰면 더 쉽고 거기에 타입스크립트로 쓰면 큰 프로젝트 스케일링하기도 편합니다.
+
+## 14. CSS
+
+### 1. What is CSS
+
+#### Q1. CSS가 무엇이고, 왜 사용하는지?
+
+### 2. Margin and Padding
+
+### 3. Flexbox
+
+flex container와 flex item이 존재한다.
+
+`display: flex;`를 주면 그 element는 flex container가 되고, 그 container의 직속 children들이 flex item이 된다.
+
+```
+
+display: flex
+flex-direction: row / colum / reverse-row
+```

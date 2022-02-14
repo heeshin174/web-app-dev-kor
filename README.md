@@ -4,16 +4,15 @@
 
 ## Table of Contents
 
-- [Documentations](https://github.com/heeshin174/Web_App_Dev_Kor#documentations)
-
-1. [Web Application에서 Server와 Cilent의 이해](https://github.com/heeshin174/Web_App_Dev_Kor#1-web-application%EC%97%90%EC%84%9C-server%EC%99%80-cilent%EC%9D%98-%EC%9D%B4%ED%95%B4)
+0. [Web Development Loadmap](https://github.com/heeshin174/Web_App_Dev_Kor#0-web-development-loadmap)
+1. [Web Application Development](https://github.com/heeshin174/Web_App_Dev_Kor#1-web-application-development)
 2. [JavaScript](https://github.com/heeshin174/Web_App_Dev_Kor#2-javascript)
 3. [TypeScript](https://github.com/heeshin174/Web_App_Dev_Kor#3-typescript)
 4. [Web Application Development의 이해](https://github.com/heeshin174/Web_App_Dev_Kor#4-web-application-development%EC%9D%98-%EC%9D%B4%ED%95%B4)
 5. [ReactJs](https://github.com/heeshin174/Web_App_Dev_Kor#5-reactjs)
 6. [VueJs](https://github.com/heeshin174/Web_App_Dev_Kor#6-vuejs)
 7. [ExpressJs](https://github.com/heeshin174/Web_App_Dev_Kor#7-expressjs)
-8. [Flask](https://github.com/heeshin174/Web_App_Dev_Kor#8-flask)
+8. [Flask (Python)](https://github.com/heeshin174/Web_App_Dev_Kor#8-flask-python)
 9. [Postgresql](https://github.com/heeshin174/Web_App_Dev_Kor#9-postgresql)
 10. [Mongodb](https://github.com/heeshin174/Web_App_Dev_Kor#10-mongodb)
 11. [Remix](https://github.com/heeshin174/Web_App_Dev_Kor#11-remix)
@@ -21,87 +20,316 @@
 13. [Redux](https://github.com/heeshin174/Web_App_Dev_Kor#13-redux)
 14. [CSS](https://github.com/heeshin174/Web_App_Dev_Kor#14-css)
 
-## Documentations
+## 0. Web Development Loadmap
 
-1. Frontend Framework (client side)
+1. [Basic Setup]()
+2. [Front-End]()
+3. [Back-End]()
+4. [Tools]()
+5. [Testing]()
+6. [Publish]()
+7. [기타 유용한 links]()
 
-- React JS (Meta): https://reactjs.org/
-- Angular jS (Google): https://angularjs.org/
-- Vue JS: https://vuejs.org/
-- React JS with Typescript: https://create-react-app.dev/docs/adding-typescript/
+### 1. Basic Setup
 
-2. Sytling (client side)
+- Computer
+  - MacOS
+  - Windows (+ **WSL**: Window subsystem for Linux)
+  - Linux
+- Browser
+  - ⭐ **Chrome**
+  - Edge
+  - Safari (MacOS)
+  - Brave browser
+- Text Editor
+  - ⭐ **VSCode** (+ VSCode extension)
+  - IntelliJ
+  - Emac
+  - Vim
+  - Atom
+- Terminal
+  - **Window Terminal** (Windows, + Ubuntu)
+  - **Iterm2** (MacOS)
+  - Powershell (Windows)
+  - Bash
+  - zsh
+- Other Tools
+  - Programming Langauges (Node.js, Python, Java, ...)
+  - nvm (Node Version Manager)
+  - Git
+- OS별 개발환경 세팅:
+  - Macbook developer setup: https://www.youtube.com/watch?v=B26yiuC5zPM
+    - Homebrew (MacOS package manager): https://brew.sh/
+  - Window developer setup (+ WSL): https://nomadcoders.co/windows-setup-for-developers
+    - Chocolatey (Window package manager): https://chocolatey.org/
 
-- Bootstrap: https://getbootstrap.com/docs/5.0
-- Tailwindcss: https://tailwindcss.com/docs/installation
-- FontAwesome (icons): https://fontawesome.com/
-- Devicon (icons representing programming languages, designing & development tools) https://devicon.dev/
-- Google Font (text style) : https://fonts.google.com/
-- styled-components: https://styled-components.com/docs
+#### Windows Developer Setup (WSL)
 
-💥 ReactJS Framework (ReactJS Only):
+1. Microsoft Store에서 download `Windows Terminal`
+2. Microsoft Store에서 download `Ubuntu`
+3. Google에 `install WSL2` 검색 후 Terminal로 설치
+4. Google에 `install WSL2` 검색 후 `Ubuntu`를 WSL1에서 WSL2로 update
+5. Google에 `VSCode` 검색 후 download, 그 후 VSCode extension 설치
 
-- react-bootstrap (components): https://react-bootstrap.github.io/getting-started/introduction
-- Material-UI (components): https://mui.com/
-- React-icons (icons): https://react-icons.github.io/react-icons
-- react-typed (Dynanic text): https://github.com/ssbeefeater/react-typed
-- redux: https://redux.js.org/introduction/getting-started
-- redux-toolkit: https://redux-toolkit.js.org/
-- react-transition-group: https://reactcommunity.org/react-transition-group
-- react-redux: https://react-redux.js.org/
-- redux-thunk: https://github.com/reduxjs/redux-thunk
-- react-beautiful-dnd (drag and drop): https://github.com/atlassian/react-beautiful-dnd
-- react-scroll (smooth scroll): https://github.com/fisshy/react-scroll
-- react-router: https://reactrouter.com/docs/en/v6
+이제 `Windows Terminal`로 `Ubuntu`를 실행할 수 있다. `Ubuntu`를 메인 terminal로 설정한다.
+`Ubuntu`에서 실행하는 것은 Linux console를 사용한다. 즉, 지금 사용하는 Windows랑 다른 Linux OS 컴퓨터라고 생각하면 된다.
+Linux환경에서 제일 위에 있는 root folder로 가보면 다음의 폴더들을 볼 수 있다.
 
-💥 VueJs Framework (VueJS Only):
+bin dev home lib lib64 lost+found mnt proc run snap sys usr
+boot etc init lib32 libx32 media opt root sbin srv tmp var
 
-- Vuetify: https://next.vuetifyjs.com
+여기서 중요한 folders는 `home`과 `mnt`이다.
+mnt는 내 Windows환경의 파일들을 Linux와 연결하여 Linux console로 실행할 수 있게 해준다.
+home은 내 Linux환경의 homepage이다.
 
-3. Backend Framework (server side)
+둘 중에 어디에다가 코드를 작성할 지는 자유지만, mnt는 내 Windows환경과 연결되어 있기 때문에 Linux환경에 문제가 생겨도 파일들을 잃지 않는다.
+home은 내 Linux환경으로, Windows와 연결되어 있지 않기 때문에 Linux환경에 문제가 생기면 파일들을 잃어버린다.
 
-- Express js: https://expressjs.com/
-- Next js (Server side rendering): https://nextjs.org/docs/getting-started
-- Remix (Server side rendering): https://remix.run/docs/en/v1
-- Flask (python framework): https://flask.palletsprojects.com/en/2.0.x/
-- Django (python framework): https://docs.djangoproject.com/en/4.0/
-- nodemon (javascript framework: auto reload server): https://www.npmjs.com/package/nodemon)
-- dotenv (javascript framework: set environmental variables): https://github.com/motdotla/dotenv
-- concurrently (javascript framework: start client and server together): https://github.com/open-cli-tools/concurrently
-- Axios (javascript framework: XMLHttpRequests): https://axios-http.com/docs/intro
-- JWS (Json Web Token): https://jwt.io/
-- bcryptjs (hashing password): https://www.npmjs.com/package/bcryptjs
+그럼으로 mnt folder를 이용하여, 내 Windows환경과 연결하여 사용하는 것이 좋다.
 
-4. Databases (server side)
+6. Ubuntu Terminal에 `code`입력 후, VSCode 서버를 Linux환경에 설치.
+7. Google에 `install nvm` (Node Version Manager) 검색 후 download, 그 후 nvm을 이용하여 `Node.js` 설치
 
-- Mongodb: https://www.mongodb.com/cloud
-- Mongoose js (Mongodb framework): https://mongoosejs.com/
-- Postgresql: https://www.postgresql.org/download/
-- PG-Pool js (Postgresql framework) : https://node-postgres.com/api/pool
+Window환경에 따로 programming languages나 다른 git 같은 tool를 설치하여 사용할 수 있지만, Linux환경에 모든 프로그래밍언어들을 설치할 것이다.
+Linux환경을 이용하면, Linux가 제공하는 모든 Unix command를 Terminal에 쉽게 사용가능하다.
+우리는 Terminal로 프로그램들을 설치하는 것에 익숙해져야 한다. 만약 설치가 안된다면, 앞에 sudo를 붙여 root권한을 준다
 
-5. Cloud Services
+> `sudo apt-get update`
 
-- AWS (Amazon Web Services): https://aws.amazon.com/
-- Azure (Microsoft): https://azure.microsoft.com/en-us/
-- GCP (Google Cloud Platform): https://cloud.google.com/
+> `sudo apt-get upgrade`
 
-6. APIs
+Node.js를 설치할 때에는 Long Time Support (LTS)가 붙어있는 최신버젼을 다운받는다.
 
-- RapidApi: https://rapidapi.com/
+그외에 사용하고 싶은 프로그래밍 언어들도 Google에 검색 후, Linux환경으로 다운받으면 된다.
 
-7. Deployment
+8. Google에 `install zsh` 검색 후 download `zsh`
 
-- Github: https://github.com/
-- Netlify: https://www.netlify.com/
-- Heroku: https://www.heroku.com/
+> `sudo apt install zsh`
 
-8. ETC
+9. Google에 `install Oh my zsh` 검색 후, curl를 사용하여 download `Oh my zsh`
 
-- Node js (Programming Language): https://nodejs.org/en/docs/
-- Python (Programming Language): https://docs.python.org/3/
-- Java (Programming Language): https://docs.oracle.com/en/java/javase/15/docs/api/index.html
-- Typescript (Programming Language): https://www.typescriptlang.org/
+`Window Terminal`을 열고, `설정`을 선택, 그 후 `Json 파열 열기`을 클릭.
+`MesloLGS NF` font를 설치 후, 아래와 같이 추가.
+`schemes`는 `TerminalSplash` 웹사이트에서 복사 붙여넣기 하면된다.
+
+```
+"profiles": {
+    "defaults": {
+      "fontFace": "MesloLGS NF"
+      "colorScheme": "Aurelia"
+    },
+    "schemes": [{
+      "name": "Aurelia",
+      "background": "#1a1a1a",
+      "black": "#000000",
+      "blue": "#579BD5",
+      "brightBlack": "#797979",
+      "brightBlue": "#9CDCFE",
+      "brightCyan": "#2BC4E2",
+      "brightGreen": "#1AD69C",
+      "brightPurple": "#975EAB",
+      "brightRed": "#EB2A88",
+      "brightWhite": "#EAEAEA",
+      "brightYellow": "#e9ad95",
+      "cyan": "#00B6D6",
+      "foreground": "#EA549F",
+      "green": "#4EC9B0",
+      "purple": "#714896",
+      "red": "#E92888",
+      "white": "#EAEAEA",
+      "yellow": "#CE9178"
+    }]
+}
+```
+
+10. Google에 `powerlevel10k` 검색 후, oh my zsh를 사용하여 download.
+
+`powerlevel10k`는 우리의 zsh terminal를 꾸밀 수 있는 프로그램이다.
+
+- `powerlevel10k`는 `MesloLGS NF` font를 요구하기 때문에, 위처럼 default에 font를 설정한다.
+
+- VScode에서 `ctrl + ,`입력 후, `terminal` 검색.
+
+1. Terminal > Integrated: Font Family > `MesloLGS NF`
+2. Terminal > Integrated > Default profile > `Ubuntu`
+
+- `.zshrc` file을 열고, 다음의 코드를 추가한다. `.zshrc`는 `Oh my zsh` terminal setting을 바꿀 수 있는 환경설정 파일이다.
+
+> `code ~/.zshrc`
+
+1. `ZSH_THEME="powerlevel10k/powerlevel10k"`
+2. `LS_COLORS="ow=01;36;40" && export LS_COLORS`
+3. `alias python=python3.8`
+4. add the following code to use nvm
+
+```
+export NVM_DIR="$HOME/.nvm"
+   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+```
+
+- Oh my zsh: https://github.com/ohmyzsh/ohmyzsh
+- powerlevel10k (A Zsh theme): https://github.com/romkatv/powerlevel10k#oh-my-zsh
+- TerminalSplash: https://terminalsplash.com/
+
+### 2. Front-End (Client side)
+
+- HTML
+  - HTML Tags
+  - Page Structure
+  - Semantic Tags (어떨때 어떤 tag사용)
+  - SEO (Search Engine Optimazatoin)
+
+* CSS
+  - Styling
+  - Layouts
+    - float
+    - Flexbox
+    - Grid
+  - Responsive Design
+  - Animation
+  - Framework
+    - Bootstrap: https://getbootstrap.com/docs/5.0
+    - Tailwindcss: https://tailwindcss.com/docs/installation
+    - styled-components: https://styled-components.com/docs
+    - Postcss
+  - 기타
+    - FontAwesome (icons): https://fontawesome.com/
+    - Devicon (icons representing programming languages, designing & development tools): https://devicon.dev/
+    - Google Font (text style): https://fonts.google.com/
+    - CSS Gradient: https://cssgradient.io/
+    - Color Space: https://mycolor.space/
+    - shape Divider (SVG): https://www.shapedivider.app/
+    - Haikei (SVG): https://haikei.app/
+    - Cool Backgrounds: https://coolbackgrounds.io/
+    - Dribble: https://dribbble.com/
+
+- Javascript
+  - **ES6+ Syntax**
+    - Basic
+      - let, const
+      - function
+      - if, for, switch, while
+      - object
+      - Array
+      - Error handler
+    - Advanced
+      - Prototype
+      - Hoisting
+      - Scope
+      - Closure
+      - Callback Function
+  - **Browser APIs**
+    - DOM Manipulation
+    - Events
+    - Fetch API (Async)
+  - ⭐ **Typescript**: https://www.typescriptlang.org/
+    - Types
+    - OOP (Object-oriented Programming)
+  - Framework (Client-Side Rendering: CSR)
+    - ⭐ **React**: https://reactjs.org/
+    - Vue: https://vuejs.org/
+    - Angular: https://angularjs.org/
+    - Svelte
+    - React JS with Typescript: https://create-react-app.dev/docs/adding-typescript/
+  - Meta-Framework (기존 framework 위에 만들어진 framework)
+    - React meta-Framework
+      - Server-Side Rendering (SSR)
+        - ⭐ **Next.js**: https://nextjs.org/docs/getting-started
+        - Remix: https://remix.run/docs/en/v1
+      - Managing and centralizing application state
+        - redux: https://redux.js.org/introduction/getting-started
+        - redux-toolkit: https://redux-toolkit.js.org/
+        - react-redux: https://react-redux.js.org/
+        - redux-thunk: https://github.com/reduxjs/redux-thunk
+      - CSS Framework
+        - react-bootstrap (components): https://react-bootstrap.github.io/getting-started/introduction
+        - Material-UI (components): https://mui.com/
+      - Static Site Generators (SSG)
+        - Gatsby
+      - Other React libraries
+        - react-icons (icons): https://react-icons.github.io/react-icons
+        - react-typed (Dynanic text): https://github.com/ssbeefeater/react-typed
+        - react-transition-group: https://reactcommunity.org/react-transition-group
+        - react-beautiful-dnd (drag and drop): https://github.com/atlassian/react-beautiful-dnd
+        - react-scroll (smooth scroll): https://github.com/fisshy/react-scroll
+        - react-router: https://reactrouter.com/docs/en/v6
+    - Vue meta-Framework
+      - Server-Side Rendering (SSR)
+        - ⭐ **Nuxt.js**
+      - CSS Framework
+        - Vuetify: https://next.vuetifyjs.com
+
+### 3. Back-End (Server side)
+
+- [Server](https://github.com/heeshin174/Web_App_Dev_Kor#1-web-application-development)
+
+* Framework
+  - Javascript
+    - Express.js: https://expressjs.com/
+  - Python
+    - Flask: https://flask.palletsprojects.com/en/2.0.x/
+    - Django: https://docs.djangoproject.com/en/4.0/
+
+- Database
+  - SQL
+    - Postgresql: https://www.postgresql.org/download/
+      - PG-Pool js: https://node-postgres.com/api/pool
+  - NOSQL
+    - Mongodb: https://www.mongodb.com/cloud
+      - Mongoose js: https://mongoosejs.com/
+
+* Next js (Server side rendering): https://nextjs.org/docs/getting-started
+* Remix (Server side rendering): https://remix.run/docs/en/v1
+* nodemon (javascript library: auto reload server): https://www.npmjs.com/package/nodemon)
+* dotenv (javascript library: set environmental variables): https://github.com/motdotla/dotenv
+* concurrently (javascript library: start client and server together): https://github.com/open-cli-tools/concurrently
+* Axios (javascript library: XMLHttpRequests): https://axios-http.com/docs/intro
+* JWS (Json Web Token): https://jwt.io/
+* bcryptjs (hashing password): https://www.npmjs.com/package/bcryptjs
+
+### 4. Tools
+
+- Git
+- Github
 - Docker (Container based development): https://www.docker.com/ & https://docs.docker.com/
+- APIs
+  - RapidApi: https://rapidapi.com/
+  - public-apis (links collection): https://github.com/public-apis/public-apis
+  - public-apis: https://public-apis.xyz/page/1
+
+### 5. Testing
+
+아직 실무를 하는 것이 아니라면, 크게 신경쓰지 않아도 된다.
+
+### 6. Publish
+
+- Cloud services
+  - ⭐ **AWS** (Amazon Web Services): https://aws.amazon.com/
+  - Azure (Microsoft): https://azure.microsoft.com/en-us/
+  - GCP (Google Cloud Platform): https://cloud.google.com/
+- Client side
+  - Github Pages: https://github.com/
+  - Netlify: https://www.netlify.com/
+  - Heroku: https://www.heroku.com/
+- Server side
+  - Vultr: https://www.vultr.com/
+  - Digitalocean: https://www.digitalocean.com/
+
+### 기타 유용한 Links
+
+1. Programming Langauges
+
+- Node.js: https://nodejs.org/en/docs/
+- Python: https://docs.python.org/3/
+- Java: https://docs.oracle.com/en/java/javase/15/docs/api/index.html
+- Typescript: https://www.typescriptlang.org/
+- C/C#/C++
+- Closure (Functional): https://clojure.org/
+- Dr.Racket (educational Functional): https://racket-lang.org/
+
+2. Tools
+
 - Postman (RESTful API): https://www.postman.com/downloads/
 - VSCode (Microsoft IDE: Code Editor): https://code.visualstudio.com/
 - Eclipse (Java IDE): https://www.eclipse.org/documentation/
@@ -111,7 +339,7 @@
 - Adobe photoshop (Design UI): https://www.adobe.com/products/photoshop
 - Diagram.io (Design UI): https://app.diagrams.net/
 
-9. Education
+3. Educations
 
 - Web Development In 2022 - https://www.youtube.com/watch?v=EqzUcMzfV1w&list=PLg8KC9DusHl8zGjAWYGGJygm3rWoEahJQ&index=30&ab_channel=TraversyMedia
 - 서버사이드 렌더링 - https://www.youtube.com/watch?v=iZ9csAfU5Os&list=PLg8KC9DusHl8zGjAWYGGJygm3rWoEahJQ&index=32&ab_channel=%EB%93%9C%EB%A6%BC%EC%BD%94%EB%94%A9by%EC%97%98%EB%A6%AC
@@ -121,16 +349,15 @@
 - Javascript closure: https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures
 - w3school: https://www.w3schools.com/
 - Leetcode: https://leetcode.com/
-- redux 설명글: https://hwan1001.tistory.com/38
 - react로 만든 웹 github로 deploy하기: https://codingapple.com/unit/react-build-deploy-github-pages/
 
-## 1. Web Application에서 Server와 Cilent의 이해
+## 1. Web Application Development
 
 ### 1. What is SERVER?
 
 **Server는 Client에게 Network를 통해 http요청을 받아서 정보, data, 서비스등을 전달하는 Computer이다.**
 
-위의 Server에 대한 정의를 쉽게 이야기하면, **Server는 요청을 받아 그 요청을 처리하는 기계이다.** Web Server에서 요청은 `http 요청 (request)`을 의미한다.
+위의 Server에 대한 정의를 쉽게 이야기하면, **Server는 요청을 받아 그 요청을 처리하는 기계이다.** Web Server에서 요청은 `http request`을 의미한다.
 
 - **Server: Client의 요청을 받으면 요청한 내용을 보내주는 program이 실행중인 Computer**
 - **Web Server: Client의 http요청을 받으면 요청한 내용을 보내주는 program이 실행중인 Computer**
@@ -139,9 +366,9 @@
 - 네이버웹툰 Web Server 개발자가 만드는 code: 어떤 사람이 `comic.naver.com`으로 접속하면, 네이버웹툰 메인 html파일을 전송해주셈
 
 Server와 Client는 web application에서 computer가 하는 역할을 의미한다. 사람이 학교에서 학생, 선생님, 청소부와 같은 role를 맡는 것처럼,
-Computer가 web app에서 server, cilent와 같은 role를 가진다. 한 computer가 server의 역할을 하고 있으면, 다른 computer가 cilent가 되어 이 server에 데이터를 요청할 수 있다.
+computer가 web app에서 server, client의 역할을 한다. 한 computer가 server의 역할을 하고 있으면, 다른 computer가 client가 되어 이 server에 데이터를 요청할 수 있다.
 
-Server는 식당에서 종업원이 하는 일이랑 똑같은 일을 한다. 종업원이 손님이 메뉴판에 있는 음식을 주문하면, 그 음식을 가져다 주는 것처럼, Server는 Client가 요청하면 요청한 것을 가져다 주는 역할을 한다.
+Server는 식당의 종업원 (Server)과 같은 일을 한다. 손님이 메뉴판에 있는 음식을 주문하면, 그 음식을 가져다 주는 것처럼, Client가 Server에 데이터를 요청하면, 그 데이터를 가져다 주는 역할을 한다.
 
 Client가 Web Server에게 할 수 있는 http요청은 크게 4가지이다:
 
@@ -150,9 +377,9 @@ Client가 Web Server에게 할 수 있는 http요청은 크게 4가지이다:
 3. PUT요청: 수정
 4. DELETE요청: 삭제
 
-설명: 여기서 알아야 할 점은 사용자도 http request를 보내는 code를 작성해야지만 server와 정보를 주고 받을 수가 있다는 점이다. 사용자는 GET요청 code를 browser의 URL 창에서 쉽게 작성이 가능하다. 다른 POST/PUT/DELETE 요청들은 Server 개발자가 웹페이지에 Button을 만들어 놓아서 사용자가 웹페이지에서 쉽게 http request를 할 수 있도록 만들어 놓아야 한다.
+여기서 알아야 할 점은 client가 http request를 보내는 code를 작성해야지만 server와 정보를 주고 받을 수가 있다는 점이다. 사용자는 GET요청를 browser의 URL 입력창에서 쉽게 작성이 가능하다. 다른 POST/PUT/DELETE 요청들은 Server 개발자가 웹페이지에 버튼들을 만들어 놓아서 사용자가 웹페이지내에서 쉽게 http request를 할 수 있도록 만들어 놓을 수 있다.
 
-- 즉, 웹 서버개발자가 http요청을 하는 버튼들을 웹페이지에 잘 만들어 놓으면, 사용자는 그냥 클릭만으로 http요청을 할 수 있다.
+즉, 웹 서버개발자가 http요청을 하는 버튼들을 웹페이지에 잘 만들어 놓으면, 사용자는 내용을 입력 후 클릭만으로 http요청을 할 수 있다.
 
 1. GET요청은 읽기 요청으로 서버에 "나 이런 URI을 가진 페이지를 읽고 싶음"이라는 요청을 보낼 수 있다. 우리가 Server에 가장 많이 하는 요청으로 Chrome, Edge와 같은 browser로 URI만 검색하면 GET요청을 할 수 있다.
 
@@ -167,11 +394,9 @@ Client가 Web Server에게 할 수 있는 http요청은 크게 4가지이다:
 **API는 한 program에서 다른 program으로 data를 주고받기 위한 방법을 의미한다.**
 
 API는 식당에서의 메뉴판과 같은 역할을 한다고 이해하면 쉽다. 식당의 API는 메뉴판으로, 식당과 손님이 음식을 주고받기 위한 방법이다.
-식당은 메뉴판을 만들어 놓고, 손님이 음식을 주문 하기 전까지는 아무것도 하지 않는다.
-또한 손님이 메뉴판에 정의되지 않은 음식을 주문하면, 그 주문은 받을 수가 없다.
+식당은 메뉴판을 만들어 놓고, 손님이 음식을 주문 하기 전까지는 아무것도 하지 않는다. 또한 손님이 메뉴판에 없는 음식을 주문하면, 식당은 그 주문은 받을 수가 없다.
 
-이와 마찬가지로, Server 역시 메뉴판, 즉 API를 만들어 놓아야지만 그 API를 가지고 Client와 data를 주고 받을 수 있다.
-Server는 Client에게 **요청 (request)**을 받지 않으면, 아무것도 하지 않는다. 또한, 손님은 메뉴판에 없는 요리는 주문할 수 없는 것처럼, Client는 Server에 정의되지 않은 API를 가지고 요청은 할 수 없다.
+이와 마찬가지로, 서버도, 메뉴판, 즉 API를 만들어 놓아야지만 그 API를 가지고 client와 data를 주고 받을 수 있다. Server는 client에게 **요청 (request)**을 받지 않으면, 아무것도 하지 않는다. 또한, 손님은 메뉴판에 없는 요리는 주문할 수 없는 것처럼, client는 server에 정의되지 않은 API를 가지고 요청은 할 수 없다.
 
 ```
 // 식당에서의 Server와 Client
@@ -189,27 +414,26 @@ Server는 Client에게 **요청 (request)**을 받지 않으면, 아무것도 �
 2. Server는 Client의 http요청을 받아 Database에게 전달
 3. Server는 Database의 data를 받아 Client에게 전달 (response)
 
-// Database가 필요없는 web server의 경우, 서버 내에서 요청을 처리한다.
+// Database가 없는 web server의 경우, 서버 내에서 요청을 처리한다.
 
-       1.http request          2.request
+      1.http request          2.request
 Client ------->      Server     ------>  Database
        <-------                 <------
       4.response                3.get data
 ```
 
-위에서 API는 서버와 사용자가 데이터를 주고 받기 위한 방법이라고 했는데, 여기서 방법이란 그냥 개발자가 만들어 놓은 코드를 의미한다.
-웹 서버의 경우, 서버 개발자가 사용자의 http요청을 받았을 때 Server가 할 행동들을 미리 정의해 둔다. 그 후 만들어 놓은 Server의 행동들, 즉 API을 메뉴판처럼 사용자에게 보여주면 된다.
+위에서 API는 서버와 사용자가 데이터를 주고 받기 위한 방법이라고 했는데, 여기서 방법이란 그냥 개발자가 만들어 놓은 코드를 의미한다. 웹 서버의 경우, 서버 개발자가 사용자의 http요청을 받았을 때 서버가 할 행동들을 미리 정의해 둔다. 그 후 만들어 놓은 server의 responses, 즉 API을 메뉴판처럼 사용자에게 보여주면 된다.
 
 ```
 // API 예시
 // 어떤 사용자가 "https://~/detail"로 GET요청을 하면 이 코드를 실행해 주세요
-app.get('/detail', (request,response) => {
+app.get('/detail', (request, response) => {
     // code to perform particular action (API).
     // To access GET variable use req.query() and req.params() methods.
 });
 ```
 
-WEb Server의 API를 성공적으로 작동하기 위해서는 다음이 필요하다.
+Web Server의 API를 성공적으로 작동하기 위해서는 다음이 필요하다:
 
 1. 요청방식 (http request method): 어떤 요청을 할 것인지
 2. URI (endpoint): 어떤 자료를 요청할지
@@ -223,29 +447,27 @@ WEb Server의 API를 성공적으로 작동하기 위해서는 다음이 필요�
 
 Web Server의 경우 `REST API`라는 방법론의 원칙에 따라 API를 작성하면 좋다.
 
-API는 상업적으로 팔 수 있다. API hosting service를 이용하여 정해진 횟수 이상의 데이터 요청이 발생하면, 돈을 지불하게 만들 수 있다.
+잘 만든 API는 상업적으로 팔 수 있다. API hosting service를 이용하여 정해진 횟수 이상의 데이터 요청이 발생하면, 사용자에게 돈을 지불하게 만들 수 있다.
 
 ⭐ 요약:
 
-1. API가 무엇인지?
+1. API가 무엇인가?
 
 **API: 한 program에서 다른 program으로 data를 주고 받기 위한 서버의 메뉴판**
 
-2. Web Server에서 API가 무엇인지?
+2. Web Server에서 API가 무엇인가?
 
 **Web Server에서의 API: 서버 개발자가 사용자에게 어떤 data를 얻기 위해서는 어떤 URI로 http요청을 보내라고 알려주는 서버의 메뉴판**
 
 ### 3. REST (Representational State Transfer) APIs
 
-**REST (REpresentational State Transfer): HTTP URI(Uniform Resource Identifier)를 통해 자원(Resource)을 명시하고, HTTP Method(POST, GET, PUT, DELETE)를 통해 해당 자원에 대한 CRUD (CREATE, READ, UPDATE, DELETE) Operation을 적용하는 것을 의미한다.**
-
-REST는 Representational State Transfer라는 용어의 약자로서 2000년도에 로이 필딩 (Roy Fielding)의 박사학위 논문에서 최초로 소개되었다. 로이 필딩은 HTTP의 주요 저자 중 한 사람으로 그 당시 웹(HTTP) 설계의 우수성에 비해 제대로 사용되어지지 못하는 모습에 안타까워하며 웹의 장점을 최대한 활용할 수 있는 아키텍처로써 REST를 발표했다고 합니다.
+**REST는 HTTP URI(Uniform Resource Identifier)를 통해 자원(Resource)을 명시하고, HTTP Method(POST, GET, PUT, DELETE)를 통해 해당 자원에 대한 CRUD (CREATE, READ, UPDATE, DELETE) Operation을 적용하는 것을 의미한다.**
 
 - REST API는 크게 세가지로 구성으로 있다:
 
-1. 자원(RESOURCE): URI (접근할 대상)
-2. 행위(Verb): HTTP METHOD: GET(조회), POST(생성), PUT(수정), DELELTE(삭제)
-3. 표현(Representations): Message
+1. 자원 (RESOURCE): URI (접근할 대상)
+2. 행위 (Verb): HTTP METHOD { GET(조회), POST(생성), PUT(수정), DELELTE(삭제) }
+3. 표현 (Representations): Message
 
 - REST API를 설계할 때, 다음의 2가지를 만족해야 한다.
 
@@ -275,29 +497,26 @@ http://restapi.example.com/houses/apartments
 http://restapi.example.com/animals/mammals/whales
 ```
 
-2. URI 마지막 문자로 슬래시(/)를 포함하지 않는다.
-   URI에 포함되는 모든 글자는 리소스의 유일한 식별자로 사용되어야 하며 URI가 다르다는 것은 리소스가 다르다는 것이고, 역으로 리소스가 다르면 URI도 달라져야 합니다. REST API는 분명한 URI를 만들어 통신을 해야 하기 때문에 혼동을 주지 않도록 URI 경로의 마지막에는 슬래시(/)를 사용하지 않습니다.
+2. URI 마지막 문자로 슬래시(/)를 포함하지 않는다. URI에 포함되는 모든 글자는 리소스의 유일한 식별자로 사용되어야 하며 URI가 다르다는 것은 리소스가 다르다는 것이고, 역으로 리소스가 다르면 URI도 달라져야 합니다. REST API는 분명한 URI를 만들어 통신을 해야 하기 때문에 혼동을 주지 않도록 URI 경로의 마지막에는 슬래시(/)를 사용하지 않습니다.
 
 ```
 http://restapi.example.com/houses/apartments/ (X)
 http://restapi.example.com/houses/apartments  (0)
 ```
 
-3. 하이픈(-)은 URI 가독성을 높이는데 사용
-   URI를 쉽게 읽고 해석하기 위해, 불가피하게 긴 URI경로를 사용하게 된다면 하이픈 (hyphen: -)을 사용해 가독성을 높일 수 있습니다.
+3. 하이픈 (hyphen: -)은 URI 가독성을 높이는데 사용한다. URI를 쉽게 읽고 해석하기 위해, 불가피하게 긴 URI경로를 사용하게 된다면 하이픈 (-)을 사용해 가독성을 높인다.
 
-4. 밑줄(\_)은 URI에 사용하지 않는다.
-   글꼴에 따라 다르긴 하지만 밑줄은 보기 어렵거나 밑줄 때문에 문자가 가려지기도 합니다. 가독성을 위해 밑줄 대신 하이픈(-)을 사용하는 것이 좋습니다.
+4. 밑줄 (\_)은 URI에 사용하지 않는다. 글꼴에 따라 다르긴 하지만 밑줄은 보기 어렵거나 밑줄 때문에 문자가 가려지기도 합니다. 가독성을 위해 밑줄 대신 하이픈(-)을 사용하는 것이 좋습니다.
 
-5. URI 경로에는 소문자가 적합하다.
-   URI 경로에 대문자 사용은 피하도록 해야 합니다. 대소문자에 따라 다른 리소스로 인식하게 되기 때문입니다. RFC 3986(URI 문법 형식)은 URI 스키마와 호스트를 제외하고는 대소문자를 구별하도록 규정하기 때문이지요.
+5. URI 경로에는 소문자가 적합하다. URI 경로에 대문자 사용은 피하도록 해야 합니다. 대소문자에 따라 다른 리소스로 인식하게 되기 때문입니다. RFC 3986 (URI 문법 형식)은 URI 스키마와 호스트를 제외하고는 대소문자를 구별하도록 규정하기 때문이지요.
 
 6. 파일 확장자는 URI에 포함시키지 않는다.
 
 ```
 http://restapi.example.com/members/soccer/345/photo.jpg (X)
 
-// REST API에서는 메시지 바디 내용의 포맷을 나타내기 위한 파일 확장자를 URI 안에 포함시키지 않습니다. Accept header를 사용하도록 합시다.
+// REST API에서는 메시지 바디 내용의 포맷을 나타내기 위한 파일 확장자를 URI 안에 포함시키지 않습니다.
+// Accept header를 사용하도록 합시다.
 GET / members/soccer/345/photo HTTP/1.1 Host: restapi.example.com Accept: image/jpg
 ```
 
@@ -315,7 +534,11 @@ Postman is great program to build an RESTful web services.
 - Postman POST요청 사용법:
 
 1. POST의 Header에서 `Content-Type:application/json`을 선택한다.
-2. POST의 Body에서 row 선택후, Post하고자 하는 데이터를 Json 형식으로 입력한다.
+2. POST의 Body에서 `raw` 선택 후, Post하고자 하는 데이터를 JSON 형식으로 입력한다.
+
+또는
+
+1. POST의 Body에서 `x-www-form-urlencoded` 선택 후, Post하고자 하는 데이터를 key, value pair로 입력한다.
 
 ![POST1](./img/postman1.png)
 
@@ -323,39 +546,35 @@ Postman is great program to build an RESTful web services.
 
 ⭐ 요약:
 
-1. REST API가 무엇인지?
+1. REST API가 무엇인가?
 
-**REST API: Web 통신에서 사용자로 부터 http요청을 받을 URI를 설계할 때 지켜야 되는 방법론을 기반으로 만든 API**
+**REST API는 Web 통신에서 사용자로부터 http요청을 받을 URI를 설계할 때 지켜야 되는 방법론을 기반으로 만든 API를 의미한다.**
 
-2. REST API를 왜 사용하는지?
+2. REST API를 왜 사용하는가?
 
 **REST API를 사용하면, 사용자는 URI 주소만 가지고도 내가 무슨 Data를 다루고 있는지 쉽게 알 수 있다.**
 
-### 4. What is Node JS?
+### 4. What is Node.js?
 
-**Node Js는 Javascript runtime이다.**
+**Node.js는 Javascript runtime environment이다.**
 
-Javascript는 HTML에 종속된 programming language이다. 즉, 1 + 1과 같은 연산을 위해 만든 것이 아니라 HTML을 조작하기 위해서 만들어진 script이다.
+Javascript는 HTML에 종속된 programming language이다. 즉, 1 + 1과 같은 연산을 보다 **HTML을 조작**하기 위해서 만들어진 script 언어이다.
 
-HTML: 웹페이지에 글쓰고, 그림을 넣은 언어로, 프로그래밍언어가 아니기 때문에 정적인 (static: 안움직이는) 웹사이트만 보여줄 수 있다.
+- `HTML (HyperText Markup Language)`: 웹페이지에 글쓰고, 그림을 넣은 언어로, 프로그래밍언어가 아니기 때문에 정적인 (static: 안움직이는) 웹사이트만 보여줄 수 있다.
+- Javascript가 HTML을 조작하여 웹페이지를 동적 (dynamic)으로 바꿔준다. 예): 버튼을 클릭하면 어떤 동작이 실행됨.
 
-Javascript가 HTML을 조작하여 웹페이지를 동적 (dynamic)으로 바꿔준다. 예): 버튼을 클릭하면 어떤 동작이 실행됨.
+Javascript는 Chrome, Edge와 같은 browser가 해석한다. 각 browser마다 Javascript를 해석하는 방법이 다른데, 그 중 Chrome이 만든 `V8`이라는 javascript 해석엔진이 너무 유용해 Chrome browser안에서만 사용하기에는 아까워서 `Node.js`라는 이름을 가지고 browser와 독립되서 나왔다.
 
-Javascript는 Chrome, Edge와 같은 browser가 해석한다. 각 browser마다 Javascript를 해석하는 방법이 다른데, 그 중 Chrome이 만든 `V8`이라는 javascript 해석엔진이 너무 유용해 Chrome browser안에서만 사용하기에는 아까워서 `Node Js`라는 이름을 가지고 browser와 독립되서 나왔다.
+즉, `Node.js` 자체로는 프로그래밍 언어가 아니라 Javascript를 실행하게 해주는 실행 환경을 의미한다. `Node.js`덕분에 Javascript를 browser밖에서 Programming Language처럼 사용할 수 있게 되었다.
 
-즉, `Node Js` 자체로는 프로그래밍 언어가 아니라 Javascript를 실행하게 해주는 실행 환경을 의미한다. `Node Js`덕분에 Javascript를 browser밖에서 Programming Language처럼 사용할 수 있게 되었다.
+Node.js로 할 수 있는 대표적인 것은 **Web Server를 만드는 것**이다. Node.js를 사용하면 Web Server를 쉽게 만들 수 있다. 왜 하필 Node.js를 이용하여 Server를 만드는 것이 좋냐하면, Node.js의 **Non-blocking I/O** 특징 때문이다.
 
-Node Js로 할 수 있는 대표적인 것은 **Web Server를 만드는 것**이다. Node Js를 사용하면 Web Server를 쉽게 만들 수 있다.
-
-왜 하필 Node Js를 이용하여 Server를 만드는 것이 좋냐하면 Node Js의 특징인 **Non-blocking I/O** 때문이다.
-
-- Node Js의 특징:
+- `Node.js`의 특징:
 
 1. **Non-blocking I/O**
 2. **Event-driven**
 
-- 설명: Non-blocking I/O operations allow a single process to serve multiple requests at the same time. Instead of the process being blocked and waiting for I/O operations to complete, the I/O operations are delegated to the system, so that the process can execute the next piece of code.
-  즉, Non-blocking I/O은 Server가 버거운 요청을 받아도, 그 요청이 끝날 때까지 기다리지 않고 더 빨리 끝나는 요청을 먼저 처리한다.
+`Non-blocking I/O` operations allow a single process to serve multiple requests at the same time. Instead of the process being blocked and waiting for I/O operations to complete, the I/O operations are delegated to the system, so that the process can execute the next piece of code. 즉, Non-blocking I/O은 Server가 버거운 요청을 받아도, 그 요청이 끝날 때까지 기다리지 않고 뒤의 code들을 실행해서 더 빨리 끝나는 요청을 먼저 처리한다.
 
 ```
 예시: 사용자의 요청에 따라 영화를 예매하주는 서버
@@ -364,56 +583,59 @@ Node Js로 할 수 있는 대표적인 것은 **Web Server를 만드는 것**이
 사용자가 시간이 오래걸리는 요청, 티겟 200장을 예매하면, 서버는 그 요청을 다 완료할 때까지 다른 작업을 하지 못하게 된다.
 이렇게 되면, 티겟 200장 예매한 사람 뒤에 있는 티켓 1장을 예매한 사람 역시 티켓 200장이 예매가 완료될 때 까지 서버를 기다려야 한다.
 
-2. Node Js로 만든 서버
+2. Node.js로 만든 서버
 사용자가 시간이 오래걸리는 요청, 티겟 200장을 예매해도 서버는 무거운 요청을 다 완료할 때까지 기다리지 않고,
 티겟 200장 예매한 사람 뒤에 있는 티켓 1장을 예매한 사람 먼저 처리를 한 다음에 티켓 200장을 처리한다.
 ```
 
-Node JS는 이벤트를 적극 활용하여 처리가 빠른 것 부터 실행하기 때문에, 요청이 매우 많이 오는 채팅, SNS Web server를 만들 때 적극 선호됩니다.
-물론 다른 언어들도 이런 식으로 서버를 짤 수 있기 때문에 요즘은 장점이 희석되긴 했지만, 코드가 매우 짧고 쉽다는 극강의 장점 덕분에 서버 개발 입문자에게 선호도가 높습니다. 하지만, 만약 필요한 서버가 웹 서버가 아니라면, Node js보다는 Python과 C같은 언어들을 사용하는 것이 좋다.
+`Node.js`는 이벤트를 적극 활용하여 처리가 빠른 것 부터 실행하기 때문에, 요청이 매우 많이 오는 채팅 프로그램 서버나, SNS Web server를 만들 때 적극 선호됩니다. 요즘에는 다른 프로그래밍 언어들도 Node.js방식으로 서버를 짤 수 있기 때문에 요즘은 장점이 희석되긴 했지만, 코드가 매우 짧고 쉽다는 극강의 장점 덕분에 서버 개발 입문자에게 선호도가 높습니다. 하지만, 만약 필요한 서버가 웹 서버가 아니라면, Node.js보다는 Python과 C같은 언어들을 사용하는 것이 좋다.
+
+`Node.js`를 설치하는 이유는? `npm (node package manager)`과 `Javascript`를 사용하기 위해서 node.js를 설치해야한다. `npm`은 `npm.js`에 등록된 package들을 내 프로젝트의 dependencies (packages)로 설치하는 것을 도와준다. 내 프로젝트에 dependencies를 설치하면 다른 프로그래머들이 작성한 유용한 code들을 가져다가 내 프로젝트에 사용할 수 있다.
 
 ⭐ 요약:
 
-1. Node Js가 무엇인지?
+1. Node.js가 무엇인가?
 
-**Node Js: browser내에서만 사용가능한 Javascript를 browser 밖에서도 사용가능하게 만든 Javascript 실행환경**
+**Node.js: Browser내에서만 사용가능한 Javascript를 밖에서도 사용가능하게 만든 Javascript 실행환경**
 
-2. Node Js를 왜 사용하는지?
+2. Node.js를 왜 사용하는가?
 
-**Node Js는 Web Server를 만드는 데 특화되어 있다. Node Js는 다른 프로그래밍 언어와 다르게 Non-blocking I/O의 특징을 가져, 시간이 오래걸리는 code들을 기다리지 않고, 다음 code를 실행한다. 그럼으로, 요청이 매우 많이 오는 프로그램들은 Node Js를 이용하여 web server를 만들면 된다.**
+**Node.js는 Web Server를 만드는 데 특화되어 있다. Node.js는 다른 프로그래밍 언어와 다르게 Non-blocking I/O의 특징을 가져, 시간이 오래걸리는 code들을 기다리지 않고, 다음 code를 실행한다. 그럼으로, 요청이 매우 많이 오는 프로그램들은 Node.js를 이용하여 web server를 만들면 된다.**
 
-3. Node Js를 설치하는 이유
+### 5. Express.js를 이용하여 실제 Server 만들기
 
-npm과 Javascript를 사용하기 위해서는 nodde js를 설치해야한다. npm stands for `node package manager`. npm은 프로그램의 dependencies (packages)를 설치하는 것을 도와준다.
-
-### 5. Express Js를 이용하여 실제 Server 만들기
-
-Express Js framework은 the most popular Node web framework으로, 아주 간단하게 Server를 만들 수 있도록 도와주는 package이다.
+`Express.js`는 the most popular Node web framework으로, 아주 간단하게 web server를 만들 수 있도록 도와주는 package이다.
 
 - 환경설정:
 
-1. Node Js 설치: 구글에 Node Js 검색 후, 가장 최신버전 설치
+1. Node.js 설치: 구글에 Node.js 검색 후, 가장 최신버전 설치
 2. VSCode 설치: 구글에 VSCode 검색 후, 가장 최신버전 설치
-3. VSCode에 Terminal을 열어 folder 생성 후, 그 안에 Express js 설치
+3. Terminal을 열어 project folder 생성 후, VSCode로 열기
 
-package.json 생성 (이 프로그램이 사용하는 dependencies (packages)을 모아둔 파일)
+```
+> $ mkdir projectName
+> $ cd projectName
+> $ code .
+```
+
+`package.json` 생성 (이 프로젝트가 사용하는 dependencies을 모아둔 파일)
 
 > `npm init`
 
-이러면, node_modules란 folder가 생성되는 데, 이 folder에는 다운 받은 packages의 실제 source code가 담겨있다.
+이러면, `node_modules`란 folder가 생성되는 데, 이 folder에는 다운 받은 packages의 실제 source code가 담겨있다.
 
-Express Js을 이 project에 설치
+`Express.js`을 이 project내에 설치
 
 > `npm i express`
 
-4. `server.js`, `app.js` file을 생성 후, express js 가져오기
+4. `server.js`, `app.js` files을 생성 후, Express.js 가져오기
 
 - `server.js` file
 
 ```
-const app = require("./app");
+const app = require("./app"); // import app from './app.js'
 
-const PORT = process.env.PORT || 5000;
+const PORT = 5000;
 app.listen(PORT, () => console.log(`Server started on PORT ${PORT}`));
 
 // app.listen(서버를 띄울 port number, 서버를 띄운 후 실행할 코드)
@@ -425,44 +647,46 @@ app.listen(PORT, () => console.log(`Server started on PORT ${PORT}`));
 - `app.js` file
 
 ```
-const express = require('express'); // import express js framework
+const express = require('express'); // import Express.js framework
 const app = express();
 
 // Bodyparser Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-module.export = app;
+module.export = app; // export app
 ```
 
-5. server를 실행하기: Terminal에 `node server.js`을 입력
+5. Server를 실행하기: Terminal에 `node server.js`을 입력
 
 6. 내 컴퓨터의 5000 port에 진입하기
 
-Browser에서 `http://localhost:5000`에 Get 요청을 보내면, 내 컴퓨터의 5000 port에 접근할 수 있다.
+Browser에서 `http://localhost:5000`에 GET 요청을 보내면, 내 컴퓨터의 5000 port에 접근할 수 있다.
 
 7. Get 요청에 응답할 code 작성하기
 
 ```
 // 사용자가 '/pet'으로 Get 요청을 보내면, pet과 관련된 안내문을 띄우기
 app.get('/pet', function (req, res) {
-    res.send("This is pet page")
-    // 또는
-    res.status(200).json({ message: "This is pet page" });
+  res.send("This is pet page")
+  // 또는
+  res.status(200).json({ message: "This is pet page" });
 });
 
 // Browser에서 `http://localhost:5000/pet`에 Get 요청을 보내면, "This is pet page"라는 문구를 확인할 수 있다.
 ```
 
-이는 내 컴퓨터의 5000 port이므로, 다른 컴퓨터로 위의 localhost URI를 검색하면, 그 컴퓨터의 5000 port에 접근하기 때문에 이 Server에는 접근할 수 없다.
+이는 내 컴퓨터의 5000 port이므로, 다른 컴퓨터로 위의 localhost URI를 검색하면, 그 컴퓨터의 5000 port에 접근하기 때문에 이 서버에는 접근할 수 없다.
 
-8. nodemon js library로 코드 수정시 서버 재시작을 자동화하기
+8. Nodemon.js library로 코드 수정시 서버 재시작을 자동화하기
 
-우리가 코드를 수정하면, 수정할 때마다 서버를 `CTRL + C`로 종료하고 `node server.js`로 서버를 다시 시작해야 한다. 그럼으로 nodemon js library로 코드 수정시 서버 재시작을 자동화한다.
+우리가 코드를 수정하면, 수정할 때마다 서버를 `CTRL + C`로 종료하고 `node server.js`로 서버를 다시 시작해야 한다. 그럼으로 Nodemon.js library로 코드 수정시 서버 재시작을 자동화한다.
 
 nodemon은 개발할 때만 사용할 dependency이기 때문에, -D를 붙혀 실제 production에서는 설치하지 않는다.
 
 > `npm i -D nodemon`
+
+- `package.json` file
 
 ```
 // package.json의 scripts에 다음의 코드를 추가한다.
@@ -472,10 +696,8 @@ nodemon은 개발할 때만 사용할 dependency이기 때문에, -D를 붙혀 �
 },
 ```
 
-- start: start the server. but need to restart the server after every server-side change.
-- server: start the server. nodemon continuously watch the server, and we won't have to keep updating it.
-
-server는 개발할 때만 사용할 command이다.
+- **start**: start the server. but need to restart the server after every server-side change.
+- **server**: start the server. nodemon continuously watch the server, and we won't have to keep updating it. server는 개발할 때만 사용할 command이다. 실제 production에서는 nodemon이 필요하지 않다.
 
 To use these command, type:
 
@@ -485,12 +707,12 @@ To use these command, type:
 
 우리는 이제 `node server.js` 대신 `npm start`로 웹서버를 실행시킬 수 있고, `npm run server`로 nodemon을 이용하여 server를 개발할 수 있다.
 
-9. Get 요청시 HTML file을 주는 code 작성하기
+9. GET요청시 HTML file을 주는 code 작성하기
+
+사용자가 '/'으로 GET요청시, index.html file 보여주기
 
 ```
-// 사용자가 '/'으로 Get 요청을 보내면, index.html file 보여주기
-// __dirname을 사용하기 위해, Include path module
-var path = require("path");
+var path = require("path"); // __dirname을 사용하기 위해, include path module
 
 app.get('/', function (req, res) {
     res.sendFile(__dirname + "/index.html"); // __dirname은 current directory를 반환한다.
@@ -499,13 +721,11 @@ app.get('/', function (req, res) {
 // Browser에서 `http://localhost:5000`에 Get 요청을 보내면, `index.html` file을 확인할 수 있다.
 ```
 
-10. Node Js의 common Js syntax를 ES6 syntax로 변경하기 (Optional)
+10. Node.js의 CommonJS module을 ES6 module로 변경하기 (Optional)
 
-Node Js는 common Js의 syntax을 채용하였다. 그래서, 다른 files을 불러오거나 내보낼 때 (import/export), common Js syntax인 `require('module_name')`와 `module.export = "module_name"`을 사용한다.
+Node.js는 CommonJS module의 syntax을 채용하였다. 그래서, 다른 files을 불러오거나 내보낼 때 (import/export), CommonJS syntax인 `const module_name = require('module_path')`와 `module.export = "module_name"`을 사용한다. 우리는 `import`와 `export` keywords가 편하기 때문에 ES6 module로 변경 할 것이다.
 
-이는 다른 programming language에서는 볼 수 없는 방식으로, 우리는 ES6 syntax인 `import`과 `export`이 편하기 때문에 Server를 ES6 syntax로 바꾸어 볼 것이다.
-
-In order to enable Node support for ES modules we need to tweak the package.json file. In the package.json file add `"type": "module"` to the root of the file.
+In order to enable Node support for ES modules we need to tweak the `package.json` file. In the `package.json` file add `"type": "module"` to the root of the file.
 
 ```
 // package.json에 "type": "module" 추가하기
@@ -540,31 +760,32 @@ Once we have updated our package file we have to make the relevant changes to ou
 import express from 'express';
 
 const app = express();
+const PORT = 5000;
 
 app.get('/',(req,res) => {
-    res.send('ES6 is the Node way to go');
+  res.send('ES6 is the Node way to go');
 })
 
-app.listen(3000,() => {
-    console.log(`App listening on port 3000!`);
+app.listen(PORT, () => {
+  console.log(`App listening on port ${PORT}!`);
 })
 ```
 
 Callback function을 정의하는 세가지 방법:
 
 1. Arrow function으로 함수의 이름 없이 함수를 정의
-2. Function keyword를 사용해 regular function을 정의
+2. `function` keyword를 사용해 regular function을 정의
 3. 함수를 따로 정의해 그 함수의 이름을 parameter로 전달
 
 ```
 // arrow function
-app.get('/',(req,res) => {
-    res.send('ES6 is the Node way to go');
+app.get('/', (req,res) => {
+  res.send('ES6 is the Node way to go');
 })
 
 // regular function
-app.get('/',function (req,res) {
-    res.send('ES6 is the Node way to go');
+app.get('/', function (req,res) {
+  res.send('ES6 is the Node way to go');
 })
 
 // function을 parameter로 전달
@@ -579,15 +800,17 @@ const getGoals = (req, res) => {
 app.get('/', getGoals)
 ```
 
+자세한 Express.js 사용법은 official documentation을 참고한다.
+
 ⭐ 요약:
 
-1. Express Js가 무엇이고, 왜 사용하는지?
+1. Express.js가 무엇이고, 왜 사용하는가?
 
-**Express Js는 Javascript backend framework로 Web server를 아주 쉽고 간편하게 만들게 해준다.**
+**Express.js는 Javascript web framework로 web server를 아주 쉽고 간편하게 만들게 해준다.**
 
 2. 컴퓨터에서 port가 무엇인지?
 
-**ports는 computer가 외부와 네트워크로 소통할 수 있는 구멍들을 의미하고, localhost:{port}를 browser에 검색하면 내 컴퓨터의 특정 port에 접근할 수 있다.**
+**ports는 computer가 외부와 네트워크로 소통할 수 있는 구멍들을 의미하고, localhost:${port}를 browser에 검색하면 내 컴퓨터의 특정 port에 접근할 수 있다.**
 
 ### 6. Server 운영 방식에 차이 이해하기
 
@@ -600,23 +823,21 @@ app.get('/', getGoals)
 회사가 server를 운영하는 방식인 `On-premise`방식과 `Cloud computing service` 방식을 각 각
 건물을 빌리는 것과 호텔을 이용하는 것에 비유할 수 있다.
 
-1. On-premise 방식:
+1. **On-premise** 방식:
    회사가 집적 물리적인 computer를 사서, 그 computer를 server로 만든다.
    이 방법은 computer를 직접 사야함으로 Cloud Computing service보다 더 많은 돈이 요구된다.
    black friday와 같이, 특정날에 사용자가 많아져 server를 늘리려면, 새로운 computer를 또 사야하고
    이 시즌이 지나면 그 computer는 다시 사용되지 않는다.
-   server를 사용자에 맞게 scale-up, scale-down하기 쉽지 않아 자원에 낭비가 생긴다.
+   server를 사용자 수에 맞게 scale-up, scale-down하기 쉽지 않아 자원에 낭비가 생긴다.
    대신, 회사가 집적 관리하기 떄문에 보안 문제에 더 안전하다.
 
 2. **Cloud Computing Service** 방식:
    위에서 호텔이 여려 방을 제공한다고 했는데,
    cloud computing에서는 virtualization을 이용하여 한 물리적 computer에 여러대의 가상 computer를 만들 수 있다
    (virtualBox에 ubuntu를 설치하는 것을 생각하면 된다).
-   대기업에서 제공하는 Cloud computing service를 이용하면, 회사는 물리적인 computer 자원을 사지않고
-   저렴한 가격에 server를 운용할 수 있다.
-   black friday와 같이, 특정날에 사용자가 많아지면, server를 늘리는 일에 아주 적합하다.
-   server를 사용자에 맞게 scale-up, scale-down하기 쉽기 때문에, 자원에 낭비가 없고,
-   내가 사용한 만큼만 돈을 지불하면 된다 (pay-as-you-use).
+   대기업에서 제공하는 Cloud computing service를 이용하면, 회사는 물리적인 computer 자원을 사지않고 저렴한 가격에 server를 운용할 수 있다.
+   black friday와 같이, 특정날에 사용자가 많아지면, server를 늘리는 데 아주 적합하다.
+   server를 사용자 수에 맞게 scale-up, scale-down하기 쉽기 때문에, 자원에 낭비가 없고, 내가 사용한 만큼만 돈을 지불하면 된다 (pay-as-you-use).
 
 ```
 Amazon사의 AWS (Amazon web services),
@@ -625,43 +846,42 @@ Google사의 GCP (Google cloud platform)등이 cloud computing service를 제공
 ```
 
 각 방식의 장점 요약:
-On-premise: security
-Cloud Computing service: money, scale-up & down, fast set up
+
+- On-premise: security
+- Cloud Computing service: money, scale-up & down, fast set up
 
 Cloud Computing service가 어디까지 service해주는 가에 따라 service를 세 가지로 나눌 수 있다.
 
-1. Iaas (Infrastructure as a service): AWS EC2 가상 머신,
-2. Paas (platform as a service): AWS Elastic Beanstalk,
-3. Saas (Software as a service): youtube, evernote, dropbox, Amazon Web Services (AWS)
-
-이런 cloud computing service의 엄청난 장점 덕분에 대세로 떠오르고 있다.
+1. `Iaas (Infrastructure as a service)`: AWS EC2 가상 머신,
+2. `Paas (platform as a service)`: AWS Elastic Beanstalk,
+3. `Saas (Software as a service)`: youtube, evernote, dropbox, Amazon Web Services (AWS)
 
 예로, brainless machine을 생각할 수 있다. 기존에 machine을 만드려먼 그 machine에 들어갈 비싼 computer 부품들을
 직접사서 조립해야 했지만, 이젠 machine이 network에 연결만 되어 있으면 cloud Computing service의 computer를 가져다
-사용하면 된다.
+사용하면 된다. 이런 cloud computing service의 엄청난 장점 덕분에 대세로 떠오르고 있다.
 
-- 기존 machine: 실제 computer 부품 구매, 200만원
-- brainless machine: network를 사용하여 더 좋은 computer를 더 싸게 이용, 50만원
+- 기존 machine: 실제 computer 부품 구매하여 제품내에 설치하고 비용은 200만원으로 비싸다.
+- Brainless machine: network를 사용하여 더 좋은 computer를 더 싸게 이용하고 비용은 50만원으로 더 저렴하다.
 
 ⭐ 요약:
 
-1. Cloud Computing Services가 무엇인지?
+1. Cloud Computing Services가 무엇인가?
 
 **Cloud Computing Services는 내 컴퓨터가 아닌 각 Cloud computing service의 데이터베이스에 있는 computer들로 Server를 운영하기 때문에, 내가 직접 컴퓨터를 안사도 인터넷만 있으면 더 싼 가격에 더 좋은 컴퓨터로 나의 Server를 운영할 수 있다.**
 
-2. Cloud Computing Services를 왜 사용하는지?
+2. Cloud Computing Services를 왜 사용하는가?
 
 **Cloud Computing Services로 Server를 운영하면 money, scale-up & down, fast set up에 엄청난 강점이 존재한다.**
 
 ### 7. CORS (Cross-Origin Resource Sharing) 이해하기
 
-#### CORS가 무엇인가
+#### CORS가 무엇인가?
 
 **CORS는 다른 출처간에 resource를 공유할 수 있도록, browser내에서 다른 URI사이의 API등의 데이터 접근이 가능하도록 허용하는 것을 의미한다.**
 
 `교차 출처 리소스 공유(Cross-Origin Resource Sharing, CORS)`는 추가 HTTP Header를 사용하여, 한 출처에서 실행 중인 웹 애플리케이션이 다른 출처의 선택한 자원에 접근할 수 있는 권한을 부여하도록 브라우저에 알려주는 체제입니다.
 
-CORS란 주소가 어쩌구닷컴인 주소에서 다른 주소로 API로 데이터를 받아오기 위해 **Frontend에서** HTTP request를 보냈을 때 발생하는 에러를 없에기 위한 것이다. Postman이나 baecked에서 http요청을 하면 잘 작동하는 http Request가 웹브라우저에서는 CORS 문제로 막히게 된다.
+CORS란 내 주소에서 다른 주소로 API로 데이터를 받아오기 위해 **Frontend에서** HTTP request를 보냈을 때 발생하는 에러를 없에기 위한 것이다. Postman이나 backend에서 다른 주소로 http요청을 하면 잘 작동하는 데, 웹브라우저에서 다른 주소로 http요청을 하면 CORS 문제로 막히게 된다.
 
 이는 크롬, 엣지같은 browser가 내가 data를 얻기위해 방문하는 웹사이트를 믿지 못하기 때문에 발생하는 에러이다. Browser로 내가 웹사이트에 login한 사이트들은 다음번에 이 사이트를 방문하면, log-in한 것이 유지되고 있는 경우가 많다. 이는 browser가 token등의 로그인 정보를 cookie로 저장해서, 그 사이트를 다시 접속하면, 그 http request에다가 로그인 정보가 있는 cookie를 같이 보내, 웹사이트가 내가 로그인이 되어있다는 것을 알게하기 때문에 가능하다.
 
@@ -671,11 +891,19 @@ CORS란 주소가 어쩌구닷컴인 주소에서 다른 주소로 API로 데이
 
 그래서 브라우저에서 `cross-origin` 요청을 안전하게 할 수 있도록 하는 메커니즘입니다.
 
-`cross-origin`이란 다음 중 한 가지라도 다른 경우를 말합니다.
+`cross-origin`이란 다음 중 한 가지라도 다른 경우를 말합니다:
 
 - **Protocal** (scheme): http와 https는 프로토콜이 다르다.
-- **Domain**: domain.com과 other-domain.com은 다르다.
+- **Domain**: `domain.com`과 `other-domain.com`은 다르다.
 - **port**: 8080포트와 3000포트는 다르다.
+
+```
+https://naver.com/id=3:3000
+
+Scheme(Protocol) : https
+Domain : naver.com
+port : 3000
+```
 
 즉, Origin이란 출처를 의미하며 `Protocol + Host + Port` 를 합친 것을 말한다. Origin이 같으면 CORS가 필요하지 않고, 에러는 발생하지 않는다.
 
@@ -685,15 +913,7 @@ CORS가 없이 모든 곳에서 데이터를 요청할 수 있게 되면, 다른
 
 원래는 Browser는 서로 다른 출처끼리의 요청을 주고받는 건 금지되어있다. 하지만, 웹 생태계가 다양해 지면서, 여러 서비스들간에 보다 자유롭게 데이터가 주고 받아질 필요가 생기면서 합의된 출처들간에 데이터를 주고받는 것을 합법적으로 허용하기 위해 CORS가 등징했다. CORS를 사용하려면 요청을 받는 backend쪽에서 이걸 허락할 다른 출처들을 미리 명시해 두면 된다.
 
-- 예시: 음식점 홈페이지에서 Google map API로 데이터를 요청한다. 다른 주소로의 요청이니까 `Cross-Origin API`이다. Broswer는 다른 주소로의 요청에는 Origin이라는 HEADER를 추가해서 보낸다. Header의 Origin 항목에는 요청하는 쪽의 scheme (Protocol), domain, port가 담겨있다. 이 요청을 받은 Google map API는 답장 HEADER에 지정된 `Access-Control-Allow-Origin` 정보를 실어서 보낸다. 만약 음식점 홈페이지 URI가 CORS에 등록된 상태면, 답장 HEADER에 이 URI도 들어있다. 크롬이 Origin애서 보낸 출처값이 Googlde Map server의 답장 HEADER에 담긴 `Access-Control-Allow-Origin`에 똑같이 있으면 안전한 웹사이트로 간주하고, response data를 받아온다. 만약 없다면, 크름은 "data를 받으려면 CORS를 사용하던지 해라"라는 error를 발생시킨다.
-
-```
-https://naver.com/id=3:3000
-
-Scheme(Protocol) : https
-Domain : naver.com
-port : 3000
-```
+- 예시: 음식점 홈페이지에서 Google map API로 데이터를 요청한다. 다른 주소로의 요청이니까 `Cross-Origin API`이다. Broswer는 다른 주소로의 요청에는 Origin이라는 HEADER를 추가해서 보낸다. Header의 Origin 항목에는 요청하는 쪽의 scheme (Protocol), domain, port가 담겨있다. 이 요청을 받은 Google map API는 답장 HEADER에 지정된 `Access-Control-Allow-Origin` 정보를 실어서 보낸다. 만약 음식점 홈페이지 URI가 CORS에 등록된 상태면, 답장 HEADER에 이 URI도 들어있다. 크롬이 Origin애서 보낸 출처값이 Googlde Map server의 답장 HEADER에 담긴 `Access-Control-Allow-Origin`에 똑같이 있으면 안전한 웹사이트로 간주하고, response data를 받아온다. 만약 없다면, 크롬은 "data를 받으려면 CORS를 사용하던지 해라"라는 error를 발생시킨다.
 
 #### CORS는 어떻게 동작하는가?
 
@@ -726,8 +946,7 @@ Simple requqets라고 부릅니다. 이 요청은 추가적으로 확인하지 �
 
 - `preflight` 요청일 경우
 
-Origin헤더에 현재 요청하는 origin과, Access-Control-Request-Method헤더에 요청하는 HTTP method와 Access-Control-Request-Headers요청 시 사용할 헤더를 OPTIONS 메서드로 서버로 요청합니다. 이때 내용물은 없이 헤더만 전송합니다.
-브라우저가 서버에서 응답한 헤더를 보고 유효한 요청인지 확인합니다. 만약 유효하지 않은 요청이라면 요청은 중단되고 에러가 발생합니다. 만약 유효한 요청이라면 원래 요청으로 보내려던 요청을 다시 요청하여 리소스를 응답받습니다.
+Origin헤더에 현재 요청하는 origin과,` Access-Control-Request-Method` Header에 요청하는 HTTP method와 `Access-Control-Request-Headers` 요청 시 사용할 헤더를 OPTIONS 메서드로 서버로 요청합니다. 이때 내용물은 없이 헤더만 전송합니다. 브라우저가 서버에서 응답한 헤더를 보고 유효한 요청인지 확인합니다. 만약 유효하지 않은 요청이라면 요청은 중단되고 에러가 발생합니다. 만약 유효한 요청이라면 원래 요청으로 보내려던 요청을 다시 요청하여 리소스를 응답받습니다.
 
 - preflight 요청이란?
 
@@ -737,8 +956,8 @@ Origin헤더에 현재 요청하는 origin과, Access-Control-Request-Method헤�
 
 ```
 Origin
-Access-Control-Request-Method: preflight 요청을 할 때 실제 요청에서 어떤 메서드를 사용할 것인지 서버에게 알리기 위해 사용됩니다.
-Access-Control-Request-Headers: preflight요청을 할 때 실제 요청에서 어떤 header를 사용할 것인지 서버에게 알리기 위해 사용됩니다.
+Access-Control-Request-Method: preflight요청 시 실제 요청에서 어떤 method를 사용할 것인지 서버에게 알리기 위해 사용됩니다.
+Access-Control-Request-Headers: preflight요청 시 실제 요청에서 어떤 header를 사용할 것인지 서버에게 알리기 위해 사용됩니다.
 ```
 
 - 응답 헤더 목록
@@ -751,34 +970,36 @@ Access-Control-Allow-Credentials:
 - Credentials가 true 일 때 요청에 대한 응답이 노출될 수 있는지를 나타냅니다.
 - preflight요청에 대한 응답의 일부로 사용되는 경우 실제 자격 증명을 사용하여 실제 요청을 수행할 수 있는지를 나타냅니다.
 - 간단한 GET 요청은 preflight되지 않으므로 자격 증명이 있는 리소스를 요청하면 헤더가 리소스와 함께 반환되지 않으면 브라우저에서 응답을 무시하고 웹 콘텐츠로 반환하지 않습니다.
-Access-Control-Allow-Methods: preflight`요청에 대한 대한 응답으로 허용되는 메서드들을 나타냅니다.
-Access-Control-Allow-Headers: preflight요청에 대한 대한 응답으로 실제 요청 시 사용할 수 있는 HTTP 헤더를 나타냅니다.
+Access-Control-Allow-Methods: preflight요청에 대한 응답으로 허용되는 메서드들을 나타냅니다.
+Access-Control-Allow-Headers: preflight요청에 대한 응답으로 실제 요청 시 사용할 수 있는 HTTP 헤더를 나타냅니다.
 ```
 
 ⭐ 요약:
 
-1. CORS (Cross-Origin Resource Sharing)가 무엇인지?
+1. CORS (Cross-Origin Resource Sharing)가 무엇인가?
 
 **CORS는 다른 출처간에 resource를 공유할 수 있도록, web browser내에서 다른 URI사이에 데이터를 주고 받는 것을 합법적으로 허용하는 것을 의미한다.**
 즉, 서로 다른 Origin간에 자원을 공유하는 것을 가능하게 해주며 기본적으로 차단되어있습니다.
 
-2. SOP (Same-Origin Policy)가 무엇인지?
+2. SOP (Same-Origin Policy)가 무엇인가?
 
 **Web browser의 동일 출처 정책,으로 동일한 URI사이에서만 API등의 data 접근이 가능하도록, 다른 URI의 data접근을 막는 것을 의미한다.** Web browser는 default값으로 SOP를 유지한다.
 
-### 8. Express Js에서 CORS를 이용해보기
+### 8. Express.js에서 CORS 사용하기
 
 Installation is done using the npm install command:
 
 > $ `npm i express cors`
 
-- Simple Usage (Enable All CORS Requests)
+- Simple Usage in Express.js (Enable All CORS Requests)
 
 ```
 var express = require('express')
 var cors = require('cors')
 var app = express()
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.use(cors())
 
 app.get('/products/:id', (req, res, next) => {
@@ -811,13 +1032,189 @@ app.listen(80, function () {
 })
 ```
 
-다른 기타 사용법은 구글에 express cors 검색후 공식문서를 확인한다.
+자세한 사용법은 구글에 express cors 검색 후 공식문서를 확인한다.
+
+### 9. AJAX 이해하기
+
+`Ajax` is a set of web development techniques that uses various web technologies on the client-side to create **asynchronous web applications**. With Ajax, web applications can send and retrieve data from a server asynchronously without interfering with the display and behaviour of the existing page. Ajax는 Asynchronous JavaScript And XML의 약자로 서버와 비동기적으로 데이터를 주고받는 자바스크립트 기술을 의미한다. Ajax를 사용하면 새로고침없이 서버에게 GET요청을 할 수 있다.
+
+- 장점: 새로고침이 없기 때문에, 페이지들간에 부드러운 이동이 가능하다.
+
+Ajax는 서버랑 비동기적으로 통신할 때 사용하는 기술이므로 Ajax를 이해하기 위해서는 서버에 대한 이해가 먼저 필요하다. 서버는 유저가 데이터를 요구하면 데이터를 보내주는 프로그램이다.
+
+웹서버에게 데이터를 요구하는 방법:
+
+1. 원하는 데이터의 URL (서버개발자가 만든 API를 통해 얻을 수 있다.)
+2. 그 URL로 GET request 보내기
+
+#### 데이터 URL에 GET request 보내기
+
+원하는 데이터의 URL에 GET request를 보내는 데에는 여러가지 방법이 있다:
+
+1. Browser에 URL를 입력
+
+2. HTML `form` tag로 GET요청
+
+`form` tag내의 `button`을 누르면, action의 URL로 GET요청이 실행된다.
+
+- `index.html` file
+
+```
+<form action="example.com" method="GET">
+  <button type="submit">GET request</button>
+</form>
+```
+
+위의 방법들로 GET요청을 보내면, browser가 새로고침된다. 새로고침되는 게 싫다면 AJAX로 GET요청을 보내면 된다.
+
+#### Ajax로 GET요청 보내기
+
+Ajax로 GET요청을 보내는 방법:
+
+1. javascript의 built-in 함수인 `fetch()` function 사용: native JavaScript
+
+최신 javascript는 `fetch()`를 사용하여 Ajax로 GET요청을 보낸다.
+
+`https://example.github.io/price.json` URL에 GET요청 보내기
+
+```
+// Promise ver
+const 함수 = fetch("https://example.github.io/price.json")
+  .then((res) => {
+    if (!res) {
+      throw new Error("Data not found");
+    }
+    return res.json();
+  })
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((err) => {
+    console.log(err.message);
+  });
+
+// Async/Await ver
+const 함수 = async () => {
+  try {
+    const res = await fetch("https://example.github.io/price.json");
+    if (!res) {
+      throw new Error("Data not found");
+    }
+    const result = await res.json();
+    console.log(result);
+  } catch (error) {
+    console.log(err.message);
+  }
+};
+```
+
+위에서 보다 싶이, native javascript만 사용하면 데이터 하나를 가져오는 데 많은 코드를 작성해야 한다.
+
+2. 외부 library 사용: `Axios`의 `axios.get()`, `Jquery`의 `$.ajax()`
+
+- React나 Vue 개발환경에서는 자주 `Axios` library를 설치해서 사용한다.
+- Axios 환경설정: npm으로 Axios 설치 or CDN 추가
+
+> `npm i axios`
+
+또는, HTML에 다음 script tag 추가
+
+`<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.25.0/axios.min.js" integrity="sha512-/Q6t3CASm04EliI1QyIDAA/nDo9R8FQ/BULoUFyN4n/BDdyIxeH7u++Z+eobdmr11gG5D/6nPFyDlnisDwhpYA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>`
+
+- Axios 사용법
+
+```
+const axios = require('axios');
+
+// Promise ver
+const 함수 = axios
+  .get("https://example.github.io/price.json")
+  .then((result) => {
+    console.log(result.data);
+  })
+  .catch((err) => {
+    console.log(err.message);
+  });
+
+// Async/Await ver
+const 함수 = async () => {
+  try {
+    const result = await axios.get("https://example.github.io/price.json");
+    const data = await result.data();
+    console.log(data);
+  } catch (error) {
+    console.log(err.message);
+  }
+};
+
+// axios API
+// Send a POST request
+axios({
+  method: 'post',
+  url: '/user/12345',
+  data: {
+    firstName: 'Fred',
+    lastName: 'Flintstone'
+  }
+});
+
+// GET request for remote image in node.js
+axios({
+  method: 'get', // default
+  url: 'http://bit.ly/2mTM3nY',
+  responseType: 'stream',
+  headers: {
+	  'Access-Control-Allow-Origin': '*',
+	},
+})
+  .then(function (response) {
+    response.data.pipe(fs.createWriteStream('ada_lovelace.jpg'))
+  });
+```
+
+Axios로 GET요청시 CORS관련 에러를 자주 보게 된다. 이는 browser에서 보안때문에 내 주소와 다른 주소로는 ajax 요청이 불가능해 생기는 에러이다. 이럴 경우 다음의 코드를 추가한다.
+
+```
+headers: {
+	  'Access-Control-Allow-Origin': '*',
+},
+
+또는
+
+CORS 정책 관련 기능을 끈다.
+
+//  Express.js의 경우
+const cors = require('cors');
+app.use(cors());
+```
 
 ## % 부록0: 유용한 VSCode 기능 알아보기 %
 
 - `단어 + tab`: Snippets를 이용하여 자동완성 기능을 적극활용한다.
 - Debug tool를 이용하여 프로그램을 디버깅할 수 있다 (내가 확인하고 싶은 코드 옆에 breakpoint 생성 후 debug 실행).
-- VScode extension인 `Prettier`을 download하면, save시 code formatting을 자동으로 해준다.
+
+### 유용한 VScode extension
+
+1. `Prettier` - save시 auto code formatting.
+
+- `CTRL + ,`로 setting 열기
+- `save` 검색 후 `format on save` 체크
+- `prettier` 검색 후 `Prettier: Tab width`를 `2`로 변경
+- `quote` 검색 후 `Javascript/Typescript > preferences: Quote style`을 `single`로 변경
+
+2. `Live Server` - HTML/CSS/Javascript의 server 실행
+3. `Material icon theme` - file icon 변경
+4. `ES7+ React/Redux/React-Native snippets` - React 개발환경시 코드 자동완성
+5. `Auto rename tag` - HTML에서 tag이름 변경 시, 뒤의 tag도 같이 변경
+6. `HTML CSS Support` - HTML에서 CSS file의 자동완성
+7. `Volar` - Vue 개발환경
+8. `bracket pair colorizer2` - 괄호마다 색생추가
+9. `CSS peek` - HTML에서 CSS peek가능
+10. `indent-rainbow` - indentation마다 색상추가
+11. `open in browser` - HTML을 browser로 열기
+12. `ESLint`
+13. `GitLens — Git supercharged` - git을 이용해, 코드 변경자 확인
+14. `Community Material Theme` - vscode 색상변경
 
 ### keyboard snippets
 
@@ -844,10 +1241,11 @@ In VScode, go to `Help > Keyboard Shortcuts References`. 우리가 사용가능�
 
 #### Basic editing
 
-- `tab`: 자동완성 (현재치고 있는 코드를 자동완성해준다.)
+- `tab`: 자동완성 (현재치고 있는 코드를 자동완성)
 - `Ctrl + X`: Cut line (empty selection)
 - `Ctrl+ shift + k`: Delete Line
-- `Ctrl + L => DEL`: Delete Line -` Ctrl + C`: Copy
+- `Ctrl + L => DEL`: Delete Line
+- `Ctrl + C`: Copy
 - `Ctrl + V`: Paste
 - `Ctrl + Z`: Undo
 - `Ctrl + S`: Save
@@ -868,17 +1266,18 @@ In VScode, go to `Help > Keyboard Shortcuts References`. 우리가 사용가능�
 - `Del`: 커서 뒤의 한 캐릭터 삭제
 - `Ctrl + Del`: 커서 뒤의 한 단어 삭제
 - `Ctrl + A`: 현재 파일의 모든 문장 drag
+- `Ctrl + ,`: Setting 열기
 
 - `Alt + click`: Multi-cursor (Alt + Click를 여러 군데 찍으면, 한번에 여러 곳에 typing할 수 있다).
 
-### Terminal Command
+### Terminal (Unix shell) Command
 
-- `ls`: list files in current directory
-- `ls -l`: list all files in current directory
-- `ls -a`: list all files in current directory
-- `mkdir`: make directory
+- `ls`: list files in current directory (list)
+- `ls -l`: list files detail in current directory (list -long)
+- `ls -a`: list all files in current directory (list -all)
+- `mkdir + fileName`: make directory
 - `cd`: change directory
-- `chmod +x fileName` : make it executable
+- `chmod +x fileName` : make it executable (change mode)
 - `cd dirName`: change directory
 - `cd ..` - change directory backword
 - `rm fileName`: remove file
@@ -890,10 +1289,18 @@ In VScode, go to `Help > Keyboard Shortcuts References`. 우리가 사용가능�
 - `cat fileName`: see the whole text file in terminal
 - `pwd`: show current path you are in
 - `man (1/2/3) malloc`: show manual page for malloc
+- `clear`: clear all text in terminal
+- `find . -type file -name "*.json"`: 현제 folder의 내부에 존재하는 모든 json 파일을 반환
+- `touch fileName`: fileName이 존재하면 파일 열기, 존재하지 않으면 새로운 파일 생성
+- `echo + text`: Terminal에 text 출력
+- `echo + text > fileName`: fileName에 text를 덮어 씌우기
+- `echo + text >> fileName`: fileName에 text를 append
+- `vi fileName`: Vim text editor로 fileName열기
+- `nano fileName`: nano text editor로 fileName열기
 
 ### Emmets
 
-에밋(Emmet)은 HTML, XML, XSL 문서 등을 편집할 때 빠른 코딩을 위해 사용하는 플러그인이다. 원래 젠코딩(Zen Coding)으로 부르다가 에밋(Emmet)으로 이름을 변경했다. 매우 간단한 몇 가지 코드만 입력하면, 자동으로 완전한 HTML 코드를 생성해 준다. Emmet은 Visual Studio Code에 내장되어 있으며 확장이 필요하지 않습니다.
+에밋(Emmet)은 HTML, XML, XSL 문서 등을 편집할 때 빠른 코딩을 위해 사용하는 플러그인이다. 매우 간단한 몇 가지 코드만 입력하면, 자동으로 완전한 HTML 코드를 생성해 준다. Emmet은 Visual Studio Code에 내장되어 있으며 확장이 필요하지 않습니다.
 
 예시:
 
@@ -911,16 +1318,44 @@ ul box안에 li tag를 5개 만들고 싶다.
 </ul>
 ```
 
-div box안에 container라는 class를 주고, class가 title인 p tag를 3개 만들고 싶다.
+div box안에 container라는 class를 주고, class가 title과 title$인 p tag를 3개 만들고 싶다.
 
-- `div.container>p.title*3` + tab
+- `div.container>p.title.title${$}*3` + tab
 
 ```
 <div class="container">
-  <p class="title"></p>
-  <p class="title"></p>
-  <p class="title"></p>
+	<p class="title title1">1</p>
+	<p class="title title2">2</p>
+	<p class="title title3">3</p>
 </div>
+```
+
+- `div>(header>ul>li*2>a)+footer>p` + tab
+
+```
+<div>
+  <header>
+    <ul>
+      <li><a href=""></a></li>
+      <li><a href=""></a></li>
+    </ul>
+  </header>
+  <footer>
+    <p></p>
+  </footer>
+</div>
+```
+
+더미 dummy 용 텍스트 입력하기
+
+- `p>lorem` + tab
+
+- `p>lorem4` + tab
+
+```
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus quibusdam eligendi commodi, nisi reprehenderit corporis, libero laudantium quo blanditiis unde maiores voluptatum quam mollitia necessitatibus facilis aspernatur minima ullam cupiditate.</p>
+
+<p>Lorem ipsum dolor sit.</p>
 ```
 
 css에서 display를 none으로 하고 싶다.
@@ -935,7 +1370,7 @@ Emmets은 html, css을 생성할 때만 가능한 것으로, react 개발환경�
 
 Enable Emmet support for JSX:
 
-1. In VScode, go to `File > Preferences > Settings > Open setting (setting.json) `
+- In VScode, go to `File > Preferences > Settings > Open setting (setting.json) `
 
 We will add the following lines anywhere in this setting:
 
@@ -974,7 +1409,7 @@ export default $1;
 
 ## 2. Javascript
 
-### Q1. What is Javascript?
+### 1. What is Javascript?
 
 **JavaScript, often abbreviated JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS.**
 
@@ -1022,7 +1457,7 @@ age = "Hello"; // age에 문자형 (String)값이 들어오면서, age의 타입
 
 **Javascript는 HTML 조작과 변경에 사용된다.**
 
-### Q2. Basic Javascript syntax
+### 2. Basic Javascript syntax
 
 Javascript syntax를 배울 때 중요한 점은 **if, for, var, let, function, array, object등 Javascript에서 사용하는 문법은 HTML을 조작하고, 변경하기 위해 등장했다는 것이다.**
 
@@ -2109,15 +2544,24 @@ decimal = "Hello"; // error. decimal은 정수라니까...
 ### 1. Framework vs Library
 
 - Framework를 한국어로 하면 frame (틀), work (작업), 즉 기본적인 틀을 만드는 작업이다.
-  framework는 기본적인 사용방법이 존재하기 때문에 우리는 이 기본적인 뼈대에다가 살을 붙이면 된다.
+  Framework는 기본적인 사용방법이 존재하기 때문에 우리는 이 기본적인 뼈대에다가 살을 붙이면 된다.
 
 - Library는 특정 기능에 대한 도구 or 함수들을 모은 집합입니다.
   즉, 프로그래머가 개발하는데 필요한 것들을 모아둔 것입니다.
-  library는 단순 활용이 가능한 도구들의 집합
+  library는 단순 활용이 가능한 도구들의 집합이다.
 
 집을 만드는 작업이라고 하면,
-framework는 집의 기본 구조를 제공하여, 우리는 그 구조에 더하면 되고,
-library는 침대, 소파와 같은 가구로, 우리는 이 가구들로 집을 만들어야 한다.
+
+- Framework는 집의 기본 구조를 제공하여, 우리는 그 구조에 더하면 되고,
+- Library는 침대, 소파와 같은 가구로, 우리는 이 가구들로 집을 만들어야 한다.
+
+프로그래밍에서는
+You, the developer, use a library. You call a library when and where you need to.
+In contrast, a framework call your code
+
+```
+Developer    Framework
+```
 
 ### 2. ⭐ Frontend framework vs Server-Side Web Framework
 
@@ -2145,7 +2589,7 @@ Server가 Client에 자료를 넘겨주면, Client computer가 그 정보를 가
 CSR (Client Side Rendering)이라고 부른다. CSR은 HTMl이 비어있기 때문에 검색 엔진에 노출되어 검색되기 쉽지 않다.
 SEO (Search Engine Optimization)에 약점을 가진다.
 
-⭐ `React JS`: React는 Meta사에서 만든 Javascript frontend framework로 computer에 최신 버전의 `node js`를 설치하면 누구나
+⭐ `React JS`: React는 Meta사에서 만든 Javascript frontend framework로 computer에 최신 버전의 `Node.js`를 설치하면 누구나
 쉽게 사용할 수 있다.
 
 그 밖에도 google사에서 만든 `Angular JS`,
@@ -2689,21 +3133,21 @@ return (
 
 ### 1. What is VueJs
 
-#### Q1. Vue Js가 무엇이고, 왜 사용하는가
+#### Vue Js가 무엇이고, 왜 사용하는가
 
 Vue Js는 Web app을 만들 수 있는 Javascript Front-end Framework이다.
 
-#### Q2. Web app은 무엇이고, 왜 사용하는가
+#### Web app은 무엇이고, 왜 사용하는가
 
-A. **page간 이동에 새로고침이 필요없이 부드럽게 넘어가기 때문에**
+**page간 이동에 새로고침이 필요없이 부드럽게 넘어가기 때문에**
 
 Web-app은 Single Page Application (SPA)이라고 불리는 웹페이지로, 하나의 html을 가지고, 그 안에 내용물만을 변경하여 사용자에게 보여준다. 웹사이트 내에서 page loading이 덜 걸리고, page간 이동에 새로고침이 필요없이 부드럽게 넘어가기 때문에 사용한다.
 
 Web app를 만들 수 있는 frontend framework에는 Vue 말고도 React/Angular등 다른 tools도 많이 있다.
 
-#### Q3. Web app을 만드는데 굳이 Vue를 사용하는 이유는 무엇인가
+#### Web app을 만드는데 굳이 Vue를 사용하는 이유는 무엇인가
 
-A. **Vue는 문법이 쉽고 하나로 정해져 있기 떄문에, 문법 몇개만 외워주면 초보도 쉽게 output를 낼 수 있다.**
+**Vue는 문법이 쉽고 하나로 정해져 있기 떄문에, 문법 몇개만 외워주면 초보도 쉽게 output를 낼 수 있다.**
 
 - A1. Vue가 더 쉽기 때문이다. React나 Vue 중 본인에게 맞는 거 사용하면 되는데, Javascript를 잘 하지 못한다면 Vue를 먼저 사용해본다.
 - A2. Vue는 문법이 하나로 정해져 있기 때문에 여러 개발자사이의 코딩 스타일을 통일시킨다. 다른 개발자가 나와 같은 방법만을 사용해야 함으로 한 눈에 이해하기 쉽다.
@@ -2794,7 +3238,7 @@ Vue는 문법이 쉽고 하나로 정해져 있기 떄문에, 문법 몇개만 �
 
 Vue로 Project를 만들면서, Vue의 문법들을 공부해보자.
 
-1. 최신 버젼의 Node js 설치 (`npm`을 사용하기 위해)
+1. 최신 버젼의 Node.js 설치 (`npm`을 사용하기 위해)
 2. VScode code editor와 VScode extension 설치 (`Vue` code를 쉽게 입력하기 위해)
 
 - `Vue Language Features (Volar)`
@@ -2805,7 +3249,7 @@ Vue로 Project를 만들면서, Vue의 문법들을 공부해보자.
 3. 기본적인 HTML, CSS and JavaScript 개념
 4. [Vue 문법 몇가지](https://vuejs.org/guide/introduction.html)
 
-#### Q1. Vue로 project 만드는 방법은
+#### Vue로 project 만드는 방법은
 
 A. **project 1. 생성 => 2. 개발 => 3. 배포**
 
@@ -2928,7 +3372,7 @@ const blueColor = 'color : blue';
 
 ### Vuetify
 
-#### Q1. What is Vuetify?
+#### 1. What is Vuetify?
 
 A. **Vuetify is a complete UI framework built on top of Vue.js.**
 
@@ -2936,17 +3380,17 @@ Vuetify는 React의 Material-UI/React-bootstrap과 같은 UI framework로, 미�
 
 ## 7. ExpressJs
 
-### Q1. What is Express js?
+### 1. What is Express.js?
 
-Express Js는 Javascript Back-end Framework로, Web Server을 만들 때 사용한다.
+Express.js는 Javascript Back-end Framework로, Web Server을 만들 때 사용한다.
 
 ## 8. Flask (Python)
 
-### Q1. What is Flask?
+### 1. What is Flask?
 
 Flask is a micro web framework written in Python. Flask는 Python으로 구동되는 Web Framework로, 간단하게 기능을 설명하면 내가 만든 program에 web server를 구동시켜주는 편한 코드 모음이라고 할 수 있다. 다른 python Web Framework인 Django 보다 라이트한 특성때문에 간단한 API서버 구축에 적합하다. By default, Flask runs on port 5000 in development mode.
 
-### Q2. Setup flask Project
+### 2. Setup flask Project
 
 Install Flask module
 
@@ -2993,13 +3437,13 @@ server에 요청하면 연산이 없이 바로 나가는 것들, images, css, js
 
 ### 1. What is Mongodb
 
-#### Q1. Mongodb가 무엇이고, 왜 사용하는지?
+#### 1. Mongodb가 무엇이고, 왜 사용하는지?
 
 MongoDB is a source-available cross-platform document-oriented database program.
 
 MongoDB is Classified as a NoSQL database program, MongoDB uses JSON-like documents with optional schemas.
 
-#### Q2. Nosql가 무엇이고, 왜 사용하는지?
+#### 2. Nosql가 무엇이고, 왜 사용하는지?
 
 NoSQL은 Not Only SQL, SQL 뿐만 아니다라는 의미를 지니고있다. 즉, SQL을 사용하는 관계형 데이터베이스가 아닌 데이터베이스를 의미한다. 대표적인 관계형 데이터베이스로는 MySQL, Oracle, PostgreSQL이 있고, NoSQL 진영에는 이 포스트에서 다루는 MongoDB와 Redis, HBase 등이 있다.
 
@@ -3036,6 +3480,21 @@ Set User name & User password => Network access IP Address => Connect => "Connet
 
 ## 12. NextJs
 
+### What is Next.js?
+
+Next.js는 Web framework인 react.js에 기능을 더한 Web-meta framework이다. React.js로 만든 웹을 **Static & Server Side Rendering (SSD)**를 가능하게 만들어 준다.
+
+#### prerequisite
+
+- Javascript/Typescript/React.js에 대한 기본지식
+-
+
+> `npx create-next-app@latest`
+
+Typescript 추가
+
+> `npx create-next-app@latest --typescript`
+
 ## 13. Redux
 
 ### 1. What is Redux
@@ -3048,7 +3507,7 @@ redux는 redux toolkit으로 쓰면 더 쉽고 거기에 타입스크립트로 �
 
 ### 1. What is CSS
 
-#### Q1. CSS가 무엇이고, 왜 사용하는지?
+#### Q1용하는지?. CSS가 무엇이고, 왜 사
 
 ### 2. Margin and Padding
 

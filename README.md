@@ -2,28 +2,31 @@
 
 목표: Web Application Development을 이해하고 나만의 web app을 만들어보자.
 
-아래의 내용은 간단한 개념위주이므로, 개념만 공부해서는 이해하기 힘들다.
-
-**실제 project를 만들면서** 필요한 부분들을 이 곳에서 참고히면 된다.
+아래의 내용은 간단한 개념위주이므로, 개념만 공부해서는 이해하기 힘들다. **실제 project를 만들면서** 필요한 부분들을 이 곳에서 참고히면 된다.
 
 ## Table of Contents
 
 0. [Web Development Loadmap](https://github.com/heeshin174/Web_App_Dev_Kor#0-web-development-loadmap)
-1. [HTML](https://github.com/heeshin174/Web_App_Dev_Kor#1-html)
-2. [CSS](https://github.com/heeshin174/Web_App_Dev_Kor#2-css)
-4. [JavaScript](https://github.com/heeshin174/Web_App_Dev_Kor#3-javascript)
-5. [TypeScript](https://github.com/heeshin174/Web_App_Dev_Kor#4-typescript)
-3. [Web Application Development](https://github.com/heeshin174/Web_App_Dev_Kor#1-web-application-development)
-6. [Web Application Development의 이해](https://github.com/heeshin174/Web_App_Dev_Kor#4-web-application-development%EC%9D%98-%EC%9D%B4%ED%95%B4)
-7. [React.js](https://github.com/heeshin174/Web_App_Dev_Kor#5-reactjs)
-8. [Vue.js](https://github.com/heeshin174/Web_App_Dev_Kor#6-vuejs)
-9. [Express.js](https://github.com/heeshin174/Web_App_Dev_Kor#7-expressjs)
-10. [Flask (Python)](https://github.com/heeshin174/Web_App_Dev_Kor#8-flask-python)
-11. [Postgresql](https://github.com/heeshin174/Web_App_Dev_Kor#9-postgresql)
-12. [Mongodb](https://github.com/heeshin174/Web_App_Dev_Kor#10-mongodb)
-13. [Remix](https://github.com/heeshin174/Web_App_Dev_Kor#11-remix)
-14. [Next.js](https://github.com/heeshin174/Web_App_Dev_Kor#12-nextjs)
-15. [Redux](https://github.com/heeshin174/Web_App_Dev_Kor#13-redux)
+
+- [FrontEnd](https://github.com/heeshin174/Web_App_Dev_Kor#2-front-end-client-side)
+
+  1. [HTML](https://github.com/heeshin174/Web_App_Dev_Kor#1-html)
+  2. [CSS](https://github.com/heeshin174/Web_App_Dev_Kor#2-css)
+  3. [JavaScript](https://github.com/heeshin174/Web_App_Dev_Kor#3-javascript)
+  4. [TypeScript](https://github.com/heeshin174/Web_App_Dev_Kor#4-typescript)
+  5. [React.js](https://github.com/heeshin174/Web_App_Dev_Kor#5-reactjs)
+  6. [Vue.js](https://github.com/heeshin174/Web_App_Dev_Kor#6-vuejs)
+  7. [Next.js](https://github.com/heeshin174/Web_App_Dev_Kor#7-nextjs)
+  8. [Remix](https://github.com/heeshin174/Web_App_Dev_Kor#8-remix)
+  9. [Redux](https://github.com/heeshin174/Web_App_Dev_Kor#9-redux)
+
+- [BackEnd](https://github.com/heeshin174/Web_App_Dev_Kor#3-back-end-server-side)
+
+  1. [Web Application Development](https://github.com/heeshin174/Web_App_Dev_Kor#1-web-application-development)
+  2. [Express.js](https://github.com/heeshin174/Web_App_Dev_Kor#7-expressjs)
+  3. [Flask (Python)](https://github.com/heeshin174/Web_App_Dev_Kor#8-flask-python)
+  4. [Postgresql](https://github.com/heeshin174/Web_App_Dev_Kor#9-postgresql)
+  5. [Mongodb](https://github.com/heeshin174/Web_App_Dev_Kor#10-mongodb)
 
 ## 0. Web Development Loadmap
 
@@ -72,34 +75,27 @@
 
 #### Windows Developer Setup (WSL)
 
-1. Microsoft Store에서 download `Windows Terminal`
-2. Microsoft Store에서 download `Ubuntu`
-3. Google에 `install WSL2` 검색 후 Terminal로 설치
-4. Google에 `install WSL2` 검색 후 `Ubuntu`를 WSL1에서 WSL2로 update
-5. Google에 `VSCode` 검색 후 download, 그 후 VSCode extension 설치
+1. Microsoft Store에서 `Windows Terminal`와 `Ubuntu` 다운로드
+2. Google에 `WSL2` 검색 후 Terminal로 설치. 그 후 `Ubuntu`를 WSL1에서 WSL2로 update
+3. Google에 `VSCode` 검색 후 download, 그 후 VSCode extension 설치
 
 이제 `Windows Terminal`로 `Ubuntu`를 실행할 수 있다. `Ubuntu`를 메인 terminal로 설정한다.
-`Ubuntu`에서 실행하는 것은 Linux console를 사용한다. 즉, 지금 사용하는 Windows랑 다른 Linux OS 컴퓨터라고 생각하면 된다.
+`Ubuntu`에서 실행하는 것은 Linux console를 사용한다. 즉, 내 컴퓨터에 설치된 Windows랑 다른 새로운 Linux OS 컴퓨터가 하나 더 있다고 생각하면 된다.
 Linux환경에서 제일 위에 있는 root folder로 가보면 다음의 폴더들을 볼 수 있다.
 
+```
 bin dev home lib lib64 lost+found mnt proc run snap sys usr
 boot etc init lib32 libx32 media opt root sbin srv tmp var
+```
 
-여기서 중요한 folders는 `home`과 `mnt`이다.
-mnt는 내 Windows환경의 파일들을 Linux와 연결하여 Linux console로 실행할 수 있게 해준다.
-home은 내 Linux환경의 homepage이다.
+여기서 중요한 folders는 `home`과 `mnt`이다. `mnt`는 내 Windows환경의 파일들을 Linux와 연결하여 Linux console로 실행할 수 있게 해준다. `home`은 내 Linux환경의 메인 directory이다. 둘 중에 어디에다가 코드를 작성할 지는 자유지만, `mnt`는 내 Windows환경과 연결되어 있기 때문에 Linux환경에 문제가 생겨도 파일들을 잃지 않는다. `home`은 내 Windows와 연결되어 있지 않기 때문에 Linux환경에 문제가 생기면 파일들을 잃어버린다.
 
-둘 중에 어디에다가 코드를 작성할 지는 자유지만, mnt는 내 Windows환경과 연결되어 있기 때문에 Linux환경에 문제가 생겨도 파일들을 잃지 않는다.
-home은 내 Linux환경으로, Windows와 연결되어 있지 않기 때문에 Linux환경에 문제가 생기면 파일들을 잃어버린다.
+그럼으로 `mnt` folder를 이용하여, 내 Windows환경과 연결하여 사용하는 것을 추천한다.
 
-그럼으로 mnt folder를 이용하여, 내 Windows환경과 연결하여 사용하는 것이 좋다.
+4. Ubuntu Terminal에 `code`입력 후, VSCode 서버를 Linux환경에 설치.
+5. Google에 `install nvm` (Node Version Manager) 검색 후 download, 그 후 nvm을 이용하여 `Node.js` 설치
 
-6. Ubuntu Terminal에 `code`입력 후, VSCode 서버를 Linux환경에 설치.
-7. Google에 `install nvm` (Node Version Manager) 검색 후 download, 그 후 nvm을 이용하여 `Node.js` 설치
-
-Window환경에 따로 programming languages나 다른 git 같은 tool를 설치하여 사용할 수 있지만, Linux환경에 모든 프로그래밍언어들을 설치할 것이다.
-Linux환경을 이용하면, Linux가 제공하는 모든 Unix command를 Terminal에 쉽게 사용가능하다.
-우리는 Terminal로 프로그램들을 설치하는 것에 익숙해져야 한다. 만약 설치가 안된다면, 앞에 sudo를 붙여 root권한을 준다
+Window환경에 따로 programming languages나 다른 git 같은 tool를 설치하여 사용할 수 있지만, 우리는 Linux환경에 개발에 필요한 모든 tools을 설치할 것이다. 그 이유는 Linux환경을 이용하면, Linux가 제공하는 모든 **Unix command**를 Terminal에 쉽게 사용가능하다. 우리는 Terminal로 파일들을 생성, 조작하고 프로그램들을 설치하는 것에 익숙해져야 한다. 만약 설치가 안된다면, 앞에 sudo를 붙여 root권한을 준다
 
 > `sudo apt-get update`
 
@@ -109,15 +105,15 @@ Node.js를 설치할 때에는 Long Time Support (LTS)가 붙어있는 최신버
 
 그외에 사용하고 싶은 프로그래밍 언어들도 Google에 검색 후, Linux환경으로 다운받으면 된다.
 
-8. Google에 `install zsh` 검색 후 download `zsh`
+6. Google에 `install zsh` 검색 후 download `zsh`
 
 > `sudo apt install zsh`
 
-9. Google에 `install Oh my zsh` 검색 후, curl를 사용하여 download `Oh my zsh`
+7. Google에 `install Oh my zsh` 검색 후 curl를 사용하여 download `Oh my zsh`
 
 `Window Terminal`을 열고, `설정`을 선택, 그 후 `Json 파열 열기`을 클릭.
 `MesloLGS NF` font를 설치 후, 아래와 같이 추가.
-`schemes`는 `TerminalSplash` 웹사이트에서 복사 붙여넣기 하면된다.
+`schemes`는 TerminalSplash 웹사이트에서 복사 붙여넣기 하면된다.
 
 ```
 "profiles": {
@@ -149,25 +145,24 @@ Node.js를 설치할 때에는 Long Time Support (LTS)가 붙어있는 최신버
 }
 ```
 
-10. Google에 `powerlevel10k` 검색 후, oh my zsh를 사용하여 download.
+8. Google에 `powerlevel10k` 검색 후, oh my zsh를 사용하여 download.
 
-`powerlevel10k`는 우리의 zsh terminal를 꾸밀 수 있는 프로그램이다.
+- `powerlevel10k`는 zsh terminal를 꾸밀 수 있는 프로그램이다.
+- `powerlevel10k`는 `MesloLGS NF` font를 요구하기 때문에, default font를 위와 같이 설정한다.
 
-- `powerlevel10k`는 `MesloLGS NF` font를 요구하기 때문에, 위처럼 default에 font를 설정한다.
+- VScode에서 `ctrl + ,`입력 후, `terminal` 검색:
 
-- VScode에서 `ctrl + ,`입력 후, `terminal` 검색.
-
-1. Terminal > Integrated: Font Family > `MesloLGS NF`
-2. Terminal > Integrated > Default profile > `Ubuntu`
+  1. Terminal > Integrated: Font Family > `MesloLGS NF`
+  2. Terminal > Integrated > Default profile > `Ubuntu`
 
 - `.zshrc` file을 열고, 다음의 코드를 추가한다. `.zshrc`는 `Oh my zsh` terminal setting을 바꿀 수 있는 환경설정 파일이다.
 
-> `code ~/.zshrc`
+  > `code ~/.zshrc`
 
-1. `ZSH_THEME="powerlevel10k/powerlevel10k"`
-2. `LS_COLORS="ow=01;36;40" && export LS_COLORS`
-3. `alias python=python3.8`
-4. add the following code to use nvm
+  1. `ZSH_THEME="powerlevel10k/powerlevel10k"`
+  2. `LS_COLORS="ow=01;36;40" && export LS_COLORS`
+  3. `alias python=python3.8`
+  4. add the following code to use `nvm`
 
 ```
 export NVM_DIR="$HOME/.nvm"
@@ -190,45 +185,44 @@ React.js, Typescript 등등 native `HTML`, `CSS`, `Javascript`로 작성되지 �
 
 ![htmlcssjs](img/htmlcssjs.gif)
 
-- [HTML]()
-  - [HTML Tags]()
-  - [Page Structure]()
-  - [Semantic Tags]()
-  - [SEO (Search Engine Optimazatoin)]()
+- [HTML](https://github.com/heeshin174/Web_App_Dev_Kor#1-html)
+  - [HTML Tags](https://github.com/heeshin174/Web_App_Dev_Kor#html-tags)
+  - [Page Structure](https://github.com/heeshin174/Web_App_Dev_Kor#page-structure)
+  - [Semantic Tags](https://github.com/heeshin174/Web_App_Dev_Kor#semantic-tags)
+  - [SEO (Search Engine Optimazation)](https://github.com/heeshin174/Web_App_Dev_Kor#seo-search-engine-optimazation)
 
-* [CSS]()
-  - [Styling]()
-  - [Layouts]()
-    - [float]()
-    - [Flexbox]()
-    - [Grid]()
-  - [Responsive Design]()
-  - [Animation]()
-  - Framework
+* [CSS](https://github.com/heeshin174/Web_App_Dev_Kor#2-css)
+  - [Styling](https://github.com/heeshin174/Web_App_Dev_Kor#styling)
+  - [Layouts](https://github.com/heeshin174/Web_App_Dev_Kor#layouts)
+    - [Float](https://github.com/heeshin174/Web_App_Dev_Kor#float)
+    - [Flexbox](https://github.com/heeshin174/Web_App_Dev_Kor#flexbox)
+    - [Grid](https://github.com/heeshin174/Web_App_Dev_Kor#grid)
+  - [Responsive Design](https://github.com/heeshin174/Web_App_Dev_Kor#responsive-design)
+  - [Animation](https://github.com/heeshin174/Web_App_Dev_Kor#animation)
+  - Library and Framework
     - Bootstrap: https://getbootstrap.com/docs/5.0
     - Tailwindcss: https://tailwindcss.com/docs/installation
     - styled-components: https://styled-components.com/docs
-    - Postcss
+    - Postcss: https://postcss.org/
   - 기타
     - FontAwesome (icons): https://fontawesome.com/
-    - Devicon (icons representing programming languages, designing & development tools): https://devicon.dev/
+    - Devicon (icons representing programming tools): https://devicon.dev/
     - Google Font (text style): https://fonts.google.com/
     - CSS Gradient: https://cssgradient.io/
     - Color Space: https://mycolor.space/
-    - shape Divider (SVG): https://www.shapedivider.app/
+    - Shape Divider (SVG): https://www.shapedivider.app/
     - Haikei (SVG): https://haikei.app/
     - Cool Backgrounds: https://coolbackgrounds.io/
     - Dribble: https://dribbble.com/
 
-- Javascript
++ [Javascript](https://github.com/heeshin174/Web_App_Dev_Kor#3-javascript)
   - **ES6+ Syntax**
     - Basic
       - let, const
-      - function
+      - [function](https://github.com/heeshin174/Web_App_Dev_Kor#function)
       - if, for, switch, while
       - object
-      - Array
-      - Error handler
+      - [Array]((https://github.com/heeshin174/Web_App_Dev_Kor#array))
     - Advanced
       - Prototype
       - Hoisting
@@ -238,23 +232,22 @@ React.js, Typescript 등등 native `HTML`, `CSS`, `Javascript`로 작성되지 �
   - **Browser APIs**
     - DOM Manipulation
     - Events
-    - Fetch API (Async)
-  - ⭐ **Typescript**: https://www.typescriptlang.org/
+    - Fetch API (+ Async/Await, Error handler)
+  - ⭐ [**Typescript**](https://github.com/heeshin174/Web_App_Dev_Kor#4-typescript): https://www.typescriptlang.org/
     - Types
-    - OOP (Object-oriented Programming)
-  - Framework (Client-Side Rendering: CSR)
-    - ⭐ **React**: https://reactjs.org/
-    - Vue: https://vuejs.org/
+    - Object-oriented Programming (OOP)
+  - FrontEnd Library & Framework
+    - ⭐ [**React**](https://github.com/heeshin174/Web_App_Dev_Kor#5-reactjs): https://reactjs.org/
+    - [Vue](https://github.com/heeshin174/Web_App_Dev_Kor#6-vuejs): https://vuejs.org/
     - Angular: https://angularjs.org/
     - Svelte
     - React JS with Typescript: https://create-react-app.dev/docs/adding-typescript/
-  - Library & Meta-Framework (기존 framework 위에 만들어진 framework)
-    - React meta-Framework
+  - Meta Library & Meta Framework (Meta-Framework: 기존 framework 위에 만들어진 framework)
+    - React based
       - Server-Side Rendering (SSR)
-        - ⭐ **Next.js**: https://nextjs.org/docs/getting-started
+        - ⭐ [**Next.js**](https://github.com/heeshin174/Web_App_Dev_Kor#7-nextjs): https://nextjs.org/docs/getting-started
         - Remix: https://remix.run/docs/en/v1
       - Managing and centralizing application state
-        - redux: https://redux.js.org/introduction/getting-started
         - redux-toolkit: https://redux-toolkit.js.org/
         - react-redux: https://react-redux.js.org/
         - redux-thunk: https://github.com/reduxjs/redux-thunk
@@ -270,18 +263,20 @@ React.js, Typescript 등등 native `HTML`, `CSS`, `Javascript`로 작성되지 �
         - react-beautiful-dnd (drag and drop): https://github.com/atlassian/react-beautiful-dnd
         - react-scroll (smooth scroll): https://github.com/fisshy/react-scroll
         - react-router: https://reactrouter.com/docs/en/v6
-    - Vue meta-Framework
+    - Vue based
       - Server-Side Rendering (SSR)
         - ⭐ **Nuxt.js**
       - CSS Framework
         - Vuetify: https://next.vuetifyjs.com
+  - Library & Meta-Framework (기존 framework 위에 만들어진 framework)
+  - redux: https://redux.js.org/introduction/getting-started
 
 ### 3. Back-End (Server side)
 
 - [Server](https://github.com/heeshin174/Web_App_Dev_Kor#1-web-application-development)
 
-* Framework
-  - Javascript
+* Library and Framework
+  - [Javascript](https://github.com/heeshin174/Web_App_Dev_Kor#3-javascript)
     - Express.js: https://expressjs.com/
   - Python
     - Flask: https://flask.palletsprojects.com/en/2.0.x/
@@ -313,6 +308,7 @@ React.js, Typescript 등등 native `HTML`, `CSS`, `Javascript`로 작성되지 �
   - RapidApi: https://rapidapi.com/
   - public-apis (links collection): https://github.com/public-apis/public-apis
   - public-apis: https://public-apis.xyz/page/1
+  - themmoviedb (movie database): https://www.themoviedb.org/
 
 ### 5. Testing
 
@@ -376,12 +372,12 @@ React.js, Typescript 등등 native `HTML`, `CSS`, `Javascript`로 작성되지 �
 
 ## 1. HTML
 
-- [HTML Tags]()
-- [Page Structure]()
-- [Semantic Tags]()
-- [SEO (Search Engine Optimazatoin)]()
+- [HTML Tags](https://github.com/heeshin174/Web_App_Dev_Kor#html-tags)
+- [Page Structure](https://github.com/heeshin174/Web_App_Dev_Kor#page-structure)
+- [Semantic Tags](https://github.com/heeshin174/Web_App_Dev_Kor#semantic-tags)
+- [SEO (Search Engine Optimazation)](https://github.com/heeshin174/Web_App_Dev_Kor#seo-search-engine-optimazation)
 
-**`HyperText Markup Language (HTML)` is the standard markup language for creating Web pages and documents designed to be displayed in a web browser.**
+**`HyperText Markup Language (HTML)` is the standard markup language for creating web pages and documents designed to be displayed in a web browser.**
 
 사용자가 웹브라우저로 특정 URL에 접속하면 서버가 그 사이트의 `HTML`, `CSS`, `Javacsript`를 보내주고 웹브라우저가 이를 해석하여 사용자에게 보여준다. 그 중 `HTML`은 웹사이트안에 실제 들어있는 내용물 (content) 자체를 의미한다.
 
@@ -399,9 +395,9 @@ HTML는 **tree structure**를 가진다. Every tree node is an object. Tags are 
     - ...
     - `<footer>`
 
-예시: `index.html`은 웹사이트의 홈페이지를 의미하는 naming이다.
+예시: `index.html` file 
 
-- `index.html` file
+`index.html`은 웹사이트의 홈페이지를 의미하는 naming이다.
 
 ```
 <!DOCTYPE html>
@@ -491,18 +487,19 @@ HTML는 **tree structure**를 가진다. Every tree node is an object. Tags are 
 
 - HTML Tags References: https://www.w3schools.com/tags/ref_byfunc.asp
 
-- `<div>` defines a division or a section in an HTML document.
-- `<div>` is used as a container for HTML elements - which is then styled with CSS or manipulated with JavaScript.
-- `<div>` is easily styled by using the class or id attribute.
+- `<div>` and `<span>` tags 
+
+div tag defines a division or a section in an HTML document. `<div>` is used as a container for HTML elements - which is then styled with CSS or manipulated with JavaScript. `<div>` is easily styled by using the class or id attribute.
+
 - `<span>` is an inline container used to mark up a part of a text, or a part of a document.
 - `<span>` tag is easily styled by CSS or manipulated with JavaScript using the class or id attribute.
 - `<div>` is a block-level element and `<span>` is an inline element.
 
-- `<a>` HTMLAnchorElement: `href` attribute에 주어진 hyperlink에 GET request 보내기. 즉 go to the link
+- `<a>` HTMLAnchorElement: `href` attribute에 주어진 hyperlink에 GET request 보내기
 
 ```
-<a href:"#home">GO to homepage</a> // id=home인 HTMLElement로 이동
-<a href:"https://www.google.com">This is google Link</a
+<a href:"#home">Go to homepage</a>  // id=home인 HTMLElement로 이동
+<a href:"https://www.google.com">This is google Link</a>
 ```
 
 - `<button>` HTMLButtonElement: 클릭 시 `onClick` attribute에 주어진 javascript code 실행.
@@ -633,7 +630,7 @@ Examples of semantic elements: <form>, <table>, and <article> - Clearly defines 
 <summary>: Defines a heading for the <details> element
 ```
 
-### SEO (Search Engine Optimazatoin)
+### SEO (Search Engine Optimazation)
 
 `Search Engine Optimazatoin (SEO)`는 내가 만든 web site가 Google, Naver와 같은 검색 엔진에 많이 노출되게 하는 방법을 의미한다. 이 검색 엔진에 노출이 되려면, 서버가 가지고 있는 HTML이 텅 비어있으면 안된다. 이는 검색 엔진이 서버의 HTML파일을 확인하면서 검색 엔진에 노출시키는 구조이기 때문이다.
 
@@ -641,12 +638,19 @@ React, Vue와 같은 Frontend framework로 만들어진 사이트, Client-Side R
 
 ## 2. CSS
 
-- [Styling]()
-- [Layouts]()
-- [Responsive Design]()
-- [Animation]()
+- [Styling](https://github.com/heeshin174/Web_App_Dev_Kor#styling)
+- [Layouts](https://github.com/heeshin174/Web_App_Dev_Kor#layouts)
+  - [Float](https://github.com/heeshin174/Web_App_Dev_Kor#float)
+  - [Flexbox](https://github.com/heeshin174/Web_App_Dev_Kor#flexbox)
+  - [Grid](https://github.com/heeshin174/Web_App_Dev_Kor#grid)
+- [Responsive Design](https://github.com/heeshin174/Web_App_Dev_Kor#responsive-design)
+- [Animation](https://github.com/heeshin174/Web_App_Dev_Kor#animation)
+
+[CSS Properties Refernece](https://www.w3schools.com/cssref/default.asp)
 
 **`Cascading Style Sheets (CSS)`는 HTML을 꾸미기 위해 사용한다.**
+
+With CSS, you can control the color, font, the size of text, the spacing between elements, how elements are positioned and laid out, what background images or background colors are to be used, different displays for different devices and screen sizes, and much more!
 
 CSS can be added to HTML documents in 3 ways:
 
@@ -692,11 +696,9 @@ CSS can be added to HTML documents in 3 ways:
 </html>
 ```
 
-With CSS, you can control the color, font, the size of text, the spacing between elements, how elements are positioned and laid out, what background images or background colors are to be used, different displays for different devices and screen sizes, and much more!
+**CSS사용법 예시:**
 
-- CSS Properties Refernece: https://www.w3schools.com/cssref/default.asp
-
-- 사용할 색상을 변수로 저장
+- 자주 사용할 색상을 :root에 변수로 저장하면, 모든 Element에 다음의 색상을 쉽게 이용가능하다.
 
 ```
 :root {
@@ -709,9 +711,17 @@ With CSS, you can control the color, font, the size of text, the spacing between
   --primary-bg: #2b2b2b;
   --primary-mint: #11abb0;
 }
+
+.col h1 {
+  color: var(--primary-white);
+  width: 600px;
+  line-height: 130%; 
+  font-size: 4rem;
+}
+/* line-height: 줄 사이 간격 */
 ```
 
-- body tag에는 `margin: 8`이 default로 설정되어 있다. 이를 없에기 (Wild card 전체 선택: \*)
+- body tag에는 `margin: 8px`이 default로 설정되어 있다. 이를 없에기 (Wild card/전체 선택: \*)
 
 ```
 * {
@@ -730,15 +740,17 @@ body {
   font-family: "Roboto", sans-serif;
   font-weight: 900;
 }
+/* font-weight가 900이면 bold, 300이면 normal이다. */
 ```
 
 - `id=box`인 HTMLElement의 style 변경 (id selector: #)
 
 ```
 #id {
-  background: url("../../img/istockphoto-1032782930-640x640.jpg") no-repeat; /* background를 다음 url로 교체 */
+  background: url("../../img/istockphoto-1032782930-640x640.jpg") no-repeat;
   weight: 90vh /* vh는 view height로 현재 보이는 화면의 90%를 채운다 */
 }
+/* background를 주어진 url로 교체 */
 ```
 
 - `class=hero`인 HTMLElement의 style 변경 (class selector: .)
@@ -753,7 +765,8 @@ body {
   margin-top: 70px;
 }
 
-.hero::before {  /* HTMLElement전에 empty content를 만들고 */
+/* HTMLElement전에 empty content를 만들고 gradient 추가 */
+.hero::before {  
   content: "";
   background: linear-gradient(to right, black, transparent);
   position: absolute;
@@ -783,28 +796,12 @@ body {
 - `class=col`인 HTMLElement의 자식인 세번째 h1 tag의 style 변경
 
 ```
-<div class="col">
-  <h1>This is first child</h1>
-  <h1>This is second child</h1>
-  <h1>This is third child</h1>
-</div>
-
 .col h1:nth-child(3) {
   color: var(--primary-gold);
   animation: slide 2s;
   margin-top: 64px;
   margin-bottom: 64px;
   font-weight: inherit;
-}
-```
-
-- 화면이 600px보다 작을 경우 `class=logo`인 HTMLElement 안보이게 하기
-
-```
-@media only screen and (max-width: 600px) {
-  .logo {
-    display: none;
-  }
 }
 ```
 
@@ -817,19 +814,16 @@ body {
 ![Styling](img/cssstyle.png)
 
 - `Padding`은 content와 한 몸처럼 styles의 영향을 받고, `margin`은 content와 별개로 styles의 영향을 받는다.
-
-- `Border`는 테두리로 border를 이용하면, 박스를 만들고 밑줄을 추가하는 등 여러가지를 할 수 있다.
-
+- `Border`는 테두리를 의미한다. border를 이용하면, 박스를 만들고 밑줄을 추가하는 등 여러가지를 할 수 있다.
 - content에 밑줄을 추가: `border-bottom: 5px`
 
-- The `border` property is a shorthand property for: `border`: `border-width` + `border-style (required)` + `border-color`
+- The `border` property is a shorthand property for:
 
 ```
-border: border-width border-style(required) border-color
-border: 1px solid black
+border: border-width border-style (required) border-color
 ```
 
-is equivalent to
+`border: 1px solid black` is equivalent to
 
 ```
 border-width: 1px
@@ -842,26 +836,25 @@ border-color: black
 ### Layouts
 
 - `position: absolute`는 모니터의 왼쪽 위가 (0, 0)이 되고 그에 맞는 width와 height를 줄 수 있다.
-
 - `position: relative`는 content의 왼쪽 아래가 (0, 0)이 되고 그에 맞는 width와 height를 줄 수 있다.
 
 ![position](img/absoluterelative.jpg)
 
 ```
-absBox {
+.absBox {
   position: absolute;
   width: 400px;
   height: 400px;
 }
 
-relBox {
+.relBox {
   position: relative;
   width: 400px;
   height: 200px;
 }
 ```
 
-#### float
+#### Float
 
 float은 이미지와 텍스트를 어떻게 정렬할 것인지 나타내기 위해 등장한 개념이다. `float:left`는 이미지를 왼쪽으로, `float:center`는 이미지를 가운데로, `float:right`는 이미지를 오른쪽으로 정렬한다.
 
@@ -869,7 +862,7 @@ float은 이미지와 텍스트를 어떻게 정렬할 것인지 나타내기 �
 
 #### Flexbox
 
-`Flexbox`에는 flex container와 flex item이 존재한다. flex container는 flex item들을 담는 박스가 된다.
+`Flexbox`에는 **flex container**와 **flex item**이 존재한다. flex container는 flex item들을 담는 박스가 된다.
 
 ![flexbox](img/flexbox.jpg)
 
@@ -877,45 +870,54 @@ float은 이미지와 텍스트를 어떻게 정렬할 것인지 나타내기 �
 
 ```
 .container {
-  display: flex
-  flex-direction: row / colum / reverse-row
+  display: flex;
+  flex-direction: row (default)/column/reverse-row;
 }
 ```
-
-`flex container`에 적용할 수 있는 속성과 `flex item`에 적용할 수 있는 속성이 다르다.
 
 - `flex-direction: row`일 경우: main axis는 horizontal line이고, cross axis는 vertical line이다. x-axis가 중심축이다.
 - `flex-direction: column`일 경우: main axis는 vertical line이고, cross axis는 horizontal line이다. y-axis가 중심축이다.
 - `flex-direction`을 지정하지 않으면 row가 기본값이다.
 
+`flex container`에 적용할 수 있는 속성과 `flex item`에 적용할 수 있는 속성이 다르다.
+
 ![flexbox2](img/flexbox2.png)
 
-- `flex-container`에 지정 가능한 속성
+`flex-container`에 지정 가능한 속성:
 
 ```
 - display: flex
 - flex-direction: row (default)/column
 - flex-wrap: nowrap (default)/wrap/wrap-reverse
-/* flex-wrap는 기본값으로 nowrap이다. 이는 한 flex-container에 아무리 많은 flex-item이 들어서도 다른 line으로 가지 않는다. 즉, 아무리 item이 많아도 한 row에 때려박는다.
-   flex-wrap:wrap이 되면 flex-container에 container보다 많은 flex-item이 들어서면 다른 line으로 자동적으로 이동한다. 즉, item의 크기가 container의 크기를 넘어서면 다른 row을 자동적으로 생성한다. */
 - flex-flow: column wrap;
-/* flex-flow property is a shorthand property for: flex-flow: flex-direction + flex-wrap */
-- justify-content: flex-start (default)/flex-end/left/right/center/space-around/space-evenly/space-between /* main axis */
-- align-content: flex-start (default)/flex-end/left/right/center/space-around/space-evenly/space-between  /* cross axis */
-- align-items: left/center/right/baseline /* cross axis */
+- justify-content: flex-start (default)/flex-end/left/right/center/space-around/space-evenly/space-between
+- align-content: flex-start (default)/flex-end/left/right/center/space-around/space-evenly/space-between  
+- align-items: left/center/right/baseline
+/* main axis: justify-content */
+/* cross axis:  align-content, align-items */
 ```
 
-- `flex-item`에 지정 가능한 속성
-- flex-item의 속성의 기본값은 모두 0이다.
+- `flex-wrap`는 기본값으로 nowrap이다. 이는 한 `flex-container`에 아무리 많은 `flex-item`이 들어서도 다른 line을 생성하지 않는다. 즉, 아무리 item이 많아도 한 row에 때려박는다. flex-wrap:wrap이 되면 flex-container에 container보다 많은 flex-item이 들어서면 다른 line으로 자동적으로 이동한다. 즉, item의 크기가 container의 크기를 넘어서면 다른 row을 자동적으로 생성한다.
+
+- The `flex-flow` property is a shorthand property for:
 
 ```
-- order: 0 
+flex-flow: flex-direction + flex-wrap;
+```
+
+`flex-flow: column wrap` is equivalent to
+
+```
+flex-direction: column;
+flex-wrap: wrap;
+```
+
+`flex-item`에 지정 가능한 속성 (속성의 기본값은 모두 0이다)
+
+```
+- order: 0
 /* item들 사이에 순서를 지정 */
 - flex-grow: 0
-/* flex-grow를 지정하지 않으면, 화면의 크기가 커져도, 본인 고유의 크기를 유지한다. 
-   하지만, flex-grow가 0이 아닌 item들은 그 숫자에 맞게, flex-container를 모두 채우려고 크기가 커진다. 
-   flex-grow는 화면이 커졌을 때 item들이 어떤 비율로 커질 것인지를 나타낸다. 
-*/
 
 .item1 {
   flex-grow: 2
@@ -928,10 +930,8 @@ float은 이미지와 텍스트를 어떻게 정렬할 것인지 나타내기 �
 }
 
 /* item1이 item2, item3보다 2배의 비율로 크기를 유지하면서 커진다. */
- 
+
 - flex-shrink: 0
-/* flex-shrink는 flex-grow와 반대로 화면이 작아졌을 때 item들이 어떤 비율로 작아질 것인지를 나타낸다. 
-*/
 - flex-basis: 0
 
 .item1 {
@@ -943,12 +943,13 @@ float은 이미지와 텍스트를 어떻게 정렬할 것인지 나타내기 �
 .item3 {
   flex-basis: 10%
 }
-/* flex-basis는 
-*/
+/* item1, item2, item3이 화면의 크기와 상관없이 위의 비율을 유지한다. */
 
-- align-self: center;
-/* item별로 정렬 */
+- align-self: center; /* item별로 정렬 */
 ```
+
+- flex-grow를 지정하지 않으면, 화면의 크기가 커져도, 본인 고유의 크기를 유지한다. 하지만, flex-grow가 0이 아닌 item들은 그 숫자에 맞게, flex-container를 모두 채우려고 크기가 커진다. flex-grow는 화면이 커졌을 때 item들이 어떤 비율로 커질 것인지를 나타낸다.
+- flex-shrink는 flex-grow와 반대로 화면이 작아졌을 때 item들이 어떤 비율로 작아질 것인지를 나타낸다.
 
 #### Grid
 
@@ -956,35 +957,40 @@ float은 이미지와 텍스트를 어떻게 정렬할 것인지 나타내기 �
 
 **Responsive Design**는 브라우저의 크기에 따라 보이는 화면이 달라지는 것을 뜻한다. 컴퓨터를 기준으로 웹사이트를 만들게 되면, mobile로 보게되면 화면이 작아서 다 보이지 않게 된다.
 
+- 화면의 width가 600px보다 작을 경우 `class=logo`인 HTMLElement 안보이게 하기
+
+```
+@media only screen and (max-width: 600px) {
+  .logo {
+    display: none;
+  }
+}
+```
+
 ### Animation
 
-`@keyframe`을 이용하면 Animation을 구현할 수 있다.
-
+`@keyframe`을 이용하면 Animation을 구현할 수 있다. 자세한 내용은 https://www.w3schools.com/css/css3_animations.asp 참고.
 
 ## 3. Javascript
 
 ### 1. What is Javascript?
 
-**JavaScript, often abbreviated JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS.**
+**JavaScript, often abbreviated JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS. Javascript는 웹환경에서 가장 많이 쓰이는 프로그래밍언어이다.**
 
-맨 처음 Javascript는 web browser에 귀속된 programming language이였다. 각 browser마다 Javascript 해석엔진이 달랐는데, Chrome에서 사용하는 해석엔진인 'v8'이 browser와 독립적으로 출시되면서 프로그래밍언어로서 급부상했다.
+맨 처음 Javascript는 web browser에 귀속된 programming language이였다. 각 browser마다 Javascript 해석엔진이 달랐는데, Chrome에서 사용하는 해석엔진인 'v8'이 browser와 독립적으로 출시되면서 프로그래밍언어로서 급부상했다. Javascript를 이용하여 웹서버, 모바일앱, mechine learning 등을 할 수 있지만, Javascript의 근본은 웹개발을 할 때 사용하는 것이다. Web 환경에서 JavaScript를 사용하는 가장 큰 이유는 **HTML 조작과 변경**이다. HTML을 조작하고, 변경하면서 우리는 이쁘고, 실용적인 웹페이지를 만들 수 있다.
 
-Javascript를 이용하여 웹서버, 모바일앱, mechine learning 등을 할 수 있지만, Javascript의 근본은 웹개발을 할 때 사용하는 것이다.
-
-Web 환경에서 JavaScript를 사용하는 가장 큰 이유는 **HTML 조작과 변경**이다. HTML을 조작하고, 변경하면서 우리는 이쁘고, 실용적인 웹페이지를 만들 수 있다.
-
-Javascript는 web browser를 위해 등장한 언어이기 때문에 다른 프로그래밍 언어들과는 차별점을 가진다.
+Javascript는 web을 위해 등장한 언어이기 때문에 다른 프로그래밍 언어들과는 차별점을 가진다.
 
 - Javascript는 비동기 프로그래밍 (asynchronous programming) 언어이다.
   자바스크립트의 비동기 처리란 특정 코드의 연산이 끝날 때까지 코드의 실행을 멈추지 않고 다음 코드를 먼저 실행하는 자바스크립트의 특성을 의미한다.
-  코드를 한줄 씩 실행하기는 하지만, 데이터를 불러오는데 오래걸리는 것들을 기다리지 않는다.
+  코드를 위에서 부터 한줄 씩 실행하기는 하지만, 데이터를 불러오는데 오래걸리는 것들을 기다리지 않는다.
 
-- JavaScript is a `dynamically typed language`이다.
+- JavaScript is a `dynamically typed language`로 변수타입의 지정이 필요없이 알아서 타입을 정해준다.
   It means that JS does not require the explicit declaration of the variables before they're used. 변수의 타입을 직접 지정해주지 않아도, JavaScript가 알아서 변수의 타입을 정해준다. 이는 한 variable에 여러 타입이 assign되는 상황을 가능하게 만든다. 작은 project를 만들 때에는 편리하지만, 큰 project를 만들고, team 단위로 만들게 되면 이런 높은 자유도는 오히려 독이 되어 어디서 어떻게 잘 못 되었는 지 알기 어렵게 만든다.
 
 ```
 // static typing in Java
-int age = 10; // age의 타입을 정해놨기 때문에 다른 type은 age에 올 수 없다.
+int age = 10; // age의 타입을 int형으로 정해놨기 때문에 다른 types은 올 수 없다.
 
 age = "Hello"; (x) // error를 만든다.
 age = 20;  (o)
@@ -998,19 +1004,7 @@ age = "Hello"; // age에 문자형 (String)값이 들어오면서, age의 타입
 
 왜 Javascript가 비동기적인지를 생각해보면, 만약에 Javascript가 동기 프로그래밍(synchronous programming) 언어이면, 우리는 서버가 모든 데이터를 불러올 때까지 아무 버튼도 누를수 없다.
 
-⭐ 요약:
-
-1. Javascript가 무엇인지?
-
-**Javascript는 웹환경에서 가장 많이 쓰이는 프로그래밍언어이다.**
-
-**JavaScript is a `dynamically typed language`로 변수타입의 지정이 필요없이 알아서 타입을 정해준다.**
-
-2. Javascript를 왜 사용하는지?
-
-**Javascript는 HTML 조작과 변경에 사용된다.**
-
-### 2. Basic Javascript syntax
+### 2. ES6+ Syntax
 
 Javascript syntax를 배울 때 중요한 점은 **if, for, var, let, function, array, object등 Javascript에서 사용하는 문법은 HTML을 조작하고, 변경하기 위해 등장했다는 것이다.**
 
@@ -1051,18 +1045,24 @@ JavaScript Data Type
 - `//`는 single-line comment `/* */`는 multi-line comment로 컴퓨터는 인식하지 못하고, 사람간에 설명이 필요할 때 사용한다.
 
 ```
-console.log(name); // name is not defined here. name를 변수가 선언되기도 전에 사용하면 error가 발생한다.
-let name; // name is undefined here. name = undefined
+// name is not defined here. 
+// name를 변수가 선언되기도 전에 사용하면 error가 발생한다.
+console.log(name); 
+
+// name is undefined here. name = undefined
+let name; 
 name = "Shin"; // name is "Shin" here.
 ```
 
 - 문자는 `""` (double quote), `''` (single quote), `` (back tic) 사이에 넣는다.
-- 위의 기호들 사이에 있으면, 문자 자료형 `String`이 된다.
-- double quote와 single quote는 아무런 차이가 없고, back tic의 경우 `${variable}`을 사용해서 다른 곳에서 정의한 값을 문자열 사이에 넣을 수 있다.
+- 위의 기호들 사이에 있으면, 문자 자료형 `String`이 된다. double quote와 single quote는 아무런 차이가 없지만, single quote를 더 선호한다.
+
+- **Template Literals**: back tic의 경우 `${variable}`을 사용해서 다른 곳에서 정의한 값을 문자열 사이에 넣을 수 있다.
 
 ```
 const name = "Shin";
-console.log(`Hello ${name}!`); // Hello Shin
+console.log("Hello" + name + "!"); // Bad: Hello Shin
+console.log(`Hello ${name}!`); // Good: Hello Shin
 ```
 
 #### If statement
@@ -1079,19 +1079,15 @@ if (condition1) {
 }
 ```
 
-또는
-
-```
-{ x> 5 ? tb : fb }
-```
+또는 **Conditional (ternary) operator** = `{ cond ? tb : fb}`
 
 #### Function
 
-**Function은 긴 코드를 한 단어로 압축하고 싶을 때 사용한다.**
+**Function은 긴 코드를 한 단어로 압축하고 싶을 때 사용한다.** Function은 parameters를 받아 값을 return한다. 즉, input를 받아 output를 만드는 게 함수이다. 
 
-Function은 parameters를 받아 값을 return한다. `return`은 함수를 종료시키기 때문에 return 뒤에는 아무것도 올 수 가 없다.
+`return` keyword은 함수를 종료시키기 때문에 return 뒤에는 아무것도 올 수 가 없다. 함수 내에서 정의한 변수들은 local variable (지역변수)로 함수 밖에서는 사용할 수 없다. 그럼으로, 함수 내에서 바뀐 값을 함수 밖에서 이용하고 싶으면 return사용해야 한다.  
 
-Javascript에서 function을 정의하는 방법에는 3가지가 있다.
+Javascript에서 function을 정의하는 방법에는 크게 3가지가 있다:
 
 ```
 // 1. 함수 선언식: Function Declarations
@@ -1110,13 +1106,12 @@ const add = (x, y) => {
 }
 ```
 
-함수 선언식과 표현식의 차이점은 함수 선언식은 호이스팅에 영향을 받지만, 함수 표현식은 호이스팅에 영향을 받지 않는다.
+함수 선언식과 표현식의 차이점은 함수 선언식은 Hoisting에 영향을 받지만, 함수 표현식은 영향을 받지 않는다. broswer는 자바스크립트를 실행하기 전에 파일 전체를 훓는다. 이 때, 함수 선언식으로 작성된 함수들은 미리 memory에 올려놔 언제든지 사용가능 하도록 만든다.
 
-함수 표현식: 코드에 도달하면 생성. 변수의 생성과 같다.
-함수 선언식: 코드에 도달하기전, 어디서든 호출이 가능하다.
+- 함수 표현식: 코드에 도달하면 생성. 변수의 생성과 같다.
+- 함수 선언식: 실행전에 메모리에 입력. 코드에 도달하기전에 메모리에 있기 때문에, 언제 어디서든 호출이 가능하다.
 
-함수 선언식은 코드를 구현한 위치와 관계없이 자바스크립트의 특징인 호이스팅에 따라 브라우저가 자바스크립트를 해석할 때 맨 위로 끌어 올려진다.
-이 말은 함수 선언식은 어디서든 호출이 가능하고, function이 선언 되기 전에 function을 사용할 수 있다는 의미이다.
+함수 선언식은 코드를 구현한 위치와 관계없이 broswer가 자바스크립트를 해석할 때 맨 위로 끌어 올려진다. 이 말은 함수 선언식은 어디서든 호출이 가능하고, function이 선언 되기 전에 코드에서도 함수가 이 파일내에 선언만 되어 있다면 사용할 수 있다.
 
 ```
 // 함수 표현식은 함수가 선언되기 전 코드에서도 함수를 호출할 수 있다.
@@ -1141,7 +1136,7 @@ const add = function (x, y) {
 
 1. 함수 표현식이 호이스팅에 영향을 받지 않는다.
 2. 클로져 (Closure) 로 사용 가능하다. 클로져는 함수를 실행하기 전에 해당 함수에 변수를 넘기고 싶을 때 사용된다.
-3. 콜백 (callback function)으로 사용 (다른 함수의 인자로 넘길 수 있음) 가능하다.
+3. 콜백 (callback function)으로 사용 가능하다. (다른 함수의 인자로 넘길 수 있음)
 
 그럼으로 함수 선언식보다는 함수 표현식을 지향하는 것이 좋다.
 
@@ -1222,18 +1217,18 @@ const add = (x, y) => {
 return result };
 ```
 
-#### Array (배열)
+#### Array
 
-**Array는 여러 변수들을 하나로 묶어놓은 묶음이다.**
+**Array (배열)는 여러 변수들을 하나로 묶어놓은 묶음이다.**
 
-Array을 만들 때, Javascript의 안좋은 점이 들어난다. Javascript는 array내에도 같은 type만 담을 수 있는 것이 아니라, 다른 type들도 섞어서 담을 수가 있다. 이렇게 되면, error을 일으킬 확률이 높으니 array 내에는 같은 type만 담을 수 있도록 한다.
+Array을 만들 때, Javascript의 안좋은 점이 들어난다. Javascript는 array내에 같은 type만 담을 수 있는 것이 아니라, 다른 type들도 섞어서 담을 수가 있다. 이렇게 되면, error을 일으킬 확률이 높으니 array 내에는 같은 type만 담을 수 있도록 한다.
 
 - Object는 **{} curly braces**를 이용해서 정의한다.
 - Array는 **[] square brackets**를 이용해서 정의한다.
 
 Array인 객체에는 `map()`, `filter()`, `forEach()` 등 다양한 함수들을 사용할 수 있다.
 
-- `Array.length`는 현재 배열의 길이를 반환
+0. `Array.length`는 현재 배열의 길이를 반환
 
 1. `Array.push("name")`: 배열 끝에 요소 추가
 
@@ -1250,7 +1245,7 @@ let arr = [0,1,2,3,4,5];
 arr.slice(1,4); // [2,3,4]
 ```
 
-Python의 Array[n:m+1]과 동일하다.
+Python의 `Array[n:m+1]`과 동일하다.
 
 6. `Array.concat(arr1, ...)`: 두개 이상의 배열을 합쳐 새배열을 반환
 
@@ -1386,11 +1381,11 @@ console.log(ResultMap); // ['김학생', '윤학생']
 // http://comics.naver.com로 가서 webtoon 데이터 좀 가져다 주세요!
 const webtoon = fetch('http://comics.naver.com');
 
-// ... 아직 데이터가 도착 안했어.
 console.log(webtoon) // undefined
+// ... 아직 데이터가 도착 안했어.
 ```
 
-비동기 처리 사례는 setTimeout()입니다. setTimeout()은 Web API의 한 종류입니다. 코드를 바로 실행하지 않고 지정한 시간만큼 기다렸다가 로직을 실행합니다.
+비동기 처리 사례는 setTimeout()이다. setTimeout()은 Web API의 한 종류로 코드를 바로 실행하지 않고 지정한 시간만큼 기다렸다가 로직을 실행한다.
 
 ```
 // #1
@@ -1419,7 +1414,7 @@ console.log('Hello Again');
 3초 있다가 ‘Bye’ 출력
 ```
 
-setTimeout() 역시 비동기 방식으로 실행되기 때문에 3초를 기다렸다가 다음 코드를 수행하는 것이 아니라 일단 setTimeout()을 실행하고 나서 바로 다음 코드인 console.log('Hello Again');으로 넘어갔습니다. 따라서, ‘Hello’, ‘Hello Again’를 먼저 출력하고 3초가 지나면 ‘Bye’가 출력됩니다.
+setTimeout() 역시 비동기 방식으로 실행되기 때문에 3초를 기다렸다가 다음 코드를 수행하는 것이 아니라, 일단 setTimeout()을 실행하고 나서 바로 다음 코드인 console.log('Hello Again');으로 넘어간다. 따라서, ‘Hello’, ‘Hello Again’를 먼저 출력하고 3초가 지나면 ‘Bye’가 출력됩니다.
 
 그러면, Javascript에서 동기적인 프로그래밍을 하는 방법은 무엇이 있을까?
 
@@ -1435,8 +1430,8 @@ setTimeout() 역시 비동기 방식으로 실행되기 때문에 3초를 기다
 
 콜백함수를 이용하면, 코드를 위에서 부터 차례로 시작하는 동기적 프로그래밍을 할 수 있습니다.
 
-콜백함수 정의: 함수에 parameter로 들어가는 함수
-콜백함수 용도: 코드를 위에서 부터 순차적으로 실행하고 싶을 때 사용
+- **콜백함수 정의: 함수에 parameter로 들어가는 함수**
+- **콜백함수 용도: 코드를 위에서 부터 순차적으로 실행하고 싶을 때 사용**
 
 ```
 // 콜백함수는 이미 우리의 코드 속에서 자주 사용되고 있다.
@@ -1450,11 +1445,11 @@ number.forEach(x => {
 
 콜백함수 사용원칙:
 
-1. 익명 함수(anonymous function) 사용
+1. 익명 함수(anonymous function)를 콜백함수로 사용할 수 있다.
 
 함수의 내부에서 실행되기 때문에 이름을 붙이지 않아도 된다.
 
-2. 다른 곳에 정의된 함수를 콜백함수로 사용할수 있다.
+2. 다른 곳에 정의된 함수를 콜백함수로 사용할 수 있다.
 
 함수를 변수 or 다른 함수의 변수처럼 사용할 수 있다. 함수를 콜백함수로 사용할 경우, 함수의 이름만 넘겨주면 된다.
 
@@ -1505,7 +1500,7 @@ add(2, function(result) {
 // finish!!
 ```
 
-콜백지옥 해결 방안 : Promise의 return 사용하여 Promise Hell을 탈출할 수 있다.
+콜백지옥 해결 방안 : Promise의 return 사용하여 callback Hell을 탈출할 수 있다.
 
 ### 5. Promise
 
@@ -1513,8 +1508,7 @@ add(2, function(result) {
 
 Promise가 왜 필요한가요? 프로미스를 사용하면 비동기 메서드에서 마치 동기 메서드처럼 값을 반환할 수 있습니다. 다만 최종 결과를 반환하지는 않고, 대신 프로미스를 반환해서 미래의 어떤 시점에 결과를 제공합니다.
 
-프로미스는 주로 데이터를 받는데 오래걸리는 코드를 동기 프로그래밍처럼 사용하고 싶을 때 사용합니다.
-일반적으로 웹 애플리케이션을 구현할 때 서버에서 데이터를 요청하고 받아오기 위해 아래와 같은 API를 사용합니다.
+프로미스는 주로 데이터를 받는데 오래걸리는 코드를 동기 프로그래밍처럼 사용하고 싶을 때 사용합니다. 일반적으로 웹 애플리케이션을 구현할 때 서버에서 데이터를 요청하고 받아오기 위해 아래와 같은 API를 사용합니다.
 
 ```
 app.get('url 주소/products/1', function(response) {
@@ -1951,24 +1945,677 @@ ES6 기반의 모듈 시스템은 CommonJS 방식에 비해 코드의 직관성�
 
 ### 1. What is Typescript
 
-TypeScript is a programming language developed and maintained by Microsoft. It is a strict syntactical superset of JavaScript and adds optional static typing to the language.
+TypeScript is a programming language developed and maintained by Microsoft. It is a strict syntactical superset of JavaScript and adds optional static typing to the language. 여기서 알 수 있듯이, Typescript는 Javascript의 superset으로 Java와 같이 변수를 선언할 때, 그 변수의 type을 지정해 주어야만 한다. 그럼 그냥 Javascript를 쓰면 되는 데, 왜 browser가 인식도 못하는 Typescript를 사용하는 가?에 대한 의문이 든다. 여기서 우리는 먼저 Javascript에 대한 이해가 필요하다.
 
-여기서 알 수 있듯이, Typescript는 Javascript의 superset으로 Java와 같이 변수를 선언할 때, 그 변수의 type을 지정해 주어야만 한다. 그럼 그냥 Javascript를 쓰면 되는 데, 왜 browser가 인식도 못하는 Typescript를 사용하는 가?에 대한 의문이 든다.
+- JavaScript is a `dynamically typed language`이다. JavaScript에서는 변수의 타입을 직접 지정해주지 않아도, JavaScript가 알아서 변수의 타입을 정해준다. 그럼으로 한 variable의 type이 여러 코드가 실행됨에 따라 계속 변화하는 것이 가능하다. 작은 project를 만들 때에는 편리하지만, 큰 project를 만들고, team 단위로 만들게 되면 이런 높은 자유도는 에러가 발생했을 시 오히려 독이 되어 어디서 어떻게 잘 못 되었는 지 알기 어렵게 만든다.
 
-여기서 우리는 Javascript에 대한 이해가 필요하다.
-
-- JavaScript is a `dynamically typed language`이다. JavaScript에서는 변수의 타입을 직접 지정해주지 않아도, JavaScript가 알아서 변수의 타입을 정해준다. 그럼으로 한 variable의 type이 여러 코드가 실행됨에 따라 계속 변화하는 것이 가능하다.
-
-- 작은 project를 만들 때에는 편리하지만, 큰 project를 만들고, team 단위로 만들게 되면 이런 높은 자유도는 오히려 독이 되어 어디서 어떻게 잘 못 되었는 지 알기 어렵게 만든다.
-
-이때, Typescript를 이용하면, 변수의 type을 지정해 주어야만 하기 떄문에, 어디선가 error가 발생하면 꽤 자세하게 무엇이 잘 못 되었는 지를 알려준다.
+**Typescript를 이용하면, 변수의 type을 지정해 주어야만 하기 떄문에, 어디선가 error가 발생하면 꽤 자세하게 무엇이 잘 못 되었는 지를 알려준다.**
 
 ```
 let decimal: number = 6; // decimal에는 정수 타입만 오는 것이 가능하고, 6이란 정수를 assign한다.
 decimal = "Hello"; // error. decimal은 정수라니까...
 ```
 
-### 2. Basic Typescript syntax
+## 5. ReactJs
+
+### 1. What is React.js
+
+**React.js**는 web app을 만들 수 있는 Javascript library이다. React.js is a JavaScript library for building user interfaces
+
+#### Web app은 무엇이고, 왜 사용하는가
+
+A. **page간 이동에 새로고침이 필요없이 부드럽게 넘어가기 때문에**
+
+Web-app은 Single Page Application (SPA)이라고 불리는 웹페이지로, 하나의 html을 가지고, 그 안에 내용물만을 변경하여 사용자에게 보여준다. 웹사이트 내에서 page loading이 덜 걸리고, page간 이동에 새로고침이 필요없이 부드럽게 넘어가기 때문에 사용한다.
+
+Web app를 만들 수 있는 frontend framework에는 React 말고도 Vue/Angular등 다른 tools도 많이 있다.
+
+#### Web app을 만드는데 굳이 React를 사용하는 이유는 무엇인가
+
+- A1. **React는 사용자가 가장 많은 library이기 때문에 교육자료도 많고, 참고할 자료도 매우 많다.**
+- A2. **다른 framework와 마찬가지로, React는 component단위로 Element를 관리하기 때문에, 이를 함수처럼 사용할 수 있고 재사용(reusable)이 쉽다.**
+
+1. React가 사용자가 가장 많아, react를 배운다면 취업시장에서 유리하고 교육용 자료들을 쉽게 찾을 수 있다.
+
+2. 자유도가 높은 코드는 특정 행동을 수행하는 코드를 여러 방법으로 작성할 수 있기 때문에,
+
+### 2. React 개발환경
+
+- React의 If문: If문은 condition이 true면 truebranch, false면 falsebranch를 실행한다.
+
+```
+// React if (1)
+const condition = () => {
+  if (true) {
+    return <p>truebranch</p>
+  } else {
+    return <p>falsebrance</p>
+  }
+}
+
+// React if (2)
+{ condition ? <p>truebranch</p> : <p>falsebrance</p> }
+```
+
+- React의 for문: `<ul>{ todos.map(todo => <li key={todo}>{todo}</li>) }</ul>`
+
+- React의 state 변경
+
+```
+const [human, setHuman] = useState(['Park', 18, 'male'])
+
+let humanCopy = [...human];
+humanCopy[0] = 'Kim';
+setHuman(humanCopy);
+```
+
+### 2. JSX에 대해
+
+React.js는 js 대신 jsx 라는 특수한 extension을 사용한다. JSX stands for JavaScript XML. It is simply a syntax extension of JavaScript. 하지만 js를 사용해도 react가 알아서 jsx로 인식하기 때문에 아무런 문제는 없다 (Button.js === Button.jsx). 보통은 component를 만들때, jsx 확장자를 이용하여 다른 js files과 차별점을 둘 때 사용하면 좋다.
+
+아래 변수 선언을 살펴봅시다.
+
+> `const element = <h1>Hello, world!</h1>;`
+
+위에 희한한 태그 문법은 문자열도, HTML도 아닙니다.
+
+JSX라 하며 JavaScript를 확장한 문법입니다. UI가 어떻게 생겨야 하는지 설명하기 위해 React와 함께 사용할 것을 권장합니다. JSX라고 하면 템플릿 언어가 떠오를 수도 있지만, JavaScript의 모든 기능이 포함되어 있습니다.
+
+JSX는 React “엘리먼트(element)” 를 생성합니다.
+
+React는 JSX 사용이 필수가 아니지만, 대부분의 사람은 JavaScript 코드 안에서 UI 관련 작업을 할 때 시각적으로 더 도움이 된다고 생각합니다. 또한 React가 더욱 도움이 되는 에러 및 경고 메시지를 표시할 수 있게 해줍니다.
+
+아래 예시에서는 name이라는 변수를 선언한 후 중괄호로 감싸 JSX 안에 사용하였습니다.
+
+```
+const name = 'Josh Perez';
+const element = <h1>Hello, {name}</h1>;
+
+ReactDOM.render(
+  element,
+  document.getElementById('root')
+);
+```
+
+JSX의 중괄호 안에는 유효한 모든 JavaScript 표현식을 넣을 수 있습니다. 예를 들어 2 + 2, user.firstName 또는 formatName(user) 등은 모두 유효한 JavaScript 표현식입니다.
+컴파일이 끝나면, JSX 표현식이 정규 JavaScript 함수 호출이 되고 JavaScript 객체로 인식됩니다.
+즉, JSX를 if 구문 및 for loop 안에 사용하고, 변수에 할당하고, 인자로서 받아들이고, 함수로부터 반환할 수 있습니다.
+
+### 3. ReactJS에서 NPM 패키지 모듈 불러오기
+
+NPM 패키지 모듈들은 **CommonJS**를 기본 모듈 시스템으로 채택한다. 즉, 모듈을 내보내고 불러오는 것에 있어 require, module.exports 등을 사용한다는 의미이다.
+
+그러나 실제로 ReactJS 등의 라이브러리를 활용하여 Frontend 개발을 할 때는 NPM 패키지 모듈을 불러오기 위해 ES6 문법의 코드를 작성하는 경우가 많다(import/export).
+
+그런데 왜 문제가 발생하지 않을까? 이는 Babel 등의 컴파일러가 import, export 등의 코드를 CommonJS 기반의 코드로 변환해주기 때문이다.
+그러고 나면 Webpack에 의해 JavaScript 모듈들의 번들링이 가능해진다.
+
+### 4. Basic ReactJs Syntax
+
+#### List와 Key
+
+먼저 JavaScript에서 리스트를 어떻게 변환하는지 살펴봅시다.
+
+아래는 map()함수를 이용하여 numbers 배열의 값을 두배로 만든 후 map()에서 반환하는 새 배열을 doubled 변수에 할당하고 로그를 확인하는 코드입니다.
+
+```
+const numbers = [1, 2, 3, 4, 5];
+const doubled = numbers.map((number) => number \* 2);
+console.log(doubled); // [2, 4, 6, 8, 10]
+```
+
+React에서 배열을 Element List로 만드는 방식은 이와 거의 동일 합니다.
+
+- 여러개의 컴포넌트 렌더링 하기
+
+엘리먼트 모음을 만들고 중괄호 {}를 이용하여 JSX에 포함 시킬 수 있습니다.
+
+아래의 JavaScript map() 함수를 사용하여 numbers 배열을 반복 실행합니다. 각 항목에 대해 `<li>` Element를 반환하고 엘리먼트 배열의 결과를 listItems에 저장합니다.
+
+```
+const numbers = [1, 2, 3, 4, 5];
+const listItems = numbers.map((number) =>
+  <li>{number}</li>
+);
+
+// listItems 배열을 <ul>엘리먼트 안에 포함하고 DOM에 렌더링합니다.
+ReactDOM.render(
+
+  <ul>{listItems}</ul>,
+  document.getElementById('root')
+);
+
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+```
+
+- 기본 리스트 컴포넌트
+
+일반적으로 컴포넌트 안에서 리스트를 렌더링합니다.
+
+이전 예시를 numbers 배열을 받아서 순서 없는 엘리먼트 리스트를 출력하는 컴포넌트로 리팩토링할 수 있습니다.
+
+```
+function NumberList(props) {
+    const numbers = props.numbers;
+    const listItems = numbers.map((number) =>
+        <li>{number}</li>
+    );
+
+    return (
+        <ul>{listItems}</ul>
+    );
+}
+
+const numbers = [1, 2, 3, 4, 5];
+ReactDOM.render(
+    <NumberList numbers={numbers} />,
+    document.getElementById('root')
+);
+```
+
+이 코드를 실행하면 리스트의 각 항목에 `key`를 넣어야 한다는 경고가 표시됩니다. `key`는 엘리먼트 리스트를 만들 때 포함해야 하는 특수한 문자열 attribute입니다. 다음 섹션에서 key의 중요성에 대해서 더 설명하겠습니다. 이제 `numbers.map()` 안에서 리스트의 각 항목에 key를 할당하여 키 누락 문제를 해결하겠습니다.
+
+```
+function NumberList(props) {
+    const numbers = props.numbers;
+    const listItems = numbers.map((number) =>
+          <li key={number.toString()}>
+               {number}
+          </li>
+    );
+
+    return (
+       <ul>{listItems}</ul>
+);
+}
+
+const numbers = [1, 2, 3, 4, 5];
+ReactDOM.render(
+     <NumberList numbers={numbers} />,
+     document.getElementById('root')
+);
+```
+
+- Key
+
+Key는 React가 어떤 항목을 변경, 추가 또는 삭제할지 식별하는 것을 돕습니다. key는 엘리먼트에 안정적인 고유성을 부여하기 위해 배열 내부의 엘리먼트에 지정해야 합니다.
+
+```
+const numbers = [1, 2, 3, 4, 5];
+const listItems = numbers.map((number) =>
+
+  <li key={number.toString()}>
+    {number}
+  </li>
+);
+```
+
+Key를 선택하는 가장 좋은 방법은 리스트의 다른 항목들 사이에서 해당 항목을 고유하게 식별할 수 있는 문자열을 사용하는 것입니다. 대부분의 경우 데이터의 ID를 key로 사용합니다.
+
+```
+const todoItems = todos.map((todo) =>
+
+  <li key={todo.id}>
+    {todo.text}
+  </li>
+);
+```
+
+렌더링 한 항목에 대한 안정적인 ID가 없다면 최후의 수단으로 항목의 인덱스를 key로 사용할 수 있습니다.
+
+```
+const todoItems = todos.map((todo, index) =>
+// Only do this if items have no stable IDs
+
+  <li key={index}>
+    {todo.text}
+  </li>
+);
+```
+
+항목의 순서가 바뀔 수 있는 경우 key에 인덱스를 사용하는 것은 권장하지 않습니다. 이로 인해 성능이 저하되거나 컴포넌트의 state와 관련된 문제가 발생할 수 있습니다. Robin Pokorny’s가 작성한 글인 인덱스를 key로 사용할 경우 부정적인 영향에 대한 상세 설명을 참고하시길 바랍니다. 리스트 항목에 명시적으로 key를 지정하지 않으면 React는 기본적으로 인덱스를 key로 사용합니다.
+
+Key로 컴포넌트 추출하기
+키는 주변 배열의 context에서만 의미가 있습니다.
+
+예를 들어 ListItem 컴포넌트를 추출 한 경우 ListItem 안에 있는 `<li>` 엘리먼트가 아니라 배열의 `<ListItem />` 엘리먼트가 key를 가져야 합니다.
+
+예시: 잘못된 Key 사용법
+
+```
+function ListItem(props) {
+const value = props.value;
+return (
+// 틀렸습니다! 여기에는 key를 지정할 필요가 없습니다.
+
+<li key={value.toString()}>
+{value}
+</li>
+);
+}
+
+function NumberList(props) {
+const numbers = props.numbers;
+const listItems = numbers.map((number) =>
+// 틀렸습니다! 여기에 key를 지정해야 합니다.
+<ListItem value={number} />
+);
+return (
+
+<ul>
+{listItems}
+</ul>
+);
+}
+
+const numbers = [1, 2, 3, 4, 5];
+ReactDOM.render(
+<NumberList numbers={numbers} />,
+document.getElementById('root')
+);
+예시: 올바른 Key 사용법
+
+function ListItem(props) {
+// 맞습니다! 여기에는 key를 지정할 필요가 없습니다.
+return <li>{props.value}</li>;
+}
+
+function NumberList(props) {
+const numbers = props.numbers;
+const listItems = numbers.map((number) =>
+// 맞습니다! 배열 안에 key를 지정해야 합니다.
+<ListItem key={number.toString()} value={number} />
+);
+return (
+
+<ul>
+{listItems}
+</ul>
+);
+}
+
+const numbers = [1, 2, 3, 4, 5];
+ReactDOM.render(
+<NumberList numbers={numbers} />,
+document.getElementById('root')
+);
+```
+
+경험상 map() 함수 내부에 있는 엘리먼트에 key를 넣어 주는 게 좋습니다.
+
+Key는 형제 사이에서만 고유한 값이어야 한다.
+Key는 배열 안에서 형제 사이에서 고유해야 하고 전체 범위에서 고유할 필요는 없습니다. 두 개의 다른 배열을 만들 때 동일한 key를 사용할 수 있습니다.
+
+```
+function Blog(props) {
+const sidebar = (
+
+<ul>
+{props.posts.map((post) =>
+<li key={post.id}>
+{post.title}
+</li>
+)}
+</ul>
+);
+const content = props.posts.map((post) =>
+<div key={post.id}>
+<h3>{post.title}</h3>
+<p>{post.content}</p>
+</div>
+);
+return (
+<div>
+{sidebar}
+<hr />
+{content}
+</div>
+);
+}
+
+const posts = [
+{id: 1, title: 'Hello World', content: 'Welcome to learning React!'},
+{id: 2, title: 'Installation', content: 'You can install React from npm.'}
+];
+ReactDOM.render(
+<Blog posts={posts} />,
+document.getElementById('root')
+);
+```
+
+React에서 key는 힌트를 제공하지만 컴포넌트로 전달하지는 않습니다. 컴포넌트에서 key와 동일한 값이 필요하면 다른 이름의 prop으로 명시적으로 전달합니다.
+
+```
+const content = posts.map((post) =>
+<Post
+    key={post.id}
+    id={post.id}
+    title={post.title} />
+);
+```
+
+위 예시에서 Post 컴포넌트는 props.id를 읽을 수 있지만 props.key는 읽을 수 없습니다.
+
+JSX에 map() 포함시키기
+위 예시에서 별도의 listItems 변수를 선언하고 이를 JSX에 포함했습니다.
+
+```
+function NumberList(props) {
+const numbers = props.numbers;
+const listItems = numbers.map((number) =>
+<ListItem key={number.toString()}
+              value={number} />
+);
+return (
+
+<ul>
+{listItems}
+</ul>
+);
+}
+```
+
+JSX를 사용하면 중괄호 안에 모든 표현식을 포함 시킬 수 있으므로 map() 함수의 결과를 인라인으로 처리할 수 있습니다.
+
+```
+function NumberList(props) {
+const numbers = props.numbers;
+return (
+
+<ul>
+{numbers.map((number) =>
+<ListItem key={number.toString()}
+                  value={number} />
+)}
+</ul>
+);
+}
+```
+
+이 방식을 사용하면 코드가 더 깔끔해 지지만, 이 방식을 남발하는 것은 좋지 않습니다. JavaScript와 마찬가지로 가독성을 위해 변수로 추출해야 할지 아니면 인라인으로 넣을지는 개발자가 직접 판단해야 합니다. map() 함수가 너무 중첩된다면 컴포넌트로 추출 하는 것이 좋습니다.
+
+## 6. VueJs
+
+### 1. What is Vue.js
+
+#### Vue Js가 무엇이고, 왜 사용하는가
+
+Vue Js는 Web app을 만들 수 있는 Javascript Front-end Framework이다.
+
+#### Web app은 무엇이고, 왜 사용하는가
+
+**page간 이동에 새로고침이 필요없이 부드럽게 넘어가기 때문에**
+
+Web-app은 Single Page Application (SPA)이라고 불리는 웹페이지로, 하나의 html을 가지고, 그 안에 내용물만을 변경하여 사용자에게 보여준다. 웹사이트 내에서 page loading이 덜 걸리고, page간 이동에 새로고침이 필요없이 부드럽게 넘어가기 때문에 사용한다.
+
+Web app를 만들 수 있는 frontend framework에는 Vue 말고도 React/Angular등 다른 tools도 많이 있다.
+
+#### Web app을 만드는데 굳이 Vue를 사용하는 이유는 무엇인가
+
+**Vue는 문법이 쉽고 하나로 정해져 있기 떄문에, 문법 몇개만 외워주면 초보도 쉽게 output를 낼 수 있다.**
+
+- A1. Vue가 더 쉽기 때문이다. React나 Vue 중 본인에게 맞는 거 사용하면 되는데, Javascript를 잘 하지 못한다면 Vue를 먼저 사용해본다.
+- A2. Vue는 문법이 하나로 정해져 있기 때문에 여러 개발자사이의 코딩 스타일을 통일시킨다. 다른 개발자가 나와 같은 방법만을 사용해야 함으로 한 눈에 이해하기 쉽다.
+
+1. React가 사용자가 Vue보다 더 많음에도, 굳이 Vue를 배우는 이유는 Vue의 문법이 더 쉽기 때문이다. Vue는 사용법이 쉬운데 다른 어려운 frameworks와 동일하게 좋은 웹앱을 만들 수 있기 때문에, 웹앱 입문자라면 React보다는 Vue를 추천한다.
+
+- if문 비교
+
+```
+// if문은 condition이 true면 truebranch, false면 falsebranch를 실행한다.
+// React if (1)
+const condition = () => {
+  if (true) {
+    return <p>truebranch</p>
+  } else {
+    return <p>falsebranch</p>
+  }
+}
+
+// React if (2)
+{ condition ? <p>truebranch</p> : <p>falsebranch</p> }
+
+// Vue if
+<template>
+  <div>
+    <p v-if="condition">truebranch</p>
+    <p v-else>falsebranch</p>
+  </div>
+</template>
+```
+
+- for loop 비교
+
+```
+// React for
+<ul>{ todos.map(todo => <li key={todo}>{todo}</li>) }</ul>
+
+// Vue for
+<template>
+  <ul>
+    <li v-for="todo in todos" :key="todo">{{ todo }}}/li>
+  </ul>
+</template>
+```
+
+- state변경 비교
+
+```
+// React의 state 변경
+const [human, setHuman] = useState(['Park', 18, 'male'])
+
+let humanCopy = [...human];
+humanCopy[0] = 'Kim';
+setHuman(humanCopy);
+
+// Vue의 state 변경
+return {
+  human: ['Park', 18, 'Male'],
+}
+
+this.human[0] = 'Kim'
+```
+
+2. 자유도가 높은 코드는 특정 행동을 수행하는 코드를 여러 방법으로 작성할 수 있기 때문에, 다른 개발자가 나와 다른 방법을 사용하면 한 눈에 이해하기 어렵다. 그럼으로, 여러 개발자와 협업할 때, error를 만들어 내기 쉽다. Vue는 자유도가 낮기 때문에 다른 개발자의 코드라도 이해하기가 쉽다. Vue는 코드를 짤때 맞는 방법이 정해져 있어, 여러 개발자사이의 코딩 스타일을 통일시킨다.
+
+Vue를 사용하면, 특정 행동을 수행하는 코드를 다른 개발자가 나와 같은 방법만을 사용해야 함으로 한 눈에 이해하기 쉽다. Vue는 문법이 쉽고 하나로 정해져 있기 떄문에, 문법 몇개만 외워주면 초보도 쉽게 output를 낼 수 있다.
+
+- `<HTML>`을 여러개 만들고 싶다.
+
+```
+// React
+1. { map }
+2. forEach
+3. for | for in | for of
+
+// Vue
+1. v-for
+```
+
+- `<HTML>`을 조건부로 보여주고 싶다.
+
+```
+// React
+1. if | else
+2. Conditional (ternary) operator = { cond ? tb : fb}
+3. && ||
+4. enum
+
+// Vue
+1. v-if | v-else
+```
+
+### 2. Vue 개발환경
+
+Vue로 Project를 만들면서, Vue의 문법들을 공부해보자.
+
+1. 최신 버젼의 `Node.js` 설치 (`npm`을 사용하기 위해)
+2. VScode code editor와 VScode extension 설치 (`Vue` code를 쉽게 입력하기 위해)
+
+- `Vue Language Features (Volar)`
+- `html css support`: (`ctrl + space`: view a list of id and class attribute suggestions )
+- `TypeScript Vue Plugin (Volar)`
+
+3. 기본적인 HTML, CSS and JavaScript 개념
+4. [Vue 문법 몇가지](https://vuejs.org/guide/introduction.html)
+
+#### Vue로 project 만드는 방법은
+
+A. **project 1. 생성 => 2. 개발 => 3. 배포**
+
+1. Vue의 최신버전으로 프로젝트 생성
+
+Terminal에 다음의 코드를 입력
+
+This command will install and execute `create-vue`, the official Vue project scaffolding tool.
+
+> $ `npm init vue@latest`
+
+```
+✔ Project name: … <your-project-name>
+✔ Add TypeScript? … No / Yes
+✔ Add JSX Support? … No / Yes
+✔ Add Vue Router for Single Page Application development? … No / Yes
+✔ Add Pinia for state management? … No / Yes
+✔ Add Cypress for testing? … No / Yes
+
+Scaffolding project in ./<your-project-name>...
+Done.
+```
+
+아직 익숙하지 않으면 전부 `No`을 선택
+
+2. 개발
+
+Install dependencies and start the dev server
+
+your-project-name로 이동
+
+> $ `cd <your-project-name>`
+
+dependencies 설치
+
+> $ `npm install` 또는 `npm i`
+
+> $ `npm run dev` 또는 VSCode에서 Open Editor 및에 `NPM SCRIPTS`에서 `dev` 실행 버튼 클릭
+
+- web browser에 `localhost:{{port}}` 입력
+- dev server를 종료하려면 terminal에서 `Ctrl + C` 입력
+- `src/App.vue` 가 우리의 메인 웹페이지이다.
+- 현재 project에 맞게, src directory의 files 수정 & 추가하면 된다.
+
+```
+// App.vue
+<template></tempalte> // HTML Code
+<script></script> // Javascript Code
+<style></style> // CSS Code
+```
+
+- `src` directory: source code 저장
+- `public` directory: HTML file 및 기타 파일 저장
+- `package.json`: 이 project에 사용되는 dependencies의 이름 저장
+- `node_modules` directory: 실제 설치된 dependencies 저장
+
+3. 배포
+
+When you are ready to ship your app to production, run the following:
+
+> `npm run build`
+
+This will create a production-ready build of your app in the project's `./dist` directory.
+Vue files을 웹 broswer가 이해할 수 있는 HTML, CSS, Javascript로 변환 후 `./dist` 폴더에 생성
+
+`./dist` 폴더의 files만 있으면 웹사이트 생성가능.
+
+### 3. Databinding in Vue js
+
+#### Databinding이 무엇이고, 왜 사용하는가
+
+- A1. **Databinding은 Javascript data를 HTML에 꽃아 넣는 문법이다.**
+- A2. **Databinding은 Javascript로 HTML을 조작하고, 변경하기 위해 사용한다.**
+- A3. **Vue의 실시간 자동 rendering을 쓰기 위해서 사용한다.**
+- A4. **안바뀔꺼 같은 data는 databinding할 필요없이 HTML에 hardcoding하고, 자주 변하는 데이터들은 script tag에 저장한 후 HTML에 꽂아 넣는다.**
+
+계속 변하는 data를 hardcoding해놓으면, 그 값을 변경하기 어렵다. 하지만 Databinding을 이용하면, 계속 변하는 데이터에 대해 값을 쉽게 변경할 수 있다.
+
+실시간 자동 rendering: script tag에 정의된 data를 변경하면, 그 data와 연결된 HTML에도 실시간으로 변경된다.
+
+#### Vue에서 Databinding 사용하는 방법은 무엇인가
+
+Element의 text content을 Databinding할 경우 `{{데이터이름}}`, HTML Attribute를 Databinding할 경우 `:속성="데이터이름"`
+
+- script tag에 Javascript형식으로 변수에 data를 assign한 후, template tag에 `{{}}` double curly braces을 사용하여 그 변수의 값을 사용할 수 있다.
+
+`{{데이터이름}}`
+
+```
+<script>
+const name = "Shin";
+</script>
+
+<template>
+<p>Hello My name is {{name}}<p>
+</template>
+
+// Hello My name is Shin
+```
+
+- HTML Attribute 역시 binding이 가능하다. `:` colon을 HTML Attribute 앞에 붙인 후, 변수명을 `""`을 사용하면 된다.
+
+`:속성="데이터이름"`
+
+```
+<script>
+const blueColor = 'color : blue';
+</script>
+
+<template>
+<p :style="blueColor">This is blue color<p>
+</template>
+```
+
+기존 Javascript에서 databinding을 사용할려면 `document.getElementById("name").innerHTML = "이름"`과 같은 긴 문법을 사용해야 했지만, Vue에서는 databinding을 아주 쉽게 할 수 있다. `{{}}` 안에 변수명을 집어넣으면 끝이다.
+
+안바뀔꺼 같은 data는 databinding할 필요없이 HTML에 hardcoding하고, 자주 변하는 데이터들은 script tag에 저장한 후 HTML에 꽂아 넣는다.
+
+⭐ 기타 다른 Vue 문법은 vuejs.org 공식 문서를 참고하자!
+
+### Vuetify
+
+**Vuetify is a complete UI framework built on top of Vue.js.**
+
+Vuetify는 React의 Material-UI/React-bootstrap과 같은 UI framework로, 미리 만들어진 component를 가져다가 웹페이지를 꾸밀 수 있다. 그냥 원하는 component를 복사, 붙여넣기해서 쓰면 되기 때문에 아주 쉽고 간편하다.
+
+## 7. NextJs
+
+### What is Next.js?
+
+`Next.js`는 Web framework인 react.js에 기능을 더한 meta-framework이다. `Next.js`, `Remix`는 React.js가 가진 Client-Side Rendering 문제를 해결하기 위해 등장했다.
+React.js로 만든 웹은 default로 Client-Side Rendering이 된다.
+
+- Client-Side Rendering: 사용자가 웹사이트로 접근한 후에야 그 웹의 Javascript를 다운받고, browser가 React를 실행시켜 UI를 만든다.
+
+React.js로 만든 웹을 **Static & Server Side Rendering (SSR)**를 가능하게 만들어 준다.
+React.js로 만든 웹을 **Static & Server Side Rendering (SSR)**를 가능하게 만들어 준다.
+
+`Remix` 역시 SSR을 지원하지만, Next.js가 프로그래머들 사이에서 가장 인기가 많은 이유는 배우기 쉽고, 사용하기 쉽기 때문이다.
+
+#### prerequisite
+
+- Javascript/Typescript/React.js에 대한 기본지식
+-
+
+> `npx create-next-app@latest`
+
+Typescript 추가
+
+> `npx create-next-app@latest --typescript`
 
 ## 1. Web Application Development
 
@@ -2809,6 +3456,100 @@ const cors = require('cors');
 app.use(cors());
 ```
 
+### 10. Framework vs Library
+
+- Framework를 한국어로 하면 frame (틀), work (작업), 즉 기본적인 틀을 만드는 작업이다.
+  Framework는 **정해진 사용방법이 존재**하기 때문에 우리는 framework가 요구하는 대로 따라해야지만 원하는 결과를 얻을 수 있다. 
+
+- Library는 특정 기능에 대한 도구 or 함수들을 모은 집합이다.
+  즉, 프로그래머가 개발하는데 필요한 것들을 모아둔 것입니다.
+  library는 단순 활용이 가능한 도구들의 집합이다.
+
+집을 만드는 작업이라고 하면,
+
+- Framework는 집의 기본 구조를 제공하여, 우리는 그 구조에 더하면 되고,
+- Library는 침대, 소파와 같은 가구로, 우리는 이 가구들로 집을 만들어야 한다.
+
+프로그래밍에서 차이:
+
+- You, the developer, use a library. You call a library when and where you need to.
+- In contrast, a framework call your code. 
+
+개발자가 Library를 내 코드로 호출하고, framework는 반대로 framework가 내 코드를 호출한다. Framework를 사용할 떄 코드를 특정 장소와 폴더안에 입력해야만 제대로 작동하는 것을 볼 수 있다. 이는 framework가 설계될 때 이미 큰 틀이 설계되어 있고, 개발자는 framework가 요구하는 틀을 따라가야 한다. 즉, Library가 코드의 자유도가 더 높고, framework가 코드의 자유도가 더 낮다. 뭐가 더 좋고 나쁨은 없으나, 큰 project를 만들 때에는 여러 개발자와 함께 만들기 때문에 개발자들 사이에 자유도가 낮은 framework가 더 유리하고, 작은 project를 만들때에는 자유도가 높은 library가 더 편하다.
+
+- Framework: 어떤 동작을 수행하기 위한 코드 작성 방법이 정해져 있기 때문에, 다른 개발자의 코드를 보고 한 눈에 알아볼 수 있고 에러를 빨리 찾을 수 있다.
+             개발자들 사이 너도 나도 같은 방법을 사용.  
+- Library: 개발자가 자유롭게 코드를 가져다 쓰기 때문에 자유도가 높다.  
+
+```
+          call
+Developer ------> Library
+Developer <------ Framework
+          call
+
+// Library
+import API from Library
+const mydata = API()
+
+// Framework
+- Flask: need to put all HTML files in "Template" folder to work
+- Next.js: need to put all Javascript files in "Pages" folder to route
+```
+
+예시:
+- Libraray: React.js, Bootstrap, ...
+- Framework: Vue.js, Flask, Django, ...
+
+### 11. Frontend framework vs Server-Side Web Framework
+
+Web App dev는 크게 Frontend, Backend로 나눌 수 있고, 이를 합쳐 Fullstack dev라고 한다.
+이는 MVC (Model / View / Controll) software design pattern 라고도 불린다.
+Model–view–controller is a software design pattern commonly used for developing user interfaces that divide the related program logic into three interconnected elements.
+
+- Model은 View와 Controll을 연결하는 연결고리 역할을 한다.
+- View은 client가 웹사이트에 방문하여 실제로 보게되는 회면을 의미한다. HTML (HyperText Markup Language), CSS (Cascading Style Sheets), Javascript를 이용하여 View를 작성할 수 있다. 여기서 programming language는 오직 Javascript이다.
+- Controll은 app의 functionalities를 의미한다.
+
+각각의 programming language마다 Web Application Server를 만드는 web app framework를 제공한다.
+
+1. python: Django, Flask, FastAPI
+2. Java: spring, spring boot, play
+3. Javascript: Express, Fastify
+4. php: Laravel
+
+![This is an image](./img/server_side_web_framework.png)
+
+`Frontend framework`은 pure Javascript, HTML이 아닌 web view를 더 쉽게 작성할 수 있게 만드는 framework이다.
+SPA를 제공하는 frontend framework에는 크게 React JS, Vue JS, Angular JS가 있다.
+**Single Page Application** (SPA)는 body가 비어있는 하나의 HTML을 가지고 Javascript를 이용해서 그 안에 Data만 변경하는 것을 말한다.
+Server가 Client에 자료를 넘겨주면, Client computer가 그 정보를 가지고 HTML를 완성하기 때문에
+CSR (Client Side Rendering)이라고 부른다. CSR은 HTMl이 비어있기 때문에 검색 엔진에 노출되어 검색되기 쉽지 않다.
+SEO (Search Engine Optimization)에 약점을 가진다.
+
+⭐ `React JS`: React는 Meta사에서 만든 Javascript frontend framework로 computer에 최신 버전의 `Node.js`를 설치하면 누구나
+쉽게 사용할 수 있다.
+
+그 밖에도 `Angular JS`, `Vue JS`등 다양한 Web Application Frontend framework이 존재한다.
+이 Web application framework은 사용방법이 거의 비슷하기 때문에 하나만 잘 이해하면, 나머지는 쉽게 사용할 수 있다.
+
+`Figma`, `Adobe photoshop` 등 다양한 Moderm UI/UX (web view)를 실질적으로 코드를 작성하기 전에 디자인할 수 있는 program들이 많이 존재하므로, 이를 이용하여 웹사이트를 미리 디자인 해 볼 수도 있다.
+
+### 12. Server-Side Rendering (SSD)
+
+SSD는 CSD가 가진 검색 엔진에 대한 보완을 위해 등장한 개념으로, CSD와는 다르게 Server에서 HTML을 전부 완성한 후에 Client에게 보내준다.
+이로 인해 이용자가 많을 경우 Server에 과부화가 걸릴 수도 있다.
+
+### 13. Database
+
+Database와 web app을 연결하여 쉽고 간단하게 data를 읽고 쓸 수 있다.
+Database는 크게 Relational database (sql)와 Not only Relational database (Nosql)로 나눌 수 있다.
+`sql (Structured Query Language)`
+
+⭐ `postgresql` - Relational database의 대표주자
+
+⭐ `Mongo Database` - Not only Relational database의 대표주자
+![This is an image](./img/Database.png)
+
 ## % 부록0: 유용한 VSCode 기능 알아보기 %
 
 - `단어 + tab`: Snippets를 이용하여 자동완성 기능을 적극활용한다.
@@ -3153,86 +3894,6 @@ main은 항상 완벽한 완결된 코드이어야 함으로 main에 직접적�
 
 6. AWS Elastic Beanstalk - 간단히 코드를 배포할 때 사용
 
-## 4. Web Application Development의 이해
-
-### 1. Framework vs Library
-
-- Framework를 한국어로 하면 frame (틀), work (작업), 즉 기본적인 틀을 만드는 작업이다.
-  Framework는 기본적인 사용방법이 존재하기 때문에 우리는 이 기본적인 뼈대에다가 살을 붙이면 된다.
-
-- Library는 특정 기능에 대한 도구 or 함수들을 모은 집합입니다.
-  즉, 프로그래머가 개발하는데 필요한 것들을 모아둔 것입니다.
-  library는 단순 활용이 가능한 도구들의 집합이다.
-
-집을 만드는 작업이라고 하면,
-
-- Framework는 집의 기본 구조를 제공하여, 우리는 그 구조에 더하면 되고,
-- Library는 침대, 소파와 같은 가구로, 우리는 이 가구들로 집을 만들어야 한다.
-
-프로그래밍에서는
-You, the developer, use a library. You call a library when and where you need to.
-In contrast, a framework call your code
-
-```
-Developer    Framework
-```
-
-### 2. ⭐ Frontend framework vs Server-Side Web Framework
-
-Web App dev는 크게 Frontend, Backend, Database로 나눌 수 있고, 이 세가지를 합쳐 Fullstack dev라고 한다.
-이는 MVC (Model / View / Controll) software design pattern 라고도 불린다.
-Model–view–controller is a software design pattern commonly used for developing user interfaces that divide the related program logic into three interconnected elements.
-
-- Model은 View와 Controll을 연결하는 연결고리 역할을 한다.
-- View은 client가 웹사이트에 방문하여 실제로 보게되는 회면을 의미한다. HTML (HyperText Markup Language), CSS (Cascading Style Sheets), Javascript를 이용하여 View를 작성할 수 있다. 여기서 programming language는 오직 Javascript이다.
-- Controll은 app의 functionalities를 의미한다.
-
-각각의 programming language마다 Web Application Server를 만드는 web app framework를 제공한다.
-
-1. python: Django, Flask, FastAPI
-2. Java: spring, spring boot, play
-3. Javascript: Express, Fastify
-4. php: Laravel
-
-![This is an image](./img/server_side_web_framework.png)
-
-`Frontend framework`은 pure Javascript, HTML이 아닌 web view를 더 쉽게 작성할 수 있게 만드는 framework이다.
-SPA를 제공하는 frontend framework에는 크게 React JS, Vue JS, Angular JS가 있다.
-**Single Page Application** (SPA)는 body가 비어있는 하나의 HTML을 가지고 Javascript를 이용해서 그 안에 Data만 변경하는 것을 말한다.
-Server가 Client에 자료를 넘겨주면, Client computer가 그 정보를 가지고 HTML를 완성하기 때문에
-CSR (Client Side Rendering)이라고 부른다. CSR은 HTMl이 비어있기 때문에 검색 엔진에 노출되어 검색되기 쉽지 않다.
-SEO (Search Engine Optimization)에 약점을 가진다.
-
-⭐ `React JS`: React는 Meta사에서 만든 Javascript frontend framework로 computer에 최신 버전의 `Node.js`를 설치하면 누구나
-쉽게 사용할 수 있다.
-
-그 밖에도 google사에서 만든 `Angular JS`,
-
-`Vue JS`등 다양한 Web Application Frontend framework이 존재한다.
-이 Web application framework은 사용방법이 거의 비슷하기 때문에 하나만 잘 이해하면, 나머지는 쉽게 사용할 수 있다.
-
-`Figma`, `Adobe photoshop` 등 다양한 Moderm UI/UX (web view)를 실질적으로 코드를 작성하기 전에 디자인할 수 있는 program들이 많이 존재하므로, 이를 이용하여 웹사이트를 미리 디자인 해 볼 수도 있다.
-
-### 3. Server-Side Rendering (SSD)
-
-SSD는 CSD가 가진 검색 엔진에 대한 보완을 위해 등장한 개념으로, CSD와는 다르게 Server에서 HTML을 전부 완성한 후에 Client에게 보내준다.
-이로 인해 이용자가 많을 경우 Server에 과부화가 걸릴 수도 있다.
-
-### 4. Database
-
-Database와 web app을 연결하여 쉽고 간단하게 data를 읽고 쓸 수 있다.
-Database는 크게 Relational database (sql)와 Not only Relational database (Nosql)로 나눌 수 있다.
-`sql (Structured Query Language)`
-
-⭐ `postgresql` - Relational database의 대표주자
-
-⭐ `Mongo Database` - Not only Relational database의 대표주자
-![This is an image](./img/Database.png)
-
-### 5. Deploy Frontend Projects
-
-⭐ `Netlify`, `heroku`, `Github`등을 이용해 내가 만든 웹사이트를 배포할 수 있다.
-
 ## % 부록3: Docker 이해하기 %
 
 local computer에 다운되어 있는 environment와 server computer에 다운되어 있는 environment가 다르면, local에서 작성된 code는 server에서 호환성 문제로 작동이 안될 수도 있다. 이 문제를 해결하기 위해 container라는 개념이 등장하였고, Docker가 container를 제공하는 가장 큰 platform이다.
@@ -3326,671 +3987,6 @@ react js에서 array를 하나씩 iterate해야할 경우 `array.map()` 함수�
 react js는 jsx이기 때문에 `array.map((param) => {body})`가 아니라 `array.map((param) => (body))`처럼 body에도 parentheses를 사용해야 한다.
 
 `map()`은 javascript code이기 때문에 `{ array.map((param) => (body))}`과 같이 curly brackets {} 안에서 정의하면 된다.
-
-## 5. ReactJs
-
-### 1. What is ReactJs
-
-#### Q1. React Js가 무엇이고, 왜 사용하는가
-
-React Js는 Web app을 만들 수 있는 Javascript Front-end Framework이다.
-
-#### Q2. Web app은 무엇이고, 왜 사용하는가
-
-A. **page간 이동에 새로고침이 필요없이 부드럽게 넘어가기 때문에**
-
-Web-app은 Single Page Application (SPA)이라고 불리는 웹페이지로, 하나의 html을 가지고, 그 안에 내용물만을 변경하여 사용자에게 보여준다. 웹사이트 내에서 page loading이 덜 걸리고, page간 이동에 새로고침이 필요없이 부드럽게 넘어가기 때문에 사용한다.
-
-Web app를 만들 수 있는 frontend framework에는 React 말고도 Vue/Angular등 다른 tools도 많이 있다.
-
-#### Q3. Web app을 만드는데 굳이 React를 사용하는 이유는 무엇인가
-
-- A1. **React는 사용자가 가장 많은 framework이기 때문에 교육자료도 많고, 참고할 자료도 매우 많다.**
-- A2. **다른 framework와 마찬가지로, React는 component단위로 Element를 관리하기 때문에, 이를 함수처럼 사용할 수 있고 재사용(reusable)이 쉽다.**
-
-1. React가 사용자가 가장 많아, react를 배운다면 취업시장에서 유리하고 교육용 자료들을 쉽게 찾을 수 있다.
-
-2. 자유도가 높은 코드는 특정 행동을 수행하는 코드를 여러 방법으로 작성할 수 있기 때문에,
-
-```
-// Q. <HTML>을 여러개 만들고 싶다.
-// React
-1. { map }
-2. forEach
-3. for | for in | for of
-
-// Vue
-1. v-for
-```
-
-```
-// Q. <HTML>을 조건부로 보여주고 싶다.
-// React
-1. if | else
-2. tenary operator
-3. && ||
-4. enum
-
-// Vue
-1. v-if | v-else
-```
-
-### 2. React 개발환경
-
-- React의 If문: If문은 condition이 true면 truebranch, false면 falsebranch를 실행한다.
-
-```
-// React if (1)
-const condition = () => {
-  if (true) {
-    return <p>truebranch</p>
-  } else {
-    return <p>falsebrance</p>
-  }
-}
-
-// React if (2)
-{ condition ? <p>truebranch</p> : <p>falsebrance</p> }
-```
-
-- React의 for문: `<ul>{ todos.map(todo => <li key={todo}>{todo}</li>) }</ul>`
-
-- React의 state 변경
-
-```
-const [human, setHuman] = useState(['Park', 18, 'male'])
-
-let humanCopy = [...human];
-humanCopy[0] = 'Kim';
-setHuman(humanCopy);
-```
-
-### 2. JSX에 대해
-
-React js는 js 대신 jsx 라는 특수한 extension을 사용한다. 하지만 js를 사용해도 react가 알아서 jsx로 인식하기 때문에 아무런 문제는 없다. (Button.js === Button.jsx)
-보통은 component를 만들때, jsx 확장자를 이용하여 다른 js files과 차별점을 둘 때 사용하면 좋다.
-
-JSX stands for JavaScript XML. It is simply a syntax extension of JavaScript.
-
-아래 변수 선언을 살펴봅시다.
-
-> `const element = <h1>Hello, world!</h1>;`
-
-위에 희한한 태그 문법은 문자열도, HTML도 아닙니다.
-
-JSX라 하며 JavaScript를 확장한 문법입니다. UI가 어떻게 생겨야 하는지 설명하기 위해 React와 함께 사용할 것을 권장합니다. JSX라고 하면 템플릿 언어가 떠오를 수도 있지만, JavaScript의 모든 기능이 포함되어 있습니다.
-
-JSX는 React “엘리먼트(element)” 를 생성합니다.
-
-React는 JSX 사용이 필수가 아니지만, 대부분의 사람은 JavaScript 코드 안에서 UI 관련 작업을 할 때 시각적으로 더 도움이 된다고 생각합니다. 또한 React가 더욱 도움이 되는 에러 및 경고 메시지를 표시할 수 있게 해줍니다.
-
-아래 예시에서는 name이라는 변수를 선언한 후 중괄호로 감싸 JSX 안에 사용하였습니다.
-
-```
-const name = 'Josh Perez';
-const element = <h1>Hello, {name}</h1>;
-
-ReactDOM.render(
-  element,
-  document.getElementById('root')
-);
-```
-
-JSX의 중괄호 안에는 유효한 모든 JavaScript 표현식을 넣을 수 있습니다. 예를 들어 2 + 2, user.firstName 또는 formatName(user) 등은 모두 유효한 JavaScript 표현식입니다.
-
-컴파일이 끝나면, JSX 표현식이 정규 JavaScript 함수 호출이 되고 JavaScript 객체로 인식됩니다.
-
-즉, JSX를 if 구문 및 for loop 안에 사용하고, 변수에 할당하고, 인자로서 받아들이고, 함수로부터 반환할 수 있습니다.
-
-### 3. ReactJS에서 NPM 패키지 모듈 불러오기
-
-NPM 패키지 모듈들은 **CommonJS**를 기본 모듈 시스템으로 채택한다.
-
-즉, 모듈을 내보내고 불러오는 것에 있어 require, module.exports 등을 사용한다는 의미이다.
-
-그러나 실제로 ReactJS 등의 라이브러리를 활용하여 Frontend 개발을 할 때는 NPM 패키지 모듈을 불러오기 위해 ES6 문법의 코드를 작성하는 경우가 많다(import/export).
-
-그런데 왜 문제가 발생하지 않을까? 이는 Babel 등의 컴파일러가 import, export 등의 코드를 CommonJS 기반의 코드로 변환해주기 때문이다.
-그러고 나면 Webpack에 의해 JavaScript 모듈들의 번들링이 가능해진다.
-
-### 4. Basic ReactJs Syntax
-
-#### List와 Key
-
-먼저 JavaScript에서 리스트를 어떻게 변환하는지 살펴봅시다.
-
-아래는 map()함수를 이용하여 numbers 배열의 값을 두배로 만든 후 map()에서 반환하는 새 배열을 doubled 변수에 할당하고 로그를 확인하는 코드입니다.
-
-```
-const numbers = [1, 2, 3, 4, 5];
-const doubled = numbers.map((number) => number \* 2);
-console.log(doubled); // [2, 4, 6, 8, 10]
-```
-
-React에서 배열을 Element List로 만드는 방식은 이와 거의 동일 합니다.
-
-- 여러개의 컴포넌트 렌더링 하기
-
-엘리먼트 모음을 만들고 중괄호 {}를 이용하여 JSX에 포함 시킬 수 있습니다.
-
-아래의 JavaScript map() 함수를 사용하여 numbers 배열을 반복 실행합니다. 각 항목에 대해 `<li>` Element를 반환하고 엘리먼트 배열의 결과를 listItems에 저장합니다.
-
-```
-const numbers = [1, 2, 3, 4, 5];
-const listItems = numbers.map((number) =>
-  <li>{number}</li>
-);
-
-// listItems 배열을 <ul>엘리먼트 안에 포함하고 DOM에 렌더링합니다.
-ReactDOM.render(
-
-  <ul>{listItems}</ul>,
-  document.getElementById('root')
-);
-
-<ul>
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-    <li>4</li>
-    <li>5</li>
-</ul>
-```
-
-- 기본 리스트 컴포넌트
-
-일반적으로 컴포넌트 안에서 리스트를 렌더링합니다.
-
-이전 예시를 numbers 배열을 받아서 순서 없는 엘리먼트 리스트를 출력하는 컴포넌트로 리팩토링할 수 있습니다.
-
-```
-function NumberList(props) {
-    const numbers = props.numbers;
-    const listItems = numbers.map((number) =>
-        <li>{number}</li>
-    );
-
-    return (
-        <ul>{listItems}</ul>
-    );
-}
-
-const numbers = [1, 2, 3, 4, 5];
-ReactDOM.render(
-    <NumberList numbers={numbers} />,
-    document.getElementById('root')
-);
-```
-
-이 코드를 실행하면 리스트의 각 항목에 `key`를 넣어야 한다는 경고가 표시됩니다. `key`는 엘리먼트 리스트를 만들 때 포함해야 하는 특수한 문자열 attribute입니다. 다음 섹션에서 key의 중요성에 대해서 더 설명하겠습니다. 이제 `numbers.map()` 안에서 리스트의 각 항목에 key를 할당하여 키 누락 문제를 해결하겠습니다.
-
-```
-function NumberList(props) {
-    const numbers = props.numbers;
-    const listItems = numbers.map((number) =>
-          <li key={number.toString()}>
-               {number}
-          </li>
-    );
-
-    return (
-       <ul>{listItems}</ul>
-);
-}
-
-const numbers = [1, 2, 3, 4, 5];
-ReactDOM.render(
-     <NumberList numbers={numbers} />,
-     document.getElementById('root')
-);
-```
-
-- Key
-
-Key는 React가 어떤 항목을 변경, 추가 또는 삭제할지 식별하는 것을 돕습니다. key는 엘리먼트에 안정적인 고유성을 부여하기 위해 배열 내부의 엘리먼트에 지정해야 합니다.
-
-```
-const numbers = [1, 2, 3, 4, 5];
-const listItems = numbers.map((number) =>
-
-  <li key={number.toString()}>
-    {number}
-  </li>
-);
-```
-
-Key를 선택하는 가장 좋은 방법은 리스트의 다른 항목들 사이에서 해당 항목을 고유하게 식별할 수 있는 문자열을 사용하는 것입니다. 대부분의 경우 데이터의 ID를 key로 사용합니다.
-
-```
-const todoItems = todos.map((todo) =>
-
-  <li key={todo.id}>
-    {todo.text}
-  </li>
-);
-```
-
-렌더링 한 항목에 대한 안정적인 ID가 없다면 최후의 수단으로 항목의 인덱스를 key로 사용할 수 있습니다.
-
-```
-const todoItems = todos.map((todo, index) =>
-// Only do this if items have no stable IDs
-
-  <li key={index}>
-    {todo.text}
-  </li>
-);
-```
-
-항목의 순서가 바뀔 수 있는 경우 key에 인덱스를 사용하는 것은 권장하지 않습니다. 이로 인해 성능이 저하되거나 컴포넌트의 state와 관련된 문제가 발생할 수 있습니다. Robin Pokorny’s가 작성한 글인 인덱스를 key로 사용할 경우 부정적인 영향에 대한 상세 설명을 참고하시길 바랍니다. 리스트 항목에 명시적으로 key를 지정하지 않으면 React는 기본적으로 인덱스를 key로 사용합니다.
-
-Key로 컴포넌트 추출하기
-키는 주변 배열의 context에서만 의미가 있습니다.
-
-예를 들어 ListItem 컴포넌트를 추출 한 경우 ListItem 안에 있는 `<li>` 엘리먼트가 아니라 배열의 `<ListItem />` 엘리먼트가 key를 가져야 합니다.
-
-예시: 잘못된 Key 사용법
-
-```
-function ListItem(props) {
-const value = props.value;
-return (
-// 틀렸습니다! 여기에는 key를 지정할 필요가 없습니다.
-
-<li key={value.toString()}>
-{value}
-</li>
-);
-}
-
-function NumberList(props) {
-const numbers = props.numbers;
-const listItems = numbers.map((number) =>
-// 틀렸습니다! 여기에 key를 지정해야 합니다.
-<ListItem value={number} />
-);
-return (
-
-<ul>
-{listItems}
-</ul>
-);
-}
-
-const numbers = [1, 2, 3, 4, 5];
-ReactDOM.render(
-<NumberList numbers={numbers} />,
-document.getElementById('root')
-);
-예시: 올바른 Key 사용법
-
-function ListItem(props) {
-// 맞습니다! 여기에는 key를 지정할 필요가 없습니다.
-return <li>{props.value}</li>;
-}
-
-function NumberList(props) {
-const numbers = props.numbers;
-const listItems = numbers.map((number) =>
-// 맞습니다! 배열 안에 key를 지정해야 합니다.
-<ListItem key={number.toString()} value={number} />
-);
-return (
-
-<ul>
-{listItems}
-</ul>
-);
-}
-
-const numbers = [1, 2, 3, 4, 5];
-ReactDOM.render(
-<NumberList numbers={numbers} />,
-document.getElementById('root')
-);
-```
-
-경험상 map() 함수 내부에 있는 엘리먼트에 key를 넣어 주는 게 좋습니다.
-
-Key는 형제 사이에서만 고유한 값이어야 한다.
-Key는 배열 안에서 형제 사이에서 고유해야 하고 전체 범위에서 고유할 필요는 없습니다. 두 개의 다른 배열을 만들 때 동일한 key를 사용할 수 있습니다.
-
-```
-function Blog(props) {
-const sidebar = (
-
-<ul>
-{props.posts.map((post) =>
-<li key={post.id}>
-{post.title}
-</li>
-)}
-</ul>
-);
-const content = props.posts.map((post) =>
-<div key={post.id}>
-<h3>{post.title}</h3>
-<p>{post.content}</p>
-</div>
-);
-return (
-<div>
-{sidebar}
-<hr />
-{content}
-</div>
-);
-}
-
-const posts = [
-{id: 1, title: 'Hello World', content: 'Welcome to learning React!'},
-{id: 2, title: 'Installation', content: 'You can install React from npm.'}
-];
-ReactDOM.render(
-<Blog posts={posts} />,
-document.getElementById('root')
-);
-```
-
-React에서 key는 힌트를 제공하지만 컴포넌트로 전달하지는 않습니다. 컴포넌트에서 key와 동일한 값이 필요하면 다른 이름의 prop으로 명시적으로 전달합니다.
-
-```
-const content = posts.map((post) =>
-<Post
-    key={post.id}
-    id={post.id}
-    title={post.title} />
-);
-```
-
-위 예시에서 Post 컴포넌트는 props.id를 읽을 수 있지만 props.key는 읽을 수 없습니다.
-
-JSX에 map() 포함시키기
-위 예시에서 별도의 listItems 변수를 선언하고 이를 JSX에 포함했습니다.
-
-```
-function NumberList(props) {
-const numbers = props.numbers;
-const listItems = numbers.map((number) =>
-<ListItem key={number.toString()}
-              value={number} />
-);
-return (
-
-<ul>
-{listItems}
-</ul>
-);
-}
-```
-
-JSX를 사용하면 중괄호 안에 모든 표현식을 포함 시킬 수 있으므로 map() 함수의 결과를 인라인으로 처리할 수 있습니다.
-
-```
-function NumberList(props) {
-const numbers = props.numbers;
-return (
-
-<ul>
-{numbers.map((number) =>
-<ListItem key={number.toString()}
-                  value={number} />
-)}
-</ul>
-);
-}
-```
-
-이 방식을 사용하면 코드가 더 깔끔해 지지만, 이 방식을 남발하는 것은 좋지 않습니다. JavaScript와 마찬가지로 가독성을 위해 변수로 추출해야 할지 아니면 인라인으로 넣을지는 개발자가 직접 판단해야 합니다. map() 함수가 너무 중첩된다면 컴포넌트로 추출 하는 것이 좋습니다.
-
-## 6. VueJs
-
-### 1. What is VueJs
-
-#### Vue Js가 무엇이고, 왜 사용하는가
-
-Vue Js는 Web app을 만들 수 있는 Javascript Front-end Framework이다.
-
-#### Web app은 무엇이고, 왜 사용하는가
-
-**page간 이동에 새로고침이 필요없이 부드럽게 넘어가기 때문에**
-
-Web-app은 Single Page Application (SPA)이라고 불리는 웹페이지로, 하나의 html을 가지고, 그 안에 내용물만을 변경하여 사용자에게 보여준다. 웹사이트 내에서 page loading이 덜 걸리고, page간 이동에 새로고침이 필요없이 부드럽게 넘어가기 때문에 사용한다.
-
-Web app를 만들 수 있는 frontend framework에는 Vue 말고도 React/Angular등 다른 tools도 많이 있다.
-
-#### Web app을 만드는데 굳이 Vue를 사용하는 이유는 무엇인가
-
-**Vue는 문법이 쉽고 하나로 정해져 있기 떄문에, 문법 몇개만 외워주면 초보도 쉽게 output를 낼 수 있다.**
-
-- A1. Vue가 더 쉽기 때문이다. React나 Vue 중 본인에게 맞는 거 사용하면 되는데, Javascript를 잘 하지 못한다면 Vue를 먼저 사용해본다.
-- A2. Vue는 문법이 하나로 정해져 있기 때문에 여러 개발자사이의 코딩 스타일을 통일시킨다. 다른 개발자가 나와 같은 방법만을 사용해야 함으로 한 눈에 이해하기 쉽다.
-
-1. React가 사용자가 Vue보다 더 많음에도, 굳이 Vue를 배우는 이유는 Vue의 문법이 더 쉽기 때문이다. Vue는 사용법이 쉬운데 다른 어려운 frameworks와 동일하게 좋은 웹앱을 만들 수 있기 때문에, 웹앱 입문자라면 React보다는 Vue를 추천한다.
-
-```
-// if문은 condition이 true면 truebranch, false면 falsebranch를 실행한다.
-// React if (1)
-const condition = () => {
-  if (true) {
-    return <p>truebranch</p>
-  } else {
-    return <p>falsebrance</p>
-  }
-}
-
-// React if (2)
-{ condition ? <p>truebranch</p> : <p>falsebrance</p> }
-
-// Vue if
-<template>
-  <div>
-    <p v-if="condition">truebranch</p>
-    <p v-else>falsebranch</p>
-  </div>
-</template>
-```
-
-```
-// React for
-<ul>{ todos.map(todo => <li key={todo}>{todo}</li>) }</ul>
-
-// Vue for
-<template>
-  <ul>
-    <li v-for="todo in todos" :key="todo">{{ todo }}}/li>
-  </ul>
-</template>
-```
-
-```
-// React의 state 변경
-const [human, setHuman] = useState(['Park', 18, 'male'])
-
-let humanCopy = [...human];
-humanCopy[0] = 'Kim';
-setHuman(humanCopy);
-
-// Vue의 state 변경
-return {
-  human: ['Park', 18, 'Male'],
-}
-
-this.human[0] = 'Kim'
-```
-
-2. 자유도가 높은 코드는 특정 행동을 수행하는 코드를 여러 방법으로 작성할 수 있기 때문에, 다른 개발자가 나와 다른 방법을 사용하면 한 눈에 이해하기 어렵다. 그럼으로, 여러 개발자와 협업할 때, error를 만들어 내기 쉽다. Vue는 자유도가 낮기 때문에 다른 개발자의 코드라도 이해하기가 쉽다. Vue는 코드를 짤때 맞는 방법이 정해져 있어, 여러 개발자사이의 코딩 스타일을 통일시킨다.
-
-Vue를 사용하면, 특정 행동을 수행하는 코드를 다른 개발자가 나와 같은 방법만을 사용해야 함으로 한 눈에 이해하기 쉽다.
-
-Vue는 문법이 쉽고 하나로 정해져 있기 떄문에, 문법 몇개만 외워주면 초보도 쉽게 output를 낼 수 있다.
-
-```
-// Q. <HTML>을 여러개 만들고 싶다.
-// React
-1. { map }
-2. forEach
-3. for | for in | for of
-
-// Vue
-1. v-for
-```
-
-```
-// Q. <HTML>을 조건부로 보여주고 싶다.
-// React
-1. if | else
-2. tenary operator
-3. && ||
-4. enum
-
-// Vue
-1. v-if | v-else
-```
-
-### 2. Vue 개발환경
-
-Vue로 Project를 만들면서, Vue의 문법들을 공부해보자.
-
-1. 최신 버젼의 Node.js 설치 (`npm`을 사용하기 위해)
-2. VScode code editor와 VScode extension 설치 (`Vue` code를 쉽게 입력하기 위해)
-
-- `Vue Language Features (Volar)`
-- `html css support`
-  (`ctrl + space`: view a list of id and class attribute suggestions )
-- `TypeScript Vue Plugin (Volar)`
-
-3. 기본적인 HTML, CSS and JavaScript 개념
-4. [Vue 문법 몇가지](https://vuejs.org/guide/introduction.html)
-
-#### Vue로 project 만드는 방법은
-
-A. **project 1. 생성 => 2. 개발 => 3. 배포**
-
-1. Vue의 최신버전으로 프로젝트 생성
-
-Terminal에 다음의 코드를 입력
-
-This command will install and execute `create-vue`, the official Vue project scaffolding tool.
-
-> $ `npm init vue@latest`
-
-```
-✔ Project name: … <your-project-name>
-✔ Add TypeScript? … No / Yes
-✔ Add JSX Support? … No / Yes
-✔ Add Vue Router for Single Page Application development? … No / Yes
-✔ Add Pinia for state management? … No / Yes
-✔ Add Cypress for testing? … No / Yes
-
-Scaffolding project in ./<your-project-name>...
-Done.
-```
-
-아직 익숙하지 않으면 전부 `No`을 선택
-
-2. 개발
-
-Install dependencies and start the dev server
-
-your-project-name로 이동
-
-> $ `cd <your-project-name>`
-
-dependencies 설치
-
-> $ `npm install` 또는 `npm i`
-
-> $ `npm run dev` 또는 VSCode에서 Open Editor 및에 `NPM SCRIPTS`에서 `dev` 실행 버튼 클릭
-
-- web browser에 `localhost:{{port}}` 입력
-- dev server를 종료하려면 terminal에서 `Ctrl + C` 입력
-- `src/App.vue` 가 우리의 메인 웹페이지이다.
-- 현재 project에 맞게, src directory의 files 수정 & 추가하면 된다.
-
-```
-// App.vue
-<template></tempalte> // HTML Code
-<script></script> // Javascript Code
-<style></style> // CSS Code
-```
-
-- `src` directory: source code 저장
-- `public` directory: HTML file 및 기타 파일 저장
-- `package.json`: 이 project에 사용되는 dependencies의 이름 저장
-- `node_modules` directory: 실제 설치된 dependencies 저장
-
-3. 배포
-
-When you are ready to ship your app to production, run the following:
-
-> `npm run build`
-
-This will create a production-ready build of your app in the project's `./dist` directory.
-Vue files을 웹 broswer가 이해할 수 있는 HTML, CSS, Javascript로 변환 후 `./dist` 폴더에 생성
-
-`./dist` 폴더의 files만 있으면 웹사이트 생성가능.
-
-### 3. Databinding in Vue js
-
-#### Q1. Databinding이 무엇이고, 왜 사용하는가
-
-- A1. **Databinding은 Javascript data를 HTML에 꽃아 넣는 문법이다.**
-- A2. **Databinding은 Javascript로 HTML을 조작하고, 변경하기 위해 사용한다.**
-- A3. **Vue의 실시간 자동 rendering을 쓰기 위해서 사용한다.**
-- A4. **안바뀔꺼 같은 data는 databinding할 필요없이 HTML에 hardcoding하고, 자주 변하는 데이터들은 script tag에 저장한 후 HTML에 꽂아 넣는다.**
-
-계속 변하는 data를 hardcoding해놓으면, 그 값을 변경하기 어렵다. 하지만 Databinding을 이용하면, 계속 변하는 데이터에 대해 값을 쉽게 변경할 수 있다.
-
-실시간 자동 rendering: script tag에 정의된 data를 변경하면, 그 data와 연결된 HTML에도 실시간으로 변경된다.
-
-#### Q2. Vue에서 Databinding 사용하는 방법은
-
-A. Element의 text content을 Databinding할 경우 `{{데이터이름}}`, HTML Attribute를 Databinding할 경우 `:속성="데이터이름"`
-
-- script tag에 Javascript형식으로 변수에 data를 assign한 후, template tag에 `{{}}` double curly braces을 사용하여 그 변수의 값을 사용할 수 있다.
-
-`{{데이터이름}}`
-
-```
-<script>
-const name = "Shin";
-</script>
-
-<template>
-<p>Hello My name is {{name}}<p>
-</template>
-
-// Hello My name is Shin
-```
-
-- HTML Attribute 역시 binding이 가능하다. `:` colon을 HTML Attribute 앞에 붙인 후, 변수명을 `""`을 사용하면 된다.
-
-`:속성="데이터이름"`
-
-```
-<script>
-const blueColor = 'color : blue';
-</script>
-
-<template>
-<p :style="blueColor">This is blue color<p>
-</template>
-```
-
-기존 Javascript에서 databinding을 사용할려면 `document.getElementById("name").innerHTML = "이름"`과 같은 긴 문법을 사용해야 했지만, Vue에서는 databinding을 아주 쉽게 할 수 있다. `{{}}` 안에 변수명을 집어넣으면 끝이다.
-
-안바뀔꺼 같은 data는 databinding할 필요없이 HTML에 hardcoding하고, 자주 변하는 데이터들은 script tag에 저장한 후 HTML에 꽂아 넣는다.
-
-⭐ 기타 다른 Vue 문법은 vuejs.org 공식 문서를 참고하자!
-
-### Vuetify
-
-#### 1. What is Vuetify?
-
-A. **Vuetify is a complete UI framework built on top of Vue.js.**
-
-Vuetify는 React의 Material-UI/React-bootstrap과 같은 UI framework로, 미리 만들어진 component를 가져다가 웹페이지를 꾸밀 수 있다. 그냥 원하는 component를 복사, 붙여넣기해서 쓰면 되기 때문에 아주 쉽고 간편하다.
 
 ## 7. ExpressJs
 
@@ -4091,23 +4087,6 @@ Set User name & User password => Network access IP Address => Connect => "Connet
 `MONGO_URI = mongodb+srv://Shin:<password>@cluster0.sjhvl.mongodb.net/<myfirstDatabase>?retryWrites=true&w=majority`
 
 ## 11. Remix
-
-## 12. NextJs
-
-### What is Next.js?
-
-Next.js는 Web framework인 react.js에 기능을 더한 meta-framework이다. React.js로 만든 웹을 **Static & Server Side Rendering (SSR)**를 가능하게 만들어 준다.
-
-#### prerequisite
-
-- Javascript/Typescript/React.js에 대한 기본지식
--
-
-> `npx create-next-app@latest`
-
-Typescript 추가
-
-> `npx create-next-app@latest --typescript`
 
 ## 13. Redux
 

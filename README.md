@@ -2,7 +2,7 @@
 
 목표: Web Application Development을 이해하고 나만의 web app을 만들어보자.
 
-아래의 내용은 간단한 개념위주이므로, 개념만 공부해서는 이해하기 힘들다. **실제 project를 만들면서** 필요한 부분들을 이 곳에서 참고히면 된다.
+아래의 내용은 간단한 개념위주로, 개념만 공부해서는 이해하기 힘들다. **실제 project를 만들면서** 필요한 부분들을 이 곳에서 참고히면 된다.
 
 ## Table of Contents
 
@@ -23,10 +23,10 @@
 - [BackEnd](https://github.com/heeshin174/Web_App_Dev_Kor#3-back-end-server-side)
 
   1. [Web Application Development](https://github.com/heeshin174/Web_App_Dev_Kor#1-web-application-development)
-  2. [Express.js](https://github.com/heeshin174/Web_App_Dev_Kor#7-expressjs)
-  3. [Flask (Python)](https://github.com/heeshin174/Web_App_Dev_Kor#8-flask-python)
-  4. [Postgresql](https://github.com/heeshin174/Web_App_Dev_Kor#9-postgresql)
-  5. [Mongodb](https://github.com/heeshin174/Web_App_Dev_Kor#10-mongodb)
+  2. [Express.js](https://github.com/heeshin174/Web_App_Dev_Kor#2-expressjs)
+  3. [Flask (Python)](https://github.com/heeshin174/Web_App_Dev_Kor#3-flask-python)
+  4. [Postgresql](https://github.com/heeshin174/Web_App_Dev_Kor#4-postgresql)
+  5. [Mongodb](https://github.com/heeshin174/Web_App_Dev_Kor#5-mongodb)
 
 ## 0. Web Development Loadmap
 
@@ -176,8 +176,8 @@ export NVM_DIR="$HOME/.nvm"
 
 ### 2. Front-End (Client side)
 
-Front-End의 기본은 `HTML`, `CSS`, `Javascript`이다. 이는 web browser가 읽을 수 있는 파일들이 이 세가지 밖에 없기 때문이다.
-React.js, Typescript 등등 native `HTML`, `CSS`, `Javascript`로 작성되지 않은 파일들은 browser가 읽을 수 없기 떄문에 결국에는 이 세가지로 변환해주어야 한다.
+Front-End은 사용자가 웹사이트를 방문시 보게되는 화면/User Interface (UI)을 의미한다. Front-End의 기본은 `HTML`, `CSS`, `Javascript`이다. 이는 web browser가 읽을 수 있는 파일들이 이 세가지 밖에 없기 때문이다.
+React.js, Typescript 등등 outside library/framework로 만들어 native `HTML`, `CSS`, `Javascript`로 작성되지 않은 파일들은 browser가 읽을 수 없기 떄문에 결국에는 이 세가지로 변환해주어야 한다.
 
 - `HTML`: Structural 뼈대
 - `CSS`: Presentational 살점
@@ -240,13 +240,13 @@ React.js, Typescript 등등 native `HTML`, `CSS`, `Javascript`로 작성되지 �
     - ⭐ [**React**](https://github.com/heeshin174/Web_App_Dev_Kor#5-reactjs): https://reactjs.org/
     - [Vue](https://github.com/heeshin174/Web_App_Dev_Kor#6-vuejs): https://vuejs.org/
     - Angular: https://angularjs.org/
-    - Svelte
+    - **Svelte**: https://svelte.dev/docs
     - React JS with Typescript: https://create-react-app.dev/docs/adding-typescript/
   - Meta Library & Meta Framework (Meta-Framework: 기존 framework 위에 만들어진 framework)
     - React based
       - Server-Side Rendering (SSR)
         - ⭐ [**Next.js**](https://github.com/heeshin174/Web_App_Dev_Kor#7-nextjs): https://nextjs.org/docs/getting-started
-        - Remix: https://remix.run/docs/en/v1
+        - [Remix](https://github.com/heeshin174/Web_App_Dev_Kor#8-remix): https://remix.run/docs/en/v1
       - Managing and centralizing application state
         - redux-toolkit: https://redux-toolkit.js.org/
         - react-redux: https://react-redux.js.org/
@@ -271,11 +271,22 @@ React.js, Typescript 등등 native `HTML`, `CSS`, `Javascript`로 작성되지 �
   - Library & Meta-Framework (기존 framework 위에 만들어진 framework)
   - redux: https://redux.js.org/introduction/getting-started
 
+`Frontend library/framework`은 web application을 더 쉽게 작성할 수 있게 만들어 주는 outside library/framework을 말한다.
+**Single Page Application** (SPA)는 body가 비어있는 하나의 HTML을 가지고 Javascript를 이용해서 그 안에 Data만 변경하는 것을 말한다.
+Server가 Client에 자료를 넘겨주면, Client computer가 그 정보를 가지고 HTML를 완성하기 때문에 CSR (Client Side Rendering)이라고 부른다. CSR은 HTMl이 비어있기 때문에 검색 엔진에 노출되어 검색되기 쉽지 않아 SEO (Search Engine Optimization)에 약점을 가진다.
+SPA를 제공하는 frontend framework에는 크게 React JS, Vue JS, Angular JS가 있다. 이들은 사용방법이 거의 비슷하기 때문에 하나만 잘 이해하면, 나머지는 쉽게 사용할 수 있다.
+
+- ⭐ **`React JS`**: React는 Meta사에서 만든 Javascript frontend library로 computer에 최신 버전의 `Node.js`를 설치하면 누구나 사용할 수 있다.
+- **VanillaJS** is just a way to refer to native (non-extended and standards-based) JavaScript
+
 ### 3. Back-End (Server side)
+
+Back-End은 사용자가 웹사이트를 방문시 서버쪽에서 실행 할 UX (user experience)을 의미한다.
+API key같은 외부에 노출되서는 안되는 environmental variables들은 서버쪽에서 다뤄, 사용자가 접근하지 못하게 해야한다. 또한 데이터를 저장할 database의 logic 역시 back-end에서 다뤄야 하는 요소들중 하나이다.
 
 - [Server](https://github.com/heeshin174/Web_App_Dev_Kor#1-web-application-development)
 
-* Library and Framework
++ Library and Framework
   - [Javascript](https://github.com/heeshin174/Web_App_Dev_Kor#3-javascript)
     - Express.js: https://expressjs.com/
   - Python
@@ -298,6 +309,52 @@ React.js, Typescript 등등 native `HTML`, `CSS`, `Javascript`로 작성되지 �
 * Axios (javascript library: XMLHttpRequests): https://axios-http.com/docs/intro
 * JWS (Json Web Token): https://jwt.io/
 * bcryptjs (hashing password): https://www.npmjs.com/package/bcryptjs
+
+각각의 programming language마다 Web Application Server를 만드는 web app framework를 제공한다.
+
+1. python: Django, Flask, FastAPI
+2. Java: spring, spring boot, play
+3. Javascript: Express, Fastify
+4. php: Laravel
+
+![This is an image](./img/server_side_web_framework.png)
+
+#### Full-stack (Client + Server)
+
+Web App dev는 크게 Frontend, Backend로 나눌 수 있고, 이를 합쳐 Fullstack dev라고 한다. Full-stack은 front-end와 back-end를 합친 것으로 서버쪽과 사용자쪽 모두를 다룬다. 이는 MVC (Model / View / Controll) software design pattern 라고도 불린다.
+
+- Model–view–controller is a software design pattern commonly used for developing user interfaces that divide the related program logic into three interconnected elements.
+  - Model은 View와 Controll을 연결하는 연결고리 역할을 한다.
+  - View은 client가 웹사이트에 방문하여 실제로 보게되는 회면을 의미한다. HTML (HyperText Markup Language), CSS (Cascading Style Sheets), Javascript를 이용하여 View를 작성할 수 있다. 여기서 programming language는 오직 Javascript이다.
+  - Controll은 app의 functionalities를 의미한다.
+
+추천조합:
+
+- MERN stack in Typescript
+  - Mongo database
+  - Express.js (server)
+  - React.js (front-end)
+  - Node.js
+  - Next.js (Server-side rendering)
+  - Redux.js (state managing)
+- PERN stack in Typescript
+  - Postgresql database
+  - Express.js (server)
+  - React.js (front-end)
+  - Node.js
+  - Next.js (Server-side rendering)
+  - Redux.js (state managing)
+
+#### Database
+
+Database와 web app을 연결하여 쉽고 간단하게 data를 읽고 쓸 수 있다.
+Database는 크게 Relational database (sql)와 Not only Relational database (Nosql)로 나눌 수 있다.
+`sql (Structured Query Language)`
+
+⭐ `postgresql` - Relational database의 대표주자
+
+⭐ `Mongo Database` - Not only Relational database의 대표주자
+![This is an image](./img/Database.png)
 
 ### 4. Tools
 
@@ -322,15 +379,15 @@ React.js, Typescript 등등 native `HTML`, `CSS`, `Javascript`로 작성되지 �
 
 ### 6. Publish
 
-- Cloud services
+- Cloud service provider
   - ⭐ **AWS** (Amazon Web Services): https://aws.amazon.com/
   - Azure (Microsoft): https://azure.microsoft.com/en-us/
   - GCP (Google Cloud Platform): https://cloud.google.com/
-- Client side
+- Client side service provider
   - Github Pages: https://github.com/
   - Netlify: https://www.netlify.com/
   - Heroku: https://www.heroku.com/
-- Server side
+- Server side service provider
   - Vultr: https://www.vultr.com/
   - Digitalocean: https://www.digitalocean.com/
 
@@ -1958,9 +2015,9 @@ decimal = "Hello"; // error. decimal은 정수라니까...
 
 ## 5. ReactJs
 
-### 1. What is React.js
+### What is React.js
 
-**React.js**는 web app을 만들 수 있는 Javascript library이다. React.js is a JavaScript library for building user interfaces
+**React.js**는 web app을 만들 수 있는 Javascript library이다. React.js is a JavaScript library for building user interfaces. 
 
 #### Web app은 무엇이고, 왜 사용하는가
 
@@ -1975,43 +2032,54 @@ Web app를 만들 수 있는 frontend framework에는 React 말고도 Vue/Angula
 - A1. **React는 사용자가 가장 많은 library이기 때문에 교육자료도 많고, 참고할 자료도 매우 많다.**
 - A2. **다른 framework와 마찬가지로, React는 component단위로 Element를 관리하기 때문에, 이를 함수처럼 사용할 수 있고 재사용(reusable)이 쉽다.**
 
-1. React가 사용자가 가장 많아, react를 배운다면 취업시장에서 유리하고 교육용 자료들을 쉽게 찾을 수 있다.
+React가 web app을 만드는 library/framework들 중에 사용자가 가장 많아서 react를 배운다면 취업시장에서 유리하고 교육용 자료들을 쉽게 찾을 수 있다.
 
-2. 자유도가 높은 코드는 특정 행동을 수행하는 코드를 여러 방법으로 작성할 수 있기 때문에,
+### Framework vs Library
 
-### 2. React 개발환경
+- Framework를 한국어로 하면 frame (틀), work (작업), 즉 기본적인 틀을 만드는 작업이다.
+  Framework는 **정해진 사용방법이 존재**하기 때문에 우리는 framework가 요구하는 대로 따라해야지만 원하는 결과를 얻을 수 있다. 
 
-- React의 If문: If문은 condition이 true면 truebranch, false면 falsebranch를 실행한다.
+- Library는 특정 기능에 대한 도구 or 함수들을 모은 집합이다.
+  즉, 프로그래머가 개발하는데 필요한 것들을 모아둔 코드 더미들로, library는 단순 활용이 가능한 도구들의 집합이다.
+
+집을 만드는 작업이라고 하면,
+
+- Framework는 집의 기본 구조를 제공하여 우리는 그 구조에 필요한 가구, 침구, 벽지등을 추가하는 것이다.
+- Library는 침대, 소파와 같은 가구들을 의미한다. 우리는 이 가구들로 직접 집을 만들어야 한다.
+
+프로그래밍에서 차이:
+
+- You, the developer, use a library. You call a library when and where you need to.
+- In contrast, a framework call your code. 
+
+개발자가 Library를 내 코드로 호출하고, framework는 반대로 framework가 내 코드를 호출한다. Framework를 사용할 떄 framework가 요구하는 대로 코드를 특정 장소와 폴더안에 입력해야만 제대로 작동하는 것을 볼 수 있다. 이는 framework가 설계될 때 이미 큰 틀이 설계되어 있고, 개발자는 framework가 요구하는 틀을 따라가야 한다. 즉, Library가 코드의 자유도가 더 높고, framework가 코드의 자유도가 더 낮다. 뭐가 더 좋고 나쁨은 없으나, 큰 project를 만들 때에는 여러 개발자와 함께 만들기 때문에 개발자들 사이에 자유도가 낮은 framework가 더 유리하고, 작은 project를 만들때에는 자유도가 높은 library가 더 편하다.
+
+- Framework: 어떤 동작을 수행하기 위한 코드 작성 방법이 정해져 있기 때문에, 다른 개발자의 코드를 보고 한 눈에 알아볼 수 있고 에러를 빨리 찾을 수 있다.
+             개발자들 사이 너도 나도 같은 방법을 사용.  
+- Library: 개발자가 자유롭게 코드를 가져다 쓰기 때문에 자유도가 높다. 다른 개발자의 코드를 한 눈에 알아보기 힘들 수 있다.
 
 ```
-// React if (1)
-const condition = () => {
-  if (true) {
-    return <p>truebranch</p>
-  } else {
-    return <p>falsebrance</p>
-  }
-}
+          call
+Developer ------> Library
+Developer <------ Framework
+          call
 
-// React if (2)
-{ condition ? <p>truebranch</p> : <p>falsebrance</p> }
+// Library
+import API from Library
+const mydata = API()
+
+// Framework
+- Flask: need to put all HTML files in "templates" folder to work
+- Next.js: need to put all Javascript files in "pages" folder to route
 ```
 
-- React의 for문: `<ul>{ todos.map(todo => <li key={todo}>{todo}</li>) }</ul>`
+예시:
+- Libraray: React.js, Bootstrap, ...
+- Framework: Vue.js, Flask, Django, ...
 
-- React의 state 변경
+### JSX extension
 
-```
-const [human, setHuman] = useState(['Park', 18, 'male'])
-
-let humanCopy = [...human];
-humanCopy[0] = 'Kim';
-setHuman(humanCopy);
-```
-
-### 2. JSX에 대해
-
-React.js는 js 대신 jsx 라는 특수한 extension을 사용한다. JSX stands for JavaScript XML. It is simply a syntax extension of JavaScript. 하지만 js를 사용해도 react가 알아서 jsx로 인식하기 때문에 아무런 문제는 없다 (Button.js === Button.jsx). 보통은 component를 만들때, jsx 확장자를 이용하여 다른 js files과 차별점을 둘 때 사용하면 좋다.
+React.js는 `.js` 대신 `.jsx` 라는 특수한 extension을 사용한다. JSX stands for JavaScript XML. It is simply a syntax extension of JavaScript. 하지만 js를 사용해도 react가 알아서 jsx로 인식하기 때문에 아무런 문제는 없다 (Button.js === Button.jsx). 보통은 component를 만들때, .jsx 확장자를 이용하여 다른 js files과 차별점을 둘 때 사용하면 좋다.
 
 아래 변수 선언을 살펴봅시다.
 
@@ -2019,9 +2087,9 @@ React.js는 js 대신 jsx 라는 특수한 extension을 사용한다. JSX stands
 
 위에 희한한 태그 문법은 문자열도, HTML도 아닙니다.
 
-JSX라 하며 JavaScript를 확장한 문법입니다. UI가 어떻게 생겨야 하는지 설명하기 위해 React와 함께 사용할 것을 권장합니다. JSX라고 하면 템플릿 언어가 떠오를 수도 있지만, JavaScript의 모든 기능이 포함되어 있습니다.
+JSX라 하며 JavaScript를 확장한 문법입니다. UI가 어떻게 생겨야 하는지 설명하기 위해 React와 함께 사용된다. JSX라고 하면 템플릿 언어가 떠오를 수도 있지만, JavaScript의 모든 기능이 포함되어 있습니다.
 
-JSX는 React “엘리먼트(element)” 를 생성합니다.
+JSX는 React “Element” 를 생성합니다.
 
 React는 JSX 사용이 필수가 아니지만, 대부분의 사람은 JavaScript 코드 안에서 UI 관련 작업을 할 때 시각적으로 더 도움이 된다고 생각합니다. 또한 React가 더욱 도움이 되는 에러 및 경고 메시지를 표시할 수 있게 해줍니다.
 
@@ -2041,16 +2109,44 @@ JSX의 중괄호 안에는 유효한 모든 JavaScript 표현식을 넣을 수 �
 컴파일이 끝나면, JSX 표현식이 정규 JavaScript 함수 호출이 되고 JavaScript 객체로 인식됩니다.
 즉, JSX를 if 구문 및 for loop 안에 사용하고, 변수에 할당하고, 인자로서 받아들이고, 함수로부터 반환할 수 있습니다.
 
-### 3. ReactJS에서 NPM 패키지 모듈 불러오기
+#### ReactJS에서 NPM 패키지 모듈 불러오기
 
 NPM 패키지 모듈들은 **CommonJS**를 기본 모듈 시스템으로 채택한다. 즉, 모듈을 내보내고 불러오는 것에 있어 require, module.exports 등을 사용한다는 의미이다.
 
-그러나 실제로 ReactJS 등의 라이브러리를 활용하여 Frontend 개발을 할 때는 NPM 패키지 모듈을 불러오기 위해 ES6 문법의 코드를 작성하는 경우가 많다(import/export).
+그러나 실제로 React.jS 등의 라이브러리를 활용하여 Frontend 개발을 할 때는 NPM 패키지 모듈을 불러오기 위해 ES6 문법의 코드를 작성하는 경우가 많다 (import/export).
 
-그런데 왜 문제가 발생하지 않을까? 이는 Babel 등의 컴파일러가 import, export 등의 코드를 CommonJS 기반의 코드로 변환해주기 때문이다.
-그러고 나면 Webpack에 의해 JavaScript 모듈들의 번들링이 가능해진다.
+그런데 왜 문제가 발생하지 않을까? 이는 Babel 등의 컴파일러가 import, export 등의 코드를 CommonJS 기반의 코드로 변환해주기 때문이다. 그러고 나면 Webpack에 의해 JavaScript 모듈들의 번들링이 가능해진다.
 
-### 4. Basic ReactJs Syntax
+### Basic ReactJs Syntax
+
+- React의 If문: If문은 condition이 true면 truebranch, false면 falsebranch를 실행한다.
+
+```
+// React if (1)
+const condition = () => {
+  if (true) {
+    return <p>truebranch</p>
+  } else {
+    return <p>falsebrance</p>
+  }
+}
+
+// React if (2) ternary operator
+{ condition ? <p>truebranch</p> : <p>falsebrance</p> }
+```
+
+- React의 for문: `<ul>{ todos.map(todo => <li key={todo}>{todo}</li>) }</ul>`
+
+- React의 state 변경
+
+```
+const [human, setHuman] = useState(['Park', 18, 'male'])
+
+let humanCopy = [...human];
+humanCopy[0] = 'Kim';
+setHuman(humanCopy);
+```
+
 
 #### List와 Key
 
@@ -2340,6 +2436,49 @@ return (
 
 이 방식을 사용하면 코드가 더 깔끔해 지지만, 이 방식을 남발하는 것은 좋지 않습니다. JavaScript와 마찬가지로 가독성을 위해 변수로 추출해야 할지 아니면 인라인으로 넣을지는 개발자가 직접 판단해야 합니다. map() 함수가 너무 중첩된다면 컴포넌트로 추출 하는 것이 좋습니다.
 
+
+### Curly brackets {} vs Parentheses () in JSX Arrow Function
+
+- Curly brackets: are a special syntax to let the JSX parser know that it needs to interpret the contents between them as javascript instead of text.
+
+`const items =this.state.toDoList.map((item) => <li>{item}</li> )`
+
+Since {item} is in curly brackets JSX interprets that as to find the variable item back in javascript land and to insert it within the `<li></li>`s.
+
+- Parentheses: are used to wrap multiline codes of Javascript after the return statement in order for your code to compile.
+
+```
+render () {
+return ( <li> {item}</li>,
+<SomeComponent /> )
+}
+```
+
+If you only have one line of code, you don’t need the parentheses.
+
+```
+render () {
+return <li> {item}</li>
+}
+```
+
+```
+// jsx syntax
+const items = { {id: 1, name: eggs}, {id: 2, name: milk} }
+{ items.map(item => (
+ <tr key={items.id}>
+    <td>{ items.name }</td>
+ <tr>
+)) }
+```
+
+react.js를 이용할 때, javascript 코드를 jsx syntax에서 사용하고 싶으면 curly brackets {} 안에서 정의하면 된다.
+react.js에서 array를 하나씩 iterate해야할 경우 `array.map()` 함수를 이용하고, 그 안에 callback함수인 arrow function을 정의한다.
+
+react.js는 jsx이기 때문에 `array.map((param) => {body})`가 아니라 `array.map((param) => (body))`처럼 body에도 parentheses를 사용해야 한다.
+
+`map()`은 javascript code이기 때문에 `{ array.map((param) => (body))}`과 같이 curly brackets {} 안에서 정의하면 된다.
+
 ## 6. VueJs
 
 ### 1. What is Vue.js
@@ -2606,6 +2745,11 @@ React.js로 만든 웹을 **Static & Server Side Rendering (SSR)**를 가능하�
 
 `Remix` 역시 SSR을 지원하지만, Next.js가 프로그래머들 사이에서 가장 인기가 많은 이유는 배우기 쉽고, 사용하기 쉽기 때문이다.
 
+### Server-Side Rendering (SSD)
+
+SSD는 CSD가 가진 검색 엔진에 대한 보완을 위해 등장한 개념으로, CSD와는 다르게 Server에서 HTML을 전부 완성한 후에 Client에게 보내준다.
+이로 인해 이용자가 많을 경우 Server에 과부화가 걸릴 수도 있다.
+
 #### prerequisite
 
 - Javascript/Typescript/React.js에 대한 기본지식
@@ -2616,6 +2760,349 @@ React.js로 만든 웹을 **Static & Server Side Rendering (SSR)**를 가능하�
 Typescript 추가
 
 > `npx create-next-app@latest --typescript`
+
+## 8. Remix
+
+## 9. Redux
+
+### What is Redux
+
+`Redux` is an open-source JavaScript library for managing and centralizing application state. It is most commonly used with libraries such as React or Angular for building user interfaces. Redux is a predictable **state container** for JavaScript apps. Redux는 일명 **상태 (state)관리 library**이다. React.js와 같이 사용할 시 `react-redux`를 사용한다. `Redux`는 `redux-toolkit`으로 쓰면 더 쉽고 거기에 typescript로 작성하면 큰 프로젝트 스케일링하기도 편하다.
+
+
+## % 부록0: 유용한 VSCode 기능 알아보기 %
+
+- `단어 + tab`: Snippets를 이용하여 자동완성 기능을 적극활용한다.
+- Debug tool를 이용하여 프로그램을 디버깅할 수 있다 (내가 확인하고 싶은 코드 옆에 breakpoint 생성 후 debug 실행).
+
+### 유용한 VScode extension
+
+1. `Prettier`: save시 auto code formatting.
+
+- `CTRL + ,`로 setting 열기
+- `save` 검색 후 `format on save` 체크
+- `prettier` 검색 후 `Prettier: Tab width`를 `2`로 변경
+- `quote` 검색 후 `Javascript/Typescript > preferences: Quote style`을 `single`로 변경
+
+2. `Live Server`: HTML/CSS/Javascript의 server 실행
+3. `Material icon theme`: file icon 변경
+4. `ES7+ React/Redux/React-Native snippets`: React 개발환경시 코드 자동완성
+5. `Auto rename tag`: HTML에서 tag이름 변경 시, 뒤의 tag도 같이 변경
+6. `HTML CSS Support`: HTML에서 CSS file의 자동완성
+7. `Volar`: Vue 개발환경
+8. `bracket pair colorizer2`: 괄호마다 색생추가
+9. `CSS peek`: HTML에서 CSS peek가능
+10. `indent-rainbow`: indentation마다 색상추가
+11. `open in browser`: HTML을 browser로 열기
+12. `ESLint`
+13. `GitLens — Git supercharged`: git을 이용해, 코드 변경자 확인
+14. `Community Material Theme`: VScode 색상변경
+15. `Remote Remote - WSL`: Windows로 WSL 실행시만 설치
+
+### keyboard snippets
+
+우리는 코드를 짤 때, 최대한 마우스를 사용하지 않도록 해야 된다. keyboard snippets을 이용하면, 키보트만으로도 우리가 하고 싶은 것을 빠르게 할 수 있다.
+
+In VScode, go to `Help > Keyboard Shortcuts References`. 우리가 사용가능한 유용한 키보드 단축기들을 볼 수 있다.
+
+#### Navigation
+
+- `Ctrl + P`: 이 폴더 내에 다른 file name을 입력 후, 그 file로 이동 (파일간 이동)
+- `Ctrl + G`: 이 파일 내에 Line 이동 (파일 내 이동)
+- `pageUp/pageDown`: Move to (next/previous) page in file
+- `Alt + (pageUP/pageDown)`: Scroll page up/down
+- `F12`: Go to Definition (선택된 코드가 정의된 file로 워프)
+- `Alt + F12`: peek Definition (현재 file에서 확인)
+- `Ctrl + (Left/Right)`: 단어 단위로 왼쪽/오른쪽으로 이동
+- `Ctrl + (Up/Down)`: Scroll line up/down
+- `Home/End`: Go to beginning/end of line
+- `Ctrl + (Home/End)`: Go to beginning/end of file
+- `Ctrl + (1/2/3)`: 새로운 split editor 생성 후, 그곳으로 cursor이동
+- `Ctrl + F4`: 현재 split editor 종료
+
+- `Ctrl + click`: Go to definition
+
+#### Basic editing
+
+- `tab`: 자동완성 (현재치고 있는 코드를 자동완성)
+- `Ctrl + X`: Cut line (empty selection)
+- `Ctrl+ shift + k`: Delete Line
+- `Ctrl + L => DEL`: Delete Line
+- `Ctrl + C`: Copy
+- `Ctrl + V`: Paste
+- `Ctrl + Z`: Undo
+- `Ctrl + S`: Save
+- `` Ctrl + `(back tic) ``: Open terminal
+- `` Ctrl + Shift + `(back tic) ``: Create new terminal
+- `Ctrl + shift + R`: Refactoring (drag된 코드를 변수로 만들기, 함수로 만들기, 새로운 file로 옮기기, ...)
+- `F2`: Renaming (변수 이름 변경하기: 이 변수와 연관된 모든 다른 file에서 사용중인 변수명도 함께 바꿔준다.)
+- `Ctrl + F`: Find (F2를 사용하는 것이 더 편리하다).
+- `Ctrl + H`: Renaming (F2를 사용하는 것이 더 편리하다).
+- `Ctrl + L`: 한 줄 선택
+- `Alt + (Up/Down)`: 한 줄을 위/아래로 옮기기
+- `shift + alt + (Up/Down)`: 한 줄을 아래줄에 복사후 붙여넣기 (Copy & Paste)
+- `shift + (Arrow)`: Arrow로 움직인 영역만큼만 drag
+- `shift + Ctrl + (Arrow)`: 단어 단위로 Arrow로 움직인 영역만큼만 drag
+- `Ctrl+ /`: Toggle line comment
+- `Ctrl+ (]/[)`: Indent/outdent line
+- `Terminal에서 (Up/Down)`: 이전에 Terminal에 입력했었던 command 보기
+- `Del`: 커서 뒤의 한 캐릭터 삭제
+- `Ctrl + Del`: 커서 뒤의 한 단어 삭제
+- `Ctrl + A`: 현재 파일의 모든 문장 drag
+- `Ctrl + ,`: Setting 열기
+
+- `Alt + click`: Multi-cursor (Alt + Click를 여러 군데 찍으면, 한번에 여러 곳에 typing할 수 있다).
+
+### Terminal (Unix shell) Command
+
+- `ls`: list files in current directory (list)
+- `ls -l`: list files detail in current directory (list -long)
+- `ls -a`: list all files in current directory (list -all)
+- `mkdir + fileName`: make directory
+- `cd`: change directory
+- `chmod +x fileName` : make it executable (change mode)
+- `cd dirName`: change directory
+- `cd ..`: change directory backword
+- `rm fileName`: remove file
+- `rm -r dirName`: remove directory
+- `rm -f fileName`: force to remove file
+- `rm- rf dirName`: force to remove directory
+- `./executableFile.exe`: execute the file
+- `mv oldName newName`: rename the file
+- `mv file1 file2 dir`: move the files `file1` and `file2` to the `dir1` directory
+- `cat fileName`: see the whole text file in terminal
+- `pwd`: show current path you are in
+- `man (1/2/3) malloc`: show manual page for malloc
+- `clear`: clear all text in terminal
+- `find . -type file -name "*.json"`: 현제 folder의 내부에 존재하는 모든 json 파일을 반환
+- `touch fileName`: fileName이 존재하면 파일 열기, 존재하지 않으면 새로운 파일 생성
+- `echo + text`: Terminal에 text 출력
+- `echo + text > fileName`: fileName에 text를 덮어 씌우기
+- `echo + text >> fileName`: fileName에 text를 append
+- `vi fileName`: Vim text editor로 fileName열기
+- `nano fileName`: nano text editor로 fileName열기
+- `code fileName`: VSCode text editor로 fileName열기
+
+### Emmets
+
+에밋(Emmet)은 HTML, XML, XSL 문서 등을 편집할 때 빠른 코딩을 위해 사용하는 플러그인이다. 매우 간단한 몇 가지 코드만 입력하면, 자동으로 완전한 HTML 코드를 생성해 준다. Emmet은 Visual Studio Code에 내장되어 있으며 확장이 필요하지 않습니다.
+
+예시:
+
+ul box안에 li tag를 5개 만들고 싶다.
+
+- `ul>li*5` + tab
+
+```
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+```
+
+div box안에 container라는 class를 주고, class가 title과 title$인 p tag를 3개 만들고 싶다.
+
+- `div.container>p.title.title${$}*3` + tab
+
+```
+<div class="container">
+	<p class="title title1">1</p>
+	<p class="title title2">2</p>
+	<p class="title title3">3</p>
+</div>
+```
+
+- `div>(header>ul>li*2>a)+footer>p` + tab
+
+```
+<div>
+  <header>
+    <ul>
+      <li><a href=""></a></li>
+      <li><a href=""></a></li>
+    </ul>
+  </header>
+  <footer>
+    <p></p>
+  </footer>
+</div>
+```
+
+더미 dummy 용 텍스트 입력하기
+
+- `p>lorem` + tab
+
+- `p>lorem4` + tab
+
+```
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus quibusdam eligendi commodi, nisi reprehenderit corporis, libero laudantium quo blanditiis unde maiores voluptatum quam mollitia necessitatibus facilis aspernatur minima ullam cupiditate.</p>
+
+<p>Lorem ipsum dolor sit.</p>
+```
+
+css에서 display를 none으로 하고 싶다.
+
+- `dn` + tab = `display:none;`
+
+css에서 margin-top을 20px으로 하고 싶다.
+
+- `mt20` + tab = `margin-top:20px;`
+
+Emmets은 html, css을 생성할 때만 가능한 것으로, react 개발환경인 jsx에서는 사용할 수 없다.
+
+Enable Emmet support for JSX:
+
+- In VScode, go to `File > Preferences > Settings > Open setting (setting.json) `
+
+We will add the following lines anywhere in this setting:
+
+```
+"emmet.includeLanguages": {
+  "javascript": "javascriptreact",
+  "typescript": "typescriptreact"
+}
+```
+
+이제 HTML, CSS뿐만 아니라 react js 개발환경에서도 Emmet을 사용할 수 있다.
+
+### ES7+ React/Redux/React-Native snippets
+
+VScode extension인 `ES7+ React/Redux/React-Native snippets`을 download하면 `rafce`만 code에 입력하면 arrow function이 자동적으로 완성된다.
+
+이는 React Js 코드, 특히 components를 작성할 떄, 매우 간편하게 사용할 수 있다.
+
+```
+// rafc
+import React from 'react';
+
+export const $1 = () => {
+  return <div>$0</div>;
+};
+
+// rafce
+import React from 'react';
+
+const $1 = () => {
+  return <div>$0</div>;
+};
+
+export default $1;
+```
+
+## % 부록1: git으로 다른 programmer와 collaboration 하기 %
+
+### Git이 무엇이고, 왜 사용하는지
+
+깃(Git)은 software의 변경사항을 추적하고 여러 명의 사용자들 간에 해당 파일들의 작업을 조율하기 위한 분산 버전 관리 시스템이다.
+
+1. 프로젝트의 버젼들을 쉽게 관리하려고
+2. source code를 저장하고, 다른 programmer와 공유하고, 협업하기 위해서
+
+### Git 환경설정: Git를 사용하기 위해서는 Git을 local computer에 다운받아야 한다.
+
+Git을 다운받은후 Terminal에 `git config --global user.name "my_name"`, `git config --global user.email "myEmail@example.com"`을 입력해 설정한다.
+
+### Git 시작하기: git을 사용할 project folder에서 terminal에 `git init`을 입력
+
+`git init`을 한 project는 내 컴퓨터 내에서만 git을 사용하는 것이다. 그럼으로 github으로 project를 올리려면 Internet에 있는 github이랑 직접 연결해주어야 한다.
+
+`git remote ...`
+
+### Git의 `master` branch는 항상 완전환 코드이어야 한다.
+
+다른 사람이랑 협업을 할 경우에 git의 `issues`, `pull request` 탭을 잘 활용하여, 프로젝트를 성공적으로 완성해 보자.
+
+- issues: 코드에서 고쳐야 할 부분들을 우리팀 전체가 볼 수 있게 만들어, 추후에 고칠 수 있게 하는 것. 이 프로젝트가 public이라면, 아무나 issues에 코드의 문제점을 제시할 수 있다.
+- pull request: master branch에 merge하기 전에 내가 고친 코드를 다른 협업자가 관찰하고 이상이 없는 지 확인하는 단계
+
+### Git Command:
+
+Initialize repository
+
+> $ `git init`
+
+project내 모든 branch를 출력
+
+> $ `git branch`
+
+Create branch called v1
+
+> $ `git branch v1`
+
+기존의 branchName brannch로 이동
+
+> $ `git checkout branchName`
+
+새로운 branchName brannch를 생성 후, 바로 그 branch로 이동
+
+> $ `git checkout -b branchName`
+
+Create branch called fix-19 based on the code in the fix-18 branch
+
+> $ `git checkout -b fix-18 fix-19`
+
+### Git 사용법
+
+1. 소스 코드를 다운 받기
+
+   > $ `git clone https:...` or `Download zip file`
+
+2. Always start your branch with what is in the remote/main, so after you have cloned the repository locally
+
+branchName brannch를 생성 후 바로 이동
+
+> $ `git checkout branchName`
+
+> Your branch is up to date with 'origin/main'.
+
+3. 새로운 branch를 만들어서 main branch 에서 만든 branch로 이동하기
+   now that your local matched the most up to date stuff, switch to a branch for your own work.
+
+> $ `git switch -c branchName`
+
+4. 소스 코드에 변화를 만든 후, pull request하여 다른 협업자가 볼 수 있게 하기
+
+Do your thing, then when your ready to push, open terminal back up and make sure your in the base directory for the project:
+
+Stage all your changes for commit
+
+> $ `git add .`
+
+Commit your changes
+
+> $ `git commit -m "My Commit Message, what did I do today?"`
+
+Push your commit to a remote branch (probably want to use your same local branch name)
+
+> $ `git push --set-upstream origin branchName`
+
+또는
+
+> $ `git push -u orgin branchName`
+
+`git push -u origin master` command는 main branch에 code를 push 하는 것입니다.
+
+main은 항상 완벽한 완결된 코드이어야 함으로 main에 직접적으로 push하는 것은 지양해야 합니다.
+
+위에 서술된 방법으로, 새로운 branch를 만들어서 pull request를 하면된다.
+
+> $ `git push -u origin master`
+
+요약:
+
+```
+1. In terminal type: `git clone https:...`
+2. Make changes to the code
+3. Once you finish, type: `git add .`
+4. Commit your work: `git commit -m "what i did"`
+5. Create new branch or Move to the existing branch
+- Create and move to new branch: `git checkout -b <branchName>`
+- Move to the existing branch: `git switch -c <branchName>`
+6. push your work to that branch: `git push -u origin <branchName>`
+```
 
 ## 1. Web Application Development
 
@@ -3456,551 +3943,20 @@ const cors = require('cors');
 app.use(cors());
 ```
 
-### 10. Framework vs Library
 
-- Framework를 한국어로 하면 frame (틀), work (작업), 즉 기본적인 틀을 만드는 작업이다.
-  Framework는 **정해진 사용방법이 존재**하기 때문에 우리는 framework가 요구하는 대로 따라해야지만 원하는 결과를 얻을 수 있다. 
+## 2. ExpressJs
 
-- Library는 특정 기능에 대한 도구 or 함수들을 모은 집합이다.
-  즉, 프로그래머가 개발하는데 필요한 것들을 모아둔 것입니다.
-  library는 단순 활용이 가능한 도구들의 집합이다.
-
-집을 만드는 작업이라고 하면,
-
-- Framework는 집의 기본 구조를 제공하여, 우리는 그 구조에 더하면 되고,
-- Library는 침대, 소파와 같은 가구로, 우리는 이 가구들로 집을 만들어야 한다.
-
-프로그래밍에서 차이:
-
-- You, the developer, use a library. You call a library when and where you need to.
-- In contrast, a framework call your code. 
-
-개발자가 Library를 내 코드로 호출하고, framework는 반대로 framework가 내 코드를 호출한다. Framework를 사용할 떄 코드를 특정 장소와 폴더안에 입력해야만 제대로 작동하는 것을 볼 수 있다. 이는 framework가 설계될 때 이미 큰 틀이 설계되어 있고, 개발자는 framework가 요구하는 틀을 따라가야 한다. 즉, Library가 코드의 자유도가 더 높고, framework가 코드의 자유도가 더 낮다. 뭐가 더 좋고 나쁨은 없으나, 큰 project를 만들 때에는 여러 개발자와 함께 만들기 때문에 개발자들 사이에 자유도가 낮은 framework가 더 유리하고, 작은 project를 만들때에는 자유도가 높은 library가 더 편하다.
-
-- Framework: 어떤 동작을 수행하기 위한 코드 작성 방법이 정해져 있기 때문에, 다른 개발자의 코드를 보고 한 눈에 알아볼 수 있고 에러를 빨리 찾을 수 있다.
-             개발자들 사이 너도 나도 같은 방법을 사용.  
-- Library: 개발자가 자유롭게 코드를 가져다 쓰기 때문에 자유도가 높다.  
-
-```
-          call
-Developer ------> Library
-Developer <------ Framework
-          call
-
-// Library
-import API from Library
-const mydata = API()
-
-// Framework
-- Flask: need to put all HTML files in "Template" folder to work
-- Next.js: need to put all Javascript files in "Pages" folder to route
-```
-
-예시:
-- Libraray: React.js, Bootstrap, ...
-- Framework: Vue.js, Flask, Django, ...
-
-### 11. Frontend framework vs Server-Side Web Framework
-
-Web App dev는 크게 Frontend, Backend로 나눌 수 있고, 이를 합쳐 Fullstack dev라고 한다.
-이는 MVC (Model / View / Controll) software design pattern 라고도 불린다.
-Model–view–controller is a software design pattern commonly used for developing user interfaces that divide the related program logic into three interconnected elements.
-
-- Model은 View와 Controll을 연결하는 연결고리 역할을 한다.
-- View은 client가 웹사이트에 방문하여 실제로 보게되는 회면을 의미한다. HTML (HyperText Markup Language), CSS (Cascading Style Sheets), Javascript를 이용하여 View를 작성할 수 있다. 여기서 programming language는 오직 Javascript이다.
-- Controll은 app의 functionalities를 의미한다.
-
-각각의 programming language마다 Web Application Server를 만드는 web app framework를 제공한다.
-
-1. python: Django, Flask, FastAPI
-2. Java: spring, spring boot, play
-3. Javascript: Express, Fastify
-4. php: Laravel
-
-![This is an image](./img/server_side_web_framework.png)
-
-`Frontend framework`은 pure Javascript, HTML이 아닌 web view를 더 쉽게 작성할 수 있게 만드는 framework이다.
-SPA를 제공하는 frontend framework에는 크게 React JS, Vue JS, Angular JS가 있다.
-**Single Page Application** (SPA)는 body가 비어있는 하나의 HTML을 가지고 Javascript를 이용해서 그 안에 Data만 변경하는 것을 말한다.
-Server가 Client에 자료를 넘겨주면, Client computer가 그 정보를 가지고 HTML를 완성하기 때문에
-CSR (Client Side Rendering)이라고 부른다. CSR은 HTMl이 비어있기 때문에 검색 엔진에 노출되어 검색되기 쉽지 않다.
-SEO (Search Engine Optimization)에 약점을 가진다.
-
-⭐ `React JS`: React는 Meta사에서 만든 Javascript frontend framework로 computer에 최신 버전의 `Node.js`를 설치하면 누구나
-쉽게 사용할 수 있다.
-
-그 밖에도 `Angular JS`, `Vue JS`등 다양한 Web Application Frontend framework이 존재한다.
-이 Web application framework은 사용방법이 거의 비슷하기 때문에 하나만 잘 이해하면, 나머지는 쉽게 사용할 수 있다.
-
-`Figma`, `Adobe photoshop` 등 다양한 Moderm UI/UX (web view)를 실질적으로 코드를 작성하기 전에 디자인할 수 있는 program들이 많이 존재하므로, 이를 이용하여 웹사이트를 미리 디자인 해 볼 수도 있다.
-
-### 12. Server-Side Rendering (SSD)
-
-SSD는 CSD가 가진 검색 엔진에 대한 보완을 위해 등장한 개념으로, CSD와는 다르게 Server에서 HTML을 전부 완성한 후에 Client에게 보내준다.
-이로 인해 이용자가 많을 경우 Server에 과부화가 걸릴 수도 있다.
-
-### 13. Database
-
-Database와 web app을 연결하여 쉽고 간단하게 data를 읽고 쓸 수 있다.
-Database는 크게 Relational database (sql)와 Not only Relational database (Nosql)로 나눌 수 있다.
-`sql (Structured Query Language)`
-
-⭐ `postgresql` - Relational database의 대표주자
-
-⭐ `Mongo Database` - Not only Relational database의 대표주자
-![This is an image](./img/Database.png)
-
-## % 부록0: 유용한 VSCode 기능 알아보기 %
-
-- `단어 + tab`: Snippets를 이용하여 자동완성 기능을 적극활용한다.
-- Debug tool를 이용하여 프로그램을 디버깅할 수 있다 (내가 확인하고 싶은 코드 옆에 breakpoint 생성 후 debug 실행).
-
-### 유용한 VScode extension
-
-1. `Prettier`: save시 auto code formatting.
-
-- `CTRL + ,`로 setting 열기
-- `save` 검색 후 `format on save` 체크
-- `prettier` 검색 후 `Prettier: Tab width`를 `2`로 변경
-- `quote` 검색 후 `Javascript/Typescript > preferences: Quote style`을 `single`로 변경
-
-2. `Live Server`: HTML/CSS/Javascript의 server 실행
-3. `Material icon theme`: file icon 변경
-4. `ES7+ React/Redux/React-Native snippets`: React 개발환경시 코드 자동완성
-5. `Auto rename tag`: HTML에서 tag이름 변경 시, 뒤의 tag도 같이 변경
-6. `HTML CSS Support`: HTML에서 CSS file의 자동완성
-7. `Volar`: Vue 개발환경
-8. `bracket pair colorizer2`: 괄호마다 색생추가
-9. `CSS peek`: HTML에서 CSS peek가능
-10. `indent-rainbow`: indentation마다 색상추가
-11. `open in browser`: HTML을 browser로 열기
-12. `ESLint`
-13. `GitLens — Git supercharged`: git을 이용해, 코드 변경자 확인
-14. `Community Material Theme`: VScode 색상변경
-15. `Remote Remote - WSL`: Windows로 WSL 실행시만 설치
-
-### keyboard snippets
-
-우리는 코드를 짤 때, 최대한 마우스를 사용하지 않도록 해야 된다. keyboard snippets을 이용하면, 키보트만으로도 우리가 하고 싶은 것을 빠르게 할 수 있다.
-
-In VScode, go to `Help > Keyboard Shortcuts References`. 우리가 사용가능한 유용한 키보드 단축기들을 볼 수 있다.
-
-#### Navigation
-
-- `Ctrl + P`: 이 폴더 내에 다른 file name을 입력 후, 그 file로 이동 (파일간 이동)
-- `Ctrl + G`: 이 파일 내에 Line 이동 (파일 내 이동)
-- `pageUp/pageDown`: Move to (next/previous) page in file
-- `Alt + (pageUP/pageDown)`: Scroll page up/down
-- `F12`: Go to Definition (선택된 코드가 정의된 file로 워프)
-- `Alt + F12`: peek Definition (현재 file에서 확인)
-- `Ctrl + (Left/Right)`: 단어 단위로 왼쪽/오른쪽으로 이동
-- `Ctrl + (Up/Down)`: Scroll line up/down
-- `Home/End`: Go to beginning/end of line
-- `Ctrl + (Home/End)`: Go to beginning/end of file
-- `Ctrl + (1/2/3)`: 새로운 split editor 생성 후, 그곳으로 cursor이동
-- `Ctrl + F4`: 현재 split editor 종료
-
-- `Ctrl + click`: Go to definition
-
-#### Basic editing
-
-- `tab`: 자동완성 (현재치고 있는 코드를 자동완성)
-- `Ctrl + X`: Cut line (empty selection)
-- `Ctrl+ shift + k`: Delete Line
-- `Ctrl + L => DEL`: Delete Line
-- `Ctrl + C`: Copy
-- `Ctrl + V`: Paste
-- `Ctrl + Z`: Undo
-- `Ctrl + S`: Save
-- `` Ctrl + `(back tic) ``: Open terminal
-- `` Ctrl + Shift + `(back tic) ``: Create new terminal
-- `Ctrl + shift + R`: Refactoring (drag된 코드를 변수로 만들기, 함수로 만들기, 새로운 file로 옮기기, ...)
-- `F2`: Renaming (변수 이름 변경하기: 이 변수와 연관된 모든 다른 file에서 사용중인 변수명도 함께 바꿔준다.)
-- `Ctrl + F`: Find (F2를 사용하는 것이 더 편리하다).
-- `Ctrl + H`: Renaming (F2를 사용하는 것이 더 편리하다).
-- `Ctrl + L`: 한 줄 선택
-- `Alt + (Up/Down)`: 한 줄을 위/아래로 옮기기
-- `shift + alt + (Up/Down)`: 한 줄을 아래줄에 복사후 붙여넣기 (Copy & Paste)
-- `shift + (Arrow)`: Arrow로 움직인 영역만큼만 drag
-- `shift + Ctrl + (Arrow)`: 단어 단위로 Arrow로 움직인 영역만큼만 drag
-- `Ctrl+ /`: Toggle line comment
-- `Ctrl+ (]/[)`: Indent/outdent line
-- `Terminal에서 (Up/Down)`: 이전에 Terminal에 입력했었던 command 보기
-- `Del`: 커서 뒤의 한 캐릭터 삭제
-- `Ctrl + Del`: 커서 뒤의 한 단어 삭제
-- `Ctrl + A`: 현재 파일의 모든 문장 drag
-- `Ctrl + ,`: Setting 열기
-
-- `Alt + click`: Multi-cursor (Alt + Click를 여러 군데 찍으면, 한번에 여러 곳에 typing할 수 있다).
-
-### Terminal (Unix shell) Command
-
-- `ls`: list files in current directory (list)
-- `ls -l`: list files detail in current directory (list -long)
-- `ls -a`: list all files in current directory (list -all)
-- `mkdir + fileName`: make directory
-- `cd`: change directory
-- `chmod +x fileName` : make it executable (change mode)
-- `cd dirName`: change directory
-- `cd ..`: change directory backword
-- `rm fileName`: remove file
-- `rm -r dirName`: remove directory
-- `rm -f fileName`: force to remove file
-- `rm- rf dirName`: force to remove directory
-- `./executableFile.exe`: execute the file
-- `mv oldName newName`: rename the file
-- `mv file1 file2 dir`: move the files `file1` and `file2` to the `dir1` directory
-- `cat fileName`: see the whole text file in terminal
-- `pwd`: show current path you are in
-- `man (1/2/3) malloc`: show manual page for malloc
-- `clear`: clear all text in terminal
-- `find . -type file -name "*.json"`: 현제 folder의 내부에 존재하는 모든 json 파일을 반환
-- `touch fileName`: fileName이 존재하면 파일 열기, 존재하지 않으면 새로운 파일 생성
-- `echo + text`: Terminal에 text 출력
-- `echo + text > fileName`: fileName에 text를 덮어 씌우기
-- `echo + text >> fileName`: fileName에 text를 append
-- `vi fileName`: Vim text editor로 fileName열기
-- `nano fileName`: nano text editor로 fileName열기
-- `code fileName`: VSCode text editor로 fileName열기
-
-### Emmets
-
-에밋(Emmet)은 HTML, XML, XSL 문서 등을 편집할 때 빠른 코딩을 위해 사용하는 플러그인이다. 매우 간단한 몇 가지 코드만 입력하면, 자동으로 완전한 HTML 코드를 생성해 준다. Emmet은 Visual Studio Code에 내장되어 있으며 확장이 필요하지 않습니다.
-
-예시:
-
-ul box안에 li tag를 5개 만들고 싶다.
-
-- `ul>li*5` + tab
-
-```
-<ul>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-</ul>
-```
-
-div box안에 container라는 class를 주고, class가 title과 title$인 p tag를 3개 만들고 싶다.
-
-- `div.container>p.title.title${$}*3` + tab
-
-```
-<div class="container">
-	<p class="title title1">1</p>
-	<p class="title title2">2</p>
-	<p class="title title3">3</p>
-</div>
-```
-
-- `div>(header>ul>li*2>a)+footer>p` + tab
-
-```
-<div>
-  <header>
-    <ul>
-      <li><a href=""></a></li>
-      <li><a href=""></a></li>
-    </ul>
-  </header>
-  <footer>
-    <p></p>
-  </footer>
-</div>
-```
-
-더미 dummy 용 텍스트 입력하기
-
-- `p>lorem` + tab
-
-- `p>lorem4` + tab
-
-```
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus quibusdam eligendi commodi, nisi reprehenderit corporis, libero laudantium quo blanditiis unde maiores voluptatum quam mollitia necessitatibus facilis aspernatur minima ullam cupiditate.</p>
-
-<p>Lorem ipsum dolor sit.</p>
-```
-
-css에서 display를 none으로 하고 싶다.
-
-- `dn` + tab = `display:none;`
-
-css에서 margin-top을 20px으로 하고 싶다.
-
-- `mt20` + tab = `margin-top:20px;`
-
-Emmets은 html, css을 생성할 때만 가능한 것으로, react 개발환경인 jsx에서는 사용할 수 없다.
-
-Enable Emmet support for JSX:
-
-- In VScode, go to `File > Preferences > Settings > Open setting (setting.json) `
-
-We will add the following lines anywhere in this setting:
-
-```
-"emmet.includeLanguages": {
-  "javascript": "javascriptreact",
-  "typescript": "typescriptreact"
-}
-```
-
-이제 HTML, CSS뿐만 아니라 react js 개발환경에서도 Emmet을 사용할 수 있다.
-
-### ES7+ React/Redux/React-Native snippets
-
-VScode extension인 `ES7+ React/Redux/React-Native snippets`을 download하면 `rafce`만 code에 입력하면 arrow function이 자동적으로 완성된다.
-
-이는 React Js 코드, 특히 components를 작성할 떄, 매우 간편하게 사용할 수 있다.
-
-```
-// rafc
-import React from 'react';
-
-export const $1 = () => {
-  return <div>$0</div>;
-};
-
-// rafce
-import React from 'react';
-
-const $1 = () => {
-  return <div>$0</div>;
-};
-
-export default $1;
-```
-
-## % 부록1: git으로 다른 programmer와 collaboration 하기 %
-
-### 1. Git이 무엇이고, 왜 사용하는지
-
-깃(Git)은 software의 변경사항을 추적하고 여러 명의 사용자들 간에 해당 파일들의 작업을 조율하기 위한 분산 버전 관리 시스템이다.
-
-1. 프로젝트의 버젼들을 쉽게 관리하려고
-2. source code를 저장하고, 다른 programmer와 공유하고, 협업하기 위해서
-
-### 2. Git 환경설정: Git를 사용하기 위해서는 Git을 local computer에 다운받아야 한다.
-
-Git을 다운받은후 Terminal에 `git config --global user.name "my_name"`, `git config --global user.email "myEmail@example.com"`을 입력해 설정한다.
-
-### 3. Git 시작하기: git을 사용할 project folder에서 terminal에 `git init`을 입력
-
-### 4. Git의 `master` branch는 항상 완전환 코드이어야 한다.
-
-다른 사람이랑 협업을 할 경우에 git의 `issues`, `pull request` 탭을 잘 활용하여, 프로젝트를 성공적으로 완성해 보자.
-
-- issues: 코드에서 고쳐야 할 부분들을 우리팀 전체가 볼 수 있게 만들어, 추후에 고칠 수 있게 하는 것. 이 프로젝트가 public이라면, 아무나 issues에 코드의 문제점을 제시할 수 있다.
-- pull request: master branch에 merge하기 전에 내가 고친 코드를 다른 협업자가 관찰하고 이상이 없는 지 확인하는 단계
-
-### 4. Git Command:
-
-Initialize repository
-
-> $ `git init`
-
-모든 branch를 출력
-
-> $ `git branch`
-
-Create branch called v1
-
-> $ `git branch v1`
-
-기존의 branchName brannch로 이동
-
-> $ `git checkout branchName`
-
-새로운 branchName brannch를 생성 후, 바로 그 branch로 이동
-
-> $ `git checkout -b branchName`
-
-Create branch called fix-19 based on the code in the fix-18 branch
-
-> $ `git checkout -b fix-18 fix-19`
-
-### 5. Git 사용법
-
-1. 소스 코드를 다운 받기
-
-   > $ `git clone https:...` or `Download zip file`
-
-2. Always start your branch with what is in the remote/main, so after you have cloned the repository locally
-
-branchName brannch를 생성 후 바로 이동
-
-> $ `git checkout branchName`
-
-> Your branch is up to date with 'origin/main'.
-
-3. 새로운 branch를 만들어서 main branch 에서 만든 branch로 이동하기
-   now that your local matched the most up to date stuff, switch to a branch for your own work.
-
-> $ `git switch -c branchName`
-
-4. 소스 코드에 변화를 만든 후, pull request하여 다른 협업자가 볼 수 있게 하기
-
-Do your thing, then when your ready to push, open terminal back up and make sure your in the base directory for the project:
-
-Stage all your changes for commit
-
-> $ `git add .`
-
-Commit your changes
-
-> $ `git commit -m "My Commit Message, what did I do today?"`
-
-Push your commit to a remote branch (probably want to use your same local branch name)
-
-> $ `git push --set-upstream origin branchName`
-
-또는
-
-> $ `git push -u orgin branchName`
-
-`git push -u origin master` command는 main branch에 code를 push 하는 것입니다.
-
-main은 항상 완벽한 완결된 코드이어야 함으로 main에 직접적으로 push하는 것은 지양해야 합니다.
-
-위에 서술된 방법으로, 새로운 branch를 만들어서 pull request를 하면된다.
-
-> $ `git push -u origin master`
-
-요약:
-
-```
-1. In terminal type: `git clone https:...`
-2. Make changes to the code
-3. Once you finish, type: `git add .`
-4. Commit your work: `git commit -m "what i did"`
-5. Create new branch or Move to the existing branch
-- Create and move to new branch: `git checkout -b <branchName>`
-- Move to the existing branch: `git switch -c <branchName>`
-6. push your work to that branch: `git push -u origin <branchName>`
-```
-
-## % 부록2: Amazon사의 cloud service인 AWS (Amazon Web Service) 사용하기 %
-
-1. AWS IAM - User를 생성하고, create access key를 사용하여, API에 접근하기
-
-2. AWS S3 - bucket을 만들어 파일 저장하기
-
-3. AWS SES (Simple Email Service) - email 보내기
-
-4. AWS EC2 가상환경 - virtualBox와 같이 가상 환경을 제공
-
-5. AWS Lambda - 함수
-
-6. AWS Elastic Beanstalk - 간단히 코드를 배포할 때 사용
-
-## % 부록3: Docker 이해하기 %
-
-local computer에 다운되어 있는 environment와 server computer에 다운되어 있는 environment가 다르면, local에서 작성된 code는 server에서 호환성 문제로 작동이 안될 수도 있다. 이 문제를 해결하기 위해 container라는 개념이 등장하였고, Docker가 container를 제공하는 가장 큰 platform이다.
-
-Docker는 서비스를 제공할 때, 아주 쉽고, 빠르고, 간단하게 같은 environment의 container를 만드는 것을 도와준다.
-
-Dockerfile로 image를 만들고 (build),
-image로 container를 실행한다 (run).
-
-Dockerhub에서 공식적인 image을 다운 받을 수도 있고, 내가 customized한 image도 upload할 수 있다.
-
-기본 구조: Dockerfile -build> Dokcer image -run> Docker container
-
-- Dockerfile로 image를 build하는 commend
-
-  > $ docker bulid -t imageName
-  > local computer에 이 이미지가 존재하지 않으면, Dockerhub에서 image을 다운 받는다.
-
-- image로 container를 run하는 commend
-  > $ docker run -it imageName
-  > $ docker run -b imageName
-  > (d는 daemon의 약자로 뒤에서 작동한다.)
-
-### Bootstrap and Reactstrap or Material-Ui
-
-`bootstrap`은 frontend dev에 대한 구조를 미리 만들어둔 프레임워크로 UI stlye에 대한 기본적인 css, js를 제공합니다.
-react js 뿐만 아니라 frontend dev 전체에 사용할 수 있는 매우 유용한 프레임워크입니다.
-
-1. client/public에 있는 index.html에 bootstrap homepage에 있는 css link tag, js script tag을 copy & paste해서 bootstrap을 사용하는 방법이 있고,
-2. source code를 copy & paste하는 방법이 있고,
-3. npm package manager를 이용해 `npm install bootstrap`을 이용하여 사용할 수 있다.
-
-bootstrap: https://getbootstrap.com/docs/5.1/getting-started/download/
-
-`reactstrap`은 bootstrap component를 react component로 사용할 수 있게 만들어 주는 framework이다.
-
-`material-ui`은 `reactstrap`처럼 다른 프로그래머가 미리 만들어둔 react component를 가져다 쓸 수 있기 떄문에 매우 편하다.
-이처럼 다른 사람이 만들어둔 source code를 찾아 copy & paste만 잘해도 된다.
-
-reactstrap: https://reactstrap.github.io/?path=/docs/components-navbar--navbar
-
-material-ui는 react js에서 쓸 수 있는 react components을 모아둔 framework이다.
-
-material-ui가 2022년 기준 react js에서 가장 많이 쓰이는 framework이다.
-
-`material-ui`은 `reactstrap`처럼 다른 프로그래머가 미리 만들어둔 react component를 가져다 쓸 수 있기 떄문에 매우 편하다.
-이처럼 다른 사람이 만들어둔 source code를 찾아 copy & paste만 잘해도 된다.
-
-material-ui: https://mui.com/
-
-## Curly brackets {} vs Parentheses () in Javascript Arrow Function
-
-### Using JSX in React:
-
-- Curly brackets: are a special syntax to let the JSX parser know that it needs to interpret the contents between them as javascript instead of text.
-
-`const items =this.state.toDoList.map((item) => <li>{item}</li> )`
-
-Since {item} is in curly brackets JSX interprets that as to find the variable item back in javascript land and to insert it within the `<li></li>`s.
-
-- Parentheses: are used to wrap multiline codes of Javascript after the return statement in order for your code to compile.
-
-```
-render () {
-return ( <li> {item}</li>,
-<SomeComponent /> )
-}
-```
-
-If you only have one line of code, you don’t need the parentheses.
-
-```
-render () {
-return <li> {item}</li>
-}
-```
-
-```
-// jsx syntax
-const items = { {id: 1, name: eggs}, {id: 2, name: milk} }
-{ items.map(item => (
- <tr key={items.id}>
-    <td>{ items.name }</td>
- <tr>
-)) }
-```
-
-react js를 이용할 때, javascript 코드를 jsx syntax에서 사용하고 싶으면 curly brackets {} 안에서 정의하면 된다.
-react js에서 array를 하나씩 iterate해야할 경우 `array.map()` 함수를 이용하고, 그 안에 callback함수인 arrow function을 정의한다.
-
-react js는 jsx이기 때문에 `array.map((param) => {body})`가 아니라 `array.map((param) => (body))`처럼 body에도 parentheses를 사용해야 한다.
-
-`map()`은 javascript code이기 때문에 `{ array.map((param) => (body))}`과 같이 curly brackets {} 안에서 정의하면 된다.
-
-## 7. ExpressJs
-
-### 1. What is Express.js?
+### What is Express.js?
 
 Express.js는 Javascript Back-end Framework로, Web Server을 만들 때 사용한다.
 
-## 8. Flask (Python)
+## 3. Flask (Python)
 
-### 1. What is Flask?
+### What is Flask?
 
 Flask is a micro web framework written in Python. Flask는 Python으로 구동되는 Web Framework로, 간단하게 기능을 설명하면 내가 만든 program에 web server를 구동시켜주는 편한 코드 모음이라고 할 수 있다. 다른 python Web Framework인 Django 보다 라이트한 특성때문에 간단한 API서버 구축에 적합하다. By default, Flask runs on port 5000 in development mode.
 
-### 2. Setup flask Project
+### Setup flask Project
 
 Install Flask module
 
@@ -4041,30 +3997,22 @@ server에 요청하면 연산이 없이 바로 나가는 것들, images, css, js
 
 여기서 중요한 점은 flask를 사용할 때 `"templates"`, `"static"` 이라는 이름을 변경해선 안된다.
 
-## 9. Postgresql
+## 4. Postgresql
 
-## 10. Mongodb
+## 5. Mongodb
 
-### 1. What is Mongodb
+### What is Mongodb
 
-#### 1. Mongodb가 무엇이고, 왜 사용하는지?
+MongoDB is a source-available cross-platform document-oriented database program. MongoDB is Classified as a NoSQL database program, MongoDB uses JSON-like documents with optional schemas. NoSQL은 Not Only SQL, SQL 뿐만 아니다라는 의미를 지니고있다. 즉, SQL을 사용하는 관계형 데이터베이스가 아닌 데이터베이스를 의미한다. 대표적인 관계형 데이터베이스로는 MySQL, Oracle, PostgreSQL이 있고, NoSQL 진영에는 이 포스트에서 다루는 MongoDB와 Redis, HBase 등이 있다.
 
-MongoDB is a source-available cross-platform document-oriented database program.
-
-MongoDB is Classified as a NoSQL database program, MongoDB uses JSON-like documents with optional schemas.
-
-#### 2. Nosql가 무엇이고, 왜 사용하는지?
-
-NoSQL은 Not Only SQL, SQL 뿐만 아니다라는 의미를 지니고있다. 즉, SQL을 사용하는 관계형 데이터베이스가 아닌 데이터베이스를 의미한다. 대표적인 관계형 데이터베이스로는 MySQL, Oracle, PostgreSQL이 있고, NoSQL 진영에는 이 포스트에서 다루는 MongoDB와 Redis, HBase 등이 있다.
-
-#### Q3. Collections이 무엇인지
+#### Collections이 무엇인지
 
 If you aren't failiar with nosql, think `Collectoins` as `Table of row and column` in sql.
 In nosql, you have collection of Document.
 
 Document is just json object.
 
-### 2. Mongodb 개발환경
+### Mongodb 개발환경
 
 We need a MongoDB URL to be able to connect to.
 
@@ -4086,14 +4034,39 @@ Set User name & User password => Network access IP Address => Connect => "Connet
 
 `MONGO_URI = mongodb+srv://Shin:<password>@cluster0.sjhvl.mongodb.net/<myfirstDatabase>?retryWrites=true&w=majority`
 
-## 11. Remix
+## % 부록2: Amazon사의 cloud service인 AWS (Amazon Web Service) 사용하기 %
 
-## 13. Redux
+1. AWS IAM - User를 생성하고, create access key를 사용하여, API에 접근하기
 
-### 1. What is Redux
+2. AWS S3 - bucket을 만들어 파일 저장하기
 
-`Redux` is an open-source JavaScript library for managing and centralizing application state. It is most commonly used with libraries such as React or Angular for building user interfaces. Redux is a predictable **state container** for JavaScript apps. Redux는 일명 **상태 (state)관리 library**이다. React.js와 같이 사용할 시 `react-redux`를 사용한다. `Redux`는 `redux-toolkit`으로 쓰면 더 쉽고 거기에 typescript로 작성하면 큰 프로젝트 스케일링하기도 편합니다.
+3. AWS SES (Simple Email Service) - email 보내기
 
-`Redux Toolkit` is our official recommended approach for writing Redux logic. It wraps around the Redux core, and contains packages and functions that we think are essential for building a Redux app. Redux Toolkit builds in our suggested best practices, simplifies most Redux tasks, prevents common mistakes, and makes it easier to write Redux applications.
+4. AWS EC2 가상환경 - virtualBox와 같이 가상 환경을 제공
 
-### 2. Redux 사용이유
+5. AWS Lambda - 함수
+
+6. AWS Elastic Beanstalk - 간단히 코드를 배포할 때 사용
+
+## % 부록3: Docker 이해하기 %
+
+local computer에 다운되어 있는 environment와 server computer에 다운되어 있는 environment가 다르면, local에서 작성된 code는 server에서 호환성 문제로 작동이 안될 수도 있다. 이 문제를 해결하기 위해 container라는 개념이 등장하였고, Docker가 container를 제공하는 가장 큰 platform이다.
+
+Docker는 서비스를 제공할 때, 아주 쉽고, 빠르고, 간단하게 같은 environment의 container를 만드는 것을 도와준다.
+
+Dockerfile로 image를 만들고 (build),
+image로 container를 실행한다 (run).
+
+Dockerhub에서 공식적인 image을 다운 받을 수도 있고, 내가 customized한 image도 upload할 수 있다.
+
+기본 구조: Dockerfile -build> Dokcer image -run> Docker container
+
+- Dockerfile로 image를 build하는 commend
+
+  > $ docker bulid -t imageName
+  > local computer에 이 이미지가 존재하지 않으면, Dockerhub에서 image을 다운 받는다.
+
+- image로 container를 run하는 commend
+  > $ docker run -it imageName
+  > $ docker run -b imageName
+  > (d는 daemon의 약자로 뒤에서 작동한다.)

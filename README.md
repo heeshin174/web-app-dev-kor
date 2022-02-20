@@ -9,7 +9,6 @@
 0. [Web Development Loadmap](https://github.com/heeshin174/Web_App_Dev_Kor#0-web-development-loadmap)
 
 - [FrontEnd](https://github.com/heeshin174/Web_App_Dev_Kor#2-front-end-client-side)
-
   1. [HTML](https://github.com/heeshin174/Web_App_Dev_Kor#1-html)
   2. [CSS](https://github.com/heeshin174/Web_App_Dev_Kor#2-css)
   3. [JavaScript](https://github.com/heeshin174/Web_App_Dev_Kor#3-javascript)
@@ -21,7 +20,6 @@
   9. [Redux](https://github.com/heeshin174/Web_App_Dev_Kor#9-redux)
 
 - [BackEnd](https://github.com/heeshin174/Web_App_Dev_Kor#3-back-end-server-side)
-
   1. [Web Application Development](https://github.com/heeshin174/Web_App_Dev_Kor#1-web-application-development)
   2. [Express.js](https://github.com/heeshin174/Web_App_Dev_Kor#2-expressjs)
   3. [Flask (Python)](https://github.com/heeshin174/Web_App_Dev_Kor#3-flask-python)
@@ -30,15 +28,14 @@
 
 ## 0. Web Development Loadmap
 
-- Youtube Link: https://www.youtube.com/watch?v=TTLHd3IyErM&list=PLg8KC9DusHl_fxr5tZgwvoHE5SbPnKm_q&index=2
-
-1. [Basic Setup](https://github.com/heeshin174/Web_App_Dev_Kor#1-basic-setup)
-2. [Front-End](https://github.com/heeshin174/Web_App_Dev_Kor#2-front-end-client-side)
-3. [Back-End](https://github.com/heeshin174/Web_App_Dev_Kor#3-back-end-server-side)
-4. [Tools](https://github.com/heeshin174/Web_App_Dev_Kor#4-tools)
-5. [Testing](https://github.com/heeshin174/Web_App_Dev_Kor#5-testing)
-6. [Publish](https://github.com/heeshin174/Web_App_Dev_Kor#6-publish)
-7. [기타 유용한 links](https://github.com/heeshin174/Web_App_Dev_Kor#%EA%B8%B0%ED%83%80-%EC%9C%A0%EC%9A%A9%ED%95%9C-links)
+- [Youtube Link](https://www.youtube.com/watch?v=TTLHd3IyErM&list=PLg8KC9DusHl_fxr5tZgwvoHE5SbPnKm_q&index=2)
+  1. [Basic Setup](https://github.com/heeshin174/Web_App_Dev_Kor#1-basic-setup)
+  2. [Front-End](https://github.com/heeshin174/Web_App_Dev_Kor#2-front-end-client-side)
+  3. [Back-End](https://github.com/heeshin174/Web_App_Dev_Kor#3-back-end-server-side)
+  4. [Tools](https://github.com/heeshin174/Web_App_Dev_Kor#4-tools)
+  5. [Testing](https://github.com/heeshin174/Web_App_Dev_Kor#5-testing)
+  6. [Publish](https://github.com/heeshin174/Web_App_Dev_Kor#6-publish)
+  7. [기타 유용한 links](https://github.com/heeshin174/Web_App_Dev_Kor#%EA%B8%B0%ED%83%80-%EC%9C%A0%EC%9A%A9%ED%95%9C-links)
 
 ### 1. Basic Setup
 
@@ -222,12 +219,12 @@ React.js, Typescript 등등 outside library/framework로 만들어 native `HTML`
       - [function](https://github.com/heeshin174/Web_App_Dev_Kor#function)
       - if, for, switch, while
       - object
-      - [Array]((https://github.com/heeshin174/Web_App_Dev_Kor#array))
+      - [Array](https://github.com/heeshin174/Web_App_Dev_Kor#array)
     - Advanced
       - Prototype
-      - Hoisting
+      - [Hoisting](https://github.com/heeshin174/Web_App_Dev_Kor#hoisting)
       - Scope
-      - Closure
+      - [Closure](https://github.com/heeshin174/Web_App_Dev_Kor#closure)
       - Callback Function
   - **Browser APIs**
     - DOM Manipulation
@@ -244,7 +241,7 @@ React.js, Typescript 등등 outside library/framework로 만들어 native `HTML`
     - React JS with Typescript: https://create-react-app.dev/docs/adding-typescript/
   - Meta Library & Meta Framework (Meta-Framework: 기존 framework 위에 만들어진 framework)
     - React based
-      - Server-Side Rendering (SSR)
+      - [Server-Side Rendering (SSR)]()
         - ⭐ [**Next.js**](https://github.com/heeshin174/Web_App_Dev_Kor#7-nextjs): https://nextjs.org/docs/getting-started
         - [Remix](https://github.com/heeshin174/Web_App_Dev_Kor#8-remix): https://remix.run/docs/en/v1
       - Managing and centralizing application state
@@ -301,8 +298,9 @@ API key같은 외부에 노출되서는 안되는 environmental variables들은 
     - Mongodb: https://www.mongodb.com/cloud
       - Mongoose js: https://mongoosejs.com/
 
-* Next js (Server side rendering): https://nextjs.org/docs/getting-started
+* Next.js (Server side rendering): https://nextjs.org/docs/getting-started
 * Remix (Server side rendering): https://remix.run/docs/en/v1
+* Gatsby.js (Server side generator): https://www.gatsbyjs.com/
 * nodemon (javascript library: auto reload server): https://www.npmjs.com/package/nodemon)
 * dotenv (javascript library: set environmental variables): https://github.com/motdotla/dotenv
 * concurrently (javascript library: start client and server together): https://github.com/open-cli-tools/concurrently
@@ -393,39 +391,36 @@ Database는 크게 Relational database (sql)와 Not only Relational database (No
 
 ### 기타 유용한 Links
 
-1. Programming Langauges
+- Programming Langauges
+  - Node.js: https://nodejs.org/en/docs/
+  - Python: https://docs.python.org/3/
+  - Java: https://docs.oracle.com/en/java/javase/15/docs/api/index.html
+  - Typescript: https://www.typescriptlang.org/
+  - C/C#/C++
+  - Closure (Functional): https://clojure.org/
+  - Dr.Racket (educational Functional): https://racket-lang.org/
 
-- Node.js: https://nodejs.org/en/docs/
-- Python: https://docs.python.org/3/
-- Java: https://docs.oracle.com/en/java/javase/15/docs/api/index.html
-- Typescript: https://www.typescriptlang.org/
-- C/C#/C++
-- Closure (Functional): https://clojure.org/
-- Dr.Racket (educational Functional): https://racket-lang.org/
+- Tools
+  - Postman (RESTful API): https://www.postman.com/downloads/
+  - VSCode (Microsoft IDE: Code Editor): https://code.visualstudio.com/
+  - Eclipse (Java IDE): https://www.eclipse.org/documentation/
+  - GoormIDE (Docker based Cloud IDE): https://www.goorm.io/
+  - Pythontutor (code visulaization): https://pythontutor.com/
+  - Figma (Design UI/UX): https://www.figma.com/
+  - Adobe photoshop (Design UI): https://www.adobe.com/products/photoshop
+  - Diagram.io (Design UI): https://app.diagrams.net/
+  - Jsbin (간단한 code 실행): https://jsbin.com/
 
-2. Tools
-
-- Postman (RESTful API): https://www.postman.com/downloads/
-- VSCode (Microsoft IDE: Code Editor): https://code.visualstudio.com/
-- Eclipse (Java IDE): https://www.eclipse.org/documentation/
-- GoormIDE (Docker based Cloud IDE): https://www.goorm.io/
-- Pythontutor (code visulaization): https://pythontutor.com/
-- Figma (Design UI/UX): https://www.figma.com/
-- Adobe photoshop (Design UI): https://www.adobe.com/products/photoshop
-- Diagram.io (Design UI): https://app.diagrams.net/
-- Jsbin (간단한 code 실행): https://jsbin.com/
-
-3. Educations
-
-- Web Development In 2022 - https://www.youtube.com/watch?v=EqzUcMzfV1w&list=PLg8KC9DusHl8zGjAWYGGJygm3rWoEahJQ&index=30&ab_channel=TraversyMedia
-- 서버사이드 렌더링 - https://www.youtube.com/watch?v=iZ9csAfU5Os&list=PLg8KC9DusHl8zGjAWYGGJygm3rWoEahJQ&index=32&ab_channel=%EB%93%9C%EB%A6%BC%EC%BD%94%EB%94%A9by%EC%97%98%EB%A6%AC
-- 웹개발 개념정리 - https://www.youtube.com/watch?v=ED2rOHM1od0&list=PLg8KC9DusHl8zGjAWYGGJygm3rWoEahJQ&index=33&ab_channel=%EA%B0%9C%EB%B0%9C%ED%95%98%EB%8A%94%EC%A0%95%EB%8C%80%EB%A6%AC
-- Async Await: https://kiwanjung.medium.com/%EB%B2%88%EC%97%AD-async-await-%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-%EC%A0%84%EC%97%90-promise%EB%A5%BC-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-955dbac2c4a4
-- Closure & Hoisting: https://dongmin-jang.medium.com/javascript-closure-hoisting-7bf8eb5062b9
-- Javascript closure: https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures
-- w3school: https://www.w3schools.com/
-- Leetcode: https://leetcode.com/
-- react로 만든 웹 github로 deploy하기: https://codingapple.com/unit/react-build-deploy-github-pages/
+- Educations
+  - Web Development In 2022 - https://www.youtube.com/watch?v=EqzUcMzfV1w&list=PLg8KC9DusHl8zGjAWYGGJygm3rWoEahJQ&index=30&ab_channel=TraversyMedia
+  - 서버사이드 렌더링 - https://www.youtube.com/watch?v=iZ9csAfU5Os&list=PLg8KC9DusHl8zGjAWYGGJygm3rWoEahJQ&index=32&ab_channel=%EB%93%9C%EB%A6%BC%EC%BD%94%EB%94%A9by%EC%97%98%EB%A6%AC
+  - 웹개발 개념정리 - https://www.youtube.com/watch?v=ED2rOHM1od0&list=PLg8KC9DusHl8zGjAWYGGJygm3rWoEahJQ&index=33&ab_channel=%EA%B0%9C%EB%B0%9C%ED%95%98%EB%8A%94%EC%A0%95%EB%8C%80%EB%A6%AC
+  - Async Await: https://kiwanjung.medium.com/%EB%B2%88%EC%97%AD-async-await-%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-%EC%A0%84%EC%97%90-promise%EB%A5%BC-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-955dbac2c4a4
+  - Closure & Hoisting: https://dongmin-jang.medium.com/javascript-closure-hoisting-7bf8eb5062b9
+  - Javascript closure: https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures
+  - w3school: https://www.w3schools.com/
+  - Leetcode: https://leetcode.com/
+  - react로 만든 웹 github로 deploy하기: https://codingapple.com/unit/react-build-deploy-github-pages/
 
 ## 1. HTML
 
@@ -1010,6 +1005,17 @@ flex-wrap: wrap;
 
 #### Grid
 
+`Grid`에는 **grid container**와 **grid item**이 존재한다. grid container는 grid item들을 담는 박스가 된다.
+
+- `display: grid;`를 주면 그 HTMLElement는 grid container가 되고, 그 container의 직속 children들이 grid item이 된다.
+
+Flexbox와 Grid의 큰 차이점은
+
+- Flex: one dimension layout 
+- Grid: two dimension layout
+
+https://studiomeal.com/archives/533
+
 ### Responsive Design
 
 **Responsive Design**는 브라우저의 크기에 따라 보이는 화면이 달라지는 것을 뜻한다. 컴퓨터를 기준으로 웹사이트를 만들게 되면, mobile로 보게되면 화면이 작아서 다 보이지 않게 된다.
@@ -1030,7 +1036,7 @@ flex-wrap: wrap;
 
 ## 3. Javascript
 
-### 1. What is Javascript?
+### What is Javascript?
 
 **JavaScript, often abbreviated JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS. Javascript는 웹환경에서 가장 많이 쓰이는 프로그래밍언어이다.**
 
@@ -1061,7 +1067,7 @@ age = "Hello"; // age에 문자형 (String)값이 들어오면서, age의 타입
 
 왜 Javascript가 비동기적인지를 생각해보면, 만약에 Javascript가 동기 프로그래밍(synchronous programming) 언어이면, 우리는 서버가 모든 데이터를 불러올 때까지 아무 버튼도 누를수 없다.
 
-### 2. ES6+ Syntax
+### ES6+ Syntax
 
 Javascript syntax를 배울 때 중요한 점은 **if, for, var, let, function, array, object등 Javascript에서 사용하는 문법은 HTML을 조작하고, 변경하기 위해 등장했다는 것이다.**
 
@@ -1422,7 +1428,7 @@ console.log(ResultMap); // ['김학생', '윤학생']
 
 이처럼 filter와 map을 동시에 활용해서 조건에 부합하는 object를 가져온 뒤, object의 특정 key의 value값을 가져와 새로운 배열을 만드는 것이 가능한 걸 알 수 있었다.
 
-### 3. Javascript에서 synchronous programming 이해하기 (💥 Callback/Promises/Async Await)
+### synchronous programming 이해하기 (💥 Callback/Promises/Async Await)
 
 **Javascript는 asynchronous programming로 데이터를 요청하는 데 시간이 많이 걸리는 line이 있으면, 그 code의 값을 기다리지 않고 다음 code를 시작한다.**
 
@@ -1481,7 +1487,7 @@ setTimeout() 역시 비동기 방식으로 실행되기 때문에 3초를 기다
 2. Promise object
 3. Async and Await
 
-### 4. CallBack Function으로 비동기 프로그램이 가진 문제 해결하기
+### CallBack Function으로 비동기 프로그램이 가진 문제 해결하기
 
 **콜백함수(Callback Function)란 파라미터로 함수를 전달받아, 함수의 내부에서 실행하는 함수이다.**
 
@@ -1559,7 +1565,7 @@ add(2, function(result) {
 
 콜백지옥 해결 방안 : Promise의 return 사용하여 callback Hell을 탈출할 수 있다.
 
-### 5. Promise
+### Promise
 
 **A promise is an object that may produce a single value some time in the future**
 
@@ -1597,7 +1603,7 @@ mongoose
   .catch((err) => console.log(err.massage));
 ```
 
-### 6. 💥 Async & Await
+### 💥 Async & Await
 
 Await is basically syntactic sugar (사람이 이해하기 쉽게 만든 것) for Promises. It makes your asynchronous code look more like synchronous/procedural code, which is easier for humans to understand.
 
@@ -1686,7 +1692,7 @@ async function getFirstUser() {
 이 글의 중요한 점은
 💥 **promise를 이해하지 못하면 async/await를 사용하면서 진짜 진짜 이해하기 어려운 케이스와 버그를 만나게 된다**
 
-### 7. Javascript의 Hoisting 이해하기
+### Hoisting
 
 호이스팅(Hoisting)의 개념: 함수 안에 있는 선언들을 모두 끌어올려서 해당 함수 유효 범위의 최상단에 선언하는 것을 말한다.
 
@@ -1702,8 +1708,7 @@ async function getFirstUser() {
 Hoisting 대상:
 
 **var 변수 선언**과 **function 함수선언문**에서만 호이스팅이 일어난다.
-var 변수/함수의 **선언**만 위로 끌어 올려지며, **할당**은 끌어 올려지지 않는다.
-let/const 변수 선언과 함수표현식에서는 호이스팅이 발생하지 않는다.
+var 변수/함수의 **선언**만 위로 끌어 올려지며, **할당**은 끌어 올려지지 않는다. 즉, 변수에 값이 할당대기 전까지는 `undefined`이였다가 값이 할당되면 그제서야 제대로 된 값을 가진다. `let/const`를 이용한 변수 선언과 함수 표현식에서는 호이스팅이 발생하지 않는다.
 
 ```
 // Javascript에서는 변수/함수가 program에 정의되어 있으면, program내에 어느 곳에서도 접근이 가능하다.
@@ -1736,10 +1741,8 @@ var getID = () => {
 console.log("hello");
 var myname = "HEEE"; // var 변수
 let myname2 = "HEEE2"; // let 변수
-```
 
-```
-// 위의 결과와 동일하다.
+// 위와 동일
 // 이처럼 var로 정의된 변수들은 값을 assign하기 전에 프로그램의 맨 위로 올라오게 된다.
 var myname; // [Hoisting] "선언"
 console.log("hello");
@@ -1754,36 +1757,30 @@ foo();
 foo2();
 
 function foo() { // 함수선언문
-console.log("hello");
+  console.log("hello");
 }
 var foo2 = function() { // 함수표현식
-console.log("hello2");
+  console.log("hello2");
 }
-```
-
-```
 // 위와 동일
 var foo2; // [Hoisting] 함수표현식의 변수값 "선언"
 
 function foo() { // [Hoisting] 함수선언문
-console.log("hello");
+  console.log("hello");
 }
 
 foo();
 foo2(); // undefined
 
 foo2 = function() {
-console.log("hello2");
+  console.log("hello2");
 }
 ```
 
 Hoisting 함수선언문과 함수표현식에서 서로 다르게 동작하기 때문에 주의해야 한다.
 변수에 할당된 함수표현식은 끌어 올려지지 않기 때문에 이때는 변수의 스코프 규칙을 그대로 따른다.
 
-**Hoisting 우선순위:**
-
-- 같은 이름의 var 변수 선언과 함수 선언에서의 호이스팅
-- 변수 선언이 함수 선언보다 위로 끌어올려진다.
+**Hoisting 우선순위:** 같은 이름의 var 변수 선언과 함수 선언에서의 호이스팅에서는 변수 선언이 함수 선언보다 위로 끌어올려진다.
 
 ```
 var myName = "hi";
@@ -1810,10 +1807,10 @@ var yourName;
 
 // 2. [Hoisting] 함수선언문
 function myName() {
-console.log("yuddomack");
+  console.log("Shin");
 }
 function yourName() {
-console.log("everyone");
+  console.log("everyone");
 }
 
 // 3. 변수값 할당
@@ -1831,10 +1828,10 @@ var myName = "Heee"; // 값 할당
 var yourName; // 값 할당 X
 
 function myName() { // 같은 이름의 함수 선언
-console.log("myName Function");
+  console.log("myName Function");
 }
 function yourName() { // 같은 이름의 함수 선언
-console.log("yourName Function");
+  console.log("yourName Function");
 }
 
 console.log(typeof myName); // > "string"
@@ -1844,18 +1841,134 @@ console.log(typeof yourName); // > "function"
 - 값이 할당되어 있지 않은 변수의 경우, 함수선언문이 변수를 덮어쓴다.
 - 값이 할당되어 있는 변수의 경우, 변수가 함수선언문을 덮어쓴다.
 
-TIP Hoisting 사용 시 주의:
+Hoisting 주의사항:
+  - 코드의 가독성과 유지보수를 위해 Hoisting이 일어나지 않도록 한다.
+  - 호이스팅을 제대로 모르더라도 함수와 변수를 가급적 코드 상단부에서 선언하면, Hoisting 인한 스코프 꼬임 현상은 방지할 수 있다.
+  - 변수 선언시 `var`대신 `let/const`를 사용한다.
 
-- 코드의 가독성과 유지보수를 위해 Hoisting이 일어나지 않도록 한다.
-  호이스팅을 제대로 모르더라도 함수와 변수를 가급적 코드 상단부에서 선언하면, Hoisting 인한 스코프 꼬임 현상은 방지할 수 있다.
-  let/const를 사용한다.
-- var를 쓰면 혼란스럽고 쓸모없는 코드가 생길 수 있다. 그럼 왜 var와 호이스팅을 이해해야 할까?
-  ES6를 어디에서든 쓸 수 있으려면 아직 시간이 더 필요하므로 ES5로 트랜스컴파일을 해야한다.
-  따라서 아직은 var가 어떻게 동작하는지 이해하고 있어야 한다.
+### Closure
 
-### 8. Javascript의 Closure 이해하기
+**“A closure is the combination of a function and the lexical environment within which that function was declared.”** 클로저는 함수와 그 함수가 선언됐을 때의 어휘적 환경(Lexical environment)과의 조합이다. 위 정의에서 중요한 키워드는 “함수가 선언됐을 때의 렉시컬 환경(Lexical environment)”이다. Closure means that an inner function always has access to the vars and parameters of its outer function, even after the outer function has returned. 
 
-### 9. JavaScript 모듈 시스템
+Closure는 자바스크립트 고유의 개념이 아니라 함수를 일급 객체로 취급하는 함수형 프로그래밍 언어(Functional Programming language: 얼랭(Erlnag), 스칼라(Scala), 하스켈(Haskell), 리스프(Lisp)…)에서 사용되는 중요한 특성이다.
+
+```
+let one = 1;
+function outerFunc() {
+  var x = 10;
+  var innerFunc = function () { console.log(x + one); };
+  innerFunc();
+}
+
+outerFunc(); // 10
+// 1. innerFunc 함수 스코프(함수 자신의 스코프를 가리키는 활성 객체) 내에서 변수 x를 검색한다. 검색이 실패하였다.
+// 2. innerFunc 함수를 포함하는 외부 함수 outerFunc의 scope에서 변수 x를 검색한다. 검색이 성공하였다.
+
+// global (전역) lexical environment:
+// one: 1
+// outerFunc: function
+//
+//  /|\ 참조
+//   | 
+// 
+// 내부 outerFunc lexical environment: 
+// x = 10
+//
+//  /|\ 참조
+//   | 
+// 
+// 내부 innerFunc lexical environment: 
+```
+
+스코프(Scope)는 함수를 호출할 때가 아니라 **함수를 어디에 선언**하였는지에 따라 결정되고 이를 **Lexical scoping**이라 한다. 위 예제의 함수 innerFunc는 함수 outerFunc의 내부에서 선언되었기 때문에 함수 innerFunc의 상위 스코프는 함수 outerFunc이다. 함수 innerFunc가 전역에 선언되었다면 함수 innerFunc의 상위 스코프는 전역 (global) 스코프가 된다.
+
+```
+function outerFunc() {
+  var x = 10;
+  var innerFunc = function () { console.log(x); };
+  return innerFunc;
+}
+
+/**
+ *  함수 outerFunc를 호출하면 내부 함수 innerFunc가 반환된다.
+ *  그리고 함수 outerFunc의 실행 컨텍스트는 소멸한다.
+ */
+var inner = outerFunc();
+inner(); // 10
+```
+
+함수 outerFunc는 내부함수 innerFunc를 반환하고 생을 마감했다. 즉, 함수 outerFunc는 실행된 이후 call stack에서 제거되었으므로 함수 outerFunc의 변수 x 또한 더이상 유효하지 않게 되어 변수 x에 접근할 수 있는 방법은 달리 없어 보인다. 그러나 위 코드의 실행 결과는 변수 x의 값인 10이다. 이미 life-cycle이 종료되어 실행 컨텍스트 스택에서 제거된 함수 outerFunc의 지역변수 x가 다시 부활이라도 한 듯이 동작하고 있다. 뭔가 특별한 일이 일어나고 있는 것 같다.
+
+이처럼 자신을 포함하고 있는 외부함수보다 내부함수가 더 오래 유지되는 경우, 외부 함수 밖에서 내부함수가 호출되더라도 외부함수의 지역 변수에 접근할 수 있는데 이러한 함수를 클로저(Closure)라고 부른다.
+
+다시 MDN의 정의로 돌아가 보자.
+
+“A closure is the combination of a function and the lexical environment within which that function was declared.”
+클로저는 함수와 그 함수가 선언됐을 때의 렉시컬 환경(Lexical environment)과의 조합이다.
+
+위 정의에서 말하는 “함수”란 반환된 내부함수를 의미하고 “그 함수가 선언될 때의 Lexical environment”란 내부 함수가 선언됐을 때의 스코프를 의미한다. 즉, 클로저는 반환된 내부함수가 자신이 선언됐을 때의 환경(Lexical environment)인 스코프를 기억하여 자신이 선언됐을 때의 환경 밖에서 호출되어도 그 환경(scope)에 접근할 수 있는 함수를 말한다. 이를 조금 더 간단히 말하면 클로저는 자신이 생성될 때의 환경(Lexical environment)을 기억하는 함수다라고 말할 수 있겠다.
+
+클로저에 의해 참조되는 외부함수의 변수 즉 outerFunc 함수의 변수 x를 자유변수(Free variable)라고 부른다. 클로저라는 이름은 자유변수에 함수가 닫혀있다(closed)라는 의미로 의역하면 자유변수에 엮여있는 함수라는 뜻이다.
+
+실행 컨텍스트의 관점에 설명하면, 내부함수가 유효한 상태에서 외부함수가 종료하여 외부함수의 실행 컨텍스트가 반환되어도, 외부함수 실행 컨텍스트 내의 활성 객체(Activation object)(변수, 함수 선언 등의 정보를 가지고 있다)는 내부함수에 의해 참조되는 한 유효하여 내부함수가 스코프 체인을 통해 참조할 수 있는 것을 의미한다.
+
+즉 외부함수가 이미 반환되었어도 외부함수 내의 변수는 이를 필요로 하는 내부함수가 하나 이상 존재하는 경우 계속 유지된다. 이때 내부함수가 외부함수에 있는 변수의 복사본이 아니라 실제 변수에 접근한다는 것에 주의하여야 한다.
+
+이를 그림으로 표현하면 아래와 같다.
+
+![closure1](img/closure1.png)
+![closure1](img/closure2.png)
+
+Closure 사용이유:
+  1. 상태 유지: 현재 상태를 기억하고 변경된 최신 상태를 유지
+  2. 전역변수의 사용을 억제해 의도되지 않은 변경을 방지
+     - 변수의 값은 누군가에 의해 언제든지 변경될 수 있어 오류 발생의 근본적 원인이 될 수 있다. 상태 변경이나 가변(mutable) 데이터를 피하고 불변성(Immutability)을 지향하는 함수형 프로그래밍에서 부수 효과(Side effect)를 최대한 억제하여 오류를 피하고 프로그램의 안정성을 높이기 위해 클로저는 적극적으로 사용된다.
+  3. 정보의 은닉: encapsulation 
+
+- Closure 예시
+
+```
+// 함수를 인자로 전달받고 함수를 반환하는 고차 함수
+// 이 함수가 반환하는 함수는 클로저로서 카운트 상태를 유지하기 위한 자유 변수 counter을 기억한다.
+function makeCounter(predicate) {
+  // 카운트 상태를 유지하기 위한 자유 변수
+  var counter = 0;
+  // 클로저를 반환
+  return function () {
+    counter = predicate(counter);
+    return counter;
+  };
+}
+
+// 보조 함수
+function increase(n) {
+  return ++n;
+}
+
+// 보조 함수
+function decrease(n) {
+  return --n;
+}
+
+// 함수로 함수를 생성한다.
+// makeCounter 함수는 보조 함수를 인자로 전달받아 함수를 반환한다
+const increaser = makeCounter(increase);
+console.log(increaser()); // 1
+console.log(increaser()); // 2
+
+// increaser 함수와는 별개의 독립된 렉시컬 환경을 갖기 때문에 카운터 상태가 연동하지 않는다.
+const decreaser = makeCounter(decrease);
+console.log(decreaser()); // -1
+console.log(decreaser()); // -2
+```
+
+함수 makeCounter는 보조 함수를 인자로 전달받고 함수를 반환하는 **high-order function** (고차 함수)이다. 함수 makeCounter가 반환하는 함수는 자신이 생성됐을 때의 렉시컬 환경인 함수 makeCounter의 스코프에 속한 변수 counter을 기억하는 클로저다. 함수 makeCounter는 인자로 전달받은 보조 함수를 합성하여 자신이 반환하는 함수의 동작을 변경할 수 있다. 이때 주의해야 할 것은 함수 makeCounter를 호출해 함수를 반환할 때 반환된 함수는 자신만의 독립된 렉시컬 환경을 갖는다는 것이다. 이는 함수를 호출하면 그때마다 새로운 렉시컬 환경이 생성되기 때문이다. 위 예제에서 변수 increaser와 변수 decreaser에 할당된 함수는 각각 자신만의 독립된 렉시컬 환경을 갖기 때문에 카운트를 유지하기 위한 자유 변수 counter를 공유하지 않아 카운터의 증감이 연동하지 않는다. 따라서 독립된 카운터가 아니라 연동하여 증감이 가능한 카운터를 만들려면 렉시컬 환경을 공유하는 클로저를 만들어야 한다. 
+
+⭐ 요약:
+  - Closure는 함수와 lexical environment의 조합으로 함수가 생성될 당시의 외부 변수를 기억하므로 내부함수가 외부함수의 맥락(context)에 접근할 수 있는 것을 가리킨다.
+  - Closure는 특정 상황에서 발생하는 ‘현상’이고 함수는 이 현상이 나타나기 위한 ‘조건’에 해당한다’.
+
+### JavaScript 모듈 시스템
 
 1. Node.js의 module 시스템: CommonJS (module.exports, require)
 2. Javascript ES6부터는 브라우저 단에서도 쉽게 JavaScript의 모듈화가 가능하도록 모듈 시스템이 추가되었다. (export, import)
@@ -2000,7 +2113,7 @@ ES6 기반의 모듈 시스템은 CommonJS 방식에 비해 코드의 직관성�
 
 ## 4. Typescript
 
-### 1. What is Typescript
+### What is Typescript
 
 TypeScript is a programming language developed and maintained by Microsoft. It is a strict syntactical superset of JavaScript and adds optional static typing to the language. 여기서 알 수 있듯이, Typescript는 Javascript의 superset으로 Java와 같이 변수를 선언할 때, 그 변수의 type을 지정해 주어야만 한다. 그럼 그냥 Javascript를 쓰면 되는 데, 왜 browser가 인식도 못하는 Typescript를 사용하는 가?에 대한 의문이 든다. 여기서 우리는 먼저 Javascript에 대한 이해가 필요하다.
 
@@ -2146,7 +2259,6 @@ let humanCopy = [...human];
 humanCopy[0] = 'Kim';
 setHuman(humanCopy);
 ```
-
 
 #### List와 Key
 
@@ -2735,31 +2847,67 @@ Vuetify는 React의 Material-UI/React-bootstrap과 같은 UI framework로, 미�
 
 ### What is Next.js?
 
-`Next.js`는 Web framework인 react.js에 기능을 더한 meta-framework이다. `Next.js`, `Remix`는 React.js가 가진 Client-Side Rendering 문제를 해결하기 위해 등장했다.
-React.js로 만든 웹은 default로 Client-Side Rendering이 된다.
+`Next.js`는 react.js에 **Server Side Rendering (SSR)** 기능을 더한 meta-framework이다. `Next.js`, `Remix`는 React.js가 가진 Client-Side Rendering (CSR) 문제를 해결하기 위해 등장했다. React.js로 만든 웹은 자동으로 Client-Side Rendering이 된다. `Next.js`는 `React.js`로 만든 웹을 **Static & Server Side Rendering**를 가능하게 만들어 준다. `Remix` 역시 SSR을 지원하지만, Next.js가 프로그래머들 사이에서 가장 인기가 많은 이유는 배우기 쉽고, 사용하기 쉽기 때문이다.
 
-- Client-Side Rendering: 사용자가 웹사이트로 접근한 후에야 그 웹의 Javascript를 다운받고, browser가 React를 실행시켜 UI를 만든다.
+### Client-Side Rendering (CSR) vs Server-Side Rendering (SSR)
 
-React.js로 만든 웹을 **Static & Server Side Rendering (SSR)**를 가능하게 만들어 준다.
-React.js로 만든 웹을 **Static & Server Side Rendering (SSR)**를 가능하게 만들어 준다.
+- Time To View (TTV): 사용자가 화면 UI를 보는 데까지 걸리는 시간. 즉 page가 **Viewable**이 되는 데 걸리는 시간
+- Time To Interact (TTI): 화면 UI를 클릭하면 반응하는 데까지  걸리는 시간. 즉 page가 **Interactable**이 되는 데 걸리는 시간
 
-`Remix` 역시 SSR을 지원하지만, Next.js가 프로그래머들 사이에서 가장 인기가 많은 이유는 배우기 쉽고, 사용하기 쉽기 때문이다.
+- **Client-Side Rendering (CSR)**방식: 사용자가 웹사이트로 접근한 후에야 그 웹를 만드는 데 필요한 모든 Javascript를 다운받고, browser가 React를 실행시켜 UI를 만든다. (TTI = TTV)
+  1. Server sending Response to Browser
+  2. Browser Downloads Javascript files
+    - 하나의 div element가 들어있는 HTML file
+    - HTMLf file에 UI를 추가할 javascript
+    - framework/library source code
+  3. Browser executes React.js
+    - browser가 다운받은 react source code를 이용해, javascript를 실행시키고 화면을 만든다. 
+  4. Page now **Viewable** and **Interactable** 
+    - 사용자는 모든 component가 전부 다 로딩된 후에야, 화면을 보는 것이 가능하고 웹사이트의 기능들을 사용할 수 있다.
 
-### Server-Side Rendering (SSD)
+![clientsiderendering](img/CSR.png)
 
-SSD는 CSD가 가진 검색 엔진에 대한 보완을 위해 등장한 개념으로, CSD와는 다르게 Server에서 HTML을 전부 완성한 후에 Client에게 보내준다.
-이로 인해 이용자가 많을 경우 Server에 과부화가 걸릴 수도 있다.
+- CSR방식의 장점: 
+  1. Rich site interactions
+    - 처음 화면이 보이는 순간부터 interactable이 되어, 모든 버튼들이 잘 작동한다.
+  2. Fast website rendering after the initial load.
+    - 처음 화면이 보이는 순간부터, 다른 page로의 전환에 새로고침이 필요없다.
+  3. Great for web applications.
+  4. Robust selection of JavaScript libraries.
 
-#### prerequisite
+- CSR방식의 문제: framework/library source code를 다운받아야 하므로, 웹사이트가 크면 클수록 사용자에게 보여주는 데 오랜 시간이 필요하다.
+  1. Initial loading may take too long: 
+    - framework/library source code를 다운받는 데 시간이 걸릴 수 있다. 
+    - 웹사이트가 클수록 사용자는 로딩시간이 오래걸리고 흰 화면만 보게 된다
+  2. Low Search Engine Optimization (SEO): 
+    - UI를 만들기 전에는 HTML file에 달랑 하나의 div element만 존재하여, google, naver등의 검색엔진에 노출되기 어렵다.
 
-- Javascript/Typescript/React.js에 대한 기본지식
--
+- **Server-Side Rendering (SSR)**방식: TTV < TTI
+  1. Server sending Response to Browser
+  2. Browser renders the page now **Viewable** and browser downloads js files.
+  3. Browser executes React.js
+  4. Page now **Interactable** 
 
-> `npx create-next-app@latest`
+![serversiderendering](img/SSR-server-side-rendering-infographic.png)
 
-Typescript 추가
+- SSR방식의 장점: 
+  1. Initial page load is faster
+  2. Great Search Engine Optimization (SEO)
+    - 모든 content가 HTML file안에 있기 때문에, 검색엔진에 노출되기 쉽다.
+  3. Great for static sites
 
-> `npx create-next-app@latest --typescript`
+- SSR방식의 문제: 
+  1. Blinking issue
+    - 화면전환시 서버에서 새로운 화면을 받아와야 하므로, 화면이 깜박거리는 이슈가 있다.
+  2. Non-rich site interaction
+    - 화면이 보이는
+  2. Low Search Engine Optimization (SEO)
+  1. Frequent server requests.
+    - Server가 HTML을 전부 완성한 후에 Client에게 보내기 때문에 이용자가 많을 경우 Server에 과부화가 걸릴 수도 있다.
+  2. An overall slow page rendering.
+  3. Full page reloads.
+  4. Non-rich site interactions.
+    - 처음 화면이 빠르게 보이는 대신 화면이 viewable이 되는 순간과 interactable 되는 순간의 시간차가 있기 때문에, 이 사이에는 보는 것만 가능하고, 어떤 동작을 취할 수는 없다. 
 
 ## 8. Remix
 

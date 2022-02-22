@@ -1475,6 +1475,20 @@ console.log(ResultMap); // ['김학생', '윤학생']
 
 이처럼 filter와 map을 동시에 활용해서 조건에 부합하는 object를 가져온 뒤, object의 특정 key의 value값을 가져와 새로운 배열을 만드는 것이 가능한 걸 알 수 있었다.
 
+10. `Array.prototype.flat()`
+
+- 중첩 배열 삭제 / 빈공간 삭제
+
+```
+// 중첩 다차원 배열 평평하게
+const array = [1, [2, 3], [4, 5]];
+array.flat(1); // 결과 : [1,2,3,4,5]
+
+// 데이터 정리도 가능
+const entries = ["bob", "sally", , , , , , , , "cindy"];
+entries.flat(); // 결과 ['bob', 'sally', 'cindy'];
+```
+
 ### synchronous programming 이해하기 (💥 Callback/Promises/Async Await)
 
 **Javascript는 asynchronous programming로 데이터를 요청하는 데 시간이 많이 걸리는 line이 있으면, 그 code의 값을 기다리지 않고 다음 code를 시작한다.**
@@ -2156,7 +2170,7 @@ ES6 기반의 모듈 시스템은 CommonJS 방식에 비해 코드의 직관성�
   = 아직 지원하지 않는 기능(Bare import 등)들이 꽤 있다. (ECMAScript modules in browsers 참고)
 - 점차 해결되고는 있지만 아직 몇 가지 이슈가 있다. (ECMAScript modules in browsers 참고)
 
-### Pro Tips
+### 최신 문법 정리 (ES6 ~ ES12)
 
 #### Ternary Operator
 
@@ -2186,7 +2200,7 @@ function getResult(score) {
 
 #### Nullish coalescing operator ??
 
-variable이 null인 경우와 아닌 경우를 나누어, nullCheckException을 방지하는 error checking 문법이다. 
+variable이 null/undefined인 경우와 아닌 경우를 나누어, nullCheckException을 방지하는 error checking 문법이다. 
 
 > `{ leftExpr ?? rightExpr }`
 
@@ -2233,7 +2247,31 @@ function printMessage(text) {
 }
 ```
 
-#### Object Destructuring
+#### Destructuring Assignment 
+
+구조분해 할당 (destructuring assignment) 문법
+
+- 객체, 배열안의 속성을 해체하여 그 값을 변수로 한번에 빼서 사용하기 위한 자바스크립트 expression이다.
+
+Array/Object Destructuring:
+
+Array
+
+```
+// Array Destructuring
+const arr = ['가', '나', '다', '라'];
+
+// Bad Code
+const ga = arr[0];
+const na = arr[1];
+const da = arr[2];
+const ra = arr[3];
+
+// Good Code
+const [ ga, na, da, ra ] = arr
+```
+
+Object
 
 ```
 // Object Destructuring
@@ -2260,27 +2298,416 @@ function displayPerson(person) {
 
 // person object에 있는 name과 age가 자동으로 { name, age }의 변수로 할당된다.
 // `person.`의 반복을 줄일 수 있다.
+// 만약 person.name을 다른 변수의 이름으로 하고 싶다면 {key:newkey} 을 이용한다.
+const { name: rename, age: myage } = person;
+// rename이라는 변수명에 person.name의 값이 할당된다.
+// myage이라는 변수명에 person.age의 값이 할당된다.
 ```
 
-#### Spread Syntax (...)
+#### Spread Syntax ( ... )
+
+- 전개연산자
+- 객체나 배열의 안의 요소들을 펼쳐 복사에 이용. 자기 자신 객체,배열은 영향 안받음
+- 함수의 argument에 쓰이면, 나머지 연산자로 작용. 나머지 인자값들을 모아 배열로 생성
 
 Spread syntax ( ... ) allows an iterable such as an array expression or string to be expanded in places where zero or more arguments (for function calls) or elements (for array literals) are expected, or an object expression to be expanded in places where zero or more key-value pairs (for object literals) are expected.
 
-#### Optional Chainging (?.)
+```
+const obj1 = { key: 'key1' };
+const obj2 = { key: 'key2' }; 
+const array = [obj1, obj2]; 
+
+// array copy 
+const arrayCopy = [...array]; 
+console.log(arrayCopy); // [ { key: 'key1' }, { key: 'key2' } ]
+
+const arrayCopy2 = [...array, { key: 'key3' }]; 
+obj1.key = 'newKey'; 
+// array배열은 래퍼런스 값을 갖고있는 배열이다. 그래서 전개연산자로 복사하여도 
+// 레퍼런스 변수는 복사로 취급하지만, 그걸 잇는 주소연결은 똑같다. 
+
+console.log(array); // [ { key: 'newKey' }, { key: 'key2' } ] 
+console.log(arrayCopy2); // [ { key: 'newKey' }, { key: 'key2' }, { key: 'key3' } ] 
+
+// object copy  
+const obj3 = { ...obj1 }; 
+console.log(obj3); // { key: 'key1' } 
+ 
+// array concatenation 
+const fruits1 = ['🍑', '🍓']; 
+const fruits2 = ['🍌', '🥝']; 
+const fruits = [...fruits1, ...fruits2]; 
+console.log(fruits); // [ '🍑', '🍓', '🍌', '🥝' ] 
+ 
+// object merge 
+const dog1 = { dog: '🐕' }; 
+const dog2 = { dog: '🐶' }; 
+const dog = { ...dog1, ...dog2 }; 
+console.log(dog); // { dog: '🐶' }
+```
+
+Array
+
+```
+// Spread Syntax - Array
+let fruits = ['🍉', '🍊', '🍌'];
+
+// fruits.push('🍓');
+fruits = [...fruits, '🍓'];
+console.log(fruits);
+
+// fruits.unshift('🍇');
+fruits = ['🍇', ...fruits];
+console.log(fruits);
+
+const fruits2 = ['🍈', '🍑', '🍍'];
+
+let combined = fruits.concat(fruits2);
+combined = [...fruits, '🍒', ...fruits2];
+console.log(combined);
+```
+
+Object
+
+```
+// Spread Syntax - Object
+const item = { type: '👔', size: 'M' };
+const detail = { price: 20, made: 'Korea', gender: 'M' };
+
+// Bad Code
+item['price'] = detail.price;
+
+// Bad Code
+const newObject = new Object();
+newObject['type'] = item.type;
+newObject['size'] = item.size;
+newObject['price'] = detail.price;
+newObject['made'] = detail.made;
+newObject['gender'] = detail.gender;
+console.log(newObject);
+
+// Bad Code
+const newObject2 = {
+  type: item.type,
+  size: item.size,
+  price: detail.price,
+  made: detail.made,
+  gender: detail.gender,
+};
+console.log(newObject);
+
+// Good Code
+const shirt0 = Object.assign(item, detail);
+console.log(shirt0);
+
+// Better! Code
+const shirt = { ...item, ...detail, price: 30 };
+console.log(shirt);
+```
+
+#### Optional Chainging ?.
+
+- `?.` 문법
+- property가 없는 중첩 객체를 에러 없이 안전하게 접근할 수 있다
+- **`?.`은 `?.`'앞’의 평가 대상이 undefined나 null이면 평가를 멈추고 undefined를 반환. 평가대상이 true이면 쭉쭉 이어나가 최종값을 반환**
+
+```
+const person1 = {
+  name: 'Ellie',
+  job: {
+    title: 'S/W Engineer',
+    manager: {
+      name: 'Bob',
+    },
+  },
+};
+
+const person2 = {
+  name: 'Bob',
+};
+
+// Bad Code
+function printManager(person) { // 중첩 객체의 값을 불러오는 함수
+  console.log(person.job.manager.name);
+}
+
+printManager(person1); // Bob
+printManager(person2); // error
+
+// Bad Code
+function printManager(person) {
+  console.log(person.job && person.job.manager && person.job.manager.name);
+}
+
+printManager(person1); // Bob
+printManager(person2); // undefined
+
+
+// Good Code
+function printManager(person) {
+  console.log(person?.job?.manager?.name);
+}
+
+printManager(person1); // Bob
+printManager(person2); // undefined
+``` 
+
+`?.()` 함수 접근
+
+```
+let user1 = {
+  admin() {
+    alert("관리자 계정입니다.");
+  }
+}
+
+let user2 = {};
+
+user1.admin?.(); // 관리자 계정입니다.
+user2.admin?.(); // undefined
+```
+
+`?.[]` key 접근
+
+```
+let user1 = {
+  firstName: "Violet"
+};
+
+let user2 = null; // user2는 권한이 없는 사용자라고 가정해봅시다.
+
+let key = "firstName";
+
+alert( user1?.[key] ); // Violet
+alert( user2?.[key] ); // undefined
+
+alert( user1?.[key]?.something?.not?.existing); // undefined
+delete user?.name; // user가 존재하면 user.name을 삭제합니다.
+```
 
 #### Template Literals `${ variable}`
 
-#### Loops 
+- Template Literals이란 자바스크립트에서 문자열을 입력하는 선진적인 방식입니다.
+- Template Literals은 표현식/문자열 삽입, 여러 줄 문자열, 문자열 형식화, 문자열 태깅 등 다양한 기능을 제공합니다.
 
-#### Async/Await
+```
+// Template Literals (Template String)
+const person = {
+  name: 'Julia',
+  score: 4,
+};
+
+// Bad Code
+console.log(
+  'Hello ' + person.name + ', Your current score is: ' + person.score
+);
+
+// Good Code
+const { name, score } = person;
+console.log(`Hello ${name}, Your current score is: ${score}`);
+```
+
+- **Multi-line strings**
+  - 템플릿 리터럴을 사용하면 여러 개행 줄의 문자열도 나눠서 작성할 필요가 없이 한번에 작성 가능합니다.
+
+```
+// 기존 문법
+console.log("string text line 1\n" + "string text line 2");
+
+//템플릿 리터럴
+console.log(`string text line 1
+string text line 2`);
+```
+
+- **Raw strings (원래 문자열)**
+  - Raw string은 이스케이프 문자를 해석하지 않은 일반 문자열입니다.
+  - `String.raw` 태그함수를 사용하면 템플릿 문자열을 입력한 대로 출력할 수 있습니다.
+
+```
+let s = String.raw`xy\n${1+1}z`;
+console.log(s); //xy\n2z
+```
+
+태그 함수를 만들어 원래의 문자열을 반환하려면 첫 번째 인자의 raw 프로퍼티를 사용하면 됩니다.
+
+```
+let tag = function(strings) {
+    console.log(strings);
+    return strings.raw[0];
+}
+
+let str = tag`Hello\nWorld.`;
+console.log(str); //Hello\nWorld.
+```
+
+#### Tagged Template Literal
+
+- Template Literal의 발전된 형태의 하나로 Tagged Template Literal이 있다.
+- 함수의 실행을 Template Literal로 구현
+- 태그를 사용하여 Template Literal을 함수로 파싱할 수 있습니다.
+
+```
+let person = 'Lee'; 
+let age = 28; 
+let tag = function(strings, personExp, ageExp) { 
+  console.log(strings); 
+  // 첫 인수는 배열이 들어오고 
+  console.log(personExp); 
+  // 나머지 인수는 ${변수}값이 들어온다. 
+  console.log(ageExp); 
+}; 
+  
+let output = tag`that ${person} is a ${age}`;
+// strings = [ 'that ', ' is a ', '' ]
+// personExp = Lee
+// ageExp = 28
+```
+
+- Tagged templates는 데이터 별로 상황(조건)이 다른 경우 유용하게 쓰일 수 있습니다.
+
+```
+const ramenList = [
+    {
+        brand: '농심',
+        items: ['신라면','짜파게티','참치마요','둥지냉면']
+    },
+    {
+        brand: '삼양',
+        items: ['삼양라면', '불닭볶음면']
+    },
+    {
+        brand: '오뚜기',
+        itmes: []
+    }
+];
+
+console.log(`구매가능한 ${ramenList[0].brand}의 라면 : ${ramenList[0].items}`);
+//구매가능한 농심의 라면 : 신라면,짜파게티,참치마요,둥지냉면
+console.log(`구매가능한 ${ramenList[1].brand}의 라면 : ${ramenList[1].items}`);
+//구매가능한 삼양의 라면 : 삼양라면,불닭볶음면
+console.log(`구매가능한 ${ramenList[2].brand}의 라면 : ${ramenList[2].items}`);
+//구매가능한 오뚜기의 라면 : undefined
+```
+
+위와 같이 ramenList 데이터가 들어오는 경우, 오뚜기의 라면 데이터는 아직 추가가 안되어 있고, 그 결과 undefined라는 결과가 나왔습니다. 이런 경우에 tagged templates로 해결할 수 있습니다.
+
+```
+function fn(strings, brand, items) {
+    if(undefined === items) {
+        return = brand + "의 라면은 재고가 없습니다!";
+    } else {
+        return = strings[0] + brand + strings[1] + items;
+    }
+}
+
+console.log(fn`구매가능한 ${ramenList[0].brand}의 라면 : ${ramenList[0].items}`);
+//구매가능한 농심의 라면 : 신라면,짜파게티,참치마요,둥지냉면
+console.log(fn`구매가능한 ${ramenList[1].brand}의 라면 : ${ramenList[1].items}`);
+//구매가능한 삼양의 라면 : 삼양라면,불닭볶음면
+console.log(fn`구매가능한 ${ramenList[2].brand}의 라면 : ${ramenList[2].items}`);
+//오뚜기의 라면은 재고가 없습니다!
+```
+
+#### Array Loops 
+
+- Array를 looping할 때, for loop이 아니라
+- `Array.prototype.map()`, `Array.prototype.filter()`, `Array.prototype.reduce()`등을 활용한다.
+
+```
+// Looping
+const items = [1, 2, 3, 4, 5, 6];
+
+// Bad Code
+function getAllEvens(items) {
+  const result = [];
+  for (let i = 0; i < items.length; i++) {
+    if (items[i] % 2 === 0) {
+      result.push(items[i]);
+    }
+  }
+  return result;
+}
+
+function multiplyByFour(items) {
+  const result = [];
+  for (let i = 0; i < items.length; i++) {
+    result.push(items[i] * 4);
+  }
+  return result;
+}
+
+function sumArray(items) {
+  let sum = 0;
+  for (let i = 0; i < items.length; i++) {
+    sum += items[i];
+  }
+  return sum;
+}
+
+const evens = getAllEvens(items);
+const multiple = multiplyByFour(evens);
+const sum = sumArray(multiple);
+console.log(sum);
+
+// Good Code
+const evens = items.filter((num) => num % 2 === 0);
+const multiple = evens.map((num) => num * 4);
+const sum = multiple.reduce((a, b) => a + b, 0);
+console.log(sum);
+
+// Good Code
+const result = items
+  .filter((num) => num % 2 === 0)
+  .map((num) => num * 4)
+  .reduce((a, b) => a + b, 0);
+console.log(result);
+```
+
+#### Async/await
+
+- 비동기적 코드를 동기적으로 실행할 수 있게 도와주는 문법
+- Async/await은 Promise를 사용하여 동기적 프로그래밍을 가능하게 한다.
+
+```
+// Promise -> Async/await
+
+// Bad Code
+function displayUser() {
+  fetchUser() //
+    .then((user) => {
+      fetchProfile(user) //
+        .then((profile) => {
+          updateUI(user, profile);
+        });
+    });
+}
+
+// Good Code
+async function displayUser() {
+  const user = await fetchUser();
+  const profile = await fetchProfile(user);
+  updateUI(user, profile);
+}
+```
 
 #### Quiz
 
 - Remove duplicates from list: list->set->list
 
 ```
-const array = [];
+// Remove Duplicates!
+const array = ['🐶', '🐱', '🐈', '🐶', '🦮', '🐱'];
+console.log(array);
 
+const newSet = new Set(array)
+const newList = [newSet]
+
+console.log(newSet);
+// Set(4) { '🐶', '🐱', '🐈', '🦮' }
+console.log([new Set(array)]);
+// [ Set(4) { '🐶', '🐱', '🐈', '🦮' } ]
+console.log([...new Set(array)]);
+// [ '🐶', '🐱', '🐈', '🦮' ]
 ```
 
 ## 4. Typescript

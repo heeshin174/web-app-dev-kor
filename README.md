@@ -300,7 +300,7 @@ API key같은 외부에 노출되서는 안되는 environmental variables들은 
 * Next.js (Server side rendering): https://nextjs.org/docs/getting-started
 * Remix (Server side rendering): https://remix.run/docs/en/v1
 * Gatsby.js (Server side generator): https://www.gatsbyjs.com/
-* nodemon (javascript library: auto reload server): https://www.npmjs.com/package/nodemon)
+* nodemon (javascript library: auto reload server): https://www.npmjs.com/package/nodemon
 * dotenv (javascript library: set environmental variables): https://github.com/motdotla/dotenv
 * concurrently (javascript library: start client and server together): https://github.com/open-cli-tools/concurrently
 * Axios (javascript library: XMLHttpRequests): https://axios-http.com/docs/intro
@@ -348,9 +348,9 @@ Database와 web app을 연결하여 쉽고 간단하게 data를 읽고 쓸 수 �
 Database는 크게 Relational database (sql)와 Not only Relational database (Nosql)로 나눌 수 있다.
 `sql (Structured Query Language)`
 
-⭐ `postgresql` - Relational database의 대표주자
+- `postgresql` - Relational database의 대표주자
+-  `Mongo Database` - Not only Relational database의 대표주자
 
-⭐ `Mongo Database` - Not only Relational database의 대표주자
 ![This is an image](./img/Database.png)
 
 ### 4. Tools
@@ -409,14 +409,11 @@ Database는 크게 Relational database (sql)와 Not only Relational database (No
   - Adobe photoshop (Design UI): https://www.adobe.com/products/photoshop
   - Diagram.io (Design UI): https://app.diagrams.net/
   - Jsbin (간단한 code 실행): https://jsbin.com/
-
+  - Quicktype (Api로 얻은 Json data를 각종 다른 언어로 변환): https://quicktype.io/
+  
 - Educations
   - Web Development In 2022 - https://www.youtube.com/watch?v=EqzUcMzfV1w&list=PLg8KC9DusHl8zGjAWYGGJygm3rWoEahJQ&index=30&ab_channel=TraversyMedia
-  - 서버사이드 렌더링 - https://www.youtube.com/watch?v=iZ9csAfU5Os&list=PLg8KC9DusHl8zGjAWYGGJygm3rWoEahJQ&index=32&ab_channel=%EB%93%9C%EB%A6%BC%EC%BD%94%EB%94%A9by%EC%97%98%EB%A6%AC
-  - 웹개발 개념정리 - https://www.youtube.com/watch?v=ED2rOHM1od0&list=PLg8KC9DusHl8zGjAWYGGJygm3rWoEahJQ&index=33&ab_channel=%EA%B0%9C%EB%B0%9C%ED%95%98%EB%8A%94%EC%A0%95%EB%8C%80%EB%A6%AC
   - Async Await: https://kiwanjung.medium.com/%EB%B2%88%EC%97%AD-async-await-%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-%EC%A0%84%EC%97%90-promise%EB%A5%BC-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-955dbac2c4a4
-  - Closure & Hoisting: https://dongmin-jang.medium.com/javascript-closure-hoisting-7bf8eb5062b9
-  - Javascript closure: https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures
   - w3school: https://www.w3schools.com/
   - Leetcode: https://leetcode.com/
   - react로 만든 웹 github로 deploy하기: https://codingapple.com/unit/react-build-deploy-github-pages/
@@ -685,7 +682,7 @@ Examples of semantic elements: <form>, <table>, and <article> - Clearly defines 
 
 `Search Engine Optimazatoin (SEO)`는 내가 만든 web site가 Google, Naver와 같은 검색 엔진에 많이 노출되게 하는 방법을 의미한다. 이 검색 엔진에 노출이 되려면, 서버가 가지고 있는 HTML이 텅 비어있으면 안된다. 이는 검색 엔진이 서버의 HTML파일을 확인하면서 검색 엔진에 노출시키는 구조이기 때문이다.
 
-React, Vue와 같은 Frontend framework로 만들어진 사이트, Client-Side Rendering (CSR)의 경우, 서버는 텅 빈 html을 사용자에게 넘겨주고, 사용자의 컴퓨터에서 HTML이 완성되는 구조이기 때문에 검색엔진에 노출되기 어렵다. 그럼으로 Frontend framework로 만들어진 사이트의 경우, Server-Side Rendering (SSR)을 지원하는 Next.js나 Nuxt.js등을 이용하여 검색 엔진에 많이 노출되게 해야한다.
+React.js, Vue.js와 같은 Frontend library/framework로 만들어진 사이트, Client-Side Rendering (CSR),의 경우 서버는 텅 빈 html을 사용자에게 넘겨주고, 사용자의 컴퓨터에서 HTML이 완성되는 구조이기 때문에 검색엔진에 노출되기 어렵다. 그럼으로 Server-Side Rendering (SSR)을 지원하는 Next.js나 Nuxt.js등을 이용하여 검색 엔진에 많이 노출되게 할 수 있다.
 
 ## 2. CSS
 
@@ -2159,7 +2156,132 @@ ES6 기반의 모듈 시스템은 CommonJS 방식에 비해 코드의 직관성�
   = 아직 지원하지 않는 기능(Bare import 등)들이 꽤 있다. (ECMAScript modules in browsers 참고)
 - 점차 해결되고는 있지만 아직 몇 가지 이슈가 있다. (ECMAScript modules in browsers 참고)
 
-참고로 Node.js 버전 13.2 미만에서도 버전 12 이상에서는 Node.js를 실행할 때 `--experimental-module` 옵션을 넘기면 동일한 방법으로 ES 모듈을 사용할 수 있으니 참고바라겠습니다.
+### Pro Tips
+
+#### Ternary Operator
+
+if statement를 간편하게 사용할 수 있는 문법: List processing (Lisp)의 `(if condition truebranch falsebranch)`와 동일하다.
+
+condition을 계산 후, condition이 false면 falsebranch를 실행하고, otherwise truebranch를 실행한다.
+
+> `{condition ? truebranch : falsebranch}`
+
+```
+// Bad Code
+function getResult(score) {
+  let result;
+  if (score > 5) {
+    result = '👍';
+  } else if (score <= 5) {
+    result = '👎';
+  }
+  return result;
+}
+
+// Good Code
+function getResult(score) {
+  return score > 5 ? '👍' : '👎';
+}
+```
+
+#### Nullish coalescing operator ??
+
+variable이 null인 경우와 아닌 경우를 나누어, nullCheckException을 방지하는 error checking 문법이다. 
+
+> `{ leftExpr ?? rightExpr }`
+
+leftExpr가 null이거나 undefined인 경우 rightExpr를, 아니면 leftExpr를 반환한다.
+
+```
+// Bad Code
+function printMessage(text) {
+  let message = text;
+  if (text == null || text == undefined) {
+    message = 'Nothing to display 😜';
+  }
+  console.log(message);
+}
+
+// Good Code
+function printMessage(text) {
+  const message = text ?? 'Nothing to display 😜';
+  console.log(message);
+}
+```
+
+#### Logical OR operator ||
+
+> `{ leftExpr || rightExpr }`
+
+leftExpr가 falsy인 경우에만 rightExpr가 실행된다.
+leftExpr가 true인 경우, rightExpr의 값에 상관없이 무조건 true이기 때문에 편의를 위해 leftExpr만 실행한다.
+
+falsy에 해당되는 값:
+  - boolean false
+  - int 0
+  - int -0
+  - undefined
+  - null
+  - NaN (Not a Number)
+  - string '' (empty string)
+
+```
+// Logical OR operator ||
+function printMessage(text) {
+  const message = text || 'Nothing to display 😜';
+  console.log(message);
+}
+```
+
+#### Object Destructuring
+
+```
+// Object Destructuring
+const person = {
+  name: 'Julia',
+  age: 20,
+  phone: '0107777777',
+};
+
+// Bad Code
+function displayPerson(person) {
+  displayAvatar(person.name);
+  displayName(person.name);
+  displayProfile(person.name, person.age);
+}
+
+// Good Code
+function displayPerson(person) {
+  const { name, age } = person;
+  displayAvatar(name);
+  displayName(name);
+  displayProfile(name, age);
+}
+
+// person object에 있는 name과 age가 자동으로 { name, age }의 변수로 할당된다.
+// `person.`의 반복을 줄일 수 있다.
+```
+
+#### Spread Syntax (...)
+
+Spread syntax ( ... ) allows an iterable such as an array expression or string to be expanded in places where zero or more arguments (for function calls) or elements (for array literals) are expected, or an object expression to be expanded in places where zero or more key-value pairs (for object literals) are expected.
+
+#### Optional Chainging (?.)
+
+#### Template Literals `${ variable}`
+
+#### Loops 
+
+#### Async/Await
+
+#### Quiz
+
+- Remove duplicates from list: list->set->list
+
+```
+const array = [];
+
+```
 
 ## 4. Typescript
 
@@ -2903,7 +3025,7 @@ const blueColor = 'color : blue';
   1. Server sending Response to Browser
   2. Browser Downloads Javascript files
     - 하나의 div element가 들어있는 HTML file
-    - HTMLf file에 UI를 추가할 javascript
+    - HTML file에 UI를 추가할 javascript
     - framework/library source code
   3. Browser executes React.js
     - browser가 다운받은 react source code를 이용해, javascript를 실행시키고 화면을 만든다. 
@@ -3190,13 +3312,79 @@ export default $1;
 
 ### Git 환경설정
 
-Git을 다운받은후 Terminal에 `git config --global user.name "my_name"`, `git config --global user.email "myEmail@example.com"`을 입력해 설정한다.
+Git을 다운받은후 Terminal에 다음을 입력해 설정한다.
 
-### Git 시작하기: git을 사용할 project folder에서 terminal에 `git init`을 입력
+> $ `git config --global user.name "my_name"`, 
 
-`git init`을 한 project는 내 컴퓨터 내에서만 git을 사용하는 것이다. 그럼으로 github으로 project를 올리려면 Internet에 있는 github이랑 직접 연결해주어야 한다.
+> $ `git config --global user.email "myEmail@example.com"`
 
-`git remote ...`
+### Git으로 처음 project 시작하기 
+
+git을 사용할 project folder에서 terminal에 `git init`을 입력
+
+`git init`은 맨 처음에 새로운 project를 위한 git repository를 만들 때만 사용하는 command이다. 즉, 기존에 진행되어 이미 source code가 github server에 올라간 project들은 `git init`을 할 필요가 없다.
+
+`git init`을 한 project는 내 컴퓨터 내에서만 git을 사용하는 것이다. 그럼으로 github server로 project를 올리려면 새로 git repository를 생성 후 직접 연결해주어야 한다.
+
+`git remote ...`로 내 컴퓨터와 github server를 연결해 온라인에서 다른 프로그래머와 협업할 수 있다.
+
+### Git workflow
+
+![gitworkflow2](img/git-workflow-1.png)
+
+1. Download source code
+
+> $ `git clone https:...` or `Download zip file`
+
+또는 이미 한 번 다운 받은 적이 있는 project의 최신 버전은 `git pull` command를 이용한다.
+
+> $ `git pull origin master` 
+
+2. branch에 source code 복사하기
+
+branchName branch를 생성 후 바로 이동
+
+> $ `git checkout -b branchName`
+
+또는 Move to the existing branch:
+
+> $ `git switch -c branchName`
+
+3. 소스 코드에 변화를 만든 후, pull request하여 다른 협업자가 볼 수 있게 하기
+
+Do your thing, then when your ready to push, open terminal back up and make sure your in the base directory for the project:
+
+Stage all your changes for commit
+
+> $ `git add .`
+
+Commit your changes
+
+> $ `git commit -m "My Commit Message, what did I do today?"`
+
+Push your commit to a remote branch (probably want to use your same local branch name)
+
+> $ `git push --set-upstream origin branchName`
+
+또는
+
+> $ `git push -u orgin branchName`
+
+`git push -u origin master` command는 main branch에 code를 push 하는 것입니다. master branch는 항상 완벽하게 작동하는 코드이어야 함으로 master branch에 직접적으로 push하는 것은 지양해야 합니다. 위에 서술된 방법으로, 새로운 branch를 만들어서 pull request를 하여 다른 개발자의 code review를 받은 후 문제가 없으면 master branch에 merge하면 된다.
+
+요약:
+
+![gitworkflow1](img/gitworkflow.jpg)
+
+1. Download source code: `git clone https:...`
+2. Create new branch or change to new existing branch
+   - Create and move to new branch: `git checkout -b <branchName>`
+   - Move to the existing branch: `git switch -c <branchName>`
+3. Make changes to the code
+4. Once you finish, create pull request 
+   - `git add .`
+   - Commit your work: `git commit -m "what i did"`
+   - push your work to that branch: `git push -u origin <branchName>`
 
 ### Git의 `master` branch는 항상 완전환 코드이어야 한다.
 
@@ -3206,7 +3394,7 @@ Git을 다운받은후 Terminal에 `git config --global user.name "my_name"`, `g
   - 코드에서 고쳐야 할 부분들을 우리팀 전체가 볼 수 있게 만들어, 추후에 고칠 수 있게 하는 것. 이 프로젝트가 public이라면, 아무나 issues에 코드의 문제점을 제시할 수 있다.
 - pull request: master branch에 merge하기 전에 내가 고친 코드를 다른 협업자가 관찰하고 이상이 없는 지 확인하는 단계
 
-### Git Command:
+### Git Command
 
 Initialize repository
 
@@ -3224,13 +3412,51 @@ Create branch called v1
 
 > $ `git checkout branchName`
 
-새로운 branchName brannch를 생성 후, 바로 그 branch로 이동
+새로운 branchName branch를 생성 후, 바로 그 branch로 이동
 
 > $ `git checkout -b branchName`
 
 Create branch called fix-19 based on the code in the fix-18 branch
 
 > $ `git checkout -b fix-18 fix-19`
+
+#### git clone/pull로 최신 버젼의 project 가져오기 
+
+💣 `git pull` =` git fetch` +` git merge`
+
+pull과 fetch의 차이점은 병합을 하냐 안 하냐의 차이다.
+
+- `git pull`
+  - 원격저장소에 있는 프로젝트의 변경사항을 그대로 로컬저장소에 옮겨와 자동으로 병합
+  - 팀 단위로 사용하는 계정이 아닌 개인적으로 깃허브를 사용하는 사람들이라면 git pull 명령어를 가장 많이 사용할 것이다.
+  - "변경 사항을 가져옴과 동시에 자동으로 병합이 되기 때문에 무엇이 추가되고 병합되었는지 확인이 안 됨"
+
+- `git fetch`
+  - 원격저장소에 있는 프로젝트의 변경사항을 가져오기만 한 후 병합(merge)은 따로 깃 입문자 또는 깃허브를 개인적으로 사용하는 사람이라면 git fetch 명령어는 거의 사용하지 않을 것이다.
+  - "다른 사람이 수정한 부분을 확인하고 병합할 수 있다는 장점이 있음"
+
+- `git clone`
+  - clone이라는 단어처럼 원격저장소의 내용을 새로운 폴더에 그대로 복사하는 것!
+  - 맨 처음 project의 source code를 복사할 경우에만 사용
+
+1. 맨 처음에 터미널을 열고 `git clone https:...`를 입력 해 local storage로 source code 복사한다. 
+2. `git remote -v`로 연결된 저장소 확인
+
+```
+> $ git remote -v
+origin  https://github.com/heeshin174/Web_App_Dev_Kor.git (fetch)
+origin  https://github.com/heeshin174/Web_App_Dev_Kor.git (push)
+```
+
+3. 다른 협력자가 올린 최신 버젼의 코드를 내가 다운받은 파일에 덮어씌우기
+
+저장소 연결 확인 후 `git pull` 입력
+
+> $ `git pull`
+
+만약 안된다면 다음 command 입력
+
+> $ `git pull origin master`
 
 ### Git 특정 commit으로 돌아가기
 
@@ -3297,66 +3523,6 @@ Date:   Fri Feb 18 13:50:57 2022 -0600
 
     - 앞서 설명한 checkout 의 두 가지 방법 모두 똑같이 reset 에도 에 적용 가능하다.
     - 남아있는 추가됐던 파일 지우기
-
-### Git 사용법
-
-1. 소스 코드를 다운 받기
-
-   > $ `git clone https:...` or `Download zip file`
-
-2. Always start your branch with what is in the remote/main, so after you have cloned the repository locally
-
-branchName brannch를 생성 후 바로 이동
-
-> $ `git checkout branchName`
-
-> Your branch is up to date with 'origin/main'.
-
-3. 새로운 branch를 만들어서 main branch 에서 만든 branch로 이동하기
-   now that your local matched the most up to date stuff, switch to a branch for your own work.
-
-> $ `git switch -c branchName`
-
-4. 소스 코드에 변화를 만든 후, pull request하여 다른 협업자가 볼 수 있게 하기
-
-Do your thing, then when your ready to push, open terminal back up and make sure your in the base directory for the project:
-
-Stage all your changes for commit
-
-> $ `git add .`
-
-Commit your changes
-
-> $ `git commit -m "My Commit Message, what did I do today?"`
-
-Push your commit to a remote branch (probably want to use your same local branch name)
-
-> $ `git push --set-upstream origin branchName`
-
-또는
-
-> $ `git push -u orgin branchName`
-
-`git push -u origin master` command는 main branch에 code를 push 하는 것입니다.
-
-main은 항상 완벽한 완결된 코드이어야 함으로 main에 직접적으로 push하는 것은 지양해야 합니다.
-
-위에 서술된 방법으로, 새로운 branch를 만들어서 pull request를 하면된다.
-
-> $ `git push -u origin master`
-
-요약:
-
-```
-1. In terminal type: `git clone https:...`
-2. Make changes to the code
-3. Once you finish, type: `git add .`
-4. Commit your work: `git commit -m "what i did"`
-5. Create new branch or Move to the existing branch
-- Create and move to new branch: `git checkout -b <branchName>`
-- Move to the existing branch: `git switch -c <branchName>`
-6. push your work to that branch: `git push -u origin <branchName>`
-```
 
 ## 1. Web Application Development
 

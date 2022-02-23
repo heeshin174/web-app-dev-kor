@@ -1489,6 +1489,224 @@ const entries = ["bob", "sally", , , , , , , , "cindy"];
 entries.flat(); // 결과 ['bob', 'sally', 'cindy'];
 ```
 
+### Object-oriented programming (OOP) 객체 지향형 언어
+
+80년대 초 소프트웨어가 하드웨어의 빠른 변화를 못 쫓아감. 해결책으로 객체지향 언어를 도입 (절차적 -> 객체지향)
+절차적은 프로그램이 순서대로 실행되는 것을 의미한다.
+
+- OOP의 장점
+  - 코드의 재사용성이 높다 (reusable)
+  - 유지보수가 용이
+    - 소프트웨어의 빠른 변화를 간단히 따라갈 수 있다.
+  - 중복 코드 제거 
+
+OOP = 기존 프로그래밍 언어 + 객체지향 개념(규칙)
+
+- OOP의 핵심 개념
+  1. encapsulation 캡슐화
+  2. polymorphism 다형성
+  3. Inheritance 상속
+  4. Abstraction  추상화
+
+객체지향 개념을 공부할 때에는 최소한의 핵심이론을 가지고 실습을 많이 해야한다.
+이해보다는 다른 사람이 작성한 것을 따라해보고, 실습 위주로 가야한다.
+
+- 실습 
+  - 웹: Javascript, Spring
+  - 모바일: 안드로이드 앱
+
+#### Class and Object 
+
+- class의 정의: class란 Object를 정의해 놓은 것
+- class의 용도: class는 object를 생성하는 데 사용
+
+- object의 정의: 실제로 존재한느 것. 사물 또는 개념
+- object의 용도: 객체가 가지고 있는 기능과 속성에 따라 다름
+
+- class는 설계도, object는 설계도로 만든 실제 제품과 같다.
+  - class는 붕어빵틀, object는 붕어빵
+  - class는 cookiecutter, object는 cookie
+
+#### Object의 구성요소 - 속성과 기능
+
+OOP 개념은 다른 많은 과학기술과 마찬가지로 군사적 목적으로 처음 시작되었다.
+실제 세계를 컴퓨터 안에 옮겨, 컴퓨터 안에서 미사일을 발사하는 시행착오를 겪어 실전에서 오차를 줄일 수 있다.
+이처럼, OOP는 실제 세계인 Hardware를 Software화 시켜 컴퓨터 안에서 돌아가게 하는 게 목적이다.
+
+우리가 현재 Computer로 할 수 있는 일이 많아진 이유 역시, 동영상 player, Audio player등 Hardware를 software화 시켜 computer에 설치했기 때문에 가능한 일이다.
+
+예: Tv라는 Hardware를 software화 시켜 컴퓨터에 설치해 컴퓨터 내에서 Tv를 볼 수 있게 만든다.
+  - Tv라는 객체는 속성과 기능으로 이루어져 있다.
+  - 속성은 variables로 기능은 method로 표현하여 software화 할 수 있다.
+    - Tv 속성: 크기, 길이, 높이, 색상, 볼륨, 채널, ...
+    - Tv 기능: 켜기, 끄기, 볼륨 높이기, 볼륨 낮추기, 채널 변경하기, ...
+
+핵심은 Hardware를 분석 및 관찰하면, 객체는 속성과 기능으로 이루어져 있고, 속성은 변수로, 기능은 method를 사용하여 Software로 만들 수 있다.
+
+#### Class
+
+클래스 이름은 명사들의 조합으로 이루어지며 첫 글자는 대문자로 지정하는 것이 관례이다.
+
+```
+class Classname {
+    // constructor() { } --> 멤버변수 선언 및 기타 초기화
+    // getter, setter
+    // method
+}
+```
+
+Class를 이용해 객체를 생성하려면, `new` 예약어를 사용한다.
+
+`var|let|const 변수이름 = new Classname();`
+
+일반적으로 Javascript에서의 객체 선언은 const 키워드를 사용함.
+
+위와 같이 정의하면 변수는 클래스 안에 정의된 모든 기능을 부여받은 특수한 형태의 변수가 되는데 이를 객체라고 하고, 객체는 자신에게 기능을 점(.)을 통해 접근할 수 있다.
+
+```
+객체.멤버변수 = 값;
+객체.method();
+```
+
+User Class
+
+```
+class User {
+    constructor(name, email) {
+        this.name = name;
+        this.email = email;
+    }
+
+    // setter and getter
+    set name(value){
+        if(!value){
+            console.log("name 입력하세요.");
+            return;
+        }
+        this._name = value;
+    }
+
+    get name(){
+        return this._name;
+    }
+
+    get email(){
+        return this._email;
+    }
+
+    set email(value){
+        if(!value){
+            console.log("email을 입력하세요.");
+            return ;
+        }
+        this._email = value;
+    }
+
+    // method
+    // User.prototype.printName();
+    printName() { 
+      console.log(`Hello, I am ${this.name}`);
+    }
+}
+
+// User라는 이름을 가진 함수를 만듭니다. 함수 본문은 생성자 메서드 constructor에서 가져옵니다. 생성자 메서드가 없으면 본문이 비워진 채로 함수가 만들어집니다.
+// printName같은 클래스 내에서 정의한 메서드를 User.prototype에 저장합니다.
+
+const user1 = new User("Shin", "example@email.com");
+console.log(user1); // User { _name: 'Shin', _email: 'example@email.com' }
+console.log(user1.name); // Shin
+console.log(user1.email); // example@email.com
+console.log(user1.printName()); // Hello, I am Shin
+
+const user2 = new User("John", "john@email.com");
+console.log(user2); // User { _name: 'John', _email: 'john@email.com' }
+console.log(user2.name); // John
+console.log(user2.email); // john@email.com
+console.log(user2.printName()); // Hello, I am John
+```
+
+기존 문법
+
+```
+function User(name, email) {
+  this.name = name;
+  this.email = email;
+
+  // 모든 함수의 prototype은 'constructor' property를 기본으로 갖고 있기 때문에
+  // constructor property를 명시적으로 만들 필요가 없습니다.
+
+  // method
+  this.printName = function() { 
+      console.log(`Hello, I am ${this.name}`);
+    }
+}
+
+const user1 = new User("Shin", "example@email.com");
+console.log(user1.printName()); // Hello, I am Shin
+```
+
+위 둘의 방식에 차이가 없다면 `class` keyword 없이도 클래스 역할을 하는 function를 선언할 수 있기 때문에 클래스는 '편의 문법’에 불과하다고 이야기합니다. 참고로 기능은 동일하나 기존 문법을 사람이 쉽게 읽을 수 있게 만든 문법을 편의 문법 (syntactic sugar, 문법 설탕)이라고 합니다. 하지만, class는 function으로 만든 것보다 더 많은 것을 제공한다.
+
+class로 만든 함수엔 특수 내부 property인 `[[IsClassConstructor]]: true`가 이름표처럼 붙습니다. 이것만으로도 두 방법엔 분명한 차이가 있음을 알 수 있다.
+자바스크립트는 다양한 경우에 `[[IsClassConstructor]]: true`를 활용합니다. class 생성자를 new와 함께 호출하지 않으면 에러가 발생하는데 이 때 `[[IsClassConstructor]]: true`가 사용된다.
+
+#### Class inheritance 
+
+JavaScript에서는 클래스간 상속의 관계를 만들기 위해, 다음 두 가지 방법을 사용할 수 있다.
+
+1. Prototype Chain
+2. Class
+
+Class의 기능을 다른 클래스에 상속시킨 후 추가적인 기능을 명시하여 원래의 기능을 확장하는 방법으로, class를 정의할 때 클래스 이름 뒤에 `extends` keyword를 명시하고 상속받고자 하는 부모 클래스의 이름을 지정한다.
+
+```
+// 부모 class
+class Protoss {
+    /** 모든 객체가 갖는 명사적 특성들을 멤버변수로 정의 */
+    constructor(name, hp, dps){
+        this._name = name; // 이름
+        this._hp = hp; // 체력(health point)
+        this._dps = dps; //초당공격력(damage per Second)
+        console.log("[%s] 체력 : %d, 공격력 : %d", name, hp, dps);        
+    }
+
+    /** 객체가 수행해야 하는 동작들을 함수 형태로 정의 */
+    move(position){
+        console.log("%s(이)가 %s까지 이동합니다.",  this._name, position);
+    }
+
+    attack(target){
+        console.log("%s(이)가 %s(을)를 공격합니다. 데미지: %d", this._name, target, this._dps);
+    }
+}
+
+// 부모 class를 상속받는 자식 class
+class Zealot extends Protoss {
+  sword(target){
+    this.attack(target);
+    console.log("근접 공격");        
+  }
+}
+
+class Scout extends Protoss {
+  constructor(name, hp, dps) {
+    super(name);
+    super(hp);
+    super(dps);
+    // Scout class만 가지는 멤버변수
+    this.isFly = true;
+  }
+
+  fire(target) {
+    this.attack(target);
+    console.log("비행 공격");
+  }
+}
+
+const zealot1 = new Zealot("Zealot", "80", "100");
+const scout1 = new Scout("Scout", "100", "80");
+```
+
 ### synchronous programming 이해하기 (💥 Callback/Promises/Async Await)
 
 **Javascript는 asynchronous programming로 데이터를 요청하는 데 시간이 많이 걸리는 line이 있으면, 그 code의 값을 기다리지 않고 다음 code를 시작한다.**

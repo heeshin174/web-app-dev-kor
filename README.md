@@ -240,8 +240,8 @@ React.js, Typescript 등등 outside library/framework로 만들어 native `HTML`
     - React JS with Typescript: https://create-react-app.dev/docs/adding-typescript/
   - Meta Library & Meta Framework (Meta-Framework: 기존 framework 위에 만들어진 framework)
     - React based
-      - [Server-Side Rendering (SSR)]()
-        - ⭐ [**Next.js**](https://github.com/heeshin174/Web_App_Dev_Kor#7-nextjs): https://nextjs.org/docs/getting-started
+      - [Server-Side Rendering (SSR)](https://github.com/heeshin174/Web_App_Dev_Kor#client-side-rendering-csr-vs-server-side-rendering-ssr)
+        - ⭐ [**Next.js**](https://github.com/heeshin174/Web_App_Dev_Kor#7-nextjs): https://nextjs.org/docs/
         - [Remix](https://github.com/heeshin174/Web_App_Dev_Kor#8-remix): https://remix.run/docs/en/v1
       - Managing and centralizing application state
         - redux-toolkit: https://redux-toolkit.js.org/
@@ -2928,7 +2928,7 @@ console.log([...new Set(array)]);
 // [ '🐶', '🐱', '🐈', '🦮' ]
 ```
 
-## 4. Typescript
+## 4. [Typescript](https://www.typescriptlang.org/)
 
 ### What is Typescript
 
@@ -2943,7 +2943,7 @@ let decimal: number = 6; // decimal에는 정수 타입만 오는 것이 가능�
 decimal = "Hello"; // error. decimal은 정수라니까...
 ```
 
-## 5. ReactJs
+## 5. [ReactJs](https://reactjs.org/)
 
 ### What is React.js
 
@@ -3094,9 +3094,9 @@ React에서 배열을 Element List로 만드는 방식은 이와 거의 동일 �
 
 - 여러개의 컴포넌트 렌더링 하기
 
-엘리먼트 모음을 만들고 중괄호 {}를 이용하여 JSX에 포함 시킬 수 있습니다.
+엘리먼트 모음을 만들고 중괄호 `{}`를 이용하여 JSX에 포함 시킬 수 있습니다.
 
-아래의 JavaScript map() 함수를 사용하여 numbers 배열을 반복 실행합니다. 각 항목에 대해 `<li>` Element를 반환하고 엘리먼트 배열의 결과를 listItems에 저장합니다.
+아래의 JavaScript의 `Array.prototype.map()` 함수를 사용하여 numbers 배열을 반복 실행합니다. 각 항목에 대해 `<li>` Element를 반환하고 엘리먼트 배열의 결과를 listItems에 저장합니다.
 
 ```
 const numbers = [1, 2, 3, 4, 5];
@@ -3104,7 +3104,7 @@ const listItems = numbers.map((number) =>
   <li>{number}</li>
 );
 
-// listItems 배열을 <ul>엘리먼트 안에 포함하고 DOM에 렌더링합니다.
+// listItems 배열을 <ul>element 안에 포함하고 DOM에 rendering합니다.
 ReactDOM.render(
 
   <ul>{listItems}</ul>,
@@ -3145,7 +3145,7 @@ ReactDOM.render(
 );
 ```
 
-이 코드를 실행하면 리스트의 각 항목에 `key`를 넣어야 한다는 경고가 표시됩니다. `key`는 엘리먼트 리스트를 만들 때 포함해야 하는 특수한 문자열 attribute입니다. 다음 섹션에서 key의 중요성에 대해서 더 설명하겠습니다. 이제 `numbers.map()` 안에서 리스트의 각 항목에 key를 할당하여 키 누락 문제를 해결하겠습니다.
+이 코드를 실행하면 리스트의 각 항목에 `key`를 넣어야 한다는 경고가 표시됩니다. `key`는 element list를 만들 때 포함해야 하는 특수한 문자열 attribute입니다. 다음 섹션에서 key의 중요성에 대해서 더 설명하겠습니다. 이제 `numbers.map()` 안에서 리스트의 각 항목에 key를 할당하여 키 누락 문제를 해결하겠습니다.
 
 ```
 function NumberList(props) {
@@ -3655,7 +3655,7 @@ const blueColor = 'color : blue';
 
 ⭐ 기타 다른 Vue 문법은 vuejs.org 공식 문서를 참고하자!
 
-## 7. NextJs
+## 7. [NextJs](https://nextjs.org/docs)
 
 ### What is Next.js?
 
@@ -3770,6 +3770,10 @@ In VScode, go to `Help > Keyboard Shortcuts References`. 우리가 사용가능�
 - `Ctrl + (Left/Right)`: 단어 단위로 왼쪽/오른쪽으로 이동
 - `Ctrl + (Up/Down)`: Scroll line up/down
 - `Home/End`: Go to beginning/end of line
+  - `Fn + leftArrow`: End
+  - `Fn + rightArrow`: Home
+  - `Fn + downArow`: pageDown
+  - `Fn + upArrow`: pageUp
 - `Ctrl + (Home/End)`: Go to beginning/end of file
 - `Ctrl + (1/2/3)`: 새로운 split editor 생성 후, 그곳으로 cursor이동
 - `Ctrl + F4`: 현재 split editor 종료
@@ -5062,7 +5066,9 @@ server에 요청하면 연산이 없이 바로 나가는 것들, images, css, js
 
 여기서 중요한 점은 flask를 사용할 때 `"templates"`, `"static"` 이라는 이름을 변경해선 안된다.
 
-## 4. Postgresql
+## 4. [Postgresql](https://www.postgresql.org/docs/)
+
+Postgresql는 relational database의 대표주자이다.
 
 ## 5. Mongodb
 

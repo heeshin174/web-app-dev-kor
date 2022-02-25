@@ -3669,30 +3669,30 @@ const blueColor = 'color : blue';
 - Client-Side Rendering (CSR)방식: 사용자가 웹사이트로 접근한 후에야 그 웹를 만드는 데 필요한 모든 Javascript를 다운받고, browser가 React를 실행시켜 UI를 만든다. (TTI = TTV)
   1. Server sending Response to Browser
   2. Browser Downloads Javascript files
-    - 하나의 div element가 들어있는 HTML file
-    - HTML file에 UI를 추가할 javascript
-    - framework/library source code
+     - 하나의 div element가 들어있는 HTML file
+     - HTML file에 UI를 추가할 javascript
+     - framework/library source code
   3. Browser executes React.js
-    - browser가 다운받은 react source code를 이용해, javascript를 실행시키고 화면을 만든다. 
+     - browser가 다운받은 react source code를 이용해, javascript를 실행시키고 화면을 만든다. 
   4. Page now **Viewable** and **Interactable** 
-    - 사용자는 모든 component가 전부 다 로딩된 후에야, 화면을 보는 것이 가능하고 웹사이트의 기능들을 사용할 수 있다.
+     - 사용자는 모든 component가 전부 다 로딩된 후에야, 화면을 보는 것이 가능하고 웹사이트의 기능들을 사용할 수 있다.
 
 ![clientsiderendering](img/CSR.png)
 
 - CSR방식의 장점: 
   1. Rich site interactions
-    - 처음 화면이 보이는 순간부터 interactable이 되어, 모든 버튼들이 잘 작동한다.
+     - 처음 화면이 보이는 순간부터 interactable이 되어, 모든 버튼들이 잘 작동한다.
   2. Fast website rendering after the initial load.
-    - 처음 화면이 보이는 순간부터, 다른 page로의 전환에 새로고침이 필요없다.
+     - 처음 화면이 보이는 순간부터, 다른 page로의 전환에 새로고침이 필요없다.
   3. Great for web applications.
   4. Robust selection of JavaScript libraries.
 
 - CSR방식의 문제: framework/library source code를 다운받아야 하므로, 웹사이트가 크면 클수록 사용자에게 보여주는 데 오랜 시간이 필요하다.
   1. Initial loading may take too long: 
-    - framework/library source code를 다운받는 데 시간이 걸릴 수 있다. 
-    - 웹사이트가 클수록 사용자는 로딩시간이 오래걸리고 흰 화면만 보게 된다
+     - framework/library source code를 다운받는 데 시간이 걸릴 수 있다. 
+     - 웹사이트가 클수록 사용자는 로딩시간이 오래걸리고 흰 화면만 보게 된다
   2. Low Search Engine Optimization (SEO): 
-    - UI를 만들기 전에는 HTML file에 달랑 하나의 div element만 존재하여, google, naver등의 검색엔진에 노출되기 어렵다.
+     - UI를 만들기 전에는 HTML file에 달랑 하나의 div element만 존재하여, google, naver등의 검색엔진에 노출되기 어렵다.
 
 - Server-Side Rendering (SSR)방식: TTV < TTI
   1. Server sending Response to Browser
@@ -3710,12 +3710,138 @@ const blueColor = 'color : blue';
 
 - SSR방식의 문제: 
   1. Frequent server requests.
-    - Server가 HTML을 전부 완성한 후에 Client에게 보내기 때문에 이용자가 많을 경우 Server에 과부화가 걸릴 수도 있다.
+     - Server가 HTML을 전부 완성한 후에 Client에게 보내기 때문에 이용자가 많을 경우 Server에 과부화가 걸릴 수도 있다.
   2. An overall slow page rendering.
   3. Full page reloads.
-    - 화면전환시 서버에서 새로운 화면을 받아와야 하므로, 화면이 깜박거리는 이슈가 있다.
+     - 화면전환시 서버에서 새로운 화면을 받아와야 하므로, 화면이 깜박거리는 이슈가 있다.
   4. Non-rich site interactions.
-    - 처음 화면이 빠르게 보이는 대신 화면이 viewable이 되는 순간과 interactable 되는 순간의 시간차가 있기 때문에, 이 사이에는 보는 것만 가능하고, 어떤 동작을 취할 수는 없다. 
+     - 처음 화면이 빠르게 보이는 대신 화면이 viewable이 되는 순간과 interactable 되는 순간의 시간차가 있기 때문에, 이 사이에는 보는 것만 가능하고, 어떤 동작을 취할 수는 없다. 
+
+### pages
+
+`Next.js`는 framework이기 때문에, `Next.js`가 정해놓은 규칙, 틀을 따라가야지만 원하는 결과를 얻을 수 있다. `Next.js`가 요구하는 틀 중 가장 유용하고, 중요한 틀은 `pages`이다. `pages` directory안에 React component를 만들어 export하면, 기존 React.js에서 사용하던 routing 방식인 `react-router-dom`을 사용하지 않고, Next.js가 자동으로 그 `.js`, `.jsx`, `.ts`, `.tsx` extentsion의 이름으로 routing 해준다.
+
+`pages` directory안에 `about.js`라는 React component를 만들어 export하면, it will be accessible at `/about`.
+
+- `pages/about.js` file
+
+```
+function About() {
+  return <div>This is About page</div>
+}
+
+export default About
+// go to https://localhost:{PORT}/about
+```
+
+#### Pages with Dynamic Routes
+
+`Next.js` supports pages with dynamic routes. For example, if you create a file called `pages/posts/[id].js`, then it will be accessible at `posts/1`, `posts/2`, etc.
+
+- React.js의 Dynamic Routes:  `posts/:id.js`
+- Next.js의 Dynamic Routes:  `pages/posts/[id].js`
+
+### Pre-rendering
+
+By default, Next.js **pre-renders** every page. This means that Next.js generates HTML for each page in advance, instead of having it all done by client-side JavaScript. Pre-rendering can result in better performance and SEO.
+
+Each generated HTML is associated with minimal JavaScript code necessary for that page. When a page is loaded by the browser, its JavaScript code runs and makes the page fully interactive. (This process is called hydration.)
+
+#### Two forms of Pre-rendering
+
+Next.js has two forms of pre-rendering: **Static Generation** and **Server-side Rendering**. The difference is in when it generates the HTML for a page.
+
+1. **Static Generation** (Recommended): The HTML is generated at build time and will be reused on each request. 
+   - If a page uses **Static Generation**, the page HTML is generated at **build time**. That means in production, the page HTML is generated when you run `next build`. This HTML will then be reused on each request. It can be cached by a CDN. In Next.js, you can statically generate pages with or without data.
+2. **Server-side Rendering**: The HTML is generated on **each request**.
+   - 사용자가 서버에 HTML, CSS, Javascript를 요청할 때마다 서버가 Javascript를 이용하여, HTML를 만든다.
+
+Importantly, Next.js lets you choose which pre-rendering form you'd like to use for each page. You can create a "hybrid" Next.js app by using Static Generation for most pages and using Server-side Rendering for others.
+
+We recommend using Static Generation over Server-side Rendering for performance reasons. Statically generated pages can be cached by CDN with no extra configuration to boost performance. However, in some cases, Server-side Rendering might be the only option.
+
+You can also use Client-side Rendering along with Static Generation or Server-side Rendering. That means some parts of a page can be rendered entirely by client side JavaScript.
+
+### getServerSideProps
+
+`page`다음으로 중요한 `Next.js`문법은 `getServerSideProps` method 이다. If you export a function called `getServerSideProps` (Server-Side Rendering) from a page, Next.js will pre-render this page on each request using the data returned by getServerSideProps.
+
+`getServerSideProps` only runs on server-side and never runs on the browser. 
+
+#### Using getServerSideProps to fetch data at request time
+
+The following example shows how to fetch data at request time and pre-render the result.
+
+```
+function Page({ data }) {
+  // Render data...
+}
+
+// This gets called on every request
+export async function getServerSideProps() {
+  // Fetch data from external API
+  const res = await fetch(`https://.../data`)
+  const data = await res.json()
+
+  // Pass data to the page via props
+  return { props: { data } }
+}
+
+export default Page
+```
+
+### getStaticProps
+
+다음으로 중요한 `Next.js`문법은 `getStaticProps` method이다. If you export a function called `getStaticProps` (Static Site Generation) from a page, Next.js will pre-render this page at build time using the props returned by `getStaticProps`.
+
+#### When should I use getStaticProps?
+
+You should use `getStaticProps` if:
+
+- The data required to render the page is available at build time ahead of a user’s request
+  - `getStaticProps` always runs on the server and never on the client.
+  - `getStaticProps` always runs during `next build` and generate HTML files
+- The data comes from a headless CMS
+- The data can be publicly cached (not user-specific)
+- The page must be pre-rendered (for SEO) and be very fast 
+  - getStaticProps generates HTML and JSON files, both of which can be cached by a CDN for performance
+
+#### Using getStaticProps to fetch data from a CMS
+
+The following example shows how you can fetch a list of blog posts from a CMS.
+
+```
+// posts will be populated at build time by getStaticProps()
+function Blog({ posts }) {
+  return (
+    <ul>
+      {posts.map((post) => (
+        <li>{post.title}</li>
+      ))}
+    </ul>
+  )
+}
+
+// This function gets called at build time on server-side.
+// It won't be called on client-side, so you can even do
+// direct database queries.
+export async function getStaticProps() {
+  // Call an external API endpoint to get posts.
+  // You can use any data fetching library
+  const res = await fetch('https://.../posts')
+  const posts = await res.json()
+
+  // By returning { props: { posts } }, the Blog component
+  // will receive `posts` as a prop at build time
+  return {
+    props: {
+      posts,
+    },
+  }
+}
+
+export default Blog
+```
 
 ## 8. Remix
 
@@ -3757,7 +3883,8 @@ const blueColor = 'color : blue';
 ### keyboard snippets
 
 우리는 코드를 짤 때, 최대한 마우스를 사용하지 않도록 해야 된다. keyboard snippets을 이용하면, 키보트만으로도 우리가 하고 싶은 것을 빠르게 할 수 있다.
-In VScode, go to `Help > Keyboard Shortcuts References`. 우리가 사용가능한 유용한 키보드 단축기들을 볼 수 있다.
+
+- In VScode, go to `Help > Keyboard Shortcuts References`. 우리가 사용가능한 유용한 키보드 단축기들을 볼 수 있다.
 
 #### Navigation
 
@@ -3770,6 +3897,7 @@ In VScode, go to `Help > Keyboard Shortcuts References`. 우리가 사용가능�
 - `Ctrl + (Left/Right)`: 단어 단위로 왼쪽/오른쪽으로 이동
 - `Ctrl + (Up/Down)`: Scroll line up/down
 - `Home/End`: Go to beginning/end of line
+  - In labtop:
   - `Fn + leftArrow`: End
   - `Fn + rightArrow`: Home
   - `Fn + downArow`: pageDown
@@ -3790,8 +3918,8 @@ In VScode, go to `Help > Keyboard Shortcuts References`. 우리가 사용가능�
 - `Ctrl + V`: Paste
 - `Ctrl + Z`: Undo
 - `Ctrl + S`: Save
-- `` Ctrl + `(back tic) ``: Open terminal
-- `` Ctrl + Shift + `(back tic) ``: Create new terminal
+- ``Ctrl + `(back tic)``: Open terminal
+- ``Ctrl + Shift + `(back tic)``: Create new terminal
 - `Ctrl + shift + R`: Refactoring (drag된 코드를 변수로 만들기, 함수로 만들기, 새로운 file로 옮기기, ...)
 - `F2`: Renaming (변수 이름 변경하기: 이 변수와 연관된 모든 다른 file에서 사용중인 변수명도 함께 바꿔준다.)
 - `Ctrl + F`: Find (F2를 사용하는 것이 더 편리하다).
@@ -5023,15 +5151,17 @@ Express.js는 Javascript Back-end Framework로, Web Server을 만들 때 사용�
 
 ### What is Flask?
 
-Flask is a micro web framework written in Python. Flask는 Python으로 구동되는 Web Framework로, 간단하게 기능을 설명하면 내가 만든 program에 web server를 구동시켜주는 편한 코드 모음이라고 할 수 있다. 다른 python Web Framework인 Django 보다 라이트한 특성때문에 간단한 API서버 구축에 적합하다. By default, Flask runs on port 5000 in development mode.
+`Flask` is a micro web framework written in Python. Flask는 Python으로 구동되는 Web Framework로, 간단하게 기능을 설명하면 내가 만든 program에 web server를 구동시켜주는 편한 코드 모음이라고 할 수 있다. 다른 python으로 작성된 web framework인 `Django` 보다 코드가 가볍기때문에 간단한 API서버 구축에 적합하다. By default, Flask runs on port 5000 in development mode.
 
 ### Setup flask Project
 
 Install Flask module
 
-> $ pip install Flask
+> $ `pip install Flask`
 
-> $ mkdir flaskapp
+Create flask application working directory
+
+> $ `mkdir flaskapp`
 
 ```
 flaskWeb/
@@ -5057,26 +5187,25 @@ flaskWeb/
 Web context를 전부 모은 directory를 `Web Application Server`라고 부른다.
 
 위의 tree 구조에서:
-Web Application Server = `flaskWeb`
-Web context = `newFlaskApp`, `flaskapp`
+  - Web Application Server = `flaskWeb`
+  - Web context = `newFlaskApp`, `flaskapp`
+  - `templates` folder는 HTML files을 모아두는 곳이다.
+  - `static` folder는 정적이라는 의미로 서비스를 운영하는 데 변하지 않는 것
+    - server에 요청하면 연산이 없이 바로 나가는 것들, images, css, js등이 해당된다.
 
-`templates` folder는 HTML files을 모아두는 곳이다.
-`static` folder는 정적이라는 의미로 서비스를 운영하는 데 변하지 않는 것,
-server에 요청하면 연산이 없이 바로 나가는 것들, images, css, js등이 해당된다.
-
-여기서 중요한 점은 flask를 사용할 때 `"templates"`, `"static"` 이라는 이름을 변경해선 안된다.
+여기서 중요한 점은 `flask`를 사용할 때 `"templates"`, `"static"`이라는 폴더명을 변경해선 안된다. `flask`는 framework이기 때문에 `flask`가 요구하는 틀을 따라야지만 제대로 작동한다.
 
 ## 4. [Postgresql](https://www.postgresql.org/docs/)
 
 Postgresql는 relational database의 대표주자이다.
 
-## 5. Mongodb
+## 5. [Mongodb](https://www.mongodb.com/)
 
 ### What is Mongodb
 
 MongoDB is a source-available cross-platform document-oriented database program. MongoDB is Classified as a NoSQL database program, MongoDB uses JSON-like documents with optional schemas. NoSQL은 Not Only SQL, SQL 뿐만 아니다라는 의미를 지니고있다. 즉, SQL을 사용하는 관계형 데이터베이스가 아닌 데이터베이스를 의미한다. 대표적인 관계형 데이터베이스로는 MySQL, Oracle, PostgreSQL이 있고, NoSQL 진영에는 이 포스트에서 다루는 MongoDB와 Redis, HBase 등이 있다.
 
-#### Collections이 무엇인지
+### Collections이 무엇인지
 
 If you aren't failiar with nosql, think `Collectoins` as `Table of row and column` in sql.
 In nosql, you have collection of Document.

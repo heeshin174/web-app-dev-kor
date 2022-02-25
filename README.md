@@ -22,9 +22,10 @@
 - [BackEnd](https://github.com/heeshin174/Web_App_Dev_Kor#3-back-end-server-side)
   1. [Web Application Development](https://github.com/heeshin174/Web_App_Dev_Kor#1-web-application-development)
   2. [Express.js](https://github.com/heeshin174/Web_App_Dev_Kor#2-expressjs)
-  3. [Flask (Python)](https://github.com/heeshin174/Web_App_Dev_Kor#3-flask-python)
+  3. [Flask.py (Python)](https://github.com/heeshin174/Web_App_Dev_Kor#3-flaskpy-python)
   4. [Postgresql](https://github.com/heeshin174/Web_App_Dev_Kor#4-postgresql)
   5. [Mongodb](https://github.com/heeshin174/Web_App_Dev_Kor#5-mongodb)
+  6. [RocketRs (Rust)](https://github.com/heeshin174/Web_App_Dev_Kor#6-rocketrs-rust)
 
 ## 0. Web Development Loadmap
 
@@ -284,10 +285,12 @@ API key같은 외부에 노출되서는 안되는 environmental variables들은 
 
 + Library and Framework
   - [Javascript](https://github.com/heeshin174/Web_App_Dev_Kor#3-javascript)
-    - Express.js: https://expressjs.com/
+    - [Express.js](https://github.com/heeshin174/Web_App_Dev_Kor#2-expressjs): https://expressjs.com/
   - Python
-    - Flask: https://flask.palletsprojects.com/en/2.0.x/
+    - [Flask](https://github.com/heeshin174/Web_App_Dev_Kor#3-flask-python): https://flask.palletsprojects.com
     - Django: https://docs.djangoproject.com/en/4.0/
+  - Rust
+    - [Rocket](https://github.com/heeshin174/Web_App_Dev_Kor#6-rocketrs-rust): https://rocket.rs/ 
 
 - Database
   - SQL
@@ -297,15 +300,18 @@ API key같은 외부에 노출되서는 안되는 environmental variables들은 
     - Mongodb: https://www.mongodb.com/cloud
       - Mongoose js: https://mongoosejs.com/
 
-* Next.js (Server side rendering): https://nextjs.org/docs/getting-started
-* Remix (Server side rendering): https://remix.run/docs/en/v1
-* Gatsby.js (Server side generator): https://www.gatsbyjs.com/
-* nodemon (javascript library: auto reload server): https://www.npmjs.com/package/nodemon
-* dotenv (javascript library: set environmental variables): https://github.com/motdotla/dotenv
-* concurrently (javascript library: start client and server together): https://github.com/open-cli-tools/concurrently
-* Axios (javascript library: XMLHttpRequests): https://axios-http.com/docs/intro
-* JWS (Json Web Token): https://jwt.io/
-* bcryptjs (hashing password): https://www.npmjs.com/package/bcryptjs
+- Javascript Library/Framework
+  * Next.js (Server side rendering): https://nextjs.org/docs/getting-started
+  * Remix (Server side rendering): https://remix.run/docs/en/v1
+  * Gatsby.js (Server side generator): https://www.gatsbyjs.com/
+  * nodemon (javascript library: auto reload server): https://www.npmjs.com/package/nodemon
+  * dotenv (javascript library: set environmental variables): https://github.com/motdotla/dotenv
+  * concurrently (javascript library: start client and server together): https://github.com/open-cli-tools/concurrently
+  * Axios (javascript library: XMLHttpRequests): https://axios-http.com/docs/intro
+
+- login 
+  * JWS (Json Web Token): https://jwt.io/
+  * bcryptjs (hashing password): https://www.npmjs.com/package/bcryptjs
 
 각각의 programming language마다 Web Application Server를 만드는 web app framework를 제공한다.
 
@@ -313,8 +319,9 @@ API key같은 외부에 노출되서는 안되는 environmental variables들은 
 2. Java: spring, spring boot, play
 3. Javascript: Express, Fastify
 4. php: Laravel
+5. Rust: Rocket
 
-![This is an image](./img/server_side_web_framework.png)
+![serverside-web-framework](./img/server_side_web_framework.png)
 
 #### Full-stack (Client + Server)
 
@@ -396,6 +403,7 @@ Database는 크게 Relational database (sql)와 Not only Relational database (No
   - Java: https://docs.oracle.com/en/java/javase/15/docs/api/index.html
   - Typescript: https://www.typescriptlang.org/
   - C/C#/C++
+  - Rust: https://www.rust-lang.org/
   - Closure (Functional): https://clojure.org/
   - Dr.Racket (educational Functional): https://racket-lang.org/
 
@@ -5141,13 +5149,13 @@ app.use(cors());
 ```
 
 
-## 2. ExpressJs
+## 2. [ExpressJs](https://expressjs.com/)
 
 ### What is Express.js?
 
 Express.js는 Javascript Back-end Framework로, Web Server을 만들 때 사용한다.
 
-## 3. Flask (Python)
+## 3. [FlaskPy](https://flask.palletsprojects.com) (Python)
 
 ### What is Flask?
 
@@ -5226,13 +5234,56 @@ Create Project => Create Database => Cluster Tier: M0 Sandbox (Free) => Cloud Pr
 Set User name & User password => Network access IP Address => Connect => "Connet your application" => DRIVER: Node.js => Get mongoDBURI
 ```
 
-"Connect using MongoDB Compass" => Get mongoDBURI => 이 mongodbURI을 mongo compass에 복사하면, 로컬 컴퓨터에서 mongodb를 이용할 수 있ㄷ.
+"Connect using MongoDB Compass" => Get mongoDBURI => 이 mongodbURI을 mongo compass에 복사하면, 로컬 컴퓨터에서 mongodb를 이용할 수 있다.
 
 "Connet your application" => DRIVER: Node.js => Get mongoDBURI => 이 mongodbURI을 code에 복사하면, project에서 mongodb를 이용할 수 있다.
 
 - add `MONGO_URI` to `.env` file
 
 `MONGO_URI = mongodb+srv://Shin:<password>@cluster0.sjhvl.mongodb.net/<myfirstDatabase>?retryWrites=true&w=majority`
+
+## 6. [RocketRs](https://rocket.rs/) (Rust)
+
+Rocket is a web framework for Rust that makes it simple to write fast, secure web applications without sacrificing flexibility, usability, or type safety.
+
+Rocket은 Rust 프로그래밍언어로 작성된 서버 사이드 웹 framework이다. Rust는 C,C++과 같은 low-level programming language로 사람보다는 기계에 가깝게 코딩을 한다.
+
+![low-high](img/lowhigh.png)
+
+Rust와 C, C++는 Javascript, python과는 다르게 memory를 관리해주는 garbage collector (GC)가 없기 때문에, 변수를 선언할 때 memory에 변수를 저장할 공간을 직접 요청하고, 더이상 이용하지 않는 변수는 memory에서 free해주어야 한다. GC가 없기 때문에 아주 빠르고, 안전하다.
+
+Rust의 compiler `rustc`는 기계가 읽을 수 있는 a binary code를 생성하고, 코드의 문제를 발견 시 compiler error를 발생시켜 코드의 어디가 왜 문제이고 어떻게 작성해야 하는지 까지 알려준다. 이는 Rust로 code를 작성하는 큰 이유 중 하나이다.
+
+예시: `hello.rs` file
+
+```
+// This is a comment, and is ignored by the compiler
+// You can test this code by clicking the "Run" button over there ->
+// or if you prefer to use your keyboard, you can use the "Ctrl + Enter" shortcut
+
+// This code is editable, feel free to hack it!
+// You can always return to the original code by clicking the "Reset" button ->
+
+// This is the main function
+fn main() {
+    // Statements here are executed when the compiled binary is called
+
+    // Print text to the console
+    println!("Hello World!");
+}
+```
+
+- A binary can be generated using the Rust compiler: `rustc`.
+- `println!` is a macro that prints text to the console.
+
+> `$ rustc hello.rs`
+
+`rustc` will produce a hello binary that can be executed.
+
+```
+$ ./hello
+Hello World!
+```
 
 ## % 부록2: Amazon사의 cloud service인 AWS (Amazon Web Service) 사용하기 %
 

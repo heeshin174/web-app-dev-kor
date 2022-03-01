@@ -254,19 +254,20 @@ React.js, Typescript 등등 outside library/framework로 만들어 native `HTML`
       - Static Site Generators (SSG)
         - Gatsby
       - Other React libraries
+        - MDX (Markdown for the component era): https://mdxjs.com/
         - react-icons (icons): https://react-icons.github.io/react-icons
         - react-typed (Dynanic text): https://github.com/ssbeefeater/react-typed
         - react-transition-group: https://reactcommunity.org/react-transition-group
         - react-beautiful-dnd (drag and drop): https://github.com/atlassian/react-beautiful-dnd
         - react-scroll (smooth scroll): https://github.com/fisshy/react-scroll
         - react-router: https://reactrouter.com/docs/en/v6
+        - SWR (React Hooks for Data Fetching): https://swr.vercel.app/
     - Vue based
       - Server-Side Rendering (SSR)
         - ⭐ **Nuxt.js**
       - CSS Framework
         - Vuetify: https://next.vuetifyjs.com
-  - Library & Meta-Framework (기존 framework 위에 만들어진 framework)
-  - redux: https://redux.js.org/introduction/getting-started
+    - redux (state관리 library): https://redux.js.org/introduction/getting-started
 
 `Frontend library/framework`은 web application을 더 쉽게 작성할 수 있게 만들어 주는 outside library/framework을 말한다.
 **Single Page Application** (SPA)는 body가 비어있는 하나의 HTML을 가지고 Javascript를 이용해서 그 안에 Data만 변경하는 것을 말한다.
@@ -299,6 +300,11 @@ API key같은 외부에 노출되서는 안되는 environmental variables들은 
   - NOSQL
     - Mongodb: https://www.mongodb.com/cloud
       - Mongoose js: https://mongoosejs.com/
+  - Prisma (PlanetScale에 hosting된 serverless database와 연결): https://www.prisma.io/
+  - PlanetScale (serverless database): https://planetscale.com/
+
+- SendGrid (Email API): https://sendgrid.com/
+- JWS (Json Web Token): https://jwt.io/
 
 - Javascript Library/Framework
   * Next.js (Server side rendering): https://nextjs.org/docs/getting-started
@@ -308,10 +314,10 @@ API key같은 외부에 노출되서는 안되는 environmental variables들은 
   * dotenv (javascript library: set environmental variables): https://github.com/motdotla/dotenv
   * concurrently (javascript library: start client and server together): https://github.com/open-cli-tools/concurrently
   * Axios (javascript library: XMLHttpRequests): https://axios-http.com/docs/intro
-
-- login 
-  * JWS (Json Web Token): https://jwt.io/
   * bcryptjs (hashing password): https://www.npmjs.com/package/bcryptjs
+
+- Cloudflare Streams (realtime live streaming for live commerce): https://www.cloudflare.com/products/cloudflare-stream/
+- Cloudflare Images: https://www.cloudflare.com/products/cloudflare-images/
 
 각각의 programming language마다 Web Application Server를 만드는 web app framework를 제공한다.
 
@@ -322,6 +328,8 @@ API key같은 외부에 노출되서는 안되는 environmental variables들은 
 5. Rust: Rocket
 
 ![serverside-web-framework](./img/server_side_web_framework.png)
+
+- Web Framework benchmarks (Which web framework is high performance?): https://www.techempower.com/benchmarks/
 
 #### Full-stack (Client + Server)
 
@@ -394,6 +402,7 @@ Database는 크게 Relational database (sql)와 Not only Relational database (No
 - Server side service provider
   - Vultr: https://www.vultr.com/
   - Digitalocean: https://www.digitalocean.com/
+  - ⭐ **Vercel**: https://vercel.com/
 
 ### 기타 유용한 Links
 

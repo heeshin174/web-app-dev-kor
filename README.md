@@ -9,6 +9,7 @@
 0. [Web Development Loadmap](https://github.com/heeshin174/Web_App_Dev_Kor#0-web-development-loadmap)
 
 - [FrontEnd](https://github.com/heeshin174/Web_App_Dev_Kor#2-front-end-client-side)
+
   1. [HTML](https://github.com/heeshin174/Web_App_Dev_Kor#1-html)
   2. [CSS](https://github.com/heeshin174/Web_App_Dev_Kor#2-css)
   3. [JavaScript](https://github.com/heeshin174/Web_App_Dev_Kor#3-javascript)
@@ -22,10 +23,10 @@
 - [BackEnd](https://github.com/heeshin174/Web_App_Dev_Kor#3-back-end-server-side)
   1. [Web Application Development](https://github.com/heeshin174/Web_App_Dev_Kor#1-web-application-development)
   2. [Express.js](https://github.com/heeshin174/Web_App_Dev_Kor#2-expressjs)
-  3. [Flask.py (Python)](https://github.com/heeshin174/Web_App_Dev_Kor#3-flaskpy-python)
+  3. [Flask.py](https://github.com/heeshin174/Web_App_Dev_Kor#3-flaskpy)
   4. [Postgresql](https://github.com/heeshin174/Web_App_Dev_Kor#4-postgresql)
   5. [Mongodb](https://github.com/heeshin174/Web_App_Dev_Kor#5-mongodb)
-  6. [RocketRs (Rust)](https://github.com/heeshin174/Web_App_Dev_Kor#6-rocketrs-rust)
+  6. [RocketRs](https://github.com/heeshin174/Web_App_Dev_Kor#6-rocketrs)
 
 ## 0. Web Development Loadmap
 
@@ -213,7 +214,7 @@ React.js, Typescript 등등 outside library/framework로 만들어 native `HTML`
     - Cool Backgrounds: https://coolbackgrounds.io/
     - Dribble: https://dribbble.com/
 
-+ [Javascript](https://github.com/heeshin174/Web_App_Dev_Kor#3-javascript)
+- [Javascript](https://github.com/heeshin174/Web_App_Dev_Kor#3-javascript)
   - **ES6+ Syntax**
     - Basic
       - let, const
@@ -285,7 +286,7 @@ API key같은 외부에 노출되서는 안되는 environmental variables들은 
 
 - [Server](https://github.com/heeshin174/Web_App_Dev_Kor#1-web-application-development)
 
-+ Library and Framework
+* Library and Framework
   - [Javascript](https://github.com/heeshin174/Web_App_Dev_Kor#3-javascript)
     - [Express.js](https://github.com/heeshin174/Web_App_Dev_Kor#2-expressjs): https://expressjs.com/
     - Nest.js (run on the top of express.js): https://nestjs.com/
@@ -293,9 +294,10 @@ API key같은 외부에 노출되서는 안되는 environmental variables들은 
     - [Flask](https://github.com/heeshin174/Web_App_Dev_Kor#3-flask-python): https://flask.palletsprojects.com
     - Django: https://docs.djangoproject.com/en/4.0/
   - Rust
-    - [Rocket](https://github.com/heeshin174/Web_App_Dev_Kor#6-rocketrs-rust): https://rocket.rs/ 
+    - [Rocket](https://github.com/heeshin174/Web_App_Dev_Kor#6-rocketrs-rust): https://rocket.rs/
 
 - Database
+
   - SQL
     - Postgresql: https://www.postgresql.org/download/
       - PG-Pool js: https://node-postgres.com/api/pool
@@ -311,15 +313,16 @@ API key같은 외부에 노출되서는 안되는 environmental variables들은 
 - JWS (Json Web Token): https://jwt.io/
 
 - Javascript Library/Framework
-  * Next.js (Server side rendering): https://nextjs.org/docs/getting-started
-  * Remix (Server side rendering): https://remix.run/docs/en/v1
-  * Gatsby.js (Server side generator): https://www.gatsbyjs.com/
-  * nodemon (javascript library: auto reload server): https://www.npmjs.com/package/nodemon
-  * dotenv (javascript library: set environmental variables): https://github.com/motdotla/dotenv
-  * concurrently (javascript library: start client and server together): https://github.com/open-cli-tools/concurrently
-  * Axios (javascript library: XMLHttpRequests): https://axios-http.com/docs/intro
-  * bcrypt.js (hashing password): https://www.npmjs.com/package/bcryptjs
-  * crypto.js https://cryptojs.gitbook.io/docs/
+
+  - Next.js (Server side rendering): https://nextjs.org/docs/getting-started
+  - Remix (Server side rendering): https://remix.run/docs/en/v1
+  - Gatsby.js (Server side generator): https://www.gatsbyjs.com/
+  - nodemon (javascript library: auto reload server): https://www.npmjs.com/package/nodemon
+  - dotenv (javascript library: set environmental variables): https://github.com/motdotla/dotenv
+  - concurrently (javascript library: start client and server together): https://github.com/open-cli-tools/concurrently
+  - Axios (javascript library: XMLHttpRequests): https://axios-http.com/docs/intro
+  - bcrypt.js (hashing password): https://www.npmjs.com/package/bcryptjs
+  - crypto.js https://cryptojs.gitbook.io/docs/
 
 - Cloudflare Streams (realtime live streaming for live commerce): https://www.cloudflare.com/products/cloudflare-stream/
 - Cloudflare Images: https://www.cloudflare.com/products/cloudflare-images/
@@ -373,7 +376,7 @@ Database는 크게 Relational database (sql)와 Not only Relational database (No
 `sql (Structured Query Language)`
 
 - `postgresql` - Relational database의 대표주자
--  `Mongo Database` - Not only Relational database의 대표주자
+- `Mongo Database` - Not only Relational database의 대표주자
 
 ![This is an image](./img/Database.png)
 
@@ -420,6 +423,7 @@ Database는 크게 Relational database (sql)와 Not only Relational database (No
 ### 기타 유용한 Links
 
 - Programming Langauges
+
   - Node.js: https://nodejs.org/en/docs/
   - Python: https://docs.python.org/3/
   - Java: https://docs.oracle.com/en/java/javase/15/docs/api/index.html
@@ -441,7 +445,6 @@ Database는 크게 Relational database (sql)와 Not only Relational database (No
   - Diagram.io (Design UI): https://app.diagrams.net/
   - Jsbin (간단한 code 실행): https://jsbin.com/
   - Quicktype (Api로 얻은 Json data를 각종 다른 언어로 변환): https://quicktype.io/
-  
 - Educations
   - Web Development In 2022 - https://www.youtube.com/watch?v=EqzUcMzfV1w&list=PLg8KC9DusHl8zGjAWYGGJygm3rWoEahJQ&index=30&ab_channel=TraversyMedia
   - Async Await: https://kiwanjung.medium.com/%EB%B2%88%EC%97%AD-async-await-%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-%EC%A0%84%EC%97%90-promise%EB%A5%BC-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-955dbac2c4a4
@@ -474,7 +477,7 @@ HTML는 **tree structure**를 가진다. Every tree node is an object. Tags are 
     - ...
     - `<footer>`
 
-예시: `index.html` file 
+예시: `index.html` file
 
 `index.html`은 웹사이트의 홈페이지를 의미하는 naming이다.
 
@@ -566,7 +569,7 @@ HTML는 **tree structure**를 가진다. Every tree node is an object. Tags are 
 
 - HTML Tags References: https://www.w3schools.com/tags/ref_byfunc.asp
 
-- `<div>` and `<span>` tags 
+- `<div>` and `<span>` tags
 
 div tag defines a division or a section in an HTML document. `<div>` is used as a container for HTML elements - which is then styled with CSS or manipulated with JavaScript. `<div>` is easily styled by using the class or id attribute.
 
@@ -794,7 +797,7 @@ CSS can be added to HTML documents in 3 ways:
 .col h1 {
   color: var(--primary-white);
   width: 600px;
-  line-height: 130%; 
+  line-height: 130%;
   font-size: 4rem;
 }
 /* line-height: 줄 사이 간격 */
@@ -845,7 +848,7 @@ body {
 }
 
 /* HTMLElement전에 empty content를 만들고 gradient 추가 */
-.hero::before {  
+.hero::before {
   content: "";
   background: linear-gradient(to right, black, transparent);
   position: absolute;
@@ -970,7 +973,7 @@ float은 이미지와 텍스트를 어떻게 정렬할 것인지 나타내기 �
 - flex-wrap: nowrap (default)/wrap/wrap-reverse
 - flex-flow: column wrap;
 - justify-content: flex-start (default)/flex-end/left/right/center/space-around/space-evenly/space-between
-- align-content: flex-start (default)/flex-end/left/right/center/space-around/space-evenly/space-between  
+- align-content: flex-start (default)/flex-end/left/right/center/space-around/space-evenly/space-between
 - align-items: left/center/right/baseline
 /* main axis: justify-content */
 /* cross axis:  align-content, align-items */
@@ -1038,7 +1041,7 @@ flex-wrap: wrap;
 
 Flexbox와 Grid의 큰 차이점은
 
-- Flex: one dimension layout 
+- Flex: one dimension layout
 - Grid: two dimension layout
 
 https://studiomeal.com/archives/533
@@ -1061,7 +1064,9 @@ https://studiomeal.com/archives/533
 
 `@keyframe`을 이용하면 Animation을 구현할 수 있다. 자세한 내용은 https://www.w3schools.com/css/css3_animations.asp 참고.
 
-## 3. Javascript
+## 3. [Javascript](https://nodejs.org/en/)
+
+node package manager (npm): https://www.npmjs.com/
 
 ### What is Javascript?
 
@@ -1096,11 +1101,11 @@ age = "Hello"; // age에 문자형 (String)값이 들어오면서, age의 타입
 
 ### Web browser 동작원리
 
-Javascript를 실행하는 것은 web browser이다. 그럼으로 Web browser가 어떻게 Javascript를 해석하는 지, Javascript 해석엔진과 web browser의 동작원리를 알 필요가 있다. 
+Javascript를 실행하는 것은 web browser이다. 그럼으로 Web browser가 어떻게 Javascript를 해석하는 지, Javascript 해석엔진과 web browser의 동작원리를 알 필요가 있다.
 
-Javascript는 동기적으로 처리되는 동기 프로그래밍 (synchronous programming) 언어이지만, web browser의 Javascript 해석엔진이 비동기 프로그래밍 (asynchronous programming)을 지원한다. Javacript는 single thread이다. 그럼으로, 한번에 하나의 코드만 call stack에서 실행할 수 있다. 그럼 어떻게 자바스크립트는 싱글스레드이면서 비동기을 지원하는 것일까? 
+Javascript는 동기적으로 처리되는 동기 프로그래밍 (synchronous programming) 언어이지만, web browser의 Javascript 해석엔진이 비동기 프로그래밍 (asynchronous programming)을 지원한다. Javacript는 single thread이다. 그럼으로, 한번에 하나의 코드만 call stack에서 실행할 수 있다. 그럼 어떻게 자바스크립트는 싱글스레드이면서 비동기을 지원하는 것일까?
 
-동기적이란 한 번에 한 줄의 코드를 위에서 부터 차례로 실행하는 것을 의미한다. 비동기적이란 특정 코드의 연산이 끝날 때까지 코드의 실행을 멈추지 않고 다음 코드를 먼저 실행하는 것을 의미한다. Javascript에서 비동기적인 처리를 지원하는 함수는 `setTimeout()`, `event listener`, `ajax`이다. Web browser는 Javascript 코드를 위에서 부터 하나씩 실행하다가 위의 함수들을 만나면 시간이 오래걸리는 걸로 간주하고 Web Apis (대기실)로 옮겨논 다음에 call stack에 아무것도 없을 때, 이를 실행한다. 
+동기적이란 한 번에 한 줄의 코드를 위에서 부터 차례로 실행하는 것을 의미한다. 비동기적이란 특정 코드의 연산이 끝날 때까지 코드의 실행을 멈추지 않고 다음 코드를 먼저 실행하는 것을 의미한다. Javascript에서 비동기적인 처리를 지원하는 함수는 `setTimeout()`, `event listener`, `ajax`이다. Web browser는 Javascript 코드를 위에서 부터 하나씩 실행하다가 위의 함수들을 만나면 시간이 오래걸리는 걸로 간주하고 Web Apis (대기실)로 옮겨논 다음에 call stack에 아무것도 없을 때, 이를 실행한다.
 
 - **Call Stack:** 실행
 - **Web Apis**: 대기실
@@ -1109,11 +1114,12 @@ Javascript는 동기적으로 처리되는 동기 프로그래밍 (synchronous p
 ![callstack](img/callstack1.gif)
 
 - Javascript engine
+
   - 자바스크립트 엔진의 대표적인 예는 Google V8 엔진이다. V8은 Chrome과 node.js에서 사용한다.
   - 엔진의 2개 구성요소
     - Memory Heap : 메모리 할당이 일어나는 공간
-    - Call Stack : memory에 존재하고, 호출 스택이 쌓이는 공간 
-      - 자바스크립트는 기본적으로 작업을 싱글스레드로 처리한다. 즉, 단 하나의 호출 스택을 사용한다. 
+    - Call Stack : memory에 존재하고, 호출 스택이 쌓이는 공간
+      - 자바스크립트는 기본적으로 작업을 싱글스레드로 처리한다. 즉, 단 하나의 호출 스택을 사용한다.
       - 호출 스택에 쌓인 함수나 코드를 위에서부터 아래로 차례차례 실행한다. 그리고 하나의 작업이 끝나면 pop하고 바로 아래의 함수나 코드를 실행한다. 작업을 차례대로 실행하므로 하나의 작업이 끝날 때까지 또 다른 작업을 실행하지 않는다.
       - Memory Heap에서 작업 수행에 필요한 변수나 함수들을 찾아서 작업을 수행하는 공간이다.
   - Garbage Collector(GC)
@@ -1129,27 +1135,29 @@ Javascript는 동기적으로 처리되는 동기 프로그래밍 (synchronous p
     - 예를 들어, setTimeout, ajax, DOM 등이 있다.
   - Event Loop
     - Callback Event Queue에서 하나 씩 꺼내 동작시키는 Loop.
-    -  자바스크립트는 단일 스레드 기반 언어이기 때문에 한번에 하나씩 작업을 진행한다. 그러나 자바스크립트가 사용되는 환경을 생각해보면 많은 작업이 동시에 처리되고 있는 걸 볼 수 있다. 예를 들면, 웹브라우저는 애니메이션 효과를 보여주면서 마우스 입력을 받아서 처리하고, Node.js기반의 웹서버에서는 동시에 여러 개의 HTTP 요청을 처리하기도 한다. 어떻게 스레드가 하나인데 이런 일이 가능할까? 질문을 바꿔보면 '자바스크립트는 어떻게 동시성(Concurrency)을 지원하는 걸까'?
+    - 자바스크립트는 단일 스레드 기반 언어이기 때문에 한번에 하나씩 작업을 진행한다. 그러나 자바스크립트가 사용되는 환경을 생각해보면 많은 작업이 동시에 처리되고 있는 걸 볼 수 있다. 예를 들면, 웹브라우저는 애니메이션 효과를 보여주면서 마우스 입력을 받아서 처리하고, Node.js기반의 웹서버에서는 동시에 여러 개의 HTTP 요청을 처리하기도 한다. 어떻게 스레드가 하나인데 이런 일이 가능할까? 질문을 바꿔보면 '자바스크립트는 어떻게 동시성(Concurrency)을 지원하는 걸까'?
     - 자바스크립트는 enevt loop를 이용해서 비동기 방식으로 동시성을 지원한다.
     - 자바스크립트 엔진에서 제공되는 것이 아닌 브라우저나 node.js에서 지원한다.
   - Callback Queue (Task Queue)
     - 자바스크립트의 런타임 환경의 Callback Queue는 처리할 메세지 목록과 실행할 콜백 함수들의 리스트이다. 버튼 클릭 같은 이벤트나 DOM 이벤트, http 요청, setTimeout 같은 비동기 함수는 Web API를 호출하며 Web API는 콜백 함수를 Callback Queue에 밀어 넣는다.
-    -  Callback queue는 대기하다가 Call Stack에 아무 것도 없으면 event loop를 돌려 해당 콜백 함수를 call stack에 넣는다. Event loop의 기본 역할은 큐와 스택 두 부분을 지켜보고 있다가 스택이 비는 시점에 콜백을 실행시켜 주는 것이다.
+    - Callback queue는 대기하다가 Call Stack에 아무 것도 없으면 event loop를 돌려 해당 콜백 함수를 call stack에 넣는다. Event loop의 기본 역할은 큐와 스택 두 부분을 지켜보고 있다가 스택이 비는 시점에 콜백을 실행시켜 주는 것이다.
     - 브라우저에서는 이벤트가 발생할 때마다 메세지가 추가되고 이벤트 리스너가 첨부된다. 콜백 함수의 호출은 호출 스택의 초기 프레임으로 사용되며 자바스크립트가 싱글 스레드 이므로 스택에 대한 모든 호출이 반환될 때까지 메세지 폴링 및 처리가 중지 된다. 동기식 함수 호출은 이와 반대로 새 호출 프레임을 스택에 추가한다.
 
 ![javascriptengine](img/javascriptengine.svg)
 
 ⭐ 요약:
-  - Call Stack은 한번에 하나씩만 실행 가능하다.
-  - Call Stack에 시간이 오래걸리는 무거운 연산이 실행되면 그 동안은 다른 행동들은 할 수 없다.
-  - Web broswer는 javascript 코드를 수행하는 중에 무거운 연산을 해야될 경우 callback queue로 옮겨 call stack이 할 일이 없을 경우에만 실행하도록 만든다.
+
+- Call Stack은 한번에 하나씩만 실행 가능하다.
+- Call Stack에 시간이 오래걸리는 무거운 연산이 실행되면 그 동안은 다른 행동들은 할 수 없다.
+- Web broswer는 javascript 코드를 수행하는 중에 무거운 연산을 해야될 경우 callback queue로 옮겨 call stack이 할 일이 없을 경우에만 실행하도록 만든다.
 
 ### ES6+ Syntax
 
 Javascript syntax를 배울 때 중요한 점은 **if, for, var, let, function, array, object등 Javascript에서 사용하는 문법은 HTML을 조작하고, 변경하기 위해 등장했다는 것이다.**
 
 JavaScript Data Type:
-- Primitive data types: immutable datum represented directly at the lowest level of te language 
+
+- Primitive data types: immutable datum represented directly at the lowest level of te language
   - number, string, boolean, null, undefined
 - object (function, array, data, regexp)
 
@@ -1186,12 +1194,12 @@ JavaScript Data Type:
 - `//`는 single-line comment `/* */`는 multi-line comment로 컴퓨터는 인식하지 못하고, 사람간에 설명이 필요할 때 사용한다.
 
 ```
-// name is not defined here. 
+// name is not defined here.
 // name를 변수가 선언되기도 전에 사용하면 error가 발생한다.
-console.log(name); 
+console.log(name);
 
 // name is undefined here. name = undefined
-let name; 
+let name;
 name = "Shin"; // name is "Shin" here.
 ```
 
@@ -1224,9 +1232,9 @@ if (condition1) {
 
 #### Function
 
-**Function은 긴 코드를 한 단어로 압축하고 싶을 때 사용한다.** Function은 parameters를 받아 값을 return한다. 즉, input를 받아 output를 만드는 게 함수이다. 
+**Function은 긴 코드를 한 단어로 압축하고 싶을 때 사용한다.** Function은 parameters를 받아 값을 return한다. 즉, input를 받아 output를 만드는 게 함수이다.
 
-`return` keyword은 함수를 종료시키기 때문에 return 뒤에는 아무것도 올 수 가 없다. 함수 내에서 정의한 변수들은 local variable (지역변수)로 함수 밖에서는 사용할 수 없다. 그럼으로, 함수 내에서 바뀐 값을 함수 밖에서 이용하고 싶으면 return사용해야 한다.  
+`return` keyword은 함수를 종료시키기 때문에 return 뒤에는 아무것도 올 수 가 없다. 함수 내에서 정의한 변수들은 local variable (지역변수)로 함수 밖에서는 사용할 수 없다. 그럼으로, 함수 내에서 바뀐 값을 함수 밖에서 이용하고 싶으면 return사용해야 한다.
 
 Javascript에서 function을 정의하는 방법에는 크게 3가지가 있다:
 
@@ -1529,7 +1537,7 @@ entries.flat(); // 결과 ['bob', 'sally', 'cindy'];
   - 코드의 재사용성이 높다 (reusable)
   - 유지보수가 용이
     - 소프트웨어의 빠른 변화를 간단히 따라갈 수 있다.
-  - 중복 코드 제거 
+  - 중복 코드 제거
 
 OOP = 기존 프로그래밍 언어 + 객체지향 개념(규칙)
 
@@ -1537,16 +1545,16 @@ OOP = 기존 프로그래밍 언어 + 객체지향 개념(규칙)
   1. encapsulation 캡슐화
   2. polymorphism 다형성
   3. Inheritance 상속
-  4. Abstraction  추상화
+  4. Abstraction 추상화
 
 객체지향 개념을 공부할 때에는 최소한의 핵심이론을 가지고 실습을 많이 해야한다.
 이해보다는 다른 사람이 작성한 것을 따라해보고, 실습 위주로 가야한다.
 
-- 실습 
+- 실습
   - 웹: Javascript, Spring
   - 모바일: 안드로이드 앱
 
-#### Class and Object 
+#### Class and Object
 
 - class의 정의: class란 Object를 정의해 놓은 것
 - class의 용도: class는 object를 생성하는 데 사용
@@ -1567,10 +1575,11 @@ OOP 개념은 다른 많은 과학기술과 마찬가지로 군사적 목적으�
 우리가 현재 Computer로 할 수 있는 일이 많아진 이유 역시, 동영상 player, Audio player등 Hardware를 software화 시켜 computer에 설치했기 때문에 가능한 일이다.
 
 예: Tv라는 Hardware를 software화 시켜 컴퓨터에 설치해 컴퓨터 내에서 Tv를 볼 수 있게 만든다.
-  - Tv라는 객체는 속성과 기능으로 이루어져 있다.
-  - 속성은 variables로 기능은 method로 표현하여 software화 할 수 있다.
-    - Tv 속성: 크기, 길이, 높이, 색상, 볼륨, 채널, ...
-    - Tv 기능: 켜기, 끄기, 볼륨 높이기, 볼륨 낮추기, 채널 변경하기, ...
+
+- Tv라는 객체는 속성과 기능으로 이루어져 있다.
+- 속성은 variables로 기능은 method로 표현하여 software화 할 수 있다.
+  - Tv 속성: 크기, 길이, 높이, 색상, 볼륨, 채널, ...
+  - Tv 기능: 켜기, 끄기, 볼륨 높이기, 볼륨 낮추기, 채널 변경하기, ...
 
 핵심은 Hardware를 분석 및 관찰하면, 객체는 속성과 기능으로 이루어져 있고, 속성은 변수로, 기능은 method를 사용하여 Software로 만들 수 있다.
 
@@ -1635,7 +1644,7 @@ class User {
 
     // method
     // User.prototype.printName();
-    printName() { 
+    printName() {
       console.log(`Hello, I am ${this.name}`);
     }
 }
@@ -1667,7 +1676,7 @@ function User(name, email) {
   // constructor property를 명시적으로 만들 필요가 없습니다.
 
   // method
-  this.printName = function() { 
+  this.printName = function() {
       console.log(`Hello, I am ${this.name}`);
     }
 }
@@ -1681,7 +1690,7 @@ console.log(user1.printName()); // Hello, I am Shin
 class로 만든 함수엔 특수 내부 property인 `[[IsClassConstructor]]: true`가 이름표처럼 붙습니다. 이것만으로도 두 방법엔 분명한 차이가 있음을 알 수 있다.
 자바스크립트는 다양한 경우에 `[[IsClassConstructor]]: true`를 활용합니다. class 생성자를 new와 함께 호출하지 않으면 에러가 발생하는데 이 때 `[[IsClassConstructor]]: true`가 사용된다.
 
-#### Class inheritance 
+#### Class inheritance
 
 JavaScript에서는 클래스간 상속의 관계를 만들기 위해, 다음 두 가지 방법을 사용할 수 있다.
 
@@ -1698,7 +1707,7 @@ class Protoss {
         this._name = name; // 이름
         this._hp = hp; // 체력(health point)
         this._dps = dps; //초당공격력(damage per Second)
-        console.log("[%s] 체력 : %d, 공격력 : %d", name, hp, dps);        
+        console.log("[%s] 체력 : %d, 공격력 : %d", name, hp, dps);
     }
 
     /** 객체가 수행해야 하는 동작들을 함수 형태로 정의 */
@@ -1715,7 +1724,7 @@ class Protoss {
 class Zealot extends Protoss {
   sword(target){
     this.attack(target);
-    console.log("근접 공격");        
+    console.log("근접 공격");
   }
 }
 
@@ -2152,13 +2161,14 @@ console.log(typeof yourName); // > "function"
 - 값이 할당되어 있는 변수의 경우, 변수가 함수선언문을 덮어쓴다.
 
 Hoisting 주의사항:
-  - 코드의 가독성과 유지보수를 위해 Hoisting이 일어나지 않도록 한다.
-  - 호이스팅을 제대로 모르더라도 함수와 변수를 가급적 코드 상단부에서 선언하면, Hoisting 인한 스코프 꼬임 현상은 방지할 수 있다.
-  - 변수 선언시 `var`대신 `let/const`를 사용한다.
+
+- 코드의 가독성과 유지보수를 위해 Hoisting이 일어나지 않도록 한다.
+- 호이스팅을 제대로 모르더라도 함수와 변수를 가급적 코드 상단부에서 선언하면, Hoisting 인한 스코프 꼬임 현상은 방지할 수 있다.
+- 변수 선언시 `var`대신 `let/const`를 사용한다.
 
 ### Closure
 
-**“A closure is the combination of a function and the lexical environment within which that function was declared.”** 클로저는 함수와 그 함수가 선언됐을 때의 어휘적 환경(Lexical environment)과의 조합이다. 위 정의에서 중요한 키워드는 “함수가 선언됐을 때의 렉시컬 환경(Lexical environment)”이다. Closure means that an inner function always has access to the vars and parameters of its outer function, even after the outer function has returned. 
+**“A closure is the combination of a function and the lexical environment within which that function was declared.”** 클로저는 함수와 그 함수가 선언됐을 때의 어휘적 환경(Lexical environment)과의 조합이다. 위 정의에서 중요한 키워드는 “함수가 선언됐을 때의 렉시컬 환경(Lexical environment)”이다. Closure means that an inner function always has access to the vars and parameters of its outer function, even after the outer function has returned.
 
 Closure는 자바스크립트 고유의 개념이 아니라 함수를 일급 객체로 취급하는 함수형 프로그래밍 언어(Functional Programming language: 얼랭(Erlnag), 스칼라(Scala), 하스켈(Haskell), 리스프(Lisp)…)에서 사용되는 중요한 특성이다.
 
@@ -2179,15 +2189,15 @@ outerFunc(); // 10
 // outerFunc: function
 //
 //  /|\ 참조
-//   | 
-// 
-// 내부 outerFunc lexical environment: 
+//   |
+//
+// 내부 outerFunc lexical environment:
 // x = 10
 //
 //  /|\ 참조
-//   | 
-// 
-// 내부 innerFunc lexical environment: 
+//   |
+//
+// 내부 innerFunc lexical environment:
 ```
 
 스코프(Scope)는 함수를 호출할 때가 아니라 **함수를 어디에 선언**하였는지에 따라 결정되고 이를 **Lexical scoping**이라 한다. 위 예제의 함수 innerFunc는 함수 outerFunc의 내부에서 선언되었기 때문에 함수 innerFunc의 상위 스코프는 함수 outerFunc이다. 함수 innerFunc가 전역에 선언되었다면 함수 innerFunc의 상위 스코프는 전역 (global) 스코프가 된다.
@@ -2230,10 +2240,11 @@ inner(); // 10
 ![closure1](img/closure2.png)
 
 Closure 사용이유:
-  1. 상태 유지: 현재 상태를 기억하고 변경된 최신 상태를 유지
-  2. 전역변수의 사용을 억제해 의도되지 않은 변경을 방지
-     - 변수의 값은 누군가에 의해 언제든지 변경될 수 있어 오류 발생의 근본적 원인이 될 수 있다. 상태 변경이나 가변(mutable) 데이터를 피하고 불변성(Immutability)을 지향하는 함수형 프로그래밍에서 부수 효과(Side effect)를 최대한 억제하여 오류를 피하고 프로그램의 안정성을 높이기 위해 클로저는 적극적으로 사용된다.
-  3. 정보의 은닉: encapsulation 
+
+1. 상태 유지: 현재 상태를 기억하고 변경된 최신 상태를 유지
+2. 전역변수의 사용을 억제해 의도되지 않은 변경을 방지
+   - 변수의 값은 누군가에 의해 언제든지 변경될 수 있어 오류 발생의 근본적 원인이 될 수 있다. 상태 변경이나 가변(mutable) 데이터를 피하고 불변성(Immutability)을 지향하는 함수형 프로그래밍에서 부수 효과(Side effect)를 최대한 억제하여 오류를 피하고 프로그램의 안정성을 높이기 위해 클로저는 적극적으로 사용된다.
+3. 정보의 은닉: encapsulation
 
 - Closure 예시
 
@@ -2272,11 +2283,12 @@ console.log(decreaser()); // -1
 console.log(decreaser()); // -2
 ```
 
-함수 makeCounter는 보조 함수를 인자로 전달받고 함수를 반환하는 **high-order function** (고차 함수)이다. 함수 makeCounter가 반환하는 함수는 자신이 생성됐을 때의 렉시컬 환경인 함수 makeCounter의 스코프에 속한 변수 counter을 기억하는 클로저다. 함수 makeCounter는 인자로 전달받은 보조 함수를 합성하여 자신이 반환하는 함수의 동작을 변경할 수 있다. 이때 주의해야 할 것은 함수 makeCounter를 호출해 함수를 반환할 때 반환된 함수는 자신만의 독립된 렉시컬 환경을 갖는다는 것이다. 이는 함수를 호출하면 그때마다 새로운 렉시컬 환경이 생성되기 때문이다. 위 예제에서 변수 increaser와 변수 decreaser에 할당된 함수는 각각 자신만의 독립된 렉시컬 환경을 갖기 때문에 카운트를 유지하기 위한 자유 변수 counter를 공유하지 않아 카운터의 증감이 연동하지 않는다. 따라서 독립된 카운터가 아니라 연동하여 증감이 가능한 카운터를 만들려면 렉시컬 환경을 공유하는 클로저를 만들어야 한다. 
+함수 makeCounter는 보조 함수를 인자로 전달받고 함수를 반환하는 **high-order function** (고차 함수)이다. 함수 makeCounter가 반환하는 함수는 자신이 생성됐을 때의 렉시컬 환경인 함수 makeCounter의 스코프에 속한 변수 counter을 기억하는 클로저다. 함수 makeCounter는 인자로 전달받은 보조 함수를 합성하여 자신이 반환하는 함수의 동작을 변경할 수 있다. 이때 주의해야 할 것은 함수 makeCounter를 호출해 함수를 반환할 때 반환된 함수는 자신만의 독립된 렉시컬 환경을 갖는다는 것이다. 이는 함수를 호출하면 그때마다 새로운 렉시컬 환경이 생성되기 때문이다. 위 예제에서 변수 increaser와 변수 decreaser에 할당된 함수는 각각 자신만의 독립된 렉시컬 환경을 갖기 때문에 카운트를 유지하기 위한 자유 변수 counter를 공유하지 않아 카운터의 증감이 연동하지 않는다. 따라서 독립된 카운터가 아니라 연동하여 증감이 가능한 카운터를 만들려면 렉시컬 환경을 공유하는 클로저를 만들어야 한다.
 
 ⭐ 요약:
-  - Closure는 함수와 lexical environment의 조합으로 함수가 생성될 당시의 외부 변수를 기억하므로 내부함수가 외부함수의 맥락(context)에 접근할 수 있는 것을 가리킨다.
-  - Closure는 특정 상황에서 발생하는 ‘현상’이고 함수는 이 현상이 나타나기 위한 ‘조건’에 해당한다’.
+
+- Closure는 함수와 lexical environment의 조합으로 함수가 생성될 당시의 외부 변수를 기억하므로 내부함수가 외부함수의 맥락(context)에 접근할 수 있는 것을 가리킨다.
+- Closure는 특정 상황에서 발생하는 ‘현상’이고 함수는 이 현상이 나타나기 위한 ‘조건’에 해당한다’.
 
 ### Module System
 
@@ -2449,7 +2461,7 @@ function getResult(score) {
 
 #### Nullish coalescing operator ??
 
-variable이 null/undefined인 경우와 아닌 경우를 나누어, nullCheckException을 방지하는 error checking 문법이다. 
+variable이 null/undefined인 경우와 아닌 경우를 나누어, nullCheckException을 방지하는 error checking 문법이다.
 
 > `{ leftExpr ?? rightExpr }`
 
@@ -2480,13 +2492,14 @@ leftExpr가 falsy인 경우에만 rightExpr가 실행된다.
 leftExpr가 true인 경우, rightExpr의 값에 상관없이 무조건 true이기 때문에 편의를 위해 leftExpr만 실행한다.
 
 falsy에 해당되는 값:
-  - boolean false
-  - int 0
-  - int -0
-  - undefined
-  - null
-  - NaN (Not a Number)
-  - string '' (empty string)
+
+- boolean false
+- int 0
+- int -0
+- undefined
+- null
+- NaN (Not a Number)
+- string '' (empty string)
 
 ```
 // Logical OR operator ||
@@ -2496,7 +2509,7 @@ function printMessage(text) {
 }
 ```
 
-#### Destructuring Assignment 
+#### Destructuring Assignment
 
 구조분해 할당 (destructuring assignment) 문법
 
@@ -2563,35 +2576,35 @@ Spread syntax ( ... ) allows an iterable such as an array expression or string t
 
 ```
 const obj1 = { key: 'key1' };
-const obj2 = { key: 'key2' }; 
-const array = [obj1, obj2]; 
+const obj2 = { key: 'key2' };
+const array = [obj1, obj2];
 
-// array copy 
-const arrayCopy = [...array]; 
+// array copy
+const arrayCopy = [...array];
 console.log(arrayCopy); // [ { key: 'key1' }, { key: 'key2' } ]
 
-const arrayCopy2 = [...array, { key: 'key3' }]; 
-obj1.key = 'newKey'; 
-// array배열은 래퍼런스 값을 갖고있는 배열이다. 그래서 전개연산자로 복사하여도 
-// 레퍼런스 변수는 복사로 취급하지만, 그걸 잇는 주소연결은 똑같다. 
+const arrayCopy2 = [...array, { key: 'key3' }];
+obj1.key = 'newKey';
+// array배열은 래퍼런스 값을 갖고있는 배열이다. 그래서 전개연산자로 복사하여도
+// 레퍼런스 변수는 복사로 취급하지만, 그걸 잇는 주소연결은 똑같다.
 
-console.log(array); // [ { key: 'newKey' }, { key: 'key2' } ] 
-console.log(arrayCopy2); // [ { key: 'newKey' }, { key: 'key2' }, { key: 'key3' } ] 
+console.log(array); // [ { key: 'newKey' }, { key: 'key2' } ]
+console.log(arrayCopy2); // [ { key: 'newKey' }, { key: 'key2' }, { key: 'key3' } ]
 
-// object copy  
-const obj3 = { ...obj1 }; 
-console.log(obj3); // { key: 'key1' } 
- 
-// array concatenation 
-const fruits1 = ['🍑', '🍓']; 
-const fruits2 = ['🍌', '🥝']; 
-const fruits = [...fruits1, ...fruits2]; 
-console.log(fruits); // [ '🍑', '🍓', '🍌', '🥝' ] 
- 
-// object merge 
-const dog1 = { dog: '🐕' }; 
-const dog2 = { dog: '🐶' }; 
-const dog = { ...dog1, ...dog2 }; 
+// object copy
+const obj3 = { ...obj1 };
+console.log(obj3); // { key: 'key1' }
+
+// array concatenation
+const fruits1 = ['🍑', '🍓'];
+const fruits2 = ['🍌', '🥝'];
+const fruits = [...fruits1, ...fruits2];
+console.log(fruits); // [ '🍑', '🍓', '🍌', '🥝' ]
+
+// object merge
+const dog1 = { dog: '🐕' };
+const dog2 = { dog: '🐶' };
+const dog = { ...dog1, ...dog2 };
 console.log(dog); // { dog: '🐶' }
 ```
 
@@ -2699,7 +2712,7 @@ function printManager(person) {
 
 printManager(person1); // Bob
 printManager(person2); // undefined
-``` 
+```
 
 `?.()` 함수 접근
 
@@ -2796,16 +2809,16 @@ console.log(str); //Hello\nWorld.
 - 태그를 사용하여 Template Literal을 함수로 파싱할 수 있습니다.
 
 ```
-let person = 'Lee'; 
-let age = 28; 
-let tag = function(strings, personExp, ageExp) { 
-  console.log(strings); 
-  // 첫 인수는 배열이 들어오고 
-  console.log(personExp); 
-  // 나머지 인수는 ${변수}값이 들어온다. 
-  console.log(ageExp); 
-}; 
-  
+let person = 'Lee';
+let age = 28;
+let tag = function(strings, personExp, ageExp) {
+  console.log(strings);
+  // 첫 인수는 배열이 들어오고
+  console.log(personExp);
+  // 나머지 인수는 ${변수}값이 들어온다.
+  console.log(ageExp);
+};
+
 let output = tag`that ${person} is a ${age}`;
 // strings = [ 'that ', ' is a ', '' ]
 // personExp = Lee
@@ -2857,7 +2870,7 @@ console.log(fn`구매가능한 ${ramenList[2].brand}의 라면 : ${ramenList[2].
 //오뚜기의 라면은 재고가 없습니다!
 ```
 
-#### Array Loops 
+#### Array Loops
 
 - Array를 looping할 때, for loop이 아니라
 - `Array.prototype.map()`, `Array.prototype.filter()`, `Array.prototype.reduce()`등을 활용한다.
@@ -2978,7 +2991,7 @@ decimal = "Hello"; // error. decimal은 정수라니까...
 
 ### What is React.js
 
-**React.js**는 web app을 만들 수 있는 Javascript library이다. React.js is a JavaScript library for building user interfaces. 
+**React.js**는 web app을 만들 수 있는 Javascript library이다. React.js is a JavaScript library for building user interfaces.
 
 #### Web app은 무엇이고, 왜 사용하는가
 
@@ -2999,7 +3012,7 @@ React가 web app을 만드는 library/framework들 중에 사용자가 가장 �
 ### Framework vs Library
 
 - Framework를 한국어로 하면 frame (틀), work (작업), 즉 기본적인 틀을 만드는 작업이다.
-  Framework는 **정해진 사용방법이 존재**하기 때문에 우리는 framework가 요구하는 대로 따라해야지만 원하는 결과를 얻을 수 있다. 
+  Framework는 **정해진 사용방법이 존재**하기 때문에 우리는 framework가 요구하는 대로 따라해야지만 원하는 결과를 얻을 수 있다.
 
 - Library는 특정 기능에 대한 도구 or 함수들을 모은 집합이다.
   즉, 프로그래머가 개발하는데 필요한 것들을 모아둔 코드 더미들로, library는 단순 활용이 가능한 도구들의 집합이다.
@@ -3012,12 +3025,12 @@ React가 web app을 만드는 library/framework들 중에 사용자가 가장 �
 프로그래밍에서 차이:
 
 - You, the developer, use a library. You call a library when and where you need to.
-- In contrast, a framework call your code. 
+- In contrast, a framework call your code.
 
 개발자가 Library를 내 코드로 호출하고, framework는 반대로 framework가 내 코드를 호출한다. Framework를 사용할 떄 framework가 요구하는 대로 코드를 특정 장소와 폴더안에 입력해야만 제대로 작동하는 것을 볼 수 있다. 이는 framework가 설계될 때 이미 큰 틀이 설계되어 있고, 개발자는 framework가 요구하는 틀을 따라가야 한다. 즉, Library가 코드의 자유도가 더 높고, framework가 코드의 자유도가 더 낮다. 뭐가 더 좋고 나쁨은 없으나, 큰 project를 만들 때에는 여러 개발자와 함께 만들기 때문에 개발자들 사이에 자유도가 낮은 framework가 더 유리하고, 작은 project를 만들때에는 자유도가 높은 library가 더 편하다.
 
 - Framework: 어떤 동작을 수행하기 위한 코드 작성 방법이 정해져 있기 때문에, 다른 개발자의 코드를 보고 한 눈에 알아볼 수 있고 에러를 빨리 찾을 수 있다.
-             개발자들 사이 너도 나도 같은 방법을 사용.  
+  개발자들 사이 너도 나도 같은 방법을 사용.
 - Library: 개발자가 자유롭게 코드를 가져다 쓰기 때문에 자유도가 높다. 다른 개발자의 코드를 한 눈에 알아보기 힘들 수 있다.
 
 ```
@@ -3036,6 +3049,7 @@ const mydata = API()
 ```
 
 예시:
+
 - Libraray: React.js, Bootstrap, ...
 - Framework: Vue.js, Flask, Django, ...
 
@@ -3397,7 +3411,6 @@ return (
 
 이 방식을 사용하면 코드가 더 깔끔해 지지만, 이 방식을 남발하는 것은 좋지 않습니다. JavaScript와 마찬가지로 가독성을 위해 변수로 추출해야 할지 아니면 인라인으로 넣을지는 개발자가 직접 판단해야 합니다. map() 함수가 너무 중첩된다면 컴포넌트로 추출 하는 것이 좋습니다.
 
-
 ### Curly brackets {} vs Parentheses () in JSX Arrow Function
 
 - Curly brackets: are a special syntax to let the JSX parser know that it needs to interpret the contents between them as javascript instead of text.
@@ -3440,13 +3453,13 @@ react.js는 jsx이기 때문에 `array.map((param) => {body})`가 아니라 `arr
 
 `map()`은 javascript code이기 때문에 `{ array.map((param) => (body))}`과 같이 curly brackets {} 안에서 정의하면 된다.
 
-## 6. VueJs
+## 6. [VueJs](https://vuejs.org/guide/introduction.html)
 
 ### What is Vue.js
 
 #### Vue Js가 무엇이고, 왜 사용하는가
 
-Vue Js는 Web app을 만들 수 있는 Javascript Front-end Framework이다.
+Vue.js는 Web app을 만들 수 있는 Javascript Front-end Framework이다.
 
 #### Web app은 무엇이고, 왜 사용하는가
 
@@ -3551,23 +3564,9 @@ Vue를 사용하면, 특정 행동을 수행하는 코드를 다른 개발자가
 1. v-if | v-else
 ```
 
-### Vue 개발환경
+### Vue로 project 만들기
 
-Vue로 Project를 만들면서, Vue의 문법들을 공부해보자.
-
-1. 최신 버젼의 `Node.js` 설치 (`npm`을 사용하기 위해)
-2. VScode code editor와 VScode extension 설치 (`Vue` code를 쉽게 입력하기 위해)
-
-- `Vue Language Features (Volar)`
-- `html css support`: (`ctrl + space`: view a list of id and class attribute suggestions )
-- `TypeScript Vue Plugin (Volar)`
-
-3. 기본적인 HTML, CSS and JavaScript 개념
-4. [Vue 문법 몇가지](https://vuejs.org/guide/introduction.html)
-
-#### Vue로 project 만드는 방법은
-
-A. **project 1. 생성 => 2. 개발 => 3. 배포**
+**project 1. 생성 => 2. 개발 => 3. 배포**
 
 1. Vue의 최신버전으로 프로젝트 생성
 
@@ -3591,9 +3590,7 @@ Done.
 
 아직 익숙하지 않으면 전부 `No`을 선택
 
-2. 개발
-
-Install dependencies and start the dev server
+2. 개발: Install dependencies and start the dev server
 
 your-project-name로 이동
 
@@ -3622,7 +3619,7 @@ dependencies 설치
 - `package.json`: 이 project에 사용되는 dependencies의 이름 저장
 - `node_modules` directory: 실제 설치된 dependencies 저장
 
-3. 배포
+3. 배포: deployment
 
 When you are ready to ship your app to production, run the following:
 
@@ -3684,9 +3681,7 @@ const blueColor = 'color : blue';
 
 안바뀔꺼 같은 data는 databinding할 필요없이 HTML에 hardcoding하고, 자주 변하는 데이터들은 script tag에 저장한 후 HTML에 꽂아 넣는다.
 
-⭐ 기타 다른 Vue 문법은 vuejs.org 공식 문서를 참고하자!
-
-## 7. [NextJs](https://nextjs.org/docs)
+## 7. [NextJs](https://nextjs.org/)
 
 ### What is Next.js?
 
@@ -3695,7 +3690,7 @@ const blueColor = 'color : blue';
 ### Client-Side Rendering (CSR) vs Server-Side Rendering (SSR)
 
 - Time To View (TTV): 사용자가 화면 UI를 보는 데까지 걸리는 시간. 즉 page가 **Viewable**이 되는 데 걸리는 시간
-- Time To Interact (TTI): 화면 UI를 클릭하면 반응하는 데까지  걸리는 시간. 즉 page가 **Interactable**이 되는 데 걸리는 시간
+- Time To Interact (TTI): 화면 UI를 클릭하면 반응하는 데까지 걸리는 시간. 즉 page가 **Interactable**이 되는 데 걸리는 시간
 
 - Client-Side Rendering (CSR)방식: 사용자가 웹사이트로 접근한 후에야 그 웹를 만드는 데 필요한 모든 Javascript를 다운받고, browser가 React를 실행시켜 UI를 만든다. (TTI = TTV)
   1. Server sending Response to Browser
@@ -3704,13 +3699,14 @@ const blueColor = 'color : blue';
      - HTML file에 UI를 추가할 javascript
      - framework/library source code
   3. Browser executes React.js
-     - browser가 다운받은 react source code를 이용해, javascript를 실행시키고 화면을 만든다. 
-  4. Page now **Viewable** and **Interactable** 
+     - browser가 다운받은 react source code를 이용해, javascript를 실행시키고 화면을 만든다.
+  4. Page now **Viewable** and **Interactable**
      - 사용자는 모든 component가 전부 다 로딩된 후에야, 화면을 보는 것이 가능하고 웹사이트의 기능들을 사용할 수 있다.
 
 ![clientsiderendering](img/CSR.png)
 
-- CSR방식의 장점: 
+- CSR방식의 장점:
+
   1. Rich site interactions
      - 처음 화면이 보이는 순간부터 interactable이 되어, 모든 버튼들이 잘 작동한다.
   2. Fast website rendering after the initial load.
@@ -3719,34 +3715,38 @@ const blueColor = 'color : blue';
   4. Robust selection of JavaScript libraries.
 
 - CSR방식의 문제: framework/library source code를 다운받아야 하므로, 웹사이트가 크면 클수록 사용자에게 보여주는 데 오랜 시간이 필요하다.
-  1. Initial loading may take too long: 
-     - framework/library source code를 다운받는 데 시간이 걸릴 수 있다. 
+
+  1. Initial loading may take too long:
+     - framework/library source code를 다운받는 데 시간이 걸릴 수 있다.
      - 웹사이트가 클수록 사용자는 로딩시간이 오래걸리고 흰 화면만 보게 된다
-  2. Low Search Engine Optimization (SEO): 
+  2. Low Search Engine Optimization (SEO):
      - UI를 만들기 전에는 HTML file에 달랑 하나의 div element만 존재하여, google, naver등의 검색엔진에 노출되기 어렵다.
 
 - Server-Side Rendering (SSR)방식: TTV < TTI
   1. Server sending Response to Browser
   2. Browser renders the page now **Viewable** and browser downloads js files.
   3. Browser executes React.js
-  4. Page now **Interactable** 
+  4. Page now **Interactable**
 
 ![serversiderendering](img/SSR-server-side-rendering-infographic.png)
 
-- SSR방식의 장점: 
+- SSR방식의 장점:
+
   1. Initial page load is faster
   2. Great Search Engine Optimization (SEO)
-    - 모든 content가 HTML file안에 있기 때문에, 검색엔진에 노출되기 쉽다.
+
+  - 모든 content가 HTML file안에 있기 때문에, 검색엔진에 노출되기 쉽다.
+
   3. Great for static sites
 
-- SSR방식의 문제: 
+- SSR방식의 문제:
   1. Frequent server requests.
      - Server가 HTML을 전부 완성한 후에 Client에게 보내기 때문에 이용자가 많을 경우 Server에 과부화가 걸릴 수도 있다.
   2. An overall slow page rendering.
   3. Full page reloads.
      - 화면전환시 서버에서 새로운 화면을 받아와야 하므로, 화면이 깜박거리는 이슈가 있다.
   4. Non-rich site interactions.
-     - 처음 화면이 빠르게 보이는 대신 화면이 viewable이 되는 순간과 interactable 되는 순간의 시간차가 있기 때문에, 이 사이에는 보는 것만 가능하고, 어떤 동작을 취할 수는 없다. 
+     - 처음 화면이 빠르게 보이는 대신 화면이 viewable이 되는 순간과 interactable 되는 순간의 시간차가 있기 때문에, 이 사이에는 보는 것만 가능하고, 어떤 동작을 취할 수는 없다.
 
 ### pages
 
@@ -3769,8 +3769,8 @@ export default About
 
 `Next.js` supports pages with dynamic routes. For example, if you create a file called `pages/posts/[id].js`, then it will be accessible at `posts/1`, `posts/2`, etc.
 
-- React.js의 Dynamic Routes:  `posts/:id.js`
-- Next.js의 Dynamic Routes:  `pages/posts/[id].js`
+- React.js의 Dynamic Routes: `posts/:id.js`
+- Next.js의 Dynamic Routes: `pages/posts/[id].js`
 
 ### Pre-rendering
 
@@ -3782,7 +3782,7 @@ Each generated HTML is associated with minimal JavaScript code necessary for tha
 
 Next.js has two forms of pre-rendering: **Static Generation** and **Server-side Rendering**. The difference is in when it generates the HTML for a page.
 
-1. **Static Generation** (Recommended): The HTML is generated at build time and will be reused on each request. 
+1. **Static Generation** (Recommended): The HTML is generated at build time and will be reused on each request.
    - If a page uses **Static Generation**, the page HTML is generated at **build time**. That means in production, the page HTML is generated when you run `next build`. This HTML will then be reused on each request. It can be cached by a CDN. In Next.js, you can statically generate pages with or without data.
 2. **Server-side Rendering**: The HTML is generated on **each request**.
    - 사용자가 서버에 HTML, CSS, Javascript를 요청할 때마다 서버가 Javascript를 이용하여, HTML를 만든다.
@@ -3797,7 +3797,7 @@ You can also use Client-side Rendering along with Static Generation or Server-si
 
 `page`다음으로 중요한 `Next.js`문법은 `getServerSideProps` method 이다. If you export a function called `getServerSideProps` (Server-Side Rendering) from a page, Next.js will pre-render this page on each request using the data returned by getServerSideProps.
 
-`getServerSideProps` only runs on server-side and never runs on the browser. 
+`getServerSideProps` only runs on server-side and never runs on the browser.
 
 #### Using getServerSideProps to fetch data at request time
 
@@ -3834,7 +3834,7 @@ You should use `getStaticProps` if:
   - `getStaticProps` always runs during `next build` and generate HTML files
 - The data comes from a headless CMS
 - The data can be publicly cached (not user-specific)
-- The page must be pre-rendered (for SEO) and be very fast 
+- The page must be pre-rendered (for SEO) and be very fast
   - getStaticProps generates HTML and JSON files, both of which can be cached by a CDN for performance
 
 #### Using getStaticProps to fetch data from a CMS
@@ -3878,10 +3878,9 @@ export default Blog
 
 ## 9. Redux
 
-### What is Redux
+### What is Redux?
 
-`Redux` is an open-source JavaScript library for managing and centralizing application state. It is most commonly used with libraries such as React or Angular for building user interfaces. Redux is a predictable **state container** for JavaScript apps. Redux는 일명 **상태 (state)관리 library**이다. React.js와 같이 사용할 시 `react-redux`를 사용한다. `Redux`는 `redux-toolkit`으로 쓰면 더 쉽고 거기에 typescript로 작성하면 큰 프로젝트 스케일링하기도 편하다.
-
+`Redux` is an open-source JavaScript library for managing and centralizing application state. It is most commonly used with libraries such as React or Angular for building user interfaces. Redux is a predictable **state container** for JavaScript apps. Redux는 일명 **상태 (state)관리 library**이다. React.js와 같이 사용할 시 `react-redux`를 사용한다. `Redux` 대신 `redux-toolkit`으로 쓰면 더 쉽고 거기에 typescript로 작성하면 큰 프로젝트 스케일링하기도 편하다.
 
 ## % 부록0: 유용한 VSCode 기능 알아보기 %
 
@@ -3891,6 +3890,7 @@ export default Blog
 ### 유용한 VScode extension
 
 - `Prettier`: save시 auto code formatting.
+
   1. `CTRL + ,`로 setting 열기
   2. `save` 검색 후 `format on save` 체크
   3. `prettier` 검색 후 `Prettier: Tab width`를 `2`로 변경
@@ -3949,8 +3949,8 @@ export default Blog
 - `Ctrl + V`: Paste
 - `Ctrl + Z`: Undo
 - `Ctrl + S`: Save
-- ``Ctrl + `(back tic)``: Open terminal
-- ``Ctrl + Shift + `(back tic)``: Create new terminal
+- `` Ctrl + `(back tic) ``: Open terminal
+- `` Ctrl + Shift + `(back tic) ``: Create new terminal
 - `Ctrl + shift + R`: Refactoring (drag된 코드를 변수로 만들기, 함수로 만들기, 새로운 file로 옮기기, ...)
 - `F2`: Renaming (변수 이름 변경하기: 이 변수와 연관된 모든 다른 file에서 사용중인 변수명도 함께 바꿔준다.)
 - `Ctrl + F`: Find (F2를 사용하는 것이 더 편리하다).
@@ -4048,7 +4048,7 @@ div box안에 container라는 class를 주고, class가 title과 title$인 p tag
 </div>
 ```
 
-더미 dummy 용 텍스트 입력하기
+dummy용 텍스트 입력하기
 
 - `p>lorem` + tab
 
@@ -4113,7 +4113,7 @@ export default $1;
 
 ### Git이 무엇이고, 왜 사용하는지
 
-깃(Git)은 software의 변경사항을 추적하고 여러 명의 사용자들 간에 해당 파일들의 작업을 조율하기 위한 분산 버전 관리 시스템이다.
+Git은 software의 변경사항을 추적하고 여러 명의 사용자들 간에 해당 파일들의 작업을 조율하기 위한 분산 버전 관리 시스템이다.
 
 1. project version들을 쉽게 관리하려고
 2. project source code를 저장하고, 다른 programmer와 공유하고, 협업하기 위해서
@@ -4122,13 +4122,14 @@ export default $1;
 
 Git을 다운받은후 Terminal에 다음을 입력해 설정한다.
 
-> $ `git config --global user.name "my_name"`, 
+```
+$ `git config --global user.name "my_name"`,
+$ `git config --global user.email "myEmail@example.com"`
+```
 
-> $ `git config --global user.email "myEmail@example.com"`
+### Git으로 처음 project 시작하기
 
-### Git으로 처음 project 시작하기 
-
-git을 사용할 project folder에서 terminal에 `git init`을 입력
+git을 사용할 project folder에서 terminal에 `git init`을 입력한다.
 
 `git init`은 맨 처음에 새로운 project를 위한 git repository를 만들 때만 사용하는 command이다. 즉, 기존에 진행되어 이미 source code가 github server에 올라간 project들은 `git init`을 할 필요가 없다.
 
@@ -4150,7 +4151,7 @@ $ git remote add origin
 
 또는 이미 한 번 다운 받은 적이 있는 project의 최신 버전은 `git pull` command를 이용한다.
 
-> $ `git pull origin master` 
+> $ `git pull origin master`
 
 2. branch에 source code 복사하기
 
@@ -4193,7 +4194,7 @@ Push your commit to a remote branch (probably want to use your same local branch
    - Create and move to new branch: `git checkout -b <branchName>`
    - Move to the existing branch: `git switch -c <branchName>`
 3. Make changes to the code
-4. Once you finish, create pull request 
+4. Once you finish, create pull request
    - `git add .`
    - Commit your work: `git commit -m "what i did"`
    - push your work to that branch: `git push -u origin <branchName>`
@@ -4202,7 +4203,7 @@ Push your commit to a remote branch (probably want to use your same local branch
 
 다른 사람이랑 협업을 할 경우에 git의 `issues`, `pull request` 탭을 잘 활용하여, 프로젝트를 성공적으로 완성해 보자.
 
-- issues: 코드의 문제점 제시 
+- issues: 코드의 문제점 제시
   - 코드에서 고쳐야 할 부분들을 우리팀 전체가 볼 수 있게 만들어, 추후에 고칠 수 있게 하는 것. 이 프로젝트가 public이라면, 아무나 issues에 코드의 문제점을 제시할 수 있다.
 - pull request: master branch에 merge하기 전에 내가 고친 코드를 다른 협업자가 관찰하고 이상이 없는 지 확인하는 단계
 
@@ -4232,18 +4233,20 @@ Create branch called fix-19 based on the code in the fix-18 branch
 
 > $ `git checkout -b fix-18 fix-19`
 
-#### git clone/pull로 최신 버젼의 project 가져오기 
+#### git clone/pull로 최신 버젼의 project 가져오기
 
 💣 `git pull` =` git fetch` +` git merge`
 
 pull과 fetch의 차이점은 병합을 하냐 안 하냐의 차이다.
 
 - `git pull`
+
   - 원격저장소에 있는 프로젝트의 변경사항을 그대로 로컬저장소에 옮겨와 자동으로 병합
   - 팀 단위로 사용하는 계정이 아닌 개인적으로 깃허브를 사용하는 사람들이라면 git pull 명령어를 가장 많이 사용할 것이다.
   - "변경 사항을 가져옴과 동시에 자동으로 병합이 되기 때문에 무엇이 추가되고 병합되었는지 확인이 안 됨"
 
 - `git fetch`
+
   - 원격저장소에 있는 프로젝트의 변경사항을 가져오기만 한 후 병합(merge)은 따로 깃 입문자 또는 깃허브를 개인적으로 사용하는 사람이라면 git fetch 명령어는 거의 사용하지 않을 것이다.
   - "다른 사람이 수정한 부분을 확인하고 병합할 수 있다는 장점이 있음"
 
@@ -4251,7 +4254,7 @@ pull과 fetch의 차이점은 병합을 하냐 안 하냐의 차이다.
   - clone이라는 단어처럼 원격저장소의 내용을 새로운 폴더에 그대로 복사하는 것!
   - 맨 처음 project의 source code를 복사할 경우에만 사용
 
-1. 맨 처음에 터미널을 열고 `git clone https:...`를 입력 해 local storage로 source code 복사한다. 
+1. 맨 처음에 터미널을 열고 `git clone https:...`를 입력 해 local storage로 source code 복사한다.
 2. `git remote -v`로 연결된 저장소 확인
 
 ```
@@ -5175,14 +5178,13 @@ const cors = require('cors');
 app.use(cors());
 ```
 
-
 ## 2. [ExpressJs](https://expressjs.com/)
 
 ### What is Express.js?
 
 Express.js는 Javascript Back-end Framework로, Web Server을 만들 때 사용한다.
 
-## 3. [FlaskPy](https://flask.palletsprojects.com) (Python)
+## 3. [FlaskPy](https://flask.palletsprojects.com)
 
 ### What is Flask?
 
@@ -5222,11 +5224,12 @@ flaskWeb/
 Web context를 전부 모은 directory를 `Web Application Server`라고 부른다.
 
 위의 tree 구조에서:
-  - Web Application Server = `flaskWeb`
-  - Web context = `newFlaskApp`, `flaskapp`
-  - `templates` folder는 HTML files을 모아두는 곳이다.
-  - `static` folder는 정적이라는 의미로 서비스를 운영하는 데 변하지 않는 것
-    - server에 요청하면 연산이 없이 바로 나가는 것들, images, css, js등이 해당된다.
+
+- Web Application Server = `flaskWeb`
+- Web context = `newFlaskApp`, `flaskapp`
+- `templates` folder는 HTML files을 모아두는 곳이다.
+- `static` folder는 정적이라는 의미로 서비스를 운영하는 데 변하지 않는 것
+  - server에 요청하면 연산이 없이 바로 나가는 것들, images, css, js등이 해당된다.
 
 여기서 중요한 점은 `flask`를 사용할 때 `"templates"`, `"static"`이라는 폴더명을 변경해선 안된다. `flask`는 framework이기 때문에 `flask`가 요구하는 틀을 따라야지만 제대로 작동한다.
 
@@ -5269,13 +5272,17 @@ Set User name & User password => Network access IP Address => Connect => "Connet
 
 `MONGO_URI = mongodb+srv://Shin:<password>@cluster0.sjhvl.mongodb.net/<myfirstDatabase>?retryWrites=true&w=majority`
 
-## 6. [RocketRs](https://rocket.rs/) (Rust)
+## 6. [RocketRs](https://rocket.rs/)
 
 Rocket is a web framework for Rust that makes it simple to write fast, secure web applications without sacrificing flexibility, usability, or type safety. Rocket은 Rust 프로그래밍언어로 작성된 서버 사이드 웹 framework이다
 
-## Rust
+## [Rust](https://www.rust-lang.org/)
 
-Rust는 C++를 대체하기 위해 mozilla 제단에서 만든 언어로 system programming, embeded programming을 하기에 특화되어 있다. Rust는 low-level programming language로 사람보다는 기계에 가깝게 코딩을 한다. Rust is a **`low-level statically-typed multi-paradigm programming language`** that's focused on safety and performance. Rust solves problems that C/C++ has been struggling with for a long time, such as memory errors and building concurrent programs. 
+- crate.io (rust ): https://crates.io/
+
+### What is Rust?
+
+Rust는 C++를 대체하기 위해 mozilla 제단에서 만든 programming 언어로 system programming, embeded programming을 하기에 특화되어 있다. Rust는 low-level programming language로 사람보다는 기계에 가깝게 코딩을 한다. Rust is a **`low-level statically-typed multi-paradigm programming language`** that's focused on safety and performance. Rust solves problems that C/C++ has been struggling with for a long time, such as memory errors and building concurrent programs.
 
 위처럼 Rust는 **statically-typed** 언어이기 때문에 compile time에 compiler가 모든 변수의 data type를 알고 있어야 error없이 compile이 된다. 변수의 data type이 명확하지 않을 경우, 개발자가 직접 변수의 타입을 지정해주어야 한다.
 
@@ -5285,14 +5292,15 @@ Rust와 C++는 Javascript, python과는 다르게 memory를 관리해주는 garb
 
 Rust의 compiler `rustc`는 기계가 읽을 수 있는 a binary code를 생성하고, 코드의 문제를 발견 시 compiler error를 발생시켜 코드의 어디가 왜 문제이고 어떻게 작성해야 하는지 까지 알려준다. 이는 Rust로 code를 작성하는 큰 이유 중 하나이다.
 
-Rust 장점
+### Rust 장점
+
 - 뛰어난 compiler: 코드를 엄격하게 check하여, 문제가 있는 경우 runtime error가 발생하기도 전에 compile조차 되지 않게 만들고, 코드의 어디가 어떻게 문제인지 친절하게 설명해준다.
-- low-level과 modern programming의 조화: 
+- low-level과 modern programming의 조화:
   - 기존 low level에는 없는 기능을 제공한다: Javascript의 package manager `npm`과 같이 `cargo`라는 강력한 package manager를 제공해 외부 libraries를 쉽게 사용가능하다.
-    - `cargo run` 
-    - `cargo build` 
+    - `cargo run`
+    - `cargo build`
 - Fast and safe memory management
-  - Go나 Javascript에 존재하는 memory manager, garbage collector (GC),를 이용하지 않는 대신 새로운 개념인 **`ownership`**을 개발해 memory를 안전하게 관리한다.
+  - Go나 Javascript에 존재하는 memory manager, garbage collector (GC),를 이용하지 않는 대신 새로운 개념인 **ownership**을 개발해 memory를 안전하게 관리한다.
   - **ownership**: value는 단 하나의 owner가 존재하고, 변수가 정의된 scope을 벋어나면 자동으로 drop한다.
 
 `hello.rs` file
@@ -5317,15 +5325,24 @@ fn main() {
 - A binary can be generated using the Rust compiler: `rustc`.
 - `println!` is a macro that prints text to the console.
 
-> `$ rustc hello.rs`
-
-`rustc` will produce a hello binary that can be executed.
+`rustc` will produce a hello binary that can be executed. Rust는 뛰어난 package manager `cargo`를 제공하기 떄문에 `rustc`를 직접 이용하기 보단 `cargo build`를 이용하면 쉽게 compile이 가능하다.
 
 ```
+// use rustc compiler
+$ rustc hello.rs`
 $ ./hello
 Hello World!
+
+// modern way
+// create new rust project
+$ cargo new projectName
+// compile rust project
+$ cargo build
+// compile and run rust project
+$ cargo run
 ```
-In Rust, by default variables are **immutable**. It means that you cannot change the value of variables once assigned. This is one of many nudges Rust gives you to write your code in a way that takes advantage of the safety and easy concurrency that Rust offers. However, you still have the option to make your variables mutable. 
+
+In Rust, by default variables are **immutable**. It means that you cannot change the value of variables once assigned. This is one of many nudges Rust gives you to write your code in a way that takes advantage of the safety and easy concurrency that Rust offers. However, you still have the option to make your variables mutable.
 
 ```
 fn main() {
@@ -5344,44 +5361,44 @@ fn main() {
 }
 ```
 
-### Rust data types 
+### Rust data types
 
 Rust does not have `null` vallue
 
 1. Scalar type
-    - integer: default to `i32`
-      - `i8`: signed 8 bits -(2^7) to 2^7 -1, which is `[-128, 127]` 
-      - `i16`: signed 16 bits -(2^15) to 2^15 -1, which is `[-32768, 32767]` 
-      - `i32`: signed 32 bits -(2^31) to 2^31 -1
-      - `i64`: signed 64 bits -(2^63) to 2^63 -1
-      - `i128`: signed 128 bits -(2^127) to 2^127 -1
-      - `isize`: architecture of the computer your program is running on, which is denoted in the table as “arch”: 64 bits if you’re on a 64-bit architecture and 32 bits if you’re on a 32-bit architecture.
-      - `u8`: unsigned 8 bits 0 to 2^8 -1, which is `[0, 255]` 
-      - `u16`: unsigned 16 bits 0 to 2^16 -1
-      - `u32`: unsigned 32 bits 0 to 2^32 -1
-      - `u64`: unsigned 64 bits 0 to 2^64 -1
-      - `u128`: unsigned 128 bits 0 to 2^128 -1
-      - `usize`: architecture of the computer your program is running on.
-    - floating-point number: default to `f64`
-      - `f32`: 32 bits in size `let x = 2.0; // f64`
-      - `f64`: 64 bits in size `let y: f32 = 3.0; // f32`
-    - Boolean Type: `bool`
-      - `let t = true;`
-      - `let f: bool = false; // with explicit type annotation`
-    - charactor: `char` (single quote)
-      - `let c = 'z';`
-      - `let z = 'ℤ';`
-      - `let heart_eyed_cat = '😻';`
-    - String: `&str` (double quotes)
-      - `let name : &str = "Shin";`
+   - integer: default to `i32`
+     - `i8`: signed 8 bits -(2^7) to 2^7 -1, which is `[-128, 127]`
+     - `i16`: signed 16 bits -(2^15) to 2^15 -1, which is `[-32768, 32767]`
+     - `i32`: signed 32 bits -(2^31) to 2^31 -1
+     - `i64`: signed 64 bits -(2^63) to 2^63 -1
+     - `i128`: signed 128 bits -(2^127) to 2^127 -1
+     - `isize`: architecture of the computer your program is running on, which is denoted in the table as “arch”: 64 bits if you’re on a 64-bit architecture and 32 bits if you’re on a 32-bit architecture.
+     - `u8`: unsigned 8 bits 0 to 2^8 -1, which is `[0, 255]`
+     - `u16`: unsigned 16 bits 0 to 2^16 -1
+     - `u32`: unsigned 32 bits 0 to 2^32 -1
+     - `u64`: unsigned 64 bits 0 to 2^64 -1
+     - `u128`: unsigned 128 bits 0 to 2^128 -1
+     - `usize`: architecture of the computer your program is running on.
+   - floating-point number: default to `f64`
+     - `f32`: 32 bits in size `let x = 2.0; // f64`
+     - `f64`: 64 bits in size `let y: f32 = 3.0; // f32`
+   - Boolean Type: `bool`
+     - `let t = true;`
+     - `let f: bool = false; // with explicit type annotation`
+   - charactor: `char` (single quote)
+     - `let c = 'z';`
+     - `let z = 'ℤ';`
+     - `let heart_eyed_cat = '😻';`
+   - String: `&str` (double quotes)
+     - `let name : &str = "Shin";`
 2. Compound data types: group multiple values into one type
-    - Tuple
-      - Tuples have a fixed length: once declared, they cannot grow or shrink in size.
-      - The tuple without any values, `()`, is a special type that has only one value. The type is called the `unit type` and the value is called the unit value. Expressions implicitly return the unit value if they don’t return any other value.
-    - Array
-      - Unlike a tuple, every element of an array must have the same type. 
-      - Unlike arrays in some other languages, arrays in Rust have a fixed length.
-      - Arrays are useful when you want your data allocated on the **stack** rather than the heap
+   - Tuple
+     - Tuples have a fixed length: once declared, they cannot grow or shrink in size.
+     - The tuple without any values, `()`, is a special type that has only one value. The type is called the `unit type` and the value is called the unit value. Expressions implicitly return the unit value if they don’t return any other value.
+   - Array
+     - Unlike a tuple, every element of an array must have the same type.
+     - Unlike arrays in some other languages, arrays in Rust have a fixed length.
+     - Arrays are useful when you want your data allocated on the **stack** rather than the heap
 
 ```
 fn main() {
@@ -5412,11 +5429,11 @@ fn main() {
 
 ### Ownership
 
-`Ownership` is a set of rules that governs how a Rust program manages memory. All programs have to manage the way they use a computer’s memory while running. 
+`Ownership` is a set of rules that governs how a Rust program manages memory. All programs have to manage the way they use a computer’s memory while running.
 
-- Some languages, such as GO, Javascript have **garbage collection (GC)** that constantly looks for no-longer used memory as the program runs. 
+- Some languages, such as GO, Javascript have **garbage collection (GC)** that constantly looks for no-longer used memory as the program runs.
 
-- in other languages, such as C++, the programmer must explicitly allocate and free the memory. 
+- in other languages, such as C++, the programmer must explicitly allocate and free the memory.
 
 ```
 // c++ malloc() and free() to allocate the memory in heap
@@ -5434,31 +5451,32 @@ int main() {
 }
 ```
 
-- Rust uses a third approach: memory is managed through a system of **ownership** with a set of rules that the compiler checks. If any of the rules are violated, the program won’t compile. 
+- Rust uses a third approach: memory is managed through a system of **ownership** with a set of rules that the compiler checks. If any of the rules are violated, the program won’t compile.
 
 Ownership Rules
-  1. Each value in Rust has a variable that’s called its owner.
-  2. There can only be one owner at a time.
-  3. When the owner goes out of scope, the value will be dropped.
-       - scope이 끝나면, variable은 자동으로 free가 된다. 
+
+1. Each value in Rust has a variable that’s called its owner.
+2. There can only be one owner at a time.
+3. When the owner goes out of scope, the value will be dropped.
+   - scope이 끝나면, variable은 자동으로 free가 된다.
 
 ```
 fn main() {
   let s1 = String::from("hello"); // s1 is valid from this point forward
   let s2 = s1;
-  // s1 and s2 points same heap memory. 
+  // s1 and s2 points same heap memory.
   // In rust, s1 gives its ownership to s2.
   // s1 is no longer valid.
 
   // To, copy whole heap memory as well, use `clone()`
   // clone() method will deeply copy the heap data of the String, not just the stack data
-  let s3 = String::from("hello"); 
-  let s4 = s3.clone(); 
+  let s3 = String::from("hello");
+  let s4 = s3.clone();
   // two "hello" data in heap memory
 
   let x = 5;
   let y = x;
-  // since x and y are pushed only stack memory, 
+  // since x and y are pushed only stack memory,
   // x is still valid and wasn’t moved into y.
   // x and y are all vaild.
 
@@ -5499,6 +5517,7 @@ fn makes_copy(some_integer: i32) { // some_integer comes into scope
 변수를 heap memory에 allocate하고, 그 변수를 함수의 parameter로 넘겨주면, data의 `move`가 일어나고, 그 변수는 다시 사용할 수 없다. 이는 Rust의 ownership때문이디. 그 변수를 그 scope내에서 다시 사용하고 싶다면, ownership을 넘겨주는 것이 아니라 `References and borrowing`을 이용하여 넘겨주어야 한다. A reference is like a pointer in that it’s an address we can follow to access data stored at that address that is owned by some other variable. Unlike a pointer, a reference is guaranteed to point to a valid value of a particular type. The opposite of referencing by using `&` is dereferencing, which is accomplished with the dereference operator, `*`.
 
 The Rules of References
+
 1. At any given time, you can have either one mutable reference or any number of immutable references.
 2. References must always be valid.
 
@@ -5508,13 +5527,13 @@ fn main() {
   let len = calculate_length(&s1);
   // s1 doesn't give its ownership to function
   // rather function takes pointer of variable that points the heap memory.
-  
+
   println!("The length of '{}' is {}.", s1, len);
   // Output: The length of 'hello' is 5.
 
-  let s2 = String::from("hello"); 
+  let s2 = String::from("hello");
   let len = calculate_length(s2);
-  // s2 is move to function and no longer vaild in this scope. 
+  // s2 is move to function and no longer vaild in this scope.
 } // s1 `drop` from heap memory
 // s2's value was moved, nothing happend
 
@@ -5530,19 +5549,22 @@ fn calculate_length(s: &String) -> usize {
 
 Both the stack and the heap are parts of memory available to your code to use at runtime, but they are structured in different ways
 
-Stack 
+Stack
+
 - **last in, first out** data structure
 - Adding data is called **pushing** onto the stack, and removing data is called **popping** off the stack.
-- **All data stored on the stack must have a known, fixed size.** 
+- **All data stored on the stack must have a known, fixed size.**
 - Pushing to the stack is faster than allocating on the heap because the allocator never has to search for a place to store new data; that location is always at the top of the stack.
 - Accessing data in the heap is slower than accessing data on the stack because you have to follow a pointer to get there.
 - When your code calls a function, the values passed into the function (including, potentially, pointers to data on the heap) and the function’s local variables get pushed onto the stack. When the function is over, those values get popped off the stack.
 
 Heap
+
 - Data with an **unknown size** at compile time or a size that might change must be stored on the heap instead.
 - allocating on the heap: you request a certain amount of space. The memory allocator finds an empty spot in the heap that is big enough, marks it as being in use, and returns a pointer, which is the address of that location.
 
 Differences
+
 - allocating space on the heap requires more work than pushing to the stack, because the allocator must first find a big enough space to hold the data and then perform bookkeeping to prepare for the next allocation.
 - Pushing to the stack is faster than allocating on the heap because the allocator never has to search for a place to store new data; that location is always at the top of the stack.
 - Accessing data in the heap is slower than accessing data on the stack because you have to follow a pointer to get there.
@@ -5563,15 +5585,15 @@ Differences
 
 ## [NestJs](https://nestjs.com/)
 
-### Next.js란 
+### Next.js란
 
-Nest.js는 효율적이고, 안정적이며, 확장에 용이한 서버 어플리케이션을 구축하기 위한 진보된 nodejs framework이다. 대부분의 Nest의 코드는 typescript로 만들어졌으며, typescript 를 완전하게 지원한다. 하지만 Nest.js는 Express.js와 동급은 아닙니다. Nest.js는 HTTP 요청을 다루는 웹서버로 내부적으로 Express를 사용하고 있습니다. 즉 Nest는 Express 위에서 돌아가는 layer에 불과합니다. Express가 기본 웹서버지만 Fastify를 사용하도록 구성 할 수도 있다.
+Nest.js는 효율적이고, 안정적이며, 확장에 용이한 서버 어플리케이션을 구축하기 위한 진보된 nodejs framework이다. 대부분의 Nest의 코드는 typescript로 만들어졌으며, typescript 를 완전하게 지원한다. Nest.js는 HTTP request을 다루는 web server로 내부적으로 Express.js를 사용하고 있다. 즉 Nest.js는 Express.js 위에서 돌아가는 layer에 불과합니다. Express.js가 기본 웹서버지만 Fastify를 사용하도록 구성 할 수도 있다.
 
 ### Next.js 장점
 
 - Nest.js는 Express와 같은 web server framework로, Express는 굉장히 쉽게 서버를 만들 수 있게 만들어 줬지만 시스템 디자인 측면에서 지원하는 것은 거의 없기 때문에 이러한 문제를 해결하고자 나온 framework가 Nest.js이다.
 - NestJS는 Typescript 기반의 OOP(Object Oriented Programming), FP(Functional Programming), FRP(Functional Reactive Programming)를 지원합니다.
-- Open-closed principle: Application이 점점 커지고 복잡해지면 아키텍쳐건 application이건 확장이 용이하고 느슨하게 결합된 형태로 발전하는 것이 중요하다. 
+- Open-closed principle: Application이 점점 커지고 복잡해지면 아키텍쳐건 application이건 확장이 용이하고 느슨하게 결합된 형태로 발전하는 것이 중요하다.
 - high cohesion low coupling: module내의 결합은 크게하고, module간의 결합은 작게 만드는 것이 좋은 design이다.
 - Express/Fastify 위에서 동작하고, 추상화된 API를 제공하지만 완전하게 Express를 추상화하고 캡슐화하지 않았기 때문에 기존 Express에서 동작하는 수 많은 library를 그대로 사용할 수 있다.
 - 구조를 강제: Nest.js는 framework이기 떄문에 Nest.js만의 정해진 틀이 존재하고, 그 틀만 잘 따라하면 원하는 결과를 쉽게 얻을 수 있다. 이는 대규모 팀 협업에도 좋고, 다른 개발자의 코드를 한 눈에 알아보기 쉽다.
@@ -5582,7 +5604,7 @@ Nest.js는 효율적이고, 안정적이며, 확장에 용이한 서버 어플�
 
 기본 컨셉은 Provider(상기 이미지에선 service), Controller를 module로 합치고, 그 module들을 최종적으로 `app.module`에 합쳐서 사용하는 것이다.
 
-Nest.jS는 Singleton design pattern을 지향하기 때문에 instance를 직접 생성하지 않고 module을 통해 Injection 하는 패턴을 권장하고있다. allows only one instance at the same time.  
+Nest.jS는 Singleton design pattern을 지향하기 때문에 instance를 직접 생성하지 않고 module을 통해 Injection 하는 패턴을 권장하고있다. allows only one instance at the same time.
 
 직접 instance를 생성하여 등록하는 방법도 지원하는데, 보통 전역적으로 적용해야할 Provider들에 사용한다. (다만 권장하는 방식은 아니다. 인스턴스 생성을 NestJS에게 맡기는 것을 권장한다.)
 
@@ -5614,29 +5636,36 @@ Module은 Provider와 Controller를 합치는 역할을 한다. 뿐만 아니라
 Nest.js는 client의 요청별로 Controller와 Provider를 제작하고 이를 Module로 엮어 하나의 단위를 만든다고 할 수 있다.
 
 Nest.js 장점
+
 - 효율성 : nestjs는 typescript의 적극적인 도입, DI(Dependency Injection), IoC(Inversion of Control), Module을 통한 구조화 등의 기술을 통해 생산적인 개발이 용이하다.
 - 안정적 : Nestjs는 typescript를 적극적으로 도입함으로서 서버 application 개발 시 발생할 수 있는 오류들을 사전에 방지할 수 있도록 하였다. 또한 모듈로 감싸는 형태로 개발하기 때문에 모듈 별로 테스트 코드를 쉽게 작성할 수 있도록 구현되어 있다.
 - 확장성 : Nestjs는 module을 통해 확장이 용이하도록 설계되어 있다. 실제로 사용해보면 module을 통해 코드적으로, 논리적으로 구분한다는 장점을 크게 느끼실 수 있다. 또한 nestjs는 기본적으로 microservice 아키텍처 개발 스타일을 제공한다.
 
 ## % 부록3: Docker 이해하기 %
 
-local computer에 다운되어 있는 environment와 server computer에 다운되어 있는 environment가 다르면, local에서 작성된 code는 server에서 호환성 문제로 작동이 안될 수도 있다. 이 문제를 해결하기 위해 container라는 개념이 등장하였고, Docker가 container를 제공하는 가장 큰 platform이다.
+local computer에 다운되어 있는 environment와 server computer에 다운되어 있는 environment가 다르면, local에서 작성된 code는 server에서 호환성 문제로 작동이 안될 수도 있다. 이 문제를 해결하기 위해 container라는 개념이 등장하였고, **Docker**가 container를 제공하는 가장 큰 platform이다.
 
 Docker는 서비스를 제공할 때, 아주 쉽고, 빠르고, 간단하게 같은 environment의 container를 만드는 것을 도와준다.
 
-Dockerfile로 image를 만들고 (build),
-image로 container를 실행한다 (run).
+- Dockerfile로 image를 만들고 (build),
+- image로 container를 실행한다 (run).
 
-Dockerhub에서 공식적인 image을 다운 받을 수도 있고, 내가 customized한 image도 upload할 수 있다.
+Dockerhub은 github처럼 사용자가 공식적인 image을 다운 받을 수도 있고, customized한 image도 upload할 수 있다.
 
 기본 구조: Dockerfile -build> Dokcer image -run> Docker container
 
 - Dockerfile로 image를 build하는 commend
 
-  > $ docker bulid -t imageName
-  > local computer에 이 이미지가 존재하지 않으면, Dockerhub에서 image을 다운 받는다.
+```
+$ docker bulid -t imageName
+// local computer에 이 이미지가 존재하지 않으면,
+// Dockerhub에서 image을 다운 받는다.
+```
 
 - image로 container를 run하는 commend
-  > $ docker run -it imageName
-  > $ docker run -b imageName
-  > (d는 daemon의 약자로 뒤에서 작동한다.)
+
+```
+$ docker run -it imageName
+$ docker run -b imageName
+// d는 daemon의 약자로 뒤에서 작동한다.
+```

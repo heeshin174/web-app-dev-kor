@@ -241,9 +241,10 @@ React.js, Typescript 등등 outside library/framework로 만들어 native `HTML`
     - React JS with Typescript: https://create-react-app.dev/docs/adding-typescript/
   - Meta Library & Meta Framework (Meta-Framework: 기존 framework 위에 만들어진 framework)
     - React based
-      - [Server-Side Rendering (SSR)](https://github.com/heeshin174/Web_App_Dev_Kor#client-side-rendering-csr-vs-server-side-rendering-ssr)
+      - [Server-Side Rendering (SSR) & Static Site Generators (SSG)](https://github.com/heeshin174/Web_App_Dev_Kor#client-side-rendering-csr-vs-server-side-rendering-ssr)
         - ⭐ [**Next.js**](https://github.com/heeshin174/Web_App_Dev_Kor#7-nextjs): https://nextjs.org/docs/
         - [Remix](https://github.com/heeshin174/Web_App_Dev_Kor#8-remix): https://remix.run/docs/en/v1
+        - Gatsby
       - Managing and centralizing application state
         - redux-toolkit: https://redux-toolkit.js.org/
         - react-redux: https://react-redux.js.org/
@@ -251,8 +252,8 @@ React.js, Typescript 등등 outside library/framework로 만들어 native `HTML`
       - CSS Framework
         - react-bootstrap (components): https://react-bootstrap.github.io/getting-started/introduction
         - Material-UI (components): https://mui.com/
-      - Static Site Generators (SSG)
-        - Gatsby
+      - Data Visualization
+        - Victory: https://formidable.com/open-source/victory/
       - Other React libraries
         - MDX (Markdown for the component era): https://mdxjs.com/
         - react-icons (icons): https://react-icons.github.io/react-icons
@@ -287,6 +288,7 @@ API key같은 외부에 노출되서는 안되는 environmental variables들은 
 + Library and Framework
   - [Javascript](https://github.com/heeshin174/Web_App_Dev_Kor#3-javascript)
     - [Express.js](https://github.com/heeshin174/Web_App_Dev_Kor#2-expressjs): https://expressjs.com/
+    - Nest.js (run on the top of express.js): https://nestjs.com/
   - Python
     - [Flask](https://github.com/heeshin174/Web_App_Dev_Kor#3-flask-python): https://flask.palletsprojects.com
     - Django: https://docs.djangoproject.com/en/4.0/
@@ -303,7 +305,9 @@ API key같은 외부에 노출되서는 안되는 environmental variables들은 
   - Prisma (PlanetScale에 hosting된 serverless database와 연결): https://www.prisma.io/
   - PlanetScale (serverless database): https://planetscale.com/
 
+- Twilio: https://www.twilio.com/
 - SendGrid (Email API): https://sendgrid.com/
+- MailGun (Email API): https://www.mailgun.com/
 - JWS (Json Web Token): https://jwt.io/
 
 - Javascript Library/Framework
@@ -314,10 +318,15 @@ API key같은 외부에 노출되서는 안되는 environmental variables들은 
   * dotenv (javascript library: set environmental variables): https://github.com/motdotla/dotenv
   * concurrently (javascript library: start client and server together): https://github.com/open-cli-tools/concurrently
   * Axios (javascript library: XMLHttpRequests): https://axios-http.com/docs/intro
-  * bcryptjs (hashing password): https://www.npmjs.com/package/bcryptjs
+  * bcrypt.js (hashing password): https://www.npmjs.com/package/bcryptjs
+  * crypto.js https://cryptojs.gitbook.io/docs/
 
 - Cloudflare Streams (realtime live streaming for live commerce): https://www.cloudflare.com/products/cloudflare-stream/
 - Cloudflare Images: https://www.cloudflare.com/products/cloudflare-images/
+- Paddle (payment): https://paddle.com/
+- Paddle developer (payment): https://developer.paddle.com/
+- Apollo (transfer GraphQL data between server to the UI): https://www.apollographql.com/docs/
+- Graphql (A query language for your API): https://graphql.org/
 
 각각의 programming language마다 Web Application Server를 만드는 web app framework를 제공한다.
 
@@ -381,6 +390,10 @@ Database는 크게 Relational database (sql)와 Not only Relational database (No
 
 ### 5. Testing
 
+- JavaScript Testing Framework
+  - Jest.js: https://jestjs.io/
+- Cypress (front end testing tool): https://docs.cypress.io/guides/overview/why-cypress#In-a-nutshell
+
 - 다른 Operating system에서도 내 웹사이트가 잘 작동하는지 확인한다.
   Windows 사용자면, MacOS에서도 접속해본다.
 - 다른 Web browser에서도 내 웹사이트가 잘 작동하는지 확인한다.
@@ -418,6 +431,7 @@ Database는 크게 Relational database (sql)와 Not only Relational database (No
 
 - Tools
   - Postman (RESTful API): https://www.postman.com/downloads/
+  - Insomnia (RESTful API): https://insomnia.rest/
   - VSCode (Microsoft IDE: Code Editor): https://code.visualstudio.com/
   - Eclipse (Java IDE): https://www.eclipse.org/documentation/
   - GoormIDE (Docker based Cloud IDE): https://www.goorm.io/
@@ -4118,9 +4132,13 @@ git을 사용할 project folder에서 terminal에 `git init`을 입력
 
 `git init`은 맨 처음에 새로운 project를 위한 git repository를 만들 때만 사용하는 command이다. 즉, 기존에 진행되어 이미 source code가 github server에 올라간 project들은 `git init`을 할 필요가 없다.
 
-`git init`을 한 project는 내 컴퓨터 내에서만 git을 사용하는 것이다. 그럼으로 github server로 project를 올리려면 새로 git repository를 생성 후 직접 연결해주어야 한다.
+`git init`을 한 project는 내 컴퓨터 내에서만 git을 사용하는 것이다. 그럼으로 github server로 project를 올리려면 새로 git repository를 생성 후 직접 연결해주어야 한다. `git remote add https://<gitrepo>`내 컴퓨터와 github server를 연결해 온라인에서 다른 프로그래머와 협업할 수 있다.
 
-`git remote ...`로 내 컴퓨터와 github server를 연결해 온라인에서 다른 프로그래머와 협업할 수 있다.
+```
+$ git init
+$ git remote add https://...
+$ git remote add origin
+```
 
 ### Git workflow
 
@@ -5253,17 +5271,31 @@ Set User name & User password => Network access IP Address => Connect => "Connet
 
 ## 6. [RocketRs](https://rocket.rs/) (Rust)
 
-Rocket is a web framework for Rust that makes it simple to write fast, secure web applications without sacrificing flexibility, usability, or type safety.
+Rocket is a web framework for Rust that makes it simple to write fast, secure web applications without sacrificing flexibility, usability, or type safety. Rocket은 Rust 프로그래밍언어로 작성된 서버 사이드 웹 framework이다
 
-Rocket은 Rust 프로그래밍언어로 작성된 서버 사이드 웹 framework이다. Rust는 C,C++과 같은 low-level programming language로 사람보다는 기계에 가깝게 코딩을 한다.
+## Rust
+
+Rust는 C++를 대체하기 위해 mozilla 제단에서 만든 언어로 system programming, embeded programming을 하기에 특화되어 있다. Rust는 low-level programming language로 사람보다는 기계에 가깝게 코딩을 한다. Rust is a **`low-level statically-typed multi-paradigm programming language`** that's focused on safety and performance. Rust solves problems that C/C++ has been struggling with for a long time, such as memory errors and building concurrent programs. 
+
+위처럼 Rust는 **statically-typed** 언어이기 때문에 compile time에 compiler가 모든 변수의 data type를 알고 있어야 error없이 compile이 된다. 변수의 data type이 명확하지 않을 경우, 개발자가 직접 변수의 타입을 지정해주어야 한다.
 
 ![low-high](img/lowhigh.png)
 
-Rust와 C, C++는 Javascript, python과는 다르게 memory를 관리해주는 garbage collector (GC)가 없기 때문에, 변수를 선언할 때 memory에 변수를 저장할 공간을 직접 요청하고, 더이상 이용하지 않는 변수는 memory에서 free해주어야 한다. GC가 없기 때문에 아주 빠르고, 안전하다.
+Rust와 C++는 Javascript, python과는 다르게 memory를 관리해주는 garbage collector (GC)가 없기 때문에, 변수를 선언할 때 memory에 변수를 저장할 공간을 직접 요청하고, 더이상 이용하지 않는 변수는 memory에서 free해주어야 한다. GC가 없기 때문에 아주 빠르고, 안전하다.
 
 Rust의 compiler `rustc`는 기계가 읽을 수 있는 a binary code를 생성하고, 코드의 문제를 발견 시 compiler error를 발생시켜 코드의 어디가 왜 문제이고 어떻게 작성해야 하는지 까지 알려준다. 이는 Rust로 code를 작성하는 큰 이유 중 하나이다.
 
-예시: `hello.rs` file
+Rust 장점
+- 뛰어난 compiler: 코드를 엄격하게 check하여, 문제가 있는 경우 runtime error가 발생하기도 전에 compile조차 되지 않게 만들고, 코드의 어디가 어떻게 문제인지 친절하게 설명해준다.
+- low-level과 modern programming의 조화: 
+  - 기존 low level에는 없는 기능을 제공한다: Javascript의 package manager `npm`과 같이 `cargo`라는 강력한 package manager를 제공해 외부 libraries를 쉽게 사용가능하다.
+    - `cargo run` 
+    - `cargo build` 
+- Fast and safe memory management
+  - Go나 Javascript에 존재하는 memory manager, garbage collector (GC),를 이용하지 않는 대신 새로운 개념인 **`ownership`**을 개발해 memory를 안전하게 관리한다.
+  - **ownership**: value는 단 하나의 owner가 존재하고, 변수가 정의된 scope을 벋어나면 자동으로 drop한다.
+
+`hello.rs` file
 
 ```
 // This is a comment, and is ignored by the compiler
@@ -5293,6 +5325,227 @@ fn main() {
 $ ./hello
 Hello World!
 ```
+In Rust, by default variables are **immutable**. It means that you cannot change the value of variables once assigned. This is one of many nudges Rust gives you to write your code in a way that takes advantage of the safety and easy concurrency that Rust offers. However, you still have the option to make your variables mutable. 
+
+```
+fn main() {
+  // Variables: immutable by default
+  // Variables can be mutable using `mut` keyword
+  // immutable variable y
+  let y = 6;
+  // mutable variable x
+  let mut x = 5;
+  println!("The value of x is: {}", x);
+  x = 6;
+  println!("The value of x is: {}", x);
+
+  // Constant: always immutable
+  const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;
+}
+```
+
+### Rust data types 
+
+Rust does not have `null` vallue
+
+1. Scalar type
+    - integer: default to `i32`
+      - `i8`: signed 8 bits -(2^7) to 2^7 -1, which is `[-128, 127]` 
+      - `i16`: signed 16 bits -(2^15) to 2^15 -1, which is `[-32768, 32767]` 
+      - `i32`: signed 32 bits -(2^31) to 2^31 -1
+      - `i64`: signed 64 bits -(2^63) to 2^63 -1
+      - `i128`: signed 128 bits -(2^127) to 2^127 -1
+      - `isize`: architecture of the computer your program is running on, which is denoted in the table as “arch”: 64 bits if you’re on a 64-bit architecture and 32 bits if you’re on a 32-bit architecture.
+      - `u8`: unsigned 8 bits 0 to 2^8 -1, which is `[0, 255]` 
+      - `u16`: unsigned 16 bits 0 to 2^16 -1
+      - `u32`: unsigned 32 bits 0 to 2^32 -1
+      - `u64`: unsigned 64 bits 0 to 2^64 -1
+      - `u128`: unsigned 128 bits 0 to 2^128 -1
+      - `usize`: architecture of the computer your program is running on.
+    - floating-point number: default to `f64`
+      - `f32`: 32 bits in size `let x = 2.0; // f64`
+      - `f64`: 64 bits in size `let y: f32 = 3.0; // f32`
+    - Boolean Type: `bool`
+      - `let t = true;`
+      - `let f: bool = false; // with explicit type annotation`
+    - charactor: `char` (single quote)
+      - `let c = 'z';`
+      - `let z = 'ℤ';`
+      - `let heart_eyed_cat = '😻';`
+    - String: `&str` (double quotes)
+      - `let name : &str = "Shin";`
+2. Compound data types: group multiple values into one type
+    - Tuple
+      - Tuples have a fixed length: once declared, they cannot grow or shrink in size.
+      - The tuple without any values, `()`, is a special type that has only one value. The type is called the `unit type` and the value is called the unit value. Expressions implicitly return the unit value if they don’t return any other value.
+    - Array
+      - Unlike a tuple, every element of an array must have the same type. 
+      - Unlike arrays in some other languages, arrays in Rust have a fixed length.
+      - Arrays are useful when you want your data allocated on the **stack** rather than the heap
+
+```
+fn main() {
+    // compound data type
+    // 1. tuple
+    let tup = (500, 6.4, 1);
+
+    // destructuring
+    let (x, y, z) = tup;
+
+    // access a tuple element directly by using a period (.)
+    // followed by the index of the value we want to access.
+    let five_hundred = x.0;
+    let six_point_four = x.1;
+    let one = x.2;
+
+    println!("The value of y is: {}", y);
+
+
+    // 2. Array
+    let a = [1, 2, 3, 4, 5];
+
+    // access a array element directly by using a square brackets []
+    let first = a[0];
+    let second = a[1];
+}
+```
+
+### Ownership
+
+`Ownership` is a set of rules that governs how a Rust program manages memory. All programs have to manage the way they use a computer’s memory while running. 
+
+- Some languages, such as GO, Javascript have **garbage collection (GC)** that constantly looks for no-longer used memory as the program runs. 
+
+- in other languages, such as C++, the programmer must explicitly allocate and free the memory. 
+
+```
+// c++ malloc() and free() to allocate the memory in heap
+#include<stdio.h>
+#include<stdilb.h>
+
+int main() {
+  // allocate the memory in heap
+  int* ptr = (int*)malloc(5*sizeof(int));
+  // int data type size = sizeof(int) = 4 bytes
+  // ptr = 5 int size = 5 * 4 bytes = 20 bytes of memory
+
+  // release the allocated memory if it not needed more
+  free(ptr);
+}
+```
+
+- Rust uses a third approach: memory is managed through a system of **ownership** with a set of rules that the compiler checks. If any of the rules are violated, the program won’t compile. 
+
+Ownership Rules
+  1. Each value in Rust has a variable that’s called its owner.
+  2. There can only be one owner at a time.
+  3. When the owner goes out of scope, the value will be dropped.
+       - scope이 끝나면, variable은 자동으로 free가 된다. 
+
+```
+fn main() {
+  let s1 = String::from("hello"); // s1 is valid from this point forward
+  let s2 = s1;
+  // s1 and s2 points same heap memory. 
+  // In rust, s1 gives its ownership to s2.
+  // s1 is no longer valid.
+
+  // To, copy whole heap memory as well, use `clone()`
+  // clone() method will deeply copy the heap data of the String, not just the stack data
+  let s3 = String::from("hello"); 
+  let s4 = s3.clone(); 
+  // two "hello" data in heap memory
+
+  let x = 5;
+  let y = x;
+  // since x and y are pushed only stack memory, 
+  // x is still valid and wasn’t moved into y.
+  // x and y are all vaild.
+
+} // this scope is now over, and s2 is no
+  // longer valid
+```
+
+![heap](img/heap.svg)
+
+- `src/main.rs` file
+
+```
+fn main() {
+  let s = String::from("hello"); // s comes into scope
+
+  takes_ownership(s); // s's value moves into the function...
+                      // ... and so is no longer valid here
+
+   let x = 5; // x comes into scope
+
+    makes_copy(x); // x would move into the function,
+                   // but i32 is Copy, so it's okay to still
+                   // use x afterward
+
+} // Here, x goes out of scope, then s. But because s's value was moved, nothing
+  // special happens.
+
+fn takes_ownership(some_string: String) { // some_string comes into scope
+    println!("{}", some_string);
+} // Here, some_string goes out of scope and `drop` is called. The backing
+  // memory is freed.
+
+fn makes_copy(some_integer: i32) { // some_integer comes into scope
+    println!("{}", some_integer);
+} // Here, some_integer goes out of scope. Nothing special happens.
+```
+
+변수를 heap memory에 allocate하고, 그 변수를 함수의 parameter로 넘겨주면, data의 `move`가 일어나고, 그 변수는 다시 사용할 수 없다. 이는 Rust의 ownership때문이디. 그 변수를 그 scope내에서 다시 사용하고 싶다면, ownership을 넘겨주는 것이 아니라 `References and borrowing`을 이용하여 넘겨주어야 한다. A reference is like a pointer in that it’s an address we can follow to access data stored at that address that is owned by some other variable. Unlike a pointer, a reference is guaranteed to point to a valid value of a particular type. The opposite of referencing by using `&` is dereferencing, which is accomplished with the dereference operator, `*`.
+
+The Rules of References
+1. At any given time, you can have either one mutable reference or any number of immutable references.
+2. References must always be valid.
+
+```
+fn main() {
+  let s1 = String::from("hello");
+  let len = calculate_length(&s1);
+  // s1 doesn't give its ownership to function
+  // rather function takes pointer of variable that points the heap memory.
+  
+  println!("The length of '{}' is {}.", s1, len);
+  // Output: The length of 'hello' is 5.
+
+  let s2 = String::from("hello"); 
+  let len = calculate_length(s2);
+  // s2 is move to function and no longer vaild in this scope. 
+} // s1 `drop` from heap memory
+// s2's value was moved, nothing happend
+
+// function takes String reference and return unsigned integer
+fn calculate_length(s: &String) -> usize {
+  s.len()
+} // s2's value was moved to here, so it drops here
+```
+
+![reference](img/reference.svg)
+
+### Stack and Heap
+
+Both the stack and the heap are parts of memory available to your code to use at runtime, but they are structured in different ways
+
+Stack 
+- **last in, first out** data structure
+- Adding data is called **pushing** onto the stack, and removing data is called **popping** off the stack.
+- **All data stored on the stack must have a known, fixed size.** 
+- Pushing to the stack is faster than allocating on the heap because the allocator never has to search for a place to store new data; that location is always at the top of the stack.
+- Accessing data in the heap is slower than accessing data on the stack because you have to follow a pointer to get there.
+- When your code calls a function, the values passed into the function (including, potentially, pointers to data on the heap) and the function’s local variables get pushed onto the stack. When the function is over, those values get popped off the stack.
+
+Heap
+- Data with an **unknown size** at compile time or a size that might change must be stored on the heap instead.
+- allocating on the heap: you request a certain amount of space. The memory allocator finds an empty spot in the heap that is big enough, marks it as being in use, and returns a pointer, which is the address of that location.
+
+Differences
+- allocating space on the heap requires more work than pushing to the stack, because the allocator must first find a big enough space to hold the data and then perform bookkeeping to prepare for the next allocation.
+- Pushing to the stack is faster than allocating on the heap because the allocator never has to search for a place to store new data; that location is always at the top of the stack.
+- Accessing data in the heap is slower than accessing data on the stack because you have to follow a pointer to get there.
 
 ## % 부록2: Amazon사의 cloud service인 AWS (Amazon Web Service) 사용하기 %
 
@@ -5307,6 +5560,63 @@ Hello World!
 5. AWS Lambda - 함수
 
 6. AWS Elastic Beanstalk - 간단히 코드를 배포할 때 사용
+
+## [NestJs](https://nestjs.com/)
+
+### Next.js란 
+
+Nest.js는 효율적이고, 안정적이며, 확장에 용이한 서버 어플리케이션을 구축하기 위한 진보된 nodejs framework이다. 대부분의 Nest의 코드는 typescript로 만들어졌으며, typescript 를 완전하게 지원한다. 하지만 Nest.js는 Express.js와 동급은 아닙니다. Nest.js는 HTTP 요청을 다루는 웹서버로 내부적으로 Express를 사용하고 있습니다. 즉 Nest는 Express 위에서 돌아가는 layer에 불과합니다. Express가 기본 웹서버지만 Fastify를 사용하도록 구성 할 수도 있다.
+
+### Next.js 장점
+
+- Nest.js는 Express와 같은 web server framework로, Express는 굉장히 쉽게 서버를 만들 수 있게 만들어 줬지만 시스템 디자인 측면에서 지원하는 것은 거의 없기 때문에 이러한 문제를 해결하고자 나온 framework가 Nest.js이다.
+- NestJS는 Typescript 기반의 OOP(Object Oriented Programming), FP(Functional Programming), FRP(Functional Reactive Programming)를 지원합니다.
+- Open-closed principle: Application이 점점 커지고 복잡해지면 아키텍쳐건 application이건 확장이 용이하고 느슨하게 결합된 형태로 발전하는 것이 중요하다. 
+- high cohesion low coupling: module내의 결합은 크게하고, module간의 결합은 작게 만드는 것이 좋은 design이다.
+- Express/Fastify 위에서 동작하고, 추상화된 API를 제공하지만 완전하게 Express를 추상화하고 캡슐화하지 않았기 때문에 기존 Express에서 동작하는 수 많은 library를 그대로 사용할 수 있다.
+- 구조를 강제: Nest.js는 framework이기 떄문에 Nest.js만의 정해진 틀이 존재하고, 그 틀만 잘 따라하면 원하는 결과를 쉽게 얻을 수 있다. 이는 대규모 팀 협업에도 좋고, 다른 개발자의 코드를 한 눈에 알아보기 쉽다.
+
+### 기본 구조
+
+![nestjs](img/nestjs.png)
+
+기본 컨셉은 Provider(상기 이미지에선 service), Controller를 module로 합치고, 그 module들을 최종적으로 `app.module`에 합쳐서 사용하는 것이다.
+
+Nest.jS는 Singleton design pattern을 지향하기 때문에 instance를 직접 생성하지 않고 module을 통해 Injection 하는 패턴을 권장하고있다. allows only one instance at the same time.  
+
+직접 instance를 생성하여 등록하는 방법도 지원하는데, 보통 전역적으로 적용해야할 Provider들에 사용한다. (다만 권장하는 방식은 아니다. 인스턴스 생성을 NestJS에게 맡기는 것을 권장한다.)
+
+Singleton design pattern: 전역 변수를 사용하지 않고 객체를 하나만 생성 하도록 하며, 생성된 객체를 어디에서든지 참조할 수 있도록 하는 패턴
+
+#### Controller
+
+BackEnd에서 흔히 사용하는 Controller 개념 그대로 생각하면 된다.
+
+처음 request가 들어오는 입구 역할을 담당하며, 비즈니스 로직을 따로 분리하기 위해 진입점을 따로 분리해둔 것이다. 쉽게 설명하자면 식당에 들어갔을 때 좌석을 안내해주는 직원을 생각하면 된다.
+
+HTTP Request에 따라 어떠한 비즈니스 로직을 적용시킬지에 대한 설정을 하면 된다.
+
+#### Provider
+
+Provider는 Nest.jS의 거의 모든 데이터 처리 및 비즈니스 로직을 담당한다. 다만 역할에 따라 이름이 달라진다.
+
+- 사용자 인증: Guards
+- 클라이언트가 보내는 데이터 필터링: Pipes
+- 비즈니스 로직: Service or Handler
+- 예외처리: Exception Filters
+- Porvider 처리 과정 중 위에 해당하지 않는 무언가를 하고 싶을 때: Interceptor
+- 미들웨어: Express의 Middleware와 동일
+
+#### Module
+
+Module은 Provider와 Controller를 합치는 역할을 한다. 뿐만 아니라 다른 Module이 Provider를 사용할 수 있게 export 처리를 하거나 필요한 Provider가 있는 모듈을 Import해서 사용할 수 있게 만들어준다.
+
+Nest.js는 client의 요청별로 Controller와 Provider를 제작하고 이를 Module로 엮어 하나의 단위를 만든다고 할 수 있다.
+
+Nest.js 장점
+- 효율성 : nestjs는 typescript의 적극적인 도입, DI(Dependency Injection), IoC(Inversion of Control), Module을 통한 구조화 등의 기술을 통해 생산적인 개발이 용이하다.
+- 안정적 : Nestjs는 typescript를 적극적으로 도입함으로서 서버 application 개발 시 발생할 수 있는 오류들을 사전에 방지할 수 있도록 하였다. 또한 모듈로 감싸는 형태로 개발하기 때문에 모듈 별로 테스트 코드를 쉽게 작성할 수 있도록 구현되어 있다.
+- 확장성 : Nestjs는 module을 통해 확장이 용이하도록 설계되어 있다. 실제로 사용해보면 module을 통해 코드적으로, 논리적으로 구분한다는 장점을 크게 느끼실 수 있다. 또한 nestjs는 기본적으로 microservice 아키텍처 개발 스타일을 제공한다.
 
 ## % 부록3: Docker 이해하기 %
 

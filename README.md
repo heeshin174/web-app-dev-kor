@@ -27,6 +27,7 @@
   4. [Postgresql](https://github.com/heeshin174/Web_App_Dev_Kor#4-postgresql)
   5. [Mongodb](https://github.com/heeshin174/Web_App_Dev_Kor#5-mongodb)
   6. [RocketRs](https://github.com/heeshin174/Web_App_Dev_Kor#6-rocketrs)
+  7. [NestJs](https://github.com/heeshin174/Web_App_Dev_Kor#6-nestjs)
 
 ## 0. Web Development Loadmap
 
@@ -250,11 +251,13 @@ React.js, Typescript 등등 outside library/framework로 만들어 native `HTML`
         - redux-toolkit: https://redux-toolkit.js.org/
         - react-redux: https://react-redux.js.org/
         - redux-thunk: https://github.com/reduxjs/redux-thunk
+        - recoil: https://recoiljs.org/
       - CSS Framework
         - react-bootstrap (components): https://react-bootstrap.github.io/getting-started/introduction
         - Material-UI (components): https://mui.com/
       - Data Visualization
         - Victory: https://formidable.com/open-source/victory/
+        - Apexchart: https://apexcharts.com/
       - Other React libraries
         - MDX (Markdown for the component era): https://mdxjs.com/
         - react-icons (icons): https://react-icons.github.io/react-icons
@@ -264,6 +267,9 @@ React.js, Typescript 등등 outside library/framework로 만들어 native `HTML`
         - react-scroll (smooth scroll): https://github.com/fisshy/react-scroll
         - react-router: https://reactrouter.com/docs/en/v6
         - SWR (React Hooks for Data Fetching): https://swr.vercel.app/
+        - Framer motion (animation): https://www.framer.com/motion/
+        - react-hook-form: https://react-hook-form.com/
+        - react-query: https://react-query.tanstack.com/
     - Vue based
       - Server-Side Rendering (SSR)
         - ⭐ **Nuxt.js**
@@ -291,10 +297,11 @@ API key같은 외부에 노출되서는 안되는 environmental variables들은 
     - [Express.js](https://github.com/heeshin174/Web_App_Dev_Kor#2-expressjs): https://expressjs.com/
     - Nest.js (run on the top of express.js): https://nestjs.com/
   - Python
-    - [Flask](https://github.com/heeshin174/Web_App_Dev_Kor#3-flask-python): https://flask.palletsprojects.com
+    - [Flask.py](https://github.com/heeshin174/Web_App_Dev_Kor#3-flaskpy): https://flask.palletsprojects.com
     - Django: https://docs.djangoproject.com/en/4.0/
   - Rust
-    - [Rocket](https://github.com/heeshin174/Web_App_Dev_Kor#6-rocketrs-rust): https://rocket.rs/
+    - [Rocket.rs](https://github.com/heeshin174/Web_App_Dev_Kor#6-rocketrs): https://rocket.rs/
+    - Actix.rs: https://actix.rs/
 
 - Database
 
@@ -312,24 +319,31 @@ API key같은 외부에 노출되서는 안되는 environmental variables들은 
 - MailGun (Email API): https://www.mailgun.com/
 - JWS (Json Web Token): https://jwt.io/
 
-- Javascript Library/Framework
+- other Javascript Library/Framework
 
-  - Next.js (Server side rendering): https://nextjs.org/docs/getting-started
+  - Next (Server side rendering): https://nextjs.org/docs/getting-started
   - Remix (Server side rendering): https://remix.run/docs/en/v1
-  - Gatsby.js (Server side generator): https://www.gatsbyjs.com/
+  - Gatsby (Server side generator): https://www.gatsbyjs.com/
   - nodemon (javascript library: auto reload server): https://www.npmjs.com/package/nodemon
   - dotenv (javascript library: set environmental variables): https://github.com/motdotla/dotenv
   - concurrently (javascript library: start client and server together): https://github.com/open-cli-tools/concurrently
   - Axios (javascript library: XMLHttpRequests): https://axios-http.com/docs/intro
-  - bcrypt.js (hashing password): https://www.npmjs.com/package/bcryptjs
-  - crypto.js https://cryptojs.gitbook.io/docs/
+  - bcrypt (hashing password): https://www.npmjs.com/package/bcryptjs
+  - crypto: https://cryptojs.gitbook.io/docs/
+  - passport (social media login): https://www.passportjs.org/
+  - multer (upload files): https://github.com/expressjs/multer
+  - webpack (bundle JavaScript files): https://webpack.js.org/
+  - gulp (bundle JavaScript files): https://gulpjs.com/
 
+- ESLint (Formatters): https://eslint.org/
 - Cloudflare Streams (realtime live streaming for live commerce): https://www.cloudflare.com/products/cloudflare-stream/
 - Cloudflare Images: https://www.cloudflare.com/products/cloudflare-images/
 - Paddle (payment): https://paddle.com/
 - Paddle developer (payment): https://developer.paddle.com/
 - Apollo (transfer GraphQL data between server to the UI): https://www.apollographql.com/docs/
 - Graphql (A query language for your API): https://graphql.org/
+- Wordpress: https://wordpress.com/
+- Woocommerce (eCommerce platform built on WordPress): https://woocommerce.com/
 
 각각의 programming language마다 Web Application Server를 만드는 web app framework를 제공한다.
 
@@ -445,6 +459,7 @@ Database는 크게 Relational database (sql)와 Not only Relational database (No
   - Diagram.io (Design UI): https://app.diagrams.net/
   - Jsbin (간단한 code 실행): https://jsbin.com/
   - Quicktype (Api로 얻은 Json data를 각종 다른 언어로 변환): https://quicktype.io/
+  
 - Educations
   - Web Development In 2022 - https://www.youtube.com/watch?v=EqzUcMzfV1w&list=PLg8KC9DusHl8zGjAWYGGJygm3rWoEahJQ&index=30&ab_channel=TraversyMedia
   - Async Await: https://kiwanjung.medium.com/%EB%B2%88%EC%97%AD-async-await-%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-%EC%A0%84%EC%97%90-promise%EB%A5%BC-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-955dbac2c4a4

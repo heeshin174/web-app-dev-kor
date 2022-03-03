@@ -5610,8 +5610,9 @@ Model–view–controller (MVC) is a **software design pattern** commonly used f
 
 ### 기본 구조
 
-Nest.js는 controller와 business logic을 구분 짓고 싶어 한다. controller는 나머지 business logic은 service가 다룬다. 여기서 service란 MVC framework에서 Model 부분을 의미한다.
-controller는 service에 작성된
+Nest.js는 controller와 business logic을 구분 짓고 싶어 한다. controller는 client로 부터 url과 요청을 받아 service의 함수를 호출하고, 나머지 business logic은 service가 다룬다. 여기서 service란 MVC framework에서 Model 부분을 의미한다.
+
+- Service에는 요청을 처리하는 실제 코드를 작성하고, controller는 client의 요청을 받아 그에 맞는 service에 작성된 함수를 호출한다.
 
 ![nestjs](img/nestjs.png)
 

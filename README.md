@@ -15,10 +15,9 @@
   3. [JavaScript](https://github.com/heeshin174/Web_App_Dev_Kor#3-javascript)
   4. [TypeScript](https://github.com/heeshin174/Web_App_Dev_Kor#4-typescript)
   5. [React.js](https://github.com/heeshin174/Web_App_Dev_Kor#5-reactjs)
-  6. [Vue.js](https://github.com/heeshin174/Web_App_Dev_Kor#6-vuejs)
-  7. [Next.js](https://github.com/heeshin174/Web_App_Dev_Kor#7-nextjs)
-  8. [Remix](https://github.com/heeshin174/Web_App_Dev_Kor#8-remix)
-  9. [Redux](https://github.com/heeshin174/Web_App_Dev_Kor#9-redux)
+  6. [Vue.js](https://github.com/heeshin174/Web_App_Dev_Kor#vuejs)
+  7. [Next.js](https://github.com/heeshin174/Web_App_Dev_Kor#nextjs)
+  8. [Redux](https://github.com/heeshin174/Web_App_Dev_Kor#redux)
 
 - [BackEnd](https://github.com/heeshin174/Web_App_Dev_Kor#3-back-end-server-side)
   1. [Web Application Development](https://github.com/heeshin174/Web_App_Dev_Kor#1-web-application-development)
@@ -27,18 +26,17 @@
   4. [Postgresql](https://github.com/heeshin174/Web_App_Dev_Kor#4-postgresql)
   5. [Mongodb](https://github.com/heeshin174/Web_App_Dev_Kor#5-mongodb)
   6. [RocketRs](https://github.com/heeshin174/Web_App_Dev_Kor#6-rocketrs)
-  7. [NestJs](https://github.com/heeshin174/Web_App_Dev_Kor#6-nestjs)
+  7. [NestJs](https://github.com/heeshin174/Web_App_Dev_Kor#nestjs)
 
 ## 0. Web Development Loadmap
 
-- [Youtube Link](https://www.youtube.com/watch?v=TTLHd3IyErM&list=PLg8KC9DusHl_fxr5tZgwvoHE5SbPnKm_q&index=2)
-  1. [Basic Setup](https://github.com/heeshin174/Web_App_Dev_Kor#1-basic-setup)
-  2. [Front-End](https://github.com/heeshin174/Web_App_Dev_Kor#2-front-end-client-side)
-  3. [Back-End](https://github.com/heeshin174/Web_App_Dev_Kor#3-back-end-server-side)
-  4. [Tools](https://github.com/heeshin174/Web_App_Dev_Kor#4-tools)
-  5. [Testing](https://github.com/heeshin174/Web_App_Dev_Kor#5-testing)
-  6. [Publish](https://github.com/heeshin174/Web_App_Dev_Kor#6-publish)
-  7. [기타 유용한 links](https://github.com/heeshin174/Web_App_Dev_Kor#%EA%B8%B0%ED%83%80-%EC%9C%A0%EC%9A%A9%ED%95%9C-links)
+1. [Basic Setup](https://github.com/heeshin174/Web_App_Dev_Kor#1-basic-setup)
+2. [Front-End](https://github.com/heeshin174/Web_App_Dev_Kor#2-front-end-client-side)
+3. [Back-End](https://github.com/heeshin174/Web_App_Dev_Kor#3-back-end-server-side)
+4. [Tools](https://github.com/heeshin174/Web_App_Dev_Kor#4-tools)
+5. [Testing](https://github.com/heeshin174/Web_App_Dev_Kor#5-testing)
+6. [Publish](https://github.com/heeshin174/Web_App_Dev_Kor#6-publish)
+7. [기타 유용한 links](https://github.com/heeshin174/Web_App_Dev_Kor#%EA%B8%B0%ED%83%80-%EC%9C%A0%EC%9A%A9%ED%95%9C-links)
 
 ### 1. Basic Setup
 
@@ -66,7 +64,7 @@
 - Other Tools
   - Programming Langauges (Node.js, Python, Java, ...)
   - nvm (Node Version Manager)
-  - Git/Github
+  - Git/Github cli (command line)
 - OS별 개발환경 세팅:
   - Macbook developer setup: https://www.youtube.com/watch?v=B26yiuC5zPM
     - Homebrew (MacOS package manager): https://brew.sh/
@@ -97,9 +95,10 @@ boot etc init lib32 libx32 media opt root sbin srv tmp var
 
 Window환경에 따로 programming languages나 다른 git 같은 tool를 설치하여 사용할 수 있지만, 우리는 Linux환경에 개발에 필요한 모든 tools을 설치할 것이다. 그 이유는 Linux환경을 이용하면, Linux가 제공하는 모든 **Unix command**를 Terminal에 쉽게 사용가능하다. 우리는 Terminal로 파일들을 생성, 조작하고 프로그램들을 설치하는 것에 익숙해져야 한다. 만약 설치가 안된다면, 앞에 sudo를 붙여 root권한을 준다
 
-> `sudo apt-get update`
-
-> `sudo apt-get upgrade`
+```
+$ sudo apt-get update
+$ sudo apt-get upgrade
+```
 
 Node.js를 설치할 때에는 Long Time Support (LTS)가 붙어있는 최신버젼을 다운받는다.
 
@@ -107,7 +106,7 @@ Node.js를 설치할 때에는 Long Time Support (LTS)가 붙어있는 최신버
 
 6. Google에 `install zsh` 검색 후 download `zsh`
 
-> `sudo apt install zsh`
+> $ `sudo apt install zsh`
 
 7. Google에 `install Oh my zsh` 검색 후 curl를 사용하여 download `Oh my zsh`
 
@@ -237,16 +236,16 @@ React.js, Typescript 등등 outside library/framework로 만들어 native `HTML`
     - Object-oriented Programming (OOP)
   - FrontEnd Library & Framework
     - ⭐ [**React**](https://github.com/heeshin174/Web_App_Dev_Kor#5-reactjs): https://reactjs.org/
-    - [Vue](https://github.com/heeshin174/Web_App_Dev_Kor#6-vuejs): https://vuejs.org/
+    - [Vue](https://github.com/heeshin174/Web_App_Dev_Kor#vuejs): https://vuejs.org/
     - Angular: https://angularjs.org/
     - **Svelte**: https://svelte.dev/docs
     - React JS with Typescript: https://create-react-app.dev/docs/adding-typescript/
   - Meta Library & Meta Framework (Meta-Framework: 기존 framework 위에 만들어진 framework)
     - React based
       - [Server-Side Rendering (SSR) & Static Site Generators (SSG)](https://github.com/heeshin174/Web_App_Dev_Kor#client-side-rendering-csr-vs-server-side-rendering-ssr)
-        - ⭐ [**Next.js**](https://github.com/heeshin174/Web_App_Dev_Kor#7-nextjs): https://nextjs.org/docs/
-        - [Remix](https://github.com/heeshin174/Web_App_Dev_Kor#8-remix): https://remix.run/docs/en/v1
-        - Gatsby
+        - ⭐ [**Next.js**](https://github.com/heeshin174/Web_App_Dev_Kor#nextjs): https://nextjs.org/docs/
+        - Remix: https://remix.run/docs/en/v1
+        - Gatsby: https://www.gatsbyjs.com/
       - Managing and centralizing application state
         - redux-toolkit: https://redux-toolkit.js.org/
         - react-redux: https://react-redux.js.org/
@@ -258,7 +257,7 @@ React.js, Typescript 등등 outside library/framework로 만들어 native `HTML`
       - Data Visualization
         - Victory: https://formidable.com/open-source/victory/
         - Apexchart: https://apexcharts.com/
-      - Other React libraries
+      - Other React Library/Framework
         - MDX (Markdown for the component era): https://mdxjs.com/
         - react-icons (icons): https://react-icons.github.io/react-icons
         - react-typed (Dynanic text): https://github.com/ssbeefeater/react-typed
@@ -275,7 +274,9 @@ React.js, Typescript 등등 outside library/framework로 만들어 native `HTML`
         - ⭐ **Nuxt.js**
       - CSS Framework
         - Vuetify: https://next.vuetifyjs.com
-    - redux (state관리 library): https://redux.js.org/introduction/getting-started
+    - Other Library/Framework
+      - redux (state관리 library): https://redux.js.org/introduction/getting-started
+      - multer (upload files): https://github.com/expressjs/multer
 
 `Frontend library/framework`은 web application을 더 쉽게 작성할 수 있게 만들어 주는 outside library/framework을 말한다.
 **Single Page Application** (SPA)는 body가 비어있는 하나의 HTML을 가지고 Javascript를 이용해서 그 안에 Data만 변경하는 것을 말한다.
@@ -295,12 +296,12 @@ API key같은 외부에 노출되서는 안되는 environmental variables들은 
 * Library and Framework
   - [Javascript](https://github.com/heeshin174/Web_App_Dev_Kor#3-javascript)
     - [Express.js](https://github.com/heeshin174/Web_App_Dev_Kor#2-expressjs): https://expressjs.com/
-    - Nest.js (run on the top of express.js): https://nestjs.com/
+    - [Nest.js](https://github.com/heeshin174/Web_App_Dev_Kor#nestjs): https://nestjs.com/
   - Python
     - [Flask.py](https://github.com/heeshin174/Web_App_Dev_Kor#3-flaskpy): https://flask.palletsprojects.com
     - Django: https://docs.djangoproject.com/en/4.0/
   - Rust
-    - [Rocket.rs](https://github.com/heeshin174/Web_App_Dev_Kor#6-rocketrs): https://rocket.rs/
+    - [Rocket.rs](https://github.com/heeshin174/Web_App_Dev_Kor#rocketrs): https://rocket.rs/
     - Actix.rs: https://actix.rs/
 
 - Database
@@ -321,17 +322,14 @@ API key같은 외부에 노출되서는 안되는 environmental variables들은 
 
 - other Javascript Library/Framework
 
-  - Next (Server side rendering): https://nextjs.org/docs/getting-started
-  - Remix (Server side rendering): https://remix.run/docs/en/v1
   - Gatsby (Server side generator): https://www.gatsbyjs.com/
   - nodemon (javascript library: auto reload server): https://www.npmjs.com/package/nodemon
   - dotenv (javascript library: set environmental variables): https://github.com/motdotla/dotenv
   - concurrently (javascript library: start client and server together): https://github.com/open-cli-tools/concurrently
-  - Axios (javascript library: XMLHttpRequests): https://axios-http.com/docs/intro
+  - axios (javascript library: XMLHttpRequests): https://axios-http.com/docs/intro
   - bcrypt (hashing password): https://www.npmjs.com/package/bcryptjs
   - crypto: https://cryptojs.gitbook.io/docs/
   - passport (social media login): https://www.passportjs.org/
-  - multer (upload files): https://github.com/expressjs/multer
   - webpack (bundle JavaScript files): https://webpack.js.org/
   - gulp (bundle JavaScript files): https://gulpjs.com/
 
@@ -359,35 +357,27 @@ API key같은 외부에 노출되서는 안되는 environmental variables들은 
 
 #### Full-stack (Client + Server)
 
-Web App dev는 크게 Frontend, Backend로 나눌 수 있고, 이를 합쳐 Fullstack dev라고 한다. Full-stack은 front-end와 back-end를 합친 것으로 서버쪽과 사용자쪽 모두를 다룬다. 이는 MVC (Model / View / Controll) software design pattern 라고도 불린다.
+Web App dev는 크게 Frontend, Backend로 나눌 수 있고, 이를 합쳐 Fullstack dev라고 한다. Full-stack은 Frontend와 Backend를 합친 것으로 서버쪽과 사용자쪽 모두를 다룬다. 이는 MVC (Model / View / Controll) software design pattern 라고도 불린다.
 
 - Model–view–controller is a software design pattern commonly used for developing user interfaces that divide the related program logic into three interconnected elements.
+
   - Model은 View와 Controll을 연결하는 연결고리 역할을 한다.
-  - View은 client가 웹사이트에 방문하여 실제로 보게되는 회면을 의미한다. HTML (HyperText Markup Language), CSS (Cascading Style Sheets), Javascript를 이용하여 View를 작성할 수 있다. 여기서 programming language는 오직 Javascript이다.
+  - View은 client가 웹사이트에 방문하여 실제로 보게되는 회면을 의미한다. HTML (HyperText Markup Language), CSS (Cascading Style Sheets), Javascript를 이용하여 View를 작성할 수 있다.
   - Controll은 app의 functionalities를 의미한다.
 
-추천조합:
-
-- MERN stack in Typescript
-  - Mongo database
-  - Express.js (server)
-  - React.js (front-end)
+- 추천 full-stack 조합
+  - Typescript
   - Node.js
-  - Next.js (Server-side rendering)
-  - Redux.js (state managing)
-- PERN stack in Typescript
-  - Postgresql database
-  - Express.js (server)
-  - React.js (front-end)
-  - Node.js
-  - Next.js (Server-side rendering)
-  - Redux.js (state managing)
+  - frontend: React.js
+  - backend server: Express.js || Nest.js
+  - database: Mongodb || Postgresql
+  - server-side rendering && static site generation: Next.js
+  - state management: Redux.js
 
 #### Database
 
 Database와 web app을 연결하여 쉽고 간단하게 data를 읽고 쓸 수 있다.
-Database는 크게 Relational database (sql)와 Not only Relational database (Nosql)로 나눌 수 있다.
-`sql (Structured Query Language)`
+Database는 크게 Relational database `sql (Structured Query Language)`와 Not only Relational database (Nosql)로 나눌 수 있다.
 
 - `postgresql` - Relational database의 대표주자
 - `Mongo Database` - Not only Relational database의 대표주자
@@ -459,7 +449,6 @@ Database는 크게 Relational database (sql)와 Not only Relational database (No
   - Diagram.io (Design UI): https://app.diagrams.net/
   - Jsbin (간단한 code 실행): https://jsbin.com/
   - Quicktype (Api로 얻은 Json data를 각종 다른 언어로 변환): https://quicktype.io/
-  
 - Educations
   - Web Development In 2022 - https://www.youtube.com/watch?v=EqzUcMzfV1w&list=PLg8KC9DusHl8zGjAWYGGJygm3rWoEahJQ&index=30&ab_channel=TraversyMedia
   - Async Await: https://kiwanjung.medium.com/%EB%B2%88%EC%97%AD-async-await-%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-%EC%A0%84%EC%97%90-promise%EB%A5%BC-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-955dbac2c4a4
@@ -1081,7 +1070,7 @@ https://studiomeal.com/archives/533
 
 ## 3. [Javascript](https://nodejs.org/en/)
 
-node package manager (npm): https://www.npmjs.com/
+- node package manager (npm): https://www.npmjs.com/
 
 ### What is Javascript?
 
@@ -2989,7 +2978,7 @@ console.log([...new Set(array)]);
 
 ## 4. [Typescript](https://www.typescriptlang.org/)
 
-### What is Typescript
+### What is Typescript?
 
 TypeScript is a programming language developed and maintained by Microsoft. It is a strict syntactical superset of JavaScript and adds optional static typing to the language. 여기서 알 수 있듯이, Typescript는 Javascript의 superset으로 Java와 같이 변수를 선언할 때, 그 변수의 type을 지정해 주어야만 한다. 그럼 그냥 Javascript를 쓰면 되는 데, 왜 browser가 인식도 못하는 Typescript를 사용하는 가?에 대한 의문이 든다. 여기서 우리는 먼저 Javascript에 대한 이해가 필요하다.
 
@@ -3004,7 +2993,7 @@ decimal = "Hello"; // error. decimal은 정수라니까...
 
 ## 5. [ReactJs](https://reactjs.org/)
 
-### What is React.js
+### What is React.js?
 
 **React.js**는 web app을 만들 수 있는 Javascript library이다. React.js is a JavaScript library for building user interfaces.
 
@@ -3066,7 +3055,7 @@ const mydata = API()
 예시:
 
 - Libraray: React.js, Bootstrap, ...
-- Framework: Vue.js, Flask, Django, ...
+- Framework: Vue.js, Flask.py, Django.py, ...
 
 ### JSX extension
 
@@ -3140,23 +3129,21 @@ setHuman(humanCopy);
 
 #### List와 Key
 
-먼저 JavaScript에서 리스트를 어떻게 변환하는지 살펴봅시다.
-
-아래는 map()함수를 이용하여 numbers 배열의 값을 두배로 만든 후 map()에서 반환하는 새 배열을 doubled 변수에 할당하고 로그를 확인하는 코드입니다.
+먼저 JavaScript에서 list를 어떻게 변환하는지 살펴봅시다. 아래는 map() function를 이용하여 numbers array의 값을 두배로 만든 후 map()에서 반환하는 새 배열을 doubled 변수에 할당하고 로그를 확인하는 코드이다.
 
 ```
 const numbers = [1, 2, 3, 4, 5];
-const doubled = numbers.map((number) => number \* 2);
+const doubled = numbers.map((number) => number * 2);
 console.log(doubled); // [2, 4, 6, 8, 10]
 ```
 
-React에서 배열을 Element List로 만드는 방식은 이와 거의 동일 합니다.
+React에서 array을 Element List로 만드는 방식은 이와 거의 동일 합니다.
 
-- 여러개의 컴포넌트 렌더링 하기
+- 여러개의 component rendering 하기
 
 엘리먼트 모음을 만들고 중괄호 `{}`를 이용하여 JSX에 포함 시킬 수 있습니다.
 
-아래의 JavaScript의 `Array.prototype.map()` 함수를 사용하여 numbers 배열을 반복 실행합니다. 각 항목에 대해 `<li>` Element를 반환하고 엘리먼트 배열의 결과를 listItems에 저장합니다.
+아래의 JavaScript의 `Array.prototype.map()` 함수를 사용하여 numbers 배열을 반복 실행한다. 각 항목에 대해 `<li>` Element를 반환하고 엘리먼트 배열의 결과를 listItems에 저장한다.
 
 ```
 const numbers = [1, 2, 3, 4, 5];
@@ -3171,6 +3158,7 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
+// 결과값
 <ul>
     <li>1</li>
     <li>2</li>
@@ -3205,7 +3193,7 @@ ReactDOM.render(
 );
 ```
 
-이 코드를 실행하면 리스트의 각 항목에 `key`를 넣어야 한다는 경고가 표시됩니다. `key`는 element list를 만들 때 포함해야 하는 특수한 문자열 attribute입니다. 다음 섹션에서 key의 중요성에 대해서 더 설명하겠습니다. 이제 `numbers.map()` 안에서 리스트의 각 항목에 key를 할당하여 키 누락 문제를 해결하겠습니다.
+이 코드를 실행하면 리스트의 각 항목에 `key`를 넣어야 한다는 경고가 표시된다. `key`는 element list를 만들 때 포함해야 하는 특수한 string attribute입니다. 다음 섹션에서 key의 중요성에 대해서 더 설명하겠습니다. 이제 `numbers.map()` 안에서 리스트의 각 항목에 key를 할당하여 키 누락 문제를 해결하겠습니다.
 
 ```
 function NumberList(props) {
@@ -3228,7 +3216,7 @@ ReactDOM.render(
 );
 ```
 
-- Key
+- Key: unique identifier (UID)
 
 Key는 React가 어떤 항목을 변경, 추가 또는 삭제할지 식별하는 것을 돕습니다. key는 엘리먼트에 안정적인 고유성을 부여하기 위해 배열 내부의 엘리먼트에 지정해야 합니다.
 
@@ -3242,7 +3230,7 @@ const listItems = numbers.map((number) =>
 );
 ```
 
-Key를 선택하는 가장 좋은 방법은 리스트의 다른 항목들 사이에서 해당 항목을 고유하게 식별할 수 있는 문자열을 사용하는 것입니다. 대부분의 경우 데이터의 ID를 key로 사용합니다.
+Key를 선택하는 가장 좋은 방법은 리스트의 다른 항목들 사이에서 해당 항목을 고유하게 식별할 수 있는 문자열을 사용하는 것이다. 대부분의 경우 data의 ID를 key로 사용한다.
 
 ```
 const todoItems = todos.map((todo) =>
@@ -3258,17 +3246,15 @@ const todoItems = todos.map((todo) =>
 ```
 const todoItems = todos.map((todo, index) =>
 // Only do this if items have no stable IDs
-
   <li key={index}>
     {todo.text}
   </li>
 );
 ```
 
-항목의 순서가 바뀔 수 있는 경우 key에 인덱스를 사용하는 것은 권장하지 않습니다. 이로 인해 성능이 저하되거나 컴포넌트의 state와 관련된 문제가 발생할 수 있습니다. Robin Pokorny’s가 작성한 글인 인덱스를 key로 사용할 경우 부정적인 영향에 대한 상세 설명을 참고하시길 바랍니다. 리스트 항목에 명시적으로 key를 지정하지 않으면 React는 기본적으로 인덱스를 key로 사용합니다.
+항목의 순서가 바뀔 수 있는 경우 key에 index를 사용하는 것은 권장하지 않는다. 이로 인해 성능이 저하되거나 컴포넌트의 state와 관련된 문제가 발생할 수 있습니다. 리스트 항목에 명시적으로 key를 지정하지 않으면 React는 기본적으로 index를 key로 사용합니다.
 
-Key로 컴포넌트 추출하기
-키는 주변 배열의 context에서만 의미가 있습니다.
+Key로 컴포넌트 추출하기: 키는 주변 배열의 context에서만 의미가 있습니다.
 
 예를 들어 ListItem 컴포넌트를 추출 한 경우 ListItem 안에 있는 `<li>` 엘리먼트가 아니라 배열의 `<ListItem />` 엘리먼트가 key를 가져야 합니다.
 
@@ -3276,102 +3262,102 @@ Key로 컴포넌트 추출하기
 
 ```
 function ListItem(props) {
-const value = props.value;
-return (
-// 틀렸습니다! 여기에는 key를 지정할 필요가 없습니다.
-
-<li key={value.toString()}>
-{value}
-</li>
-);
+  const value = props.value;
+  return (
+   // 틀렸습니다! 여기에는 key를 지정할 필요가 없습니다.
+   <li key={value.toString()}>
+     {value}
+   </li>
+  );
 }
 
 function NumberList(props) {
-const numbers = props.numbers;
-const listItems = numbers.map((number) =>
-// 틀렸습니다! 여기에 key를 지정해야 합니다.
-<ListItem value={number} />
-);
-return (
+  const numbers = props.numbers;
+  const listItems = numbers.map((number) =>
+  // 틀렸습니다! 여기에 key를 지정해야 합니다.
+  <ListItem value={number} />
+  );
 
-<ul>
-{listItems}
-</ul>
-);
+  return (
+    <ul>
+    {listItems}
+    </ul>
+  );
 }
 
 const numbers = [1, 2, 3, 4, 5];
 ReactDOM.render(
-<NumberList numbers={numbers} />,
-document.getElementById('root')
-);
-예시: 올바른 Key 사용법
-
-function ListItem(props) {
-// 맞습니다! 여기에는 key를 지정할 필요가 없습니다.
-return <li>{props.value}</li>;
-}
-
-function NumberList(props) {
-const numbers = props.numbers;
-const listItems = numbers.map((number) =>
-// 맞습니다! 배열 안에 key를 지정해야 합니다.
-<ListItem key={number.toString()} value={number} />
-);
-return (
-
-<ul>
-{listItems}
-</ul>
-);
-}
-
-const numbers = [1, 2, 3, 4, 5];
-ReactDOM.render(
-<NumberList numbers={numbers} />,
-document.getElementById('root')
+  <NumberList numbers={numbers} />,
+  document.getElementById('root')
 );
 ```
 
-경험상 map() 함수 내부에 있는 엘리먼트에 key를 넣어 주는 게 좋습니다.
+예시: 올바른 Key 사용법
 
-Key는 형제 사이에서만 고유한 값이어야 한다.
-Key는 배열 안에서 형제 사이에서 고유해야 하고 전체 범위에서 고유할 필요는 없습니다. 두 개의 다른 배열을 만들 때 동일한 key를 사용할 수 있습니다.
+```
+function ListItem(props) {
+  // 여기에는 key를 지정할 필요가 없다.
+  return <li>{props.value}</li>;
+}
+
+function NumberList(props) {
+  const numbers = props.numbers;
+  const listItems = numbers.map((number) =>
+  // 배열 안에 key를 지정해야 한다.
+  <ListItem key={number.toString()} value={number} />
+);
+
+  return (
+    <ul>
+    {listItems}
+    </ul>
+  );
+}
+
+const numbers = [1, 2, 3, 4, 5];
+ReactDOM.render(
+  <NumberList numbers={numbers} />,
+  document.getElementById('root')
+);
+```
+
+- **경험상 map() function 내부에 있는 HTMLElement에 key를 넣어 주는 게 좋다.**
+- Key는 배열 안에서 형제 사이에서만 고유하면 되고 전체 범위에서 고유할 필요는 없다. 두 개의 다른 배열을 만들 때 동일한 key를 사용할 수 있습니다.
 
 ```
 function Blog(props) {
-const sidebar = (
+  const sidebar = (
+    <ul>{props.posts.map((post) =>
+      <li key={post.id}>
+        {post.title}
+      </li>
+    )}
+    </ul>
+  );
+  const content = props.posts.map((post) =>
+    <div key={post.id}>
+      <h3>{post.title}</h3>
+      <p>{post.content}</p>
+    </div>
+  );
 
-<ul>
-{props.posts.map((post) =>
-<li key={post.id}>
-{post.title}
-</li>
-)}
-</ul>
-);
-const content = props.posts.map((post) =>
-<div key={post.id}>
-<h3>{post.title}</h3>
-<p>{post.content}</p>
-</div>
-);
-return (
-<div>
-{sidebar}
-<hr />
-{content}
-</div>
-);
+  return (
+    <div>
+      {sidebar}
+      <hr />
+      {content}
+    </div>
+  );
 }
 
-const posts = [
-{id: 1, title: 'Hello World', content: 'Welcome to learning React!'},
-{id: 2, title: 'Installation', content: 'You can install React from npm.'}
-];
+  const posts = [
+    {id: 1, title: 'Hello World', content: 'Welcome to learning React!'},
+    {id: 2, title: 'Installation', content: 'You can install React from npm.'}
+  ];
+
 ReactDOM.render(
-<Blog posts={posts} />,
-document.getElementById('root')
+  <Blog posts={posts} />,
+  document.getElementById('root')
 );
 ```
 
@@ -3389,6 +3375,7 @@ const content = posts.map((post) =>
 위 예시에서 Post 컴포넌트는 props.id를 읽을 수 있지만 props.key는 읽을 수 없습니다.
 
 JSX에 map() 포함시키기
+
 위 예시에서 별도의 listItems 변수를 선언하고 이를 JSX에 포함했습니다.
 
 ```
@@ -3407,20 +3394,19 @@ return (
 }
 ```
 
-JSX를 사용하면 중괄호 안에 모든 표현식을 포함 시킬 수 있으므로 map() 함수의 결과를 인라인으로 처리할 수 있습니다.
+JSX를 사용하면 중괄호 안에 모든 표현식을 포함 시킬 수 있으므로 map() 함수의 결과를 inline으로 처리할 수 있습니다.
 
 ```
 function NumberList(props) {
-const numbers = props.numbers;
-return (
-
-<ul>
-{numbers.map((number) =>
-<ListItem key={number.toString()}
-                  value={number} />
-)}
-</ul>
-);
+  const numbers = props.numbers;
+  return (
+    <ul>
+    {numbers.map((number) =>
+    <ListItem key={number.toString()}
+              value={number} />
+    )}
+    </ul>
+  );
 }
 ```
 
@@ -3428,18 +3414,20 @@ return (
 
 ### Curly brackets {} vs Parentheses () in JSX Arrow Function
 
-- Curly brackets: are a special syntax to let the JSX parser know that it needs to interpret the contents between them as javascript instead of text.
+- Curly brackets: a special syntax to let the JSX parser know that it needs to interpret the contents between them as javascript instead of text.
 
-`const items =this.state.toDoList.map((item) => <li>{item}</li> )`
+`const items = this.state.toDoList.map((item) => <li>{item}</li>)`
 
-Since {item} is in curly brackets JSX interprets that as to find the variable item back in javascript land and to insert it within the `<li></li>`s.
+Since `{item} `is in curly brackets JSX interprets that as to find the variable item back in javascript land and to insert it within the `<li></li>`s.
 
 - Parentheses: are used to wrap multiline codes of Javascript after the return statement in order for your code to compile.
 
 ```
 render () {
-return ( <li> {item}</li>,
-<SomeComponent /> )
+  return (
+    <li> {item}</li>,
+    <SomeComponent />
+  )
 }
 ```
 
@@ -3447,30 +3435,31 @@ If you only have one line of code, you don’t need the parentheses.
 
 ```
 render () {
-return <li> {item}</li>
+  return <li>{item}</li>
 }
 ```
 
+- jsx syntax
+
 ```
-// jsx syntax
 const items = { {id: 1, name: eggs}, {id: 2, name: milk} }
 { items.map(item => (
- <tr key={items.id}>
-    <td>{ items.name }</td>
- <tr>
-)) }
+    <tr key={items.id}>
+      <td>{ items.name }</td>
+    <tr>
+))}
 ```
 
-react.js를 이용할 때, javascript 코드를 jsx syntax에서 사용하고 싶으면 curly brackets {} 안에서 정의하면 된다.
-react.js에서 array를 하나씩 iterate해야할 경우 `array.map()` 함수를 이용하고, 그 안에 callback함수인 arrow function을 정의한다.
+react를 이용할 때, javascript 코드를 jsx syntax에서 사용하고 싶으면 curly brackets {} 안에서 정의하면 된다.
+react에서 array를 하나씩 iterate해야할 경우 `array.map()` 함수를 이용하고, 그 안에 callback함수인 arrow function을 정의한다.
 
 react.js는 jsx이기 때문에 `array.map((param) => {body})`가 아니라 `array.map((param) => (body))`처럼 body에도 parentheses를 사용해야 한다.
 
 `map()`은 javascript code이기 때문에 `{ array.map((param) => (body))}`과 같이 curly brackets {} 안에서 정의하면 된다.
 
-## 6. [VueJs](https://vuejs.org/guide/introduction.html)
+## [VueJs](https://vuejs.org/guide/introduction.html)
 
-### What is Vue.js
+### What is Vue.js?
 
 #### Vue Js가 무엇이고, 왜 사용하는가
 
@@ -3696,7 +3685,7 @@ const blueColor = 'color : blue';
 
 안바뀔꺼 같은 data는 databinding할 필요없이 HTML에 hardcoding하고, 자주 변하는 데이터들은 script tag에 저장한 후 HTML에 꽂아 넣는다.
 
-## 7. [NextJs](https://nextjs.org/)
+## [NextJs](https://nextjs.org/)
 
 ### What is Next.js?
 
@@ -3889,9 +3878,7 @@ export async function getStaticProps() {
 export default Blog
 ```
 
-## 8. Remix
-
-## 9. Redux
+## Redux
 
 ### What is Redux?
 
@@ -5254,11 +5241,11 @@ Postgresql는 relational database의 대표주자이다.
 
 ## 5. [Mongodb](https://www.mongodb.com/)
 
-### What is Mongodb
+### What is Mongodb?
 
 MongoDB is a source-available cross-platform document-oriented database program. MongoDB is Classified as a NoSQL database program, MongoDB uses JSON-like documents with optional schemas. NoSQL은 Not Only SQL, SQL 뿐만 아니다라는 의미를 지니고있다. 즉, SQL을 사용하는 관계형 데이터베이스가 아닌 데이터베이스를 의미한다. 대표적인 관계형 데이터베이스로는 MySQL, Oracle, PostgreSQL이 있고, NoSQL 진영에는 이 포스트에서 다루는 MongoDB와 Redis, HBase 등이 있다.
 
-### Collections이 무엇인지
+### Collections이 무엇인지?
 
 If you aren't failiar with nosql, think `Collectoins` as `Table of row and column` in sql.
 In nosql, you have collection of Document.
@@ -5272,7 +5259,6 @@ We need a MongoDB URL to be able to connect to.
 - Go to Mongodb website (Mongodb Atlas) and create database
 - Mongodb Atlas: cloud baesd
 - Mongodb compass: local computer based
-- MongoDB URL (MongoDB Atlas): https://www.mongodb.com/cloud/atlas/lp/try2?utm_content=1217adtest_pmcopy_control&utm_source=google&utm_campaign=gs_americas_united_states_search_core_brand_atlas_desktop&utm_term=mongodb%20atlas&utm_medium=cpc_paid_search&utm_ad=e&utm_ad_campaign_id=12212624338&adgroup=115749704063&gclid=Cj0KCQiAxc6PBhCEARIsAH8Hff0GkAMWkv-SOoaFSdMgxQaEshcIGIyDHAaSqp-B-yPgW03BbW9DxxQaAhi8EALw_wcB
 
 ```
 Create Project => Create Database => Cluster Tier: M0 Sandbox (Free) => Cloud Provider: AWS
@@ -5564,7 +5550,7 @@ fn calculate_length(s: &String) -> usize {
 
 Both the stack and the heap are parts of memory available to your code to use at runtime, but they are structured in different ways
 
-Stack
+#### Stack
 
 - **last in, first out** data structure
 - Adding data is called **pushing** onto the stack, and removing data is called **popping** off the stack.
@@ -5573,7 +5559,7 @@ Stack
 - Accessing data in the heap is slower than accessing data on the stack because you have to follow a pointer to get there.
 - When your code calls a function, the values passed into the function (including, potentially, pointers to data on the heap) and the function’s local variables get pushed onto the stack. When the function is over, those values get popped off the stack.
 
-Heap
+#### Heap
 
 - Data with an **unknown size** at compile time or a size that might change must be stored on the heap instead.
 - allocating on the heap: you request a certain amount of space. The memory allocator finds an empty spot in the heap that is big enough, marks it as being in use, and returns a pointer, which is the address of that location.
@@ -5584,65 +5570,127 @@ Differences
 - Pushing to the stack is faster than allocating on the heap because the allocator never has to search for a place to store new data; that location is always at the top of the stack.
 - Accessing data in the heap is slower than accessing data on the stack because you have to follow a pointer to get there.
 
-## % 부록2: Amazon사의 cloud service인 AWS (Amazon Web Service) 사용하기 %
-
-1. AWS IAM - User를 생성하고, create access key를 사용하여, API에 접근하기
-
-2. AWS S3 - bucket을 만들어 파일 저장하기
-
-3. AWS SES (Simple Email Service) - email 보내기
-
-4. AWS EC2 가상환경 - virtualBox와 같이 가상 환경을 제공
-
-5. AWS Lambda - 함수
-
-6. AWS Elastic Beanstalk - 간단히 코드를 배포할 때 사용
-
 ## [NestJs](https://nestjs.com/)
 
-### Next.js란
+### Next.js란?
 
-Nest.js는 효율적이고, 안정적이며, 확장에 용이한 서버 어플리케이션을 구축하기 위한 진보된 nodejs framework이다. 대부분의 Nest의 코드는 typescript로 만들어졌으며, typescript 를 완전하게 지원한다. Nest.js는 HTTP request을 다루는 web server로 내부적으로 Express.js를 사용하고 있다. 즉 Nest.js는 Express.js 위에서 돌아가는 layer에 불과합니다. Express.js가 기본 웹서버지만 Fastify를 사용하도록 구성 할 수도 있다.
+Nest.js는 효율적이고, 안정적이며, 확장에 용이한 서버 어플리케이션을 구축하기 위한 진보된 node.js framework이다. 대부분의 Nest의 코드는 typescript로 만들어졌으며, typescript 를 완전하게 지원한다. Nest.js는 HTTP request을 다루는 web server로 내부적으로 Express.js를 사용하고 있다. Express.js가 기본 웹서버지만 Fastify를 사용하도록 구성 할 수도 있다. Fastify를 사용하면 Express.js보다 더 빠른 웹서버를 만들 수 있다.
 
 ### Next.js 장점
 
 - Nest.js는 Express와 같은 web server framework로, Express는 굉장히 쉽게 서버를 만들 수 있게 만들어 줬지만 시스템 디자인 측면에서 지원하는 것은 거의 없기 때문에 이러한 문제를 해결하고자 나온 framework가 Nest.js이다.
-- NestJS는 Typescript 기반의 OOP(Object Oriented Programming), FP(Functional Programming), FRP(Functional Reactive Programming)를 지원합니다.
-- Open-closed principle: Application이 점점 커지고 복잡해지면 아키텍쳐건 application이건 확장이 용이하고 느슨하게 결합된 형태로 발전하는 것이 중요하다.
+- Nest.jS는 Typescript 기반의 OOP(Object Oriented Programming), FP(Functional Programming), FRP(Functional Reactive Programming)를 지원한다.
 - high cohesion low coupling: module내의 결합은 크게하고, module간의 결합은 작게 만드는 것이 좋은 design이다.
 - Express/Fastify 위에서 동작하고, 추상화된 API를 제공하지만 완전하게 Express를 추상화하고 캡슐화하지 않았기 때문에 기존 Express에서 동작하는 수 많은 library를 그대로 사용할 수 있다.
 - 구조를 강제: Nest.js는 framework이기 떄문에 Nest.js만의 정해진 틀이 존재하고, 그 틀만 잘 따라하면 원하는 결과를 쉽게 얻을 수 있다. 이는 대규모 팀 협업에도 좋고, 다른 개발자의 코드를 한 눈에 알아보기 쉽다.
+- 효율성: Nest.js는 typescript의 적극적인 도입, DI(Dependency Injection), IoC(Inversion of Control), Module을 통한 구조화 등의 기술을 통해 생산적인 개발이 용이하다.
+- 안정적: Nest.js는 typescript를 적극적으로 도입함으로서 server application 개발 시 발생할 수 있는 오류들을 사전에 방지할 수 있도록 하였다. 또한 module로 감싸는 형태로 개발하기 때문에 module 별로 테스트 코드를 쉽게 작성할 수 있도록 구현되어 있다.
+- 확장성 (Open-closed principle): Nest.js는 module을 통해 확장이 용이하도록 설계되어 있다. 실제로 사용해보면 module을 통해 코드적으로, 논리적으로 구분한다는 장점을 크게 느끼실 수 있다. 또한 nest.js는 기본적으로 microservice 아키텍처 개발 스타일을 제공한다.
+
+### Model–view–controller (MVC) Framework
+
+Model–view–controller (MVC) is a **software design pattern** commonly used for developing user interfaces that divide the related program logic into three interconnected elements. This is done to separate internal representations of information from the ways information is presented to and accepted from the user.
+
+- Model (Service)
+
+  - Application 계층의 정보, data 의미
+  - The central component of the pattern. It is the application's dynamic data structure, independent of the user interface. It directly manages the data, logic and rules of the application.
+  - The model is responsible for managing the data of the application. It receives user input from the controller.
+
+- View
+
+  - user interface와 화면 출력 로직을 담당
+  - Any representation of information such as a chart, diagram or table. Multiple views of the same information are possible, such as a bar chart for management and a tabular view for accountants.
+  - The view renders presentation of the model in a particular format.
+
+- Controller
+  - Model과 View의 연결하는 제어 로직을 담당. 즉, data와 비즈니스 로직사이의 상호동작을 관리
+  - Accepts input and converts it to commands for the model or view
+  - The controller responds to the user input and performs interactions on the data model objects. The controller receives the input, optionally validates it and then passes the input to the model.
 
 ### 기본 구조
 
+Nest.js는 controller와 business logic을 구분 짓고 싶어 한다. controller는 나머지 business logic은 service가 다룬다. 여기서 service란 MVC framework에서 Model 부분을 의미한다.
+controller는 service에 작성된
+
 ![nestjs](img/nestjs.png)
 
-기본 컨셉은 Provider(상기 이미지에선 service), Controller를 module로 합치고, 그 module들을 최종적으로 `app.module`에 합쳐서 사용하는 것이다.
+기본 컨셉은 Provider (또는 service), Controller를 module로 합치고, 그 module들을 최종적으로 `app.module`에 합쳐서 사용하는 것이다. `app.module`은 모든 module의 root module이다.
 
-Nest.jS는 Singleton design pattern을 지향하기 때문에 instance를 직접 생성하지 않고 module을 통해 Injection 하는 패턴을 권장하고있다. allows only one instance at the same time.
+Nest.jS는 singleton design pattern을 지향하기 때문에 instance를 직접 생성하지 않고 module을 통해 Injection 하는 패턴을 권장하고있다. 직접 instance를 생성하여 등록하는 방법도 지원하는데, 보통 전역적으로 적용해야할 Provider들에 사용한다. (다만 권장하는 방식은 아니다. 인스턴스 생성을 NestJS에게 맡기는 것을 권장한다.)
 
-직접 instance를 생성하여 등록하는 방법도 지원하는데, 보통 전역적으로 적용해야할 Provider들에 사용한다. (다만 권장하는 방식은 아니다. 인스턴스 생성을 NestJS에게 맡기는 것을 권장한다.)
+- Singleton design pattern: 전역 변수를 사용하지 않고 객체를 하나만 생성 하도록 하며, 생성된 객체를 어디에서든지 참조할 수 있도록 하는 software design pattern. Singleton allows only one instance at the same time.
 
-Singleton design pattern: 전역 변수를 사용하지 않고 객체를 하나만 생성 하도록 하며, 생성된 객체를 어디에서든지 참조할 수 있도록 하는 패턴
+### Controller와 Service
+
+- Controller: Request를 어떻게 처리할까?
+- Service (Model || Provider): Request에 대해 어떤 처리를 할까?
+
+1. Client가 Server에 Request를 보낸다.
+2. Request URL에 알맞은 Controller가 수신한다.
+3. Controller는 넘어온 요청을 처리하기 위해 Service를 호출한다.
+4. Service는 알맞은 정보를 가공하여 Controller에게 데이터를 넘긴다.
+5. Controller는 Service 의 결과물을 Client 에게 전달해준다.
+
+여기에 Service가 Client의 요청에 대한 올바른 정보를 제공하기 위한 처리를 하는데요 이것을 '비즈니스 로직을 수행한다' 고 말합니다.
+
+- Business logic:
+  - program에서 실세계의 규칙에 따라 data를 CRUD하는 부분을 일컫는다.
+  - 사용자에게는 노출되지 않고, backend 서버에서 data를 처리하는 코드를 의미한다.
+  - the custom rules or algorithms that handle the exchange of information between a database and user interface.
+
+만약에 사용자에게 객체 100개 생성 후 List에 담은 결과 값을 전달하기 위한 다음 2가지 방법 중에서 Controller 에서 Service 호출해서 처리하면 좀 더 깔끔하다.
+
+- Controller에서 수행
+
+```
+@RequestMapping(value="/getUsers")
+public String getUsers(Model model) {
+    ArrayList arrayListOfUser = new ArrayList<>();
+
+    for(int indexOfUser = 0; indexOfUser < 100; indexOfUser++) {
+        User user = new User();
+        user.setUserId(indexOfUser);
+        user.setUserName("UserName"+indexOfUser);
+        arrayListOfUser.add(user);
+    }
+
+    model.addAttribute("users",arrayListOfUser);
+
+    return "user";
+}
+```
+
+- **Controller에서 Service 호출해서 처리**
+
+```
+@RequestMapping(value="/getUsers")
+public String getUsers(Model model) {
+    model.addAttribute("users", userService.getUsers());
+    return "user";
+}
+```
+
+위의 예제는 간단하지만, 여러 정보를 가공해야한다거나 DB에서 데이터를 가져와 handling 한다면 Controller에서 수행하는 첫번째 방법은 getUsers() method가 어마무시하게 길어지니까 가독성이 매우 떨어진다. 그래서 Service라는 속성을 통해 요청과 수행을 분리하는 것 입니다.
 
 #### Controller
 
-BackEnd에서 흔히 사용하는 Controller 개념 그대로 생각하면 된다.
+BackEnd에서 흔히 사용하는 Controller 개념 그대로 생각하면 된다. url를 받아 함수를 실행하는 역할을 한다.
 
-처음 request가 들어오는 입구 역할을 담당하며, 비즈니스 로직을 따로 분리하기 위해 진입점을 따로 분리해둔 것이다. 쉽게 설명하자면 식당에 들어갔을 때 좌석을 안내해주는 직원을 생각하면 된다.
+처음 request가 들어오는 입구 역할을 담당하며, 비즈니스 로직을 따로 분리하기 위해 진입점을 따로 분리해둔 것이다. Express.js에서 router가 하는 일이라고 생각하면 된다. 비유하자면 식당에 들어갔을 때 좌석을 안내해주는 직원을 생각하면 된다.
 
 HTTP Request에 따라 어떠한 비즈니스 로직을 적용시킬지에 대한 설정을 하면 된다.
 
-#### Provider
+#### Provider (Service)
 
-Provider는 Nest.jS의 거의 모든 데이터 처리 및 비즈니스 로직을 담당한다. 다만 역할에 따라 이름이 달라진다.
+Provider는 Nest.jS의 거의 모든 데이터 처리 및 비즈니스 로직을 담당한다. 즉, 실제 작동될 function이 작성되는 공간이다. 다만 역할에 따라 이름이 달라진다.
 
 - 사용자 인증: Guards
 - 클라이언트가 보내는 데이터 필터링: Pipes
 - 비즈니스 로직: Service or Handler
 - 예외처리: Exception Filters
 - Porvider 처리 과정 중 위에 해당하지 않는 무언가를 하고 싶을 때: Interceptor
-- 미들웨어: Express의 Middleware와 동일
+- Middleware: Express의 Middleware와 동일
 
 #### Module
 
@@ -5650,11 +5698,15 @@ Module은 Provider와 Controller를 합치는 역할을 한다. 뿐만 아니라
 
 Nest.js는 client의 요청별로 Controller와 Provider를 제작하고 이를 Module로 엮어 하나의 단위를 만든다고 할 수 있다.
 
-Nest.js 장점
+## % 부록2: Amazon사의 cloud service인 AWS (Amazon Web Service) 사용하기 %
 
-- 효율성 : nestjs는 typescript의 적극적인 도입, DI(Dependency Injection), IoC(Inversion of Control), Module을 통한 구조화 등의 기술을 통해 생산적인 개발이 용이하다.
-- 안정적 : Nestjs는 typescript를 적극적으로 도입함으로서 서버 application 개발 시 발생할 수 있는 오류들을 사전에 방지할 수 있도록 하였다. 또한 모듈로 감싸는 형태로 개발하기 때문에 모듈 별로 테스트 코드를 쉽게 작성할 수 있도록 구현되어 있다.
-- 확장성 : Nestjs는 module을 통해 확장이 용이하도록 설계되어 있다. 실제로 사용해보면 module을 통해 코드적으로, 논리적으로 구분한다는 장점을 크게 느끼실 수 있다. 또한 nestjs는 기본적으로 microservice 아키텍처 개발 스타일을 제공한다.
+- AWS IAM: User를 생성하고, create access key를 사용하여, API에 접근하기
+- AWS S3: bucket을 만들어 파일 저장하기
+- AWS SES (Simple Email Service): email 보내기
+- AWS EC2 가상환경: virtualBox와 같이 가상 환경을 제공
+- **AWS Lambda**: Anonymous function (익명함수)
+  - AWS Lambda는 programming language rust로 작성되었다.
+- **AWS Elastic Beanstalk**: 간단히 코드를 배포할 때 사용
 
 ## % 부록3: Docker 이해하기 %
 

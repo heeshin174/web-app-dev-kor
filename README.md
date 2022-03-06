@@ -4,6 +4,15 @@
 
 아래의 내용은 간단한 개념위주로, 개념만 공부해서는 이해하기 힘들다. **실제 project를 만들면서** 필요한 부분들을 이 곳에서 참고히면 된다.
 
+### 좋은 코드를 작성하는 기본원칙 세가지
+
+- DRY: Don't Repeat Yourself
+  - 같은 코드가 반복될 경우, 함수로 만든다.
+- KISS: Keep It Simple and Stupid
+  - 한 함수는 딱 한가지 일만 수행하도록 만든다.
+- YANGI: You Are Not Gonna Need It
+  - 지금 당장 필요하지 않는 미래지향적인 코드를 작성하지 않는다.
+
 ## Table of Contents
 
 0. [Web Development Loadmap](https://github.com/heeshin174/Web_App_Dev_Kor#0-web-development-loadmap)
@@ -27,6 +36,7 @@
   5. [Mongodb](https://github.com/heeshin174/Web_App_Dev_Kor#5-mongodb)
   6. [RocketRs](https://github.com/heeshin174/Web_App_Dev_Kor#6-rocketrs)
   7. [NestJs](https://github.com/heeshin174/Web_App_Dev_Kor#nestjs)
+  8. [Serverless](https://github.com/heeshin174/Web_App_Dev_Kor#serverless)
 
 ## 0. Web Development Loadmap
 
@@ -275,7 +285,7 @@ React.js, Typescript 등등 outside library/framework로 만들어 native `HTML`
       - CSS Framework
         - Vuetify: https://next.vuetifyjs.com
     - Other Library/Framework
-      - redux (state관리 library): https://redux.js.org/introduction/getting-started
+      - redux (manage state): https://redux.js.org/introduction/getting-started
       - multer (upload files): https://github.com/expressjs/multer
 
 `Frontend library/framework`은 web application을 더 쉽게 작성할 수 있게 만들어 주는 outside library/framework을 말한다.
@@ -283,8 +293,8 @@ React.js, Typescript 등등 outside library/framework로 만들어 native `HTML`
 Server가 Client에 자료를 넘겨주면, Client computer가 그 정보를 가지고 HTML를 완성하기 때문에 CSR (Client Side Rendering)이라고 부른다. CSR은 HTMl이 비어있기 때문에 검색 엔진에 노출되어 검색되기 쉽지 않아 SEO (Search Engine Optimization)에 약점을 가진다.
 SPA를 제공하는 frontend framework에는 크게 React JS, Vue JS, Angular JS가 있다. 이들은 사용방법이 거의 비슷하기 때문에 하나만 잘 이해하면, 나머지는 쉽게 사용할 수 있다.
 
-- ⭐ **`React JS`**: React는 Meta사에서 만든 Javascript frontend library로 computer에 최신 버전의 `Node.js`를 설치하면 누구나 사용할 수 있다.
-- **VanillaJS** is just a way to refer to native (non-extended and standards-based) JavaScript
+- ⭐ **`React.js`**: React는 Meta사에서 만든 Javascript frontend library로 computer에 최신 버전의 `Node.js`를 설치하면 누구나 사용할 수 있다.
+- **Vanilla.js** is just a way to refer to native (non-extended and standards-based) JavaScript
 
 ### 3. Back-End (Server side)
 
@@ -295,14 +305,14 @@ API key같은 외부에 노출되서는 안되는 environmental variables들은 
 
 * Library and Framework
   - [Javascript](https://github.com/heeshin174/Web_App_Dev_Kor#3-javascript)
-    - [Express.js](https://github.com/heeshin174/Web_App_Dev_Kor#2-expressjs): https://expressjs.com/
-    - [Nest.js](https://github.com/heeshin174/Web_App_Dev_Kor#nestjs): https://nestjs.com/
+    - [Express](https://github.com/heeshin174/Web_App_Dev_Kor#2-expressjs): https://expressjs.com/
+    - [Nest](https://github.com/heeshin174/Web_App_Dev_Kor#nestjs): https://nestjs.com/
   - Python
-    - [Flask.py](https://github.com/heeshin174/Web_App_Dev_Kor#3-flaskpy): https://flask.palletsprojects.com
+    - [Flask](https://github.com/heeshin174/Web_App_Dev_Kor#3-flaskpy): https://flask.palletsprojects.com
     - Django: https://docs.djangoproject.com/en/4.0/
-  - Rust
-    - [Rocket.rs](https://github.com/heeshin174/Web_App_Dev_Kor#rocketrs): https://rocket.rs/
-    - Actix.rs: https://actix.rs/
+  - [Rust](https://github.com/heeshin174/Web_App_Dev_Kor#rust)
+    - [Rocket](https://github.com/heeshin174/Web_App_Dev_Kor#rocketrs): https://rocket.rs/
+    - Actix: https://actix.rs/
 
 - Database
 
@@ -314,11 +324,7 @@ API key같은 외부에 노출되서는 안되는 environmental variables들은 
       - Mongoose js: https://mongoosejs.com/
   - Prisma (PlanetScale에 hosting된 serverless database와 연결): https://www.prisma.io/
   - PlanetScale (serverless database): https://planetscale.com/
-
-- Twilio: https://www.twilio.com/
-- SendGrid (Email API): https://sendgrid.com/
-- MailGun (Email API): https://www.mailgun.com/
-- JWS (Json Web Token): https://jwt.io/
+  - Firebase (backend as a service): https://firebase.google.com/
 
 - other Javascript Library/Framework
 
@@ -332,7 +338,14 @@ API key같은 외부에 노출되서는 안되는 environmental variables들은 
   - passport (social media login): https://www.passportjs.org/
   - webpack (bundle JavaScript files): https://webpack.js.org/
   - gulp (bundle JavaScript files): https://gulpjs.com/
+  - feather (real-time applications and REST APIs): https://feathersjs.com/
+  - serverless-http (Use existing middleware framework (e.g. Express, Koa) in AWS Lambda): https://github.com/dougmoscrop/serverless-http
 
+- Twilio: https://www.twilio.com/
+- SendGrid (Email API): https://sendgrid.com/
+- MailGun (Email API): https://www.mailgun.com/
+- JWS (Json Web Token): https://jwt.io/
+- serverless (All-in-one development & monitoring of auto-scaling apps on AWS Lambda): https://www.serverless.com/
 - ESLint (Formatters): https://eslint.org/
 - Cloudflare Streams (realtime live streaming for live commerce): https://www.cloudflare.com/products/cloudflare-stream/
 - Cloudflare Images: https://www.cloudflare.com/products/cloudflare-images/
@@ -343,7 +356,7 @@ API key같은 외부에 노출되서는 안되는 environmental variables들은 
 - Wordpress: https://wordpress.com/
 - Woocommerce (eCommerce platform built on WordPress): https://woocommerce.com/
 
-각각의 programming language마다 Web Application Server를 만드는 web app framework를 제공한다.
+각각의 programming language마다 Web Application Server를 만드는 web app framework가 있다.
 
 1. python: Django, Flask, FastAPI
 2. Java: spring, spring boot, play
@@ -379,8 +392,8 @@ Web App dev는 크게 Frontend, Backend로 나눌 수 있고, 이를 합쳐 Full
 Database와 web app을 연결하여 쉽고 간단하게 data를 읽고 쓸 수 있다.
 Database는 크게 Relational database `sql (Structured Query Language)`와 Not only Relational database (Nosql)로 나눌 수 있다.
 
-- `postgresql` - Relational database의 대표주자
-- `Mongo Database` - Not only Relational database의 대표주자
+- postgresql: Relational database의 대표주자
+- Mongo Database: Not only Relational database의 대표주자
 
 ![This is an image](./img/Database.png)
 
@@ -449,6 +462,7 @@ Database는 크게 Relational database `sql (Structured Query Language)`와 Not 
   - Diagram.io (Design UI): https://app.diagrams.net/
   - Jsbin (간단한 code 실행): https://jsbin.com/
   - Quicktype (Api로 얻은 Json data를 각종 다른 언어로 변환): https://quicktype.io/
+  - cloudcraft (draw AWS diagrams): https://www.cloudcraft.co/
 - Educations
   - Web Development In 2022 - https://www.youtube.com/watch?v=EqzUcMzfV1w&list=PLg8KC9DusHl8zGjAWYGGJygm3rWoEahJQ&index=30&ab_channel=TraversyMedia
   - Async Await: https://kiwanjung.medium.com/%EB%B2%88%EC%97%AD-async-await-%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-%EC%A0%84%EC%97%90-promise%EB%A5%BC-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-955dbac2c4a4
@@ -1532,7 +1546,7 @@ const entries = ["bob", "sally", , , , , , , , "cindy"];
 entries.flat(); // 결과 ['bob', 'sally', 'cindy'];
 ```
 
-### Object-oriented programming (OOP) 객체 지향형 언어
+### Object-Oriented Programming (OOP) 객체 지향형 언어
 
 80년대 초 소프트웨어가 하드웨어의 빠른 변화를 못 쫓아감. 해결책으로 객체지향 언어를 도입 (절차적 -> 객체지향)
 절차적은 프로그램이 순서대로 실행되는 것을 의미한다.
@@ -3878,11 +3892,292 @@ export async function getStaticProps() {
 export default Blog
 ```
 
-## Redux
+## [Redux](https://redux-toolkit.js.org/)
 
 ### What is Redux?
 
-`Redux` is an open-source JavaScript library for managing and centralizing application state. It is most commonly used with libraries such as React or Angular for building user interfaces. Redux is a predictable **state container** for JavaScript apps. Redux는 일명 **상태 (state)관리 library**이다. React.js와 같이 사용할 시 `react-redux`를 사용한다. `Redux` 대신 `redux-toolkit`으로 쓰면 더 쉽고 거기에 typescript로 작성하면 큰 프로젝트 스케일링하기도 편하다.
+`Redux` is an open-source JavaScript library for **managing and centralizing application state**. It is most commonly used with libraries such as React or Angular for building user interfaces. Redux is a predictable state container for JavaScript apps. Redux는 일명 **상태 (state)관리 library**이다.
+
+- 상태관리 library에서 상태란 state를 의미하고, 변수를 의미한다.
+- Redux는 react에 종속된 meta-library가 아니다.
+  - react뿐만 아니라 pure javascript에서도 redux를 사용할 수 있다.
+- 세 가지 version의 redux가 있다.
+  1. redux: 기본 redux library. pure HTML, JavaScript 환경에서도 redux 사용가능
+  2. react-redux: react 개발환경에서 사용하기 위한 redux
+  3. **redux-toolkit**: redux 개발사에서 추천하는 간단한 redux
+     - Redux 대신 redux-toolkit을 사용하면 더 쉽고 거기에 typescript로 작성하면 큰 project scaling하기 편하다.
+
+### Redux를 왜 사용할까?
+
+큰 project에서:
+
+- A1. **props문법이 귀찮을 때**
+  - redux를 쓰면 state를 component 바깥인 `store.js`에서 관리한다.
+- A2. **state변경 관리할 때**
+  1. `store.js`에 state를 어떻게 변경할 것인지에 대한 방법을 함수로 정의한다.
+  2. state를 변경하고 싶을 경우, 개별 component에서 직접 하는 것이 아니라 상황에 맞는 function을 호출한다.
+
+개별 component는 `store.js`에 정의된 변수와 함수만 호출했을 뿐이므로, state에 문제가 생긴다면 문제점은 `store.js`에만 존재하기 때문에 error를 찾기 쉽다.
+
+#### React환경의 웹개발
+
+react애서 application을 만들 때, 기본적으로 보통 하나의 root component `App.js`에서 상태를 관리한다.
+
+![redux1](img/redux1.png)
+
+- 예시: Todo app
+  - App: input state와, 이를 변경하는 onChange 함수와, 새 todo아이템을 생성하는 onCreate 함수를 props로 Form에게 전달
+  - Form: App으로부터 해당 함수와 state을 받아서 화면에 보여주고, 변경 이벤트가 발생하면 app에서 받은 onChange를 호출하여 App이 지닌 input state을 update한다. 그렇게 input값을 수정하여 추가 버튼을 누르면, onCreate를 호출하여 todos array을 업데이트 합니다.
+  - todos 배열이 업데이트 되면, 해당 배열이 TodoItemList에게 전달이 되어 화면에 rendering된다.
+
+이러한 구조는 parent component에서 state의 모든걸 관리하고 prop문법으로 children component로 내려주기 때문에 직관적이다.
+
+문제는 application의 규모가 커졌을 때 발생한다. 보여지는 component의 개수가 늘어나고, 다루는 data도 늘어나고, 그 데이터를 업데이트 하는 함수들도 늘어나면, state를 다른 component에 내려주는 props가 엄청나게 많이 필요하다. 또한 어느 component에서 state를 변경해서 error가 발생했을 경우, state를 변경하는 component를 하나하나 확인해야하기 때문에 state를 유지보수 하는 것도 힘들다.
+
+예를 들어 다음의 구조를 가진 react project가 있다고 생각해봅시다.
+
+![reduxexample](img/reduxexample.png)
+
+Root component에서 G component에게 어떠한 값을 전달해 줘야 하는 상황에는 어떻게 해야 할까요?
+
+state는 root component에만 존재하기 때문에 props문법을 여러번 사용해야한다. Root에서 A를 거치고 E를 거쳐야만 G에 도착할 수 있다.
+
+```
+// App.js에서 A 렌더링
+<A value={5}>
+
+// A.js에서 E 렌더링
+<E value={this.props.value} />
+
+// E.js에서 G 렌더링
+<G value={this.props.value} />
+```
+
+### Redux환경의 웹개발
+
+**Redux를 사용하면, state 관리를 component바깥에서 한다.** Redux는 state의 저장과 관리를 `store.js` file에서만 한다.
+
+#### store 생성
+
+redux를 사용하면 store를 만들 수 있고 이 안에 project의 state를 저장한다.
+
+아래의 그림에서 B에서 일어나는 변화가 G에 반영된다고 가정을 해봅시다. (B에서 변화 -> G에 영향)
+
+![reduxstore1](img/reduxstore1.png)
+
+#### component의 store 구독
+
+G component는 state의 변화를 알기위해 store에 구독을 한다. 구독을 하는 과정에서 특정 listener 함수를 store한테 전달한다. 그리고 나중에 store의 state 값에 변동이 생긴다면 전달 받았던 함수를 호출한다.
+
+#### store에 state 변경을 요청하기
+
+![reduxstore2](img/reduxstore2.png)
+
+B component에서 어떤 이벤트가 발생하여 상태를 변화 할 일이 생기면, B는 **dispatch** 라는 함수를 통하여 **action object**을 store한테 건네준다. action은 상태에 변화를 일으킬 때 참조 할 수 있는 object이다. 각 component에서 state를 변경하면 error가 발생 시 찾기 힘들기 떄문에, store에 state가 어떻게 변화할 지 미리 action을 만들어 둔다. 각 component는 그 action을 호출하기만 하면 store가 state에 action에 정의된 되로 변화를 준다.
+
+action object는 `type`이라는 값이 필수로 있어야 한다.
+
+예를들어 store가 `{ type: 'INCREMENT' }`인 action 객체를 전달 받으면, 그 type의 reducer를 참조해 state를 변경한다. `type` 를 제외한 값은 optional이다.
+
+#### reducer를 통하여 state를 변화시키기
+
+action object를 받은 store가, 전달받은 action의 type에 따라 어떻게 상태를 업데이트 해야 할지 정의를 해줘야겠죠? 이러한 update logic을 정의하는 함수를 `reducer`라고 한다. 예를들어 type 이 INCREMENT 라는 액션이 들어오면 숫자를 더해주고, DECREMENT 라는 액션이 들어오면 숫자를 감소시키는 함수를 reducer라 한다.
+
+reducer 함수는 두가지의 parameter를 받아 새로운 state 객체를 만들어서 반환한다.
+
+- state: 현재 상태
+- action: 액션 객체
+
+![reduxstore3](img/reduxstore3.png)
+
+상태에 변화가 생기면, 이전에 G component가 스토어한테 구독 할 때 전달했던 함수 **listener** 가 호출된다. 이를 통하여 G는 새로운 state를 받게되고, 이에 따라 comoponent는 rerendering을 한다.
+
+### Redux 예제
+
+- `index.html` file
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>그냥 평범한 리덕스</title>
+</head>
+<body>
+  <h1 id="number">0</h1>
+  <button id="increment">+</button>
+  <button id="decrement">-</button>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/redux/3.6.0/redux.js"></script>
+</body>
+</html>
+```
+
+- `index.js` file
+
+```
+// 편의를 위하여 각 DOM 엘리먼트에 대한 레퍼런스를 만들어줍니다.
+const elNumber = document.getElementById('number');
+const btnIncrement = document.getElementById('increment');
+const btnDecrement = document.getElementById('decrement');
+
+// 액션 타입을 정의해줍니다.
+const INCREMENT = 'INCREMENT';
+const DECREMENT = 'DECREMENT';
+
+// 액션 객체를 만들어주는 액션 생성 함수
+const increment = (diff) => ({ type: INCREMENT, diff: diff });
+const decrement = () => ({ type: DECREMENT });
+
+// initialize state
+// 상태의 형태는 개발자 마음대로 입니다.
+const initialState = {
+  number: 0
+};
+
+// reducer 함수 생성
+// 여기에 state = initialState가 parameter의 기본값이 된다.
+const counter = (state = initialState, action) => {
+  console.log(action);
+  switch(action.type) {
+    case INCREMENT:
+      return {
+        number: state.number + action.diff
+      };
+    case DECREMENT:
+      return {
+        number: state.number - 1
+      };
+    default:
+      return state;
+  }
+}
+
+// Redux library 호출
+const { createStore } = Redux;
+
+// Create store
+// createStore 에 reducer function를 넣어서 호출
+const store = createStore(counter);
+
+
+// 상태가 변경 될 때 마다 호출시킬 listener 함수 정의
+const render = () => {
+  elNumber.innerText = store.getState().number;
+  console.log('내가 실행됨');
+}
+
+// 스토어에 구독을하고, 뭔가 변화가 있다면, render 함수를 실행합니다.
+store.subscribe(render);
+
+// 초기렌더링을 위하여 직접 실행시켜줍니다.
+render();
+
+
+// 버튼에 click event 생성
+// state를 변경하고 싶을 경우 dispatch 함수에 action object를 넣어서 호출한다.
+btnIncrement.addEventListener('click', () => {
+  // state에 25만큼 추가
+  store.dispatch(increment(25));
+})
+
+btnDecrement.addEventListener('click', () => {
+  // state에 1만큼 감소
+  store.dispatch(decrement());
+})
+
+// + 버튼을 누룬 후 - 버튼을 눌렀을 떄의 console
+// > console
+// [object Object] {
+//  diff: 25,
+//  type: "INCREMENT"
+// }
+// "내가 실행됨"
+// [object Object] {
+//  type: "DECREMENT"
+// }
+// "내가 실행됨"
+```
+
+### Redux 규칙
+
+- 하나의 application에는 하나의 store만 생성한다.
+- state는 read-only이다.
+  - react에서 state를 변경 할 때 useState hook를 사용하고, 배열을 업데이트 해야 할 때는 배열 자체에 push를 직접 하지 않고, concat() 함수를 사용하여 기존의 배열은 수정하지 않고 새로운 배열을 만들어서 교체하는 방식으로 업데이트한다. 엄청 깊은 구조로 되어있는 객체를 업데이트를 할 때도 마찬가지로, 기존의 객체는 건들이지 않고 `Object.assign` 을 사용하거나 spread 연산자 `(...)` 를 사용하여 update한다.
+  - redux에서도 기존의 상태는 건들이지 않고 새로운 상태를 생성하여 업데이트 해주는 방식으로 해야한다.
+  - redux에서 Immutability (불변성) 을 유지해야 하는 이유는 내부적으로 데이터가 변경 되는 것을 감지하기 위하여 shallow equality 검사를 하기 때문이다. 이를 통하여 객체의 변화를 감지 할 때 객체의 깊숙한 안쪽까지 비교를 하는 것이 아니라 겉핥기 식으로 비교를 하여 좋은 성능을 유지할 수 있다.
+- state에 변화를 주는 함수, reducer는 pure function이어야만 한다.
+  - 이전의 state는 절대로 건들이지 않고, 변화를 일으킨 새로운 상태 객체를 만들어서 반환해야 한다.
+  - 똑같은 parameter로 호출된 reducer는 언제나 똑같은 결과값을 반환해야만 합니다.
+    - 순수하지 않은 작업: new Date(), random number를 생성, 네트워크에 요청을 보내기
+    - 순수하지 않은 작업들은 reducer의 바깥에서 **redux-middleware**를 사용해 처리해야 한다.
+
+pure function이란
+
+- 똑같은 input를 받았을 시 계속 같은 결과만 반환
+- side-effect가 없는 함수
+
+![redux-middleware](img/redux-middleware.png.crdownload)
+
+Middleware를 action과 reducer 사이의 중간다리라고 생각한다. Middleware를 사용하면 action이 dispatch 되어서 reducer에서 이를 처리하기전에 사전에 지정된 작업들을 설정할 수 있다.
+
+### 비동기 작업을 처리하기 위한 redux-middleware library
+
+`redux-thunk`, `redux-promise-middleware`, `redux-pender` 이 세 library는 각각 다른 방식으로 비동기 action을 처리한다.
+
+#### redux-thunk
+
+redux를 사용하는 application에서 비동기 작업을 처리 할 때 가장 기본적인 방법으로는 `redux-thunk`라는 middleware를 사용 하는것 이다
+
+**thunk**란, 특정 작업을 나중에 하도록 미루기 위해서 함수형태로 감싼것을 칭합니다.
+
+예를 들어서 여러분들이 `1 + 2` 을 지금 당장 실행 하고 싶다면 `const x = 1 + 2;`와 같이 작성해 연산의 결과를 `x`에 assign할 수 있다.
+
+`const foo = () => 1 + 2;` 와 같이 함수로 만들게 되면, 연산이 바로 이뤄지지 않고 나중에 `foo()`가 호출 되어야만 이뤄진다.
+
+`redux-thunk` middleware는 객체 대신 함수를 생성하는 액션 생성함수를 작성 할 수 있게 해준다. redux에서는 기본적으로는 액션 객체를 dispatch한다.
+
+- `src/store.js` file
+
+```
+import { createStore, applyMiddleware } from 'redux';
+import modules from './modules';
+import { createLogger } from 'redux-logger';
+import ReduxThunk from 'redux-thunk';
+
+const logger = createLogger();
+const store = createStore(modules, applyMiddleware(logger, ReduxThunk))
+
+export default store;
+```
+
+https://velopert.com/3401
+
+### Redux 정리
+
+- `subscribe(listener)`: state 변경 시 listener를 실행하는 함수
+- `dispatch(action)`: state 변경을 요청하는 함수. action object를 parameter로 넘겨, 그 type에 맞는 reducer를 호출한다.
+- `reducer()`: action type에 따라 실제 state을 변경할 update logic이 정의된 함수
+
+기존에는 부모에서 자식의 자식의 자식까지 state를 전달해줘야 했는데, redux를 사용하면 store를 사용하여 state를 component와 독립적으로 두고 상태를 업데이트 하거나, 새로운 상태를 전달받는다. 따라서, 여러 component를 거쳐서 받아올 필요 없이 아무리 깊숙히 있어도 직속 부모에게서 받아오는 것 처럼 원하는 상태값을 골라서 귀찮은 props 없이 편리하게 받을 수 있다.
+
+### React에서 redux와 redux-toolkit 사용
+
+https://redux-toolkit.js.org/tutorials/quick-start
+
+- Create a Redux store with `configureStore`
+  - `configureStore` accepts a `reducer` function as a named argument
+  - `configureStore` automatically sets up the store with good default settings
+- Provide the Redux store to the React application components
+  - Put a React-Redux `<Provider>` component around your `<App />`
+  - Pass the Redux store as `<Provider store={store}>`
+- Create a Redux "slice" reducer with `createSlice`
+  - Call `createSlice` with a string name, an initial state, and named reducer functions
+  - Reducer functions may "mutate" the state using Immer
+  - Export the generated slice reducer and action creators
+- Use the React-Redux `useSelector/useDispatch` hooks in React components
+  - Read data from the store with the `useSelector` hook
+  - Get the `dispatch` function with the `useDispatch` hook, and dispatch actions as needed
 
 ## % 부록0: 유용한 VSCode 기능 알아보기 %
 
@@ -3893,7 +4188,7 @@ export default Blog
 
 - `Prettier`: save시 auto code formatting.
 
-  1. `CTRL + ,`로 setting 열기
+  1. `ctrl + ,`로 setting 열기
   2. `save` 검색 후 `format on save` 체크
   3. `prettier` 검색 후 `Prettier: Tab width`를 `2`로 변경
   4. `quote` 검색 후 `Javascript/Typescript > preferences: Quote style`을 `single`로 변경
@@ -3908,10 +4203,18 @@ export default Blog
 - `CSS peek`: HTML에서 CSS peek가능
 - `indent-rainbow`: indentation마다 색상추가
 - `open in browser`: HTML을 browser로 열기
-- `ESLint`
+- `ESLint`: code formatting
 - `GitLens — Git supercharged`: git을 이용해, 코드 변경자 확인
 - `Community Material Theme`: VScode 색상변경
 - `Remote Remote - WSL`: Windows로 WSL 실행시만 설치
+- `Paste JSON as Types`: JSON data를 code로 변환
+  1. code로 변환하고 싶은 JSON data 복사
+  2. code를 저장할 file 생성
+     - 예: `Tweet.ts`
+     - `ts`는 JSON data를 typescript interface로 변환해준다.
+  3. `ctrl + shift + p`로 Command Palette 열기
+  4. Command Palette에 `Paste JSON as Types` 검색
+  5. Top-level type name입력
 
 ### keyboard snippets
 
@@ -3969,25 +4272,40 @@ export default Blog
 - `Ctrl + Del`: 커서 뒤의 한 단어 삭제
 - `Ctrl + A`: 현재 파일의 모든 문장 drag
 - `Ctrl + ,`: Setting 열기
+- `Ctrl + space`: 자동완성제안 (현재치고 있는 코드의 자동완성 list를 보여줌)
+- `Ctrl + shift + p`: open Command Palette
+
+  - Command Palette에 `@` 입력: 현제 project에 define된 모든 classes, interfaces 반환
+  - Command Palette에 `Paste JSON as Types` 입력: JSON data를 code로 변환
+  - Command Palette에 `zen mode` 입력: code를 작성하는 것에만 집중할 수 있도록 필요없는 UI 없애기
+
+- `Ctrl + K + Z`: toggle zen mode
+
+  - `Ctrl + K`: Cuttom key binding for toggling zen mode
+  - Z key가 undo와 연결되어 있기 떄문에 개인적으로 `Ctrl + K`를 이용해 toggle zen mode한다.
 
 - `Alt + click`: Multi-cursor (Alt + Click를 여러 군데 찍으면, 한번에 여러 곳에 typing할 수 있다).
 
 ### Terminal (Unix shell) Command
 
+`ctrl + backtic`로 terminal를 열어 다음의 command를 입력
+
 - `ls`: list files in current directory (list)
 - `ls -l`: list files detail in current directory (list -long)
 - `ls -a`: list all files in current directory (list -all)
 - `mkdir + fileName`: make directory
-- `cd`: change directory
-- `chmod +x fileName` : make it executable (change mode)
+- `chmod +x fileName` : make it executable (chmod: change mode)
 - `cd dirName`: change directory
-- `cd ..`: change directory backword
+- `cd ..`: change directory backword. parent 폴더로 이동
+- `cd ~/filename`: root directory에서 filename이 있는 폴더로 이동
+- `code ~/filename`: root directory에서 filename인 file을 찾아 vscode로 열기
+- `code .`: current directory를 vscode로 열기
 - `rm fileName`: remove file
 - `rm -r dirName`: remove directory
 - `rm -f fileName`: force to remove file
-- `rm- rf dirName`: force to remove directory
+- `rm -rf dirName`: force to remove directory
 - `./executableFile.exe`: execute the file
-- `mv oldName newName`: rename the file
+- `mv currentName newName`: rename the file (currentName -> newName)
 - `mv file1 file2 dir`: move the files `file1` and `file2` to the `dir1` directory
 - `cat fileName`: see the whole text file in terminal
 - `pwd`: show current path you are in
@@ -4001,6 +4319,7 @@ export default Blog
 - `vi fileName`: Vim text editor로 fileName열기
 - `nano fileName`: nano text editor로 fileName열기
 - `code fileName`: VSCode text editor로 fileName열기
+- `ssh ...`: ssh로 remote server와 연결
 
 ### Emmets
 
@@ -4340,6 +4659,49 @@ Date:   Fri Feb 18 13:50:57 2022 -0600
 
     - 앞서 설명한 checkout 의 두 가지 방법 모두 똑같이 reset 에도 에 적용 가능하다.
     - 남아있는 추가됐던 파일 지우기
+
+### Git tag
+
+tag는 branch와 혼동될 수 있으나 서로 다른 목적을 지닌다. tag는 source code version을 정하는 용도로 많이 사용한다.
+
+- git tag: version release시 사용한다.
+  - 특정 시점의 version을 알려준다.
+- git branch: commit할때마다 commit ID가 update된다.
+
+![nextjstag](img/nextjstag.png)
+
+```
+// 이 project에 현재 등록된 tag list 반환
+$ git tag
+
+// tagname이 v1.0.0인 tag 생성
+$ git tag v1.0.0
+
+// local computer에 존재하는 모든 tag를 원격 저장소에 올리기
+$ git push --tags
+
+// tagname이 v1.0.0인 tag 삭제
+$ git tag -d v1.0.0
+
+// tagname이 v1.0.0인 tag를 원격 저장소에 올리기
+$ git push origin v1.0.0
+
+// 원격 저장소에 있는 v1.0.0 tag 삭제
+$ git push origin :tags/v1.0.0
+
+위와 같은 명령어들로 기본적인 tag의 활용을 할 수 있다.
+본인의 경우는 commit 한 것들과 같이 올려버린다.
+
+$ git push origin master && git push origin v1.0.0
+
+// 오래된 commit에 tag를 생성하고 싶을 경우
+// tag-name과 tag를 붙이고 싶은 commit의 id를 통해 활용할 수 있다.
+$ git tag {tag-name} {commit-id}
+$ git tag v10.0.0 40a2b49
+
+// tag-name의 코드 상태로 되돌리기
+$ git checkout {tag-name}
+```
 
 ## 1. Web Application Development
 
@@ -5699,6 +6061,231 @@ Module은 Provider와 Controller를 합치는 역할을 한다. 뿐만 아니라
 
 Nest.js는 client의 요청별로 Controller와 Provider를 제작하고 이를 Module로 엮어 하나의 단위를 만든다고 할 수 있다.
 
+### Nest.js 예시
+
+Nest.js는 nest command line을 제공한다.
+
+```
+// Nest.js cli 설치 후
+// 새로운 Nest.js project 생성
+$ npm i -g @nestjs/cli
+$ nest new project-name
+
+// 새로운 movies controller 생성
+$ nest g co
+> movies
+```
+
+- spec files은 test에 사용된다.
+
+- `src/movies/movies.controller.ts`
+
+```
+import { Controller, Get, Param, Post, Delete, Patch, Body, Query } from '@nestjs/common';
+
+@Controller('movies')
+export class MoviesController {
+
+  /**
+   * @route GET movies
+   * @desc Get All Movies
+   * @access Public
+   */
+  @Get()
+  getMovies(): string {
+    return "Movies List";
+  }
+
+  /**
+   * @route GET movies/search?year={searchYear}
+   * @desc Get a movie
+   * @access Public
+   */
+  @Get("search")
+  getMovie(@Query("year") searchYear: string): string {
+	  return `We are searching for a movie after ${searchYear}`;
+  }
+
+  /**
+   * @route GET movies/:id
+   * @desc Get a movie
+   * @access Public
+   */
+  @Get("/:id")
+  getMovie(@Param("id") id: string): string {
+	  return `movie with the id ${id}`;
+  }
+
+  /**
+   * @route   POST movies
+   * @desc    Create a movie
+   * @access  Private
+   */
+  @Post(@Body() movieData)
+  addMovie() {
+	  return "create movie";
+  }
+
+	/**
+   * @route   DELETE movies/:id
+   * @desc    DELETE a movie
+   * @access  Private
+   */
+  @Delete("/:id")
+  deleteMovie(@Param("id") id: string) {
+	  return `delete movie with the id ${id}`;
+  }
+
+	/**
+   * @route   PATCH movies/:id
+   * @desc    PATCH a movie
+   * @access  Private
+   */
+  @Patch("/:id")
+  patch(@Param("id") id: string, @Body() updateData) {
+	  return `patch movie with the id ${id}`;
+  }
+}
+```
+
+Postman을 이용하여 `https://localhost:3000/movies`로 http request를 보내면 잘 작동한다.
+
+## Serverless
+
+Serverless를 직역하면 "서버가 없다" 라는 의미이다. 하지만, 서버가 진짜로 없는건 아니고 **"서버의 존재"에 대해서 신경쓰지 않아도 되기** 때문에 serverless인 것이다. 서버가 어떤 사양으로 돌아가고있는지, 요청 수에 따라 서버의 갯수를 늘려야 할지, 네트워크는 어떤걸 사용할지, 이런걸 설정할 필요가 없다. 즉, 특정 작업을 수행하기 위해서 컴퓨터를 혹은 가상머신에 서버를 설정하고, 이를 통해 처리 하는 것이 아님을 의미한다. serverless는 **BaaS (Backend as a Service)**, **FaaS (Function as a Service)**로 나눌 수 있다.
+
+BaaS를 제공하는 서비스에는 **Firebase**, Kinvey등이 있고, FaaS를 제공하는 서비스에는 **AWS Lambda**, Azure Functions, Google Cloud Functions 등이 있다.
+
+- serverless: backend without server management
+
+### serverless 이전의 기술
+
+#### 회사내 자체적 시스템 설계
+
+시스템에서 필요한 모든 Infrastructure를 직접 관리하는 것을 의미한다. 전산실이라는 키워드를 생각하시면 이해하기 쉬울 것이다. 컴퓨터를 둘 공간, 컴퓨터의 hardware, network, operating system 등을 모두 직접 관리를 해야 한다. 이 방식의 가장 큰 문제는 시스템이 엄청 커지면 전산실을 유지 할 관리자가 필요하고, 이 인력에 대한 비용이 나간다. 즉, 비용이 자체적 시스템의 가장 큰 문제이다.
+
+#### IaaS (Infrastructure as a Service)
+
+AWS, Azure 등의 cloud service가 제공하는 IaaS를 사용하면 더 이상 서버자원, 네트워크, 전력 등의 Infrastructure를 모두 직접 구축 할 필요가 없다. 이러한 인프라를 가상화하여 관리하기 쉽게 해주는 서비스를 통해 관리자패널에서 인프라를 구성하고 사용하면 된다. 사용자는 가상머신을 만들고, 네트워크를 설정하고, 하드웨어도 설정하고, 거기에 운영체제를 설치해서 application을 구동하고 사용량을 쉽게 모니터링 할 수 있다.
+
+대표적으로 **AWS EC2, AWS S3**가 있다. Amazon takes the responsibility of networking, storage, server and virtualization and the user is responsible for managing the Operating System, middleware, runtime, data and application.
+
+#### PaaS (Platform as a Service)
+
+IaaS에서 한번 더 추상화된 모델이다. Network와 runtime까지 제공되어 사용자는 이제 application만 배포하면 바로 구동시킬 수 있다. 대표적으로 **AWS Elastic Beanstalk**, Azure App Services 등이 있고, 이를 사용하면 Auto Scaling 및 Load Balancing도 쉽게 적용할 수 있다.
+
+### BaaS (Backend as a Service)
+
+계산기 수준의 단순한 웹 app이라면, backend server없이 forntend 쪽 코드로만으로도 개발이 가능하다. 하지만 data를 저장하고, 다른 기기에서도 접근하고, 공유하려면 backend 개발은 필수적이다. 서버 개발을 하다보면 고려할 사항이 많은데, Firebase 같은 BaaS을 사용하면 frontend 개발만 할 줄 알면 아주 쉽게 full-stack app을 만들 수 있다.
+
+- 서버 개발시 고려사항
+  - 서버의 축소/확장
+  - 보안성
+  - 물리적 컴퓨터
+  - 컴퓨터 세팅
+
+#### BaaS 장점과 단점
+
+장점
+
+- Application 개발에 있어서 필요한 다양한 기능들 (database, 소셜서비스 연동, file system 등)을 아주 쉽게 API로 제공해 줌으로서, 개발자들이 서버 개발을 하지 않고서도 필요한 기능을 쉽고 빠르게 구현 할 수 있게 해주고, 비용은 사용 한 만큼만 지불하면 된다. 서버의 이용자가 순식간에 늘어나게 되어도 BaaS provider가 알아서 확장해준다.
+
+- 개발 시간의 단축 (회사 입장으로서 생각한다면, 인건비), 서버 확장 작업의 불필요함: 백엔드에 대한 지식이 없어도 아주 빠른 속도로 개발이 가능하다. 특히, Firebase에서는 실시간 database를 사용하여 데이터가 새로 생성되거나, 수정되었을 때 socket을 사용하여 클라이언트에게 바로 반영시켜주는 기능이 있는데 이러한 기능은 직접 개발하게 된다면 구조 설정에 꽤 많은 시간이 필요 할 수도 있는데 이를 단지 코드 몇 줄만으로 구현 할 수 있게 해주는 멋진 기능들을 지니고 있다. 추가적으로, 일정 사용량 만큼 무료로 사용 할 수 있기 때문에 소규모 프로젝트의 경우 백엔드로서 매우 유용하게 사용 할 수 있다.
+
+단점
+
+- client 위주의 코드: 이 부분은 어떻게 관리하냐에 따라 다르긴 하겠지만 BaaS를 사용함으로서, backend business logic들이 frontend 쪽에 구현이 된다. 예를들어 이메일 발송, 결제 처리 등의 작업들은 backend에서 수행되어야만 한다. Firebase의 경우에는 Firebase SDK를 불러와서 서버쪽에서도 사용이 가능하긴 하지만 일부 로직을 직접 서버측에서 구현할 바에, 그냥 모든 로직을 직접 구현하는 게 나을 수 있다.
+
+- 가격 (다른 서비스와 비교): Firebase의 경우엔 초반엔 무료이다. 이는 소규모 프로젝트에는 정말 매력적으로 다가 올 수 있는 장점이지만 앱의 규모가 커지면, 가격이 꽤 비싸다. 실시간 database에 10G가 쌓이고, 한달 전송되는 데이터의 양이 20G 정도면 database 비용으로만 $70가 발생합니다. 다른 Cloud computing hosting을 해주는 서비스 Vultr의 가격대를 보면, $10면 40GB SSD, 2000GB 월 대역폭을 사용 할 수 있다. 그럼으로 사용자가 별로 없을 것 같은 서비스면 Firebase는 정말 좋은 선택이지만, 서비스의 규모가 커질수록 직접 구현을 했을 때 대비 지출되는 비용이 크게 늘어날 것이다.
+
+### Firebase
+
+Firebase는 Google사에서 제공하는 BaaS이다. 실시간 database가 필요한 서비스라면, 일부 기능에서 Firebase를 사용하는것은 정말 좋은 선택일 수도 있다. 사용자가 많아질 수록 비용이 비싸지만 소규모에서는 무료이고 사용자가 많아진다 싶으면 AWS Lambda로 데이터를 옮기면 되니 큰 문제는 아니다.또한 AWS에 비해서 아주 친절한 interface를 가지고 있어 사용자가 쉽고 빠르게 firebase의 기능을 사용할 수 있다. 그럼으로, 처음 project를 시작할 경우 Firebase는 아주 매력적인 선택이다.
+
+참고로, 실시간 기능을 최소 공수로 구현하고 싶다면 `Feather.js` 라는 web framework도 있으니 참고해 보길 바랍니다.
+
+```
+// firebase-tools 설치
+$ npm i firebase-tools
+
+$ firebase login
+
+// firebase project 시작
+$ firebase init
+
+// firebase 실행
+$ firebase serve
+```
+
+### FaaS (Function as a Service)
+
+기존에는 backend를 server에서 24시간동안 실행시켜야 헀다면, FaaS는 backend를 여러개의 함수로 쪼개서 매우 거대하고 분산된 컴퓨팅 자원에 여러분이 준비해둔 함수를 등록하고, 사용자로 부터 request가 왔을 경우에만 이 함수들이 실행된다. 함수가 실행된 횟수 (그리고 실행된 시간)만큼 비용을 내면 된다.
+
+우리가 등록한 함수는 특정 이벤트가 발생했을때 실행된다.
+
+- 주기적으로 실행되게 설정 가능: 5분마다, 1시간마다, 하루마다 주기적으로 특정 함수를 실행해 크롤링 작업, 주기적 처리등 을 할 수 있다.
+- web 요청 처리 가능: 특정 URL로 사용자가 접속하면 특정 함수를 실행하게 만들어 backend API를 구성 할 수 있다.
+- console을 통하여 직접 호출 할 수도 있다.
+
+#### PaaS 와의 주요 차이점
+
+서버 시스템에 대해서 신경쓰지 않아도 된다는 점이 PaaS와 유사하기도 한데 가장 중요한 차이점은 PaaS의 경우엔, 전체 application을 배포하며, 일단 어떠한 서버에서 당신의 애플리케이션이 24시간동안 계속 돌아가고 있다는 점 입니다.
+
+반면 FaaS는 application이 아닌 함수를 배포하며, 계속 실행되고 있는 것이 아니라 특정 이벤트가 발생 했을 때 실행되며, 실행이 되었다가 작업을 마치면 (혹은 최대 타임아웃 시간을 지나면) 종료된다.
+
+#### FaaS 장점과 단점
+
+장점
+
+- 비용 (pay as you go): 특정 작업을 하기 위하여 서버를 준비하고 24/7동안 하루종일 켜놓는것이 아니라, 필요할때만 함수가 호출되어 처리되며 함수가 호출된 만큼만 비용이 드므로, 비용이 많이 절약된다.
+- 인프라 관리: 네트워크, 장비 이런것들에 대한 구성 작업을 신경 쓸 필요 없다.
+- 인프라 보안: linux update, 최근 발생한 Intel Meltdown 취약점 보안패치등 보안 또한 FaaS provider가 알아서 해주기 때문에 신경 쓸 필요 없다.
+- 확장성: FaaS는 확장성 면에서 매우 뛰어나다. 일반적으로, FaaS 를 사용하지 않는다면, 다양한 트래픽에 유연한 대응을 하기 위하여 우리는 AWS의 Auto Scaling 같은 기술이 필요하다. 이를 통하여 CPU 사용량, Network 처리량에 따라 서버의 갯수를 늘리는 방식으로 처리를 분산시켜야만 한다. FaaS를 사용하게 되면 이렇게 특정 조건에 따라 자동으로 확장되는 것이 아니라, 함수가 1초에 1개가 호출되면 1개가 호출되는것이고, 100,000,00 개가 호출되면 100,000,00 개가 호출된다.
+
+단점
+
+- 자원의 제한: 모든 코드를 함수로 쪼개서 작업하다보니, 함수에서 사용 할 수 있는 자원에 제한이 있다. 함수가 한번 호출 될 때, AWS Lambda에서는 최대 1500MB의 memory까지 사용 가능하며, 처리시간은 최대 300초 까지 사용 가능하다. 이로 인해 web socket 같이 계속 켜놔야 하는것은 할 수 없다. 그 대신 AWS IoT, Pusher 등의 서비스를 사용하면 된다.
+- FaaS provider에 강한 의존: AWS, Azure, Google 등의 FaaS 제공사에 강한 의존을 하게 된다.
+- local data 사용 불가능: 함수들은 무상태적 (stateless)이기 때문에, 데이터를 local storage에서 읽고 쓸 수 없습니다. 그 대신 AWS S3, Azure Storage를 이용하면 된다.
+
+#### FaaS Use Case
+
+그렇다면, FaaS 는 다음의 용도로 사용 될 수 있다.
+
+- Backend: 서비스의 백엔드를 FaaS로 구현
+- Crawler: 주기적으로 페이지를 긁어서 수집
+- File 처리: 파일을 업로드하고, 화질/사이즈를 조정하고, AWS S3 같은 storage에 저장하는 기능을 구현
+- 로그 분석 / 실시간 모니터링: 예를 들어, 특정 컴퓨팅 자원이 CPU 사용량이 70% 에 도달 했을 때, Slack등을 통하여 알림을 받고 싶다면 AWS Cloudwatch/CloudTrail과 AWS Lambda를 연동하여 알림을 받을 수 있다.
+- 자동화 작업: Netflix의 경우 동영상을 인코딩하고, 검증하고, tagging하고, 백업하고, 공개하는 작업들을 AWS Lambda를 통하여 자동화 시켰다.
+
+### [Serverless Framework](https://www.serverless.com/)
+
+AWS Lambda, Azure Functions, Google Cloud Functions를 통하여 serverless application을 만들게 된다면, 단순히 함수들을 작성하는 것 뿐만이 아니라 해당 애플리케이션에서 필요한 아키텍쳐들을 설정해주어야하는데, 이는 수동으로 하나 하나 직접하기엔 꽤나 번거로운 일 입니다. Serverless framework를 사용하면, 매우 간단하게 application을 만들고 배포 할 수 있습니다. 서버리스 애플리케이션은 Javascript뿐만 아니라 C#, Java Python, Golang 등으로 작성 할 수도 있습니다.
+
+```
+// Install serverless framework
+$ npm i serverless
+
+// check serverless framework version
+$ sls --version
+// 또는
+$ serverless --version
+
+// Login to Serverless account
+$ sls login
+
+// Create a serverless function
+$ sls create --template function-name
+
+// Deploy to cloud provider
+$ sls deploy
+
+// Function deplyed! Trigger with live url
+$ http://xyz.amazonaws.com/function-name
+```
+
+https://velopert.com/3549
+
 ## % 부록2: Amazon사의 cloud service인 AWS (Amazon Web Service) 사용하기 %
 
 - AWS IAM: User를 생성하고, create access key를 사용하여, API에 접근하기
@@ -5706,7 +6293,8 @@ Nest.js는 client의 요청별로 Controller와 Provider를 제작하고 이를 
 - AWS SES (Simple Email Service): email 보내기
 - AWS EC2 가상환경: virtualBox와 같이 가상 환경을 제공
 - **AWS Lambda**: Anonymous function (익명함수)
-  - AWS Lambda는 programming language rust로 작성되었다.
+  - serverless: server management가 필요없는 server
+  - AWS Lambda는 rust programming language로 작성되었다.
 - **AWS Elastic Beanstalk**: 간단히 코드를 배포할 때 사용
 
 ## % 부록3: Docker 이해하기 %
@@ -5715,14 +6303,14 @@ local computer에 다운되어 있는 environment와 server computer에 다운�
 
 Docker는 서비스를 제공할 때, 아주 쉽고, 빠르고, 간단하게 같은 environment의 container를 만드는 것을 도와준다.
 
-- Dockerfile로 image를 만들고 (build),
-- image로 container를 실행한다 (run).
+1. Dockerfile로 docker image를 만들고 (build)
+2. docker image로 container를 실행한다 (run)
 
 Dockerhub은 github처럼 사용자가 공식적인 image을 다운 받을 수도 있고, customized한 image도 upload할 수 있다.
 
 기본 구조: Dockerfile -build> Dokcer image -run> Docker container
 
-- Dockerfile로 image를 build하는 commend
+- Dockerfile로 image를 build하는 command
 
 ```
 $ docker bulid -t imageName
@@ -5730,10 +6318,12 @@ $ docker bulid -t imageName
 // Dockerhub에서 image을 다운 받는다.
 ```
 
-- image로 container를 run하는 commend
+- image로 container를 run하는 command
 
 ```
 $ docker run -it imageName
-$ docker run -b imageName
-// d는 daemon의 약자로 뒤에서 작동한다.
+$ docker run -d imageName
+// Another useful parameter to pass to docker run is the -d flag.
+// This flag causes Docker to start the container in "detached" mode.
+// d는 daemon/detached의 약자로 background에서 작동한다.
 ```

@@ -34,8 +34,8 @@
   3. [Flask.py](https://github.com/heeshin174/Web_App_Dev_Kor#3-flaskpy)
   4. [Postgresql](https://github.com/heeshin174/Web_App_Dev_Kor#4-postgresql)
   5. [Mongodb](https://github.com/heeshin174/Web_App_Dev_Kor#5-mongodb)
-  6. [RocketRs](https://github.com/heeshin174/Web_App_Dev_Kor#6-rocketrs)
-  7. [NestJs](https://github.com/heeshin174/Web_App_Dev_Kor#nestjs)
+  6. [Rocket.rs](https://github.com/heeshin174/Web_App_Dev_Kor#6-rocketrs)
+  7. [Nest.js](https://github.com/heeshin174/Web_App_Dev_Kor#nestjs)
   8. [Serverless](https://github.com/heeshin174/Web_App_Dev_Kor#serverless)
 
 ## 0. Web Development Loadmap
@@ -52,8 +52,17 @@
 
 - Computer
   - MacOS
-  - Windows (+ **WSL**: Window subsystem for Linux)
+  - Windows (+ ⭐ **WSL**: Window subsystem for Linux)
   - Linux
+- Keyboard
+  - 기계식 키보드
+    - **Red 적축**: 키압이 낮기때문에 끝까지 누르지 않아도 입력이 된다.
+    - Brown 갈축: 무거운 느낌으로 비추
+    - Wireless 60%, 66% Mechanical Keyboard
+      - Anna Pro 2 Gatron Red 게이트론 적축
+      - Leopold FC750R slient red
+      - ⭐ Keychron K7, 68 Keys Ultra-Slim Wireless Low-Profile Gateron Mechanical RGB
+  - Capacitive Keyboard 무접점 키보드
 - Browser
   - **Chrome**
   - Edge
@@ -185,8 +194,8 @@ export NVM_DIR="$HOME/.nvm"
 
 ### 2. Front-End (Client side)
 
-Front-End은 사용자가 웹사이트를 방문시 보게되는 화면/User Interface (UI)을 의미한다. Front-End의 기본은 `HTML`, `CSS`, `Javascript`이다. 이는 web browser가 읽을 수 있는 파일들이 이 세가지 밖에 없기 때문이다.
-React.js, Typescript 등등 outside library/framework로 만들어 native `HTML`, `CSS`, `Javascript`로 작성되지 않은 파일들은 browser가 읽을 수 없기 떄문에 결국에는 이 세가지로 변환해주어야 한다.
+Front-End은 사용자가 웹사이트를 방문시 보게되는 화면, 즉 User Interface (UI)을 의미한다. Front-End의 기본은 `HTML`, `CSS`, `Javascript`이다. 이는 web browser가 읽을 수 있는 파일들이 이 세가지 밖에 없기 때문이다. 최근에는 `Web Assembly`까지 포함해 4가지를 읽을 수 있다.
+React.js, Typescript 등등 outside library/framework로 만들어 native HTML, CSS, Javascript로 작성되지 않은 파일들은 browser가 읽을 수 없기 떄문에 마지막에는 이 세가지로 변환해주어야 한다.
 
 - `HTML`: Structural 뼈대
 - `CSS`: Presentational 살점
@@ -248,12 +257,12 @@ React.js, Typescript 등등 outside library/framework로 만들어 native `HTML`
     - ⭐ [**React**](https://github.com/heeshin174/Web_App_Dev_Kor#5-reactjs): https://reactjs.org/
     - [Vue](https://github.com/heeshin174/Web_App_Dev_Kor#vuejs): https://vuejs.org/
     - Angular: https://angularjs.org/
-    - **Svelte**: https://svelte.dev/docs
-    - React JS with Typescript: https://create-react-app.dev/docs/adding-typescript/
+    - Svelte: https://svelte.dev/docs
+    - React with Typescript: https://create-react-app.dev/docs/adding-typescript/
   - Meta Library & Meta Framework (Meta-Framework: 기존 framework 위에 만들어진 framework)
     - React based
       - [Server-Side Rendering (SSR) & Static Site Generators (SSG)](https://github.com/heeshin174/Web_App_Dev_Kor#client-side-rendering-csr-vs-server-side-rendering-ssr)
-        - ⭐ [**Next.js**](https://github.com/heeshin174/Web_App_Dev_Kor#nextjs): https://nextjs.org/docs/
+        - ⭐ [**Next**](https://github.com/heeshin174/Web_App_Dev_Kor#nextjs): https://nextjs.org/docs/
         - Remix: https://remix.run/docs/en/v1
         - Gatsby: https://www.gatsbyjs.com/
       - Managing and centralizing application state
@@ -281,25 +290,25 @@ React.js, Typescript 등등 outside library/framework로 만들어 native `HTML`
         - react-query: https://react-query.tanstack.com/
     - Vue based
       - Server-Side Rendering (SSR)
-        - ⭐ **Nuxt.js**
+        - ⭐ **Nuxt**: https://nuxtjs.org/
       - CSS Framework
         - Vuetify: https://next.vuetifyjs.com
     - Other Library/Framework
       - redux (manage state): https://redux.js.org/introduction/getting-started
       - multer (upload files): https://github.com/expressjs/multer
 
-`Frontend library/framework`은 web application을 더 쉽게 작성할 수 있게 만들어 주는 outside library/framework을 말한다.
+Front-End library/framework은 web application을 더 쉽게 작성할 수 있게 만들어 주는 outside library/framework을 의미한다.
 **Single Page Application** (SPA)는 body가 비어있는 하나의 HTML을 가지고 Javascript를 이용해서 그 안에 Data만 변경하는 것을 말한다.
-Server가 Client에 자료를 넘겨주면, Client computer가 그 정보를 가지고 HTML를 완성하기 때문에 CSR (Client Side Rendering)이라고 부른다. CSR은 HTMl이 비어있기 때문에 검색 엔진에 노출되어 검색되기 쉽지 않아 SEO (Search Engine Optimization)에 약점을 가진다.
-SPA를 제공하는 frontend framework에는 크게 React JS, Vue JS, Angular JS가 있다. 이들은 사용방법이 거의 비슷하기 때문에 하나만 잘 이해하면, 나머지는 쉽게 사용할 수 있다.
+Server가 Client에 자료를 넘겨주면, Client computer가 그 정보를 가지고 HTML를 완성하기 때문에 Client Side Rendering (CSR)이라고 부른다. CSR은 HTML이 비어있기 때문에 검색 엔진에 노출되어 검색되기 쉽지 않아 Search Engine Optimization (SEO)에 취약하다.
+SPA를 제공하는 frontend framework에는 크게 React, Vue, Angular가 있다. 이들은 사용방법이 거의 비슷하기 때문에 하나만 잘 이해하면, 나머지는 쉽게 사용할 수 있다.
 
-- ⭐ **`React.js`**: React는 Meta사에서 만든 Javascript frontend library로 computer에 최신 버전의 `Node.js`를 설치하면 누구나 사용할 수 있다.
+- ⭐ **React.js**: React는 Meta사에서 만든 Javascript frontend web library로 computer에 최신 버전의 `Node.js`를 설치하면 누구나 사용할 수 있다.
 - **Vanilla.js** is just a way to refer to native (non-extended and standards-based) JavaScript
 
 ### 3. Back-End (Server side)
 
-Back-End은 사용자가 웹사이트를 방문시 서버쪽에서 실행 할 UX (user experience)을 의미한다.
-API key같은 외부에 노출되서는 안되는 environmental variables들은 서버쪽에서 다뤄, 사용자가 접근하지 못하게 해야한다. 또한 데이터를 저장할 database의 logic 역시 back-end에서 다뤄야 하는 요소들중 하나이다.
+Back-End은 사용자가 웹사이트를 방문시 서버쪽에서 실행 할 User Experience(UX)을 의미한다.
+API key같은 외부에 노출되서는 안되는 environmental variables들은 server side에서 다뤄, 사용자가 접근하지 못하게 해야한다. 또한 데이터를 저장할 database의 logic 역시 backend에서 다뤄야 하는 요소들중 하나이다.
 
 - [Server](https://github.com/heeshin174/Web_App_Dev_Kor#1-web-application-development)
 
@@ -318,10 +327,10 @@ API key같은 외부에 노출되서는 안되는 environmental variables들은 
 
   - SQL
     - Postgresql: https://www.postgresql.org/download/
-      - PG-Pool js: https://node-postgres.com/api/pool
+      - PG-Pool.js: https://node-postgres.com/api/pool
   - NOSQL
     - Mongodb: https://www.mongodb.com/cloud
-      - Mongoose js: https://mongoosejs.com/
+      - Mongoose.js: https://mongoosejs.com/
   - Prisma (PlanetScale에 hosting된 serverless database와 연결): https://www.prisma.io/
   - PlanetScale (serverless database): https://planetscale.com/
   - Firebase (backend as a service): https://firebase.google.com/
@@ -329,48 +338,42 @@ API key같은 외부에 노출되서는 안되는 environmental variables들은 
 - other Javascript Library/Framework
 
   - Gatsby (Server side generator): https://www.gatsbyjs.com/
-  - nodemon (javascript library: auto reload server): https://www.npmjs.com/package/nodemon
-  - dotenv (javascript library: set environmental variables): https://github.com/motdotla/dotenv
-  - concurrently (javascript library: start client and server together): https://github.com/open-cli-tools/concurrently
-  - axios (javascript library: XMLHttpRequests): https://axios-http.com/docs/intro
+  - nodemon (auto reload server): https://www.npmjs.com/package/nodemon
+  - dotenv (set/get environmental variables): https://github.com/motdotla/dotenv
+  - concurrently (start client and server together): https://github.com/open-cli-tools/concurrently
+  - axios (XMLHttpRequests): https://axios-http.com/docs/intro
   - bcrypt (hashing password): https://www.npmjs.com/package/bcryptjs
   - crypto: https://cryptojs.gitbook.io/docs/
   - passport (social media login): https://www.passportjs.org/
   - webpack (bundle JavaScript files): https://webpack.js.org/
   - gulp (bundle JavaScript files): https://gulpjs.com/
   - feather (real-time applications and REST APIs): https://feathersjs.com/
+  - serverless (All-in-one development & monitoring of auto-scaling apps on AWS Lambda): https://www.serverless.com/
   - serverless-http (Use existing middleware framework (e.g. Express, Koa) in AWS Lambda): https://github.com/dougmoscrop/serverless-http
 
 - Twilio: https://www.twilio.com/
 - SendGrid (Email API): https://sendgrid.com/
 - MailGun (Email API): https://www.mailgun.com/
 - JWS (Json Web Token): https://jwt.io/
-- serverless (All-in-one development & monitoring of auto-scaling apps on AWS Lambda): https://www.serverless.com/
 - ESLint (Formatters): https://eslint.org/
 - Cloudflare Streams (realtime live streaming for live commerce): https://www.cloudflare.com/products/cloudflare-stream/
 - Cloudflare Images: https://www.cloudflare.com/products/cloudflare-images/
 - Paddle (payment): https://paddle.com/
 - Paddle developer (payment): https://developer.paddle.com/
 - Apollo (transfer GraphQL data between server to the UI): https://www.apollographql.com/docs/
-- Graphql (A query language for your API): https://graphql.org/
+- ⭐ **Graphql** (A query language for your API): https://graphql.org/
 - Wordpress: https://wordpress.com/
 - Woocommerce (eCommerce platform built on WordPress): https://woocommerce.com/
 
 각각의 programming language마다 Web Application Server를 만드는 web app framework가 있다.
 
-1. python: Django, Flask, FastAPI
-2. Java: spring, spring boot, play
-3. Javascript: Express, Fastify
-4. php: Laravel
-5. Rust: Rocket
-
 ![serverside-web-framework](./img/server_side_web_framework.png)
 
 - Web Framework benchmarks (Which web framework is high performance?): https://www.techempower.com/benchmarks/
 
-#### Full-stack (Client + Server)
+#### Full-Stack (Client + Server)
 
-Web App dev는 크게 Frontend, Backend로 나눌 수 있고, 이를 합쳐 Fullstack dev라고 한다. Full-stack은 Frontend와 Backend를 합친 것으로 서버쪽과 사용자쪽 모두를 다룬다. 이는 MVC (Model / View / Controll) software design pattern 라고도 불린다.
+Web App dev는 크게 Frontend, Backend로 나눌 수 있고, 이를 합쳐 Full-stack dev라고 한다. Full-stack은 서버쪽과 사용자쪽 모두를 다룬다. 이는 MVC (Model / View / Controll) software design pattern라고도 불린다.
 
 - Model–view–controller is a software design pattern commonly used for developing user interfaces that divide the related program logic into three interconnected elements.
 
@@ -389,18 +392,18 @@ Web App dev는 크게 Frontend, Backend로 나눌 수 있고, 이를 합쳐 Full
 
 #### Database
 
-Database와 web app을 연결하여 쉽고 간단하게 data를 읽고 쓸 수 있다.
+Database와 web app을 연결하면 쉽고 간단하게 data를 읽고 쓸 수 있다.
 Database는 크게 Relational database `sql (Structured Query Language)`와 Not only Relational database (Nosql)로 나눌 수 있다.
 
-- postgresql: Relational database의 대표주자
-- Mongo Database: Not only Relational database의 대표주자
+- ⭐ **postgresql**: Relational database의 대표주자
+- ⭐ **Mongo Database**: Not only Relational database의 대표주자
 
-![This is an image](./img/Database.png)
+![database](./img/Database.png)
 
 ### 4. Tools
 
-- Git
-- Github
+- ⭐ **Git**
+- **Github**
 - Docker (Container based development): https://www.docker.com/ & https://docs.docker.com/
 - APIs
   - RapidApi: https://rapidapi.com/
@@ -411,7 +414,7 @@ Database는 크게 Relational database `sql (Structured Query Language)`와 Not 
 ### 5. Testing
 
 - JavaScript Testing Framework
-  - Jest.js: https://jestjs.io/
+  - Jest: https://jestjs.io/
 - Cypress (front end testing tool): https://docs.cypress.io/guides/overview/why-cypress#In-a-nutshell
 
 - 다른 Operating system에서도 내 웹사이트가 잘 작동하는지 확인한다.
@@ -446,25 +449,25 @@ Database는 크게 Relational database `sql (Structured Query Language)`와 Not 
   - Java: https://docs.oracle.com/en/java/javase/15/docs/api/index.html
   - Typescript: https://www.typescriptlang.org/
   - C/C#/C++
-  - Rust: https://www.rust-lang.org/
+  - ⭐ **Rust**: https://www.rust-lang.org/
   - Closure (Functional): https://clojure.org/
-  - Dr.Racket (educational Functional): https://racket-lang.org/
+  - DrRacket (educational & Functional): https://racket-lang.org/
 
 - Tools
   - Postman (RESTful API): https://www.postman.com/downloads/
   - Insomnia (RESTful API): https://insomnia.rest/
   - VSCode (Microsoft IDE: Code Editor): https://code.visualstudio.com/
   - Eclipse (Java IDE): https://www.eclipse.org/documentation/
+  - Stackblitz (web framework code 실행): https://stackblitz.com/
   - GoormIDE (Docker based Cloud IDE): https://www.goorm.io/
   - Pythontutor (code visulaization): https://pythontutor.com/
   - Figma (Design UI/UX): https://www.figma.com/
   - Adobe photoshop (Design UI): https://www.adobe.com/products/photoshop
   - Diagram.io (Design UI): https://app.diagrams.net/
-  - Jsbin (간단한 code 실행): https://jsbin.com/
+  - Jsbin (간단한 HTML, CSS, JS code 실행): https://jsbin.com/
   - Quicktype (Api로 얻은 Json data를 각종 다른 언어로 변환): https://quicktype.io/
   - cloudcraft (draw AWS diagrams): https://www.cloudcraft.co/
 - Educations
-  - Web Development In 2022 - https://www.youtube.com/watch?v=EqzUcMzfV1w&list=PLg8KC9DusHl8zGjAWYGGJygm3rWoEahJQ&index=30&ab_channel=TraversyMedia
   - Async Await: https://kiwanjung.medium.com/%EB%B2%88%EC%97%AD-async-await-%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-%EC%A0%84%EC%97%90-promise%EB%A5%BC-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-955dbac2c4a4
   - w3school: https://www.w3schools.com/
   - Leetcode: https://leetcode.com/
@@ -477,13 +480,14 @@ Database는 크게 Relational database `sql (Structured Query Language)`와 Not 
 - [Semantic Tags](https://github.com/heeshin174/Web_App_Dev_Kor#semantic-tags)
 - [SEO (Search Engine Optimazation)](https://github.com/heeshin174/Web_App_Dev_Kor#seo-search-engine-optimazation)
 
-**`HyperText Markup Language (HTML)` is the standard markup language for creating web pages and documents designed to be displayed in a web browser.**
+**HyperText Markup Language (HTML) is the standard markup language for creating web pages and documents designed to be displayed in a web browser.**
 
 사용자가 웹브라우저로 특정 URL에 접속하면 서버가 그 사이트의 `HTML`, `CSS`, `Javacsript`를 보내주고 웹브라우저가 이를 해석하여 사용자에게 보여준다. 그 중 `HTML`은 웹사이트안에 실제 들어있는 내용물 (content) 자체를 의미한다.
 
 HTML는 **tree structure**를 가진다. Every tree node is an object. Tags are element nodes and form the tree structure: `<html>` is at the root, then `<head>` and `<body>` are its children, etc.
 
 - `<html>`
+
   - `<head>`
     - `<link>`
     - `<title>`
@@ -495,9 +499,9 @@ HTML는 **tree structure**를 가진다. Every tree node is an object. Tags are 
     - ...
     - `<footer>`
 
-예시: `index.html` file
-
 `index.html`은 웹사이트의 홈페이지를 의미하는 naming이다.
+
+- `index.html` file
 
 ```
 <!DOCTYPE html>
@@ -3009,16 +3013,16 @@ decimal = "Hello"; // error. decimal은 정수라니까...
 
 ### What is React.js?
 
-**React.js**는 web app을 만들 수 있는 Javascript library이다. React.js is a JavaScript library for building user interfaces.
+**React**는 web app을 만들 수 있는 Javascript library이다. React is a JavaScript library for building user interfaces.
 
 #### Web app은 무엇이고, 왜 사용하는가
 
-A1. **page간 이동에 새로고침이 필요없이 부드럽게 넘어가기 때문에**
-A2. UI가 보이는 동시에 클릭이 가능하다. viewable and interactable at the same time.
+- A1. **page간 이동에 새로고침이 필요없이 부드럽게 넘어가기 때문에**
+- A2. UI가 보이는 동시에 클릭이 가능하다. viewable and interactable at the same time.
 
 Web-app은 Single Page Application (SPA)이라고 불리는 웹페이지로, 하나의 html을 가지고, 그 안에 내용물만을 변경하여 사용자에게 보여준다. 웹사이트 내에서 page loading이 덜 걸리고, page간 이동에 새로고침이 필요없이 부드럽게 넘어가기 때문에 사용한다.
 
-Web app를 만들 수 있는 frontend framework에는 React 말고도 Vue/Angular등 다른 tools도 많이 있다.
+Web app를 만들 수 있는 frontend web framework에는 React 말고도 Vue/Angular등 다른 tools도 많이 있다.
 
 #### Web app을 만드는데 굳이 React를 사용하는 이유는 무엇인가
 
@@ -3035,7 +3039,7 @@ React가 web app을 만드는 library/framework들 중에 사용자가 가장 �
 - Library는 특정 기능에 대한 도구 or 함수들을 모은 집합이다.
   즉, 프로그래머가 개발하는데 필요한 것들을 모아둔 코드 더미들로, library는 단순 활용이 가능한 도구들의 집합이다.
 
-집을 만드는 작업이라고 하면,
+집을 만드는 작업이라고 하면:
 
 - Framework는 집의 기본 구조를 제공하여 우리는 그 구조에 필요한 가구, 침구, 벽지등을 추가하는 것이다.
 - Library는 침대, 소파와 같은 가구들을 의미한다. 우리는 이 가구들로 직접 집을 만들어야 한다.
@@ -3703,12 +3707,12 @@ const blueColor = 'color : blue';
 
 ### What is Next.js?
 
-`Next.js`는 react.js에 **Server Side Rendering (SSR)** 기능을 더한 meta-framework이다. `Next.js`, `Remix`는 react가 가진 Client-Side Rendering (CSR) 문제를 해결하기 위해 등장했다. React로 만든 웹은 자동으로 Client-Side Rendering이 된다. `Next.js`는 `React.js`로 만든 웹을 **Static & Server Side Rendering**를 가능하게 만들어 준다. `Remix.js` 역시 SSR을 지원하지만, `Next.js`가 프로그래머들 사이에서 가장 인기가 많은 이유는 배우기 쉽고, 사용하기 쉽기 때문이다.
+Next.js는 react.js에 **Server Side Rendering (SSR)** 기능을 더한 meta-framework이다. Next와 Remix는 React가 가진 Client-Side Rendering (CSR) 문제를 해결하기 위해 등장했다. React로 만든 웹은 자동으로 Client-Side Rendering이 된다. Next는 React app을 **Static & Server Side Rendering**이 가능하게 만든다. Remix 역시 SSR을 지원하지만, Next가 프로그래머들 사이에서 가장 인기가 많은 이유는 배우기 쉽고, 사용하기 쉽고, community가 커서 배울 수 있는 자료가 많기 때문이다.
 
 ### Client-Side Rendering (CSR) vs Server-Side Rendering (SSR)
 
-- Time To View (TTV): 사용자가 화면 UI를 보는 데까지 걸리는 시간. 즉 page가 **Viewable**이 되는 데 걸리는 시간
-- Time To Interact (TTI): 화면 UI를 클릭하면 반응하는 데까지 걸리는 시간. 즉 page가 **Interactable**이 되는 데 걸리는 시간
+- **Time To View (TTV)**: 사용자가 화면 UI를 보는 데까지 걸리는 시간. 즉 page가 **Viewable**이 되는 데 걸리는 시간
+- **Time To Interact (TTI)**: 화면 UI를 클릭하면 반응하는 데까지 걸리는 시간. 즉 page가 **Interactable**이 되는 데 걸리는 시간
 
 - Client-Side Rendering (CSR)방식: 사용자가 웹사이트로 접근한 후에야 그 웹를 만드는 데 필요한 모든 Javascript를 다운받고, browser가 React를 실행시켜 UI를 만든다. (TTI = TTV)
   1. Server sending Response to Browser
@@ -3768,7 +3772,7 @@ const blueColor = 'color : blue';
 
 ### pages
 
-`Next.js`는 framework이기 때문에, `Next.js`가 정해놓은 규칙, 틀을 따라가야지만 원하는 결과를 얻을 수 있다. `Next.js`가 요구하는 틀 중 가장 유용하고, 중요한 틀은 `pages`이다. `pages` directory안에 React component를 만들어 export하면, 기존 React.js에서 사용하던 routing 방식인 `react-router-dom`을 사용하지 않고, Next.js가 자동으로 그 `.js`, `.jsx`, `.ts`, `.tsx` extentsion의 이름으로 routing 해준다.
+Next는 framework이기 때문에, Next가 정해놓은 규칙과 틀을 따라가야지만 원하는 결과를 얻을 수 있다. Next가 요구하는 틀 중 가장 유용하고, 중요한 틀은 `pages`이다. `pages` directory안에 React component를 만들어 export하면, 기존 React에서 사용하던 routing 방식인 `react-router-dom`을 사용하지 않고, Next가 자동으로 그 `.js`, `.jsx`, `.ts`, `.tsx` extentsion의 이름으로 routing 해준다.
 
 `pages` directory안에 `about.js`라는 React component를 만들어 export하면, it will be accessible at `/about`.
 
@@ -3841,7 +3845,7 @@ export default Page
 
 ### getStaticProps
 
-다음으로 중요한 `Next.js`문법은 `getStaticProps` method이다. If you export a function called `getStaticProps` (Static Site Generation) from a page, Next.js will pre-render this page at build time using the props returned by `getStaticProps`.
+다음으로 중요한 Next의 문법은 `getStaticProps` method이다. If you export a function called `getStaticProps` (Static Site Generation) from a page, Next.js will pre-render this page at build time using the props returned by `getStaticProps`.
 
 #### When should I use getStaticProps?
 
@@ -5936,7 +5940,7 @@ Differences
 
 ### Next.js란?
 
-Nest.js는 효율적이고, 안정적이며, 확장에 용이한 서버 어플리케이션을 구축하기 위한 진보된 node.js framework이다. 대부분의 Nest의 코드는 typescript로 만들어졌으며, typescript 를 완전하게 지원한다. Nest.js는 HTTP request을 다루는 web server로 내부적으로 Express.js를 사용하고 있다. Express.js가 기본 웹서버지만 Fastify를 사용하도록 구성 할 수도 있다. Fastify를 사용하면 Express.js보다 더 빠른 웹서버를 만들 수 있다.
+Nest.js는 효율적이고, 안정적이며, 확장에 용이한 서버 어플리케이션을 구축하기 위한 진보된 node.js framework이다. 대부분의 Nest의 코드는 typescript로 만들어졌으며, typescript를 완전하게 지원한다. Nest는 HTTP request을 다루는 web server로 내부적으로 Express.js를 사용하고 있다. Express가 기본 웹서버지만 Fastify를 사용하도록 구성 할 수도 있다. Fastify를 사용하면 Express보다 더 빠른 웹서버를 만들 수 있다.
 
 ### Next.js 장점
 

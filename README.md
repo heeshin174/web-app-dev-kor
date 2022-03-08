@@ -223,6 +223,8 @@ React.js, Typescript 등등 outside library/framework로 만들어 native HTML, 
     - styled-components: https://styled-components.com/docs
     - Postcss: https://postcss.org/
   - 기타
+    - headlessui ( React, Vue + Tailwind): https://headlessui.dev/
+    - heroicons (svg icons with React, Vue + Tailwind): https://heroicons.com/
     - FontAwesome (icons): https://fontawesome.com/
     - Devicon (icons representing programming tools): https://devicon.dev/
     - Google Font (text style): https://fonts.google.com/
@@ -474,11 +476,6 @@ Database는 크게 Relational database `sql (Structured Query Language)`와 Not 
   - react로 만든 웹 github로 deploy하기: https://codingapple.com/unit/react-build-deploy-github-pages/
 
 ## 1. HTML
-
-- [HTML Tags](https://github.com/heeshin174/Web_App_Dev_Kor#html-tags)
-- [Page Structure](https://github.com/heeshin174/Web_App_Dev_Kor#page-structure)
-- [Semantic Tags](https://github.com/heeshin174/Web_App_Dev_Kor#semantic-tags)
-- [SEO (Search Engine Optimazation)](https://github.com/heeshin174/Web_App_Dev_Kor#seo-search-engine-optimazation)
 
 **HyperText Markup Language (HTML) is the standard markup language for creating web pages and documents designed to be displayed in a web browser.**
 
@@ -741,14 +738,6 @@ Examples of semantic elements: <form>, <table>, and <article> - Clearly defines 
 React.js, Vue.js와 같은 Frontend library/framework로 만들어진 사이트, Client-Side Rendering (CSR),의 경우 서버는 텅 빈 html을 사용자에게 넘겨주고, 사용자의 컴퓨터에서 HTML이 완성되는 구조이기 때문에 검색엔진에 노출되기 어렵다. 그럼으로 Server-Side Rendering (SSR)을 지원하는 Next.js나 Nuxt.js등을 이용하여 검색 엔진에 많이 노출되게 할 수 있다.
 
 ## 2. CSS
-
-- [Styling](https://github.com/heeshin174/Web_App_Dev_Kor#styling)
-- [Layouts](https://github.com/heeshin174/Web_App_Dev_Kor#layouts)
-  - [Float](https://github.com/heeshin174/Web_App_Dev_Kor#float)
-  - [Flexbox](https://github.com/heeshin174/Web_App_Dev_Kor#flexbox)
-  - [Grid](https://github.com/heeshin174/Web_App_Dev_Kor#grid)
-- [Responsive Design](https://github.com/heeshin174/Web_App_Dev_Kor#responsive-design)
-- [Animation](https://github.com/heeshin174/Web_App_Dev_Kor#animation)
 
 [CSS Properties Refernece](https://www.w3schools.com/cssref/default.asp)
 
@@ -4188,7 +4177,7 @@ https://redux-toolkit.js.org/tutorials/quick-start
 - `단어 + tab`: Snippets를 이용하여 자동완성 기능을 적극활용한다.
 - Debug tool를 이용하여 프로그램을 디버깅할 수 있다 (내가 확인하고 싶은 코드 옆에 breakpoint 생성 후 debug 실행).
 
-### 유용한 VScode extension
+### VScode extension
 
 - `Prettier`: save시 auto code formatting.
 
@@ -4199,8 +4188,8 @@ https://redux-toolkit.js.org/tutorials/quick-start
 
 - `Live Server`: HTML/CSS/Javascript의 server 실행
 - `Material icon theme`: file icon 변경
-- `ES7+ React/Redux/React-Native snippets`: React 개발환경시 코드 자동완성
-- `Auto rename tag`: HTML에서 tag이름 변경 시, 뒤의 tag도 같이 변경
+- `ES7+ React/Redux/React-Native snippets`: React 개발환경시 코드 자동완성 `rafce`
+- `Auto rename tag`: HTML에서 tag name 변경 시, 뒤의 tag도 같이 변경
 - `HTML CSS Support`: HTML에서 CSS file의 자동완성
 - `Volar`: Vue 개발환경
 - `bracket pair colorizer2`: 괄호마다 색생추가
@@ -4209,9 +4198,9 @@ https://redux-toolkit.js.org/tutorials/quick-start
 - `open in browser`: HTML을 browser로 열기
 - `ESLint`: code formatting
 - `GitLens — Git supercharged`: git을 이용해, 코드 변경자 확인
-- `Community Material Theme`: VScode 색상변경
 - `Remote Remote - WSL`: Windows로 WSL 실행시만 설치
 - `Paste JSON as Types`: JSON data를 code로 변환
+
   1. code로 변환하고 싶은 JSON data 복사
   2. code를 저장할 file 생성
      - 예: `Tweet.ts`
@@ -4220,16 +4209,43 @@ https://redux-toolkit.js.org/tutorials/quick-start
   4. Command Palette에 `Paste JSON as Types` 검색
   5. Top-level type name입력
 
+- `Tailwind CSS IntelliSense`: Tailwindcss 사용시 유용
+- `Docker`: Dockerfile 작성 시 유용
+- `Quokka.js`: JS/TS file 작성 시 error checking 등 유용
+- `Community Material Theme`: VScode color theme
+- `Dracula Official`: VScode color theme
+- `Night Owl`: VScode color theme
+- `codesnap`: screenshot of code block
+- `Thunder Client`: rest request 보내기. Postman과 비슷하다.
+- `REST Client`: rest request 보내기.
+
+  1. `*.http` file 생성
+  2. http request 작성 후 Send Request 클릭
+
+  ```
+  // test.http
+  GET http://localhost:5000/users
+
+  POST http://localhost:5000/users
+  Content-Type: application/json
+
+  {
+    "username":"Harry",
+    "password":"123456"
+  }
+  ```
+
 ### keyboard snippets
 
 우리는 코드를 짤 때, 최대한 마우스를 사용하지 않도록 해야 된다. keyboard snippets을 이용하면, 키보트만으로도 우리가 하고 싶은 것을 빠르게 할 수 있다.
 
-- In VScode, go to `Help > Keyboard Shortcuts References`. 우리가 사용가능한 유용한 키보드 단축기들을 볼 수 있다.
+- In VScode, go to `Help > Keyboard Shortcuts References`. VScode에서 사용가능한 유용한 키보드 단축기들을 볼 수 있다.
 
 #### Navigation
 
 - `Ctrl + P`: 이 폴더 내에 다른 file name을 입력 후, 그 file로 이동 (파일간 이동)
-- `Ctrl + G`: 이 파일 내에 Line 이동 (파일 내 이동)
+- `Ctrl + G`: 이 파일 내에 Line 입력 후 이동 (파일 내 이동)
+- `Ctrl + Shift + o`: file 내 작성된 다른 코드로 이동
 - `pageUp/pageDown`: Move to (next/previous) page in file
 - `Alt + (pageUP/pageDown)`: Scroll page up/down
 - `F12`: Go to Definition (선택된 코드가 정의된 file로 워프)
@@ -4243,28 +4259,30 @@ https://redux-toolkit.js.org/tutorials/quick-start
   - `Fn + downArow`: pageDown
   - `Fn + upArrow`: pageUp
 - `Ctrl + (Home/End)`: Go to beginning/end of file
-- `Ctrl + (1/2/3)`: 새로운 split editor 생성 후, 그곳으로 cursor이동
-- `Ctrl + F4`: 현재 split editor 종료
+- `Ctrl + \`: 새로운 split editor 생성
+- `Ctrl + (1/2/3/...)`: 새로운 split editor 생성 후, 그곳으로 cursor 이동
+- `Alt + (1/2/3/...)`: 열려있는 여러 tab 중, 그곳으로 cursor 이동
+- `Ctrl + W\F4`: 현재 tap 또는 split editor 닫기
 
 - `Ctrl + click`: Go to definition
+- `Ctrl + hover`: peek definition
 
 #### Basic editing
 
 - `tab`: 자동완성 (현재치고 있는 코드를 자동완성)
-- `Ctrl + X`: Cut line (empty selection)
+- `Ctrl + X`: Cut (select하지 않을 경우 현재 cursor가 있는 line 삭제)
 - `Ctrl+ shift + k`: Delete Line
-- `Ctrl + L => DEL`: Delete Line
-- `Ctrl + C`: Copy
+- `Ctrl + L`: Select Line
+- `Ctrl + C`: Copy (select하지 않을 경우 현재 cursor가 있는 line 복사)
 - `Ctrl + V`: Paste
 - `Ctrl + Z`: Undo
-- `Ctrl + S`: Save
+- `Ctrl + S`: Save file
 - `` Ctrl + `(back tic) ``: Open terminal
 - `` Ctrl + Shift + `(back tic) ``: Create new terminal
 - `Ctrl + shift + R`: Refactoring (drag된 코드를 변수로 만들기, 함수로 만들기, 새로운 file로 옮기기, ...)
 - `F2`: Renaming (변수 이름 변경하기: 이 변수와 연관된 모든 다른 file에서 사용중인 변수명도 함께 바꿔준다.)
 - `Ctrl + F`: Find (F2를 사용하는 것이 더 편리하다).
 - `Ctrl + H`: Renaming (F2를 사용하는 것이 더 편리하다).
-- `Ctrl + L`: 한 줄 선택
 - `Alt + (Up/Down)`: 한 줄을 위/아래로 옮기기
 - `shift + alt + (Up/Down)`: 한 줄을 아래줄에 복사후 붙여넣기 (Copy & Paste)
 - `shift + (Arrow)`: Arrow로 움직인 영역만큼만 drag
@@ -4288,46 +4306,52 @@ https://redux-toolkit.js.org/tutorials/quick-start
   - `Ctrl + K`: Cuttom key binding for toggling zen mode
   - Z key가 undo와 연결되어 있기 떄문에 개인적으로 `Ctrl + K`를 이용해 toggle zen mode한다.
 
+- `Ctrl + b`: toggle side-bar
+- `Ctrl + -`: zoom out
+- `Ctrl + +`: zoom in
+- `Ctrl + d`: find next match (현재 select된 단어와 일치하는 다음 위치 찾은 후 multi cursor)
+
 - `Alt + click`: Multi-cursor (Alt + Click를 여러 군데 찍으면, 한번에 여러 곳에 typing할 수 있다).
 
 ### Terminal (Unix shell) Command
 
 `ctrl + backtic`로 terminal를 열어 다음의 command를 입력
 
-- `ls`: list files in current directory (list)
-- `ls -l`: list files detail in current directory (list -long)
-- `ls -a`: list all files in current directory (list -all)
-- `mkdir + fileName`: make directory
-- `chmod +x fileName` : make it executable (chmod: change mode)
-- `cd dirName`: change directory
-- `cd ..`: change directory backword. parent 폴더로 이동
-- `cd ~/filename`: root directory에서 filename이 있는 폴더로 이동
-- `code ~/filename`: root directory에서 filename인 file을 찾아 vscode로 열기
-- `code .`: current directory를 vscode로 열기
-- `rm fileName`: remove file
-- `rm -r dirName`: remove directory
-- `rm -f fileName`: force to remove file
-- `rm -rf dirName`: force to remove directory
-- `./executableFile.exe`: execute the file
-- `mv currentName newName`: rename the file (currentName -> newName)
-- `mv file1 file2 dir`: move the files `file1` and `file2` to the `dir1` directory
-- `cat fileName`: see the whole text file in terminal
-- `pwd`: show current path you are in
-- `man (1/2/3) malloc`: show manual page for malloc
-- `clear`: clear all text in terminal
-- `find . -type file -name "*.json"`: 현제 folder의 내부에 존재하는 모든 json 파일을 반환
-- `touch fileName`: fileName이 존재하면 파일 열기, 존재하지 않으면 새로운 파일 생성
-- `echo + text`: Terminal에 text 출력
-- `echo + text > fileName`: fileName에 text를 덮어 씌우기
-- `echo + text >> fileName`: fileName에 text를 append
-- `vi fileName`: Vim text editor로 fileName열기
-- `nano fileName`: nano text editor로 fileName열기
-- `code fileName`: VSCode text editor로 fileName열기
-- `ssh ...`: ssh로 remote server와 연결
+- `UpArrow`: 최근에 사용한 command 가져오기
+- `$ ls`: list files in current directory (list)
+- `$ ls -l`: list files detail in current directory (list -long)
+- `$ ls -a`: list all files in current directory (list -all)
+- `$ mkdir + fileName`: make directory
+- `$ chmod +x fileName` : make it executable (chmod: change mode)
+- `$ cd dirName`: change directory
+- `$ cd ..`: change directory backword. parent 폴더로 이동
+- `$ cd ~/filename`: root directory에서 filename이 있는 폴더로 이동
+- `$ code ~/filename`: root directory에서 filename인 file을 찾아 vscode로 열기
+- `$ code .`: current directory를 vscode로 열기
+- `$ rm fileName`: remove file
+- `$ rm -r dirName`: remove directory
+- `$ rm -f fileName`: force to remove file
+- `$ rm -rf dirName`: force to remove directory
+- `$ ./executableFile.exe`: execute the file
+- `$ mv currentName newName`: rename the file (currentName -> newName)
+- `$ mv file1 file2 dir`: move the files `file1` and `file2` to the `dir1` directory
+- `$ cat fileName`: see the whole text file in terminal
+- `$ pwd`: show current path you are in
+- `$ man (1/2/3) malloc`: show manual page for malloc
+- `$ clear`: clear all text in terminal
+- `$ find . -type file -name "*.json"`: 현제 folder의 내부에 존재하는 모든 json 파일을 반환
+- `$ touch fileName`: fileName이 존재하면 파일 열기, 존재하지 않으면 새로운 파일 생성
+- `$ echo + text`: Terminal에 text 출력
+- `$ echo + text > fileName`: fileName에 text를 덮어 씌우기
+- `$ echo + text >> fileName`: fileName에 text를 append
+- `$ vi fileName`: Vim editor로 fileName열기
+- `$ nano fileName`: nano editor로 fileName열기
+- `$ code fileName`: VSCode editor로 fileName열기$
+- `$ ssh ...`: ssh로 remote server와 연결
 
 ### Emmets
 
-에밋(Emmet)은 HTML, XML, XSL 문서 등을 편집할 때 빠른 코딩을 위해 사용하는 플러그인이다. 매우 간단한 몇 가지 코드만 입력하면, 자동으로 완전한 HTML 코드를 생성해 준다. Emmet은 Visual Studio Code에 내장되어 있으며 확장이 필요하지 않습니다.
+Emmet은 HTML, XML, XSL 문서 등을 편집할 때 빠른 코딩을 위해 사용하는 플러그인이다. 매우 간단한 몇 가지 코드만 입력하면, 자동으로 완전한 HTML 코드를 생성해 준다. Emmet은 Visual Studio Code에 내장되어 있어 extension이 필요없다.
 
 예시:
 

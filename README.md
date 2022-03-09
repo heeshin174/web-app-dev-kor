@@ -2987,38 +2987,870 @@ console.log([...new Set(array)]);
 
 ### What is Typescript?
 
-TypeScript is a programming language developed and maintained by Microsoft. It is a strict syntactical superset of JavaScript and adds optional static typing to the language. 여기서 알 수 있듯이, Typescript는 Javascript의 superset으로 Java와 같이 변수를 선언할 때, 그 변수의 type을 지정해 주어야만 한다. 그럼 그냥 Javascript를 쓰면 되는 데, 왜 browser가 인식도 못하는 Typescript를 사용하는 가?에 대한 의문이 든다. 여기서 우리는 먼저 Javascript에 대한 이해가 필요하다.
+TypeScript is a programming language developed and maintained by Microsoft. It is a strict syntactical **superset of JavaScript** and adds optional static typing to the language.
+Typescript는 Javascript의 superset으로 Java처럼 변수를 선언할 때, 그 변수의 type을 지정해 주어야만 한다.
 
-- JavaScript is a `dynamically typed language`이다. JavaScript에서는 변수의 타입을 직접 지정해주지 않아도, JavaScript가 알아서 변수의 타입을 정해준다. 그럼으로 한 variable의 type이 여러 코드가 실행됨에 따라 계속 변화하는 것이 가능하다. 작은 project를 만들 때에는 편리하지만, 큰 project를 만들고, team 단위로 만들게 되면 이런 높은 자유도는 에러가 발생했을 시 오히려 독이 되어 어디서 어떻게 잘 못 되었는 지 알기 어렵게 만든다.
+- `Typescript = Javascript + type`
+- TypeScript Compiler (TSC)가 complie 과정에서 Type Check를 통해 error 없이 안정성이 확보되면 지정해둔 Type들을 제거한 후 JavaScript 코드를 생성해준다.
+- 즉, TypeScript는 새로운 프로그래밍 언어가 아니다.
 
-**Typescript를 이용하면, 변수의 type을 지정해 주어야만 하기 떄문에, 어디선가 error가 발생하면 꽤 자세하게 무엇이 잘 못 되었는 지를 알려준다.**
+그럼 그냥 Javascript를 쓰면 되는 데, 왜 browser가 인식도 못하는 Typescript를 사용하는 가?에 대한 의문이 든다.
+여기서 우리는 먼저 Javascript에 대한 이해가 필요하다.
+
+- JavaScript is a `dynamically typed language`이다.
+  - JavaScript에서는 변수의 타입을 직접 지정해주지 않아도, 스스로 변수의 타입을 정한다.
+  - 그럼으로 한 variable의 type이 여러 코드가 실행됨에 따라 계속 변화하는 것이 가능하다.
+    - `5 - '3'`과 같은 integer와 string의 연산 또한 Javascript에선 가능하다.
+  - 작은 project를 만들 때에는 편리하지만, 큰 project를 만들고 team 단위로 만들게 되면 이런 높은 자유도는 에러 발생 시 오히려 독이 되어 어디서 어떻게 잘 못 되었는 지 알기 어렵게 만든다.
+
+즉, 큰 project을 만들 떈 Javascript가 제공하는 자유도 & 유연성은 오히려 안좋다. 그럼으로 Typescript를 사용해 자유도를 낮춰서 사용하는 것이다.
+
+### Typescript 장점
+
+**Typescript를 이용하면, 변수의 type을 지정해 주어야만 하기 떄문에, 어디선가 error가 발생하면 꽤 자세하게 무엇이 잘 못 되었는 지 알려준다.**
 
 ```
-let decimal: number = 6; // decimal에는 정수 타입만 오는 것이 가능하고, 6이란 정수를 assign한다.
-decimal = "Hello"; // error. decimal은 정수라니까...
+let decimal: number = 6;
+// decimal에는 number data type만 오는 것이 가능하고, 6이란 값을 assign한다.
+decimal = "Hello"; // error: decimal은 number만 가능
+```
+
+### Typescript 실행
+
+1. 최신 `node.js` 설치
+2. Typescript를 global로 설치
+   - `$npm i -g typescript`
+3. `*.ts` file과 `tsconfig.json` file 생성
+4. Typescript를 Javascript로 complie
+   - `$ tsc -w`
+
+### Typescript Data Types
+
+![datatype](img/Relationships-between-the-various-TypeScript-data-types-1536x788.png)
+
+- Primitives (기본형/원시타입): string, number, boolean, bigint, symbol
+  - `string` 문자형
+    - ' 나 " 는 물론, backtic ` 도 사용해 string을 만들 수 있다.
+  - `number`
+    - `number` is for numbers like 42. JavaScript does not have a special runtime value for integers. so there’s no equivalent to `int` or `float`.
+  - `boolean`
+    - true와 false만을 갖는 타입
+
+```
+// type annotation
+let nyName: string = "Alice";
+let myAge: number = 20;
+let isMale: boolean = false;
+
+// type annotation을 쓸 수도 있지만, "Alice"란 값이 이미 string이기 때문에
+// 위의 경우 type annotation이 필요 없다.
+// No type annotation needed
+let myName = "Alice";
+let myAge = 20;
+let isMale = true;
+```
+
+- `null` & `undefined`
+
+  - 기본적으로 `null` 과 `undefined`는 다른 모든 타입의 하위 타입니다.
+    - 즉, `boolean`, `number`, `string` 타입에도 `null`과 `undefined`를 넣을 수 있다.
+  - `--strictNullChecks`를 사용하면, `null`과 `undefined`는 오직 `any`와 각자 자신들 타입에만 할당 가능합니다. (예외로 `undefined`는 `void`에 할당 가능)
+  - `--strictNullChecks` 경우, `string` 또는 `null` 또는 `undefined`를 허용하고 싶은 경우 union 타입인 `string | null | undefined`를 사용한다.
+
+```
+let u: undefined = undefined;
+let n: null = null;
+
+// No `--strictNullChecks`
+let sentense: string = null; // okay
+
+// `--strictNullChecks`
+let sentense: string = null; // error
+let sentense: string | null = null; // okay
+
+// define union data type
+type myType = string | null;
+let sentense: myType = null; // okay
+```
+
+- Array 배열
+
+  - **same data type**의 변수들로 이루어진 유한 집합이다.
+  - Array을 구성하는 각각의 값을 element라 하고, 그 위치를 가리키는 숫자는 index라 한다.
+    - `element = array[index]`
+  - Array를 만드는 방법에는 2가지가 있다.
+    - `let arr: number[] = [1, 2, 3]; // 타입뒤에 []를 사용`
+    - `let list: Array<number> = [1, 2, 3]; // generics 타입을 사용`
+    - generics: `Array<elementType>`
+
+- Tuple
+
+  - another sort of Array type that knows exactly how many elements it contains, and exactly which types it contains at specific positions.
+  - **Element의 data type과 개수가 고정된 array**
+  - 다른 타입끼리 섞는 것도 가능하다.
+  - 즉, 내가 지정한 data array이다.
+  - data type이 tuple인 array도 만들 수 있다.
+
+```
+// tuple 정의
+type StringNumberPair = [string, number];
+
+let person1: StringNumberPair = ['Chris', 22]; // okay
+let person2: StringNumberPair= ['Chris', 22, 35]; // error
+let person3: StringNumberPair = [22, 'Chris']; // error
+
+// data type이 StringNumberPair인 array
+let employee: [string, number][] = [[1, 'A'], [2, 'B']]
+// is equivalent to
+let employee: StringNumberPair[] = [[1, 'A'], [2, 'B']]
+```
+
+- `enum` enumeration (열거형)
+  - `enum`은 javascript에는 없는 typescript에서만 제공하는 data type이다.
+  - `enum`은 **named constant**의 집합을 선언할 수 있게 해준다.
+    - named constant는 permanent data을 나타내는 식별자로, 절대로 data 값이 바뀌지 않는다.
+    - 원주율을 사용할 때 마다 매번 3.14159를 입력하는 대신 PI라는 named constant로 사용이 가능하다. 변수와 named constant를 구분하기 위해 변수는 소문자, named constant는 대문자로 표기한다.
+  - `enum` allows for describing a value which could be one of a set of possible named constants.
+  - 기본적으로, `enum`은 0부터 시작하여 멤버들의 번호를 매깁니다.
+
+```
+// default: Red = 0, Green = 1, Blue = 2
+enum Color {RED, GREEN, BLUE}
+let c: Color = Color.GREEN;  // 1
+let colorName: string = Color[2]; // "BLUE"
+
+// 모든 값을 수동으로 설정할 수도 있다:
+// 아래와 같이 enum을 선언하면 Red의 color code를 `Color.RED`로 쉽게 사용할 수 있다.
+enum Color {RED = "	#FF0000", GREEN = "#00FF00", BLUE = "#0000FF"}
+let c: Color = Color.GREEN; // "#00FF00"
+let colorName: string = Color["#0000FF"]; // BLUE
+```
+
+- `any`
+  - `never` data type을 제외한 모든 type
+  - 기존 Javascript의 data type이다.
+  - 어떤 data type이 올 지 알 수 없는 경우 `any`를 사용한다.
+    - ex : 사용자가 직접 input 창에 입력한 데이터
+  - type 검사를 하지 않고, 어떤 값이 들어오든 complie이 되야할 때 사용한다.
+
+```
+let anyDataOK: any = 26;
+anyDataOK = "solmi"; // okay
+anyDataOK = true; // okay
+```
+
+- `void`
+
+  - 어떤 타입도 존재할 수 없음을 의미
+  - `any`의 반대
+  - `void`를 타입 변수로 선언하는 것은 좋지 않다.
+    - `void`에는 `undefined`만 할당가능
+
+```
+let unusable: void = undefined;
+
+// No `--strictNullChecks`
+unusable = null; // okay
+
+// `--strictNullChecks`
+unusable = null; // no
+```
+
+- `never`
+  - `never`는 절대 발생할 수 없는 값을 의미
+    - ex: function expression이나 arrow function expression에서 항상 오류를 발생시키거나 절대 반환하지 않는 반환 타입으로 쓰입니다.
+
+```
+// never를 반환하는 함수는 함수의 마지막에 도달할 수 없다.
+function error(message: string): never {
+    throw new Error(message);
+}
+
+// 반환 타입이 never로 추론된다.
+function fail() {
+    return error("Something failed");
+}
+
+// never를 반환하는 함수는 함수의 마지막에 도달할 수 없다.
+function infiniteLoop(): never {
+    while (true) {
+    }
+}
+```
+
+- `Object` 객체
+  - `object`는 Primitives이 아닌 type을 나타냅니다.
+  - JavaScript와의 차이점은 컴파일러 옵션에서 엄격한 타입 검사 `strict` 를 true 로 설정하면, `null`은 포함되지 않는다.
+    - JavaScript에서는 `null`도 `typeof object`로 나와서 항상 if문 등으로타입 체크를 해야하지만, Typescript에서는 아니다.
+
+```
+// Optional Properties
+// Object types can also specify that some or all of their properties are optional.
+// To do this, add a `?` after the property name
+// age is optional
+let user: { name: string, password: string, age?: number } = {
+  name: 'solmi',
+  password: "123456",
+};
+```
+
+#### Typescript Function
+
+function도 parameter data type과 return data type을 정할 수 있다.
+
+parameter 뒤에 `?` 를 붙이면 optional이란 뜻이다.
+
+```
+// number type인 num1과 num2를 받아 number type을 return하는 함수
+function add(num1: number, num2: number):number {
+  return num1+num2;
+}
+
+// Optional Properties
+// num2는 optional이기 때문에 있을 수 도 있고, 없을 수 도 있다.
+function add(num1: number, num2?: number):number {
+  return num1+num2;
+}
+
+add(5) // It works without err but throws NaN. num2 is undefined.
+
+function add(num1: number, num2?: number):number {
+  // prevent undefined
+  // num2가 있을 때와 없을 때를 다르게 하려면, if statement를 이용하면 된다.
+  if(num2) return num1 + num2; // num2가 있을 때
+    return num1; // num2가 없을 때
+}
+
+// num2의 default value는 10이다.
+function add(num1: number, num2: number = 10):number {
+if(num2) return num1 + num2;
+  return num1;
+}
+```
+
+#### Interface and Type Aliases
+
+Object property가 여러개가 있다면 함수에 parameter를 쓸 때 매우 길어진다. 게다가 비슷한 함수가 계속 늘어나게 되면 유지보수가 힘들어 질 것이다.
+함수에 parameter가 길어질 때, interface와 Type Aliases을 사용하면 매우 편리하다.
+
+- An `interface` declaration and `type` are the ways to name an object type
+
+```
+// Person interface 생성
+interface Person {
+  firstName: string,
+  lastName: string,
+  age: number,
+  isMale?: boolean // isMale은 optional이다.
+}
+// 또는
+// Person type 생성
+type Person {
+  firstName: string,
+  lastName: string,
+  age: number,
+  isMale?: boolean // isMale은 optional이다.
+}
+
+// Person type인 person를 받는 함수
+function fullName(person: Person) {
+  console.log(`${person.firstName} ${person.lastName}`)
+}
+
+let p = {
+  firstName: 'John',
+  lastName: 'Smith',
+  age: 20,
+}
+
+fullName(p) // "John Smith"
+```
+
+`interface`와 `type`의 차이가 있긴 하지만, 우리는 똑같이 object type에 이름을 붙이는 방법이라 생각하고 사용해도 아무런 문제가 없다.
+Type aliases and interfaces are very similar, and in many cases you can choose between them freely. Almost all features of an `interface` are available in `type`, the key distinction is that a type cannot be re-opened to add new properties vs an interface which is always extendable.
+
+![interfacevstype](img/interfacevstype.png)
+
+#### Typescript Class
+
+Typescript의 class 문법은 Java랑 동일하다.
+
+```
+class Employee {
+    employeeName: string;
+
+    // class instance를 만드는 constructor
+    constructor(name:string) {
+        this.employeeName = name;
+    }
+
+    // class method
+    greet() {
+        console.log(`Welcome! ${this.employeeName}`)
+    }
+}
+
+let employee1 = new Employee('kdy')
+employee1.greet(); // Welcome! kdy
+```
+
+#### Typescript Class Inheritance
+
+```
+// Employee class를 상속받은 Manager class
+class Manager extends Employee{
+    constructor(managerName: string) {
+        super(managerName);
+    }
+    delegateWork() {
+        console.log(`Manager delegating tasks`)
+    }
+}
+
+let m1 = new Manager('kang')
+m1.delegateWork(); // Manager delegating tasks
+m1.greet(); // Welcome! kang
+console.log(m1.employeeName); // kang
+```
+
+Employee class를 상속받는 Manager class도 Employee constructor를 초기화하기 위해 super()를 사용한다.
+Manager instance를 생성하면 Manager constructor는 employeeName를 초기화하기 위해서 Employee constructor를 호출한다.
+
+#### Enum data type이 필요한 이유
+
+TypeScript `enum`은 JavaScript에는 없는 개념으로 기존의 상수, 배열, 혹은 객체와 비슷해 보인다. 그냥 상수, Array, object를 써도 될 것 같은데, 굳이 `enum`을 쓰는 이유가 뭘까요?
+
+예를 들어 한국어, 영어, 일본어, 중국어를 지원하는 software가 있다고 하면,
+`const productLanguage: 'ko' | 'en' | 'ja' | 'zh' = 'en';` 이런식으로 작성할 수 있을 것이다.
+`productLanguage` 에는 정해진 언어 외에 값을 지정할 수 없다.
+
+코딩을 하다보니, 제품이 어떤 언어를 지원하기로 했었는지도 가물가물하고, 'ja' 나 'zh' 만으로 이게 일본어, 중국어를 의미하는 건지 정확히 알기 쉽지 않다.
+특정 국가 코드가 정확히 어떤 언어를 가리키는지 일일이 외우기도 쉽지 않기 때문에 const를 여러 개 둬서 문제를 해결할 수는 있지만, 그닥 깔끔한 느낌은 아닙니다.
+
+`Enum`은 이런 경우에 유용하다. literal type과 값에 각각 이름을 붙여서 코드의 가독성을 높여준다.
+
+```
+// 더 개선할 수 있을까?
+const korean = 'ko'
+const english = 'en'
+const japanese = 'ja'
+const chinese = 'zh'
+const spanish = 'es'
+
+// 위의 5개의 const 보단 하나의 enum를 사용하는 것이 더 깔끔하다.
+enum Language {
+  // KOREAN이라는 상수에 'ko'란 literal를 assign
+  // const korean = 'ko'와 동일하다.
+  KOREAN = 'ko',
+  ENGLISH = 'en',
+  JAPANESE = 'ja',
+  CHINESE = 'zh',
+  SPANISH = 'es',
+}
+
+// enum은 object이므로 이렇게 접근해서 사용할 수 있다.
+const productLanguage: Language = Language.ENGLISH // 'en'
+```
+
+- Object와 Enum 차이점
+  1. 객체는 속성을 자유로이 변경할 수 있는데 반해, `enum`의 속성은 변경할 수 없다.
+  2. 객체의 속성은 literal의 type이 아니라 그보다 넓은 타입으로 타입 추론이 이루어지는데 반해 `enum`은 항상 literal type이 사용됩니다.
+  3. 객체의 속성 값으로는 JavaScript가 허용하는 모든 값이 올 수 있지만, `enum`의 **속성 값으로는 string 또는 number만 허용**됩니다.
+
+정리하면, 같은 ‘종류’를 나타내고, literal 값이 변하지 않는 여러 개의 number 혹은 string을 다뤄야 하면 `enum`을 사용해 각각 적당한 이름을 붙여서 코드의 가독성을 높인다. 그 외의 경우 상수, 배열, 객체 등을 사용하면 된다.
+
+- 단, object literal에 대해 **const assertion**을 해준다면 이 객체를 `enum`과 비슷한 방식으로 사용할 수 있다.
+
+```
+const languageCodes = {
+  KOREAN = 'ko',
+  ENGLISH = 'en',
+  JAPANESE = 'ja',
+  CHINESE = 'zh',
+  SPANISH = 'es',
+} as const
+// const assertion
+// 속성 값을 변경할 수 없음
+// 속성의 타입으로 리터럴 타입이 지정됨
+type LanguageCode = typeof languageCodes[keyof typeof languageCodes]
+const code: LanguageCode = languageCodes.KOREAN
+```
+
+### Literal vs Constant
+
+Literal과 Constant를 같은 의미로 사용하는 사람들이 많지만, 엄연히 따지자면 확실한 차이점이 존재한다.
+
+#### 상수 (constant)
+
+상수 Const는 **변하지 않는 변수**를 뜻한다. 상수에는 숫자뿐만 아니라 class나 struct 같이 기본형에서 파생된 객체나 유도형같은 데이터를 넣을 수 있다.
+
+상수는 데이터가 변하지 않아야 한다고 했다. 그래서 참조변수를 const로 지정 할 때, 참조변수에 넣은 인스턴스 안의 데이터 까지도 변하지 않는 다고 생각하기 쉽다.
+하지만, 참조변수가 상수(참조변수 메모리의 주소값이 변하지 않는다라는 의미)지, 그 memory address가 가리키는 데이터들까지 변하지 않는 다는 의미는 아니다.
+
+프로그래밍에서 상수를 쓸 때는 C,C++,C#은 `const` , Java는 `final` 제어자를 쓴다.
+
+Java 언어로 예를 들어보자.
+
+즉 Test라는 클래스를 만들었다면,
+
+```
+// constant t1과 Test class instance literal
+final Test t1 = new Test();
+
+t1 = new Test(); // error
+t1.num = 10; // okay
+```
+
+참조변수인 `t1`의 값을 변경하는 것은 불가능하지만, class 안의 데이터를 변경해도 상관이 없다.
+
+#### Literal
+
+Literal은 data 그 자체를 의미한다. **변수에 넣는 변하지 않는 데이터**를 의미한다.
+
+아래의 예제를 보자.
+
+`let a : number = 1`
+
+`let`를 `const`로 바꾸면, a는 상수가 된다. 여기서의 literal은 1이다.
+
+`const PI : number = 3.14159`
+
+원주율에서 3.14159와 같이 변하지 않는 데이터를 literal이라고 부른다.
+
+- constant: 참조변수 PI가 가지고 있는 memory address
+- literal: 참조변수 PI가 가지고 있는 memory address의 실제 값
+
+  - literal: 3.141519
+
+정리하면 상수는 변하지 않는 변수를 의미하며 (memory address) 메모리 값을 변경할 수 없다. Literal은 변수의 값이 변하지 않는 data (memory 위치안의 값)를 의미한다.
+
+### Typescript Const assertions
+
+선언하는 모든 변수마다 항상 그 타입까지 같이 적어주어야 한다면 귀찮기 때문에, static typing을 지원하는 언어에는 대개 ‘타입 추론’이라는 기능이 포함되어 있다. 타입 추론을 지원하는 언어에서는, 변수에 대입하는 ‘literal의 타입’을 보고 해당 변수의 타입을 자동으로 지정해줍니다. 즉, 할당된 data의 data type을 보고 해당 변수의 타입을 자동으로 결정할 수 있다.
+TypeScript 역시 타입 추론 기능을 잘 지원하고 있습니다.
+
+```
+// 할당된 값 'world'가 이미 string이기 때문에
+// 굳이 이렇게 적어주지 않아도 된다.
+let hello: string = 'world';
+
+// 타입 추론 기능을 활용해서, 아래와 같이 짧게 적는다.
+let hello = 'world';
+```
+
+위 예제에서 let 대신 const 변수로 선언하면, 아래와 같이 string 대신에 `‘world’` 타입으로 추론됩니다.
+
+```
+const hello = 'world';
+// is equivalent to
+const hello : 'world' = 'world';
+```
+
+TypeScript는 특정 문자열 자체를 타입으로 다룰 수 있게 해주는 **string literal type을 지원**합니다. 즉, 위와 같은 타입 정보는 hello 변수는 반드시 `“world”` string이어야만 하며, 다른 문자열이 될 수 없다는 사실을 나타낸다. 변수를 let으로 선언하느냐, const로 선언하느냐에 따라 타입 추론의 규칙이 달라진다. 이는 let 변수는 다른 값이 대입될 수 있고, const 변수에는 다른 값이 대입될 수 없기 때문이다.
+
+TypeScript 3.4에 추가된 **const assertion 기능을 사용하면, let 변수에 대해서도 const 변수를 사용할 때와 같은 타입 추론 규칙을 적용**할 수 있다.
+
+const assertion을 적용하려면, ‘const’ 라는 키워드로 타입 단언을 하면 됩니다.
+
+```
+// const assertion은 Typescript의 기능이기 떄문에 *.ts, *.tsx file만 가능하다.
+let hello = 'world' as const;
+let hello = <const>'world';
+// are equivalent to
+const hello : 'world' = 'world';
+```
+
+hello를 let 변수로 선언했음에도, 마치 const 변수로 선언한 것처럼 “world” 타입으로 추론된다. 위의 경우, hello 변수에 “world” 이외의 다른 값을 대입하려고 하면 complie time error가 난다.
+
+이렇게 별 쓸모 없어 보이는 기능이 왜 추가된 걸까요? 이는 객체에 대한 const assertion이 유용한 점이 있기 떄문이다.
+이번에는 const 변수에 객체를 대입해서, 타입 추론이 어떻게 되는지 보겠습니다.
+
+```
+const obj = {
+  hello: 'world',
+  foo: 'bar'
+};
+// is equivalent to
+const obj = {
+  hello: string,
+  foo: string
+};
+```
+
+변수가 const로 선언되었다 할지라도, 객체 내부의 속성에 대한 타입은 넓은 범위로 추론된다. 이는 변수가 const 일지라도 hello 속성의 값은 얼마든지 변경될 수 있기 때문이다. 이런 경우, 타입 추론의 범위를 좁혀주기 위해 const assertion을 사용할 수 있다.
+
+```
+// 하나의 속성에 대한 const assertion
+const obj = {
+  hello: 'world' as const,
+  foo: 'bar'
+};
+// 모든 속성에 대한 const assertion
+const obj = {
+  hello: 'world',
+  foo: 'bar'
+} as const;
+
+// 타입 추론 결과
+const obj = {
+  hello: 'world',
+  foo: string'
+};
+const obj = {
+  hello: 'world',
+  foo: 'bar'
+} as const;
+```
+
+**이제 우리는 const assertion을 이용하여 하나의 const 상수에 여러 const를 정의할 수 있다.**
+
+### Typescript Type assertions
+
+Typescript의 Type assertions은 const assertions과 비슷하다. const assertions이 let 변수를 const 상수 취급할 때 사용했다면, **type assertions은 변수를 특정 data type으로 취급할 떄 사용**한다.
+
+어떤 상황에선 TypeScript보다 개발자가 값에 대해 더 잘 알고 일을 때가 있다. Type assertions은 compliler에게 "날 믿어, 난 내가 뭘 하고 있는지 알아"라고 말해주는 방법이다. Type assertions은 다른 언어들의 타입 변환 (형 변환)과 유사하지만, 다른 특별한 검사를 하거나 data를 재구성하지는 않습니다. 즉, runtime에 영향 없이 온전히 complier만 이를 사용한다는 의미이다. 즉, Typescript는 개발자를 믿고 그 **data를 개발자가 지정한 data type으로 다루게** 된다.
+
+```
+let someValue: any = "this is a string";
+
+// 1. angle-bracket 문법
+let strLength: number = (<string>someValue).length;
+
+// 2. as-문법
+let strLength: number = (someValue as string).length;
+```
+
+TypeScript를 React의 JSX와 함께 사용할 때는, as-스타일의 단언만 허용된다.
+
+### Typescript Type guards
+
+**Type Guards** allow you to narrow down the type of an object within a conditional block. This way of reducing the size of a type is called **narrowing**. Checking the result of typeof and similar runtime operations are called **type guards**.
+
+즉 Type Guard를 통해 **컴파일러가 타입을 예측할 수 있도록 타입을 좁혀 주어서(narrowing) 좀 더 type safety**함을 보장할 수 있다.
+
+#### built-in Type Guard: typeof, instanceof, in
+
+JavaScript에 이미 존재하는 `typeof`, `instanceof`, `in` 등의 연산자를 활용해 Type Guard을 할 수 있다.
+
+#### typeof type guards
+
+`typeof` operator는 피연산자의 data type을 string로 return한다. 이 특성을 활용해서 Typescript에서는 아래와 같은 상황에서 사용할 수 있다.
+
+```
+// arg는 union type으로 string 혹은 number 일 수 있다
+function testFunc(arg: string | number) {
+   arg.substring(3); // err
+   // ts(2339) : Property 'substring' does not exist on type 'string | number'.
+
+  if (typeof arg === "string") {
+    // 이 code block에서 사용하는 arg는 string type이다.
+    arg.substring(3);
+  } else {
+    // 이 code block에서 사용하는 arg는 number type이다.
+    arg = 1;
+  }
+}
+```
+
+위의 함수에서 parameter인 arg는 union type으로 string 혹은 number 일 수 있다. 이 상황에서 `arg.substring` 을 사용하면, arg가 number일 수 도 있기 떄문에 `substring`이 존재하지 않는다는 에러가 발생한다. 그러므로 conditional block `if (typeof arg === 'string')` 을 사용해, if 문 내에서는 arg가 무조건 string type임을 보장하게 만든 후 `arg.substring` 을 사용하면 error가 없어진다.
+
+- **typeof type guard는 'string', 'number', 'bigint', 'boolean', 'symbol', 'undefined', 'object', 'function' 타입만 사용할 수 있습니다.**
+
+#### instanceof narrowing
+
+`instanceof` operator는, 판별할 객체가 특정한 class에 속하는지 확인한다. 사실 Javascript에서 class는 prototype이라는 속성을 활용한 것이고, `instanceof`는 prototype chain에 생성자의 prototype이 있는지 여부를 확인하는 방식으로 동작한다.
+
+```
+class Student {
+  name: string;
+  age: number;
+}
+class School {
+  location: string;
+}
+
+function testFunc(arg: Student | School) {
+  if (arg instanceof Student) {
+    // 이 code block에서는 arg가 Student class의 instance이다.
+    console.log(arg.name); // okay
+    console.log(arg.location); // error
+    // ts(2339) : Property 'location' does not exist on type 'Student'.
+  } else {
+    // 이 code block에서는 arg가 School class의 instance이다.
+    console.log(arg.location); // okay
+  }
+}
+
+const student = new Student();
+testFunc(student);
+```
+
+#### in operator narrowing
+
+`in` operator는 객체가 특정 property를 가지고 있는지 파악하는데 활용하는 연산자이다. `in` operator로 type guard를 하는 방법은 type이 일치하는 지 판단하는 다른 방법과 달리, 객체에 특정 property가 존재하는지 판단하기 떄문에 더 섬세한 type guard가 가능하다.
+
+```
+type A = { a: () => void };
+type B = { b: () => void };
+
+function sample(data: A | B) {
+  // 'a'라는 property가 정의된 타입은 A 타입 뿐이므로,
+  // TypeScript 는 data 을 A 타입이라 추론할 수 있다.
+  if ('a' in data) {
+    return data.a();
+  }
+
+  // A 타입이 아니라면, B 타입만 가능하므로 B 타입이라 추론할 수 있다.
+  return data.b();
+}
+```
+
+여기서 중요한 점은 `typeof` 피연산자로 올 수 있는 것은 primitives types 및 object로 제한이 됩니다. (참고로 `null` type은 `typeof` 시 `object`를 반환한다)
+즉, typescript는 사용자가 직접 `type` 혹은 `interface` 를 사용해 작성한 type은 `typeof`로 검사를 할 수 없다. 사용자가 정의한 interface와 type은 **user defined type guards** 를 작성해 type을 검사한다.
+
+#### User Defined Type Guards
+
+To define a type guard, we simply need to define a function whose return type is a **type predicate**: `parameterName is Type`.
+A predicate takes the form `parameterName is Type`, where `parameterName` must be the name of a parameter from the current function signature.
+
+아래와 같이 Animal, Flower interface를 정의했다고 가정해 보겠습니다. Animal interface에만 name property가 존재하고, Flower interface에만 type property가 존재한다.
+
+```
+interface Animal {
+  name: string;
+  age: number;
+}
+
+interface Flower {
+  type: string;
+  age: number;
+}
+
+interface ExampleInfo {
+  page: number;
+  infoBody: Animal | Flower;
+}
+
+// User Defined Type Guards Function
+// 인자로 넘어온 arg 값에 name property가 있다면 arg의 type을 Animal로 인식하게 한다.
+// `arg is Animal` is our type predicate in this example.
+function isAnimal(arg: any): arg is Animal {
+  return arg.name !== undefined;
+  // 또는
+  // return 'name' in arg;
+}
+```
+
+여기서 `arg is Animal`이 type predicate이고 `isAnimal()`이 Type Guards Function이다. `isAnimal()`은 arg를 인지로 받아 그 type을 Animal로 인식한 후 `arg.name`이 존재하면 `true`를 `arg.name`이 `undefined`이면 `false`를 반환한다. Any time `isAnimal()` is called with some variable, TypeScript will narrow that variable to that specific type if the original type is compatible. 즉, `isAnimal()`은 arg의 type이 Animal interface인지를 확인하는 type guard이다.
+
+```
+function doSomething(arg: ExampleInfo) {
+  const { page, infoBody } = arg;
+
+  if (isAnimal(infoBody)) {
+    // 이 if문 안에서 infoBody의 타입은 반드시 Animal interface이다.
+    console.log(infoBody.name); // okay
+  } else {
+    // 이 if문 안에서 infoBody의 타입은 반드시 Flower interface이다.
+    console.log(infoBody.type); // okay
+    console.log(infoBody.name); // error
+  }
+}
+
+const puppy: Animal = {
+  name: "puppy",
+  age: 5,
+};
+const animalInfo: ExampleInfo = {
+  page: 10,
+  infoBody: puppy,
+};
+doSomething(animalInfo);
+```
+
+Typescript로 코드를 작성할 때, 위와 같이 `interface` 를 정의하는 경우가 매우 많습니다. 위의 경우 특정 property의 유무에 따라 type guards를 한 상황이다. 즉, `isAnimal()`은 인자로 받은 값에 name property가 있으면 arg의 data type을 Animal interface로 인식한다. 따라서 if 문 안에서 인자의 type이 Animal 임이 보장되므로 안심하고 name property를 사용할 수 있다.
+
+위에서 user defined type guards 함수의 판단조건은 특정 property의 유무 이지만, 여기에서 return 하는 부분을 조금만 수정하면 판단 조건을 원하는 대로 바꿀 수 있다.
+예를 들어, 특정 객체의 property의 값에는 숫자가 오는데, 특정 숫자일 때와 아닐 때에 따라 타입을 다르게 구분하고 싶다면 아래와 같이 작성해볼 수 있다.
+
+```
+interface ZeroBody {
+  age: 0; // 반드시 0만 가능하다는 의미
+  name: string;
+}
+
+interface OtherBody {
+  age: number;
+  name: string;
+}
+
+interface Response {
+  type: string;
+  body: ZeroBody | OtherBody;
+}
+
+function isZero(arg: any): arg is ZeroBody {
+  return arg.age === 0;
+}
+
+function doSomething(arg: Response) {
+  const { type, body } = arg;
+
+  if (isZero(body)) {
+    // 여기서 body는 ZeroBody와 age가 0인 OtherBody만 가능
+    console.log(body.age); // 0
+  } else {
+    // 여기서 body는 OtherBody만 가능
+    console.log(body.age);
+  }
+}
+```
+
+`body.age` 값이 0이면 body에 오는 값의 타입은 ZeroBody이고, 0이 아니면 타입이 OtherBody로 보장할 수 있다. 이처럼 조건별로 다른 타입으로 좁히고 싶을 때 원하는 대로 user defined type guards 함수를 작성하여 활용할 수 있다.
+
+- 다른 예시: obj 의 타입이 A 타입인지 확인하는 user-defined type gurads function
+
+```
+type A = { a: () => void };
+type B = { b: () => void };
+
+// obj 의 타입이 A 타입인지 확인하는 user-defined type gurads function
+function isA(obj: any): obj is A {
+  // obj 에 a property가 있고 a 가 함수라면 A 타입이라 판단한다.
+  return obj.a !== undefined && typeof obj.a == 'function';
+}
+
+function sample(data: A | B) {
+  // user-defined type gourads 로 타입을 판별한다.
+  // isA()의 결과가 true 라면, data 의 type이 A라 추론한다.
+  if(isA(data)) {
+    // 여기서 data는 A만 가능
+    data.a();
+  } else {
+    // 여기서 data는 B만 가능
+    data.b();
+  }
+}
+
+sample({ a: () => console.log("A")})
+```
+
+- 다른 예제: axios library에서 error chekcing type guard
+
+```
+import { AxiosError } from "axios";
+
+// type predicates: `something is AxiosError`
+// something에 isAxiosError property가 있을 경우 true, 아닐 경우 false를 반환
+function isAxiosError(something: any): something is AxiosError {
+  return something.isAxiosError === true;
+}
+
+// Register user
+export const register = createAsyncThunk (
+  "auth/register",
+  async (user, thunkAPI) => {
+    try {
+      return await authService.register(user);
+    } catch (err) {
+      if (isAxiosError(err)) {
+        const message =
+          (err.response && err.response.data && err.response.data.message) ||
+          err.message ||
+          err.toString();
+        return thunkAPI.rejectWithValue(message);
+      }
+    }
+  }
+);
+```
+
+#### this based type guards
+
+You can use `this is Type `in the return position for methods in classes and interfaces. When mixed with a type narrowing (e.g. if statements) the type of the target object would be narrowed to the specified Type.
+
+```
+// @strictPropertyInitialization: false
+class FileSystemObject {
+  isFile(): this is FileRep {
+    return this instanceof FileRep;
+  }
+  isDirectory(): this is Directory {
+    return this instanceof Directory;
+  }
+  isNetworked(): this is Networked & this {
+    return this.networked;
+  }
+  constructor(public path: string, private networked: boolean) {}
+}
+
+class FileRep extends FileSystemObject {
+  constructor(path: string, public content: string) {
+    super(path, false);
+  }
+}
+
+class Directory extends FileSystemObject {
+  children: FileSystemObject[];
+}
+
+interface Networked {
+  host: string;
+}
+
+const fso: FileSystemObject = new FileRep("foo/bar.txt", "foo");
+
+if (fso.isFile()) {
+  fso.content;
+  // const fso: FileRep
+} else if (fso.isDirectory()) {
+  fso.children;
+  // const fso: Directory
+} else if (fso.isNetworked()) {
+  fso.host;
+  // const fso: Networked & FileSystemObject
+}
+```
+
+A common use-case for a this-based type guard is to **allow for lazy validation of a particular field**. For example, this case removes an `undefined` from the value held inside box when `hasValue()` has been verified to be true:
+
+```
+class Box<T> {
+  value?: T;
+
+  hasValue(): this is { value: T } {
+    return this.value !== undefined;
+  }
+}
+
+const box = new Box();
+box.value = "Gameboy";
+
+box.value; // (property) Box<unknown>.value?: unknown
+
+if (box.hasValue()) {
+  box.value; // (property) value: unknown
+}
 ```
 
 ## 5. [ReactJs](https://reactjs.org/)
 
-### What is React.js?
+### What is React?
 
-**React**는 web app을 만들 수 있는 Javascript library이다. React is a JavaScript library for building user interfaces.
+React는 web app을 만들 수 있는 Javascript library이다. React is a JavaScript library for building user interfaces.
+React 말고도 Vue, Svelte나 Angular등 다른 Web app를 만들 수 있는 frontend web framework도 있다.
 
-#### Web app은 무엇이고, 왜 사용하는가
+#### Web app은 무엇이고, 왜 사용하는가?
 
 - A1. **page간 이동에 새로고침이 필요없이 부드럽게 넘어가기 때문에**
+  - Web-app은 Single Page Application (SPA)이라고 불리는 webpage로, 하나의 `index.html`을 가지고, 그 안에 내용물만을 Javasciprt로 변경하여 사용자에게 보여준다.
 - A2. UI가 보이는 동시에 클릭이 가능하다. viewable and interactable at the same time.
 
-Web-app은 Single Page Application (SPA)이라고 불리는 웹페이지로, 하나의 html을 가지고, 그 안에 내용물만을 변경하여 사용자에게 보여준다. 웹사이트 내에서 page loading이 덜 걸리고, page간 이동에 새로고침이 필요없이 부드럽게 넘어가기 때문에 사용한다.
-
-Web app를 만들 수 있는 frontend web framework에는 React 말고도 Vue/Angular등 다른 tools도 많이 있다.
-
-#### Web app을 만드는데 굳이 React를 사용하는 이유는 무엇인가
+#### Web app을 만드는데 굳이 React를 사용하는 이유는 무엇인가?
 
 - A1. **React는 사용자가 가장 많은 library이기 때문에 교육자료도 많고, 참고할 자료도 매우 많다.**
-- A2. **다른 framework와 마찬가지로, React는 component단위로 Element를 관리하기 때문에, 이를 함수처럼 사용할 수 있고 재사용(reusable)이 쉽다.**
-
-React가 web app을 만드는 library/framework들 중에 사용자가 가장 많아서 react를 배운다면 취업시장에서 유리하고 교육용 자료들을 쉽게 찾을 수 있다.
+  - React가 web app을 만드는 library/framework들 중에 사용자가 가장 많아서 취업에도 유리하고, 교육용 자료들을 쉽게 찾을 수 있다.
+- A2. **다른 framework와 마찬가지로, React는 component단위로 Element를 관리하기 때문에, 이를 함수처럼 사용할 수 있고 재사용 (reusable)이 쉽다.**
 
 ### Framework vs Library
 
@@ -3104,7 +3936,7 @@ NPM 패키지 모듈들은 **CommonJS**를 기본 모듈 시스템으로 채택�
 
 그런데 왜 문제가 발생하지 않을까? 이는 Babel 등의 컴파일러가 import, export 등의 코드를 CommonJS 기반의 코드로 변환해주기 때문이다. 그러고 나면 Webpack에 의해 JavaScript 모듈들의 번들링이 가능해진다.
 
-### Basic ReactJs Syntax
+### React Syntax
 
 - React의 If문: If문은 condition이 true면 truebranch, false면 falsebranch를 실행한다.
 
@@ -3468,7 +4300,7 @@ react.js는 jsx이기 때문에 `array.map((param) => {body})`가 아니라 `arr
 
 ### What is Vue.js?
 
-#### Vue Js가 무엇이고, 왜 사용하는가
+#### Vue 가 무엇이고, 왜 사용하는가
 
 Vue.js는 Web app을 만들 수 있는 Javascript Front-end Framework이다.
 
@@ -3641,9 +4473,9 @@ Vue files을 웹 broswer가 이해할 수 있는 HTML, CSS, Javascript로 변환
 
 `./dist` 폴더의 files만 있으면 웹사이트 생성가능.
 
-### Databinding in Vue js
+### Vue Databinding
 
-#### Databinding이 무엇이고, 왜 사용하는가
+#### Databinding이 무엇이고, 왜 사용하는가?
 
 - A1. **Databinding은 Javascript data를 HTML에 꽃아 넣는 문법이다.**
 - A2. **Databinding은 Javascript로 HTML을 조작하고, 변경하기 위해 사용한다.**
@@ -3654,7 +4486,7 @@ Vue files을 웹 broswer가 이해할 수 있는 HTML, CSS, Javascript로 변환
 
 실시간 자동 rendering: script tag에 정의된 data를 변경하면, 그 data와 연결된 HTML에도 실시간으로 변경된다.
 
-#### Vue에서 Databinding을 하는 방법은 무엇인가
+#### Vue에서 Databinding을 하는 방법은 무엇인가?
 
 Element의 text content을 Databinding할 경우 `{{데이터이름}}`, HTML Attribute를 Databinding할 경우 `:속성="데이터이름"`
 
@@ -3694,9 +4526,9 @@ const blueColor = 'color : blue';
 
 ## [NextJs](https://nextjs.org/)
 
-### What is Next.js?
+### What is Next?
 
-Next.js는 react.js에 **Server Side Rendering (SSR)** 기능을 더한 meta-framework이다. Next와 Remix는 React가 가진 Client-Side Rendering (CSR) 문제를 해결하기 위해 등장했다. React로 만든 웹은 자동으로 Client-Side Rendering이 된다. Next는 React app을 **Static & Server Side Rendering**이 가능하게 만든다. Remix 역시 SSR을 지원하지만, Next가 프로그래머들 사이에서 가장 인기가 많은 이유는 배우기 쉽고, 사용하기 쉽고, community가 커서 배울 수 있는 자료가 많기 때문이다.
+**Next.js**는 react.js에 **Server Side Rendering (SSR)** 기능을 더한 meta-framework이다. Next와 Remix는 React가 가진 Client-Side Rendering (CSR) 문제를 해결하기 위해 등장했다. React로 만든 웹은 자동으로 Client-Side Rendering이 된다. Next는 React app을 **Static & Server Side Rendering**이 가능하게 만든다. Remix 역시 SSR을 지원하지만, Next가 프로그래머들 사이에서 가장 인기가 많은 이유는 배우기 쉽고, 사용하기 쉽고, community가 커서 배울 수 있는 자료가 많기 때문이다.
 
 ### Client-Side Rendering (CSR) vs Server-Side Rendering (SSR)
 
@@ -4169,8 +5001,13 @@ https://redux-toolkit.js.org/tutorials/quick-start
   - Reducer functions may "mutate" the state using Immer
   - Export the generated slice reducer and action creators
 - Use the React-Redux `useSelector/useDispatch` hooks in React components
+
   - Read data from the store with the `useSelector` hook
   - Get the `dispatch` function with the `useDispatch` hook, and dispatch actions as needed
+
+- 용어정리: https://velog.io/@josworks27/Redux%EC%9D%98-%EC%9A%A9%EC%96%B4-%EB%B0%8F-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC
+
+- REact에서 사용: https://medium.com/@seungha_kim_IT/typescript-%EC%B5%9C%EC%8B%A0-%EA%B8%B0%EB%8A%A5%EC%9D%84-%ED%99%9C%EC%9A%A9%ED%95%9C-redux-%EC%95%A1%EC%85%98-%ED%83%80%EC%9D%B4%ED%95%91-ef46fff8850b
 
 ## % 부록0: 유용한 VSCode 기능 알아보기 %
 

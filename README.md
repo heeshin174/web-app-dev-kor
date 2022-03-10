@@ -454,6 +454,7 @@ Database는 크게 Relational database `sql (Structured Query Language)`와 Not 
   - ⭐ **Rust**: https://www.rust-lang.org/
   - Closure (Functional): https://clojure.org/
   - DrRacket (educational & Functional): https://racket-lang.org/
+  - Web Assembly: https://webassembly.org/
 
 - Tools
   - Postman (RESTful API): https://www.postman.com/downloads/
@@ -4777,7 +4778,7 @@ state는 root component에만 존재하기 때문에 props문법을 여러번 �
 <G value={this.props.value} />
 ```
 
-### Redux환경의 웹개발
+### Redux 환경의 웹개발
 
 **Redux를 사용하면, state 관리를 component바깥에서 한다.** Redux는 state의 저장과 관리를 `store.js` file에서만 한다.
 
@@ -6509,9 +6510,13 @@ Rocket is a web framework for Rust that makes it simple to write fast, secure we
 
 ### What is Rust?
 
-Rust는 C++를 대체하기 위해 mozilla 제단에서 만든 programming 언어로 system programming, embeded programming을 하기에 특화되어 있다. Rust는 low-level programming language로 사람보다는 기계에 가깝게 코딩을 한다. Rust is a **`low-level statically-typed multi-paradigm programming language`** that's focused on safety and performance. Rust solves problems that C/C++ has been struggling with for a long time, such as memory errors and building concurrent programs.
+Rust는 2012년에 공개된 low-level programming language로, C++의 단점을 개선하고 함수형 패러다임을 차용해 2016, 2017, 2018년 3년 연속 가장 사랑받는 언어로 등극한 프로그래밍 언어이다. 기존 C++ 사용자, 혹은 low-level language를 필요로 하는 사람들이 지속적으로 늘면서 커뮤니티의 크기 역시 점점 커지고 있는 추세이다.
+
+Rust는 C++를 대체하기 위해 mozilla 제단에서 만든 programming language로 system programming, embeded programming을 하기에 특화되어 있다. Rust는 low-level programming language로 사람보다는 기계에 가깝게 코딩을 한다. Rust is a **`low-level statically-typed multi-paradigm programming language`** that's focused on safety and performance. Rust solves problems that C/C++ has been struggling with for a long time, such as memory errors and building concurrent programs.
 
 위처럼 Rust는 **statically-typed** 언어이기 때문에 compile time에 compiler가 모든 변수의 data type를 알고 있어야 error없이 compile이 된다. 변수의 data type이 명확하지 않을 경우, 개발자가 직접 변수의 타입을 지정해주어야 한다.
+
+Rust는 기본적으로 C, C++과 유사한 점이 많아서, 다른 언어에 비해 Wab Assembly (Wasm)으로의 complie이 자연스럽다. 더해서, 아래 소개해드릴 도구를 사용하면 Javascript와 Rust를 굉장히 자연스럽게 이어줄 수 있어서, 최근 Wasm 프로그램 작성을 위한 언어로도 Rust가 많이 선택되고 있습니다.
 
 ![low-high](img/lowhigh.png)
 
@@ -6798,26 +6803,61 @@ Differences
 
 ### WebAssembly + Rust + wasm-bindgen
 
-WebAssembly + Rust + wasm-bindgen
+#### [WebAssembly](https://webassembly.org/)
 
-https://medium.com/@seungha_kim_IT/webassembly-rust-wasm-bindgen-%EF%B8%8F-part-1-66e902286bf4
+**WebAssembly** (줄여서 Wasm)는 web browser에서의 실행을 목적으로 하는 실행 파일 형식이다. Windows 용 실행 파일 형식이 따로 있고, macOS 용 실행 파일 형식이 따로 있듯이, web browser 전용 실행 파일 형식에 대한 표준이 바로 wasm인 것 이다.
+
+왜 이런 기술이 생겨난 걸까요? JavaScript는 그 시작부터 성능보다는 편의성을 염두에 두고 설계된 언어이다. Javascript는 컴퓨터 보다 개발자에 가깝게 설계된 언어이다. 이런 언어를 high-level programming language라 한다.
+
+Chorme browser의 V8 engine의 등장에 따라 상당한 규모의 JavaScript program을 상당히 빠른 속도로 돌릴 수 있게 되었지만, 아직 C/C++ 로 구현된 program을 대체할 정도로 속도가 빠르지 않다. 특히 실시간 미디어 처리 (이미지, 영상, 오디오, …) 및 게임같이 프로그램 실행 속도가 아주 중요한 분야에서는 구현 언어로 JavaScript를 선택할 수 없었다. JavaScript는 모든 modern web browser에서 지원하는 유일한 프로그래밍 언어이므로, 자연히 웹이라는 플랫폼은 JavaScript의 한계를 넘어설 수 없었다. 이러한 상황을 타개하기 위해 나온 기술이 바로 Wasm 이다.
+
+Emscripten 등의 도구를 사용하면, C/C++ 등의 언어로 작성된 program을 Wasm 형식으로 complie 할 수 있다. 이 때, 출력되는 파일의 확장자는 `.wasm` 이고, text 형식의 source code가 아닌 binary 형식의 executable file 이다. 이 파일을 web broswer에 불러와 빠른 속도로 실행시킬 수 있다. C/C++ 뿐만 아니라 Rust, Go와 같은 다른 언어들에 대한 Wasm 도구들도 다수 공개되어 있다.
+
+#### Javascript <-> Wasm의 어려움
+
+현재 버전의 Wasm에는 여러 한계점이 있습니다만, 그 중 가장 불편한 것은 **‘Wasm으로 구현된 함수의 인수로 숫자밖에 넘길 수 없다’**는 점이다. 이것을 다르게 말하면, complie 시점에 그 크기를 알 수 있는 타입만을 매개변수의 타입으로 지정할 수 있다는 것입니다. (이는 C/C++/Rust와 같은 저수준 언어의 특징이기도 합니다.) 따라서, 객체, array, string을 Wasm 함수에 그대로 넘길 수 없다.
+
+이런 제약을 뛰어넘기 위해서 Wasm은 [메모리 공유를 위한 API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Memory) 를 지원하고 있습니다. 이 API를 통해서 간접적으로 Wasm 함수에 문자열을 넘길 수 있고, 대략 아래와 같은 과정을 거쳐야 합니다.
+
+1. Wasm 모듈과 JavaScript thread 사이에 공유할 메모리를 확보합니다.
+2. JavaScript 문자열을 TextEncoder를 통해 UTF-8 형식으로 인코딩합니다.
+3. 인코딩한 데이터를 공유 메모리에 기록하고, Wasm 함수를 호출합니다.
+4. Wasm 함수에서는 공유 메모리에 쓰여진 데이터를 가져와서, UTF-8 디코딩을 수행합니다.
+5. 이제 Wasm 에서 string을 사용할 수 있게 되었습니다.
+
+단순히 문자열만 넘기려고 해도 이렇게 복잡한 과정을 거쳐야 하고, 객체, 배열에 대해서는 훨씬 더 복잡한 과정을 거쳐야만 JavaScript의 값을 Wasm 모듈에서 사용할 수 있다. 반대의 경우 (Wasm -> JavaScript)에도 같은 문제가 있다.
+
+#### [wasm-bindgen](https://github.com/rustwasm/wasm-bindgen)
+
+**wasm-bindgen**은 위와 같은 어려움을 해소하기 위해 만들어진 도구로, wasm-bindgen의 핵심 기능은 다음과 같다.
+
+- Import JavaScript things into Rust and export Rust things to JavaScript.
+- DOM 조작, console 로깅, 성능 모니터링과 같은 JavaScript 세계의 기능을 Rust 세계로 가져옵니다.
+- Rust 세계의 기능을 클래스, 함수 형태로 JavaScript로 가져옵니다.
+- string, number, class, closure, object 등 복잡한 data type의 값을 다룰 수 있습니다.
+- Rust 코드에 대한 TypeScript 타입 정보를 자동으로 생성합니다.
+
+- Rust를 설치하고, wasm-bindgen을 통해 Rust code를 web browser에서 실행해보는 예제를 다룹니다. 
+- wasm-pack: wasm-bindgen 기반 Rust 프로젝트를 다른 JavaScript 기반 프로젝트에서 쉽게 쓸 수 있도록 패키징해주는 도구
+
+- https://developer.mozilla.org/en-US/docs/WebAssembly/Rust_to_wasm
 
 ## [NestJs](https://nestjs.com/)
 
-### Next.js란?
+### Nest 란?
 
-Nest.js는 효율적이고, 안정적이며, 확장에 용이한 서버 어플리케이션을 구축하기 위한 진보된 node.js framework이다. 대부분의 Nest의 코드는 typescript로 만들어졌으며, typescript를 완전하게 지원한다. Nest는 HTTP request을 다루는 web server로 내부적으로 Express.js를 사용하고 있다. Express가 기본 웹서버지만 Fastify를 사용하도록 구성 할 수도 있다. Fastify를 사용하면 Express보다 더 빠른 웹서버를 만들 수 있다.
+**Nest.js**는 효율적이고, 안정적이며, 확장에 용이한 서버 어플리케이션을 구축하기 위한 진보된 node.js framework이다. 대부분의 Nest의 코드는 typescript로 만들어졌으며, typescript를 완전하게 지원한다. Nest는 HTTP request을 다루는 web server로 내부적으로 Express.js를 사용하고 있다. Express가 기본 웹서버지만 Fastify를 사용하도록 구성 할 수도 있다. Fastify를 사용하면 Express보다 더 빠른 웹서버를 만들 수 있다.
 
-### Next.js 장점
+### Nest 장점
 
-- Nest.js는 Express와 같은 web server framework로, Express는 굉장히 쉽게 서버를 만들 수 있게 만들어 줬지만 시스템 디자인 측면에서 지원하는 것은 거의 없기 때문에 이러한 문제를 해결하고자 나온 framework가 Nest.js이다.
-- Nest.jS는 Typescript 기반의 OOP(Object Oriented Programming), FP(Functional Programming), FRP(Functional Reactive Programming)를 지원한다.
+- Nest는 Express와 같은 web server framework로, Express는 굉장히 쉽게 서버를 만들 수 있게 만들어 줬지만 시스템 디자인 측면에서 지원하는 것은 거의 없기 때문에 이러한 문제를 해결하고자 등장했다.
+- Nest는 Typescript 기반의 Object Oriented Programming (OOP), Functional Programming (FP), Functional Reactive Programming (FRP)를 지원한다.
 - high cohesion low coupling: module내의 결합은 크게하고, module간의 결합은 작게 만드는 것이 좋은 design이다.
 - Express/Fastify 위에서 동작하고, 추상화된 API를 제공하지만 완전하게 Express를 추상화하고 캡슐화하지 않았기 때문에 기존 Express에서 동작하는 수 많은 library를 그대로 사용할 수 있다.
-- 구조를 강제: Nest.js는 framework이기 떄문에 Nest.js만의 정해진 틀이 존재하고, 그 틀만 잘 따라하면 원하는 결과를 쉽게 얻을 수 있다. 이는 대규모 팀 협업에도 좋고, 다른 개발자의 코드를 한 눈에 알아보기 쉽다.
-- 효율성: Nest.js는 typescript의 적극적인 도입, DI(Dependency Injection), IoC(Inversion of Control), Module을 통한 구조화 등의 기술을 통해 생산적인 개발이 용이하다.
-- 안정적: Nest.js는 typescript를 적극적으로 도입함으로서 server application 개발 시 발생할 수 있는 오류들을 사전에 방지할 수 있도록 하였다. 또한 module로 감싸는 형태로 개발하기 때문에 module 별로 테스트 코드를 쉽게 작성할 수 있도록 구현되어 있다.
-- 확장성 (Open-closed principle): Nest.js는 module을 통해 확장이 용이하도록 설계되어 있다. 실제로 사용해보면 module을 통해 코드적으로, 논리적으로 구분한다는 장점을 크게 느끼실 수 있다. 또한 nest.js는 기본적으로 microservice 아키텍처 개발 스타일을 제공한다.
+- 구조를 강제: Nest는 framework이기 떄문에 Nest.js만의 정해진 틀이 존재하고, 그 틀만 잘 따라하면 원하는 결과를 쉽게 얻을 수 있다. 이는 대규모 팀 협업에도 좋고, 다른 개발자의 코드를 한 눈에 알아보기 쉽다.
+- 효율성: Dependency Injection (DI), Inversion of Control (IoC), Module을 통한 구조화 등의 기술을 통해 생산적인 개발이 용이하다.
+- 안정적: typescript를 적극적으로 도입함으로서 server application 개발 시 발생할 수 있는 오류들을 사전에 방지할 수 있도록 하였다. 또한 module로 감싸는 형태로 개발하기 때문에 module 별로 테스트 코드를 쉽게 작성할 수 있도록 구현되어 있다.
+- 확장성 (Open-closed principle): Nest는 module을 통해 확장이 용이하도록 설계되어 있다. 실제로 사용해보면 module을 통해 코드적으로, 논리적으로 구분한다는 장점을 크게 느끼실 수 있다. 또한 nest.js는 기본적으로 microservice 아키텍처 개발 스타일을 제공한다.
 
 ### Model–view–controller (MVC) Framework
 
@@ -6840,9 +6880,9 @@ Model–view–controller (MVC) is a **software design pattern** commonly used f
   - Accepts input and converts it to commands for the model or view
   - The controller responds to the user input and performs interactions on the data model objects. The controller receives the input, optionally validates it and then passes the input to the model.
 
-### 기본 구조
+### Nest 기본 구조
 
-Nest.js는 controller와 business logic을 구분 짓고 싶어 한다. controller는 client로 부터 url과 요청을 받아 service의 함수를 호출하고, 나머지 business logic은 service가 다룬다. 여기서 service란 MVC framework에서 Model 부분을 의미한다.
+Nest는 controller와 business logic을 구분 짓고 싶어 한다. controller는 client로 부터 url과 요청을 받아 service의 함수를 호출하고, 나머지 business logic은 service가 다룬다. 여기서 service란 MVC framework에서 Model 부분을 의미한다.
 
 - Service에는 요청을 처리하는 실제 코드를 작성하고, controller는 client의 요청을 받아 그에 맞는 service에 작성된 함수를 호출한다.
 

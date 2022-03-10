@@ -4724,25 +4724,231 @@ export default Blog
 `Redux` is an open-source JavaScript library for **managing and centralizing application state**. It is most commonly used with libraries such as React or Angular for building user interfaces. Redux is a predictable state container for JavaScript apps. Redux는 일명 **상태 (state)관리 library**이다.
 
 - 상태관리 library에서 상태란 state를 의미하고, 변수를 의미한다.
-- Redux는 react에 종속된 meta-library가 아니다.
-  - react뿐만 아니라 pure javascript에서도 redux를 사용할 수 있다.
-- 세 가지 version의 redux가 있다.
+- Redux는 React에 종속된 meta-library가 아니다.
+  - React와 같이 사용하면 아주 좋지만, pure javascript에서도 redux를 사용할 수 있다.
+- Redux libraries 및 도구
   1. redux: 기본 redux library. pure HTML, JavaScript 환경에서도 redux 사용가능
-  2. react-redux: react 개발환경에서 사용하기 위한 redux
+  2. react-redux:
+     - React 개발환경에서 사용하기 위한 redux
+     - React 요소가 state을 읽고 저장소를 업데이트하는 작업을 전달하여 Redux 저장소와 상호 작용할 수 있도록하는 공식 패키지입니다.
   3. **redux-toolkit**: redux 개발사에서 추천하는 간단한 redux
      - Redux 대신 redux-toolkit을 사용하면 더 쉽고 거기에 typescript로 작성하면 큰 project scaling하기 편하다.
+  - Redux DevTools Extension
+    - 시간에 따른 저장소의 state 변화를 보여줍니다. 이를 통해 효과적으로 디버깅 할 수 있습니다.
 
 ### Redux를 왜 사용할까?
 
 큰 project에서:
 
-- A1. **props문법이 귀찮을 때**
-  - redux를 쓰면 state를 component 바깥인 `store.js`에서 관리한다.
-- A2. **state변경 관리할 때**
+- A1. **props 문법이 귀찮을 때**
+  - redux를 쓰면 state를 component 바깥인 `store` 에서 관리한다.
+- A2. **state 변경 관리할 때**
   1. `store.js`에 state를 어떻게 변경할 것인지에 대한 방법을 함수로 정의한다.
   2. state를 변경하고 싶을 경우, 개별 component에서 직접 하는 것이 아니라 상황에 맞는 function을 호출한다.
 
-개별 component는 `store.js`에 정의된 변수와 함수만 호출했을 뿐이므로, state에 문제가 생긴다면 문제점은 `store.js`에만 존재하기 때문에 error를 찾기 쉽다.
+개별 component는 `store.js`에 정의된 변수와 함수만 호출했을 뿐이므로, state에 문제가 생긴다면 문제점은 store 에만 존재하기 때문에 error를 찾기 쉽다.
+
+### Redux Terminology
+
+Redux에는 알아야 할 몇가지 중요한 용어가 있습니다.
+
+#### Action Object
+
+Action은 `type` 이라는 key 값을 가지고 있는 Javascript object 이다. Action은 application에서 어떠한 event가 일어날 지 설명한다.
+`"domain/eventName"`처럼 보통 앞에는 기능 또는 카테고리가 들어가고 뒤에는 어떤 일이 발생 할 지에 대해 적는다.
+예를 들어 `type: "todos/todoAdded"`처럼 type은 action에 대한 설명을 하는 string 이어야 합니다.
+
+action은 발생하는 이벤트에 대해서 state를 업데이트 할 때 추가적으로 필요한 정보가 있을 수 있는데 이런 정보를 **payload**라 한다.
+
+일반적인 action은 다음과 같습니다
+
+```
+const addTodoAction = {
+  type: 'todos/todoAdded',
+  payload: 'Buy milk'
+}
+```
+
+- **Action object는 type property가 반드시 필요하며 이를 바탕으로 reducer를 작동시킨다**.
+
+#### Action Creators
+
+Action creators는 action object를 반환하는 함수이다. Action creators를 사용하면 코드를 작성할 때마다 일일이 action을 적지 않고, 생성자를 호출하면 된다.
+
+```
+// text를 받아 payload에 저장 후 action object를 반환하는 함수
+const addTodo = text => {
+  return {
+    type: 'todos/todoAdded',
+    payload: text
+  }
+}
+```
+
+#### Reducers
+
+Reducer는 현재 state와 action object를 인자로 받는 함수이다. Reducer는 action object의 type에 따라 state를 어떻게 업데이트할 지를 정의하여 새로운 state를 반환하기 위해 사용합니다. `(state, action) => newState`
+
+**Reducer는 받은 action object의 type을 기반으로 이벤트를 처리하는 event listener 라 할 수 있다.**
+
+- reducer를 작성하는 몇 가지 규칙이 있다.
+
+  - 기존 state 및 action을 사용해서 새로운 state값을 계산해서 만들어야 합니다.
+  - state를 직접 수정 할 수 없습니다. 기존 state를 deep copy 하고 복사 된 값을 변경하는 방법으로 업데이트 해야 합니다.
+    - 이는 redux의 immutability와 연결된다.
+  - Reducer는 pure function 이어야만 한다.
+    - 비동기 작업을 수행하거나 임의의 값을 생성하는 등 기타 side effect를 일으키지 않아야 합니다.
+
+- reducer 함수 내부는 일반적으로 동일한 단계를 수행합니다.
+
+  1. reducer 안에 action에 대한 처리를 하는 로직이 있는지 확인합니다.
+  2. 해당하는 action이 있으면 state의 복사본을 만들고, 복사본에 새로운 값을 업데이트 한 다음 리턴하면 됩니다.
+  3. 해당하는 action이 없다면 기존 state를 변경하지 않고 반환합니다.
+
+- `.src/features/counterSlice` file
+
+```
+const initialState = { value: 0 }
+
+function counterReducer(state = initialState, action) {
+  // reducer가 action에 대한 처리를 하는지 확인
+  if (action.type === 'counter/increment') {
+    return {
+      // 있다면 state의 복사본을 만들어
+      ...state,
+      // 새로운 값으로 사본을 업데이트
+      value: state.value + 1
+    }
+  }
+  // 없다면 기존 state를 변경하지 않고 반환
+  return state
+}
+```
+
+reducer의 action에 대한 처리는 `if/else`, `switch` 등 여러 종류를 사용할 수 있다.
+
+Reducer는 사용자가 action을 dispatch 하여 store 내의 state 를 바꾸고자 할 때, action의 type에 따라 기존의 state를 새로운 상태로 만들어 낸다.
+
+#### Store
+
+Redux는 store라는 객체에 application 의 현재 global state을 저장한다. store는 redux-toolkit의 `configureStore()` function를 사용해서 생성되며 인자로 reducer를 받는다. `getState()` function를 통해 현재 state 값을 가져올 수 있다.
+
+- `./src/app/store.js` file
+
+```
+import { configureStore } from '@reduxjs/toolkit'
+import authReducer from '../features/auth/authSlice'
+import counterReducer from '../features/counterSlice'
+
+export const store = configureStore({
+  reducer: {
+    auth: authReducer,
+    counter: counterReducer,
+  },
+})
+
+console.log(store.getState())
+```
+
+- `./index.js` file
+
+```
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import { store } from './app/store';
+import { Provider } from 'react-redux';
+
+ReactDOM.render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+```
+
+#### Dispatch
+
+Redux store에는 `dispatch()` 라는 state를 변경하는 함수가 있다. state를 변경하려면 `store.dispatch()`를 사용해서 action object를 store에 전달하는 것 이다. store는 reducer 함수를 통해서 전달받은 action의 type에 따라 state를 변경한다. dispatch 후 `getState()`를 실행하면 변경 된 state를 얻을 수 있다.
+
+```
+console.log(store.getState())
+// {value: 0}
+
+store.dispatch({ type: 'counter/increment' })
+
+console.log(store.getState())
+// {value: 1}
+```
+
+action을 전달하는 것은 application에서 event trigger를 하는 것으로 특정 evnet가 발생했을 때 store는 action을 전달받고, state를 업데이트합니다. action을 전달할 때 action creators를 호출하면 간단하게 action object를 생성할 수 있다.
+
+```
+// type이 'counter/increment'인 action object을 생성하는 함수
+const increment = () => {
+  return {
+    type: 'counter/increment'
+  }
+}
+
+store.dispatch(increment())
+
+console.log(store.getState())
+// {value: 2}
+```
+
+#### Selectors
+
+selector는 store의 state에서 특정 값을 추출하는 함수이다. App이 커지면서 다른 component가 같은 데이터를 사용할 때 반복되는 로직을 방지 할 수 있다.
+
+```
+const selectCounterValue = state => state.value
+
+const currentValue = selectCounterValue(store.getState())
+console.log(currentValue)
+// 2
+```
+
+### Redux Dataflow
+
+#### 기존 application의 state을 변경하는 단방향 data flow
+
+코드에 state view action이 있습니다.
+
+- state: 앱을 작동 시키는 global 변수
+- view: User Interface를 정의하고 현재 state를 보여준다
+- action: 사용자의 입력을 기반으로 발생하는 이벤트 및 트리거로 현재 state를 변경
+
+1. state는 특정 시점의 application의 state를 가지고 있습니다.
+2. UI는 해당 state에 따라 rendering 됩니다
+3. 사용자가 버튼을 클릭하는 등 어떤 이벤트가 발생하면 발생한 이벤트에 따라 state가 업데이트 됩니다.
+4. 새로운 state에 따라 UI가 다시 렌더링 됩니다
+
+![viewstateaction](img/viewstateaction.png)
+
+#### Redux에서의 state을 변경하는 data flow
+
+Redux는 다음 단계로 더 자세히 나눌 수 있습니다.
+
+- 초기 설정
+  - redux store는 root reducer를 사용하여 생성합니다.
+  - store는 root reducer를 한번 호출해서 초기 state 값을 저장합니다.
+  - UI가 처음 rendering 될 때 UI component는 redux store의 현재 state에 접근하고 해당 데이터를 사용하여 rendering 할 항목을 결정합니다.
+  - state가 변경되었는지 알 수 있도록 store 구독합니다.
+
+업데이트
+
+1. 사용자가 버튼을 클릭하는 등 앱에서 이벤트가 발생합니다.
+2. redux store에 action을 dispatch하는 코드는 dispatch({ type: 'counter/increment' }) 와 같이 쓸 수 있습니다.
+3. store는 이전 state와 전달 받은 action으로 reducer 함수를 실행하고, 반환 값을 새로운 state로 저장합니다.
+4. store를 구독하고 있는 UI component에 store가 업데이트 되었음을 알립니다.
+5. store의 data를 사용해야하는 UI 컴포넌트는 사용하고 있는 state가 변경되었는지 확인합니다.
+6. data가 변경된 컴포넌트는 새로운 data로 rerendering 되어 화면에 표시되는 내용을 업데이트 할 수 있습니다.
+
+![reduxdataflow](img/reduxdataflow.gif)
 
 #### React환경의 웹개발
 
@@ -4782,9 +4988,11 @@ state는 root component에만 존재하기 때문에 props문법을 여러번 �
 
 **Redux를 사용하면, state 관리를 component바깥에서 한다.** Redux는 state의 저장과 관리를 `store.js` file에서만 한다.
 
+![redux-dataflow](img/redux-dataflow.png)
+
 #### store 생성
 
-redux를 사용하면 store를 만들 수 있고 이 안에 project의 state를 저장한다.
+Redux를 사용하면 store를 만들 수 있고 이 안에 project의 global state를 저장한다.
 
 아래의 그림에서 B에서 일어나는 변화가 G에 반영된다고 가정을 해봅시다. (B에서 변화 -> G에 영향)
 
@@ -4804,7 +5012,7 @@ action object는 `type`이라는 값이 필수로 있어야 한다.
 
 예를들어 store가 `{ type: 'INCREMENT' }`인 action 객체를 전달 받으면, 그 type의 reducer를 참조해 state를 변경한다. `type` 를 제외한 값은 optional이다.
 
-#### reducer를 통하여 state를 변화시키기
+#### reducer를 통하여 state 변화시키기
 
 action object를 받은 store가, 전달받은 action의 type에 따라 어떻게 상태를 업데이트 해야 할지 정의를 해줘야겠죠? 이러한 update logic을 정의하는 함수를 `reducer`라고 한다. 예를들어 type 이 INCREMENT 라는 액션이 들어오면 숫자를 더해주고, DECREMENT 라는 액션이 들어오면 숫자를 감소시키는 함수를 reducer라 한다.
 
@@ -4846,11 +5054,11 @@ const elNumber = document.getElementById('number');
 const btnIncrement = document.getElementById('increment');
 const btnDecrement = document.getElementById('decrement');
 
-// 액션 타입을 정의해줍니다.
+// 액션 타입을 정의
 const INCREMENT = 'INCREMENT';
 const DECREMENT = 'DECREMENT';
 
-// 액션 객체를 만들어주는 액션 생성 함수
+// 액션 객체를 만들어주는 Action creators
 const increment = (diff) => ({ type: INCREMENT, diff: diff });
 const decrement = () => ({ type: DECREMENT });
 
@@ -4926,23 +5134,25 @@ btnDecrement.addEventListener('click', () => {
 
 ### Redux 규칙
 
-- 하나의 application에는 하나의 store만 생성한다.
-- state는 read-only이다.
+- Single source of truth
+  - 하나의 application에는 하나의 store만 생성한다.
+- State is read-only
   - react에서 state를 변경 할 때 useState hook를 사용하고, 배열을 업데이트 해야 할 때는 배열 자체에 push를 직접 하지 않고, concat() 함수를 사용하여 기존의 배열은 수정하지 않고 새로운 배열을 만들어서 교체하는 방식으로 업데이트한다. 엄청 깊은 구조로 되어있는 객체를 업데이트를 할 때도 마찬가지로, 기존의 객체는 건들이지 않고 `Object.assign` 을 사용하거나 spread 연산자 `(...)` 를 사용하여 update한다.
   - redux에서도 기존의 상태는 건들이지 않고 새로운 상태를 생성하여 업데이트 해주는 방식으로 해야한다.
   - redux에서 Immutability (불변성) 을 유지해야 하는 이유는 내부적으로 데이터가 변경 되는 것을 감지하기 위하여 shallow equality 검사를 하기 때문이다. 이를 통하여 객체의 변화를 감지 할 때 객체의 깊숙한 안쪽까지 비교를 하는 것이 아니라 겉핥기 식으로 비교를 하여 좋은 성능을 유지할 수 있다.
 - state에 변화를 주는 함수, reducer는 pure function이어야만 한다.
+
+  - Changes are made with pure functions.
   - 이전의 state는 절대로 건들이지 않고, 변화를 일으킨 새로운 상태 객체를 만들어서 반환해야 한다.
   - 똑같은 parameter로 호출된 reducer는 언제나 똑같은 결과값을 반환해야만 합니다.
     - 순수하지 않은 작업: new Date(), random number를 생성, 네트워크에 요청을 보내기
     - 순수하지 않은 작업들은 reducer의 바깥에서 **redux-middleware**를 사용해 처리해야 한다.
 
-pure function이란
+- pure function이란
+  - 똑같은 input를 받았을 시 계속 같은 결과만 반환
+  - side-effect가 없는 함수
 
-- 똑같은 input를 받았을 시 계속 같은 결과만 반환
-- side-effect가 없는 함수
-
-![redux-middleware](img/redux-middleware.png.crdownload)
+![redux-middleware](img/redux-middleware.png)
 
 Middleware를 action과 reducer 사이의 중간다리라고 생각한다. Middleware를 사용하면 action이 dispatch 되어서 reducer에서 이를 처리하기전에 사전에 지정된 작업들을 설정할 수 있다.
 
@@ -4950,17 +5160,11 @@ Middleware를 action과 reducer 사이의 중간다리라고 생각한다. Middl
 
 `redux-thunk`, `redux-promise-middleware`, `redux-pender` 이 세 library는 각각 다른 방식으로 비동기 action을 처리한다.
 
-#### redux-thunk
+#### Redux Thunk
 
-redux를 사용하는 application에서 비동기 작업을 처리 할 때 가장 기본적인 방법으로는 `redux-thunk`라는 middleware를 사용 하는것 이다
+redux를 사용하는 application에서 비동기 작업을 처리 할 때 가장 기본적인 방법으로는 `redux-thunk`라는 middleware를 사용 하는것 이다. 여기서 **thunk**란, 특정 작업을 나중에 하도록 미루기 위해서 함수형태로 감싼 것을 칭합니다. 예를 들어서, 여러분들이 `1 + 2` 을 지금 당장 실행 하고 싶다면 `const x = 1 + 2;`와 같이 작성해 연산의 결과를 `x`에 assign 할 수 있다. 그런데 `const foo = () => 1 + 2;` 와 같이 함수로 만들게 되면, 연산이 바로 이뤄지지 않고 나중에 `foo()`가 호출 되어야만 이뤄진다.
 
-**thunk**란, 특정 작업을 나중에 하도록 미루기 위해서 함수형태로 감싼것을 칭합니다.
-
-예를 들어서 여러분들이 `1 + 2` 을 지금 당장 실행 하고 싶다면 `const x = 1 + 2;`와 같이 작성해 연산의 결과를 `x`에 assign할 수 있다.
-
-`const foo = () => 1 + 2;` 와 같이 함수로 만들게 되면, 연산이 바로 이뤄지지 않고 나중에 `foo()`가 호출 되어야만 이뤄진다.
-
-`redux-thunk` middleware는 객체 대신 함수를 생성하는 액션 생성함수를 작성 할 수 있게 해준다. redux에서는 기본적으로는 액션 객체를 dispatch한다.
+`redux-thunk` middleware는 객체 대신 함수를 생성하는 Action Creator function 를 작성 할 수 있게 해준다. Redux에서는 기본적으로는 Action 객체를 dispatch한다.
 
 - `src/store.js` file
 
@@ -4986,7 +5190,7 @@ https://velopert.com/3401
 
 기존에는 부모에서 자식의 자식의 자식까지 state를 전달해줘야 했는데, redux를 사용하면 store를 사용하여 state를 component와 독립적으로 두고 상태를 업데이트 하거나, 새로운 상태를 전달받는다. 따라서, 여러 component를 거쳐서 받아올 필요 없이 아무리 깊숙히 있어도 직속 부모에게서 받아오는 것 처럼 원하는 상태값을 골라서 귀찮은 props 없이 편리하게 받을 수 있다.
 
-### React에서 redux와 redux-toolkit 사용
+### React에서 Redux와 redux-toolkit 사용
 
 https://redux-toolkit.js.org/tutorials/quick-start
 
@@ -5005,9 +5209,9 @@ https://redux-toolkit.js.org/tutorials/quick-start
   - Read data from the store with the `useSelector` hook
   - Get the `dispatch` function with the `useDispatch` hook, and dispatch actions as needed
 
-- 용어정리: https://velog.io/@josworks27/Redux%EC%9D%98-%EC%9A%A9%EC%96%B4-%EB%B0%8F-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC
-
 - React에서 사용: https://medium.com/@seungha_kim_IT/typescript-%EC%B5%9C%EC%8B%A0-%EA%B8%B0%EB%8A%A5%EC%9D%84-%ED%99%9C%EC%9A%A9%ED%95%9C-redux-%EC%95%A1%EC%85%98-%ED%83%80%EC%9D%B4%ED%95%91-ef46fff8850b
+
+- https://jcon.tistory.com/181#:~:text=Redux%20Slice,%ED%95%98%EA%B8%B0%20%EB%95%8C%EB%AC%B8%EC%97%90%20slice%EB%9D%BC%EA%B3%A0%20%EB%B6%80%EB%A6%85%EB%8B%88%EB%8B%A4.
 
 ## % 부록0: 유용한 VSCode 기능 알아보기 %
 

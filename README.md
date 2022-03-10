@@ -5011,6 +5011,8 @@ https://redux-toolkit.js.org/tutorials/quick-start
 
 ## % 부록0: 유용한 VSCode 기능 알아보기 %
 
+VSCode는 다양한 keyboard shortcut을 제공하기 때문에 마우스를 이용하지 않고, **최대한 keyboard을 사용**해 코딩한다.
+
 - `단어 + tab`: Snippets를 이용하여 자동완성 기능을 적극활용한다.
 - Debug tool를 이용하여 프로그램을 디버깅할 수 있다 (내가 확인하고 싶은 코드 옆에 breakpoint 생성 후 debug 실행).
 
@@ -5035,7 +5037,10 @@ https://redux-toolkit.js.org/tutorials/quick-start
 - `open in browser`: HTML을 browser로 열기
 - `ESLint`: code formatting
 - `GitLens — Git supercharged`: git을 이용해, 코드 변경자 확인
-- `Remote Remote - WSL`: Windows로 WSL 실행시만 설치
+- `Remote - WSL`: Windows로 WSL 실행시만 설치
+- `Remote - SSH`: To content to remote server using ssh
+- `Remote - Container`: To use docker container as a developer environment
+- `GitHub Repositories`: Remotely browse and edit any GitHub repository
 - `Paste JSON as Types`: JSON data를 code로 변환
 
   1. code로 변환하고 싶은 JSON data 복사
@@ -5082,7 +5087,7 @@ https://redux-toolkit.js.org/tutorials/quick-start
 
 - `Ctrl + P`: 이 폴더 내에 다른 file name을 입력 후, 그 file로 이동 (파일간 이동)
 - `Ctrl + G`: 이 파일 내에 Line 입력 후 이동 (파일 내 이동)
-- `Ctrl + Shift + o`: file 내 작성된 다른 코드로 이동
+- `Ctrl + Shift + O`: file 내 작성된 다른 코드로 이동
 - `pageUp/pageDown`: Move to (next/previous) page in file
 - `Alt + (pageUP/pageDown)`: Scroll page up/down
 - `F12`: Go to Definition (선택된 코드가 정의된 file로 워프)
@@ -5132,29 +5137,38 @@ https://redux-toolkit.js.org/tutorials/quick-start
 - `Ctrl + A`: 현재 파일의 모든 문장 drag
 - `Ctrl + ,`: Setting 열기
 - `Ctrl + space`: 자동완성제안 (현재치고 있는 코드의 자동완성 list를 보여줌)
-- `Ctrl + shift + p`: open Command Palette
+- `Ctrl + shift + P`: Open Command Palette
 
-  - Command Palette에 `@` 입력: 현제 project에 define된 모든 classes, interfaces 반환
-  - Command Palette에 `Paste JSON as Types` 입력: JSON data를 code로 변환
-  - Command Palette에 `zen mode` 입력: code를 작성하는 것에만 집중할 수 있도록 필요없는 UI 없애기
+  - Command Palette에 `@` 입력 (`Ctrl + P` + `@`): 현재 project에 define된 모든 classes, interfaces 반환
+  - Command Palette에 `>` 입력 (`Ctrl + P` + `>`): 현재 project에서 할 수 있는 모든 command 반환
+    - toggle zen mode
+    - toggle minimap
+    - `zen mode` 입력: code를 작성하는 것에만 집중할 수 있도록 필요없는 UI 없애기
+    - `Paste JSON as Types` 입력: JSON data를 code로 변환 (`Paste JSON as Types` extension 다운 후)
+    - `Quokka.js` 입력 (`Quokka.js` extension 다운 후)
+    - `Configure User Snippets` 입력: 나만의 code snippets를 만들 수 있다
+  - Command Palette에 `#` 입력: global symbol search. 현재 project에서 할 수 있는 모든 command 반환
+  - Command Palette에 `:` 입력 (`Ctrl + G`): 이 파일 내에 Line 입력 후 이동 (파일 내 이동)
 
 - `Ctrl + K + Z`: toggle zen mode
 
   - `Ctrl + K`: Cuttom key binding for toggling zen mode
-  - Z key가 undo와 연결되어 있기 떄문에 개인적으로 `Ctrl + K`를 이용해 toggle zen mode한다.
+    - Z key가 undo와 연결되어 있기 떄문에 개인적으로 `Ctrl + K`를 이용해 toggle zen mode한다.
 
 - `Ctrl + b`: toggle side-bar
 - `Ctrl + -`: zoom out
 - `Ctrl + +`: zoom in
 - `Ctrl + d`: find next match (현재 select된 단어와 일치하는 다음 위치 찾은 후 multi cursor)
 
-- `Alt + click`: Multi-cursor (Alt + Click를 여러 군데 찍으면, 한번에 여러 곳에 typing할 수 있다).
+- `Alt + click`: Multi-cursor (Alt + Click를 여러 군데 찍으면, 한번에 여러 곳에 typing 할 수 있다).
+
+- Auto-Create Directories: file explore의 `New File` 클릭 후 `dirName/dirName2/dirName3/fileName.txt` 입력
+  - 자동으로 nested folder를 생성 후, 그 안에 file를 생성
 
 ### Terminal (Unix shell) Command
 
 `ctrl + backtic`로 terminal를 열어 다음의 command를 입력
 
-- `UpArrow`: 최근에 사용한 command 가져오기
 - `$ ls`: list files in current directory (list)
 - `$ ls -l`: list files detail in current directory (list -long)
 - `$ ls -a`: list all files in current directory (list -all)
@@ -5185,6 +5199,13 @@ https://redux-toolkit.js.org/tutorials/quick-start
 - `$ nano fileName`: nano editor로 fileName열기
 - `$ code fileName`: VSCode editor로 fileName열기$
 - `$ ssh ...`: ssh로 remote server와 연결
+
+keyboard shortcut for terminal
+
+- `Ctrl + K`: clear terminal
+- `Ctrl + (LeftArrow\RightArrow)`: 단어
+- `Ctrl + C`: terminate
+- `UpArrow/DownArrow`: 최근에 사용한 command 가져오기. Terminal history
 
 ### Emmets
 
@@ -6837,7 +6858,7 @@ Emscripten 등의 도구를 사용하면, C/C++ 등의 언어로 작성된 progr
 - string, number, class, closure, object 등 복잡한 data type의 값을 다룰 수 있습니다.
 - Rust 코드에 대한 TypeScript 타입 정보를 자동으로 생성합니다.
 
-- Rust를 설치하고, wasm-bindgen을 통해 Rust code를 web browser에서 실행해보는 예제를 다룹니다. 
+- Rust를 설치하고, wasm-bindgen을 통해 Rust code를 web browser에서 실행해보는 예제를 다룹니다.
 - wasm-pack: wasm-bindgen 기반 Rust 프로젝트를 다른 JavaScript 기반 프로젝트에서 쉽게 쓸 수 있도록 패키징해주는 도구
 
 - https://developer.mozilla.org/en-US/docs/WebAssembly/Rust_to_wasm

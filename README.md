@@ -247,7 +247,7 @@ React.js, Typescript 등등 outside library/framework로 만들어 native HTML, 
       - Prototype
       - [Hoisting](https://github.com/heeshin174/Web_App_Dev_Kor#hoisting)
       - [Closure](https://github.com/heeshin174/Web_App_Dev_Kor#closure)
-      - Callback Function
+      - [Callback Function](https://github.com/heeshin174/Web_App_Dev_Kor#synchronous-programming-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0--callbackpromisesasync-await)
   - **Browser APIs**
     - DOM Manipulation
     - Events
@@ -1701,7 +1701,7 @@ console.log(user1.printName()); // Hello, I am Shin
 class로 만든 함수엔 특수 내부 property인 `[[IsClassConstructor]]: true`가 이름표처럼 붙습니다. 이것만으로도 두 방법엔 분명한 차이가 있음을 알 수 있다.
 자바스크립트는 다양한 경우에 `[[IsClassConstructor]]: true`를 활용합니다. class 생성자를 new와 함께 호출하지 않으면 에러가 발생하는데 이 때 `[[IsClassConstructor]]: true`가 사용된다.
 
-#### Class inheritance
+#### Class Inheritance
 
 JavaScript에서는 클래스간 상속의 관계를 만들기 위해, 다음 두 가지 방법을 사용할 수 있다.
 
@@ -1758,14 +1758,13 @@ const zealot1 = new Zealot("Zealot", "80", "100");
 const scout1 = new Scout("Scout", "100", "80");
 ```
 
-### synchronous programming 이해하기 (💥 Callback/Promises/Async Await)
+### Synchronous programming 이해하기 (💥 Callback/Promises/Async Await)
 
 **Javascript는 asynchronous programming로 데이터를 요청하는 데 시간이 많이 걸리는 line이 있으면, 그 code의 값을 기다리지 않고 다음 code를 시작한다.**
 
 위의 말을 이해하려면, 동기 (Synchronous)와 비동기(Asynchronous)가 무엇인지 부터 알아야 한다.
 
 - **동기** 방식은 서버에서 요청을 보냈을 때 응답이 돌아와야 다음 동작을 수행할 수 있다. 기존의 프로그래밍 언어들처럼 code를 위에서 아래로 차근차근 실행하는 것을 말한다.
-
 - **비동기** 방식은 반대로 요청을 보냈을 때 응답 상태와 상관없이 다음 동작을 수행 할 수 있다. 즉 A작업이 시작하면 동시에 B작업이 실행된다. A작업은 결과값이 나오는대로 출력된다.
 
 비동기적인 프로그래밍의 문제는 아직 데이터가 다 불러오지 못해 값이 undefined인 변수를 그 다음 code에서 가져다 쓰는 것이다.
@@ -3380,7 +3379,7 @@ const code: LanguageCode = languageCodes.KOREAN
 
 Literal과 Constant를 같은 의미로 사용하는 사람들이 많지만, 엄연히 따지자면 확실한 차이점이 존재한다.
 
-#### 상수 (constant)
+#### 상수 (Constant)
 
 상수 Const는 **변하지 않는 변수**를 뜻한다. 상수에는 숫자뿐만 아니라 class나 struct 같이 기본형에서 파생된 객체나 유도형같은 데이터를 넣을 수 있다.
 
@@ -3424,7 +3423,7 @@ Literal은 data 그 자체를 의미한다. **변수에 넣는 변하지 않는 
 
 정리하면 상수는 변하지 않는 변수를 의미하며 (memory address) 메모리 값을 변경할 수 없다. Literal은 변수의 값이 변하지 않는 data (memory 위치안의 값)를 의미한다.
 
-### Typescript Const assertions
+### Typescript Const Assertions
 
 선언하는 모든 변수마다 항상 그 타입까지 같이 적어주어야 한다면 귀찮기 때문에, static typing을 지원하는 언어에는 대개 ‘타입 추론’이라는 기능이 포함되어 있다. 타입 추론을 지원하는 언어에서는, 변수에 대입하는 ‘literal의 타입’을 보고 해당 변수의 타입을 자동으로 지정해줍니다. 즉, 할당된 data의 data type을 보고 해당 변수의 타입을 자동으로 결정할 수 있다.
 TypeScript 역시 타입 추론 기능을 잘 지원하고 있습니다.
@@ -3504,7 +3503,7 @@ const obj = {
 
 **이제 우리는 const assertion을 이용하여 하나의 const 상수에 여러 const를 정의할 수 있다.**
 
-### Typescript Type assertions
+### Typescript Type Assertions
 
 Typescript의 Type assertions은 const assertions과 비슷하다. const assertions이 let 변수를 const 상수 취급할 때 사용했다면, **type assertions은 변수를 특정 data type으로 취급할 떄 사용**한다.
 
@@ -3522,17 +3521,17 @@ let strLength: number = (someValue as string).length;
 
 TypeScript를 React의 JSX와 함께 사용할 때는, as-스타일의 단언만 허용된다.
 
-### Typescript Type guards
+### Typescript Type Guards
 
 **Type Guards** allow you to narrow down the type of an object within a conditional block. This way of reducing the size of a type is called **narrowing**. Checking the result of typeof and similar runtime operations are called **type guards**.
 
 즉 Type Guard를 통해 **컴파일러가 타입을 예측할 수 있도록 타입을 좁혀 주어서(narrowing) 좀 더 type safety**함을 보장할 수 있다.
 
-#### built-in Type Guard: typeof, instanceof, in
+#### Built-in Type Guard: typeof, instanceof, in
 
 JavaScript에 이미 존재하는 `typeof`, `instanceof`, `in` 등의 연산자를 활용해 Type Guard을 할 수 있다.
 
-#### typeof type guards
+#### typeof Type Guards
 
 `typeof` operator는 피연산자의 data type을 string로 return한다. 이 특성을 활용해서 Typescript에서는 아래와 같은 상황에서 사용할 수 있다.
 
@@ -3765,7 +3764,7 @@ export const register = createAsyncThunk (
 );
 ```
 
-#### this based type guards
+#### this based Type Guard
 
 You can use `this is Type `in the return position for methods in classes and interfaces. When mixed with a type narrowing (e.g. if statements) the type of the target object would be narrowed to the specified Type.
 
@@ -4298,13 +4297,13 @@ react.js는 jsx이기 때문에 `array.map((param) => {body})`가 아니라 `arr
 
 ## [VueJs](https://vuejs.org/guide/introduction.html)
 
-### What is Vue.js?
+### What is Vue?
 
-#### Vue 가 무엇이고, 왜 사용하는가
+#### Vue가 무엇이고, 왜 사용하는가?
 
 Vue.js는 Web app을 만들 수 있는 Javascript Front-end Framework이다.
 
-#### Web app은 무엇이고, 왜 사용하는가
+#### Web app은 무엇이고, 왜 사용하는가?
 
 **page간 이동에 새로고침이 필요없이 부드럽게 넘어가기 때문에**
 
@@ -4312,14 +4311,14 @@ Web-app은 Single Page Application (SPA)이라고 불리는 웹페이지로, 하
 
 Web app를 만들 수 있는 frontend framework에는 Vue 말고도 React/Angular등 다른 tools도 많이 있다.
 
-#### Web app을 만드는데 굳이 Vue를 사용하는 이유는 무엇인가
+#### Web app을 만드는데 굳이 Vue를 사용하는 이유는 무엇인가?
 
 **Vue는 문법이 쉽고 하나로 정해져 있기 떄문에, 문법 몇개만 외워주면 초보도 쉽게 output를 낼 수 있다.**
 
 - A1. Vue가 더 쉽기 때문이다. React나 Vue 중 본인에게 맞는 거 사용하면 되는데, Javascript를 잘 하지 못한다면 Vue를 먼저 사용해본다.
 - A2. Vue는 문법이 하나로 정해져 있기 때문에 여러 개발자사이의 코딩 스타일을 통일시킨다. 다른 개발자가 나와 같은 방법만을 사용해야 함으로 한 눈에 이해하기 쉽다.
 
-1. React가 사용자가 Vue보다 더 많음에도, 굳이 Vue를 배우는 이유는 Vue의 문법이 더 쉽기 때문이다. Vue는 사용법이 쉬운데 다른 어려운 frameworks와 동일하게 좋은 웹앱을 만들 수 있기 때문에, 웹앱 입문자라면 React보다는 Vue를 추천한다.
+React가 Vue보다 사용자가 더 많음에도, 굳이 Vue를 배우는 이유는 Vue의 문법이 더 쉽기 때문이다. Vue는 사용법이 쉬운데 다른 어려운 frameworks와 동일하게 좋은 웹앱을 만들 수 있기 때문에, 웹앱 입문자라면 React보다는 Vue를 추천한다.
 
 - if문 비교
 
@@ -5007,7 +5006,7 @@ https://redux-toolkit.js.org/tutorials/quick-start
 
 - 용어정리: https://velog.io/@josworks27/Redux%EC%9D%98-%EC%9A%A9%EC%96%B4-%EB%B0%8F-%EA%B0%9C%EB%85%90-%EC%A0%95%EB%A6%AC
 
-- REact에서 사용: https://medium.com/@seungha_kim_IT/typescript-%EC%B5%9C%EC%8B%A0-%EA%B8%B0%EB%8A%A5%EC%9D%84-%ED%99%9C%EC%9A%A9%ED%95%9C-redux-%EC%95%A1%EC%85%98-%ED%83%80%EC%9D%B4%ED%95%91-ef46fff8850b
+- React에서 사용: https://medium.com/@seungha_kim_IT/typescript-%EC%B5%9C%EC%8B%A0-%EA%B8%B0%EB%8A%A5%EC%9D%84-%ED%99%9C%EC%9A%A9%ED%95%9C-redux-%EC%95%A1%EC%85%98-%ED%83%80%EC%9D%B4%ED%95%91-ef46fff8850b
 
 ## % 부록0: 유용한 VSCode 기능 알아보기 %
 
@@ -6589,7 +6588,7 @@ fn main() {
 }
 ```
 
-### Rust data types
+### Rust Data Types
 
 Rust does not have `null` vallue
 
@@ -6796,6 +6795,12 @@ Differences
 - allocating space on the heap requires more work than pushing to the stack, because the allocator must first find a big enough space to hold the data and then perform bookkeeping to prepare for the next allocation.
 - Pushing to the stack is faster than allocating on the heap because the allocator never has to search for a place to store new data; that location is always at the top of the stack.
 - Accessing data in the heap is slower than accessing data on the stack because you have to follow a pointer to get there.
+
+### WebAssembly + Rust + wasm-bindgen
+
+WebAssembly + Rust + wasm-bindgen
+
+https://medium.com/@seungha_kim_IT/webassembly-rust-wasm-bindgen-%EF%B8%8F-part-1-66e902286bf4
 
 ## [NestJs](https://nestjs.com/)
 

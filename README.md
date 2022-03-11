@@ -4734,7 +4734,7 @@ export default Blog
   3. **redux-toolkit**: redux 개발사에서 추천하는 간단한 redux
      - Redux 대신 redux-toolkit을 사용하면 더 쉽고 거기에 typescript로 작성하면 큰 project scaling하기 편하다.
   - Redux DevTools Extension
-    - 시간에 따른 저장소의 state 변화를 보여줍니다. 이를 통해 효과적으로 디버깅 할 수 있습니다.
+    - 시간에 따른 저장소의 state 변화를 보여줍니다. 이를 통해 효과적으로 디버깅 할 수 있다.
 
 ### Redux를 왜 사용할까?
 
@@ -4787,7 +4787,7 @@ const addTodo = text => {
 
 #### Reducers
 
-Reducer는 현재 state와 action object를 인자로 받는 함수이다. Reducer는 action object의 type에 따라 state를 어떻게 업데이트할 지를 정의하여 새로운 state를 반환하기 위해 사용합니다. `(state, action) => newState`
+Reducer는 현재 state와 action object를 인자로 받는 함수이다. Reducer는 action object의 type에 따라 state를 어떻게 업데이트할 지를 정의하여 새로운 state를 반환하기 위해 사용한다. `(state, action) => newState`
 
 **Reducer는 받은 action object의 type을 기반으로 이벤트를 처리하는 event listener 라 할 수 있다.**
 
@@ -4884,7 +4884,7 @@ console.log(store.getState())
 // {value: 1}
 ```
 
-action을 전달하는 것은 application에서 event trigger를 하는 것으로 특정 evnet가 발생했을 때 store는 action을 전달받고, state를 업데이트합니다. action을 전달할 때 action creators를 호출하면 간단하게 action object를 생성할 수 있다.
+action을 전달하는 것은 application에서 event trigger를 하는 것으로 특정 evnet가 발생했을 때 store는 action을 전달받고, state를 변경한다. action을 전달할 때 action creators를 호출하면 간단하게 action object를 생성할 수 있다.
 
 ```
 // type이 'counter/increment'인 action object을 생성하는 함수
@@ -5182,17 +5182,266 @@ export default store;
 
 https://velopert.com/3401
 
-### Redux 정리
+### [Redux-toolkit](https://redux-toolkit.js.org/tutorials/quick-start)
 
-- `subscribe(listener)`: state 변경 시 listener를 실행하는 함수
-- `dispatch(action)`: state 변경을 요청하는 함수. action object를 parameter로 넘겨, 그 type에 맞는 reducer를 호출한다.
-- `reducer()`: action type에 따라 실제 state을 변경할 update logic이 정의된 함수
+Redux의 단점 중에선 boilerplate code를 참 많이 준비해야 한다는 것 입니다. Action type, Action creator function, reducer 이렇게 3가지 종류로 코드를 준비해야 합니다.
 
-기존에는 부모에서 자식의 자식의 자식까지 state를 전달해줘야 했는데, redux를 사용하면 store를 사용하여 state를 component와 독립적으로 두고 상태를 업데이트 하거나, 새로운 상태를 전달받는다. 따라서, 여러 component를 거쳐서 받아올 필요 없이 아무리 깊숙히 있어도 직속 부모에게서 받아오는 것 처럼 원하는 상태값을 골라서 귀찮은 props 없이 편리하게 받을 수 있다.
+```
+// 기존 redux code
+// action type
+export const OPEN = 'msgbox/OPEN';
+export const CLOSE = 'msgbox/CLOSE';
 
-### React에서 Redux와 redux-toolkit 사용
+// action coreator function
+export const open = (message) => ({ type: OPEN, message });
 
-https://redux-toolkit.js.org/tutorials/quick-start
+const initialState = {
+  open: false,
+  message: '',
+};
+
+// reducer
+export default msgbox(state = initialState, action) {
+  switch (action.type) {
+	case OPEN:
+      return { ...state, open: true, message: action.message };
+    case CLOSE:
+      return { ...state, open: false };
+    default:
+      return state;
+  }
+}
+```
+
+이러한 작업은 적응하면 괜찮긴 한데 project가 커질수록 이 작업이 귀찮아집니다. 그리고, 하나의 reducer에서 관리하는 상태가 커지고, 세부적인 변경사항이 늘어날수록 불변성을 지키기 위하여 `...state` 를 사용하는것도 꽤 번거롭습니다. 특히 이는 redux를 처음 사용하는 사람들에게는 이 작업이 번거로워서 redux에 대한 나쁜 인상을 주는 요소이다.
+
+2020년엔 redux 개발팀에서 드디어 공식적으로 Redux-Toolkit 이라는 library를 release 했다. 이 라이브러리가 있다면, redux를 아주 간편하게 사용할 수 있다.
+**Redux Toolkit을 사용하면 reducer, action type, action creator function, initial state를 하나의 함수 `slice`로 편하게 선언 할 수 있습니다. 이 라이브러리에선 이 4가지를 통틀어서 `slice` 라고 부릅니다.**
+
+만약, 위 코드에서 봤던 메시지 박스를 띄우는 기능에 대한 `slice`를 생성한다면, 다음과 같이 작성 합니다.
+
+```
+import { createSlice } from '@reduxjs/toolkit';
+
+// 하나의 slice function that contains reducer, action type, action creator function, initial state
+const msgboxSlice = createSlice({
+  name: 'msgbox',
+  initialState: {
+    open: false,
+    message: '',
+  },
+  reducers: {
+    open(state, action) {
+      state.open = true;
+      state.message = action.payload
+    },
+    close(state) {
+      state.open = false;
+    }
+  }
+});
+
+export default msgboxSlice.reducer;
+export const { open, close } = msgboxSlice.actions;
+
+// reducer: msgboxSlice.reducer
+// action creators: msgboxSlice.actions.open, msgboxSlice.actions.close
+// actionType:
+// - msgboxSlice.actions.open.type: 'msgbox/open'
+// - msgboxSlice.actions.close.type: 'msgbox/close'
+```
+
+리듀서와 액션 생성 함수를 한방에 만들 수가 있답니다. 그리고, Immer가 내장되어있기 때문에, 불변성을 유지하기 위하여 번거로운 코드들을 작성하지 않고 원하는 값을 직접 변경하면 알아서 불변성이 유지되면서 상태가 업데이트 됩니다.
+
+#### Redux-toolkit + Typescript
+
+redux를 사용 할 때, TypeScript를 사용하지 않으면, component에서 state를 조회할때, 그리고 action creator function를 사용 할 때 자동완성이 되지 않으므로 실수하기가 쉽습니다. TypeScript를 쓴다면 자동완성이 되기 때문에 생산성에 큰 도움을 줍니다. Redux Toolkit은 TypeScript 지원이 아주 잘 됩니다. 상태에 대한 type과, action에 대한 type만 명시하면 됩니다.
+
+- `./src/feature/msgboxSlice.ts` file
+
+```
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
+// 상태에 대한 type
+type MsgboxState = {
+  open: boolean;
+	message: string;
+}
+
+// 초기 상태값
+const initialState: MsgboxState = {
+  open: false,
+  message: ''
+};
+
+// slice
+const msgboxSlice = createSlice({
+  name: 'msgbox',
+  initialState,
+  reducers: {
+    // action에 대한 type
+    open(state, action: PayloadAction<string>) {
+      state.open = true;
+      state.message = action.payload;
+    },
+    close(state) {
+      state.open = false;
+    }
+  }
+});
+
+export default msgboxSlice.reducer;
+export const { open, close } = msgboxSlice.actions;
+```
+
+TypeScript에서 redux를 사용 할 때, react component 에서 redux state를 조회하는 경우 다음과 같이 작성합니다.
+
+`const something = useSelector((state: RootState) => state.some.thing);`
+
+이 때 `RootState` type을 준비할 때는 다음과 같이 하면 편합니다.
+
+```
+const rootReducer = combineReducers({ ... })
+export type RootState = ReturnType<typeof rootReducer>;
+```
+
+그리고 상태를 조회 할 때마다 `useSelector` 와 `RootState` 를 불러오는데, 저는 이 과정이 귀찮아서 다음과 같이 따로 Hook을 만들어서 사용한다.
+
+```
+type StateSelector<T> = (state: RootState) => T;
+type EqualityFn<T> = (left: T, right: T) => boolean;
+
+export function useRootState<T>(selector: StateSelector<T>, equalityFn?: EqualityFn<T>) {
+  return useSelector(selector, equalityFn);
+}
+```
+
+그럼 나중에 react component에서 다음과 같이 바로 바로 사용 할 수 있어 매우 편하다.
+
+```
+function MyComponent() {
+  const something = useRootState(state => state.some.thing);
+  // ...
+}
+```
+
+### Selector 사용하기
+
+Redux를 사용하여 프로젝트를 개발하시는 분들은 `reselect` 라는 library를 들어본적이 있는 분들이 계실 것입니다. 이 library를 사용하면 우리가 원하는 상태를 조회 하는 과정에서 memoization을 할 수 있습니다. 이 기능은 Redux Toolkit에도 내장되어 [createSelector](https://redux-toolkit.js.org/api/createSelector)를 통해 사용 할 수 있습니다.
+
+redux 에서 `selector` 는 필수적인 요소는 아니지만 사용을 한다면 다음 두가지 상황에 유용하게 사용 될 수 있습니다.
+
+- 상태의 위치 (key) 가 변경 될 때
+- component rerendering 최적화를 할 때
+
+#### 상태의 위치가 변경되는 상황
+
+리덕스에서 다음과 같이 상태를 지니고 있다고 가정해봅시다.
+
+```
+{
+  user: {
+    id: 1,
+    username: 'velopert',
+    displayName: 'MinJun'
+  },
+  settings: { /* ... */ }
+}
+```
+
+컴포넌트에서 user 값을 사용한다면 다음과 같이 작성하겠죠?
+
+`const user = useSelector(state => state.user);`
+
+그런데 어느 날 서비스 로직이 좀 많이 변경돼서 이 사용자 상태의 위치를 다음과 같이 변경해야된다고 가정해봅시다.
+
+```
+{
+  auth: {
+	  isCertified: false,
+    user: {
+      id: 1,
+      username: 'velopert',
+      displayName: 'MinJun',
+    }
+  },
+  settings: { /* ... */ }
+}
+```
+
+`state.user` 가 더 이상 존재하지 않고 `state.auth.user` 를 조회해야 하는 상황이 왔는데요, 이렇게 되면 기존에 `state.user` 에 의존하던 모든 코드들을 찾아서 변경해주어야만 한다.
+하지만, selector 를 따로 만들어서 사용했더라면 얘기가 조금 달라지지요.
+
+이렇게, 기존에 useSelector 의 인자에 넣었었던 함수를 따로 선언하고
+
+`export const userSelector = state => state.user;`
+추후 사용할땐 이렇게 불러와서 사용했더라면 `const user = useSelector(userSelector);`
+만약 상태의 위치가 변경되는 상황이 왔을 때 selector 만 다음과 같이 변경하면 나머지는 자동으로 반영이 되겠지요.
+
+`export const userSelector = state => state.auth.user;`
+
+#### Rerendering 최적화를 Memoized Selector 사용하기
+
+저는 selector 의 주된 사용처는 **component rerendering 최적화**를 위함이라고 생각합니다. 상태의 위치가 변경이 될 때 사용하면 유용하긴 하지만 IDE의 Find & Replace 기능으로 충분히 쉽게 반영 할 수 있기 때문에 상태 조회를 할 때 selector를 만드는 건 불필요한 추가 절차라고 느껴지기도 합니다.
+
+하지만, rerendering 최적화를 해야하는 상황에서는 정말 유용하게 사용 될 수 있습니다.
+
+다음과 같이, todos array을 state로 지닌 reducer가 있다고 가정해봅시다.
+
+```
+[
+  { id: 1, text: '책 읽기', done: true },
+  { id: 2, text: '블로그 글 쓰기', done: true },
+  { id: 3, text: '운동하기', done: false },
+  { id: 4, text: '요리하기', done: false }
+]
+```
+
+여기서 특정 component 에서 할 일 목록 중 하지 않는 작업만 필터링해서 보여준다고 가정해봅시다. 일반적으로는 다음과 같이 구현을 하게 되겠지요?
+
+```
+function UndoneTasks() {
+   const tasks = useSelector(state => state.todos.filter(todo => todo.done));
+   // ...
+}
+```
+
+별 문제가 없어보일 수 있지만 사실 문제가 있습니다. redux의 todos 말고 redux에서 관리되고 있는 관련 없는 상태가 변경 될 때에도 위 component에선 rerendering이 발생합니다. 그 이유는, 배열의 filter 함수는 새로운 배열를 생성하기 때문에 매번 값이 변경된 것으로 간주하여 rerendering이 되는 것이죠.
+
+이 때 `Memoized Selector`를 사용하면 최적화를 할 수 있습니다.
+
+```
+import { createSelector } from '@reduxjs/toolkit'
+
+const todosSelector = (state) => state.todos;
+const undoneTodos = createSelector(
+  todosSelector,
+  (todos) => todos.filter((todo) => !todo.done)
+);
+
+function UndoneTasks() {
+  const tasks = useSelector(undoneTodos);
+  // ...
+}
+```
+
+`createSelector` 를 사용하여 `Memoized Selector`를 만들 수 있는데요, 이 함수에는 selector 들을 연달아서 넣을 수 있습니다. 위 코드에 대해서 설명을 하자면 우선 `todosSelector` 라는게 있죠. 이 함수가 `createSelector` 첫번째 인자로 지정이 됐는데, 만약 이 첫번째 selector 에서 반환된 값이 변경될 때에만 그 다음 selector를 호출하여 원하는 값을 연산하여 조회합니다.
+
+이렇게 하면 todos 배열에 실제로 변화가 있을 때에만 filter 함수를 돌리게 되고, 리렌더링을 하게 되지요. 그렇다고 이러한 상황에 꼭 Memoized Selector 를 사용해야만 최적화를 할 수 있을까요? 꼭 그런것은 아닙니다.
+
+`useMemo` 를 활용하면 비슷한 최적화를 할 수 있습니다. 다음과 같이 말이죠.
+
+```
+import { useMemo } from 'react';
+
+function UndoneTasks() {
+const tasks = useSelector(state => state.todos);
+const undoneTasks = useMemo(() => tasks.filter(task => !tasks.done), [tasks])
+// ...
+}
+```
+
+이렇게, redux에서 관리하고 있는 상태를 **어떠한 연산을 처리한 후 조회해야 한다면 Memoized Selector 또는 useMemo 를 꼭 사용**하시는 것을 권장드립니다.
 
 - Create a Redux store with `configureStore`
   - `configureStore` accepts a `reducer` function as a named argument
@@ -5212,6 +5461,369 @@ https://redux-toolkit.js.org/tutorials/quick-start
 - React에서 사용: https://medium.com/@seungha_kim_IT/typescript-%EC%B5%9C%EC%8B%A0-%EA%B8%B0%EB%8A%A5%EC%9D%84-%ED%99%9C%EC%9A%A9%ED%95%9C-redux-%EC%95%A1%EC%85%98-%ED%83%80%EC%9D%B4%ED%95%91-ef46fff8850b
 
 - https://jcon.tistory.com/181#:~:text=Redux%20Slice,%ED%95%98%EA%B8%B0%20%EB%95%8C%EB%AC%B8%EC%97%90%20slice%EB%9D%BC%EA%B3%A0%20%EB%B6%80%EB%A6%85%EB%8B%88%EB%8B%A4.
+
+### API request은 이제 react-query, SWR을 이용한다
+
+2020년에 **react-query와 SWR** 라는 libraries가 release 되었다. 두 라이브러리 모두, Hook을 사용하여 API 요청 상태를 관리하고, 또 cache 관리를 해준다.
+
+- SWR은 Next.js를 만든 Vercel팀에서 만든 것이기에 server0side rendering을 하는 경우 Next.js 와 함께 사용해야 한다.
+- 반면 라프텔에서는 Next.js를 사용하지 않기 때문에 SWR이 저희에겐 적합하지 않았습니다. 그리고, react-query의 queryCache 기능이 다양한 상황에 유용하게 사용 될 수 있어서 현재 매우 편하게 사용을 하고 있습니다.
+
+위 두 라이브러리는 모두 훌륭한 솔루션들입니다. 여러분의 project에서 API 요청 하는 작업을 현재 redux와 middleware를 기반으로 구현을 했더라면, 점진적으로 둘 중 하나에게 해당 작업을 위임을 하는 것도 매우 좋은 선택지라고 생각합니다.
+
+### Test Code를 작성하자
+
+Redux는 테스트하기 쉽습니다. 이는 리덕스를 사용함으로써 얻을 수 있는 혜택이라고 생각합니다. 따라서, 가능하다면 redux 관련 코드에 대한 테스트를 작성해가면서 project 개발을 하는 것이 좋다. Test code가 있으면 확실히 코드의 안전성이 크게 생긴다.
+
+#### Reducer Testing
+
+`todosSlice` 가 다음과 같이 구현되어 있다고 가정해봅시다.
+
+```
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { nanoid } from 'nanoid';
+import { Todo } from '../types/Todo';
+
+const todosSlice = createSlice({
+  name: 'todos',
+  initialState: [] as Todo[],
+  reducers: {
+    add: {
+      prepare: (text: string) => ({
+        payload: {
+          id: nanoid(),
+          done: false,
+          text
+        }
+      }),
+      reducer(state, action: PayloadAction<Todo>) {
+        state.push(action.payload);
+      }
+    },
+    toggle(state, action: PayloadAction<string>) {
+      const todo = state.find((todo) => todo.id === action.payload);
+      if (!todo) return;
+      todo.done = !todo.done;
+    },
+    remove(state, action: PayloadAction<string>) {
+      return state.filter((todo) => todo.id !== action.payload);
+    }
+  }
+});
+
+export const todosActions = todosSlice.actions;
+export default todosSlice.reducer;
+```
+
+여기서 [prepare](https://redux-toolkit.js.org/api/createSlice#customizing-generated-action-creators) 부분은 action creator function를 customizing 하는 기능이다. 할 일 항목을 생성, toggle, 삭제하는 action들이 현재 구현이 되어있다.
+
+만약 이를 통해 만든 reducer를 test 한다면 다음과 같이 작성합니다.
+
+```
+import todos, { todosActions } from './todos';
+
+describe('todos reducer', () => {
+  it('has initial state', () => {
+    expect(todos(undefined, { type: '@@INIT' })).toEqual([]);
+  });
+
+  it('handles add', () => {
+    const state = todos([], todosActions.add('컴포넌트 만들기'));
+    expect(state[0].text === '컴포넌트 만들기');
+  });
+
+  const sampleState = [
+    { id: '1', done: false, text: '컴포넌트 만들기' },
+    { id: '2', done: false, text: '테스트 코드 작성하기' }
+  ];
+
+  it('handles toggle', () => {
+    let state = todos(sampleState, todosActions.toggle('1'));
+
+    expect(state).toEqual([
+      { id: '1', done: true, text: '컴포넌트 만들기' },
+      { id: '2', done: false, text: '테스트 코드 작성하기' }
+    ]);
+    state = todos(state, todosActions.toggle('1'));
+    expect(state).toEqual([
+      { id: '1', done: false, text: '컴포넌트 만들기' },
+      { id: '2', done: false, text: '테스트 코드 작성하기' }
+    ]);
+  });
+
+  it('handles remove', () => {
+    let state = todos(sampleState, todosActions.remove('2'));
+    expect(state).toEqual([{ id: '1', done: false, text: '컴포넌트 만들기' }]);
+    state = todos(state, todosActions.remove('1'));
+    expect(state).toEqual([]);
+  });
+});
+```
+
+우선 리듀서에서 초기상태가 잘 설정되는지 확인하고, 각 액션에 대해서 우리가 의도한 바 대로 처리가 되고 있는지 테스트 코드를 작성하면 됩니다.
+
+#### Hook 테스팅
+
+Redux와 연동하는 작업은 Custom Hook을 만들어서 하면 좋다. 이 할 일 목록 project에선 다음과 같이 `useFilteredTodos` 라는 Hook을 만들어서 사용하고 있다.
+
+```
+import { useMemo } from 'react';
+import { useRootState } from '../modules';
+import { useFilter } from './useFilter';
+import { useTodoActions } from './useTodoActions';
+
+export function useFilteredTodos() {
+  const todos = useRootState((state) => state.todos);
+  const [filter] = useFilter();
+
+  const filteredTodos = useMemo(
+    () =>
+      filter === 'ALL'
+        ? todos
+        : todos.filter((todo) => todo.done === (filter === 'DONE')),
+    [todos, filter]
+  );
+  const actions = useTodoActions();
+
+  return [filteredTodos, actions] as const;
+}
+```
+
+여기서 `useTodoActions` 는 dispatch 와 binding 된 action creator function 들을 반환하고, `useFilter`는 현재 filter 상태와 해당 값의 업데이트 함수를 반환한다.
+Custom Hook을 테스트 하는 방법은 기본적으로 두가지가 있습니다.
+
+1. Test용 component: `UseFilteredTodosExample` 같은 Test용 component를 만들어 해당 component의 test를 작성한다.
+2. [react-hooks-testing-library](https://github.com/testing-library/react-hooks-testing-library#when-not-to-use-this-library) 를 사용하는 것 입니다. 이 라이브러리를 사용 할 경우 컴포넌트를 따로 만들지 않고 Custom Hook을 테스트 할 수 있습니다. 참고로, 이 라이브러리의 문서에서는 하나의 컴포넌트에서만 사용되는 Hook이거나, 컴포넌트를 사용해서 테스트하기에 쉬운 Hook이라면 이 라이브러리를 사용하지 않을 것을 권고하고 있습니다. 현재 예시 프로젝트의 경우엔 이 상황에 해당되는데, 그럼에도 불구하고 공부 차원에서 Hook만 테스트 할 경우 어떻게 하는지 알아보겠습니다.
+
+```
+import { renderHook, act } from '@testing-library/react-hooks/dom';
+import prepareReduxWrapper from '../lib/prepareReduxWrapper';
+import { RootState } from '../modules';
+import { filterActions } from '../modules/filter';
+import { useFilteredTodos } from './useFilteredTodos';
+
+describe('useFilteredTodos', () => {
+  const initialState: RootState = {
+  filter: 'ALL',
+  todos: [
+    {
+      id: '1',
+      text: '컴포넌트 만들기',
+      done: false
+    },
+    {
+      id: '2',
+      text: '테스트 코드 작성하기',
+      done: false
+    }
+  ]};
+
+  const setup = () => {
+    const [wrapper, store] = prepareReduxWrapper(initialState);
+    const { result } = renderHook(() => useFilteredTodos(), { wrapper });
+    return { store, result };
+  };
+
+  it('properly shows todos', () => {
+    const { result } = setup();
+    expect(result.current[0]).toHaveLength(2);
+  });
+
+  it('toggles todo', () => {
+    const { result } = setup();
+    // 첫번째 항목 토글
+    act(() => {
+      result.current[1].toggle('1');
+    });
+
+  expect(result.current[0][0].done).toBe(true);
+
+  act(() => {
+    result.current[1].toggle('1');
+  });
+
+  expect(result.current[0][0].done).toBe(false);
+  });
+
+  it('filters todos', () => {
+    const { result, store } = setup();
+    // 첫번째 항목 토글
+    act(() => {
+      result.current[1].toggle('1');
+    });
+    // store를 통하여 filter 직접 변경
+
+    store.dispatch(filterActions.applyFilter('DONE'));
+    expect(result.current[0][0].text).toBe('컴포넌트 만들기');
+    expect(result.current[0].length).toBe(1);
+    // UNDONE filter 확인
+   store.dispatch(filterActions.applyFilter('UNDONE'));
+   expect(result.current[0][0].text).toBe('테스트 코드 작성하기');
+    expect(result.current[0].length).toBe(1);
+    // ALL filter 확인
+    store.dispatch(filterActions.applyFilter('ALL'));
+     expect(result.current[0].length).toBe(2);
+  });
+
+  it('removes todo', () => {
+    const { result } = setup();
+    // 첫번째 항목 제거
+    act(() => {
+      result.current[1].remove('1');
+  });
+
+  expect(result.current[0][0].text).toBe('테스트 코드 작성하기');
+  });
+});
+```
+
+`renderHook` 을 사용하면 별도의 컴포넌트를 만들지 않고도 Hook을 쉽게 테스트 할 수 있습니다. 여기서 `prepareReduxWrapper` 는 redux store와 Wrapper component를 준비해주는 함수입니다.
+
+이렇게 테스트 코드를 작성하면, 우리가 만든 Hook에 대한 완전한 테스트를 할 수 있겠죠. 상황에 따라 완전한 테스트는 생략하고 MockStore를 사용하여 단순히 액션이 잘 디스패치 되는지만 확인하는것도 좋을 수 있습니다.
+
+다음 예시는 MockStore를 사용하는 테스트 예시입니다.
+
+```
+import { act, renderHook } from '@testing-library/react-hooks/dom';
+import prepareMockReduxWrapper from '../lib/prepareMockReduxWrapper';
+import { filterActions } from '../modules/filter';
+import { useFilter } from './useFilter';
+
+describe('useFilter', () => {
+  const setup = () => {
+  const [wrapper, store] = prepareMockReduxWrapper({
+  filter: 'ALL',
+  todos: []
+  });
+
+  const { result } = renderHook(() => useFilter(), { wrapper });
+    return { wrapper, store, result };
+  };
+
+  it('returns filter', () => {
+    const { result } = setup();
+    expect(result.current[0]).toEqual('ALL');
+  });
+
+  it('returns filter', () => {
+    const { store, result } = setup();
+    // applyFilter 함수를 호출하고
+    act(() => {
+     result.current[1]('DONE');
+    });
+    // 해당 액션이 디스패치 됐는지 확인
+    expect(store.getActions()).toEqual([filterActions.applyFilter('DONE')]);
+  });
+});
+```
+
+여기서는 `applyFilter` 함수를 호출 한 다음에 상태가 업데이트하는 것 까지 확인하지는 않고, 단순히 해당 액션이 디스패치 됐는지만 확인합니다. Action이 dispatch 됐을 때 상태가 잘 변경 되는 것은 reducer test에서 이미 했기 때문에 생략 해도 된다.
+
+#### Component Testing
+
+Component Testing도 Hook test와 비슷합니다. 완전한 테스트를 할 수도 있고, MockStore를 사용하여 간단한 테스트만 진행을 하면 됩니다. Component Testing 는 `@testing-library/react`를 사용해서 진행하는 것이 편합니다.
+
+다음 예시들은 이 라이브러리를 사용한 예시 테스트 코드입니다.
+
+만약 새로운 할 일 등록을 하는 컴포넌트를 MockStore를 사용하여 테스트 할 경우엔 다음과 같이 테스트 코드를 작성 할 수 있습니다. 다음 테스트는 인풋에 텍스트를 입력하고 폼을 등록하는 과정을 테스트하고, 우리가 원하는 액션이 디스패치 됐는지 확인합니다.
+
+```
+import { render, fireEvent, screen } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
+import prepareMockReduxWrapper from '../lib/prepareMockReduxWrapper';
+import TodoForm from './TodoForm';
+import { todosActions } from '../modules/todos';
+
+describe('TodoForm', () => {
+  const setup = () => {
+  const [Wrapper, store] = prepareMockReduxWrapper();
+    render(
+      <Wrapper>
+      <TodoForm />
+      </Wrapper>
+    );
+    return { store };
+  };
+
+  it('renders properly', () => {
+    setup();
+  });
+
+  it('submit new todo', async () => {
+    const { store } = setup();
+    const input = await screen.findByPlaceholderText('할 일을 입력하세요.');
+    fireEvent.change(input, {
+      value: '컴포넌트 만들기'
+    });
+
+  fireEvent.submit(input);
+    expect(input).toHaveValue(''); // 인풋이 비었는지 확인
+  expect(
+    store
+      .getActions()
+      .filter((action) => action.type === todosActions.add.type)
+  ).toHaveLength(1); // 액션이 디스패치 됐는지 확인
+  });
+});
+```
+
+그 다음엔, 할 일 목록 필터를 변경하는 컴포넌트에서 버튼을 누르고 상태가 잘 변경되는지 완전한 component test를 하는 예시를 확인해봅시다.
+
+```
+import { render, fireEvent, screen } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
+import prepareReduxWrapper from '../lib/prepareReduxWrapper';
+import TodoFilters from './TodoFilters';
+
+describe('TodoFilters', () => {
+  const setup = () => {
+  const [Wrapper, store] = prepareReduxWrapper();
+  render(
+    <Wrapper>
+    <TodoFilters />
+    </Wrapper>
+  );
+  return { store };
+  };
+
+  it('renders properly', () => {
+    setup();
+  });
+
+  it('submit new todo', async () => {
+    setup();
+    const allButton = await screen.findByText('전체');
+    expect(allButton).toBeDisabled();
+    const doneButton = await screen.findByText('완료');
+    fireEvent.click(doneButton);
+    expect(doneButton).toBeDisabled();
+    const undoneButton = await screen.findByText('미완료');
+    fireEvent.click(undoneButton);
+    expect(undoneButton).toBeDisabled();
+  });
+});
+```
+
+이렇게 component를 test하는 방식으로 했을 때 간단하게 할 수 있는 상황이라면 굳이 Hook test를 따로 만들지 않고 component test만 진행해도 괜찮습니다.
+
+### Redux 정리
+
+- `subscribe(listener)`: state 변경 시 listener를 실행하는 함수
+- `dispatch(action)`: state 변경을 요청하는 함수. action object를 parameter로 넘겨, 그 type에 맞는 reducer를 호출한다.
+- `reducer()`: action type에 따라 실제 state을 변경할 update logic이 정의된 함수
+
+기존에는 부모에서 자식의 자식의 자식까지 state를 전달해줘야 했는데, redux를 사용하면 store를 사용하여 state를 component와 독립적으로 두고 상태를 업데이트 하거나, 새로운 상태를 전달받는다. 따라서, 여러 component를 거쳐서 받아올 필요 없이 아무리 깊숙히 있어도 직속 부모에게서 받아오는 것 처럼 원하는 상태값을 골라서 귀찮은 props 없이 편리하게 받을 수 있다.
+
+리덕스를 사용한다면
+- Redux Toolkit 꼭 사용하자
+- TypeScript 꼭 사용하자
+- Selector 사용하거나, 상태 조회 과정에서 발생하는 불필요한 리렌더링에 유의하자
+- Presentational / Container 컴포넌트는 이제 그만 구분하고 Custom Hook을 만들자
+- API 요청에 대한 로직은 가능하다면 react-query 또는 SWR에게 위임하자
+- 적합한 상황에 미들웨어 잘 활용하자
+- 테스트 코드를 잘 작성하자
+
+ref: https://velog.io/@velopert/using-redux-in-2021#redux-toolkit%EC%9D%80-%EC%9D%B4%EC%A0%9C-%ED%95%84%EC%88%98%ED%85%9C%EC%9E%85%EB%8B%88%EB%8B%A4
 
 ## % 부록0: 유용한 VSCode 기능 알아보기 %
 

@@ -50,26 +50,26 @@
 
 ### 1. Basic Setup
 
-- Computer
+- Computer Operating System
   - MacOS
   - Windows (+ ⭐ **WSL**: Window subsystem for Linux)
   - Linux
 - Keyboard
   - 기계식 키보드
-    - **Red 적축**: 키압이 낮기때문에 끝까지 누르지 않아도 입력이 된다.
-    - Brown 갈축: 무거운 느낌으로 비추
+    - **Red 적축**: 키압이 낮기때문에 끝까지 누르지 않아도 입력 가능
+    - Brown 갈축: 무거운 느낌
     - Wireless 60%, 66% Mechanical Keyboard
       - Anna Pro 2 Gatron Red 게이트론 적축
       - Leopold FC750R slient red
       - ⭐ Keychron K7, 68 Keys Ultra-Slim Wireless Low-Profile Gateron Mechanical RGB
-  - Capacitive Keyboard 무접점 키보드
+  - Capacitive (무접점) Keyboard
 - Browser
   - **Chrome**
   - Edge
   - Safari (MacOS)
   - **Brave browser**
 - Text Editor
-  - ⭐ **VSCode** (+ VSCode extension)
+  - ⭐ **VSCode** (+ Extensions)
   - IntelliJ
   - Emac
   - Vim
@@ -79,16 +79,15 @@
   - **Iterm2** (MacOS)
   - Powershell (Windows)
   - Bash
-  - zsh
 - Other Tools
-  - Programming Langauges (Node.js, Python, Java, ...)
-  - nvm (Node Version Manager)
+  - Programming Langauges (Node.js, Python, Java, C++, Rust, ...)
+  - Node Version Manager (NVM)
   - Git/Github cli (command line)
 - OS별 개발환경 세팅:
   - Macbook developer setup: https://www.youtube.com/watch?v=B26yiuC5zPM
-    - Homebrew (MacOS package manager): https://brew.sh/
-  - Window developer setup (+ WSL): https://nomadcoders.co/windows-setup-for-developers
-    - Chocolatey (Window package manager): https://chocolatey.org/
+    - [Homebrew (MacOS package manager)](https://brew.sh/)
+  - Window developer setup (+ WSL)
+    - [Chocolatey (Window package manager)](https://chocolatey.org/)
 
 #### Windows Developer Setup (WSL)
 
@@ -268,10 +267,11 @@ React.js, Typescript 등등 outside library/framework로 만들어 native HTML, 
         - Remix: https://remix.run/docs/en/v1
         - Gatsby: https://www.gatsbyjs.com/
       - Managing and centralizing application state
-        - redux-toolkit: https://redux-toolkit.js.org/
+        - ⭐ **redux-toolkit**: https://redux-toolkit.js.org/
         - react-redux: https://react-redux.js.org/
         - redux-thunk: https://github.com/reduxjs/redux-thunk
         - recoil: https://recoiljs.org/
+        - **zustand** (독일어로 상태라는 뜻이다): https://github.com/pmndrs/zustand
       - CSS Framework
         - react-bootstrap (components): https://react-bootstrap.github.io/getting-started/introduction
         - Material-UI (components): https://mui.com/
@@ -290,27 +290,46 @@ React.js, Typescript 등등 outside library/framework로 만들어 native HTML, 
         - Framer motion (animation): https://www.framer.com/motion/
         - react-hook-form: https://react-hook-form.com/
         - react-query: https://react-query.tanstack.com/
+        - react-toastify (shows error, alert, and success alert): https://github.com/fkhadra/react-toastify#readme
     - Vue based
       - Server-Side Rendering (SSR)
-        - ⭐ **Nuxt**: https://nuxtjs.org/
+        - Nuxt: https://nuxtjs.org/
       - CSS Framework
         - Vuetify: https://next.vuetifyjs.com
     - Other Library/Framework
       - redux (manage state): https://redux.js.org/introduction/getting-started
       - multer (upload files): https://github.com/expressjs/multer
 
-Front-End library/framework은 web application을 더 쉽게 작성할 수 있게 만들어 주는 outside library/framework을 의미한다.
-**Single Page Application** (SPA)는 body가 비어있는 하나의 HTML을 가지고 Javascript를 이용해서 그 안에 Data만 변경하는 것을 말한다.
-Server가 Client에 자료를 넘겨주면, Client computer가 그 정보를 가지고 HTML를 완성하기 때문에 Client Side Rendering (CSR)이라고 부른다. CSR은 HTML이 비어있기 때문에 검색 엔진에 노출되어 검색되기 쉽지 않아 Search Engine Optimization (SEO)에 취약하다.
+Front-End library/framework은 web application의 UI 부분을 더 쉽게 작성할 수 있게 만들어 준다.
+**Single Page Application** (SPA)는 body가 비어있는 하나의 HTML을 가지고 Javascript를 이용해서 그 안에 Data를 dynamic하게 할당한다.
+Server가 client에 javascript를 넘겨주면, client가 이를 가지고 HTML를 완성하기 때문에 Client Side Rendering (CSR)이라 한다. CSR에선 HTML이 비어있기 때문에 검색 엔진에 노출되어 검색되기 쉽지 않아 Search Engine Optimization (SEO)에 취약하다.
 SPA를 제공하는 frontend framework에는 크게 React, Vue, Angular가 있다. 이들은 사용방법이 거의 비슷하기 때문에 하나만 잘 이해하면, 나머지는 쉽게 사용할 수 있다.
 
 - ⭐ **React.js**: React는 Meta사에서 만든 Javascript frontend web library로 computer에 최신 버전의 `Node.js`를 설치하면 누구나 사용할 수 있다.
 - **Vanilla.js** is just a way to refer to native (non-extended and standards-based) JavaScript
 
+#### Design UI/UX Tool
+
+- Figma: https://www.figma.com/
+- Adobe xd: https://www.adobe.com/products/photoshop
+- Adobe photoshop (image 선명도, 채광): https://www.adobe.com/products/photoshop
+
+Figma, Adobe xd로 web/mobile UI를 design하면, 쉽게 css를 얻을 수 있다. **image의 선명도는 매우 중요**하므로 Adobe photoshop의 curve 기술을 사용한다. Figma는 무료이다.
+
+- Web design 시 width를 보통: 1920px로 잡는다.
+
+- Figma
+  - `Shift + R`: Ruler
+  - `o`: circle
+  - `r`: rectangle
+  - `t`: text
+  - prototype > interactions
+  - plugin
+    - Material design icons
+
 ### 3. Back-End (Server side)
 
-Back-End은 사용자가 웹사이트를 방문시 서버쪽에서 실행 할 User Experience(UX)을 의미한다.
-API key같은 외부에 노출되서는 안되는 environmental variables들은 server side에서 다뤄, 사용자가 접근하지 못하게 해야한다. 또한 데이터를 저장할 database의 logic 역시 backend에서 다뤄야 하는 요소들중 하나이다.
+Back-End은 사용자가 웹사이트를 방문시 서버쪽에서 실행 할 User Experience (UX) 부분을 말한다. API key같이 외부에 노출되선 안되는 environmental variables들은 server side에서 다뤄, 사용자가 접근하지 못하게 해야한다. 또한 데이터를 저장할 database의 logic 역시 backend에서 다뤄 사용자가 임의로 접근하지 못하게 해야한다.
 
 - [Server](https://github.com/heeshin174/Web_App_Dev_Kor#1-web-application-development)
 
@@ -332,10 +351,11 @@ API key같은 외부에 노출되서는 안되는 environmental variables들은 
       - PG-Pool.js: https://node-postgres.com/api/pool
   - NOSQL
     - Mongodb: https://www.mongodb.com/cloud
-      - Mongoose.js: https://mongoosejs.com/
+      - mongoose.js: https://mongoosejs.com/
   - Prisma (PlanetScale에 hosting된 serverless database와 연결): https://www.prisma.io/
   - PlanetScale (serverless database): https://planetscale.com/
   - Firebase (backend as a service): https://firebase.google.com/
+  - AWS
 
 - other Javascript Library/Framework
 
@@ -416,8 +436,9 @@ Database는 크게 Relational database `sql (Structured Query Language)`와 Not 
 ### 5. Testing
 
 - JavaScript Testing Framework
+
   - Jest: https://jestjs.io/
-- Cypress (front end testing tool): https://docs.cypress.io/guides/overview/why-cypress#In-a-nutshell
+  - Cypress (front end testing tool): https://docs.cypress.io/guides/overview/why-cypress#In-a-nutshell
 
 - 다른 Operating system에서도 내 웹사이트가 잘 작동하는지 확인한다.
   Windows 사용자면, MacOS에서도 접속해본다.
@@ -464,16 +485,17 @@ Database는 크게 Relational database `sql (Structured Query Language)`와 Not 
   - Stackblitz (web framework code 실행): https://stackblitz.com/
   - GoormIDE (Docker based Cloud IDE): https://www.goorm.io/
   - Pythontutor (code visulaization): https://pythontutor.com/
-  - Figma (Design UI/UX): https://www.figma.com/
-  - Adobe photoshop (Design UI): https://www.adobe.com/products/photoshop
   - Diagram.io (Design UI): https://app.diagrams.net/
   - Jsbin (간단한 HTML, CSS, JS code 실행): https://jsbin.com/
   - Quicktype (Api로 얻은 Json data를 각종 다른 언어로 변환): https://quicktype.io/
   - cloudcraft (draw AWS diagrams): https://www.cloudcraft.co/
-- Educations
-  - Async Await: https://kiwanjung.medium.com/%EB%B2%88%EC%97%AD-async-await-%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-%EC%A0%84%EC%97%90-promise%EB%A5%BC-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-955dbac2c4a4
-  - w3school: https://www.w3schools.com/
+- Algorithms:
+  - programmers: https://programmers.co.kr
   - Leetcode: https://leetcode.com/
+  - Careercup: https://www.careercup.com
+  - Glassdoor Interview section for specific companies: https://www.glassdoor.com
+- Educations
+  - w3school: https://www.w3schools.com/
   - react로 만든 웹 github로 deploy하기: https://codingapple.com/unit/react-build-deploy-github-pages/
 
 ## 1. HTML
@@ -497,9 +519,7 @@ HTML는 **tree structure**를 가진다. Every tree node is an object. Tags are 
     - ...
     - `<footer>`
 
-`index.html`은 웹사이트의 홈페이지를 의미하는 naming이다.
-
-- `index.html` file
+- `index.html` file: `index.html`은 웹사이트의 홈페이지를 의미하는 naming이다.
 
 ```
 <!DOCTYPE html>
@@ -1057,6 +1077,32 @@ Flexbox와 Grid의 큰 차이점은
 - Grid: two dimension layout
 
 https://studiomeal.com/archives/533
+
+- Grid는 다음과 같은 경우에 많이 사용된다.
+  - Card형 UI
+  - 쎔네일과 정보가 굉장히 많은 사이트 
+    - Naver같은 포털 사이트
+    - 대형 쇼핑몰
+      
+- Web design시 width는 보통 1920px를 사용한다.
+- 그럴 경우 content witdh를 1320px, 1440px, 1080px 로 잡아 grid를 나눈다.
+  - 1320px은 생각보다 넓은 grid이다.
+  - 1320px: 110px rectangle => 12개
+    - 110px: 20, 70, 20 또는 15, 80, 15
+    - 2걔: 620px ((1320 - 40 - 40) / 2)
+    - 3걔: 400px ((1320 - 40 - 80) / 3)
+    - 4걔: 290px ((1320 - 40 - 120) / 4)
+    - 5걔: 224px ((1320 - 40 - 160) / 5)
+    - 6걔: 180px ((1320 - 40 - 200) / 6)
+  - 1080px: 90px rectangle => 12개
+    - 90px: 10, 70, 10
+    - 2걔: 520px ((1080 -20 - 20) / 2)
+    - 3걔: 340px ((1080 -20 - 40) / 3)
+    - 4걔: 250px ((1080 -20 - 60) / 4)
+    - 5걔: 196px ((1080 -20 - 80) / 5)
+    - 6걔: 160px ((1080 -20 - 100) / 6)
+
+![gridguide](img/gridguide.png)
 
 ### Responsive Design
 
@@ -4805,7 +4851,7 @@ Reducer는 현재 state와 action object를 인자로 받는 함수이다. Reduc
   2. 해당하는 action이 있으면 state의 복사본을 만들고, 복사본에 새로운 값을 업데이트 한 다음 리턴하면 됩니다.
   3. 해당하는 action이 없다면 기존 state를 변경하지 않고 반환합니다.
 
-- `.src/features/counterSlice` file
+- `./src/features/counterSlice` file
 
 ```
 const initialState = { value: 0 }
@@ -5220,6 +5266,8 @@ export default msgbox(state = initialState, action) {
 
 만약, 위 코드에서 봤던 메시지 박스를 띄우는 기능에 대한 `slice`를 생성한다면, 다음과 같이 작성 합니다.
 
+- `./feature/msgboxSlice.js`
+
 ```
 import { createSlice } from '@reduxjs/toolkit';
 
@@ -5257,7 +5305,7 @@ export const { open, close } = msgboxSlice.actions;
 
 redux를 사용 할 때, TypeScript를 사용하지 않으면, component에서 state를 조회할때, 그리고 action creator function를 사용 할 때 자동완성이 되지 않으므로 실수하기가 쉽습니다. TypeScript를 쓴다면 자동완성이 되기 때문에 생산성에 큰 도움을 줍니다. Redux Toolkit은 TypeScript 지원이 아주 잘 됩니다. 상태에 대한 type과, action에 대한 type만 명시하면 됩니다.
 
-- `./src/feature/msgboxSlice.ts` file
+- `./feature/msgboxSlice.ts` file
 
 ```
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
@@ -5300,8 +5348,18 @@ TypeScript에서 redux를 사용 할 때, react component 에서 redux state를 
 
 이 때 `RootState` type을 준비할 때는 다음과 같이 하면 편합니다.
 
+- `feature/rootReducer.ts` file
+
 ```
-const rootReducer = combineReducers({ ... })
+import { combineReducers } from "@reduxjs/toolkit";
+import { useSelector } from "react-redux";
+import authReducer from "./auth/authSlice";
+import counterReducer from "./counter/counterSlice";
+
+const rootReducer = combineReducers({
+  auth: authReduer
+  counter: counterReduer
+ })
 export type RootState = ReturnType<typeof rootReducer>;
 ```
 
@@ -5319,9 +5377,11 @@ export function useRootState<T>(selector: StateSelector<T>, equalityFn?: Equalit
 그럼 나중에 react component에서 다음과 같이 바로 바로 사용 할 수 있어 매우 편하다.
 
 ```
+import { useRootState } from "../features/rootReducer";
+
 function MyComponent() {
-  const something = useRootState(state => state.some.thing);
-  // ...
+  // something1, something2 from state.auth
+  const {something1, something2 } = useRootState(state => state.auth);
 }
 ```
 
@@ -5815,6 +5875,7 @@ describe('TodoFilters', () => {
 기존에는 부모에서 자식의 자식의 자식까지 state를 전달해줘야 했는데, redux를 사용하면 store를 사용하여 state를 component와 독립적으로 두고 상태를 업데이트 하거나, 새로운 상태를 전달받는다. 따라서, 여러 component를 거쳐서 받아올 필요 없이 아무리 깊숙히 있어도 직속 부모에게서 받아오는 것 처럼 원하는 상태값을 골라서 귀찮은 props 없이 편리하게 받을 수 있다.
 
 리덕스를 사용한다면
+
 - Redux Toolkit 꼭 사용하자
 - TypeScript 꼭 사용하자
 - Selector 사용하거나, 상태 조회 과정에서 발생하는 불필요한 리렌더링에 유의하자
@@ -7068,11 +7129,11 @@ app.listen(80, function () {
 - Configuring CORS
 
 ```
-var express = require('express')
-var cors = require('cors')
-var app = express()
+let express = require('express')
+let cors = require('cors')
+let app = express()
 
-var corsOptions = {
+let corsOptions = {
   origin: 'http://example.com',
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
@@ -7106,7 +7167,6 @@ Ajax는 서버랑 비동기적으로 통신할 때 사용하는 기술이므로 
 원하는 데이터의 URL에 GET request를 보내는 데에는 여러가지 방법이 있다:
 
 1. Browser에 URL를 입력
-
 2. HTML `form` tag로 GET요청
 
 `form` tag내의 `button`을 누르면, action의 URL로 GET요청이 실행된다.
@@ -7471,28 +7531,27 @@ Rust does not have `null` vallue
 
 ```
 fn main() {
-    // compound data type
-    // 1. tuple
-    let tup = (500, 6.4, 1);
+  // compound data type
+  // 1. tuple
+  let tup = (500, 6.4, 1);
 
-    // destructuring
-    let (x, y, z) = tup;
+  // destructuring
+  let (x, y, z) = tup;
 
-    // access a tuple element directly by using a period (.)
-    // followed by the index of the value we want to access.
-    let five_hundred = x.0;
-    let six_point_four = x.1;
-    let one = x.2;
+  // access a tuple element directly by using a period (.)
+  // followed by the index of the value we want to access.
+  let five_hundred = x.0;
+  let six_point_four = x.1;
+  let one = x.2;
 
-    println!("The value of y is: {}", y);
+  println!("The value of y is: {}", y);
 
+  // 2. Array
+  let a = [1, 2, 3, 4, 5];
 
-    // 2. Array
-    let a = [1, 2, 3, 4, 5];
-
-    // access a array element directly by using a square brackets []
-    let first = a[0];
-    let second = a[1];
+  // access a array element directly by using a square brackets []
+  let first = a[0];
+  let second = a[1];
 }
 ```
 
@@ -7564,11 +7623,11 @@ fn main() {
   takes_ownership(s); // s's value moves into the function...
                       // ... and so is no longer valid here
 
-   let x = 5; // x comes into scope
+  let x = 5; // x comes into scope
 
-    makes_copy(x); // x would move into the function,
-                   // but i32 is Copy, so it's okay to still
-                   // use x afterward
+  makes_copy(x); // x would move into the function,
+                 // but i32 is Copy, so it's okay to still
+                 // use x afterward
 
 } // Here, x goes out of scope, then s. But because s's value was moved, nothing
   // special happens.
@@ -7756,18 +7815,17 @@ Nest.jS는 singleton design pattern을 지향하기 때문에 instance를 직접
 ```
 @RequestMapping(value="/getUsers")
 public String getUsers(Model model) {
-    ArrayList arrayListOfUser = new ArrayList<>();
+  ArrayList arrayListOfUser = new ArrayList<>();
 
-    for(int indexOfUser = 0; indexOfUser < 100; indexOfUser++) {
-        User user = new User();
-        user.setUserId(indexOfUser);
-        user.setUserName("UserName"+indexOfUser);
-        arrayListOfUser.add(user);
-    }
+  for(int indexOfUser = 0; indexOfUser < 100; indexOfUser++) {
+    User user = new User();
+    user.setUserId(indexOfUser);
+    user.setUserName("UserName"+indexOfUser);
+    arrayListOfUser.add(user);
+  }
 
-    model.addAttribute("users",arrayListOfUser);
-
-    return "user";
+  model.addAttribute("users",arrayListOfUser);
+  return "user";
 }
 ```
 
@@ -7776,8 +7834,8 @@ public String getUsers(Model model) {
 ```
 @RequestMapping(value="/getUsers")
 public String getUsers(Model model) {
-    model.addAttribute("users", userService.getUsers());
-    return "user";
+  model.addAttribute("users", userService.getUsers());
+  return "user";
 }
 ```
 
@@ -7873,7 +7931,7 @@ export class MoviesController {
 	  return "create movie";
   }
 
-	/**
+  /**
    * @route   DELETE movies/:id
    * @desc    DELETE a movie
    * @access  Private
@@ -7883,7 +7941,7 @@ export class MoviesController {
 	  return `delete movie with the id ${id}`;
   }
 
-	/**
+  /**
    * @route   PATCH movies/:id
    * @desc    PATCH a movie
    * @access  Private

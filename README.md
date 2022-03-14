@@ -191,6 +191,17 @@ export NVM_DIR="$HOME/.nvm"
 - powerlevel10k (A Zsh theme): https://github.com/romkatv/powerlevel10k#oh-my-zsh
 - TerminalSplash: https://terminalsplash.com/
 
+만약 Window Subsystem for Linux (WSL)에서 작업 중이라면 `$ wsl hostname -I`를 Window terminal에 입력 후, localhost를 결과값으로 변경한다.
+즉 localhost로 연결되지 않는 경우, 코드를 local computer가 아닌 다른 곳에 작성 했다는 의미이고, localhost를 그에 맞게 변경한다.
+
+- To close server, type `Ctrl + C`
+- `$ wsl hostname -I`의 값은 상시 변하므로, local computer에서 RESTAPI test시 계속 변경해 주어야 한다.
+
+```
+Window: GET http://localhost:5000/api/users/me
+WSL: GET http://172.29.69.223:5000/api/users/me
+```
+
 ### 2. Front-End (Client side)
 
 Front-End은 사용자가 웹사이트를 방문시 보게되는 화면, 즉 User Interface (UI)을 의미한다. Front-End의 기본은 `HTML`, `CSS`, `Javascript`이다. 이는 web browser가 읽을 수 있는 파일들이 이 세가지 밖에 없기 때문이다. 최근에는 `Web Assembly`까지 포함해 4가지를 읽을 수 있다.
@@ -323,6 +334,8 @@ Figma, Adobe xd로 web/mobile UI를 design하면, 쉽게 css를 얻을 수 있�
   - `o`: circle
   - `r`: rectangle
   - `t`: text
+  - `Ctrl + G`: Group Selection
+  - `Ctrl + /`: Command Palette
   - prototype > interactions
   - plugin
     - Material design icons
@@ -1080,10 +1093,9 @@ https://studiomeal.com/archives/533
 
 - Grid는 다음과 같은 경우에 많이 사용된다.
   - Card형 UI
-  - 쎔네일과 정보가 굉장히 많은 사이트 
+  - 쎔네일과 정보가 굉장히 많은 사이트
     - Naver같은 포털 사이트
     - 대형 쇼핑몰
-      
 - Web design시 width는 보통 1920px를 사용한다.
 - 그럴 경우 content witdh를 1320px, 1440px, 1080px 로 잡아 grid를 나눈다.
   - 1320px은 생각보다 넓은 grid이다.
@@ -1584,6 +1596,83 @@ array.flat(1); // 결과 : [1,2,3,4,5]
 // 데이터 정리도 가능
 const entries = ["bob", "sally", , , , , , , , "cindy"];
 entries.flat(); // 결과 ['bob', 'sally', 'cindy'];
+```
+
+11. `Array.prototype.indexOf()`
+
+- returns the first index at which a given element can be found in the array, or -1 if it is not present.
+
+```
+const beasts = ['ant', 'bison', 'camel', 'duck', 'bison'];
+
+console.log(beasts.indexOf('bison')); // 1
+
+// start from index 2
+console.log(beasts.indexOf('bison', 2)); // 4
+
+console.log(beasts.indexOf('giraffe')); // -1
+```
+
+12. `Array.prototype.toString()`
+
+- The `toString()` method returns a string representing the specified array and its elements.
+
+```
+const array1 = [1, 2, 'a', '1a'];
+
+console.log(array1.toString());
+// expected output: "1,2,a,1a"
+```
+
+#### Objects
+
+Javascript에서 object는 curly brackets `{}`를 사용한다. object로 hashmap과 같은 data structure를 만들 수 있다. **key and value pair**.
+
+```
+let object1 = {
+  // key: 'name', value: 'Shin'
+  "name": 'Shin',
+  // key: 'age', value: 20
+  "age": 20,
+}
+
+// get all keys in object
+object1.keys()
+// ['name', 'age']
+object1.values()
+// ['Shin', 20]
+```
+
+#### in operator
+
+**The in operator tests whether the given property name exists in an object, it doesn't search the values.** To search values in an array, use the `indexOf` or `includes` function. It returns the array index of the found element, or -1 if the value can't be found.
+
+```
+let nums = [11, 15, 10, 11, 4, 2, 7];
+let ob = {
+	1: "Hi",
+	"name": "Shine",
+	3: "Hi",
+	4: "Hi",
+	5: "Hi",
+}
+// index 11 does not exist
+console.log(11 in nums) // false
+
+// index 6 exists
+console.log(6 in nums) // true
+console.log(nums.includes(6)) // false
+console.log(nums.includes(11)) // true
+
+// "name" key exists
+console.log("name" in ob) // true
+// number 3 key exists
+console.log(3 in ob) // true
+// "Hi" key does not exist
+console.log("Hi" in ob) // false
+
+// object does not have includes function
+console.log(ob.includes(3)) // error
 ```
 
 ### Object-Oriented Programming (OOP) 객체 지향형 언어
@@ -3009,9 +3098,11 @@ async function displayUser() {
 }
 ```
 
-#### Quiz
+### [Quiz](https://leetcode.com/problemset/all/)
 
-- Remove duplicates from list: list->set->list
+#### Remove duplicates from list
+
+- **list->set->list**
 
 ```
 // Remove Duplicates!
@@ -3027,6 +3118,62 @@ console.log([new Set(array)]);
 // [ Set(4) { '🐶', '🐱', '🐈', '🦮' } ]
 console.log([...new Set(array)]);
 // [ '🐶', '🐱', '🐈', '🦮' ]
+```
+
+#### Two Sum
+
+Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+
+- naive approach: O(n^2) time complexity
+
+```
+function twoSum(nums: number[], target: number): number[] {
+	for (let i = 0; i < nums.length; i++) {
+		let newTarget = target - nums[i];
+		if (nums.includes(newTarget)) {
+      return [nums[i], newTarget];
+    }
+	}
+};
+```
+
+- Hashmap: O(n) time complexity
+
+```
+function twoSum(nums: number[], target: number): number[] {
+	for (let i = 0; i < nums.length; i++) {
+		let newTarget = target - nums[i];
+		if (nums.includes(newTarget)) {
+      return [nums[i], newTarget];
+    }
+	}
+};
+
+let nums = [11, 15, 10, 11, 4, 2, 7];
+console.log(twoSum(nums, 9)); // [2, 7]
+```
+
+#### Palindrome Number
+
+Given an integer `x`, return true if `x` is palindrome integer. An integer is a **palindrome** when it reads the same backward as forward.
+For example, 121 is a palindrome while 123 is not.
+
+- Optimize solution: O(d/2) time complexity
+
+```
+function isPalindrome(x: number): boolean {
+  if (x < 0 || (x != 0 && x % 10 == 0)) {
+    return false;
+  }
+
+  let res = 0;
+  while (x > res) {
+    res = res * 10 + (x % 10);
+    x = x / 10;
+  }
+
+  return x == res || x == res / 10;
+}
 ```
 
 ## 4. [Typescript](https://www.typescriptlang.org/)
@@ -3077,6 +3224,8 @@ decimal = "Hello"; // error: decimal은 number만 가능
 - Primitives (기본형/원시타입): string, number, boolean, bigint, symbol
   - `string` 문자형
     - ' 나 " 는 물론, backtic ` 도 사용해 string을 만들 수 있다.
+    - single quote ('')는 주어진 문자열을 그대로 표현하고 (String literal)
+    - double quote ("")는 주어진 문자열을 재해석하기 때문에 대부분의 경우 single quote를 사용하는 것이 좋다.
   - `number`
     - `number` is for numbers like 42. JavaScript does not have a special runtime value for integers. so there’s no equivalent to `int` or `float`.
   - `boolean`
@@ -3554,7 +3703,7 @@ const obj = {
 
 Typescript의 Type assertions은 const assertions과 비슷하다. const assertions이 let 변수를 const 상수 취급할 때 사용했다면, **type assertions은 변수를 특정 data type으로 취급할 떄 사용**한다.
 
-어떤 상황에선 TypeScript보다 개발자가 값에 대해 더 잘 알고 일을 때가 있다. Type assertions은 compliler에게 "날 믿어, 난 내가 뭘 하고 있는지 알아"라고 말해주는 방법이다. Type assertions은 다른 언어들의 타입 변환 (형 변환)과 유사하지만, 다른 특별한 검사를 하거나 data를 재구성하지는 않습니다. 즉, runtime에 영향 없이 온전히 complier만 이를 사용한다는 의미이다. 즉, Typescript는 개발자를 믿고 그 **data를 개발자가 지정한 data type으로 다루게** 된다.
+어떤 상황에선 TypeScript보다 개발자가 값에 대해 더 잘 알고 일을 때가 있다. Type assertions은 compliler에게 "날 믿어, 난 내가 뭘 하고 있는지 알아"라고 말해주는 방법이다. Type assertions은 다른 언어들의 타입 변환 (형 변환: Type Casting)과 유사하지만, 다른 특별한 검사를 하거나 data를 재구성하지는 않는다. 즉, runtime에 영향 없이 온전히 complier만 이를 사용한다는 의미이다. 즉, Typescript는 개발자를 믿고 그 **data를 개발자가 지정한 data type으로 다루게** 된다.
 
 ```
 let someValue: any = "this is a string";

@@ -336,6 +336,7 @@ Figma, Adobe xd로 web/mobile UI를 design하면, 쉽게 css를 얻을 수 있�
   - `t`: text
   - `Ctrl + G`: Group Selection
   - `Ctrl + /`: Command Palette
+  - `Shift + A`: Auto Layout
   - prototype > interactions
   - plugin
     - Material design icons

@@ -505,7 +505,7 @@ Database는 크게 Relational database `sql (Structured Query Language)`와 Not 
   - cloudcraft (draw AWS diagrams): https://www.cloudcraft.co/
 - Algorithms:
   - programmers: https://programmers.co.kr
-  - Leetcode: https://leetcode.com/
+  - [Leetcode](https://leetcode.com/problemset/all/)
   - Careercup: https://www.careercup.com
   - Glassdoor Interview section for specific companies: https://www.glassdoor.com
 - Educations
@@ -1137,19 +1137,19 @@ https://studiomeal.com/archives/533
 
 ## 3. [Javascript](https://nodejs.org/en/)
 
-- node package manager (npm): https://www.npmjs.com/
+Javascript는 [node package manager (npm)](https://www.npmjs.com/)를 지원해 내 project에 외부 js library/framework를 쉽게 import 할 수 있게 만들어 준다.
 
 ### What is Javascript?
 
 **JavaScript, often abbreviated JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS. Javascript는 웹환경에서 가장 많이 쓰이는 프로그래밍언어이다.**
 
-맨 처음 Javascript는 web browser에 귀속된 programming language이였다. 각 browser마다 Javascript 해석엔진이 달랐는데, Chrome에서 사용하는 해석엔진인 'v8'이 browser와 독립적으로 출시되면서 프로그래밍언어로서 급부상했다. Javascript를 이용하여 웹서버, 모바일앱, mechine learning 등을 할 수 있지만, Javascript의 근본은 웹개발을 할 때 사용하는 것이다. Web 환경에서 JavaScript를 사용하는 가장 큰 이유는 **HTML 조작과 변경**이다. HTML을 조작하고, 변경하면서 우리는 이쁘고, 실용적인 웹페이지를 만들 수 있다.
+맨 처음 Javascript는 web browser에 귀속된 programming language이였다. 각 browser마다 Javascript 해석엔진이 달랐는데, Chrome에서 사용하는 해석엔진인 'v8'이 browser와 독립적으로 출시되면서 programming language로 급부상했다. Javascript를 이용하여 웹서버, 모바일앱, mechine learning 등을 할 수 있지만, Javascript의 근본은 web development을 할 때 사용하는 것이다. Web 환경에서 JavaScript를 사용하는 가장 큰 이유는 **HTML 조작과 변경**이다. HTML을 조작하고, 변경하면서 우리는 이쁘고, 실용적인 웹페이지를 만들 수 있다.
 
 Javascript는 web을 위해 등장한 언어이기 때문에 다른 프로그래밍 언어들과는 차별점을 가진다.
 
-- Javascript는 동기 프로그래밍 (synchronous programming) 언어이지만, 비동기 프로그래밍 (asynchronous programming)을 지원한다.
+- Javascript는 **동기 프로그래밍 (synchronous programming) 언어이지만, 비동기 프로그래밍 (asynchronous programming)을 지원**한다.
+  js 코드를 위에서 부터 한줄 씩 차례대로 실행하기는 하지만, 데이터를 불러오는데 오래걸리는 것들은 비동기 프로그래밍을 이용하면
   자바스크립트의 비동기 처리란 특정 코드의 연산이 끝날 때까지 코드의 실행을 멈추지 않고 다음 코드를 먼저 실행하는 자바스크립트의 특성을 의미한다.
-  코드를 위에서 부터 한줄 씩 실행하기는 하지만, 데이터를 불러오는데 오래걸리는 것들을 기다리지 않는다.
 
 - JavaScript is a `dynamically typed language`로 변수타입의 지정이 필요없이 알아서 타입을 정해준다.
   It means that JS does not require the explicit declaration of the variables before they're used. 변수의 타입을 직접 지정해주지 않아도, JavaScript가 알아서 변수의 타입을 정해준다. 이는 한 variable에 여러 타입이 assign되는 상황을 가능하게 만든다. 작은 project를 만들 때에는 편리하지만, 큰 project를 만들고, team 단위로 만들게 되면 이런 높은 자유도는 오히려 독이 되어 어디서 어떻게 잘 못 되었는 지 알기 어렵게 만든다.
@@ -3099,9 +3099,7 @@ async function displayUser() {
 }
 ```
 
-### [Quiz](https://leetcode.com/problemset/all/)
-
-#### Remove duplicates from list
+#### Quiz: Remove duplicates from list
 
 - **list->set->list**
 
@@ -3119,62 +3117,6 @@ console.log([new Set(array)]);
 // [ Set(4) { '🐶', '🐱', '🐈', '🦮' } ]
 console.log([...new Set(array)]);
 // [ '🐶', '🐱', '🐈', '🦮' ]
-```
-
-#### Two Sum
-
-Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
-
-- naive approach: O(n^2) time complexity
-
-```
-function twoSum(nums: number[], target: number): number[] {
-	for (let i = 0; i < nums.length; i++) {
-		let newTarget = target - nums[i];
-		if (nums.includes(newTarget)) {
-      return [nums[i], newTarget];
-    }
-	}
-};
-```
-
-- Hashmap: O(n) time complexity
-
-```
-function twoSum(nums: number[], target: number): number[] {
-	for (let i = 0; i < nums.length; i++) {
-		let newTarget = target - nums[i];
-		if (nums.includes(newTarget)) {
-      return [nums[i], newTarget];
-    }
-	}
-};
-
-let nums = [11, 15, 10, 11, 4, 2, 7];
-console.log(twoSum(nums, 9)); // [2, 7]
-```
-
-#### Palindrome Number
-
-Given an integer `x`, return true if `x` is palindrome integer. An integer is a **palindrome** when it reads the same backward as forward.
-For example, 121 is a palindrome while 123 is not.
-
-- Optimize solution: O(d/2) time complexity
-
-```
-function isPalindrome(x: number): boolean {
-  if (x < 0 || (x != 0 && x % 10 == 0)) {
-    return false;
-  }
-
-  let res = 0;
-  while (x > res) {
-    res = res * 10 + (x % 10);
-    x = x / 10;
-  }
-
-  return x == res || x == res / 10;
-}
 ```
 
 ## 4. [Typescript](https://www.typescriptlang.org/)
@@ -4050,15 +3992,15 @@ React 말고도 Vue, Svelte나 Angular등 다른 Web app를 만들 수 있는 fr
 
 ### Framework vs Library
 
-- Framework를 한국어로 하면 frame (틀), work (작업), 즉 기본적인 틀을 만드는 작업이다.
-  Framework는 **정해진 사용방법이 존재**하기 때문에 우리는 framework가 요구하는 대로 따라해야지만 원하는 결과를 얻을 수 있다.
+- Framework를 한국어로 하면 `frame (틀) + work (작업)`, 즉 기본적인 틀을 만드는 작업이다.
+  **Framework가 요구하는 짜여진 사용방법이 존재**하기 때문에 우리는 framework가 요구하는 대로 따라해야지만 원하는 결과를 얻을 수 있다.
 
 - Library는 특정 기능에 대한 도구 or 함수들을 모은 집합이다.
-  즉, 프로그래머가 개발하는데 필요한 것들을 모아둔 코드 더미들로, library는 단순 활용이 가능한 도구들의 집합이다.
+  즉, 프로그래머가 개발하는데 필요한 것들을 모아둔 code dummy들로, 단순 활용이 가능한 도구들의 집합이다.
 
 집을 만드는 작업이라고 하면:
 
-- Framework는 집의 기본 구조를 제공하여 우리는 그 구조에 필요한 가구, 침구, 벽지등을 추가하는 것이다.
+- Framework는 집의 기본 구조를 제공하여 우리는 그 구조에 필요한 가구, 침구, 벽지등을 추가하는 것
 - Library는 침대, 소파와 같은 가구들을 의미한다. 우리는 이 가구들로 직접 집을 만들어야 한다.
 
 프로그래밍에서 차이:
@@ -4075,7 +4017,7 @@ React 말고도 Vue, Svelte나 Angular등 다른 Web app를 만들 수 있는 fr
 ```
           call
 Developer ------> Library
-Developer <------ Framework
+         <------ Framework
           call
 
 // Library
@@ -4090,29 +4032,28 @@ const mydata = API()
 예시:
 
 - Libraray: React.js, Bootstrap, ...
-- Framework: Vue.js, Flask.py, Django.py, ...
+- Framework: Vue.js, Flask.py, Django.py, Nest.js, Next.js, ...
 
-### JSX extension
+### JSX Extension
 
-React.js는 `.js` 대신 `.jsx` 라는 특수한 extension을 사용한다. JSX stands for JavaScript XML. It is simply a syntax extension of JavaScript. 하지만 js를 사용해도 react가 알아서 jsx로 인식하기 때문에 아무런 문제는 없다 (Button.js === Button.jsx). 보통은 component를 만들때, .jsx 확장자를 이용하여 다른 js files과 차별점을 둘 때 사용하면 좋다.
+React.js는 `.js` 대신 `.jsx` 라는 특수한 extension을 사용한다. JSX stands for **JavaScript XML**. It is simply a syntax extension of JavaScript.
+React는 typescript를 전적으로 지원하기 때문에 되도록이면 typescript를 이용한 `.ts`와 `.tsx` extension을 사용하도록 한다. React환경에서 `.js`를 사용해도 알아서 `.jsx`로 인식하기 때문에 아무런 문제는 없다 (`Button.js == Button.jsx`). 보통은 component를 만들때 다른 javascript와 비교하기 위해 `.jsx`, `.tsx` extension를 이용한다.
 
 아래 변수 선언을 살펴봅시다.
 
 > `const element = <h1>Hello, world!</h1>;`
 
-위에 희한한 태그 문법은 문자열도, HTML도 아닙니다.
+위에 희한한 tag 문법은 string도, HTML도 아니다. 이런 문법은 react에서 볼 수 있는 JSX라 하며 JavaScript를 확장한 것이다. REact에서 UI가 어떻게 생겨야 하는지 정의할 때 사용한다. JSX라고 하면 template language가 떠오를 수도 있지만, JSX내에서 JavaScript의 모든 기능을 사용할 수 있다.
 
-JSX라 하며 JavaScript를 확장한 문법입니다. UI가 어떻게 생겨야 하는지 설명하기 위해 React와 함께 사용된다. JSX라고 하면 템플릿 언어가 떠오를 수도 있지만, JavaScript의 모든 기능이 포함되어 있습니다.
-
-JSX는 React “Element” 를 생성합니다.
-
-React는 JSX 사용이 필수가 아니지만, 대부분의 사람은 JavaScript 코드 안에서 UI 관련 작업을 할 때 시각적으로 더 도움이 된다고 생각합니다. 또한 React가 더욱 도움이 되는 에러 및 경고 메시지를 표시할 수 있게 해줍니다.
-
-아래 예시에서는 name이라는 변수를 선언한 후 중괄호로 감싸 JSX 안에 사용하였습니다.
+**JSX는 React "Element"를 생성**한다. React는 JSX 사용이 필수가 아니지만, JavaScript 코드 안에서 User Interface 작업을 할 때 시각적으로 더 도움이 되고 React가 더욱 도움이 되는 에러 및 경고 메시지를 표시할 수 있게 해준다.
 
 ```
+// `./index.jsx` file
 const name = 'Josh Perez';
 const element = <h1>Hello, {name}</h1>;
+// `name`이라는 variable를 선언 후
+// curly brackets {} 로 감싸 JSX 안에 사용
+
 
 ReactDOM.render(
   element,
@@ -4120,15 +4061,14 @@ ReactDOM.render(
 );
 ```
 
-JSX의 중괄호 안에는 유효한 모든 JavaScript 표현식을 넣을 수 있습니다. 예를 들어 2 + 2, user.firstName 또는 formatName(user) 등은 모두 유효한 JavaScript 표현식입니다.
-컴파일이 끝나면, JSX 표현식이 정규 JavaScript 함수 호출이 되고 JavaScript 객체로 인식됩니다.
+**JSX의 curly brackets `{}` 안에는 모든 JavaScript expression을 넣을 수 있다.** 예를 들어 2 + 2, user.firstName 또는 formatName(user) 등은 모두 유효한 JavaScript 표현식입니다. 컴파일이 끝나면, JSX 표현식이 정규 JavaScript 함수 호출이 되고 JavaScript 객체로 인식됩니다.
 즉, JSX를 if 구문 및 for loop 안에 사용하고, 변수에 할당하고, 인자로서 받아들이고, 함수로부터 반환할 수 있습니다.
 
-#### ReactJS에서 NPM 패키지 모듈 불러오기
+#### React에서 NPM package module 불러오기
 
-NPM 패키지 모듈들은 **CommonJS**를 기본 모듈 시스템으로 채택한다. 즉, 모듈을 내보내고 불러오는 것에 있어 require, module.exports 등을 사용한다는 의미이다.
+NPM 패키지 모듈들은 **CommonJS**를 기본 모듈 시스템으로 채택한다. 즉, 모듈을 내보내고 불러오는 것에 있어 `require()`, `module.exports` 등을 사용한다.그러나 실제로 React 등의 library를 활용하여 Frontend 개발을 할 때는 NPM package module을 불러오기 위해 다음과 같이 ES6 syntax의 code를 작성하는 경우가 많다
 
-그러나 실제로 React.jS 등의 라이브러리를 활용하여 Frontend 개발을 할 때는 NPM 패키지 모듈을 불러오기 위해 ES6 문법의 코드를 작성하는 경우가 많다 (import/export).
+> `import React from 'react'/export default App`
 
 그런데 왜 문제가 발생하지 않을까? 이는 Babel 등의 컴파일러가 import, export 등의 코드를 CommonJS 기반의 코드로 변환해주기 때문이다. 그러고 나면 Webpack에 의해 JavaScript 모듈들의 번들링이 가능해진다.
 
@@ -4155,6 +4095,8 @@ const condition = () => {
 - React의 state 변경
 
 ```
+import { useState } from 'react'
+
 const [human, setHuman] = useState(['Park', 18, 'male'])
 
 let humanCopy = [...human];
@@ -4164,7 +4106,7 @@ setHuman(humanCopy);
 
 #### List와 Key
 
-먼저 JavaScript에서 list를 어떻게 변환하는지 살펴봅시다. 아래는 map() function를 이용하여 numbers array의 값을 두배로 만든 후 map()에서 반환하는 새 배열을 doubled 변수에 할당하고 로그를 확인하는 코드이다.
+먼저 JavaScript에서 list를 어떻게 변환하는지 살펴봅시다. 아래는 `Array.prototype.map()` function를 이용하여 numbers array의 값을 두배로 만든 후 `map()`에서 반환하는 새 배열을 doubled 변수에 할당하고 log를 확인하는 코드이다.
 
 ```
 const numbers = [1, 2, 3, 4, 5];
@@ -4172,42 +4114,35 @@ const doubled = numbers.map((number) => number * 2);
 console.log(doubled); // [2, 4, 6, 8, 10]
 ```
 
-React에서 array을 Element List로 만드는 방식은 이와 거의 동일 합니다.
-
-- 여러개의 component rendering 하기
-
-엘리먼트 모음을 만들고 중괄호 `{}`를 이용하여 JSX에 포함 시킬 수 있습니다.
-
-아래의 JavaScript의 `Array.prototype.map()` 함수를 사용하여 numbers 배열을 반복 실행한다. 각 항목에 대해 `<li>` Element를 반환하고 엘리먼트 배열의 결과를 listItems에 저장한다.
+React도 array을 Element List로 만드는 방식은 거의 동일 합니다. 여러개의 component를 rendering 하려면, Element 모음을 만들고 중괄호 `{}`를 이용하여 JSX에 포함 시킨다.
 
 ```
 const numbers = [1, 2, 3, 4, 5];
+// JavaScript의 `map()` 함수를 사용하여 numbers 배열을 반복 실행
+// 각 숫자에 대해 `<li>` Element를 반환하고 새 array를 listItems에 저장
 const listItems = numbers.map((number) =>
   <li>{number}</li>
 );
 
-// listItems 배열을 <ul>element 안에 포함하고 DOM에 rendering합니다.
+// listItems array을 <ul> element 안에 포함하고 DOM에 rendering
 ReactDOM.render(
-
   <ul>{listItems}</ul>,
   document.getElementById('root')
 );
 
 // 결과값
-<ul>
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-    <li>4</li>
-    <li>5</li>
-</ul>
+// <ul>
+//    <li>1</li>
+//    <li>2</li>
+//    <li>3</li>
+//    <li>4</li>
+//    <li>5</li>
+// </ul>
 ```
 
-- 기본 리스트 컴포넌트
+- 기본 List component
 
-일반적으로 컴포넌트 안에서 리스트를 렌더링합니다.
-
-이전 예시를 numbers 배열을 받아서 순서 없는 엘리먼트 리스트를 출력하는 컴포넌트로 리팩토링할 수 있습니다.
+일반적으로 component 내에서 list를 rendering 한다.
 
 ```
 function NumberList(props) {
@@ -4228,7 +4163,7 @@ ReactDOM.render(
 );
 ```
 
-이 코드를 실행하면 리스트의 각 항목에 `key`를 넣어야 한다는 경고가 표시된다. `key`는 element list를 만들 때 포함해야 하는 특수한 string attribute입니다. 다음 섹션에서 key의 중요성에 대해서 더 설명하겠습니다. 이제 `numbers.map()` 안에서 리스트의 각 항목에 key를 할당하여 키 누락 문제를 해결하겠습니다.
+위 코드를 실행하면 리스트의 각 항목에 `key`를 넣어야 한다는 경고가 표시된다. `key`는 element list를 만들 때 포함해야 하는 react만의 특수한 string attribute 이다. `numbers.map()` 안에서 list의 각 항목에 key를 할당하여 key 누락 문제를 해결한다.
 
 ```
 function NumberList(props) {
@@ -4251,14 +4186,13 @@ ReactDOM.render(
 );
 ```
 
-- Key: unique identifier (UID)
+#### Key: unique identifier (UID)
 
 Key는 React가 어떤 항목을 변경, 추가 또는 삭제할지 식별하는 것을 돕습니다. key는 엘리먼트에 안정적인 고유성을 부여하기 위해 배열 내부의 엘리먼트에 지정해야 합니다.
 
 ```
 const numbers = [1, 2, 3, 4, 5];
 const listItems = numbers.map((number) =>
-
   <li key={number.toString()}>
     {number}
   </li>
@@ -4269,14 +4203,15 @@ Key를 선택하는 가장 좋은 방법은 리스트의 다른 항목들 사이
 
 ```
 const todoItems = todos.map((todo) =>
-
   <li key={todo.id}>
     {todo.text}
   </li>
 );
 ```
 
-렌더링 한 항목에 대한 안정적인 ID가 없다면 최후의 수단으로 항목의 인덱스를 key로 사용할 수 있습니다.
+Rendering 한 항목에 대한 안정적인 ID가 없다면 최후의 수단으로 항목의 data의 index를 key로 사용할 수도 있다.
+하지만 data의 순서가 바뀔 수 있는 경우에는 index를 key로 사용하지 않아야 한다. 이로 인해 성능이 저하되거나 component의 state와 관련된 문제가 발생할 수 있기 떄문이다.
+List 항목에 명시적으로 key를 지정하지 않으면 React는 기본적으로 index를 key로 사용한다.
 
 ```
 const todoItems = todos.map((todo, index) =>
@@ -4287,11 +4222,7 @@ const todoItems = todos.map((todo, index) =>
 );
 ```
 
-항목의 순서가 바뀔 수 있는 경우 key에 index를 사용하는 것은 권장하지 않는다. 이로 인해 성능이 저하되거나 컴포넌트의 state와 관련된 문제가 발생할 수 있습니다. 리스트 항목에 명시적으로 key를 지정하지 않으면 React는 기본적으로 index를 key로 사용합니다.
-
-Key로 컴포넌트 추출하기: 키는 주변 배열의 context에서만 의미가 있습니다.
-
-예를 들어 ListItem 컴포넌트를 추출 한 경우 ListItem 안에 있는 `<li>` 엘리먼트가 아니라 배열의 `<ListItem />` 엘리먼트가 key를 가져야 합니다.
+Key로 component 추출하기: key는 주변 배열의 context에서만 의미가 있다. 예를 들어 ListItem component를 추출 한 경우 ListItem 안에 있는 `<li>` element가 아니라 array의 `<ListItem />` element가 key를 가져야 합니다.
 
 예시: 잘못된 Key 사용법
 
@@ -4309,7 +4240,7 @@ function ListItem(props) {
 function NumberList(props) {
   const numbers = props.numbers;
   const listItems = numbers.map((number) =>
-  // 틀렸습니다! 여기에 key를 지정해야 합니다.
+  // 틀렸습니다! 여기에는 key를 지정해야 합니다.
   <ListItem value={number} />
   );
 
@@ -4357,7 +4288,7 @@ ReactDOM.render(
 ```
 
 - **경험상 map() function 내부에 있는 HTMLElement에 key를 넣어 주는 게 좋다.**
-- Key는 배열 안에서 형제 사이에서만 고유하면 되고 전체 범위에서 고유할 필요는 없다. 두 개의 다른 배열을 만들 때 동일한 key를 사용할 수 있습니다.
+- Key는 배열 안에서 형제 사이에서만 고유하면 되고 전체 범위에서 고유할 필요는 없다. 이는 두 개의 다른 배열을 만들 때 동일한 key를 사용할 수 있음을 의미한다.
 
 ```
 function Blog(props) {
@@ -4379,7 +4310,7 @@ function Blog(props) {
   return (
     <div>
       {sidebar}
-      <hr />
+      <br />
       {content}
     </div>
   );
@@ -4400,36 +4331,32 @@ React에서 key는 힌트를 제공하지만 컴포넌트로 전달하지는 않
 
 ```
 const content = posts.map((post) =>
-<Post
+  ( <Post
     key={post.id}
     id={post.id}
     title={post.title} />
-);
+));
 ```
 
-위 예시에서 Post 컴포넌트는 props.id를 읽을 수 있지만 props.key는 읽을 수 없습니다.
+위 예시에서 Post 컴포넌트는 `props.id`를 읽을 수 있지만 `props.key`는 읽을 수 없다.
 
-JSX에 map() 포함시키기
+#### JSX에 map() 포함시키기
 
 위 예시에서 별도의 listItems 변수를 선언하고 이를 JSX에 포함했습니다.
 
 ```
 function NumberList(props) {
-const numbers = props.numbers;
-const listItems = numbers.map((number) =>
-<ListItem key={number.toString()}
+  const numbers = props.numbers;
+  const listItems = numbers.map((number) =>
+    <ListItem key={number.toString()}
               value={number} />
-);
-return (
+  );
 
-<ul>
-{listItems}
-</ul>
-);
+  return ( <ul>{listItems}</ul>);
 }
 ```
 
-JSX를 사용하면 중괄호 안에 모든 표현식을 포함 시킬 수 있으므로 map() 함수의 결과를 inline으로 처리할 수 있습니다.
+JSX를 사용하면 중괄호 안에 모든 표현식을 포함 시킬 수 있으므로 `map()` 함수의 결과를 inline으로 처리할 수 있습니다.
 
 ```
 function NumberList(props) {
@@ -4445,7 +4372,7 @@ function NumberList(props) {
 }
 ```
 
-이 방식을 사용하면 코드가 더 깔끔해 지지만, 이 방식을 남발하는 것은 좋지 않습니다. JavaScript와 마찬가지로 가독성을 위해 변수로 추출해야 할지 아니면 인라인으로 넣을지는 개발자가 직접 판단해야 합니다. map() 함수가 너무 중첩된다면 컴포넌트로 추출 하는 것이 좋습니다.
+이 방식을 사용하면 코드가 더 깔끔해 지지만, 이 방식을 남발하는 것은 좋지 않습니다. JavaScript와 마찬가지로 가독성을 위해 변수로 추출해야 할지 아니면 inline으로 넣을지는 개발자가 직접 판단해야 합니다. `map()` 함수가 너무 중첩된다면 독립된 component로 따로 정의하는 것이 좋습니다.
 
 ### Curly brackets {} vs Parentheses () in JSX Arrow Function
 
@@ -4460,7 +4387,7 @@ Since `{item} `is in curly brackets JSX interprets that as to find the variable 
 ```
 render () {
   return (
-    <li> {item}</li>,
+    <li>{item}</li>,
     <SomeComponent />
   )
 }
@@ -4485,12 +4412,86 @@ const items = { {id: 1, name: eggs}, {id: 2, name: milk} }
 ))}
 ```
 
-react를 이용할 때, javascript 코드를 jsx syntax에서 사용하고 싶으면 curly brackets {} 안에서 정의하면 된다.
-react에서 array를 하나씩 iterate해야할 경우 `array.map()` 함수를 이용하고, 그 안에 callback함수인 arrow function을 정의한다.
+react를 이용할 때, javascript 코드를 jsx syntax에서 사용하고 싶으면 curly brackets `{}` 안에 작성한다.
+react에서 array를 하나씩 iterate해야할 경우 `array.map()` 함수를 이용하고, 그 안에 callback함수 arrow function을 정의한다.
 
-react.js는 jsx이기 때문에 `array.map((param) => {body})`가 아니라 `array.map((param) => (body))`처럼 body에도 parentheses를 사용해야 한다.
+- react는 jsx이기 때문에 `array.map((param) => {body})`가 아니라 `array.map((param) => (body))`처럼 body에도 parentheses를 사용해야 한다.
+- `map()`은 javascript code이기 때문에 `{ array.map((param) => (body))}`과 같이 curly brackets `{}` 안에서 정의하면 된다.
 
-`map()`은 javascript code이기 때문에 `{ array.map((param) => (body))}`과 같이 curly brackets {} 안에서 정의하면 된다.
+### Virtual-Dom vs Real-Dom
+
+React로 기술면접을 보게되면 항상 물어보는 질문에 **virtual Dom**에 관한 것이다.
+
+- Virtual Dom과 Real Dom의 차이가 무엇인가?
+
+어느날 내 친구가 나한테 질문을 했어요: “컴포넌트를 통한 프로젝트 구성, 단방향 데이터 바인딩, 대충 알겠는데.. 왜 Virutal DOM 을 쓰는거야?”
+그래서 나는 익숙한 답변을 해줬죠. “음.. 그건 DOM 조작이 비효율적이기 떄문이야. 그리고 또 느리고”
+친구가 다시 되묻길, “자바스크립트 엔진은 계속해서 성능이 좋아지고 있는데, 정확히 어떤 부분 때문에 DOM 이 느려지는거야?”
+
+DOM은 Document Object Model의 약자이다. Document는 HTML을 의미하고,
+
+Virtual Dom
+
+자 이제 DOM 을 조작했을 때 어떤 작업이 이뤄지는지 알겠죠? DOM에 변화생기면, regenerate render tree하고 (그러면 모든 요소들의 스타일이 다시 계산됩니다) 레이아웃을 만들고 페인팅을 하는 과정이 다시 반복되는거죠.
+
+복잡한 SPA(싱글 페이지 어플리케이션) 에서는 DOM 조작이 많이 발생해요. 그 뜻은 그 변화를 적용하기 위해 브라우저가 많이 연산을 해야한단 소리고, 전체적인 프로세스를 비효율적으로 만듭니다.
+
+자, 이 이부분에서 Virtual DOM 이 빛을 발합니다! 만약에 뷰에 변화가 있다면, 그 변화는 실제 DOM 에 적용되기전에 가상의 DOM 에 먼저 적용시키고 그 최종적인 결과를 실제 DOM 으로 전달해줍니다. 이로써, 브라우저 내에서 발생하는 연산의 양을 줄이면서 성능이 개선되는 것 이지요.
+
+#### Svelte vs React/Vue
+
+Svelte는 compiler이고, React/Vue는 library/framework이다.
+
+React는 사용자가 website를 방문했을 때의 시점, 즉 runtime에서 web broser가 해당 webpage의 javascript files을 받아서 실행된다.
+
+Svelte는 이 과정을 website가 배포되기 전에 미리 해둔다. 그래서 Svelete로 만들어진 website의 javascript source code를 보면 Svelte library에 관련된 code가 없다.
+
+https://velopert.com/3236
+
+### React Life Cycle
+
+https://dev.to/oahehc/redux-data-flow-and-react-component-life-cycle-11n
+
+https://velog.io/@lamda/%EB%A6%AC%EC%97%91%ED%8A%B8-%EB%9D%BC%EC%9D%B4%ED%94%84-%EC%82%AC%EC%9D%B4%ED%81%B4%EC%9D%B4%EB%9E%80
+
+https://www.zerocho.com/category/React/post/579b5ec26958781500ed9955
+
+### React Hook
+
+https://velog.io/@solmii/React%EC%9D%98-%ED%95%A8%EC%88%98%ED%98%95-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-feat.Hooks
+
+#### What is Functional component?
+
+이름에서부터 알 수 있듯이, 함수형 컴포넌트란 함수를 기반으로 작성하는 컴포넌트를 말한다.
+기존에 우리가 사용했던 클래스형 컴포넌트에 비해 훨씬 짧고 직관적인 코드를 짤 수 있고, 함수형 프로그래밍을 할 수 있게 해준다.
+아래에서 나오는 Hooks가 도입되면서 함수형 컴포넌트에서도 클래스형 컴포넌트의 라이프 사이클 메서드와 같은 기능을 사용할 수 있게 되었다.
+react 공식 문서는 함수형 컴포넌트 + Hooks 조합을 추천하고 있다.
+
+#### Hooks 란?
+
+리액트 v16.8 로 업데이트되면서 추가된 기능으로서, 함수형 컴포넌트에서도 상태 관리를 할 수 있는 useState, 렌더링 직후 작업을 설정하는 useEffect 등의 기능 등을 제공한다.
+
+#### React useState hook
+
+#### React useEffect hook
+
+#### React useRef hook
+
+### React rendering 최적화
+
+#### React re-rendering 되는 조건
+
+component의 리렌더링 되는 조건은 아래와 같다.
+
+- **부모에서 전달받은 props가 변경될때**
+- **부모 컴포넌트가 리렌더링 될 때**
+- **자신의 state가 변경 될 때**
+
+즉, 변화하지 않는 부분도 리렌더링이 된다.
+
+#### React useMemo hook
+
+#### React useCallback hook
 
 ## [VueJs](https://vuejs.org/guide/introduction.html)
 
@@ -4613,7 +4614,7 @@ Terminal에 다음의 코드를 입력
 
 This command will install and execute `create-vue`, the official Vue project scaffolding tool.
 
-> $ `npm init vue@latest`
+> `$ npm init vue@latest`
 
 ```
 ✔ Project name: … <your-project-name>
@@ -4633,13 +4634,13 @@ Done.
 
 your-project-name로 이동
 
-> $ `cd <your-project-name>`
+> `$ cd <your-project-name>`
 
 dependencies 설치
 
-> $ `npm install` 또는 `npm i`
+> `$ npm install` 또는 `npm i`
 
-> $ `npm run dev` 또는 VSCode에서 Open Editor 및에 `NPM SCRIPTS`에서 `dev` 실행 버튼 클릭
+> `$ npm run dev` 또는 VSCode에서 Open Editor 및에 `NPM SCRIPTS`에서 `dev` 실행 버튼 클릭
 
 - web browser에 `localhost:{{port}}` 입력
 - dev server를 종료하려면 terminal에서 `Ctrl + C` 입력
@@ -4724,7 +4725,7 @@ const blueColor = 'color : blue';
 
 ### What is Next?
 
-**Next.js**는 react.js에 **Server Side Rendering (SSR)** 기능을 더한 meta-framework이다. Next와 Remix는 React가 가진 Client-Side Rendering (CSR) 문제를 해결하기 위해 등장했다. React로 만든 웹은 자동으로 Client-Side Rendering이 된다. Next는 React app을 **Static & Server Side Rendering**이 가능하게 만든다. Remix 역시 SSR을 지원하지만, Next가 프로그래머들 사이에서 가장 인기가 많은 이유는 배우기 쉽고, 사용하기 쉽고, community가 커서 배울 수 있는 자료가 많기 때문이다.
+**Next**는 react에 **Server Side Rendering (SSR)** 등 다양한 기능을 더한 meta-framework이다. Next와 Remix는 React가 가진 Client-Side Rendering (CSR) 문제를 해결하기 위해 등장했다. React로 만든 웹은 자동으로 Client-Side Rendering이 된다. Next는 React app을 **Static & Server Side Rendering**이 가능하게 만든다. Remix 역시 SSR을 지원하지만, Next가 프로그래머들 사이에서 가장 인기가 많은 이유는 배우기 쉽고, 사용하기 쉽고, community가 커서 배울 수 있는 자료가 많기 때문이다.
 
 ### Client-Side Rendering (CSR) vs Server-Side Rendering (SSR)
 
@@ -6043,7 +6044,7 @@ VSCode는 다양한 keyboard shortcut을 제공하기 때문에 마우스를 이
 - `단어 + tab`: Snippets를 이용하여 자동완성 기능을 적극활용한다.
 - Debug tool를 이용하여 프로그램을 디버깅할 수 있다 (내가 확인하고 싶은 코드 옆에 breakpoint 생성 후 debug 실행).
 
-### VScode extension
+### [VScode Extension](https://marketplace.visualstudio.com/)
 
 - `Prettier`: save시 auto code formatting.
 

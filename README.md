@@ -510,6 +510,8 @@ Database는 크게 Relational database `sql (Structured Query Language)`와 Not 
 - Educations
   - w3school: https://www.w3schools.com/
   - cssbattle: https://cssbattle.dev/
+    - [cssbattleSolution](https://github.com/ngekoding/cssbattle)
+  - codepen (css only를 검색하면 다양한 css work를 볼 수 있다): https://codepen.io/search/pens?q=css+only
   - react로 만든 웹 github로 deploy하기: https://codingapple.com/unit/react-build-deploy-github-pages/
 
 ## 1. HTML
@@ -3981,6 +3983,8 @@ if (box.hasValue()) {
 
 ## 5. [ReactJs](https://reactjs.org/)
 
+- [Typescript-React-cheatsheet](https://github.com/typescript-cheatsheets/react)
+
 ### What is React?
 
 React는 web app을 만들 수 있는 Javascript library이다. React is a JavaScript library for building user interfaces.
@@ -4041,6 +4045,29 @@ const mydata = API()
 
 - Libraray: React.js, Bootstrap, ...
 - Framework: Vue.js, Flask.py, Django.py, Nest.js, Next.js, ...
+
+### React Set Up
+
+React를 사용하기 위해서는 최신 버전의 `node.js`가 필요하다.
+
+- Node.js
+  - `$ node --version` 입력 후 설치되어 있는 지 확인한다.
+
+#### React app 생성
+
+```
+// projectName folder 생성 후 boilerplate code 다운
+$ npx create-react-app projectName
+```
+
+#### React app 실행
+
+```
+$ npm start
+
+// development mode에서 실행
+$ npm run dev
+```
 
 ### JSX Extension
 
@@ -4430,13 +4457,13 @@ react에서 array를 하나씩 iterate해야할 경우 `array.map()` 함수를 �
 
 React로 기술면접을 보게되면 항상 물어보는 질문에 **virtual Dom**에 관한 것이다.
 
+DOM은 Document Object Model의 약자이다. Document는 HTML을 의미하고,
+
 - Virtual Dom과 Real Dom의 차이가 무엇인가?
 
 어느날 내 친구가 나한테 질문을 했어요: “컴포넌트를 통한 프로젝트 구성, 단방향 데이터 바인딩, 대충 알겠는데.. 왜 Virutal DOM 을 쓰는거야?”
-그래서 나는 익숙한 답변을 해줬죠. “음.. 그건 DOM 조작이 비효율적이기 떄문이야. 그리고 또 느리고”
+그래서 나는 익숙한 답변을 해줬죠. “음.. 그건 DOM이 update 될 때 비효율적이기 떄문이야. 그리고 또 느리고”
 친구가 다시 되묻길, “자바스크립트 엔진은 계속해서 성능이 좋아지고 있는데, 정확히 어떤 부분 때문에 DOM 이 느려지는거야?”
-
-DOM은 Document Object Model의 약자이다. Document는 HTML을 의미하고,
 
 Virtual Dom
 
@@ -4458,36 +4485,411 @@ https://velopert.com/3236
 
 ### React Life Cycle
 
+- React를 functional component로 사용하게 되면, React Hook이랑 같이 사용하게 되고
+- React를 class component로 사용하게 되면, `componentDidMount()`와 같이 React lifecycle method 이랑 같이 사용하게 된다.
+
+Functional component가 class component 후에 나온 최신 문법이다. 복잡한 class component에 비해 훨씬 짧고 직관적인 코드를 짤 수 있고, functional programming을 할 수 있게 해준다. 아래에서 나오는 Hooks가 도입되면서 functional component에서도 class component의 lifecycle method와 같은 기능을 사용할 수 있게 되었다.
+
+- **React 공식 문서는 functional component + Hooks 조합을 추천하고 있다.**
+
 https://dev.to/oahehc/redux-data-flow-and-react-component-life-cycle-11n
 
 https://velog.io/@lamda/%EB%A6%AC%EC%97%91%ED%8A%B8-%EB%9D%BC%EC%9D%B4%ED%94%84-%EC%82%AC%EC%9D%B4%ED%81%B4%EC%9D%B4%EB%9E%80
 
 https://www.zerocho.com/category/React/post/579b5ec26958781500ed9955
 
-### React Hook
+### [React Hook](https://reactjs.org/docs/hooks-reference.html)
 
-https://velog.io/@solmii/React%EC%9D%98-%ED%95%A8%EC%88%98%ED%98%95-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-feat.Hooks
+https://velog.io/@velopert/using-hooks-with-typescript#useref
 
-#### What is Functional component?
+https://kyounghwan01.github.io/blog/React/react-hook/#usememo-%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%86%AB%E1%84%92%E1%85%A1%E1%86%AB-%E1%84%80%E1%85%A1%E1%86%B9-%E1%84%8C%E1%85%A2%E1%84%89%E1%85%A1%E1%84%8B%E1%85%AD%E1%86%BC
 
-이름에서부터 알 수 있듯이, 함수형 컴포넌트란 함수를 기반으로 작성하는 컴포넌트를 말한다.
-기존에 우리가 사용했던 클래스형 컴포넌트에 비해 훨씬 짧고 직관적인 코드를 짤 수 있고, 함수형 프로그래밍을 할 수 있게 해준다.
-아래에서 나오는 Hooks가 도입되면서 함수형 컴포넌트에서도 클래스형 컴포넌트의 라이프 사이클 메서드와 같은 기능을 사용할 수 있게 되었다.
-react 공식 문서는 함수형 컴포넌트 + Hooks 조합을 추천하고 있다.
+#### What are Hooks?
 
-#### Hooks 란?
+React v16.8 로 업데이트되면서 추가된 기능으로서, 함수형 컴포넌트에서도 class 없이 react의 다양한 기능들을 사용가능 하게 한다. Hooks are a new addition in React 16.8. They let you use state and other React features without writing a class.
 
-리액트 v16.8 로 업데이트되면서 추가된 기능으로서, 함수형 컴포넌트에서도 상태 관리를 할 수 있는 useState, 렌더링 직후 작업을 설정하는 useEffect 등의 기능 등을 제공한다.
+#### useState hook
 
-#### React useState hook
+useState hook은 functional component에서도 state 관리를 할 수 있게 해준다. getter, setter와 동일한 작업을 수행한다.
 
-#### React useEffect hook
+```
+// Example.jsx
+// functional component
+import { useState } from 'react';
 
-#### React useRef hook
+function Example() {
+  // Create a new state variable "count"
+  // getter: count, setter: setCount
+  const [count, setCount] = useState(0);
 
-### React rendering 최적화
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
 
-#### React re-rendering 되는 조건
+export default Example;
+```
+
+- Equivalent Class Example
+
+If you used classes in React before, this code should look familiar:
+
+```
+// Example.jsx
+// class component
+class Example extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0
+    };
+  }
+
+  render() {
+    return (
+      <div>
+        <p>You clicked {this.state.count} times</p>
+        <button onClick={() => this.setState({ count: this.state.count + 1 })}>
+          Click me
+        </button>
+      </div>
+    );
+  }
+}
+```
+
+- useState와 typescript을 같이 사용하는 예시
+
+```
+// login.tsx
+import { useState } from "react";
+
+// type 또는 interface 정의
+// `interface UserLogin {}`과 동일
+type UserLogin = {
+  email: string;
+  password: string;
+};
+
+// create login function
+// `function login {}`과 동일
+const login = () => {
+  const [formData, setformData] = useState<UserLogin>({
+    email: "",
+    password: "",
+  });
+
+  // 비구조화 할당을 통해 값 추출
+  const { email, password } = formData;
+
+  // user가 data를 변경 시 실행
+  const onChange = (e: React.FormEvent) => {
+    setformData((prevState) => ({
+      // 기존의 formData 객체를 복사한 뒤
+      ...prevState,
+      // name 키를 가진 값을 value 로 설정
+      // Javascript의 `[e.target.name]: e.target.value`와 동일
+      [(e.target as HTMLInputElement).name]: (e.target as HTMLInputElement)
+        .value,
+    }));
+  };
+
+  // user가 data를 submit 시 실행
+  const onSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const userData = { email, password };
+
+    // login
+    dispatch(loginUser(userData));
+
+    // reset data
+    setformData({
+      email: "",
+      password: ""
+    });
+  };
+
+  // user interface를 jsx로 정의
+  return (
+    <form onSubmit={onSubmit}>
+      <div className="form-group">
+        <input
+          type="email"
+          name="email"
+          value={email}
+          placeholder="Enter your Email <example@email.com>"
+          id="email"
+          onChange={onChange}
+        />
+      </div>
+      <div className="form-group">
+        <input
+          type="password"
+          name="password"
+          value={password}
+          placeholder="Enter Password"
+          id="password"
+          onChange={onChange}
+        />
+        </div>
+        <div className="form-group">
+          <button
+            type="submit"
+          >
+            Sign in
+          </button>
+        </div>
+      </form>
+    </div>
+  );
+}
+
+export default login;
+```
+
+- Typescipt 에서
+  - `useState`를 사용 할 때에는 `useState<string>` 과 같이 Generics 를 사용
+  - `useState`의 Generics 는 상황에 따라 생략 할 수도 있다.
+  - 상태가 `null` 인 상황이 발생 할 수 있거나, array 또는 complex object인 경우 Generics 를 명시한다.
+
+#### useEffect hook
+
+`useEffect` hook은 react functional component 가 rendering 될 때마다 특정 작업을 수행하도록 설정할 수 있는 기능이다. 쉽게 말하면, class component의 life cycle methods인 `componentDidMount()` 와 `componentDidUpdate()` 를 합친 형태라고 이해하면 된다.
+
+- **functional Component의 Mount/UnMount/Update 시 로직을 다룬다.**
+
+#### useEffect 에서 설정한 함수를 componentDidMount() 처럼 사용
+
+함수형 컴포넌트가 화면에 맨 처음 렌더링 될 때만 실행되야 할 경우, (업데이트 때는 실행 할 필요가 없는 경우) 에는 함수의 두번째 parameter로 비어있는 배열을 넣으면 된다. 즉 useEffect에 **dependencies를 설정하여, 이 dependencies에 저장된 state가 변할 경우에만 re-rendering 된다.**
+
+1. useEffect의 dependencies가 변할 경우, useEffect에 정의된 callback function을 실행한다.
+2. dependencies가 아예 없는 경우, 즉 두번째 parameter가 아예 존재조차 하지 않는 경우, 함수형 컴포넌트가 rendering 될 때 마다 useEffect에 정의된 callback function을 실행한다.
+3. dependencies로 빈 배열 `[]`을 설정하면, **빈 배열인 값이 계속 변하지 않기 떄문에 처음 한번 rendering 될 때만 실행된다.**
+
+```
+// useEffect 안에 callback function 를 넣는다.
+useEffect(() => {
+    console.log('Mount 될 때만 실행됩니다.');
+  }, []);
+// 맨 처음 rendering 될 때만 useEffect에 정의된 callback function을 실행
+// 그 뒤로는 실행되지 않는다.
+```
+
+#### useEffect 에서 설정한 함수를 componentDidUpdate() 처럼 사용
+
+함수형 컴포넌트의 특정 값이 변경될 때만 `useEffect` 를 호출하고 싶을 때에는 함수의 두번째 parameter로 전달되는 배열 안에 검사하고 싶은 값을 넣으면 된다.
+
+```
+useEffect(() => {
+    console.log(email);
+    console.log(password);
+  }, [email, password]);
+// email 또는 password 의 값이 바뀔 때 마다 useEffect에 정의된 callback function을 실행
+```
+
+#### useRef hook
+
+useRef는 여러가지 기능을 수행할 수 있는 데, 대표적인 것이 특정 element에 focus를 주는 것이다.
+
+- js에서 특정 DOM을 선택할때 `getElementbyId()`, `querySelecor()`를 사용하는데 react에서도 ref를 잡아야 할때가 있다.
+
+이럴때 functional component는 `useRef` hook 를 사용하고, class형은 `React.createRef` 를 사용한다
+
+- useRef 기능
+  - **Accessing DOM elements**
+    - focusing an input
+
+```
+// refEx.jsx
+import { useRef } from 'react'
+
+function refEx() {
+  const nameInput = useRef(null);
+
+  const onReset = () => {
+    nameInput.current.focus();
+  };
+
+  return (
+    <input
+      name="name"
+      placeholder="이름"
+      onChange={onChange}
+      value={name}
+      ref={nameInput}
+    />
+  );
+}
+export default refEx
+```
+
+`useRef`를 사용할 떄 주의할 점은 이를 이용해서 state를 변경하면 안된다. `useRef`을 이용할 경우 rendering이 발생하지 않는다.
+
+```
+// App.jsx
+import { useRef, useState, useEffect } from 'react';
+
+function App() {
+  const [count, setCount] = useState(0);
+  // 0 값은 refCount.current에 저장된다.
+  const refCount = useRef(0);
+
+  useEffect(() => {
+    console.log("count state : ", count)
+    console.log("ref count state : ", refCount)
+  })
+
+  return (
+    <>
+      {count}
+      <button onClick={() => {
+        setCount(count => count + 1)
+      }}>increment</button>
+      <button onClick={() => {
+        refCount.current++
+      }}>ref increment</button>
+    </>
+  );
+}
+export default App;
+```
+
+위 코드로 `useState`와 `useRef`의 차이점을 알 수 있다. `useState`로 지정된 `count`를 변화시키기 위해 첫 번째 버튼을 클릭하면 state가 계속 변화되기 때문에 콘솔에 `useEffect` 내의 `console.log`가 계속 해서 실행된다. 즉, 버튼이 눌릴 때 마다 App 의 모든 것들이 re-rendering 된다.
+
+**하지만 두 번째 버튼을 눌러서 refCount를 늘리면 컴포넌트가 re-render되지 않습니다. state나 props의 변화가 없었기 때문에 어찌보면 당연하지만 이게 useRef의 속성으로 왜 useRef로 state를 변경하면 안되는 지 보여준다.**
+
+#### useRef 와 typescript를 함께 사용할 경우
+
+```
+// <div> reference type
+const divRef = React.useRef<HTMLDivElement>(null);
+
+// <button> reference type
+const buttonRef = React.useRef<HTMLButtonElement>(null);
+
+// <br /> reference type
+const brRef = React.useRef<HTMLBRElement>(null);
+
+// <a> reference type
+const linkRef = React.useRef<HTMLLinkElement>(null);
+```
+
+이번엔 `useRef`로 DOM의 reference를 받아와 보겠습니다.
+
+```
+.circle{
+    width: 300px;
+    height:300px;
+    background-color: #000;
+    border-radius:50%;
+    transition:opacity 1s linear;
+}
+
+// App.tsx
+import React, { useRef, useEffect } from 'react';
+import styles from "./App.module.css"
+function App() {
+  const ballRef = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    const { current } = ballRef;
+    if (current !== null) {
+      current.style.opacity = "0";
+    }
+   return clearTimeout()
+  })
+return (
+    <>
+      <div ref={ballRef} className={styles.circle}></div>
+    </>
+  );
+}
+export default App;
+```
+
+ballRef에 `<HTMLDivElement>`를 generic 타입으로 설정을 해주어야 한다. 이러한 타입은 VSCode를 사용 중이라면 `<div ref={ballRef} className={styles.circle}></div>`의 ref에 마우스를 올리면 쉽게 알 수 있다. `useRef`로 생성된 객체 내에는 current라는 게 들어있는데, ref로 마크업 요소의 reference를 가져오면 current에 저장된다.
+
+```
+const { current } = ballRef;
+// 이렇게 current을 읽어오고 사용하려면 무조건 null check를 해주어야 한다.
+if (current !== null) {
+      current.style.opacity = "0";
+    }
+// 또는 optional chaining을 사용할 수 도 있다.
+current?.style.opacity = "0";
+```
+
+#### useLayoutEffect hook
+
+`useLayoutEffect`는 React Hooks의 하나의 life cycle 단계중 하나라고 할 수 있다.
+
+```
+import { useEffect, useLayoutEffect } from 'react';
+
+function App() {
+  useLayoutEffect(() => {
+    console.log('useLayoutEffect')
+  })
+  useEffect(() => {
+    console.log('useEffect')
+  })
+  console.log('render')
+  return (
+    <>
+    </>
+  );
+}
+export default App;
+```
+
+위와 같이 코드를 작성하고 console 을 확인하면 다음과 같은 순서로 log가 출력된다.
+
+```
+render
+useLayoutEffect
+useEffect
+```
+
+즉 `useLayoutEffect`는 순서적으로는 rendering 과 `useEffect` 사이에 있습니다. 하지만 `useEffect`와 useLayoutEffect는 거의 동일하게 작동을 하게 되는데 가장 큰 차이점은 바로 동기적으로 실행된다는 점입니다.
+
+- `useEffect`의 경우 `useState`의 초기 값을 0으로 둔 `count`라는 변수가 있다고 했을 때 `useEffect`를 통해 count를 10으로 setState한다면 처음에 아주 잠깐 0이 었다가 바로 10이 됩니다.
+- 하지만 `useLayoutEffect`에서 setState를 한다면 이 변화를 감지하고 동기적으로 이 변화를 적용시킨 후 렌더링합니다. 따라서 state가 10인채로 화면에 보여진다.
+
+아래 예제를 보면 더 쉽게 이해가 가실겁니다.
+
+```
+import { useState, useEffect, useLayoutEffect } from 'react';
+function App() {
+  const [number, setNumber] = useState(0);
+  useEffect(() => {
+    if (number === 0) {
+      setNumber(10)
+    }
+  }, [number])
+
+  return (
+    <>
+      {number}
+      <button onClick={() => {
+        setNumber(0)
+      }}>Button</button>
+    </>
+  );
+}
+export default App;
+```
+
+위 코드는 버튼을 누르면 number가 0이 되고 `useEffect`를 통해 state가 0이 됨을 감지하였을 때 다시 number를 10으로 올려주는 코드입니다.
+위처럼 작성하고 실행해서 버튼을 누르면 `{number}` 부분이 계속 0과 10을 왔다 갔다 하느라 깜빡거리는 것을 볼 수 있습니다.
+이는 `useEffect`가 비동기적으로 작동하기 때문인데요. 이 경우 `useEffect`를 `useLayoutEffect`로 바꿔서 실행하면 숫자가 깜빡거리지 않고 10을 계속 유지하는 것을 볼 수 있습니다. **즉 `useEffect`는 일단 화면을 보여주고 변화를 주는 반면에 `useLayoutEffect`는 변화를 적용 시킨 후 화면을 보여줍니다**
+
+### React Rendering 최적화
+
+#### React Re-Rendering 되는 조건
 
 component의 리렌더링 되는 조건은 아래와 같다.
 
@@ -4495,11 +4897,45 @@ component의 리렌더링 되는 조건은 아래와 같다.
 - **부모 컴포넌트가 리렌더링 될 때**
 - **자신의 state가 변경 될 때**
 
-즉, 변화하지 않는 부분도 리렌더링이 된다.
+즉, 변화하지 않는 부분도 위와 같은 상황이 되면 리렌더링이 된다. 이는 불필요한 작업으로 app을 느리게 만드는 요인이 된다. `useMemo`와 `useCallback` hooks를 이용하여 Rendering을 최적화할 수 있다.
 
-#### React useMemo hook
+#### useMemo hook
 
-#### React useCallback hook
+- re-rendering 시 성능 최적화를 위해 연산된 값을 `useMemo` hook으로 재사용한다.
+- 다른 함수에 의해 리렌더링으로 불필요하게 호출되는 함수를 `useMemo`로 감쌈
+
+```
+import { useMemo } from 'react';
+
+// users 값이 바뀌지 않았다면 한번만 호출됨
+// users 값이 변경될 경우에만
+const count = useMemo(() => countActiveUsers(users), [users]);
+
+const result = useMemo(() => sum(stringList), [stringList, sum]);
+```
+
+#### useCallback hook
+
+- `useMemo`는 특정 변수에 대한 결과값을 재사용할 때 사용하고, `useCallback`은 특정 함수를 새로 만들지 않고 재사용할때 사용한다.
+  - 즉, `useMemo`는 number, string 등의 일반적인 값에 사용하고, `useCallback`은 함수에 사용하면 된다.
+- component 내 함수들은 컴포넌트가 re-rendering 될 때마다 새로 만들어진다.
+  - 이는 resource 낭비로 한번 만든 함수를 필요할때만 새로만들고 재사용하는 것 중요하다.
+
+```
+import { useCallback } from 'react'
+
+const onRemove = id => {
+  setUsers(users.filter(user => user.id !== id));
+};
+
+// 위에서 아래처럼사용
+const onRemove = useCallback(
+  id => {
+    setUsers(users.filter(user => user.id !== id));
+  },
+  [users]
+);
+```
 
 ## [VueJs](https://vuejs.org/guide/introduction.html)
 
@@ -4920,6 +5356,41 @@ export async function getStaticProps() {
 }
 
 export default Blog
+```
+
+### Next에서 svg 사용하기
+
+svg는 png와 다르게 icon의 색, 크기 등 요소를 디자인에 따라 바꿀 수 있는 파일입니다. 또한 용량이 png와 다르게 매우 작아서 프로젝트 관리가 더욱 용이합니다. 그렇다면 react와 next에서는 어떻게 svg를 다루는지 알아보겠습니다.
+
+next에서는 react에서 사용하는 방식으로 svg를 읽으면 svg를 읽을 수 없다는 에러가 뜹니다. 그럼으로 다른 방식방법이 필요하다.
+
+```
+// @svgr/webpack 설치
+$ npm i -D @svgr/webpack
+
+// `next.config.js` 수정
+module.exports = withTM({
+  reactStrictMode: true,
+  webpack: config => {
+    // 아래를 추가합니다.
+    config.module.rules.push({
+      test: /\.svg$/i,
+      issuer: /\.[jt]sx?$/,
+      use: ["@svgr/webpack"]
+    });
+    return config;
+  }
+});
+
+// svg 읽어오기
+// 위와 같이 세팅을 완료했으면 아래와 같이 component 형식으로 svg를 가져올 수 있습니다.
+import Ci from "assets/svg/ci.svg";
+
+const Index = () => {
+  return <Ci />;
+};
+
+export default Index;
 ```
 
 ## [Redux](https://redux-toolkit.js.org/)
@@ -8290,4 +8761,69 @@ $ docker run -d imageName
 // Another useful parameter to pass to docker run is the -d flag.
 // This flag causes Docker to start the container in "detached" mode.
 // d는 daemon/detached의 약자로 background에서 작동한다.
+```
+
+## Moblie App Development
+
+Mobile App을 만들 때 Flutter나 Swift처럼 하나의 mobile os에 종속된 programming language를 고르면 개발자는 하나의 project에 두 개의 전혀다른 언어를 이용하여 따로 개발해야 한다.
+
+- Flutter: android
+- Swift: ios
+
+## [React-Native](https://reactnative.dev/)
+
+React-Native는 android와 ios 두 곳 모두에서 작동하므로, 한 project로 두 마리의 토끼를 모두 잡을 수 있다. 또한 React를 사용해본 개발자라면 React-Native 역시 아주 쉽게 배울 수 있기 때문에 매우 편리하다.
+
+### React-Native Set Up
+
+React-Native를 사용하기 위해서는 세 가지의 dependencies가 필요하다.
+
+- Node.js
+  - `$ node --version` 입력 후 설치되어 있는 지 확인한다.
+- Java SE Development Kit (JDK)
+  - `$ java --version` 입력 후 설치되어 있는 지 확인한다.
+- Android Studio
+
+Android Studio 설치 후
+
+- type `edit the system environment variables` in window start
+- Click `environment variables`
+- Click on `New...` to create a new` ANDROID_HOME` user variable that points to the path to your Android SDK:
+
+```
+// User Variable
+Variable name: ANDROID_HOME
+Variable value: C:\Users\Shin\AppData\Local\Android\Sdk
+
+// System variable -> path
+C:\Users\Shin\AppData\Local\Android\Sdk\platform-tools
+```
+
+- android studio에서
+- `SDK Manager`
+  - `Android SDK/SDK platform`에서 원하는 android version 설치
+  - `Android SDK/SDK Tools`에서 `Emulator Accelerator` 설치
+- `Virtual Devide Manager`
+  - `create device`로 원하는 android device 생성
+
+#### React-Native app 생성
+
+```
+// projectName folder 생성 후 boilerplate code 다운
+$ npx react-native init projectName
+
+// 또는 react-native cli (command line) 설치 후 다운
+$ npm i react-native-cli
+$ react-native init projectName
+```
+
+#### React-Native app 실행
+
+```
+$ npx react-native run-android
+$ npx react-native run-ios
+
+// 또는 react-native cli (command line) 설치 시
+$ react-native run-android
+$ react-native run-ios
 ```

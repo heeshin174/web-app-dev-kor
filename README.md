@@ -215,7 +215,6 @@ React.js, Typescript 등등 outside library/framework로 만들어 native HTML, 
 
 - [HTML](https://github.com/heeshin174/Web_App_Dev_Kor#1-html)
   - [HTML Tags](https://github.com/heeshin174/Web_App_Dev_Kor#html-tags)
-  - [Page Structure](https://github.com/heeshin174/Web_App_Dev_Kor#page-structure)
   - [Semantic Tags](https://github.com/heeshin174/Web_App_Dev_Kor#semantic-tags)
   - [SEO (Search Engine Optimazation)](https://github.com/heeshin174/Web_App_Dev_Kor#seo-search-engine-optimazation)
 
@@ -510,6 +509,7 @@ Database는 크게 Relational database `sql (Structured Query Language)`와 Not 
   - Glassdoor Interview section for specific companies: https://www.glassdoor.com
 - Educations
   - w3school: https://www.w3schools.com/
+  - cssbattle: https://cssbattle.dev/
   - react로 만든 웹 github로 deploy하기: https://codingapple.com/unit/react-build-deploy-github-pages/
 
 ## 1. HTML
@@ -602,22 +602,8 @@ HTML는 **tree structure**를 가진다. Every tree node is an object. Tags are 
 
 ![html1](img/html1.png)
 
-- HTML 확장자에서 `! + tab`을 입력하면, HTML template를 얻을 수 있다.
-
-```
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-</head>
-<body>
-
-</body>
-</html>
-```
+- HTML 확장자에서 `! + tab`을 입력하면, 기본적인 HTML template를 얻을 수 있다.
+  - `*.html` file 생성 후, `! + tab` 입력
 
 ### HTML Tags
 
@@ -725,21 +711,6 @@ div tag defines a division or a section in an HTML document. `<div>` is used as 
 
 ![Dropdown](img/form2.png)
 
-### Page Structure
-
-![htmllayout](img/htmllayout.png)
-
-```
-<header> - Defines a header for a document or a section
-<nav> - Defines a set of navigation links
-<section> - Defines a section in a document
-<article> - Defines an independent, self-contained content
-<aside> - Defines content aside from the content (like a sidebar)
-<footer> - Defines a footer for a document or a section
-<details> - Defines additional details that the user can open and close on demand
-<summary> - Defines a heading for the <details> element
-```
-
 ### Semantic Tags
 
 Semantic elements = **tag을 사용하는 것만으로도 의미를 가지는 Element**. A semantic element clearly describes its meaning to both the browser and the developer.
@@ -750,6 +721,8 @@ Semantic elements = **tag을 사용하는 것만으로도 의미를 가지는 El
 Examples of non-semantic elements: <div> and <span> - Tells nothing about its content.
 Examples of semantic elements: <form>, <table>, and <article> - Clearly defines its content.
 ```
+
+![htmllayout](img/htmllayout.png)
 
 - Semantic Tags
 
@@ -791,8 +764,8 @@ CSS can be added to HTML documents in 3 ways:
 ```
 <!DOCTYPE html>
 <html>
-<head>
-<style>
+  <head>
+  <style>
   body {
     background-color: powderblue;
   }
@@ -802,14 +775,12 @@ CSS can be added to HTML documents in 3 ways:
   p {
     color: red;
   }
-</style>
-</head>
-<body>
-
-<h1>This is a heading</h1>
-<p>This is a paragraph.</p>
-
-</body>
+  </style>
+  </head>
+  <body>
+    <h1>This is a heading</h1>
+    <p>This is a paragraph.</p>
+  </body>
 </html>
 ```
 
@@ -849,12 +820,12 @@ CSS can be added to HTML documents in 3 ways:
 /* line-height: 줄 사이 간격 */
 ```
 
-- body tag에는 `margin: 8px`이 default로 설정되어 있다. 이를 없에기 (Wild card/전체 선택: \*)
+- body tag에는 `margin: 8px`이 default로 설정되어 있다. (Wild card/전체 선택: \*)
 
 ```
+// 기본 설정 없애기
 * {
   margin:0;
-  paddign: 0;
   box-sizing: border-box;
 }
 ```
@@ -871,7 +842,10 @@ body {
 /* font-weight가 900이면 bold, 300이면 normal이다. */
 ```
 
-- `id=box`인 HTMLElement의 style 변경 (id selector: #)
+`id`와 `class`의 다른점은 `id`는 한 element에게 고유한 값이고, `class`는 여러 element에게 같은 값을 설정할 수 있다.
+id가 class보다 우선 순위를 가진다.
+
+- `id=box`인 HTMLElement의 style 변경 (**id selector: #**)
 
 ```
 #id {
@@ -881,7 +855,7 @@ body {
 /* background를 주어진 url로 교체 */
 ```
 
-- `class=hero`인 HTMLElement의 style 변경 (class selector: .)
+- `class=hero`인 HTMLElement의 style 변경 (**class selector: .**)
 
 ```
 .hero {
@@ -941,25 +915,29 @@ body {
 
 ![Styling](img/cssstyle.png)
 
-- `Padding`은 content와 한 몸처럼 styles의 영향을 받고, `margin`은 content와 별개로 styles의 영향을 받는다.
-- `Border`는 테두리를 의미한다. border를 이용하면, 박스를 만들고 밑줄을 추가하는 등 여러가지를 할 수 있다.
-- content에 밑줄을 추가: `border-bottom: 5px`
+- `padding`은 content 안에 여백을 주고, `margin`은 content 외부에 여백을 준다.
+  - `padding`은 content와 한 몸처럼 styles의 영향을 받고, `margin`은 content와 별개로 styles의 영향을 받는다.
+- `border`는 테두리를 의미한다. border를 이용하면, 박스를 만들고 밑줄을 추가하는 등 여러가지를 할 수 있다.
+
+  - `border-bottom: 5px`: content에 밑줄을 추가
 
 - The `border` property is a shorthand property for:
 
 ```
 border: border-width border-style (required) border-color
-```
 
-`border: 1px solid black` is equivalent to
+* {
+  border: 1px solid black
+}
+// is equivalent to
+* {
+  border-width: 1px
+  border-style: solid
+  border-color: black
+}
 
+// border-style: solid/dotted/double`
 ```
-border-width: 1px
-border-style: solid
-border-color: black
-```
-
-- `border-style: solid/dotted/double`
 
 ### Layouts
 
@@ -981,6 +959,8 @@ border-color: black
   height: 200px;
 }
 ```
+
+**보통은 parent에 `position: relative`를 설정하고 childredn에 `position: absolute`을 설정하여 두 개를 동시에 사용한다.**
 
 #### Float
 
@@ -1133,7 +1113,7 @@ https://studiomeal.com/archives/533
 
 ### Animation
 
-`@keyframe`을 이용하면 Animation을 구현할 수 있다. 자세한 내용은 https://www.w3schools.com/css/css3_animations.asp 참고.
+`@keyframe`을 이용하면 Animation을 구현할 수 있다. 자세한 내용은 [w3animation](https://www.w3schools.com/css/css3_animations.asp) 참고.
 
 ## 3. [Javascript](https://nodejs.org/en/)
 
@@ -1221,6 +1201,34 @@ Javascript는 동기적으로 처리되는 동기 프로그래밍 (synchronous p
 - Call Stack은 한번에 하나씩만 실행 가능하다.
 - Call Stack에 시간이 오래걸리는 무거운 연산이 실행되면 그 동안은 다른 행동들은 할 수 없다.
 - Web broswer는 javascript 코드를 수행하는 중에 무거운 연산을 해야될 경우 callback queue로 옮겨 call stack이 할 일이 없을 경우에만 실행하도록 만든다.
+
+### Javascript Data Types
+
+Javascript에는 크게 두 가지의 data types이 존재한다.
+
+- **Primitive** Type : 데이터의 실제 값 할당
+
+  - 원시타입을 제외한 나머지는 참조 타입이다.
+  - 원시 타입은 불변성(immutability)을 갖고있다.
+
+- **Reference** Type : 데이터의 위치 값만 할당
+  - `Array`
+  - `Tuple`
+  - `Object`
+  - `function`
+
+A primitive data type is data that has a primitive value (which has no properties or methods).
+There are 7 primitive data types in javascript.
+
+- `string`
+- `number`
+- `boolean`
+- `null`
+- `undefined`
+- `bigint`
+- `symbol` (ES6+ 부터 추가)
+
+자바스크립트에서 원시 타입을 제외한 나머지는 참조타입(객체(Object))이라 할 수 있다. 배열과 객체, 그리고 함수가 대표적이며, 원시타입과 가장 큰 차이점은 변수의 크기가 동적으로 변한다는 것이다. 이를 영어로는 Damanic allocation이라 한다. 이러한 특징 때문에 Object의 데이터 자체는 별도의 메모리 공간인 heap 에 저장되며, 변수에 할당 시 데이터에 대한 주소 (address of Heap memory)가 저장되기 때문에 Javascript engine이 변수가 가지고 있는 memory address를 이용해 변수의 값에 접근한다. 여기서 신기한 점은 Javascript는 function 역시 data type으로 다룬다는 점이다. Function 역시 data type이기 때문에, 함수를 변수에 저장하는 것 역시 가능하다.
 
 ### ES6+ Syntax
 

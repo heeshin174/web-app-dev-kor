@@ -29,6 +29,7 @@
   8. [Redux](https://github.com/heeshin174/Web_App_Dev_Kor#redux)
 
 - [BackEnd](https://github.com/heeshin174/Web_App_Dev_Kor#3-back-end-server-side)
+
   1. [Web Application Development](https://github.com/heeshin174/Web_App_Dev_Kor#1-web-application-development)
   2. [Express.js](https://github.com/heeshin174/Web_App_Dev_Kor#2-expressjs)
   3. [Flask.py](https://github.com/heeshin174/Web_App_Dev_Kor#3-flaskpy)
@@ -37,6 +38,9 @@
   6. [Rocket.rs](https://github.com/heeshin174/Web_App_Dev_Kor#6-rocketrs)
   7. [Nest.js](https://github.com/heeshin174/Web_App_Dev_Kor#nestjs)
   8. [Serverless](https://github.com/heeshin174/Web_App_Dev_Kor#serverless)
+
+- [MobileApp](https://github.com/heeshin174/Web_App_Dev_Kor#moblie-app-development)
+  1. [React-Native](https://github.com/heeshin174/Web_App_Dev_Kor#react-native)
 
 ## 0. Web Development Loadmap
 
@@ -111,7 +115,7 @@ boot etc init lib32 libx32 media opt root sbin srv tmp var
 4. Ubuntu Terminal에 `code`입력 후, VSCode 서버를 Linux환경에 설치.
 5. Google에 `install nvm` (Node Version Manager) 검색 후 download, 그 후 nvm을 이용하여 `Node.js` 설치
 
-Window환경에 따로 programming languages나 다른 git 같은 tool를 설치하여 사용할 수 있지만, 우리는 Linux환경에 개발에 필요한 모든 tools을 설치할 것이다. 그 이유는 Linux환경을 이용하면, Linux가 제공하는 모든 **Unix command**를 Terminal에 쉽게 사용가능하다. 우리는 Terminal로 파일들을 생성, 조작하고 프로그램들을 설치하는 것에 익숙해져야 한다. 만약 설치가 안된다면, 앞에 sudo를 붙여 root권한을 준다
+Window환경에 따로 programming languages나 다른 git 같은 tool를 설치하여 사용할 수 있지만, 우리는 Linux환경에 개발에 필요한 모든 tools을 설치할 것이다. 그 이유는 Linux환경을 이용하면, Linux가 제공하는 모든 **Unix command**를 Terminal에 쉽게 사용가능하다. 우리는 Terminal로 파일들을 생성, 조작하고 프로그램들을 설치하는 것에 익숙해져야 한다. 만약 설치가 안된다면, 앞에 sudo를 붙여 root 권한을 준다
 
 ```
 $ sudo apt-get update
@@ -216,7 +220,7 @@ React.js, Typescript 등등 outside library/framework로 만들어 native HTML, 
 - [HTML](https://github.com/heeshin174/Web_App_Dev_Kor#1-html)
   - [HTML Tags](https://github.com/heeshin174/Web_App_Dev_Kor#html-tags)
   - [Semantic Tags](https://github.com/heeshin174/Web_App_Dev_Kor#semantic-tags)
-  - [SEO (Search Engine Optimazation)](https://github.com/heeshin174/Web_App_Dev_Kor#seo-search-engine-optimazation)
+  - [Search Engine Optimazatoin (SEO)](https://github.com/heeshin174/Web_App_Dev_Kor#search-engine-optimazation-seo)
 
 * [CSS](https://github.com/heeshin174/Web_App_Dev_Kor#2-css)
   - [Styling](https://github.com/heeshin174/Web_App_Dev_Kor#styling)
@@ -622,7 +626,8 @@ div tag defines a division or a section in an HTML document. `<div>` is used as 
 - `<a>` HTMLAnchorElement: `href` attribute에 주어진 hyperlink에 GET request 보내기
 
 ```
-<a href:"#home">Go to homepage</a>  // id=home인 HTMLElement로 이동
+// id=home인 HTMLElement로 이동
+<a href:"#home">Go to homepage</a>
 <a href:"https://www.google.com">This is google Link</a>
 ```
 
@@ -719,10 +724,10 @@ Semantic elements = **tag을 사용하는 것만으로도 의미를 가지는 El
 
 예시: nav tag가 사용되었으면, "이 element는 사용자를 다른 pages로 안내하려는 목적으로 사용되었구나" 하고 바로 알 수 있다.
 
-```
-Examples of non-semantic elements: <div> and <span> - Tells nothing about its content.
-Examples of semantic elements: <form>, <table>, and <article> - Clearly defines its content.
-```
+- Examples of non-semantic elements: `<div>` and `<span>`
+  - Tells nothing about its content.
+- Examples of semantic elements: `<form>`, `<table>`, and `<article>`
+  - Clearly defines its content.
 
 ![htmllayout](img/htmllayout.png)
 
@@ -741,27 +746,29 @@ Examples of semantic elements: <form>, <table>, and <article> - Clearly defines 
 <summary>: Defines a heading for the <details> element
 ```
 
-### SEO (Search Engine Optimazation)
+### Search Engine Optimazatoin (SEO)
 
-`Search Engine Optimazatoin (SEO)`는 내가 만든 web site가 Google, Naver와 같은 검색 엔진에 많이 노출되게 하는 방법을 의미한다. 이 검색 엔진에 노출이 되려면, 서버가 가지고 있는 HTML이 텅 비어있으면 안된다. 이는 검색 엔진이 서버의 HTML파일을 확인하면서 검색 엔진에 노출시키는 구조이기 때문이다.
+`Search Engine Optimazatoin (SEO)`는 내가 만든 web site가 Google, Naver와 같은 search engine에 많이 노출되게 하는 방법을 의미한다. 이 검색 엔진에 노출이 되려면, 서버가 가지고 있는 HTML이 텅 비어있으면 안된다. 이는 검색 엔진이 서버의 HTML파일을 확인하면서 검색 엔진에 노출시키는 구조이기 때문이다.
 
-React.js, Vue.js와 같은 Frontend library/framework로 만들어진 사이트, Client-Side Rendering (CSR),의 경우 서버는 텅 빈 html을 사용자에게 넘겨주고, 사용자의 컴퓨터에서 HTML이 완성되는 구조이기 때문에 검색엔진에 노출되기 어렵다. 그럼으로 Server-Side Rendering (SSR)을 지원하는 Next.js나 Nuxt.js등을 이용하여 검색 엔진에 많이 노출되게 할 수 있다.
+React.js, Vue.js와 같은 Frontend library/framework로 만들어진 사이트의 경우, Client-Side Rendering (CSR)을 이용한다. CSR에서 서버는 텅 빈 html을 가지고 있다가 사용자에게 넘겨주고, 사용자의 컴퓨터에서 HTML이 완성되기 때문에 검색엔진에 노출되기 어렵다. 그럼으로 Server-Side Rendering (SSR)을 지원하는 Next.js나 Nuxt.js 같은 meta-frameworks을 이용하여 검색 엔진에 많이 노출되게 만들 수 있다.
 
 ## 2. CSS
 
 [CSS Properties Refernece](https://www.w3schools.com/cssref/default.asp)
 
-**`Cascading Style Sheets (CSS)`는 HTML을 꾸미기 위해 사용한다.**
+**Cascading Style Sheets (CSS)는 HTML을 꾸미기 위해 사용한다.**
 
 With CSS, you can control the color, font, the size of text, the spacing between elements, how elements are positioned and laid out, what background images or background colors are to be used, different displays for different devices and screen sizes, and much more!
 
 CSS can be added to HTML documents in 3 ways:
 
-1. Inline - by using the style attribute inside HTML elements
+1. Inline
 
-- `<h1 style="color:blue;">A Blue Heading</h1>`
+   - using the `style` attribute inside HTML elements
+   - `<h1 style="color:blue;">A Blue Heading</h1>`
 
-2. Internal - by using a `<style>` element in the `<head>` section
+2. Internal
+   - using a `<style>` element in the `<head>` section
 
 ```
 <!DOCTYPE html>
@@ -786,7 +793,8 @@ CSS can be added to HTML documents in 3 ways:
 </html>
 ```
 
-3. External - by using a `<link>` element to link to an external CSS file
+3. External
+   - using a `<link>` element to link to an external CSS file
 
 ```
 <html>
@@ -799,7 +807,7 @@ CSS can be added to HTML documents in 3 ways:
 
 **CSS사용법 예시:**
 
-- 자주 사용할 색상을 :root에 변수로 저장하면, 모든 Element에 다음의 색상을 쉽게 이용가능하다.
+- 자주 사용할 색상을 `:root`에 변수로 저장하면, 모든 Element에 다음의 색상을 쉽게 이용가능하다.
 
 ```
 :root {
@@ -833,6 +841,7 @@ CSS can be added to HTML documents in 3 ways:
 ```
 
 - 사용할 font를 import하기 (Google-font)
+  - google에 `goole font` 입력 후 원하는 font를 import
 
 ```
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;900&display=swap");
@@ -962,7 +971,8 @@ border: border-width border-style (required) border-color
 }
 ```
 
-**보통은 parent에 `position: relative`를 설정하고 childredn에 `position: absolute`을 설정하여 두 개를 동시에 사용한다.**
+- **보통은 parent에 `position: relative`를 설정하고 childredn에 `position: absolute`을 설정하여 두 개를 동시에 사용한다.**
+- 또한 parent에 `position: flex`를 설정하고 childredn에 `position: absolute`을 설정하여 두 개의 flex items를 하나로 합치는 것도 가능하다.
 
 #### Float
 
@@ -972,7 +982,7 @@ float은 이미지와 텍스트를 어떻게 정렬할 것인지 나타내기 �
 
 #### Flexbox
 
-`Flexbox`에는 **flex container**와 **flex item**이 존재한다. flex container는 flex item들을 담는 박스가 된다.
+Flexbox에는 **flex container**와 **flex item**이 존재한다. flex container는 flex item들을 담는 박스가 된다.
 
 ![flexbox](img/flexbox.jpg)
 
@@ -1007,22 +1017,20 @@ float은 이미지와 텍스트를 어떻게 정렬할 것인지 나타내기 �
 /* cross axis:  align-content, align-items */
 ```
 
-- `flex-wrap`는 기본값으로 nowrap이다. 이는 한 `flex-container`에 아무리 많은 `flex-item`이 들어서도 다른 line을 생성하지 않는다. 즉, 아무리 item이 많아도 한 row에 때려박는다. flex-wrap:wrap이 되면 flex-container에 container보다 많은 flex-item이 들어서면 다른 line으로 자동적으로 이동한다. 즉, item의 크기가 container의 크기를 넘어서면 다른 row을 자동적으로 생성한다.
+`flex-wrap`는 기본값으로 nowrap이다. 이는 한 `flex-container`에 아무리 많은 `flex-item`이 들어서도 다음 line을 생성하지 않는다. 즉, 아무리 item이 많아도 한 row에 때려박는다. `flex-wrap:wrap`이 되면 flex-container에 container보다 많은 flex-item이 들어서면 다른 line으로 자동적으로 이동한다. 즉, item의 크기가 container의 크기를 넘어서면 다른 row을 자동적으로 생성한다.
 
 - The `flex-flow` property is a shorthand property for:
 
 ```
 flex-flow: flex-direction + flex-wrap;
-```
 
-`flex-flow: column wrap` is equivalent to
-
-```
+flex-flow: column wrap;
+// is equivalent to
 flex-direction: column;
 flex-wrap: wrap;
 ```
 
-`flex-item`에 지정 가능한 속성 (속성의 기본값은 모두 0이다)
+`flex-item`에 지정 가능한 속성 (속성의 기본값은 모두 0이다):
 
 ```
 - order: 0
@@ -1072,8 +1080,6 @@ Flexbox와 Grid의 큰 차이점은
 - Flex: one dimension layout
 - Grid: two dimension layout
 
-https://studiomeal.com/archives/533
-
 - Grid는 다음과 같은 경우에 많이 사용된다.
   - Card형 UI
   - 쎔네일과 정보가 굉장히 많은 사이트
@@ -1084,24 +1090,26 @@ https://studiomeal.com/archives/533
   - 1320px은 생각보다 넓은 grid이다.
   - 1320px: 110px rectangle => 12개
     - 110px: 20, 70, 20 또는 15, 80, 15
-    - 2걔: 620px ((1320 - 40 - 40) / 2)
-    - 3걔: 400px ((1320 - 40 - 80) / 3)
-    - 4걔: 290px ((1320 - 40 - 120) / 4)
-    - 5걔: 224px ((1320 - 40 - 160) / 5)
-    - 6걔: 180px ((1320 - 40 - 200) / 6)
+    - 2개: 620px ((1320 - 40 - 40) / 2)
+    - 3개: 400px ((1320 - 40 - 80) / 3)
+    - 4개: 290px ((1320 - 40 - 120) / 4)
+    - 5개: 224px ((1320 - 40 - 160) / 5)
+    - 6개: 180px ((1320 - 40 - 200) / 6)
   - 1080px: 90px rectangle => 12개
     - 90px: 10, 70, 10
-    - 2걔: 520px ((1080 -20 - 20) / 2)
-    - 3걔: 340px ((1080 -20 - 40) / 3)
-    - 4걔: 250px ((1080 -20 - 60) / 4)
-    - 5걔: 196px ((1080 -20 - 80) / 5)
-    - 6걔: 160px ((1080 -20 - 100) / 6)
+    - 2개: 520px ((1080 -20 - 20) / 2)
+    - 3개: 340px ((1080 -20 - 40) / 3)
+    - 4개: 250px ((1080 -20 - 60) / 4)
+    - 5개: 196px ((1080 -20 - 80) / 5)
+    - 6개: 160px ((1080 -20 - 100) / 6)
 
 ![gridguide](img/gridguide.png)
 
+- https://studiomeal.com/archives/533
+
 ### Responsive Design
 
-**Responsive Design**는 브라우저의 크기에 따라 보이는 화면이 달라지는 것을 뜻한다. 컴퓨터를 기준으로 웹사이트를 만들게 되면, mobile로 보게되면 화면이 작아서 다 보이지 않게 된다.
+**Responsive Design**는 브라우저의 크기에 따라 보이는 화면이 달라지는 것을 뜻한다. 컴퓨터를 기준으로 웹사이트를 만들고, mobile로 보게되면 화면이 작아서 다 보이지 않게 된다.
 
 - 화면의 width가 600px보다 작을 경우 `class=logo`인 HTMLElement 안보이게 하기
 
@@ -1125,40 +1133,40 @@ Javascript는 [node package manager (npm)](https://www.npmjs.com/)를 지원해 
 
 **JavaScript, often abbreviated JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS. Javascript는 웹환경에서 가장 많이 쓰이는 프로그래밍언어이다.**
 
-맨 처음 Javascript는 web browser에 귀속된 programming language이였다. 각 browser마다 Javascript 해석엔진이 달랐는데, Chrome에서 사용하는 해석엔진인 'v8'이 browser와 독립적으로 출시되면서 programming language로 급부상했다. Javascript를 이용하여 웹서버, 모바일앱, mechine learning 등을 할 수 있지만, Javascript의 근본은 web development을 할 때 사용하는 것이다. Web 환경에서 JavaScript를 사용하는 가장 큰 이유는 **HTML 조작과 변경**이다. HTML을 조작하고, 변경하면서 우리는 이쁘고, 실용적인 웹페이지를 만들 수 있다.
+맨 처음 Javascript는 web browser에 귀속된 programming language이였다. 각 browser마다 Javascript 해석엔진이 달랐는데, Chrome에서 사용하는 해석엔진인 'v8'이 browser와 독립적으로 출시되면서 programming language로 급부상했다. Javascript를 이용하여 웹서버, 모바일앱, mechine learning 등 여러가지를 할 수 있지만, Javascript의 근본은 web development을 할 때 사용하는 것이다. Web 환경에서 JavaScript를 사용하는 가장 큰 이유는 **HTML 조작과 변경**이다. HTML을 조작하고, 변경하면서 우리는 이쁘고, 실용적인 웹페이지를 만들 수 있다.
 
-Javascript는 web을 위해 등장한 언어이기 때문에 다른 프로그래밍 언어들과는 차별점을 가진다.
-
-- Javascript는 **동기 프로그래밍 (synchronous programming) 언어이지만, 비동기 프로그래밍 (asynchronous programming)을 지원**한다.
-  js 코드를 위에서 부터 한줄 씩 차례대로 실행하기는 하지만, 데이터를 불러오는데 오래걸리는 것들은 비동기 프로그래밍을 이용하면
-  자바스크립트의 비동기 처리란 특정 코드의 연산이 끝날 때까지 코드의 실행을 멈추지 않고 다음 코드를 먼저 실행하는 자바스크립트의 특성을 의미한다.
-
-- JavaScript is a `dynamically typed language`로 변수타입의 지정이 필요없이 알아서 타입을 정해준다.
-  It means that JS does not require the explicit declaration of the variables before they're used. 변수의 타입을 직접 지정해주지 않아도, JavaScript가 알아서 변수의 타입을 정해준다. 이는 한 variable에 여러 타입이 assign되는 상황을 가능하게 만든다. 작은 project를 만들 때에는 편리하지만, 큰 project를 만들고, team 단위로 만들게 되면 이런 높은 자유도는 오히려 독이 되어 어디서 어떻게 잘 못 되었는 지 알기 어렵게 만든다.
+- Javascript는 web을 위해 등장한 언어이기 때문에 다른 프로그래밍 언어들과는 차별점을 가진다.
+  - Javascript는 **동기 프로그래밍 (synchronous programming) 언어이지만, 비동기 프로그래밍 (asynchronous programming)을 지원**한다.
+    - js 코드를 위에서 부터 한줄 씩 차례대로 실행하기는 하지만, 데이터를 불러오는데 오래걸리는 것들은 비동기 프로그래밍을 이용한다.
+    - 비동기 처리란 특정 코드의 연산이 끝날 때까지 기다리지 않고 다음 코드를 같이 실행하는 것을 의미한다.
+  - JavaScript is a **`dynamically typed language`로 변수의 data type을 직접 지정해주지 않아도, JavaScript가 알아서 정한다**.
+    - It means that JS does not require the explicit declaration of the variables before they're used.
+    - 이는 한 variable에 여러 타입이 assign되는 상황을 가능하게 만든다.
+    - 작은 project를 만들 때에는 편리하지만, 큰 project를 만들고, team 단위로 만들게 되면 이런 높은 자유도는 오히려 독이 되어 어디서 어떻게 잘 못 되었는 지 알기 어렵게 만든다.
 
 ```
 // static typing in Java
-int age = 10; // age의 타입을 int형으로 정해놨기 때문에 다른 types은 올 수 없다.
-
+// age의 타입을 int형으로 정해놨기 때문에 다른 types은 올 수 없다.
+int age = 10;
 age = "Hello"; (x) // error를 만든다.
 age = 20;  (o)
 
 // dynamic typing in Javascript
 let age; // 현재 age의 타입: undefined
-age = 10; // age에 정수형 (Integer)값이 들어오면서, age의 타입이 int로 변환된다.
-
-age = "Hello"; // age에 문자형 (String)값이 들어오면서, age의 타입이 string로 변환된다.
+age = 10; // age에 number가 들어오면서, age의 타입이 number로 변환된다.
+age = "Hello"; // age에 string이 들어오면서, age의 타입이 string로 변환된다.
 ```
 
-왜 Javascript가 비동기적인지를 생각해보면, 만약에 Javascript가 동기적으로만 처리된다면 우리는 서버가 모든 데이터를 불러올 때까지 아무 버튼도 누를수 없다.
+왜 Javascript가 비동기적 프로그래밍을 지원하는지 생각해보면, 만약에 Javascript가 동기적으로만 처리된다면 우리는 서버가 모든 데이터를 불러올 때까지 아무 버튼도 누를수 없다.
+즉, 사용자 경험인 User Experiecne (UX)를 신경쓰기 위한 방법이다.
 
 ### Web browser 동작원리
 
 Javascript를 실행하는 것은 web browser이다. 그럼으로 Web browser가 어떻게 Javascript를 해석하는 지, Javascript 해석엔진과 web browser의 동작원리를 알 필요가 있다.
 
-Javascript는 동기적으로 처리되는 동기 프로그래밍 (synchronous programming) 언어이지만, web browser의 Javascript 해석엔진이 비동기 프로그래밍 (asynchronous programming)을 지원한다. Javacript는 single thread이다. 그럼으로, 한번에 하나의 코드만 call stack에서 실행할 수 있다. 그럼 어떻게 자바스크립트는 싱글스레드이면서 비동기을 지원하는 것일까?
+Javascript는 동기적으로 처리되는 (synchronous programming) 언어이지만, web browser의 Javascript 해석엔진이 비동기 프로그래밍 (asynchronous programming)을 지원한다. Javacript는 single thread이다. 그럼으로, 한번에 하나의 코드만 call stack에서 실행할 수 있다. 그럼 어떻게 자바스크립트는 single thread 이면서 비동기을 지원하는 것일까?
 
-동기적이란 한 번에 한 줄의 코드를 위에서 부터 차례로 실행하는 것을 의미한다. 비동기적이란 특정 코드의 연산이 끝날 때까지 코드의 실행을 멈추지 않고 다음 코드를 먼저 실행하는 것을 의미한다. Javascript에서 비동기적인 처리를 지원하는 함수는 `setTimeout()`, `event listener`, `ajax`이다. Web browser는 Javascript 코드를 위에서 부터 하나씩 실행하다가 위의 함수들을 만나면 시간이 오래걸리는 걸로 간주하고 Web Apis (대기실)로 옮겨논 다음에 call stack에 아무것도 없을 때, 이를 실행한다.
+동기적이란 한 번에 한 줄의 코드를 위에서 부터 차례로 실행하는 것을 의미한다. 비동기적이란 특정 코드의 연산이 끝날 때까지 기다리지 않고 다음 코드를 동시에 실행하는 것을 의미한다. Javascript에서 비동기적인 처리를 지원하는 함수는 `setTimeout()`, `event listener`, `ajax`이다. Web browser는 Javascript 코드를 위에서 부터 하나씩 실행하다가 위의 함수들을 만나면 시간이 오래걸리는 걸로 간주하고 대기실인 Web Apis 로 옮겨논 다음에 call stack에 아무것도 없을 때, 이를 대기실에서 가져와 실행한다.
 
 - **Call Stack:** 실행
 - **Web Apis**: 대기실
@@ -1234,19 +1242,11 @@ There are 7 primitive data types in javascript.
 
 ### ES6+ Syntax
 
-Javascript syntax를 배울 때 중요한 점은 **if, for, var, let, function, array, object등 Javascript에서 사용하는 문법은 HTML을 조작하고, 변경하기 위해 등장했다는 것이다.**
-
-JavaScript Data Type:
-
-- Primitive data types: immutable datum represented directly at the lowest level of te language
-  - number, string, boolean, null, undefined
-- object (function, array, data, regexp)
-
-자바스크립트는 null과 undefined 타입을 제외하고 모든 것을 object로 다룬다.
+Javascript syntax를 배울 때 중요한 점은 **if, for, var, let, function, array, object 등등 Javascript에서 사용하는 문법들은 HTML을 조작하고, 변경하기 위해 등장했다는 것이다.**
 
 #### Javascript로 HTML 조작하기 (DOM Manipulation)
 
-**바꾸고 싶은 HTMl 요소 선택 (Selector) + 그 요소의 뭘 바꾸고 싶은지 선택 + 어떤 값으로 바꿀지**
+**바꾸고 싶은 HTML Element 선택 (Selector) + 그 요소의 뭘 바꾸고 싶은지 선택 + 어떤 값으로 바꿀지**
 
 요소의 뭘 바꾸고 싶은지는 매우 많기 때문에, 전부 다 외울 수는 없고, 구글에 검색해서 사용한다.
 
@@ -1270,9 +1270,9 @@ JavaScript Data Type:
 
 `age = 10; // age라는 variable에 숫자 10을 assgin한다.`
 
-- variable을 지정했는데 값을 아직 assign 안한 경우, 이 변수의 값은 undefined이 된다.
+- variable을 지정했는데 값을 아직 assign 안한 경우, 이 변수의 값은 `undefined`이 된다.
 
-- `//`는 single-line comment `/* */`는 multi-line comment로 컴퓨터는 인식하지 못하고, 사람간에 설명이 필요할 때 사용한다.
+- `//`는 single-line comment `/* */`는 multi-line comment로 컴퓨터는 인식하지 못하고, 개발자간에 설명이 필요할 때 사용한다.
 
 ```
 // name is not defined here.
@@ -1285,7 +1285,8 @@ name = "Shin"; // name is "Shin" here.
 ```
 
 - 문자는 `""` (double quote), `''` (single quote), `` (back tic) 사이에 넣는다.
-- 위의 기호들 사이에 있으면, 문자 자료형 `String`이 된다. double quote와 single quote는 아무런 차이가 없지만, single quote를 더 선호한다.
+- 위의 기호들 사이에 있으면, 문자 자료형 `String`이 된다.
+- double quote는 연산이 포함되고, single quote는 string literal로 입력값을 그대로 반환하기 떄문에, string을 만들 때는 single quote를 더 사용하도록 한다.
 
 - **Template Literals**: back tic의 경우 `${variable}`을 사용해서 다른 곳에서 정의한 값을 문자열 사이에 넣을 수 있다.
 
@@ -1298,6 +1299,7 @@ console.log(`Hello ${name}!`); // Good: Hello Shin
 #### If statement
 
 ```
+// conditional operator
 if (condition1) {
    // if condition1 is true
    // do this code
@@ -1309,7 +1311,7 @@ if (condition1) {
 }
 ```
 
-또는 **Conditional (ternary) operator** = `{ cond ? tb : fb}`
+또는 **ternary operator** = `{ condition ? truebranch : falsebrance }`
 
 #### Function
 
@@ -1330,7 +1332,7 @@ const add = function(x, y) {
   return x + y;
 }
 
-// 3. 함수 표현식에서 Arrow Function
+// 3. 함수 표현식에서 Arrow Function Expressions
 const add = (x, y) => {
    return x + y;
 }
@@ -1338,21 +1340,21 @@ const add = (x, y) => {
 
 함수 선언식과 표현식의 차이점은 함수 선언식은 Hoisting에 영향을 받지만, 함수 표현식은 영향을 받지 않는다. broswer는 자바스크립트를 실행하기 전에 파일 전체를 훓는다. 이 때, 함수 선언식으로 작성된 함수들은 미리 memory에 올려놔 언제든지 사용가능 하도록 만든다.
 
-- 함수 표현식: 코드에 도달하면 생성. 변수의 생성과 같다.
-- 함수 선언식: 실행전에 메모리에 입력. 코드에 도달하기전에 메모리에 있기 때문에, 언제 어디서든 호출이 가능하다.
+- Function Declarations: 코드에 도달하면 생성. 변수의 생성과 동일하다.
+- Function Expressions: 실행전에 메모리에 입력. 코드에 도달하기전에 메모리에 있기 때문에, 언제 어디서든 호출이 가능하다.
 
-함수 선언식은 코드를 구현한 위치와 관계없이 broswer가 자바스크립트를 해석할 때 맨 위로 끌어 올려진다. 이 말은 함수 선언식은 어디서든 호출이 가능하고, function이 선언 되기 전에 코드에서도 함수가 이 파일내에 선언만 되어 있다면 사용할 수 있다.
+Function Declarations은 코드를 구현한 위치와 관계없이 broswer가 자바스크립트를 해석할 때 맨 위로 끌어 올려진다. 이 말은 함수 선언식은 어디서든 호출이 가능하고, function이 선언 되기 전에 코드에서도 함수가 이 파일내에 선언만 되어 있다면 사용할 수 있다.
 
 ```
-// 함수 표현식은 함수가 선언되기 전 코드에서도 함수를 호출할 수 있다.
+// Function Declarations은 함수가 선언되기 전 코드에서도 함수를 호출할 수 있다.
 console.log(add(1,2)); // 3
 
 function add(x, y) {
      return x + y;
 }
 
-//  함수 선언식은 함수가 선언되기 전 코드에서는 함수를 호출할 수 없다.
-// 그 이유는 함수 선언식에서는 함수를 변수랑 똑같이 대하기 때문이다.
+// Function Expressions은 함수가 선언되기 전 코드에서는 함수를 호출할 수 없다.
+// 그 이유는 Function Expressions에서는 함수를 변수랑 똑같이 대하기 때문이다.
 console.log(add(1,2)); // error. add is not a function.
 
 const add = function (x, y) {
@@ -1360,44 +1362,40 @@ const add = function (x, y) {
 }
 ```
 
-더 자세한 내용은 Hoiesting부분을 참고하자.
+Function Declaration의 장점:
 
-함수 표현식의 장점:
+1. Hoisting에 영향을 받지 않는다.
+2. Closure로 사용 가능하다. Closure는 함수를 실행하기 전에 해당 함수에 변수를 넘기고 싶을 때 사용된다.
+3. callback function으로 사용 가능하다. (다른 함수의 인자로 넘길 수 있음)
 
-1. 함수 표현식이 호이스팅에 영향을 받지 않는다.
-2. 클로져 (Closure) 로 사용 가능하다. 클로져는 함수를 실행하기 전에 해당 함수에 변수를 넘기고 싶을 때 사용된다.
-3. 콜백 (callback function)으로 사용 가능하다. (다른 함수의 인자로 넘길 수 있음)
-
-그럼으로 함수 선언식보다는 함수 표현식을 지향하는 것이 좋다.
+그럼으로, 큰 차이는 없지만 Function Expressions보다는 Function Declaration을 지향하는 것이 좋다.
 
 #### Arrow Function
 
 Arrow Function은 함수를 더욱 간결하게 만들기 위해 등장한 개념이다.
 
-- Curly brackets: after an arrow function they represent a code block, which consists of zero or more grouped statements within the curly brackets.
+- Curly brackets `{}`: after an arrow function they represent a code block, which consists of zero or more grouped statements within the curly brackets.
 
 Arrow function에서 body부분에 Curly brackets가 쓰이면 이는 code block, 즉 여러개의 code를 묶어 놓은 것으로 인식하기 떄문에 `return` keyword가 다른 function들 처럼
-반드시 필요하다.
-
-`return`이 없으면, 이 함수는 local variable만 생성할 뿐 값을 만들어 내지 않기 떄문에, 값이 `undefined`가 된다.
+반드시 필요하다. `return` keyword가 없으면, 이 함수는 local variable만 생성할 뿐 값을 반환하지 않기 떄문에, 값이 `undefined`가 된다.
 
 ```
 // return이 있는 code block (o)
 const jsBrackets = x => {
-return x > 3 ? true : false
+  return x > 3 ? true : false
 }
 jsBrackets(5); // true
 
 // return이 없는 code block (x)
 const jsBrackets = x => {
- x > 3 ? true : false
+  x > 3 ? true : false
 }
 jsBrackets(5); // undefined
 
 // return이 없는 괄호 (o)
 // return문이 없으면 대괄호를 일반괄호로 바꾼다.
 const jsBrackets = x => (
- x > 3 ? true : false
+  x > 3 ? true : false
 )
 ```
 
@@ -1405,7 +1403,7 @@ If the function can be written on one line (as the example above can, it can be 
 
 `const jsBrackets = x => x > 3 ? true : false`
 
-- Parentheses: are used instead of curly brackets after an arrow function to return an object.
+- Parentheses are used instead of curly brackets after an arrow function to return an object.
 
 For example, they are used in map, filter, and reduce functions.
 
@@ -1421,9 +1419,8 @@ const newnumbers = numbers.map(number => {number \* 2});
 console.log("newnumbers"); // newnumbers = [undefined, undefined, ...]
 ```
 
-이를 확인하려면, browser에서 F12를 열거나, 마우스 오른쪽 클릭 후 inspect를 클릭해 개발자 모드로 들어간다.
-
-Source tab에서 js파일에 breakpoint를 걸고 실행시켜보면, scope/global scope을 통해 값을 볼 수 있다.
+1. 이를 확인하려면, browser에서 F12를 열거나, 마우스 오른쪽 클릭 후 inspect를 클릭해 개발자 모드로 들어간다.
+2. Source tab에서 js파일에 breakpoint를 걸고 실행시켜보면, scope/global scope을 통해 값을 볼 수 있다.
 
 요약:
 
@@ -1451,7 +1448,7 @@ return result };
 
 **Array (배열)는 여러 변수들을 하나로 묶어놓은 묶음이다.**
 
-Array을 만들 때, Javascript의 안좋은 점이 들어난다. Javascript는 array내에 같은 type만 담을 수 있는 것이 아니라, 다른 type들도 섞어서 담을 수가 있다. 이렇게 되면, error을 일으킬 확률이 높으니 array 내에는 같은 type만 담을 수 있도록 한다.
+Array을 만들 때, Javascript의 안좋은 점이 들어난다. Javascript는 array내에 같은 type만 담을 수 있는 것이 아니라, 다른 type들도 섞어서 담을 수가 있다. 이렇게 되면, error을 일으킬 확률이 높으니 **array 내에는 같은 data type만 담도록 한다**.
 
 - Object는 **{} curly braces**를 이용해서 정의한다.
 - Array는 **[] square brackets**를 이용해서 정의한다.
@@ -1497,7 +1494,7 @@ arr.includes(6); // false
 - currentValue: 배열 내 현재 값
 - index: 배열 내 현재 index 값
 - array: 원본 배열
-- thisArg: callbackFunctoin 내에서 this로 사용될 값
+- thisArg: callbackfunction 내에서 this로 사용될 값
 
 `Array.map()`은 Array내의 모든 요소를 돌면서 주어진 함수의 결과를 모아 **같은 길이의 새로운 배열을 return**합니다. 만약 return 값이 없으면 error를 일으키니 사용시 return 값이 무엇인지 항상 체크한다.
 
@@ -1524,18 +1521,18 @@ const ResultMap = testArray.map((x)=> {
 console.log(ResultMap); // ['김학생', '윤학생', undefined]
 ```
 
-조건을 이용해서 원하는 데이터를 가져오고 싶었지만, map은 해당 조건이 안 맞을 경우 return 없기 때문에 undefined가 들어간 결과 배열을 가져왔다.
+조건을 이용해서 원하는 데이터를 가져오고 싶었지만, map은 해당 조건이 안 맞을 경우 return 없기 때문에 `undefined`가 들어간 결과 배열을 가져왔다.
 
 9. `Array.filter(callbackFunction(currentValue, index, array), thisArg)`
 
 - currentValue: 배열 내 현재 값
 - index: 배열 내 현재 index 값
 - array: 원본 배열
-- thisArg: callbackFunctoin 내에서 this로 사용될 값
+- thisArg: callback function 내에서 this로 사용될 값
 
 filter와 map의 가장 큰 차이가 있는 게 바로 반환 결과이다.
 
-map의 경우 return 값을 지정하지 않았을 경우, 강제로 undefined를 넣어주는 반면, filter의 경우 retrun 값을 지정하지 않거나, 지정한 조건에 모든 값이 해당하지 않을 경우 빈 배열이 반환된다.
+`map`의 경우 return 값을 지정하지 않았을 경우, 강제로 `undefined`를 넣어주는 반면, `filter`의 경우 retrun 값을 지정하지 않거나, 지정한 조건에 모든 값이 해당하지 않을 경우 빈 배열이 반환된다.
 
 ```
 // 배열 내 원하는 숫자 데이터만 가져오고 싶을 경우
@@ -1635,9 +1632,26 @@ console.log(array1.toString());
 // expected output: "1,2,a,1a"
 ```
 
+`toString()`은 array 뿐만 아니라 number에도 사용할 수 있다.
+
+```
+let x = 10; // decimal 10
+let binaryx = x.toString(2); // binary 1010
+// string representation of binary number 1010
+```
+
 #### Objects
 
-Javascript에서 object는 curly brackets `{}`를 사용한다. object로 hashmap과 같은 data structure를 만들 수 있다. **key and value pair**.
+Javascript에서 object는 curly brackets `{}`를 사용한다. object로 hashmap과 같은 **key and value pair** data structure를 만들 수 있다.
+
+- object를 만드는 방법에는 크게 두 가지가 있다.
+
+  1. object constructor: `let newObject = new Object();`
+  2. curly brackets
+
+- object methods:
+  1. `object.prototype.keys()`: get all keys in object
+  2. `object.prototype.values()`: get all values in object
 
 ```
 let object1 = {
@@ -1686,9 +1700,9 @@ console.log("Hi" in ob) // false
 console.log(ob.includes(3)) // error
 ```
 
-### Object-Oriented Programming (OOP) 객체 지향형 언어
+### Object-Oriented Programming (OOP): 객체 지향형 언어
 
-80년대 초 소프트웨어가 하드웨어의 빠른 변화를 못 쫓아감. 해결책으로 객체지향 언어를 도입 (절차적 -> 객체지향)
+80년대 초 소프트웨어가 하드웨어의 빠른 변화를 못 쫓아갔다. 이에 대한 해결책으로 객체지향 언어를 도입 (절차적 -> 객체지향)
 절차적은 프로그램이 순서대로 실행되는 것을 의미한다.
 
 - OOP의 장점
@@ -1831,7 +1845,7 @@ function User(name, email) {
   this.email = email;
 
   // 모든 함수의 prototype은 'constructor' property를 기본으로 갖고 있기 때문에
-  // constructor property를 명시적으로 만들 필요가 없습니다.
+  // constructor property를 명시적으로 만들 필요가 없다.
 
   // method
   this.printName = function() {
@@ -1953,7 +1967,7 @@ console.log('Hello Again');
 3초 있다가 ‘Bye’ 출력
 ```
 
-setTimeout() 역시 비동기 방식으로 실행되기 때문에 3초를 기다렸다가 다음 코드를 수행하는 것이 아니라, 일단 setTimeout()을 실행하고 나서 바로 다음 코드인 console.log('Hello Again');으로 넘어간다. 따라서, ‘Hello’, ‘Hello Again’를 먼저 출력하고 3초가 지나면 ‘Bye’가 출력됩니다.
+`setTimeout()` 역시 비동기 방식으로 실행되기 때문에 3초를 기다렸다가 다음 코드를 수행하는 것이 아니라, 일단 `setTimeout()`을 실행하고 나서 바로 다음 코드인 `console.log('Hello Again');`으로 넘어간다. 따라서, ‘Hello’, ‘Hello Again’를 먼저 출력하고 3초가 지나면 ‘Bye’가 출력됩니다.
 
 그러면, Javascript에서 동기적인 프로그래밍을 하는 방법은 무엇이 있을까?
 
@@ -1963,9 +1977,9 @@ setTimeout() 역시 비동기 방식으로 실행되기 때문에 3초를 기다
 2. Promise object
 3. Async and Await
 
-### CallBack Function으로 비동기 프로그램이 가진 문제 해결하기
+### CallBack Function 으로 비동기 프로그램이 가진 문제 해결하기
 
-**콜백함수(Callback Function)란 파라미터로 함수를 전달받아, 함수의 내부에서 실행하는 함수이다.**
+**콜백함수(Callback Function)란 parameter로 function를 전달받아, 함수의 내부에서 실행하는 함수이다.**
 
 콜백함수를 이용하면, 코드를 위에서 부터 차례로 시작하는 동기적 프로그래밍을 할 수 있습니다.
 

@@ -972,7 +972,7 @@ border: border-width border-style (required) border-color
 ```
 
 - **보통은 parent에 `position: relative`를 설정하고 childredn에 `position: absolute`을 설정하여 두 개를 동시에 사용한다.**
-- 또한 parent에 `position: flex`를 설정하고 childredn에 `position: absolute`을 설정하여 두 개의 flex items를 하나로 합치는 것도 가능하다.
+- 또한 parent에 `display: flex`를 설정하고 childredn에 `position: absolute`을 설정하여 두 개의 flex items를 하나로 합치는 것도 가능하다.
 
 #### Float
 
@@ -1107,6 +1107,154 @@ Flexbox와 Grid의 큰 차이점은
 
 - https://studiomeal.com/archives/533
 
+#### [Table](https://www.biew.co.kr/entry/%EC%9B%B9%ED%8D%BC%EB%B8%94%EB%A6%AC%EC%85%94%EA%B0%80-%EC%95%8C%EA%B3%A0%EC%9E%88%EC%96%B4%EC%95%BC-%ED%95%A0-display-table-%EC%86%8D%EC%84%B1?category=314306)
+
+`display:table`를 이용하면, table 형식에서 유연한 삭제, 추가가 가능해진다.
+
+```
+// index.html
+<div class="boxwrap">
+	<div class="box">
+		<span class="thum"><img src="http://via.placeholder.com/40x40" alt="샘플이미지"></span>
+		<strong class="title_item">안녕 나는 제목이야</strong>
+		<p class="desc_item">안녕 나는 설명이야.<br>기왕이면 두줄 이상으로 나오게 하기위해 글을 많이 쓸거야!</p>
+	</div>
+	<div class="box">
+		<span class="thum"><img src="http://via.placeholder.com/40x40" alt="샘플이미지"></span>
+		<strong class="title_item">안녕 나는 제목이야</strong>
+		<p class="desc_item">안녕 나는 설명이야.<br>기왕이면 두줄 이상으로 나오게 하기위해 글을 많이 쓸거야!</p>
+	</div>
+	<div class="box">
+		<span class="thum"><img src="http://via.placeholder.com/40x40" alt="샘플이미지"></span>
+		<strong class="title_item">안녕 나는 제목이야</strong>
+		<p class="desc_item">안녕 나는 설명이야.<br>기왕이면 두줄 이상으로 나오게 하기위해 글을 많이 쓸거야!</p>
+	</div>
+</div>
+
+// style.css
+* {
+  margin: 0;
+  font-size: 14px;
+}
+
+ul,ol,li {
+  list-style: none;
+}
+
+.title_item {
+  display: block;
+  font-size: 16px;
+}
+
+.title_item,
+.desc_item {
+  margin-top: 10px;
+}
+
+.desc_item {
+  font-size: 12px;
+}
+
+.boxwrap {
+  display: table; /* 핵심! */
+  width: 100%;
+  background-color: #f3f3f3;
+}
+
+.boxwrap .box + .box {
+  border-left: 1px solid #ccc;
+}
+
+.boxwrap .box {
+  display: table-cell; /* 핵심! */
+  vertical-align: middle;
+  text-align: center;
+  padding: 20px;
+}
+```
+
+![casstable](./img/csstable.png)
+
+요약:
+
+1. `display: table`, `dlsplay:table-cell` 쓰세요.
+2. `table-layout:fixed`도 쓰세요.
+
+#### Understanding CSS Position and Display
+
+One of the most common CSS problems is a lack of understanding of CSS’s position, display, & float properties.
+
+**POSITION** property
+
+The position property determines in what manner an item is positioned on the page or relative to one another. position는 tag를 어떻게 위치시킬지 정하며 아래의 5가지 값을 가집니다.
+
+- STATIC (기본위치)
+  - By default position is set to static, with elements displaying on the page in the order they appear in the document.
+  - Element displays on the page in the order it appeared in the document. Top, right, bottom, left, and z-index properties have no effect when used with static. Not stackable due to z-index restriction.
+  - 다른 태그와의 관계에 따라 배치되며 임의로 위치 조절은 불가능하다.
+  - 기본값이기 때문에 static은 이미 설정된 position을 무력화 할 때 사용된다.
+- RELATIVE (상대위치)
+  - Similar to static but able to be offset by top, right, bottom, left, and z-index properties.
+  - static 위치를 기준으로 움직이며 좌표 프로퍼티 (top, bottom, right, left)를 사용하여 위치를 이동 시킨다.
+  - static을 선언한 요소와 relative를 선언한 요소의 차이점은 좌표 프로퍼티의 동작 여부 뿐 그외는 동일합니다.
+- ABSOLUTE (절대위치)
+  - Element positioned relative to its first non-static ancestor element. Similar to relative in that it may be offset by top, right, bottom, left, and z-index properties.
+  - 부모 또는 가장 가까이 있는 조상 요소를 기준으로 하며 좌표 프로퍼티 (top, bottom, right, left)를 사용하여 위치를 이동시킵니다.
+  - 부모의 위치를 벗어나 어디든 위치할 수 있다.
+  - static은 부모가 될 수 없기 때문에 absolute를 사용할 때는 부모 요소에 relative를 설정해줘야 합니다.
+  - if 부모, 조상이 모두 static인 경우?
+    - 최상위 요소인 body를 기준으로 이동합니다.
+  - 다른 요소가 자리잡고 있어도 옆으로 밀리지 않고 요소 위에 위치하며 이는 `z-index` property로 레이어를 조정한다.
+  - absolute 사용시 block요소도 inline요소와 같이 컨텐츠 영역만을 차지하기 때문에 반드시 width와 height의 크기를 설정해야한다.
+- FIXED
+  - Similar to absolute, but positioned relative to the browser window. Scrolling will not move this element.
+  - 부모요소와 상관없이 viewport를 기준으로 좌표 프로퍼티(top, bottom, right, left)를 사용하여 위치를 이동시킨다.
+  - scroll에 영향을 받지 않고 언제나 고정된 위치를 유지
+  - fixed 또한 absolute와 동일하게 사용시 block요소도 inline요소와 같이 컨텐츠 영역만을 차지하기 때문에 반드시 width와 height의 크기를 설정해야한다.
+- STICKY
+  - Element is positioned relative until a specified offset position is met by scrolling, then the element is positioned ‘fixed’ in that position on the scrolling element.
+  - relative처럼 작동하다가, 설정된 top, right, bottom, left 값 위치 도달시 고정됩니다.
+  - 스크롤 상단 고정 메뉴를 만들때 사용됩니다.
+- INHERIT
+  - parent element 의 position 속성 상속
+
+**DISPLAY** property
+
+When you create an element to display on the page, it renders as a box & we have seen how to position those boxes on the page, but there’s more we can do with them.
+
+- BLOCK
+  - Element starts on a new line & takes up the entire width. May contain other block or inline elements. Elements that are block-level by default include `<div>, <p>, <h1>-<h6>, <ul>, <li>, <canvas>.`
+- INLINE
+  - Element can start anywhere on an existing line. Height and width properties have no effect. Elements that are inline by default include `<span>, <input>, <button>, <img>`.
+- FLEX
+  - Element is displayed block-level with inner content in flexbox layout.
+- GRID
+  - Element is displayed block-level with inner content in grid layout.
+- INLINE-BLOCK
+  - Element is displayed inline but height and width may be defined. May also be used with grid, flex, or table as these are block-level elements.
+- NONE
+  - Removes this element & all children (to just make an item invisible but still take up space on the page use the visibility property)
+  - 해당 요소와 그 자식요소까지 화면과 레이아웃 자체에서 완전히 사라져 영역조차 남지 않는다.
+- INHERIT
+  - parent element 의 display 속성 상속
+- TABLE
+  - `display: table, table-cell`을 사용하여 나열.
+  - `table-layout : fixed`
+
+It can be a lot to digest at first, but once you take some time to study display & positioning styles, layout isn’t that hard!
+Take the time at the beginning of your project to lay everything out on paper or in your head and think about what display and positioning each item should have. For each element determine whether you want a block-level or an inline element, and then what type of positioning you want it to have on the page.
+
+#### Overflow property
+
+overflow 프로퍼티는 자식 요소가 부모 요소의 영역를 벗어났을 때 처리 방법을 정의합니다.
+
+- `visible` 영역을 벗어난 부분을 표시합니다. (default)
+- `hidden` 영역을 벗어난 부분을 잘라내어 보이지 않게 합니다.
+- `auto` 영역을 벗어난 부분이 있을때만 스크롤을 표시합니다.
+- `scroll` 영역을 벗어난 부분이 없어도 스크롤을 표시합니다.(현재 대부분 브라우저는 auto와 동일하게 작동합니다.)
+
+![cssoverflow](./img/cssoverflow.png)
+
 ### Responsive Design
 
 **Responsive Design**는 브라우저의 크기에 따라 보이는 화면이 달라지는 것을 뜻한다. 컴퓨터를 기준으로 웹사이트를 만들고, mobile로 보게되면 화면이 작아서 다 보이지 않게 된다.
@@ -1124,6 +1272,235 @@ Flexbox와 Grid의 큰 차이점은
 ### Animation
 
 `@keyframe`을 이용하면 Animation을 구현할 수 있다. 자세한 내용은 [w3animation](https://www.w3schools.com/css/css3_animations.asp) 참고.
+
+#### transform property
+
+CSS animate를 하다보면 transform property을 많이 사용하게 될 것이다. 이유는 transform 은 웹요소의 위치를 이동시키거나 크기 조절 및 회전시킬 수 있는 강력한 기능을 가지고 있기 때문이다.
+
+```
+transform:scale() - X 또는 Y축으로 확대/ 축소
+scale은 해당 요소를 지정한 크기만큼 확대 또는 축소 시킬 수 있습니다.
+
+transform:scaleX(x축 비율); // x축으로 확대, 축소
+transform:scaleY(y축 비율); // y축으로 확대, 축소
+transform:scale(x축 비율, y축 비율); // x축, y축으로 확대, 축소
+
+transform:rotate() - 지정 요소 회전
+rotate는 요소를 지정한 각도만큼 회전시킵니다.
+회전 각도가 플러스 값일 경우 시계 방향, 마이너스 값일 경우 반시계 방향으로 회전합니다.
+
+transform:rotateX(Ndeg); // x축 기준으로 N도 만큼 회전
+transform:rotateY(Ndeg); // y축 기준으로 N도 만큼 회전
+transform:rotate(Ndeg); // N도 만큼 회전
+
+transform:translate() - 지정 요소 X 또는 Y축으로 이동
+translate는 요소를 지정한 위치로 X 또는 Y축만큼 이동 시킵니다.
+
+transform:translateX(10px); // X축으로 10px 이동
+transform:translateY(10px); // Y축으로 10px 이동
+transform:translate(-10px, -10px); // X축으로 -10px, Y축으로 -10px 이동
+
+transform:skew() - 지정 요소 X 또는 Y축으로 기울이기
+skew는 요소를 지정한 만큼 X 또는 Y축으로 기울입니다.
+
+transform:skewX(Ndeg); // x축으로 N도 만큼 기울이기
+transform:skewY(Ndeg); // y축으로 N도 만큼 기울이기
+transform:skew(x축 Ndeg, y축 Ndeg); // x축, y축으로 N도 만큼 기울이기
+
+transform-origin 속성
+위의 transform 속성인 scale(), rotate(), translate(), skew()들을 한번씩 연습해 보았다면, 지정 요소의 중심을 기준으로 동작한다는 것을 알 수 있을 것 입니다.
+하지만 transform-origin 을 사용하면 지정 요소의 기준점을 변경할 수 있습니다.
+
+// px, 백분율(%), left, center, right 중에서 사용할 수 있습니다.
+transform-origin:x축 y축;
+```
+
+### CSSbattle
+
+css만 가지고 도형 만들기
+
+```
+// index.html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="blue"></div>
+    <div class="sliver">
+      <div class="rectangle">
+        <div class="triangle"></div>
+        <div class="triangle2"></div>
+      </div>
+      <div class="black-balls-container">
+        <div class="black"></div>
+        <div class="black"></div>
+        <div class="black"></div>
+      </div>
+      <div class="black-lines-container">
+        <div class="black-line"></div>
+        <div class="black-line"></div>
+        <div class="black-line"></div>
+        <div class="black-line"></div>
+      </div>
+      <div class="black-balls-container">
+        <div class="black"></div>
+        <div class="black"></div>
+        <div class="black"></div>
+      </div>
+    </div>
+  </body>
+</html>
+
+// style.css
+body {
+  margin: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000000;
+}
+.blue {
+  width: 240px;
+  height: 120px;
+  background: #37385a;
+  border-radius: 20px;
+  position: absolute;
+}
+
+.sliver {
+  z-index: 2;
+  width: 200px;
+  height: 80px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-sizing: border-box;
+  background: #9897ae;
+  display: flex;
+}
+
+.black {
+  width: 10px;
+  height: 10px;
+  border-radius: 100px;
+  background: #000000;
+}
+
+.black-balls-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.black-lines-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem;
+}
+
+.black-line {
+  width: 10px;
+  height: 50px;
+  border-radius: 100px;
+  background: #000000;
+  margin: 5px;
+  z-index: 2;
+}
+
+.rectangle {
+  z-index: 0;
+  width: 70px;
+  height: 80px;
+  background: #c0c3db;
+  position: absolute;
+  left: 170px;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-bottom: 80px solid transparent;
+  border-left: 25px solid green;
+}
+
+.triangle2 {
+  position: absolute;
+  left: 45px;
+  top: 0px;
+  width: 0;
+  height: 0;
+  border-bottom: 80px solid transparent;
+  border-left: 25px solid green;
+  transform: rotate(180deg);
+}
+```
+
+![cssbattle](./img/cssbattle.png)
+
+```
+// index.html
+<body>
+    <div class="wrapper-sm">
+      <div class="hide"></div>
+    </div>
+    <div class="wrapper">
+      <div class="rectangle"></div>
+      <div class="rectangle"></div>
+      <div class="rectangle"></div>
+    </div>
+</body>
+
+// style.css
+body {
+  margin: 0;
+  height: 100%;
+  background: #1a4341;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper-sm {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  background: #998235;
+  border-radius: 50%;
+}
+.hide {
+  height: 140px;
+  width: 100%;
+  background: #1a4341;
+  margin-top: 30px;
+}
+.wrapper {
+  z-index: 2;
+  width: 250px;
+  height: 250px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 75px 0;
+}
+.rectangle {
+  height: 20px;
+  width: 100%;
+  background: #f3ac3c;
+}
+```
+
+![cssbattle2](./img/cssbattle2.png)
 
 ## 3. [Javascript](https://nodejs.org/en/)
 

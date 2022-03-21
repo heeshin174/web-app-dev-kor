@@ -1321,43 +1321,39 @@ css만 가지고 도형 만들기
 
 ```
 // index.html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div class="blue"></div>
-    <div class="sliver">
-      <div class="rectangle">
-        <div class="triangle"></div>
-        <div class="triangle2"></div>
-      </div>
-      <div class="black-balls-container">
-        <div class="black"></div>
-        <div class="black"></div>
-        <div class="black"></div>
-      </div>
-      <div class="black-lines-container">
-        <div class="black-line"></div>
-        <div class="black-line"></div>
-        <div class="black-line"></div>
-        <div class="black-line"></div>
-      </div>
-      <div class="black-balls-container">
-        <div class="black"></div>
-        <div class="black"></div>
-        <div class="black"></div>
-      </div>
+<body>
+  <div class="blue"></div>
+  <div class="sliver">
+    <div class="rectangle">
+      <div class="triangle"></div>
+      <div class="triangle2"></div>
     </div>
-  </body>
-</html>
+    <div class="black-balls-container">
+      <div class="black"></div>
+      <div class="black"></div>
+      <div class="black"></div>
+    </div>
+    <div class="black-lines-container">
+      <div class="black-line"></div>
+      <div class="black-line"></div>
+      <div class="black-line"></div>
+      <div class="black-line"></div>
+    </div>
+    <div class="black-balls-container">
+      <div class="black"></div>
+      <div class="black"></div>
+      <div class="black"></div>
+    </div>
+  </div>
+</body>
 
 // style.css
+* {
+  margin: 0;
+  box-sizing: border-box;
+  height: 300px;
+}
+
 body {
   margin: 0;
   height: 100%;
@@ -1366,6 +1362,7 @@ body {
   align-items: center;
   background: #000000;
 }
+
 .blue {
   width: 240px;
   height: 120px;
@@ -1385,18 +1382,20 @@ body {
   display: flex;
 }
 
+.black-balls-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 1rem;
+  height: auto;
+}
+
 .black {
   width: 10px;
   height: 10px;
   border-radius: 100px;
   background: #000000;
-}
-
-.black-balls-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 1rem;
+  z-index: 5;
 }
 
 .black-lines-container {
@@ -1404,6 +1403,7 @@ body {
   justify-content: space-between;
   align-items: center;
   margin: 1rem;
+  height: auto;
 }
 
 .black-line {
@@ -1421,7 +1421,7 @@ body {
   height: 80px;
   background: #c0c3db;
   position: absolute;
-  left: 170px;
+  left: 48%;
 }
 
 .triangle {
@@ -1441,6 +1441,7 @@ body {
   border-left: 25px solid green;
   transform: rotate(180deg);
 }
+
 ```
 
 ![cssbattle](./img/cssbattle.png)
@@ -1501,6 +1502,113 @@ body {
 ```
 
 ![cssbattle2](./img/cssbattle2.png)
+
+```
+// index.html
+<body>
+  <div class="hat">
+    <div class="white-hat">
+    <div class="black-hat"></div>
+    </div>
+  </div>
+  <div class="upper">
+    <div class="eye"></div>
+    <div class="eye"></div>
+    <div class="background"></div>
+  </div>
+  <div class="yellow"></div>
+  <div class="lower"></div>
+</body>
+
+// styles.css
+* {
+  margin: 0;
+  box-sizing: border-box;
+  height: 300px;
+}
+
+body {
+  display: flex;
+  background: #ac474b;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.upper {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+  top: 10px;
+}
+
+.eye {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #0e1f2b;
+  position: relative;
+  top: -10px;
+}
+
+.lower {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.yellow {
+  width: 60px;
+  height: 10px;
+  border-radius: 30%;
+  background: #ffa63f;
+  position: absolute;
+  top: 125px;
+}
+
+.background {
+  position: absolute;
+  background: #ac474b;
+  width: 60px;
+  height: 20px;
+  top: 40px;
+}
+
+.hat {
+  position: absolute;
+  background: #0e1f2b;
+  width: 40px;
+  height: 40px;
+  top: 37px;
+  z-index: 2;
+}
+
+.white-hat {
+  position: absolute;
+  background: #ffffff;
+  width: 40px;
+  height: 10px;
+  top: 15px;
+}
+
+.black-hat {
+  position: absolute;
+  background: #0e1f2b;
+  width: 60px;
+  height: 5px;
+  left: -10px;
+  top: 25px;
+  z-index: 2;
+}
+```
+
+![cssbattle3](./img/cssbattle3.png)
 
 ## 3. [Javascript](https://nodejs.org/en/)
 

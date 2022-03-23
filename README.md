@@ -2,14 +2,20 @@
 
 목표: Web Application Development을 이해하고 나만의 web app을 만들어보자.
 
-아래의 내용은 간단한 개념위주로, 개념만 공부해서는 이해하기 힘들다. **실제 project를 만들면서** 필요한 부분들을 이 곳에서 참고히면 된다.
+아래의 내용은 간단한 개념위주로, 개념만 공부해서는 이해하기 힘들다. **실제 project를 만들면서 필요한 부분들을 이 곳에서 참고히면 된다.**
 
-### 좋은 코드를 작성하는 기본원칙 세가지
+개발자로서 하나의 blog를 가지고 있다면 본인이 배운 내용들을 정리하기에도 좋고, 취업할 때도 유리하게 작용할 수 있다.
+
+- medium (blog site): https://medium.com/
+- 내 블로그 https://medium.com/@heeshin174/
+
+### 좋은 코드를 작성하는 기본원칙
 
 - DRY: Don't Repeat Yourself
   - 같은 코드가 반복될 경우, 함수로 만든다.
 - KISS: Keep It Simple and Stupid
-  - 한 함수는 딱 한가지 일만 수행하도록 만든다.
+  - Functional programming의 기본 원칙으로 한 함수는 딱 한가지 일만 수행하도록 만든다.
+    - 이 경우 bug가 생기기도 어렵고, debug하기도 매우 쉽다.
 - YANGI: You Are Not Gonna Need It
   - 지금 당장 필요하지 않는 미래지향적인 코드를 작성하지 않는다.
 
@@ -88,7 +94,7 @@
   - Node Version Manager (NVM)
   - Git/Github cli (command line)
 - OS별 개발환경 세팅:
-  - Macbook developer setup: https://www.youtube.com/watch?v=B26yiuC5zPM
+  - [Macbook developer setup](https://www.youtube.com/watch?v=B26yiuC5zPM)
     - [Homebrew (MacOS package manager)](https://brew.sh/)
   - Window developer setup (+ WSL)
     - [Chocolatey (Window package manager)](https://chocolatey.org/)
@@ -211,9 +217,9 @@ WSL: GET http://172.29.69.223:5000/api/users/me
 Front-End은 사용자가 웹사이트를 방문시 보게되는 화면, 즉 User Interface (UI)을 의미한다. Front-End의 기본은 `HTML`, `CSS`, `Javascript`이다. 이는 web browser가 읽을 수 있는 파일들이 이 세가지 밖에 없기 때문이다. 최근에는 `Web Assembly`까지 포함해 4가지를 읽을 수 있다.
 React.js, Typescript 등등 outside library/framework로 만들어 native HTML, CSS, Javascript로 작성되지 않은 파일들은 browser가 읽을 수 없기 떄문에 마지막에는 이 세가지로 변환해주어야 한다.
 
-- `HTML`: Structural 뼈대
-- `CSS`: Presentational 살점
-- `Javascript`: behavioral 행동
+- **HTML**: Structural 뼈대
+- **CSS**: Presentational 살점
+- **Javascript**: behavioral 행동
 
 ![htmlcssjs](img/htmlcssjs.gif)
 
@@ -236,8 +242,8 @@ React.js, Typescript 등등 outside library/framework로 만들어 native HTML, 
     - styled-components: https://styled-components.com/docs
     - Postcss: https://postcss.org/
   - 기타
-    - headlessui ( React, Vue + Tailwind): https://headlessui.dev/
-    - heroicons (svg icons with React, Vue + Tailwind): https://heroicons.com/
+    - headlessui ( React, Vue + Tailwindcss): https://headlessui.dev/
+    - heroicons (svg icons with React, Vue + Tailwindcss): https://heroicons.com/
     - FontAwesome (icons): https://fontawesome.com/
     - Devicon (icons representing programming tools): https://devicon.dev/
     - Google Font (text style): https://fonts.google.com/
@@ -293,6 +299,8 @@ React.js, Typescript 등등 outside library/framework로 만들어 native HTML, 
         - Victory: https://formidable.com/open-source/victory/
         - Apexchart: https://apexcharts.com/
       - Other React Library/Framework
+        - ⭐ **SWR** (React Hooks for Data Fetching): https://swr.vercel.app/
+        - ⭐ **react-query** (React Hooks for Data Fetching): https://react-query.tanstack.com/
         - MDX (Markdown for the component era): https://mdxjs.com/
         - react-icons (icons): https://react-icons.github.io/react-icons
         - react-typed (Dynanic text): https://github.com/ssbeefeater/react-typed
@@ -300,10 +308,8 @@ React.js, Typescript 등등 outside library/framework로 만들어 native HTML, 
         - react-beautiful-dnd (drag and drop): https://github.com/atlassian/react-beautiful-dnd
         - react-scroll (smooth scroll): https://github.com/fisshy/react-scroll
         - react-router: https://reactrouter.com/docs/en/v6
-        - SWR (React Hooks for Data Fetching): https://swr.vercel.app/
         - Framer motion (animation): https://www.framer.com/motion/
         - react-hook-form: https://react-hook-form.com/
-        - react-query: https://react-query.tanstack.com/
         - react-toastify (shows error, alert, and success alert): https://github.com/fkhadra/react-toastify#readme
     - Vue based
       - Server-Side Rendering (SSR)
@@ -320,7 +326,7 @@ Server가 client에 javascript를 넘겨주면, client가 이를 가지고 HTML�
 SPA를 제공하는 frontend framework에는 크게 React, Vue, Angular가 있다. 이들은 사용방법이 거의 비슷하기 때문에 하나만 잘 이해하면, 나머지는 쉽게 사용할 수 있다.
 
 - ⭐ **React.js**: React는 Meta사에서 만든 Javascript frontend web library로 computer에 최신 버전의 `Node.js`를 설치하면 누구나 사용할 수 있다.
-- **Vanilla.js** is just a way to refer to native (non-extended and standards-based) JavaScript
+- **Vanilla.js** is just a way to refer to native (non-extended and standards-based) JavaScript.
 
 #### Design UI/UX Tool
 
@@ -972,7 +978,8 @@ border: border-width border-style (required) border-color
 ```
 
 - **보통은 parent에 `position: relative`를 설정하고 childredn에 `position: absolute`을 설정하여 두 개를 동시에 사용한다.**
-- 또한 parent에 `display: flex`를 설정하고 childredn에 `position: absolute`을 설정하여 두 개의 flex items를 하나로 합치는 것도 가능하다.
+- **parent에 `display: flex`를 설정하고 children에 `position: relative` 또는 `position:absolute`을 설정하여 좌표 property (left, right, top, bottom)를 사용한다.**
+- 또한 parent에 `display: flex`를 설정하고 children에 `position: absolute`을 설정하여 두 개의 flex items를 하나로 합치는 것도 가능하다.
 
 #### Float
 
@@ -1105,9 +1112,9 @@ Flexbox와 Grid의 큰 차이점은
 
 ![gridguide](img/gridguide.png)
 
-- https://studiomeal.com/archives/533
+- [이번에야말로 CSS Grid를 익혀보자](https://studiomeal.com/archives/533)
 
-#### [Table](https://www.biew.co.kr/entry/%EC%9B%B9%ED%8D%BC%EB%B8%94%EB%A6%AC%EC%85%94%EA%B0%80-%EC%95%8C%EA%B3%A0%EC%9E%88%EC%96%B4%EC%95%BC-%ED%95%A0-display-table-%EC%86%8D%EC%84%B1?category=314306)
+#### Table
 
 `display:table`를 이용하면, table 형식에서 유연한 삭제, 추가가 가능해진다.
 
@@ -1179,6 +1186,8 @@ ul,ol,li {
 
 1. `display: table`, `dlsplay:table-cell` 쓰세요.
 2. `table-layout:fixed`도 쓰세요.
+
+- [웹퍼블리셔가 알고있어야 할 display: table 속성!](https://www.biew.co.kr/entry/%EC%9B%B9%ED%8D%BC%EB%B8%94%EB%A6%AC%EC%85%94%EA%B0%80-%EC%95%8C%EA%B3%A0%EC%9E%88%EC%96%B4%EC%95%BC-%ED%95%A0-display-table-%EC%86%8D%EC%84%B1?category=314306)
 
 #### Understanding CSS Position and Display
 
@@ -1317,7 +1326,9 @@ transform-origin:x축 y축;
 
 ### CSSbattle
 
-css만 가지고 도형 만들기
+HTML, CSS만 가지고 주어진 도형 만들기
+
+![cssbattle](./img/cssbattle.png)
 
 ```
 // index.html
@@ -1444,7 +1455,7 @@ body {
 
 ```
 
-![cssbattle](./img/cssbattle.png)
+![cssbattle2](./img/cssbattle2.png)
 
 ```
 // index.html
@@ -1501,7 +1512,7 @@ body {
 }
 ```
 
-![cssbattle2](./img/cssbattle2.png)
+![cssbattle3](./img/cssbattle3.png)
 
 ```
 // index.html
@@ -1607,8 +1618,6 @@ body {
   z-index: 2;
 }
 ```
-
-![cssbattle3](./img/cssbattle3.png)
 
 ## 3. [Javascript](https://nodejs.org/en/)
 
@@ -2252,13 +2261,11 @@ class Classname {
 }
 ```
 
-Class를 이용해 객체를 생성하려면, `new` 예약어를 사용한다.
+Class를 이용해 객체를 생성하려면, `new` keyword를 사용한다.
 
 `var|let|const 변수이름 = new Classname();`
 
-일반적으로 Javascript에서의 객체 선언은 const 키워드를 사용함.
-
-위와 같이 정의하면 변수는 클래스 안에 정의된 모든 기능을 부여받은 특수한 형태의 변수가 되는데 이를 객체라고 하고, 객체는 자신에게 기능을 점(.)을 통해 접근할 수 있다.
+일반적으로 Javascript에서의 객체 선언은 const keyword를 사용한다. 위와 같이 정의하면 변수는 클래스 안에 정의된 모든 기능을 부여받은 특수한 형태의 변수가 되는데 이를 객체라고 하고, 객체는 자신에게 기능을 점(.)을 통해 접근할 수 있다.
 
 ```
 객체.멤버변수 = 값;
@@ -4085,7 +4092,7 @@ let hello: string = 'world';
 let hello = 'world';
 ```
 
-위 예제에서 let 대신 const 변수로 선언하면, 아래와 같이 string 대신에 `‘world’` 타입으로 추론됩니다.
+위 예제에서 let 대신 const 변수로 선언하면, 아래와 같이 string 대신에 `'world'` 타입으로 추론됩니다.
 
 ```
 const hello = 'world';
@@ -4500,6 +4507,63 @@ React 말고도 Vue, Svelte나 Angular등 다른 Web app를 만들 수 있는 fr
 - A1. **React는 사용자가 가장 많은 library이기 때문에 교육자료도 많고, 참고할 자료도 매우 많다.**
   - React가 web app을 만드는 library/framework들 중에 사용자가 가장 많아서 취업에도 유리하고, 교육용 자료들을 쉽게 찾을 수 있다.
 - A2. **다른 framework와 마찬가지로, React는 component단위로 Element를 관리하기 때문에, 이를 함수처럼 사용할 수 있고 재사용 (reusable)이 쉽다.**
+- A3. **핵심적으로 Javascript를 declarative way (선언형) 으로 작성할 수 있다.**
+
+### Imperative and Declarative Programming
+
+**Imperative (명령형) 프로그래밍은 컴퓨터가 어떻게 행동해야 하는지를 프로그래밍하는 것이고, Declarative (선언형) 프로그래밍은 컴퓨터가 무엇을 해야할지를 프로그래밍하는 것이다.**
+
+Did you do some C or Assembly? Recall how you had to write down everything the computer is supposed to do? Likely, “take this number, put it in the register, add 5 to it, get it back to RAM”, and so on.
+The programming technique of dictating the computer how it should work is called Imperative Programming.
+There is an other way of writing code, that consist of writing down the result you want to achieve instead of steps that are involved to get it. This is called Declarative Programming.
+
+- In Imperative Programming, you write down **how** to do it.
+  - HOW to do things (어떻게 할 것인지를 설명한다)
+  - your friend calling your father that tells her how to fix your car step by step.
+- In Declarative Programming, you write down **what** you want.
+  - WHAT to do (무엇을 할 것인가 정의한다)
+  - asking your friend to fix your car. You don’t care how to fix it, that’s up to her.
+
+```
+// Imperative Programming
+function spaceToHeart(text) {
+  let result = '';
+  for (let i = 0; i < text.length; i++) {
+    if (text[i] === ' ') {
+      result += 'HEART';
+    } else {
+      result += text[i];
+    }
+  }
+  return result;
+}
+// Declarative Programming
+function spaceToHeart(text) {
+  return text.replaceAll(' ', 'HEART');
+}
+```
+
+선언형 프로그래밍은 ​​보이지 않는 곳에서 명령형 프로그래밍을 사용하므로, 순수한 선언적 코드를 작성하는 것은 불가능하다.
+
+- Declarative은 Imperative 위에서 동작한다.
+- **declarative programming still uses imperative programming under the hood, so it’s impossible to write pure declarative code.**
+- 즉, declarative의 source code에는 imperative programming이 사용된다.
+
+#### Declarative UI in React
+
+React에서는 You write down what your page should looks like, and not how to render it. `View = Render(Props)`
+
+This allows you to clearly understand how your UI works. 어떻게 User Interface가 보일 것인지만 정의하면 react가 알아서 imperative 하게 실체화한다. 이는 사용자가 동작원리를 알 필요없이 원하는 결과를 얻을 수 있다.
+
+This has several benefits :
+
+- You **don’t care about the actual rendering implementation.**
+  - This is what allows React code to be used in Browsers, Mobile apps, Desktops, Embedded Systems.
+  - 이것이 브라우저, 모바일 앱, 데스크톱, 임베디드 시스템에서 React 코드를 사용할 수 있는 이유이다.
+- Your code is more **predictable**
+- You drastically **reduce the complexity** of your program
+
+By itself, React is just a descriptive UI library, it translate your JSX into functions that create React elements. It manages the lifecycle of those components, and that’s basically it. The real magic is done by the **renderer**. 사용자가 "이렇게 보일 것이다"라고 선언만 해두면, 실제로 그리는 것은 각 환경에 맞는 렌더러가 알아서 해 준다. 이는 렌더링에 관한 선언과 구현이 분리되어 있기에 가능하다.
 
 ### Framework vs Library
 
@@ -4582,12 +4646,11 @@ React는 typescript를 전적으로 지원하기 때문에 되도록이면 types
 **JSX는 React "Element"를 생성**한다. React는 JSX 사용이 필수가 아니지만, JavaScript 코드 안에서 User Interface 작업을 할 때 시각적으로 더 도움이 되고 React가 더욱 도움이 되는 에러 및 경고 메시지를 표시할 수 있게 해준다.
 
 ```
-// `./index.jsx` file
+// index.jsx
 const name = 'Josh Perez';
 const element = <h1>Hello, {name}</h1>;
 // `name`이라는 variable를 선언 후
 // curly brackets {} 로 감싸 JSX 안에 사용
-
 
 ReactDOM.render(
   element,
@@ -4595,7 +4658,7 @@ ReactDOM.render(
 );
 ```
 
-**JSX의 curly brackets `{}` 안에는 모든 JavaScript expression을 넣을 수 있다.** 예를 들어 2 + 2, user.firstName 또는 formatName(user) 등은 모두 유효한 JavaScript 표현식입니다. 컴파일이 끝나면, JSX 표현식이 정규 JavaScript 함수 호출이 되고 JavaScript 객체로 인식됩니다.
+**JSX의 curly brackets `{}` 안에는 모든 JavaScript expression을 넣을 수 있다.** 예를 들어 `2 + 2`, `user.firstName`, `formatName(user)` 등은 모두 유효한 JavaScript expression 이다. 컴파일이 끝나면, JSX 표현식이 정규 JavaScript 함수 호출이 되고 JavaScript 객체로 인식됩니다.
 즉, JSX를 if 구문 및 for loop 안에 사용하고, 변수에 할당하고, 인자로서 받아들이고, 함수로부터 반환할 수 있습니다.
 
 #### React에서 NPM package module 불러오기
@@ -4991,21 +5054,20 @@ Functional component가 class component 후에 나온 최신 문법이다. 복�
 
 - **React 공식 문서는 functional component + Hooks 조합을 추천하고 있다.**
 
-https://dev.to/oahehc/redux-data-flow-and-react-component-life-cycle-11n
-
-https://velog.io/@lamda/%EB%A6%AC%EC%97%91%ED%8A%B8-%EB%9D%BC%EC%9D%B4%ED%94%84-%EC%82%AC%EC%9D%B4%ED%81%B4%EC%9D%B4%EB%9E%80
-
-https://www.zerocho.com/category/React/post/579b5ec26958781500ed9955
+- https://dev.to/oahehc/redux-data-flow-and-react-component-life-cycle-11n
+- https://velog.io/@lamda/%EB%A6%AC%EC%97%91%ED%8A%B8-%EB%9D%BC%EC%9D%B4%ED%94%84-%EC%82%AC%EC%9D%B4%ED%81%B4%EC%9D%B4%EB%9E%80
+- https://www.zerocho.com/category/React/post/579b5ec26958781500ed9955
 
 ### [React Hook](https://reactjs.org/docs/hooks-reference.html)
 
-https://velog.io/@velopert/using-hooks-with-typescript#useref
-
-https://kyounghwan01.github.io/blog/React/react-hook/#usememo-%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%86%AB%E1%84%92%E1%85%A1%E1%86%AB-%E1%84%80%E1%85%A1%E1%86%B9-%E1%84%8C%E1%85%A2%E1%84%89%E1%85%A1%E1%84%8B%E1%85%AD%E1%86%BC
+- [react hook + typescript](https://velog.io/@velopert/using-hooks-with-typescript#useref)
+- [react hook 정리](https://kyounghwan01.github.io/blog/React/react-hook/#usememo-%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%86%AB%E1%84%92%E1%85%A1%E1%86%AB-%E1%84%80%E1%85%A1%E1%86%B9-%E1%84%8C%E1%85%A2%E1%84%89%E1%85%A1%E1%84%8B%E1%85%AD%E1%86%BC)
 
 #### What are Hooks?
 
 React v16.8 로 업데이트되면서 추가된 기능으로서, 함수형 컴포넌트에서도 class 없이 react의 다양한 기능들을 사용가능 하게 한다. Hooks are a new addition in React 16.8. They let you use state and other React features without writing a class.
+
+외부에서 data를 불러올 때 **SWR**이나 **React Query** library를 당연하듯 사용하고, Hooks 를 사용하다가 분리 가능한 Hooks 라 생각되면 Custom Hooks 로 나누어 사용한다.
 
 #### useState hook
 
@@ -5385,6 +5447,52 @@ export default App;
 위 코드는 버튼을 누르면 number가 0이 되고 `useEffect`를 통해 state가 0이 됨을 감지하였을 때 다시 number를 10으로 올려주는 코드입니다.
 위처럼 작성하고 실행해서 버튼을 누르면 `{number}` 부분이 계속 0과 10을 왔다 갔다 하느라 깜빡거리는 것을 볼 수 있습니다.
 이는 `useEffect`가 비동기적으로 작동하기 때문인데요. 이 경우 `useEffect`를 `useLayoutEffect`로 바꿔서 실행하면 숫자가 깜빡거리지 않고 10을 계속 유지하는 것을 볼 수 있습니다. **즉 `useEffect`는 일단 화면을 보여주고 변화를 주는 반면에 `useLayoutEffect`는 변화를 적용 시킨 후 화면을 보여줍니다**
+
+#### [useSWR hook](https://swr.vercel.app/)
+
+**API request은 react-query와 SWR을 이용한다**
+
+SWR는 javascript library for data fecthing in react. 2020년에 **react-query와 SWR** 라는 libraries가 release 되었다. 두 라이브러리 모두, Hook을 사용하여 API 요청 상태를 관리하고, 또 cache 관리를 해준다.
+
+Q. How useSWR will help you handle data in your app?
+
+- A1. Keep the data consistent among all instances
+- A2. Avoid multiple requests in every component using the custom hook
+- A3. Keep state in sync and avoid subsequent requests overriding each other
+
+- SWR은 Next.js를 만든 Vercel팀에서 만들어 server-side rendering을 하는 경우 Next 와 함께 사용해야 한다.
+- Next를 사용하지 않는 경우 SWR은 적합하지 않을 수 있다. `react-query`의 `queryCache` 기능이 다양한 상황에 유용하게 사용 될 수 있어서 현재 매우 편하게 사용을 하고 있습니다.
+
+```
+// Download SWR
+$ npm i swr
+
+// App.js
+import useSWR from 'swr'
+
+const fetcher = async (...args) => {
+    const res = await fetch(...args)
+    const movies = await res.json();
+    return movies;
+}
+
+function App() {
+  const {data, error} = useSWR('http://localhost:3000/user', fetcher)
+
+  if (error) return <h1> {error} </h1>
+
+  return (
+    <div className="App">
+    {data ? (
+      data.map((user) => ( return <h1> {user} </h1>))
+    ) : (
+      <h1>Loading</h1>
+    )}
+    </div>
+  )
+}
+export default App;
+```
 
 ### React Rendering 최적화
 
@@ -6655,8 +6763,8 @@ const undoneTasks = useMemo(() => tasks.filter(task => !tasks.done), [tasks])
 
 2020년에 **react-query와 SWR** 라는 libraries가 release 되었다. 두 라이브러리 모두, Hook을 사용하여 API 요청 상태를 관리하고, 또 cache 관리를 해준다.
 
-- SWR은 Next.js를 만든 Vercel팀에서 만든 것이기에 server0side rendering을 하는 경우 Next.js 와 함께 사용해야 한다.
-- 반면 라프텔에서는 Next.js를 사용하지 않기 때문에 SWR이 저희에겐 적합하지 않았습니다. 그리고, react-query의 queryCache 기능이 다양한 상황에 유용하게 사용 될 수 있어서 현재 매우 편하게 사용을 하고 있습니다.
+- SWR은 Next.js를 만든 Vercel팀에서 만든 것이기에 server-side rendering을 하는 경우 Next 와 함께 사용해야 한다.
+- Next를 사용하지 않는 경우 SWR은 적합하지 않을 수 있다. `react-query`의 `queryCache` 기능이 다양한 상황에 유용하게 사용 될 수 있어서 현재 매우 편하게 사용을 하고 있습니다.
 
 위 두 라이브러리는 모두 훌륭한 솔루션들입니다. 여러분의 project에서 API 요청 하는 작업을 현재 redux와 middleware를 기반으로 구현을 했더라면, 점진적으로 둘 중 하나에게 해당 작업을 위임을 하는 것도 매우 좋은 선택지라고 생각합니다.
 
@@ -8536,19 +8644,22 @@ Rocket is a web framework for Rust that makes it simple to write fast, secure we
 
 ### What is Rust?
 
-Rust는 2012년에 공개된 low-level programming language로, C++의 단점을 개선하고 함수형 패러다임을 차용해 2016, 2017, 2018년 3년 연속 가장 사랑받는 언어로 등극한 프로그래밍 언어이다. 기존 C++ 사용자, 혹은 low-level language를 필요로 하는 사람들이 지속적으로 늘면서 커뮤니티의 크기 역시 점점 커지고 있는 추세이다.
+Rust는 C++를 대체하기 위해 mozilla 제단에서 2012년에 공개한 low-level programming language이다. C++의 단점을 개선하고 함수형 패러다임을 차용해 2016, 2017, 2018년 3년 연속 가장 사랑받는 언어로 등극했다. 기존 C++ 사용자, 혹은 low-level language를 필요로 하는 사람들이 지속적으로 늘면서 커뮤니티의 크기 역시 점점 커지고 있는 추세이다.
 
-Rust는 C++를 대체하기 위해 mozilla 제단에서 만든 programming language로 system programming, embeded programming을 하기에 특화되어 있다. Rust는 low-level programming language로 사람보다는 기계에 가깝게 코딩을 한다. Rust is a **`low-level statically-typed multi-paradigm programming language`** that's focused on safety and performance. Rust solves problems that C/C++ has been struggling with for a long time, such as memory errors and building concurrent programs.
+- Rust는 system programming, embeded programming을 하기에 특화된 언어이다.
+- Rust is a **`low-level statically-typed multi-paradigm programming language`** that's focused on safety and performance.
+  - Rust는 low-level로 사람보다는 기계에 가깝게 코딩을 한다.
+  - Rust는 **statically-typed** 언어이기 때문에 compile time에 compiler가 모든 변수의 data type를 알고 있어야 error없이 compile이 된다.
+  - 변수의 data type이 명확하지 않을 경우, 개발자가 직접 변수의 타입을 지정해주어야 한다.
+- Rust solves problems that C/C++ has been struggling with for a long time, such as memory errors and building concurrent programs.
 
-위처럼 Rust는 **statically-typed** 언어이기 때문에 compile time에 compiler가 모든 변수의 data type를 알고 있어야 error없이 compile이 된다. 변수의 data type이 명확하지 않을 경우, 개발자가 직접 변수의 타입을 지정해주어야 한다.
-
-Rust는 기본적으로 C, C++과 유사한 점이 많아서, 다른 언어에 비해 Wab Assembly (Wasm)으로의 complie이 자연스럽다. 더해서, 아래 소개해드릴 도구를 사용하면 Javascript와 Rust를 굉장히 자연스럽게 이어줄 수 있어서, 최근 Wasm 프로그램 작성을 위한 언어로도 Rust가 많이 선택되고 있습니다.
+Rust는 기본적으로 C, C++과 유사한 점이 많아서, 다른 언어에 비해 Wab Assembly (Wasm)으로의 complie이 자연스럽다. 더해서, 아래 소개할 도구를 사용하면 Javascript와 Rust를 굉장히 자연스럽게 이어줄 수 있어서, 최근 Wasm 프로그램 작성을 위한 언어로도 Rust가 많이 선택되고 있다.
 
 ![low-high](img/lowhigh.png)
 
 Rust와 C++는 Javascript, python과는 다르게 memory를 관리해주는 garbage collector (GC)가 없기 때문에, 변수를 선언할 때 memory에 변수를 저장할 공간을 직접 요청하고, 더이상 이용하지 않는 변수는 memory에서 free해주어야 한다. GC가 없기 때문에 아주 빠르고, 안전하다.
 
-Rust의 compiler `rustc`는 기계가 읽을 수 있는 a binary code를 생성하고, 코드의 문제를 발견 시 compiler error를 발생시켜 코드의 어디가 왜 문제이고 어떻게 작성해야 하는지 까지 알려준다. 이는 Rust로 code를 작성하는 큰 이유 중 하나이다.
+Rust compiler `rustc`는 기계가 읽을 수 있는 a binary code를 생성하고, 코드의 문제를 발견 시 compiler error를 발생시켜 코드의 어디가 왜 문제이고 어떻게 작성해야 하는지 까지 자세히 알려준다. 이는 Rust가 사랑받는 큰 이유이다.
 
 ### Rust 장점
 
@@ -9266,8 +9377,9 @@ $ docker run -d imageName
 
 Mobile App을 만들 때 Flutter나 Swift처럼 하나의 mobile os에 종속된 programming language를 고르면 개발자는 하나의 project에 두 개의 전혀다른 언어를 이용하여 따로 개발해야 한다.
 
-- Flutter: android
-- Swift: ios
+- android: Flutter
+- ios: Swift
+- 두 mobile os 동시 가능: React-native
 
 ## [React-Native](https://reactnative.dev/)
 
@@ -9281,7 +9393,7 @@ React-Native를 사용하기 위해서는 세 가지의 dependencies가 필요�
   - `$ node --version` 입력 후 설치되어 있는 지 확인한다.
 - Java SE Development Kit (JDK)
   - `$ java --version` 입력 후 설치되어 있는 지 확인한다.
-- Android Studio
+- Mobile 기기 또는 Android Studio
 
 Android Studio 설치 후
 
@@ -9324,5 +9436,15 @@ $ npx react-native run-ios
 
 // 또는 react-native cli (command line) 설치 시
 $ react-native run-android
-$ react-native run-ios
+$ react-native run-
+
+// 또는
+$ npm start
+// Mobile에서 expo app 다운 후
+// 기본 카메라 앱으로 scan qr code
 ```
+
+## REFERENCES
+
+- [Web Development In 2022 - A Practical Guide](https://www.youtube.com/watch?v=EqzUcMzfV1w)
+- [2022 웹개발 로드맵 총정리 (공부순서 알려드림) | 올해는 정말 해보자 🚀](https://www.youtube.com/watch?v=TTLHd3IyErM)

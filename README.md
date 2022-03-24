@@ -854,9 +854,9 @@ CSS can be added to HTML documents in 3 ways:
 
 body {
   font-family: "Roboto", sans-serif;
+  /* font-weight가 900이면 bold, 300이면 normal이다. */
   font-weight: 900;
 }
-/* font-weight가 900이면 bold, 300이면 normal이다. */
 ```
 
 `id`와 `class`의 다른점은 `id`는 한 element에게 고유한 값이고, `class`는 여러 element에게 같은 값을 설정할 수 있다.
@@ -866,10 +866,11 @@ id가 class보다 우선 순위를 가진다.
 
 ```
 #id {
+  /* background를 주어진 url로 교체 */
   background: url("../../img/istockphoto-1032782930-640x640.jpg") no-repeat;
-  weight: 90vh /* vh는 view height로 현재 보이는 화면의 90%를 채운다 */
+  /* vh는 view height로 현재 보이는 화면의 90%를 채운다 */
+  weight: 90vh
 }
-/* background를 주어진 url로 교체 */
 ```
 
 - `class=hero`인 HTMLElement의 style 변경 (**class selector: .**)
@@ -952,28 +953,32 @@ border: border-width border-style (required) border-color
   border-style: solid
   border-color: black
 }
-
 // border-style: solid/dotted/double`
 ```
 
 ### Layouts
 
-- `position: absolute`는 모니터의 왼쪽 위가 (0, 0)이 되고 그에 맞는 width와 height를 줄 수 있다.
-- `position: relative`는 content의 왼쪽 아래가 (0, 0)이 되고 그에 맞는 width와 height를 줄 수 있다.
+- HTMLElement의 기본값은 `position:static`이다.
+- `position:static`과 `position: absolute/relative`와 다른점은 좌표 property의 가능유무이다.
+  - 좌표 property: left/right/top/bottom
+  - `position:static`: 좌표 property 사용불가능
+  - `position:absolute/relative`: 좌표 property 사용가능
+    - `position: absolute`는 모니터의 왼쪽 위가 (0, 0)이 된다.
+    - `position: relative`는 content의 왼쪽 아래가 (0, 0)이 된다.
 
 ![position](img/absoluterelative.jpg)
 
 ```
 .absBox {
   position: absolute;
-  width: 400px;
-  height: 400px;
+  top: 400px;
+  left: 400px;
 }
 
 .relBox {
   position: relative;
-  width: 400px;
-  height: 200px;
+  top: 200px;
+  left: 400px;
 }
 ```
 
@@ -998,15 +1003,15 @@ Flexbox에는 **flex container**와 **flex item**이 존재한다. flex containe
 ```
 .container {
   display: flex;
-  flex-direction: row (default)/column/reverse-row;
+  flex-direction: column;
 }
 ```
 
 - `flex-direction: row`일 경우: main axis는 horizontal line이고, cross axis는 vertical line이다. x-axis가 중심축이다.
+  - row가 default값이다.
 - `flex-direction: column`일 경우: main axis는 vertical line이고, cross axis는 horizontal line이다. y-axis가 중심축이다.
-- `flex-direction`을 지정하지 않으면 row가 기본값이다.
-
-`flex container`에 적용할 수 있는 속성과 `flex item`에 적용할 수 있는 속성이 다르다.
+  - column은 mobile에서 사용하기 좋다.
+- `flex container`에 적용할 수 있는 속성과 `flex item`에 적용할 수 있는 속성이 다르다.
 
 ![flexbox2](img/flexbox2.png)
 
@@ -1014,7 +1019,7 @@ Flexbox에는 **flex container**와 **flex item**이 존재한다. flex containe
 
 ```
 - display: flex
-- flex-direction: row (default)/column
+- flex-direction: row (default)/column/row-reverse/column-reverse;
 - flex-wrap: nowrap (default)/wrap/wrap-reverse
 - flex-flow: column wrap;
 - justify-content: flex-start (default)/flex-end/left/right/center/space-around/space-evenly/space-between
@@ -1040,10 +1045,13 @@ flex-wrap: wrap;
 `flex-item`에 지정 가능한 속성 (속성의 기본값은 모두 0이다):
 
 ```
-- order: 0
 /* item들 사이에 순서를 지정 */
+- order: 0
+
+/* item들 사이에 커지는 비율을 지정 */
 - flex-grow: 0
 
+/* item1이 item2, item3보다 2배의 비율로 크기를 유지하면서 커진다. */
 .item1 {
   flex-grow: 2
 }
@@ -1054,11 +1062,12 @@ flex-wrap: wrap;
   flex-grow: 1
 }
 
-/* item1이 item2, item3보다 2배의 비율로 크기를 유지하면서 커진다. */
-
+/* item들 사이에 작아지는 비율을 지정 */
 - flex-shrink: 0
+
 - flex-basis: 0
 
+/* item1, item2, item3이 화면의 크기와 상관없이 위의 비율을 유지한다. */
 .item1 {
   flex-basis: 60%
 }
@@ -1068,7 +1077,6 @@ flex-wrap: wrap;
 .item3 {
   flex-basis: 10%
 }
-/* item1, item2, item3이 화면의 크기와 상관없이 위의 비율을 유지한다. */
 
 - align-self: center; /* item별로 정렬 */
 ```
@@ -1193,19 +1201,20 @@ ul,ol,li {
 
 One of the most common CSS problems is a lack of understanding of CSS’s position, display, & float properties.
 
-**POSITION** property
+#### POSITION property
 
 The position property determines in what manner an item is positioned on the page or relative to one another. position는 tag를 어떻게 위치시킬지 정하며 아래의 5가지 값을 가집니다.
 
 - STATIC (기본위치)
   - By default position is set to static, with elements displaying on the page in the order they appear in the document.
-  - Element displays on the page in the order it appeared in the document. Top, right, bottom, left, and z-index properties have no effect when used with static. Not stackable due to z-index restriction.
+  - Element displays on the page in the order it appeared in the document.
+  - 좌표 properties인 `top`, `right`, `bottom`, `left`와 `z-index` property have no effect when used with static. Not stackable due to z-index restriction.
   - 다른 태그와의 관계에 따라 배치되며 임의로 위치 조절은 불가능하다.
-  - 기본값이기 때문에 static은 이미 설정된 position을 무력화 할 때 사용된다.
+  - 기본값이기 때문에 `position:static`은 이미 설정된 position을 없앨 때 사용한다.
 - RELATIVE (상대위치)
-  - Similar to static but able to be offset by top, right, bottom, left, and z-index properties.
+  - Similar to static but able to be offset by `top`, `right`, `bottom`, `left`, and `z-index` properties.
   - static 위치를 기준으로 움직이며 좌표 프로퍼티 (top, bottom, right, left)를 사용하여 위치를 이동 시킨다.
-  - static을 선언한 요소와 relative를 선언한 요소의 차이점은 좌표 프로퍼티의 동작 여부 뿐 그외는 동일합니다.
+  - static을 선언한 요소와 relative를 선언한 요소의 차이점은 좌표 프로퍼티와 `z-index`의 동작 여부 뿐 나머지는 동일하다.
 - ABSOLUTE (절대위치)
   - Element positioned relative to its first non-static ancestor element. Similar to relative in that it may be offset by top, right, bottom, left, and z-index properties.
   - 부모 또는 가장 가까이 있는 조상 요소를 기준으로 하며 좌표 프로퍼티 (top, bottom, right, left)를 사용하여 위치를 이동시킵니다.
@@ -1221,13 +1230,13 @@ The position property determines in what manner an item is positioned on the pag
   - scroll에 영향을 받지 않고 언제나 고정된 위치를 유지
   - fixed 또한 absolute와 동일하게 사용시 block요소도 inline요소와 같이 컨텐츠 영역만을 차지하기 때문에 반드시 width와 height의 크기를 설정해야한다.
 - STICKY
-  - Element is positioned relative until a specified offset position is met by scrolling, then the element is positioned ‘fixed’ in that position on the scrolling element.
+  - Element is positioned relative until a specified offset position is met by scrolling, then the element is positioned 'fixed' in that position on the scrolling element.
   - relative처럼 작동하다가, 설정된 top, right, bottom, left 값 위치 도달시 고정됩니다.
   - 스크롤 상단 고정 메뉴를 만들때 사용됩니다.
 - INHERIT
-  - parent element 의 position 속성 상속
+  - parent element 의 position 속성을 상속한다.
 
-**DISPLAY** property
+#### DISPLAY property
 
 When you create an element to display on the page, it renders as a box & we have seen how to position those boxes on the page, but there’s more we can do with them.
 
@@ -1287,7 +1296,7 @@ overflow 프로퍼티는 자식 요소가 부모 요소의 영역를 벗어났�
 CSS animate를 하다보면 transform property을 많이 사용하게 될 것이다. 이유는 transform 은 웹요소의 위치를 이동시키거나 크기 조절 및 회전시킬 수 있는 강력한 기능을 가지고 있기 때문이다.
 
 ```
-transform:scale() - X 또는 Y축으로 확대/ 축소
+transform:scale() // X 또는 Y축으로 확대/축소
 scale은 해당 요소를 지정한 크기만큼 확대 또는 축소 시킬 수 있습니다.
 
 transform:scaleX(x축 비율); // x축으로 확대, 축소

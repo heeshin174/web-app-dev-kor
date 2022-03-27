@@ -65,13 +65,19 @@
   - Windows (+ ⭐ **WSL**: Window subsystem for Linux)
   - Linux
 - Keyboard
+  - tenkeyless keyboard
+    - A computer keyboard that does not have a 10-key numeric keypad on the right side.
+  - split keyboard
+    - 둘로 분리된 키보드
+    - **개인적으론 분리도 되고 붙이기도 되는 tenkeyless split keyboard 추천**
   - 기계식 키보드
     - **Red 적축**: 키압이 낮기때문에 끝까지 누르지 않아도 입력 가능
     - Brown 갈축: 무거운 느낌
     - Wireless 60%, 66% Mechanical Keyboard
       - Anna Pro 2 Gatron Red 게이트론 적축
       - Leopold FC750R slient red
-      - ⭐ Keychron K7, 68 Keys Ultra-Slim Wireless Low-Profile Gateron Mechanical RGB
+      - Keychron K7, 68 Keys Ultra-Slim Wireless Low-Profile Gateron Mechanical RGB
+      - ⭐ Mistel MD770 RGB Wired + Wireless Bluetooth TKL Split Mechanical Keyboard with Cherry MX Silent Red Switch
   - Capacitive (무접점) Keyboard
 - Browser
   - **Chrome**
@@ -319,6 +325,7 @@ React.js, Typescript 등등 outside library/framework로 만들어 native HTML, 
     - Other Library/Framework
       - redux (manage state): https://redux.js.org/introduction/getting-started
       - multer (upload files): https://github.com/expressjs/multer
+      - electron (build a cross-platform desktop app): https://www.electronjs.org/
 
 Front-End library/framework은 web application의 UI 부분을 더 쉽게 작성할 수 있게 만들어 준다.
 **Single Page Application** (SPA)는 body가 비어있는 하나의 HTML을 가지고 Javascript를 이용해서 그 안에 Data를 dynamic하게 할당한다.
@@ -434,11 +441,12 @@ Web App dev는 크게 Frontend, Backend로 나눌 수 있고, 이를 합쳐 Full
   - database: Mongodb || Postgresql
   - server-side rendering && static site generation: Next.js
   - state management: Redux.js
+  - Data fetching: React-query || SWR || Axios
 
 #### Database
 
 Database와 web app을 연결하면 쉽고 간단하게 data를 읽고 쓸 수 있다.
-Database는 크게 Relational database `sql (Structured Query Language)`와 Not only Relational database (Nosql)로 나눌 수 있다.
+Database는 크게 Relational database `sql (Structured Query Language)`와 `Not only Relational database (Nosql)`로 나눌 수 있다.
 
 - ⭐ **postgresql**: Relational database의 대표주자
 - ⭐ **Mongo Database**: Not only Relational database의 대표주자
@@ -1209,7 +1217,8 @@ The position property determines in what manner an item is positioned on the pag
   - By default position is set to static, with elements displaying on the page in the order they appear in the document.
   - Element displays on the page in the order it appeared in the document.
   - 좌표 properties인 `top`, `right`, `bottom`, `left`와 `z-index` property have no effect when used with static. Not stackable due to z-index restriction.
-  - 다른 태그와의 관계에 따라 배치되며 임의로 위치 조절은 불가능하다.
+  - 다른 tag 와의 관계에 따라 배치되며 임의로 위치 조절은 불가능하다.
+  - 위치를 변경하고 싶을 때는 `transform:translate(nrem)`을 사용한다.
   - 기본값이기 때문에 `position:static`은 이미 설정된 position을 없앨 때 사용한다.
 - RELATIVE (상대위치)
   - Similar to static but able to be offset by `top`, `right`, `bottom`, `left`, and `z-index` properties.
@@ -1222,7 +1231,8 @@ The position property determines in what manner an item is positioned on the pag
   - static은 부모가 될 수 없기 때문에 absolute를 사용할 때는 부모 요소에 relative를 설정해줘야 합니다.
   - if 부모, 조상이 모두 static인 경우?
     - 최상위 요소인 body를 기준으로 이동합니다.
-  - 다른 요소가 자리잡고 있어도 옆으로 밀리지 않고 요소 위에 위치하며 이는 `z-index` property로 레이어를 조정한다.
+  - 다른 요소가 자리잡고 있어도 옆으로 밀리지 않고 요소 위에 위치하며 이는 `z-index` property로 레이어를 조정할 수 있다.
+    - `z-index`가 높으면 화면 위에 위치하고, 낮으면 다른 요소의 뒤에 위치한다.
   - absolute 사용시 block요소도 inline요소와 같이 컨텐츠 영역만을 차지하기 때문에 반드시 width와 height의 크기를 설정해야한다.
 - FIXED
   - Similar to absolute, but positioned relative to the browser window. Scrolling will not move this element.
@@ -4503,7 +4513,7 @@ if (box.hasValue()) {
 ### What is React?
 
 React는 web app을 만들 수 있는 Javascript library이다. React is a JavaScript library for building user interfaces.
-React 말고도 Vue, Svelte나 Angular등 다른 Web app를 만들 수 있는 frontend web framework도 있다.
+React 말고도 Vue, Svelte나 Angular 등 다른 Web app를 만들 수 있는 frontend web framework도 있다.
 
 #### Web app은 무엇이고, 왜 사용하는가?
 
@@ -4639,18 +4649,24 @@ $ npm start
 
 // development mode에서 실행
 $ npm run dev
+
+// project 실행
+$ npm start
+
+// code를 다 작성 후 deploy 할 때 사용할 static asset 생성
+$ npm run build
 ```
 
 ### JSX Extension
 
-React.js는 `.js` 대신 `.jsx` 라는 특수한 extension을 사용한다. JSX stands for **JavaScript XML**. It is simply a syntax extension of JavaScript.
-React는 typescript를 전적으로 지원하기 때문에 되도록이면 typescript를 이용한 `.ts`와 `.tsx` extension을 사용하도록 한다. React환경에서 `.js`를 사용해도 알아서 `.jsx`로 인식하기 때문에 아무런 문제는 없다 (`Button.js == Button.jsx`). 보통은 component를 만들때 다른 javascript와 비교하기 위해 `.jsx`, `.tsx` extension를 이용한다.
+React는 `.js` 대신 `.jsx` 라는 특수한 extension을 사용한다. JSX stands for **JavaScript XML**. It is simply a syntax extension of JavaScript.
+React는 typescript를 전적으로 지원하기 때문에 되도록이면 `.ts`와 `.tsx` extension을 사용해 typescript를 사용한다. React 환경에서 `.js`를 사용해도 알아서 `.jsx`로 인식하기 때문에 아무런 문제는 없다 (`Button.js == Button.jsx`). 보통은 component를 만들때 다른 javascript와 비교하기 위해 `.jsx`, `.tsx` extension를 이용한다.
 
 아래 변수 선언을 살펴봅시다.
 
 > `const element = <h1>Hello, world!</h1>;`
 
-위에 희한한 tag 문법은 string도, HTML도 아니다. 이런 문법은 react에서 볼 수 있는 JSX라 하며 JavaScript를 확장한 것이다. REact에서 UI가 어떻게 생겨야 하는지 정의할 때 사용한다. JSX라고 하면 template language가 떠오를 수도 있지만, JSX내에서 JavaScript의 모든 기능을 사용할 수 있다.
+위에 희한한 tag 문법은 string도, HTML도 아니다. 이런 문법은 react에서 볼 수 있는 JSX라 하며 JavaScript를 확장한 것이다. React에서 UI가 어떻게 생겨야 하는지 정의할 때 사용한다. JSX라고 하면 template language가 떠오를 수도 있지만, JSX 내에서 JavaScript의 모든 기능을 사용할 수 있다.
 
 **JSX는 React "Element"를 생성**한다. React는 JSX 사용이 필수가 아니지만, JavaScript 코드 안에서 User Interface 작업을 할 때 시각적으로 더 도움이 되고 React가 더욱 도움이 되는 에러 및 경고 메시지를 표시할 수 있게 해준다.
 
@@ -5069,6 +5085,8 @@ Functional component가 class component 후에 나온 최신 문법이다. 복�
 
 ### [React Hook](https://reactjs.org/docs/hooks-reference.html)
 
+- [Custom react hooks](https://github.com/WebDevSimplified/useful-custom-react-hooks)
+- [Awesome react hooks](https://github.com/rehooks/awesome-react-hooks)
 - [react hook + typescript](https://velog.io/@velopert/using-hooks-with-typescript#useref)
 - [react hook 정리](https://kyounghwan01.github.io/blog/React/react-hook/#usememo-%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A1%E1%86%AB%E1%84%92%E1%85%A1%E1%86%AB-%E1%84%80%E1%85%A1%E1%86%B9-%E1%84%8C%E1%85%A2%E1%84%89%E1%85%A1%E1%84%8B%E1%85%AD%E1%86%BC)
 
@@ -6350,7 +6368,7 @@ const btnDecrement = document.getElementById('decrement');
 const INCREMENT = 'INCREMENT';
 const DECREMENT = 'DECREMENT';
 
-// 액션 객체를 만들어주는 Action creators
+// 액션 객체를 만드는 Action creators
 const increment = (diff) => ({ type: INCREMENT, diff: diff });
 const decrement = () => ({ type: DECREMENT });
 
@@ -7134,10 +7152,10 @@ ref: https://velog.io/@velopert/using-redux-in-2021#redux-toolkit%EC%9D%80-%EC%9
 
 ## % 부록0: 유용한 VSCode 기능 알아보기 %
 
-VSCode는 다양한 keyboard shortcut을 제공하기 때문에 마우스를 이용하지 않고, **최대한 keyboard을 사용**해 코딩한다.
+VSCode는 다양한 keyboard shortcut을 제공하기 때문에 마우스를 사용하지 않고, **최대한 keyboard을 사용**해 코딩한다.
 
 - `단어 + tab`: Snippets를 이용하여 자동완성 기능을 적극활용한다.
-- Debug tool를 이용하여 프로그램을 디버깅할 수 있다 (내가 확인하고 싶은 코드 옆에 breakpoint 생성 후 debug 실행).
+- Debug tool를 이용하여 프로그램을 디버깅할 수 있다 (내가 확인하고 싶은 코드 line 옆에 빨간 점 breakpoint 생성 후 debug 실행).
 
 ### [VScode Extension](https://marketplace.visualstudio.com/)
 
@@ -7202,7 +7220,7 @@ VSCode는 다양한 keyboard shortcut을 제공하기 때문에 마우스를 이
 
 ### keyboard snippets
 
-우리는 코드를 짤 때, 최대한 마우스를 사용하지 않도록 해야 된다. keyboard snippets을 이용하면, 키보트만으로도 우리가 하고 싶은 것을 빠르게 할 수 있다.
+우리는 코드를 쓸 때, 마우스를 사용하지 않고 최대한 키보드를 사용하도록 해야 된다. keyboard snippets을 이용하면, 키보트만으로도 우리가 하고 싶은 것을 빠르게 할 수 있다.
 
 - In VScode, go to `Help > Keyboard Shortcuts References`. VScode에서 사용가능한 유용한 키보드 단축기들을 볼 수 있다.
 
@@ -9377,8 +9395,7 @@ $ docker bulid -t imageName
 ```
 $ docker run -it imageName
 $ docker run -d imageName
-// Another useful parameter to pass to docker run is the -d flag.
-// This flag causes Docker to start the container in "detached" mode.
+// '-d' flag causes Docker to start the container in "detached" mode.
 // d는 daemon/detached의 약자로 background에서 작동한다.
 ```
 

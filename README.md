@@ -67,7 +67,7 @@
 - Keyboard
   - tenkeyless keyboard
     - A computer keyboard that does not have a 10-key numeric keypad on the right side.
-  - split keyboard
+  - ⭐ split keyboard
     - 둘로 분리된 키보드
     - **개인적으론 분리도 되고 붙이기도 되는 tenkeyless split keyboard 추천**
   - 기계식 키보드
@@ -259,6 +259,9 @@ React.js, Typescript 등등 outside library/framework로 만들어 native HTML, 
     - Haikei (SVG): https://haikei.app/
     - Cool Backgrounds: https://coolbackgrounds.io/
     - Dribble: https://dribbble.com/
+    - postimages (Upload images on oneline): https://postimages.org/
+    - (Resize PNG images): https://onlinepngtools.com/resize-png
+    - (Remove white background): https://www.remove.bg/upload
 
 - [Javascript](https://github.com/heeshin174/Web_App_Dev_Kor#3-javascript)
   - **ES6+ Syntax**
@@ -531,6 +534,8 @@ Database는 크게 Relational database `sql (Structured Query Language)`와 `Not
     - [cssbattleSolution](https://github.com/ngekoding/cssbattle)
   - codepen (css only를 검색하면 다양한 css work를 볼 수 있다): https://codepen.io/search/pens?q=css+only
   - react로 만든 웹 github로 deploy하기: https://codingapple.com/unit/react-build-deploy-github-pages/
+- 기타
+  - Search other programmer codes in github: https://github.com/search?q=useSWR&type=Code
 
 ## 1. HTML
 

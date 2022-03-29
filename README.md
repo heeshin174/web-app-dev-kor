@@ -7464,20 +7464,20 @@ export default $1;
 
 ## % 부록1: git으로 다른 programmer와 collaboration 하기 %
 
-### Git이 무엇이고, 왜 사용하는지
+### Git이 무엇이고, 왜 사용하는가?
 
 Git은 software의 변경사항을 추적하고 여러 명의 사용자들 간에 해당 파일들의 작업을 조율하기 위한 분산 버전 관리 시스템이다.
 
 1. project version들을 쉽게 관리하려고
-2. project source code를 저장하고, 다른 programmer와 공유하고, 협업하기 위해서
+2. project source code를 저장하고 다른 programmer와 공유하고, 협업하기 위해서
 
 ### Git 환경설정
 
-Git을 다운받은후 Terminal에 다음을 입력해 설정한다.
+Git을 컴퓨터에 처음 다운받은후 Terminal에 다음을 입력해 설정한다.
 
 ```
-$ `git config --global user.name "my_name"`,
-$ `git config --global user.email "myEmail@example.com"`
+$ git config --global user.name "my_name"
+$ git config --global user.email "myEmail@example.com"
 ```
 
 ### Git으로 처음 project 시작하기
@@ -7498,45 +7498,80 @@ $ git remote add origin
 
 ![gitworkflow2](img/git-workflow-1.png)
 
-1. Download source code
+#### 1. Download source code
 
-> $ `git clone https:...` or `Download zip file`
+```
+$ git clone https:...
+or
+Download zip file
+```
 
-또는 이미 한 번 다운 받은 적이 있는 project의 최신 버전은 `git pull` command를 이용한다.
+또는 이미 한 번 컴퓨터에 다운 받은 적이 있는 project의 최신 버전은 `git pull` command를 이용한다.
 
-> $ `git pull origin master`
+```
+$ git pull origin master
+```
 
-2. branch에 source code 복사하기
+#### 2. Branch 목록 조회
+
+`git branch` 명령어를 통해 branch 목록 조회가 가능하며 옵션을 통해 원하는 목록만 조회할 수 있다.
+
+```
+git branch  (local computer의 git branch 목록 조회)
+git branch -r  (remote의 git branch 목록 조회)
+git branch -a  (모든 브랜치 목록 조회)
+
+(master)$ git branch
+* master
+  newbranch
+  newbranch2
+
+(master)$ git branch -r
+  origin/master
+  origin/newbranch
+
+(master)$ git branch -a
+* master
+  newbranch
+  newbranch2
+  origin/master
+  origin/newbranch
+```
+
+#### 3. branch에 source code 복사하기
 
 branchName branch를 생성 후 바로 이동
 
-> $ `git checkout -b branchName`
+```
+// git branch 생성과 동시에 checkout
+$ git checkout -b branchName
+or
+$ git switch -c branchName
+```
 
 또는 Move to the existing branch:
 
-> $ `git switch -c branchName`
+```
+$ git switch branchName
+```
 
-3. 소스 코드에 변화를 만든 후, pull request하여 다른 협업자가 볼 수 있게 하기
+#### 4. 소스 코드에 변화를 만든 후, pull request하여 다른 협업자가 볼 수 있게 하기
 
 Do your thing, then when your ready to push, open terminal back up and make sure your in the base directory for the project:
 
-Stage all your changes for commit
+```
+git add .  (Stage all your changes for commit)
+git commit -m 'message' (Commit your changes with message)
+git push -u orgin branchName: Push your commit to a remote branch (probably want to use your same local branch name)
 
-> $ `git add .`
+(branchName)$ git add .
+(branchName)$ git commit -m "My Commit Message, what did I do today?"
+(branchName)$ git push -u orgin branchName
+or
+(branchName)$ git push --set-upstream origin branchName
+```
 
-Commit your changes
-
-> $ `git commit -m "My Commit Message, what did I do today?"`
-
-Push your commit to a remote branch (probably want to use your same local branch name)
-
-> $ `git push --set-upstream origin branchName`
-
-또는
-
-> $ `git push -u orgin branchName`
-
-`git push -u origin master` command는 main branch에 code를 push 하는 것입니다. master branch는 항상 완벽하게 작동하는 코드이어야 함으로 master branch에 직접적으로 push하는 것은 지양해야 합니다. 위에 서술된 방법으로, 새로운 branch를 만들어서 pull request를 하여 다른 개발자의 code review를 받은 후 문제가 없으면 master branch에 merge하면 된다.
+`git push -u origin master` command는 master branch에 code를 push 하는 것입니다. master branch는 항상 완벽하게 작동하는 코드이어야 함으로 master branch에 직접적으로 push하는 것은 지양해야 합니다. 위에 서술된 방법으로, 새로운 branch를 만들어서 pull request를 하여 다른 개발자의 code review를 받은 후 문제가 없으면 master branch에 merge하면 된다.
 
 요약:
 
@@ -7545,14 +7580,14 @@ Push your commit to a remote branch (probably want to use your same local branch
 1. Download source code: `git clone https:...`
 2. Create new branch or change to new existing branch
    - Create and move to new branch: `git checkout -b <branchName>`
-   - Move to the existing branch: `git switch -c <branchName>`
+   - Move to the existing branch: `git switch <branchName>`
 3. Make changes to the code
 4. Once you finish, create pull request
    - `git add .`
    - Commit your work: `git commit -m "what i did"`
    - push your work to that branch: `git push -u origin <branchName>`
 
-### Git의 `master` branch는 항상 완전환 코드이어야 한다.
+### Git의 master branch는 항상 완전환 코드이어야 한다.
 
 다른 사람이랑 협업을 할 경우에 git의 `issues`, `pull request` 탭을 잘 활용하여, 프로젝트를 성공적으로 완성해 보자.
 
@@ -7560,35 +7595,11 @@ Push your commit to a remote branch (probably want to use your same local branch
   - 코드에서 고쳐야 할 부분들을 우리팀 전체가 볼 수 있게 만들어, 추후에 고칠 수 있게 하는 것. 이 프로젝트가 public이라면, 아무나 issues에 코드의 문제점을 제시할 수 있다.
 - pull request: master branch에 merge하기 전에 내가 고친 코드를 다른 협업자가 관찰하고 이상이 없는 지 확인하는 단계
 
-### Git Command
+### Git clone/pull로 최신 버젼의 project 가져오기
 
-Initialize repository
-
-> $ `git init`
-
-project내 모든 branch를 출력
-
-> $ `git branch`
-
-Create branch called v1
-
-> $ `git branch v1`
-
-기존의 branchName brannch로 이동
-
-> $ `git checkout branchName`
-
-새로운 branchName branch를 생성 후, 바로 그 branch로 이동
-
-> $ `git checkout -b branchName`
-
-Create branch called fix-19 based on the code in the fix-18 branch
-
-> $ `git checkout -b fix-18 fix-19`
-
-#### git clone/pull로 최신 버젼의 project 가져오기
-
-💣 `git pull` =` git fetch` +` git merge`
+```
+$ git pull = git fetch + git merge
+```
 
 pull과 fetch의 차이점은 병합을 하냐 안 하냐의 차이다.
 
@@ -7611,7 +7622,7 @@ pull과 fetch의 차이점은 병합을 하냐 안 하냐의 차이다.
 2. `git remote -v`로 연결된 저장소 확인
 
 ```
-> $ git remote -v
+$ git remote -v
 origin  https://github.com/heeshin174/Web_App_Dev_Kor.git (fetch)
 origin  https://github.com/heeshin174/Web_App_Dev_Kor.git (push)
 ```
@@ -7620,11 +7631,11 @@ origin  https://github.com/heeshin174/Web_App_Dev_Kor.git (push)
 
 저장소 연결 확인 후 `git pull` 입력
 
-> $ `git pull`
-
-만약 안된다면 다음 command 입력
-
-> $ `git pull origin master`
+```
+$ git pull
+// 만약 안된다면 다음 command 입력
+$ git pull origin master
+```
 
 ### Git 특정 commit으로 돌아가기
 
@@ -7634,12 +7645,16 @@ origin  https://github.com/heeshin174/Web_App_Dev_Kor.git (push)
 
 1. 커밋 메시지 보고 특정 커밋으로 되돌리기
 
-> $ `git log`
+```
+$ git log
+```
 
-    - 명령 입력 후, 위 아래 방향키로 원하는 버전 커밋 찾기
-    - 'commit' 문구 뒤의 해시코드 앞에서 4자리 이상 복사
+- 명령 입력 후, 위 아래 방향키로 원하는 버전 커밋 찾기
+- 'commit' 문구 뒤의 해시코드 앞에서 4자리 이상 복사
 
 ```
+$ git log
+
 commit 405d3263fab12e39a5b32a0edf80dd84eb6fd8f1 (HEAD -> master, origin/master, origin/HEAD)
 Author: heeshin174 <heeshin174@gmail.com>
 Date:   Sat Feb 19 23:21:53 2022 -0600
@@ -7653,24 +7668,28 @@ Date:   Fri Feb 18 13:50:57 2022 -0600
 ...
 ```
 
-> $ `git checkout 4자리이상의커밋해시코드`
+현재 소스를 해당 버전으로 돌리기
 
-    - 현재 소스가 해당 버전으로 돌아간다.
+```
+$ git checkout 4자리이상의커밋해시코드
+```
 
-> $ `git checkout branchName`
+되돌아오기(해당 브랜치의 최신 커밋으로 돌리기)
 
-- 되돌아오기(해당 브랜치의 최신 커밋으로 돌리기)
+```
+$ git checkout branchName
+```
 
 2. 단계별로 되돌아가기
 
-> $ `git checkout head~1`
+```
+// 최신 커밋으로부터 한단계 전으로 되돌린다.
+// 1에 해당하는 부분을 바꿔서 원하는 단계만큼 지정할 수 있다.
+$ git checkout head~1
 
-    - 최신 커밋으로부터 한단계 전으로 되돌린다.
-    - 1에 해당하는 부분을 바꿔서 원하는 단계만큼 지정할 수 있다.
-
-> $ `git checkout branchName`
-
-- 되돌아오기(해당 브랜치의 최신 커밋으로 돌리기)
+// 되돌아오기(해당 브랜치의 최신 커밋으로 돌리기)
+$ git checkout branchName
+```
 
 #### 이전 버전으로 되돌리기
 
@@ -7679,18 +7698,26 @@ Date:   Fri Feb 18 13:50:57 2022 -0600
 
 1. 되돌리는 버전을 새로 커밋하기(권장 O)
 
-> $ `git revert head~1` 혹은 `git revert 4자리이상의커밋해시코드`
+```
+$ git revert head~1
+or
+$ git revert 4자리이상의커밋해시코드
+```
 
-    - 앞서 설명한 checkout 의 두 가지 방법 모두 똑같이 revert 에 적용 가능하다.
-    - revert 명령시 해당 커밋 버전으로 새로 커밋하게 되므로, 커밋 메시지 입력창이 나타난다.
-     - i 입력 후 커밋메시지 수정하기. :wq 입력하여 저장 후 종료하기
+- 앞서 설명한 checkout 의 두 가지 방법 모두 똑같이 revert 에 적용 가능하다.
+- revert 명령시 해당 커밋 버전으로 새로 커밋하게 되므로, 커밋 메시지 입력창이 나타난다.
+- i 입력 후 커밋메시지 수정하기. :wq 입력하여 저장 후 종료하기
 
 2. 되돌리는 버전 이후의 커밋을 삭제하기(권장 X)
 
-> `git reset --hard head~1` 혹은 `git reset --hard 4자리이상의커밋해시코드`
+```
+$ git reset --hard head~1
+or
+$ git reset --hard 4자리이상의커밋해시코드
+```
 
-    - 앞서 설명한 checkout 의 두 가지 방법 모두 똑같이 reset 에도 에 적용 가능하다.
-    - 남아있는 추가됐던 파일 지우기
+- 앞서 설명한 checkout 의 두 가지 방법 모두 똑같이 reset 에도 에 적용 가능하다.
+- 남아있는 추가됐던 파일 지우기
 
 ### Git tag
 
@@ -7733,6 +7760,68 @@ $ git tag v10.0.0 40a2b49
 
 // tag-name의 코드 상태로 되돌리기
 $ git checkout {tag-name}
+```
+
+### Git Command 요약
+
+```
+// Initialize repository
+$ git init
+
+// Download repository
+$ git clone https://...
+
+// remote 저장소에 있는 최신 버전 다운
+$ git pull
+or
+$ git pull origin master
+
+// 연결된 remote 저장소 확인
+$ git remote -v
+
+// 이전 commit message 확인
+$ git log
+
+// project 내 local branch 출력
+$ git branch
+
+// project 내 remote branch 출력
+$ git branch -r
+
+// project 내 all branch 출력
+$ git branch -a
+
+// Create branch called v1
+$ git branch v1
+
+// 기존의 branchName branch로 이동
+$ git checkout branchName
+or
+$ git switch branchName
+
+// 새로운 branchName branch를 생성 후, 바로 그 branch를 checkout (이동)
+$ git checkout -b branchName
+or
+$ git switch -c branchName
+
+// Create branch called fix-19 based on the code in the fix-18 branch
+$ git checkout -b fix-18 fix-19
+
+// Stage all your changes for commit
+$ git add .
+
+// Commit your changes with message
+$ git commit -m 'message'
+
+// Push your commit to a remote branch (probably want to use your same local branch name)
+$ git push orgin branchName
+or
+$ git push -u orgin branchName
+or
+$ git push --set-upstream origin branchName
+
+// Push your commit to a master branch
+$ git push origin master
 ```
 
 ## 1. Web Application Development
@@ -9467,7 +9556,7 @@ $ npx react-native run-ios
 
 // 또는 react-native cli (command line) 설치 시
 $ react-native run-android
-$ react-native run-
+$ react-native run-ios
 
 // 또는
 $ npm start

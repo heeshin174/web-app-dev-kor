@@ -220,7 +220,7 @@ WSL: GET http://172.29.69.223:5000/api/users/me
 
 ### 2. Front-End (Client side)
 
-Front-End은 사용자가 웹사이트를 방문시 보게되는 화면, 즉 User Interface (UI)을 의미한다. Front-End의 기본은 `HTML`, `CSS`, `Javascript`이다. 이는 web browser가 읽을 수 있는 파일들이 이 세가지 밖에 없기 때문이다. 최근에는 `Web Assembly`까지 포함해 4가지를 읽을 수 있다.
+Front-End은 사용자가 웹사이트를 방문시 보게되는 화면, 즉 User Interface (UI)을 의미한다. **Front-End의 기본은 HTML, CSS, Javascript 이다.** 이는 web browser가 읽을 수 있는 파일들이 이 세가지 밖에 없기 때문이다. 최근에는 `Web Assembly`까지 포함해 4가지를 읽을 수 있다.
 React.js, Typescript 등등 outside library/framework로 만들어 native HTML, CSS, Javascript로 작성되지 않은 파일들은 browser가 읽을 수 없기 떄문에 마지막에는 이 세가지로 변환해주어야 한다.
 
 - **HTML**: Structural 뼈대
@@ -359,6 +359,35 @@ Figma, Adobe xd로 web/mobile UI를 design하면, 쉽게 css를 얻을 수 있�
   - prototype > interactions
   - plugin
     - Material design icons
+
+#### Front-End developer의 미래
+
+2022년 기준으로 Front-End developer은 수익도 많이 벌 수 있고, IT회사에서 수요도 많은 편이다. 하지만, IT업종은 새로운 기술들이 굉장히 빨리 등장하고 언제 web browser와 Javascript가 없어지고 다른 기술이 이를 대체할 지 모른다. **중요한 점은 IT업종의 새로운 기술을 배우는 것을 멈추지 않는 것이다.**
+
+- 실 예로, 2012년도에는 너도 나도 jquery라는 javascript로 웹을 개발했지만 현재 jquery는 사용되지 않는다.
+- 현재 2022년도에는 너도 나도 React라는 javascript로 웹을 개발하지만 10년 후에도 react를 사용할 지는 불확실하다.
+- 현재는 web broswer를 이용하여 사람들간에 정보를 교환하지만, 미래에는 증강현실 VR/AR 등을 이용할 때 web broswer의 효율성이 떨어지면 다른 새로운 기술이 등장할 수 밖에 없다.
+
+Front-End의 진입장벽이 낮기 떄문에 많은 개발자들이 Front-End를 쉽게 도전하고 배울 수 있다. 그럼으로 경쟁력있는 Front-End developer가 되기 위해서는 다른 여러 능력들을 배우고 공부한다.
+
+**경쟁력있는 Front-End developer 되기**
+
+- Web Design
+  - 예전에는 디자이너가 만든 웹 디자인을 받아 코드로 작성하는 게 Front-End developer의 일이였다면, 최근에는 web design과 web development의 경계가 많이 모호하다.
+  - 그럼으로, 사용자 친화적인 디자인이 무엇인지, 미니멀한 디자인이 무엇인지 web design에 대해 공부한다.
+    - font, layout 정도가 design의 기본기가 되고, 이 기본기를 잘 숙지해야 한다.
+    - 큰 image를 중심으로 갈 때에는 image를 고해상도에 채도가 높은, 즉 쨍하고 선명한 이미지를 사용하는 것이 중요하다.
+      - 기존 고해상도 이미지를 가지고, photoshop를 이용하여 변경한다.
+- Back-End Development
+  - 최근에는 Front-End로 할 수 있는 작업들이 매우 많아졌지만, database를 관리하고 사용자 정보를 관리하는 등의 일에 client의 접근을 허용할 수는 없다.
+  - 그럼으로, Back-End Development에 대해 공부한다.
+    - 한국에서는 node.js보단 java의 spring framework가 취업하기에 유리하다.
+    - 이는 java가 뛰어나서라기 보단 이미 java를 사용하는 큰 community가 형성되었기 때문이다.
+- Web Assembly
+  - Web Assembly (`*.wasm`)는 web browser가 읽을 수 있는 파일로 javascript가 아닌 C, C++, Rust 등의 프로그래밍언어로 작성된 코드를 웹 브라우져에서 실행할 수 있다.
+  - wasm 덕분에 Rust 언어가 주목받고 있다.
+- 3D/VR/AR
+  - 3D/VR/AR는 최근에 주목받는 기술들로 web browser가 아니더라도 다른 기술이 새롭게 등장할 가능성이 높은 분야이다.
 
 ### 3. Back-End (Server side)
 
@@ -1348,7 +1377,7 @@ transform-origin 속성
 transform-origin:x축 y축;
 ```
 
-### CSSbattle
+### [CSSbattle](https://cssbattle.dev/)
 
 HTML, CSS만 가지고 주어진 도형 만들기
 
@@ -9501,6 +9530,18 @@ Mobile App을 만들 때 Flutter나 Swift처럼 하나의 mobile os에 종속된
 - ios: Swift
 - 두 mobile os 동시 가능: React-native
 
+### Mobile Font-Size (24px - 40px)
+
+모바일에서는 font가 24px이면 매우 작은 사이즈이다. 24px는 사용자가 집중해서 보면 보이는 정도이다.
+
+- 기사 title: 40px
+- 기사 sub-title: 32px
+- 기사 본문: 28px
+- 기사 작성 날짜 등 덜 중요한 내용: 22px
+- 기사 설정: 24px
+
+중요한 점은 Mobile은 기기가 작기 때문에, font 또한 작아버리면 보기가 매우 힘들다. 그럼으로 최소한 24px 정도는 넘기는 것이 가독성에 좋다.
+
 ## [React-Native](https://reactnative.dev/)
 
 React-Native는 android와 ios 두 곳 모두에서 작동하므로, 한 project로 두 마리의 토끼를 모두 잡을 수 있다. 또한 React를 사용해본 개발자라면 React-Native 역시 아주 쉽게 배울 수 있기 때문에 매우 편리하다.
@@ -9564,7 +9605,136 @@ $ npm start
 // 기본 카메라 앱으로 scan qr code
 ```
 
+### [React-Native Component](https://reactnative.dev/docs/components-and-apis)
+
+- `View`는 React-Native에서 제공하는 기본적인 container component로 **flex-direction이 column인 flexbox container**이다.
+- `Text`는 React-Native에서 제공하는 기본적인 text component이다.
+- `Button`은 a basic button component that should render nicely on any platform.
+- `StyleSheet`은 React-Native에서 css를 작성할 때 사용한다.
+- `TextInput`은 기본적인 HTMLInputElement와 동일하다.
+
+```
+// Menu.js
+import {
+  Text,
+  SafeAreaView,
+  StyleSheet,
+  View,
+  Pressable,
+  TextInput,
+} from "react-native";
+import { useState } from "react";
+import FontAwesome from "react-native-vector-icons/FontAwesome";
+import Feather from "react-native-vector-icons/Feather";
+
+const onPressFunction = () => {
+  console.log("pressed icon");
+};
+
+export default Menu = () => {
+  const [text, setText] = useState("");
+  return (
+    <SafeAreaView>
+      <View style={styles.container}>
+        <View>
+          <Text style={styles.boldtext}>SEARCH</Text>
+          <View style={styles.searchContainer}>
+            <TextInput
+              style={styles.searchInput}
+              onChangeText={setText}
+              value={text}
+              autoCorrect={false}
+              placeholder="Search Articles"
+            />
+            <Feather name="x" size={16} style={{ padding: 3 }} />
+            <Feather name="search" size={20} />
+          </View>
+        </View>
+        <View style={styles.linkContainer}>
+          <Text style={styles.boldtext}>QUICK LINKS</Text>
+          <View style={{ marginTop: "2%" }}>
+            <Text style={styles.topic}>SUBSCRIBE</Text>
+            <Text style={styles.topic}>NEWSLETTERS</Text>
+            <Text style={styles.topic}>ABOUT US</Text>
+          </View>
+        </View>
+        <View style={styles.socialMediaContainer}>
+          <Pressable onPress={onPressFunction} style={styles.socialIcon}>
+            {({ pressed }) => (
+              <FontAwesome
+                name="facebook-official"
+                size={pressed ? 26 : 32}
+                color={pressed ? "darkgray" : "black"}
+              />
+            )}
+          </Pressable>
+          <Pressable onPress={onPressFunction} style={styles.socialIcon}>
+            {({ pressed }) => (
+              <FontAwesome
+                name="twitter"
+                size={pressed ? 26 : 32}
+                color={pressed ? "darkgray" : "black"}
+              />
+            )}
+          </Pressable>
+          <Pressable onPress={onPressFunction} style={styles.socialIcon}>
+            {({ pressed }) => (
+              <Feather
+                name="mail"
+                size={pressed ? 26 : 32}
+                color={pressed ? "darkgray" : "black"}
+              />
+            )}
+          </Pressable>
+        </View>
+      </View>
+    </SafeAreaView>
+  );
+};
+
+// css in js
+const styles = StyleSheet.create({
+  container: {
+    marginTop: 25,
+    height: 100,
+    margin: 12,
+  },
+  searchContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginTop: "3%",
+    borderBottomWidth: 1,
+    width: "60%",
+  },
+  searchInput: {
+    width: "77%",
+  },
+  topic: {
+    paddingTop: 5,
+  },
+  boldtext: {
+    fontWeight: "500",
+  },
+  linkContainer: {
+    marginTop: "13%",
+    justifyContent: "center",
+  },
+  socialMediaContainer: {
+    flexDirection: "row",
+    justifyContent: "flex-start",
+  },
+  socialIcon: {
+    marginTop: "13%",
+    paddingRight: "3%",
+  },
+});
+```
+
+### [React-Native-Vector-icon](https://github.com/oblador/react-native-vector-icons)
+
+- [react-native-vector-icons directory](https://oblador.github.io/react-native-vector-icons/)
+
 ## REFERENCES
 
 - [Web Development In 2022 - A Practical Guide](https://www.youtube.com/watch?v=EqzUcMzfV1w)
-- [2022 웹개발 로드맵 총정리 (공부순서 알려드림) | 올해는 정말 해보자 🚀](https://www.youtube.com/watch?v=TTLHd3IyErM)
+- [2022 웹개발 로드맵 총정리 (공부순서 알려드림) | 올해는 정말 해보자 🚀](https://www.youtube.com/watch?v=TTLHd3IyErM)-

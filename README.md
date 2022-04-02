@@ -364,8 +364,8 @@ Figma, Adobe xd로 web/mobile UI를 design하면, 쉽게 css를 얻을 수 있�
 
 2022년 기준으로 Front-End developer은 수익도 많이 벌 수 있고, IT회사에서 수요도 많은 편이다. 하지만, IT업종은 새로운 기술들이 굉장히 빨리 등장하고 언제 web browser와 Javascript가 없어지고 다른 기술이 이를 대체할 지 모른다. **중요한 점은 IT업종의 새로운 기술을 배우는 것을 멈추지 않는 것이다.**
 
-- 실 예로, 2012년도에는 너도 나도 jquery라는 javascript로 웹을 개발했지만 현재 jquery는 사용되지 않는다.
-- 현재 2022년도에는 너도 나도 React라는 javascript로 웹을 개발하지만 10년 후에도 react를 사용할 지는 불확실하다.
+- 실 예로, 2012년도에는 너도 나도 jquery라는 javascript library로 웹을 개발했지만 현재 jquery는 사용되지 않는다.
+- 현재 2022년도에는 너도 나도 React라는 javascript library로 웹을 개발하지만 10년 후에도 react를 사용할 지는 불확실하다.
 - 현재는 web broswer를 이용하여 사람들간에 정보를 교환하지만, 미래에는 증강현실 VR/AR 등을 이용할 때 web broswer의 효율성이 떨어지면 다른 새로운 기술이 등장할 수 밖에 없다.
 
 Front-End의 진입장벽이 낮기 떄문에 많은 개발자들이 Front-End를 쉽게 도전하고 배울 수 있다. 그럼으로 경쟁력있는 Front-End developer가 되기 위해서는 다른 여러 능력들을 배우고 공부한다.
@@ -404,7 +404,6 @@ Back-End은 사용자가 웹사이트를 방문시 서버쪽에서 실행 할 Us
     - Django: https://docs.djangoproject.com/en/4.0/
   - [Rust](https://github.com/heeshin174/Web_App_Dev_Kor#rust)
     - [Rocket](https://github.com/heeshin174/Web_App_Dev_Kor#rocketrs): https://rocket.rs/
-    - Actix: https://actix.rs/
 
 - Database
 
@@ -9176,7 +9175,7 @@ Nest는 controller와 business logic을 구분 짓고 싶어 한다. controller�
 
 기본 컨셉은 Provider (또는 service), Controller를 module로 합치고, 그 module들을 최종적으로 `app.module`에 합쳐서 사용하는 것이다. `app.module`은 모든 module의 root module이다.
 
-Nest.jS는 singleton design pattern을 지향하기 때문에 instance를 직접 생성하지 않고 module을 통해 Injection 하는 패턴을 권장하고있다. 직접 instance를 생성하여 등록하는 방법도 지원하는데, 보통 전역적으로 적용해야할 Provider들에 사용한다. (다만 권장하는 방식은 아니다. 인스턴스 생성을 NestJS에게 맡기는 것을 권장한다.)
+Nest는 singleton design pattern을 지향하기 때문에 instance를 직접 생성하지 않고 module을 통해 Injection 하는 패턴을 권장하고있다. 직접 instance를 생성하여 등록하는 방법도 지원하는데, 보통 전역적으로 적용해야할 Provider들에 사용한다. (다만 권장하는 방식은 아니다. 인스턴스 생성을 NestJS에게 맡기는 것을 권장한다.)
 
 - Singleton design pattern: 전역 변수를 사용하지 않고 객체를 하나만 생성 하도록 하며, 생성된 객체를 어디에서든지 참조할 수 있도록 하는 software design pattern. Singleton allows only one instance at the same time.
 
@@ -9229,11 +9228,11 @@ public String getUsers(Model model) {
 }
 ```
 
-위의 예제는 간단하지만, 여러 정보를 가공해야한다거나 DB에서 데이터를 가져와 handling 한다면 Controller에서 수행하는 첫번째 방법은 getUsers() method가 어마무시하게 길어지니까 가독성이 매우 떨어진다. 그래서 Service라는 속성을 통해 요청과 수행을 분리하는 것 입니다.
+위의 예제는 간단하지만, 여러 정보를 가공해야한다거나 DB에서 데이터를 가져와 handling 한다면 Controller에서 수행하는 첫번째 방법은 `getUsers()` method가 어마무시하게 길어지니까 가독성이 매우 떨어진다. 그래서 Service라는 속성을 통해 요청과 수행을 분리한다.
 
 #### Controller
 
-BackEnd에서 흔히 사용하는 Controller 개념 그대로 생각하면 된다. url를 받아 함수를 실행하는 역할을 한다.
+Back-End에서 흔히 사용하는 Controller 개념 그대로 생각하면 된다. url를 받아 함수를 실행하는 역할을 한다.
 
 처음 request가 들어오는 입구 역할을 담당하며, 비즈니스 로직을 따로 분리하기 위해 진입점을 따로 분리해둔 것이다. Express.js에서 router가 하는 일이라고 생각하면 된다. 비유하자면 식당에 들어갔을 때 좌석을 안내해주는 직원을 생각하면 된다.
 
@@ -9241,7 +9240,7 @@ HTTP Request에 따라 어떠한 비즈니스 로직을 적용시킬지에 대�
 
 #### Provider (Service)
 
-Provider는 Nest.jS의 거의 모든 데이터 처리 및 비즈니스 로직을 담당한다. 즉, 실제 작동될 function이 작성되는 공간이다. 다만 역할에 따라 이름이 달라진다.
+Provider는 Nest의 거의 모든 데이터 처리 및 business logic 을 담당한다. 즉, 실제 작동될 function이 작성되는 공간이다. 다만 역할에 따라 이름이 달라진다.
 
 - 사용자 인증: Guards
 - 클라이언트가 보내는 데이터 필터링: Pipes
@@ -9254,16 +9253,17 @@ Provider는 Nest.jS의 거의 모든 데이터 처리 및 비즈니스 로직을
 
 Module은 Provider와 Controller를 합치는 역할을 한다. 뿐만 아니라 다른 Module이 Provider를 사용할 수 있게 export 처리를 하거나 필요한 Provider가 있는 모듈을 Import해서 사용할 수 있게 만들어준다.
 
-Nest.js는 client의 요청별로 Controller와 Provider를 제작하고 이를 Module로 엮어 하나의 단위를 만든다고 할 수 있다.
+Nest 는 client의 요청별로 Controller와 Provider를 제작하고 이를 Module로 엮어 하나의 단위를 만든다고 할 수 있다.
 
-### Nest.js 예시
+### Nest 예시
 
-Nest.js는 nest command line을 제공한다.
+- nest command line을 사용하면 쉽게 nest를 시작할 수 있다.
 
 ```
-// Nest.js cli 설치 후
-// 새로운 Nest.js project 생성
+// Nest cli 설치
 $ npm i -g @nestjs/cli
+
+// 새로운 Nest project 생성
 $ nest new project-name
 
 // 새로운 movies controller 생성
@@ -9730,9 +9730,21 @@ const styles = StyleSheet.create({
 });
 ```
 
-### [React-Native-Vector-icon](https://github.com/oblador/react-native-vector-icons)
+### [React-Native-Vector-Icon](https://github.com/oblador/react-native-vector-icons)
 
 - [react-native-vector-icons directory](https://oblador.github.io/react-native-vector-icons/)
+
+### [React-Navigation](https://reactnavigation.org/)
+
+React-Navigation library는 react-native에서 화면간 이동 시 필요한 navigators를 쉽게 구현할 수 있도록 해준다.
+
+- Drawer navigation: side bar처럼 사용가능
+- (Bottom/Top) Tap navigation
+- Stack navigation: 전에 보던 화면으로 이동가능
+
+등 여러 가지의 navigators를 제공한다.
+
+- [Combining Stack, Tab & Drawer Navigations in React Native With React Navigation 5](https://dev.to/easybuoy/combining-stack-tab-drawer-navigations-in-react-native-with-react-navigation-5-da)
 
 ## REFERENCES
 

@@ -9,6 +9,21 @@
 - medium (blog site): https://medium.com/
 - 내 블로그 https://medium.com/@heeshin174/
 
+### 좋은 Idea와 좋은 Code Implementation
+
+실제로 project를 진행하다 보면, 사실은 **좋은 code보다 좋은 idea가 더 중요**하다. Idea가 좋지 않다면 code를 아무리 잘 작성했어도 좋은 project라고 할 수 없다. 그럼으로 **idea 60% + code 40%**로 이해할 수 있다.
+
+Idea는 다음을 포함해야 한다.
+
+- 사용자들이 접하는 문제점과 이를 해결할 해결방안
+  - 내가 살면서 집적 겪는 문제점들 또는 있었으면 좋을 것들을 note에 적어놓고, 이에 대한 해결방안을 생각해 본다.
+  - 문제점, 개선점을 documents로 정리할 땐, [A3 thinking](https://www.youtube.com/watch?v=rtyia0ci12I) 이라는 algorithm을 사용할 수 있다.
+- 제품의 명확한 사용법과 장점
+- 기존의 제품들과의 차별점
+  - 다른 제품말고 이 제품을 써야하는 이유
+  - 한 번 경험해보면, 다시는 기존의 제품들을 사용할 수 없을 정도의 편리성, 효율성
+  - 기존에 있는 제품들을 조금만 바꾸어서 만들기 보단 (모조품), 기존의 제품들을 사용해서 전혀다른 새로운 제품을 만들어 내는 것이 좋다.
+
 ### 좋은 코드를 작성하는 기본원칙
 
 - DRY: Don't Repeat Yourself
@@ -347,6 +362,13 @@ SPA를 제공하는 frontend framework에는 크게 React, Vue, Angular가 있�
 Figma, Adobe xd로 web/mobile UI를 design하면, 쉽게 css를 얻을 수 있다. **image의 선명도는 매우 중요**하므로 Adobe photoshop의 curve 기술을 사용한다. Figma는 무료이다.
 
 - Web design 시 width를 보통: 1920px로 잡는다.
+- Title font size: `font-size: 30px;`
+- 있어야 되지만 안중요한 내용 (최소크기 e.g. 작성날짜): `font-size: 13px;`
+- Sub-title/Nav-bar font size: `font-size: 15px;`
+- 본문 font size: `font-size: 18px;`
+- Icon font size: `font-size: 15px/30px/50px;`
+
+  - 또는 icon-container: 36px, icon: 26px,
 
 - Figma
   - `Shift + R`: Ruler

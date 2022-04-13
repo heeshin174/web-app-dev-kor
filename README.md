@@ -7687,6 +7687,38 @@ $ git pull
 $ git pull origin master
 ```
 
+#### Git master branch update 시 기존 branch 들을 update 하기
+
+현재 프로젝트에는 `master`, `b1`, `b2` branches가 존재한다. 다른 개발자는 b1을 나는 b2을 개발한다.
+다른 개발자가 b1를 완료하여 master branch에 merge 하였다. master에 새롭게 추가 된 b1 content를 어떻게 b2에 병합할 수 있을까?
+
+1. Download new master branch from github remote server
+2. Checkout each branch
+3. You merge. That is actually quite simple, and a perfectly local operation
+
+```
+$ git checkout master
+
+$ git pull
+or
+$ git pull origin master
+
+$ git checkout b2
+$ git merge master
+```
+
+Alternatively, you can do a rebase:
+
+`git rebase master` is the proper way to do this. Merging would mean a commit would be created for the merge, while rebasing would not.
+
+```
+$ git checkout master
+$ git pull
+$ git checkout b2
+$ git rebase master
+$ git push --force # force required if you've already pushed
+```
+
 ### Git 특정 commit으로 돌아가기
 
 #### 이전 commit source code 보고 돌아오기

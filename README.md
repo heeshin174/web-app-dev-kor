@@ -4,10 +4,18 @@
 
 아래의 내용은 간단한 개념위주로, 개념만 공부해서는 이해하기 힘들다. **실제 project를 만들면서 필요한 부분들을 이 곳에서 참고히면 된다.**
 
-개발자로서 하나의 blog를 가지고 있다면 본인이 배운 내용들을 정리하기에도 좋고, 취업할 때도 유리하게 작용할 수 있다.
+- 개발자로서 하나의 blog를 가지고 있다면 본인이 배운 내용들을 정리하기에도 좋고, 취업할 때도 유리하게 작용할 수 있다.
+  - medium (blog site): https://medium.com/
+  - 내 블로그 https://medium.com/@heeshin174/
 
-- medium (blog site): https://medium.com/
-- 내 블로그 https://medium.com/@heeshin174/
+## Web || App 개발순서
+
+1. web || app design하기
+   - Figma, Adobe XD등 다양한 tool 사용가능
+   - Client, Designer, User등 다양한 feedback를 받는 것이 중요하다.
+2. Design를 code로 implement하기
+   - 디자인이 요구하는 상황에 맞는 FrontEnd, BackEnd를 선택하는 것이 중요하다.
+3. 끊임없이 1,2를 update하기
 
 ### 좋은 Idea와 좋은 Code Implementation
 
@@ -56,9 +64,10 @@ Idea는 다음을 포함해야 한다.
   3. [Flask.py](https://github.com/heeshin174/Web_App_Dev_Kor#3-flaskpy)
   4. [Postgresql](https://github.com/heeshin174/Web_App_Dev_Kor#4-postgresql)
   5. [Mongodb](https://github.com/heeshin174/Web_App_Dev_Kor#5-mongodb)
-  6. [Rocket.rs](https://github.com/heeshin174/Web_App_Dev_Kor#6-rocketrs)
+  6. [Rocket.rs](https://github.com/heeshin174/Web_App_Dev_Kor#rocketrs)
   7. [Nest.js](https://github.com/heeshin174/Web_App_Dev_Kor#nestjs)
   8. [Serverless](https://github.com/heeshin174/Web_App_Dev_Kor#serverless)
+  9. [GraphQL](https://github.com/heeshin174/Web_App_Dev_Kor#graphql)
 
 - [MobileApp](https://github.com/heeshin174/Web_App_Dev_Kor#moblie-app-development)
   1. [React-Native](https://github.com/heeshin174/Web_App_Dev_Kor#react-native)
@@ -233,10 +242,10 @@ Window: GET http://localhost:5000/api/users/me
 WSL: GET http://172.29.69.223:5000/api/users/me
 ```
 
-### 2. Front-End (Client side)
+### 2. Front-End (Client Side)
 
-Front-End은 사용자가 웹사이트를 방문시 보게되는 화면, 즉 User Interface (UI)을 의미한다. **Front-End의 기본은 HTML, CSS, Javascript 이다.** 이는 web browser가 읽을 수 있는 파일들이 이 세가지 밖에 없기 때문이다. 최근에는 `Web Assembly`까지 포함해 4가지를 읽을 수 있다.
-React.js, Typescript 등등 outside library/framework로 만들어 native HTML, CSS, Javascript로 작성되지 않은 파일들은 browser가 읽을 수 없기 떄문에 마지막에는 이 세가지로 변환해주어야 한다.
+Front-End은 사용자가 웹사이트를 방문시 보게되는 화면, 즉 User Interface (UI)을 의미한다. Website에서 **Front-End의 기본은 HTML, CSS, Javascript 이다.** 이는 web browser가 읽을 수 있는 파일들이 이 세가지 밖에 없기 때문이다. 최근에는 `Web Assembly`까지 포함해 4가지를 읽을 수 있다.
+React.js, Typescript 등등 external library/framework로 만들어 native HTML, CSS, Javascript로 작성되지 않은 파일들은 browser가 읽을 수 없기 떄문에 마지막에는 이 세가지로 변환해주어야 한다.
 
 - **HTML**: Structural 뼈대
 - **CSS**: Presentational 살점
@@ -379,6 +388,7 @@ Figma, Adobe xd로 web/mobile UI를 design하면, 쉽게 css를 얻을 수 있�
   - `Ctrl + /`: Command Palette
   - `Shift + A`: Auto Layout
   - prototype > interactions
+    - 버튼클릭등의 상호작용을 설정
   - plugin
     - Material design icons
 
@@ -8837,7 +8847,7 @@ Set User name & User password => Network access IP Address => Connect => "Connet
 
 `MONGO_URI = mongodb+srv://Shin:<password>@cluster0.sjhvl.mongodb.net/<myfirstDatabase>?retryWrites=true&w=majority`
 
-## 6. [RocketRs](https://rocket.rs/)
+## [RocketRs](https://rocket.rs/)
 
 Rocket is a web framework for Rust that makes it simple to write fast, secure web applications without sacrificing flexibility, usability, or type safety. Rocket은 Rust 프로그래밍언어로 작성된 서버 사이드 웹 framework이다
 
@@ -9535,6 +9545,169 @@ $ http://xyz.amazonaws.com/function-name
 
 https://velopert.com/3549
 
+## [GraphQL](https://graphql.org/)
+
+GraphQL은 facebook사에서 REST api의 문제점을 해결하고자 등장한 개념이다. GraphQL을 배우고 나면 이제는 REST api를 사용할 때 문제점들이 보이고 다시는 REST api를 사용하고 싶지 않은 생각이 든다.
+GraphQL은 이름에서도 나오다시피 **Query Language (QL)**이다. GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data.
+
+GraphQL은 단지 specification (spec), 즉 이론,일 뿐이고 진짜로 사용하기 위해서는 내가 사용하고자 하는 programming 언어로 GraphQl spec를 구현해야만 한다.
+
+Database를 공부할 때 배운 Select Query Language (SQL)와 이론은 똑같다.
+
+### GraphQL 장점
+
+GraphQL 장점을 알려면 REST api의 단점을 보면 된다.
+
+- Over Fetching의 문제 해결
+  - REST api는 요청한 모든 data를 보낸다. 이는 필요없는 data까지 보내기 때문에 로딩시간이 길어진다.
+  - GraphQL은 Query Language (요청언어)이기 때문에, 내가 원하는 data만 요청하는 게 가능하다.
+- Under Fetching의 문제 해결
+  - REST api는 한번애 한 url에만 data를 요청할 수 있다. 그럼으로 2개 이상의 url에 data를 요청할 때는 여러번 요청해야 해서 로딩시간이 길어진다.
+  - GraphQL에서는 한 번에 여러개의 api request를 하는 게 가능하다.
+- Database와 같이 특정 programming 언어에 종속된 개념이 아니기 때문에 모든 언어에서 GraphQL을 사용할 수 있다는 점이다.
+
+### GraphQL 예시
+
+GraphQL의 field 하나하나가 REST Api에서는 url이 된다.
+
+https://graphql.org/swapi-graphql
+
+위의 url에 접속해 `query: Root`를 눌르면 우리가 얻을 수 있는 모든 `Fields`를 볼 수 있다.
+
+```
+GraphQL:
+- allFilms (
+after: String
+first: Int
+before: String
+last: Int
+): FilmsConnection
+- film(id: ID, filmID: ID): Film
+- person(id: ID, personID: ID): Person
+
+vs
+
+RESTAPI:
+- app/v1/films
+- app/v1/films/:id
+- app/v1/people/:id
+```
+
+GraphQL로 data 요청하기
+
+```
+allFilms (
+after: String
+first: Int
+before: String
+last: Int
+): FilmsConnection
+```
+
+에서 `FilmsConnection`을 눌르면 `allFilms`가 줄 수 있는 모든 data를 표시해 준다.
+
+![FilmsConnection](./img/graphql-ex1.png)
+
+```
+GraphQL: allFilms에 있는 totalCount data만 줘
+{
+  allFilms {
+    totalCount
+  }
+}
+
+Response:
+{
+  "data": {
+    "allFilms": {
+      "totalCount": 6
+    }
+  }
+}
+```
+
+`totalCount`는 int data를 return하고, `films`는 `[Film]`이라는 Film Array를 return한다. Film Array안에는 다음과 같은 것들을 포함한다.
+
+![FilmsConnection](./img/graphql-film1.png)
+![FilmsConnection](./img/graphql-film2.png)
+
+```
+GraphQL: allFilms에 있는 totalCount & films array 중 title의 data만 줘
+{
+  allFilms {
+    totalCount
+    films {
+      title
+    }
+  }
+}
+
+Response:
+{
+  "data": {
+    "allFilms": {
+      "totalCount": 6,
+      "films": [
+        {
+          "title": "A New Hope"
+        },
+        {
+          "title": "The Empire Strikes Back"
+        },
+        {
+          "title": "Return of the Jedi"
+        },
+        {
+          "title": "The Phantom Menace"
+        },
+        {
+          "title": "Attack of the Clones"
+        },
+        {
+          "title": "Revenge of the Sith"
+        }
+      ]
+    }
+  }
+}
+```
+
+```
+GraphQL:
+allFilms에 있는 totalCount & films array 중 title의 data하고
+allPeople에 있는 people array 중 name, hairColor, birthYear data만 줘
+{
+  allFilms {
+    totalCount
+    films {
+      title
+    }
+  }
+  allPeople {
+    people {
+      name
+      hairColor
+      birthYear
+    }
+  }
+}
+```
+
+### [GraphQL API (Apollo)](https://www.apollographql.com/docs/apollo-server/)
+
+GraphQL API를 Apollo server를 이용하여 만들어 볼 것이다. Apollo Server is an open-source, spec-compliant GraphQL server that's compatible with any GraphQL client, including Apollo Client. Apollo Server는 graphql specification을 구현해 graphql를 이해하는 서버이다.
+
+You can use Apollo Server as:
+
+- A stand-alone GraphQL server, including in a serverless environment
+  - Apollo Server만 있어도 node.js server처럼 잘 작동한다.
+- An add-on to your application's existing Node.js middleware (such as Express or Fastify)
+  - Express나 Gastify 같은 node.js backend의 최상단에 Apollo server를 추가할 수 있다.
+  - 이미 REST api를 사용하는 Express backend가 있으면, 이를 GraphQL로 바꾸는 Middleware만 추가하면 된다.
+- A gateway for a federated graph
+
+Apollo server를 이용해서 GraphQL API 만들기 : https://www.apollographql.com/docs/apollo-server/getting-started#step-2-install-dependencies
+
 ## % 부록2: Amazon사의 cloud service인 AWS (Amazon Web Service) 사용하기 %
 
 - AWS IAM: User를 생성하고, create access key를 사용하여, API에 접근하기
@@ -9582,7 +9755,7 @@ Mobile App을 만들 때 Flutter나 Swift처럼 하나의 mobile os에 종속된
 
 - android: Flutter
 - ios: Swift
-- 두 mobile os 동시 가능: React-native
+- 두 mobile os 동시 가능 (Crossover platform): React-native
 
 ### Mobile Font-Size (24px - 40px)
 
@@ -9598,7 +9771,17 @@ Mobile App을 만들 때 Flutter나 Swift처럼 하나의 mobile os에 종속된
 
 ## [React-Native](https://reactnative.dev/)
 
-React-Native는 android와 ios 두 곳 모두에서 작동하므로, 한 project로 두 마리의 토끼를 모두 잡을 수 있다. 또한 React를 사용해본 개발자라면 React-Native 역시 아주 쉽게 배울 수 있기 때문에 매우 편리하다.
+React-Native는 android와 ios 두 곳 모두에서 작동하므로, 한 project로 두 마리의 토끼를 모두 잡을 수 있다. 또한 React를 사용해본 개발자라면 React-Native 역시 아주 쉽게 배울 수 있기 때문에 매우 편리하다. React Native로만 개발하려면, ios를 개발할 땐 macbook이 android를 개발할 땐 WindowOS가 필요한 번거로움이 있는데 expo를 사용하면 OS에 상관없이 아주 쉽게 react native app을 개발할 수 있다.
+
+### [Expo](https://docs.expo.dev/)
+
+Expo는 매우 쉽게 사용가는한 crossover platform tool이다. 그럼으로 react native가 처음이라면 반드시 expo를 사용하여 개발하도록 한다.
+
+```
+$ npm i -g expo-cli
+$ expo init my-project
+> blank
+```
 
 ### React-Native Set Up
 
@@ -9608,7 +9791,8 @@ React-Native를 사용하기 위해서는 세 가지의 dependencies가 필요�
   - `$ node --version` 입력 후 설치되어 있는 지 확인한다.
 - Java SE Development Kit (JDK)
   - `$ java --version` 입력 후 설치되어 있는 지 확인한다.
-- Mobile 기기 또는 Android Studio
+- Mobile 기기 또는 Virtual device (Android Studio)
+  - Expo를 사용한다면 넘겨도 된다.
 
 Android Studio 설치 후
 
@@ -9632,7 +9816,7 @@ C:\Users\Shin\AppData\Local\Android\Sdk\platform-tools
 - `Virtual Devide Manager`
   - `create device`로 원하는 android device 생성
 
-#### React-Native app 생성
+#### React-Native app 생성 & 실행
 
 ```
 // projectName folder 생성 후 boilerplate code 다운
@@ -9641,11 +9825,8 @@ $ npx react-native init projectName
 // 또는 react-native cli (command line) 설치 후 다운
 $ npm i react-native-cli
 $ react-native init projectName
-```
 
-#### React-Native app 실행
-
-```
+// app을 실행
 $ npx react-native run-android
 $ npx react-native run-ios
 
@@ -9665,7 +9846,8 @@ $ npm start
 - `Text`는 React-Native에서 제공하는 기본적인 text component이다.
 - `Button`은 a basic button component that should render nicely on any platform.
 - `StyleSheet`은 React-Native에서 css를 작성할 때 사용한다.
-- `TextInput`은 기본적인 HTMLInputElement와 동일하다.
+- `TextInput`은 기본적인 HTMLInputElement와 동일하다. 사용자 input 받기
+- `Pressable`은 최근에 만들어진 component로 LTS이 보장된 interactive component이다.
 
 ```
 // Menu.js

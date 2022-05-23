@@ -8,9 +8,9 @@
   - medium (blog site): https://medium.com/
   - 내 블로그 https://medium.com/@heeshin174/
 
-## Web || App 개발순서
+## Web App 개발순서
 
-1. web || app design하기
+1. web app design하기
    - Figma, Adobe XD등 다양한 tool 사용가능
    - Client, Designer, User등 다양한 feedback를 받는 것이 중요하다.
 2. Design를 code로 implement하기
@@ -105,9 +105,9 @@ Idea는 다음을 포함해야 한다.
   - Capacitive (무접점) Keyboard
 - Browser
   - **Chrome**
-  - Edge
-  - Safari (MacOS)
-  - **Brave browser**
+  - Edge (WindowOS)
+  - Safari (IOS)
+  - **Brave browser (IOS)**
 - Text Editor
   - ⭐ **VSCode** (+ Extensions)
   - IntelliJ
@@ -288,6 +288,7 @@ React.js, Typescript 등등 external library/framework로 만들어 native HTML,
     - (Remove white background): https://www.remove.bg/upload
 
 - [Javascript](https://github.com/heeshin174/Web_App_Dev_Kor#3-javascript)
+
   - **ES6+ Syntax**
     - Basic
       - let, const
@@ -354,6 +355,11 @@ React.js, Typescript 등등 external library/framework로 만들어 native HTML,
       - multer (upload files): https://github.com/expressjs/multer
       - electron (build a cross-platform desktop app): https://www.electronjs.org/
 
+- REST API for FrontEnd
+- GraphQL for FrontEnd
+  - Apollo Client: https://www.apollographql.com/docs/react
+- [PyScript (Run Python in Your HTML)](https://pyscript.net/)
+
 Front-End library/framework은 web application의 UI 부분을 더 쉽게 작성할 수 있게 만들어 준다.
 **Single Page Application** (SPA)는 body가 비어있는 하나의 HTML을 가지고 Javascript를 이용해서 그 안에 Data를 dynamic하게 할당한다.
 Server가 client에 javascript를 넘겨주면, client가 이를 가지고 HTML를 완성하기 때문에 Client Side Rendering (CSR)이라 한다. CSR에선 HTML이 비어있기 때문에 검색 엔진에 노출되어 검색되기 쉽지 않아 Search Engine Optimization (SEO)에 취약하다.
@@ -410,7 +416,7 @@ Front-End의 진입장벽이 낮기 떄문에 많은 개발자들이 Front-End�
     - font, layout 정도가 design의 기본기가 되고, 이 기본기를 잘 숙지해야 한다.
     - 큰 image를 중심으로 갈 때에는 image를 고해상도에 채도가 높은, 즉 쨍하고 선명한 이미지를 사용하는 것이 중요하다.
       - 기존 고해상도 이미지를 가지고, photoshop를 이용하여 변경한다.
-- Back-End Development
+- Back-End Development + Database
   - 최근에는 Front-End로 할 수 있는 작업들이 매우 많아졌지만, database를 관리하고 사용자 정보를 관리하는 등의 일에 client의 접근을 허용할 수는 없다.
   - 그럼으로, Back-End Development에 대해 공부한다.
     - 한국에서는 node.js보단 java의 spring framework가 취업하기에 유리하다.
@@ -439,18 +445,27 @@ Back-End은 사용자가 웹사이트를 방문시 서버쪽에서 실행 할 Us
 
 - Database
 
-  - SQL
+  - Structured Query Language (SQL)
     - Postgresql: https://www.postgresql.org/download/
-      - PG-Pool.js: https://node-postgres.com/api/pool
+      - PG-Pool.js (node.js modules for interfacing with PostgreSQL): https://node-postgres.com/api/pool
   - NOSQL
     - Mongodb: https://www.mongodb.com/cloud
-      - mongoose.js: https://mongoosejs.com/
+      - mongoose.js (mongodb object modeling for node.js): https://mongoosejs.com/
   - Prisma (PlanetScale에 hosting된 serverless database와 연결): https://www.prisma.io/
   - PlanetScale (serverless database): https://planetscale.com/
   - Firebase (backend as a service): https://firebase.google.com/
-  - AWS
+  - [Amazon Web Service (AWS)](https://github.com/heeshin174/Web_App_Dev_Kor#-%EB%B6%80%EB%A1%9D2-amazon%EC%82%AC%EC%9D%98-cloud-service%EC%9D%B8-aws-amazon-web-service-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-) : https://aws.amazon.com/
+  - Micro-ORM (TypeScript ORM for Node.js based on Data Mapper, Unit of Work and Identity Map patterns): https://mikro-orm.io/
+    - Database 관련 코드를 작성하다 보면 반복되는 코드가 발생한다. 이때 **Object Relational Mapper (ORM)**이라는 Framework를 활용하면 database 처리 관련 코드가 많이 줄어들어 생산성을 향상시킬 수 있다. ORM 중에서 'Entity Framework'가 널리 사용된다. 하지만 내용이 많기 때문에 책에서는 'Dapper'를 사용한다.
 
-- other Javascript Library/Framework
+- Application Programming Interface (API or web API) that interacts with the database
+
+  - [REST API](https://github.com/heeshin174/Web_App_Dev_Kor#3-rest-representational-state-transfer-apis)
+  - [GraphQL (Query Language for API)](https://github.com/heeshin174/Web_App_Dev_Kor#graphql) : https://graphql.org/
+
+  - Apollo Server : https://www.apollographql.com/docs/apollo-server
+
+- Other Javascript Library/Framework
 
   - Gatsby (Server side generator): https://www.gatsbyjs.com/
   - nodemon (auto reload server): https://www.npmjs.com/package/nodemon
@@ -3082,9 +3097,10 @@ Node.js에서 ES6 모듈을 사용하는 방법은 package.json 파일 설정을
 
 먼저 프로젝트의 package.json 파일을 열고, 최상위에 type 항목을 module로 설정합니다.
 
-package.json 생성
+`npm init` 또는 `npm init -y`로 initial node.js project 생성.
 
-> `npm init`
+- `package.json`는 이 프로젝트가 사용하는 dependencies을 모아둔 파일
+- `npm init -y`는 yes for everyting. much simplier than `npm init`
 
 ```
 //package.json
@@ -7289,7 +7305,7 @@ VSCode는 다양한 keyboard shortcut을 제공하기 때문에 마우스를 사
 
 - In VScode, go to `Help > Keyboard Shortcuts References`. VScode에서 사용가능한 유용한 키보드 단축기들을 볼 수 있다.
 
-#### Navigation
+#### WindowOS Navigation
 
 - `Ctrl + P`: 이 폴더 내에 다른 file name을 입력 후, 그 file로 이동 (파일간 이동)
 - `Ctrl + G`: 이 파일 내에 Line 입력 후 이동 (파일 내 이동)
@@ -7310,12 +7326,12 @@ VSCode는 다양한 keyboard shortcut을 제공하기 때문에 마우스를 사
 - `Ctrl + \`: 새로운 split editor 생성
 - `Ctrl + (1/2/3/...)`: 새로운 split editor 생성 후, 그곳으로 cursor 이동
 - `Alt + (1/2/3/...)`: 열려있는 여러 tab 중, 그곳으로 cursor 이동
-- `Ctrl + W\F4`: 현재 tap 또는 split editor 닫기
+- `Ctrl + W\F4`: Close 현재 tap 또는 split editor
 
 - `Ctrl + click`: Go to definition
 - `Ctrl + hover`: peek definition
 
-#### Basic editing
+#### WindowOS Basic Editing
 
 - `tab`: 자동완성 (현재치고 있는 코드를 자동완성)
 - `Ctrl + X`: Cut (select하지 않을 경우 현재 cursor가 있는 line 삭제)
@@ -7325,7 +7341,7 @@ VSCode는 다양한 keyboard shortcut을 제공하기 때문에 마우스를 사
 - `Ctrl + V`: Paste
 - `Ctrl + Z`: Undo
 - `Ctrl + S`: Save file
-- `` Ctrl + `(back tic) ``: Open terminal
+- `Ctrl + Backtic`: Toggle terminal
 - `` Ctrl + Shift + `(back tic) ``: Create new terminal
 - `Ctrl + shift + R`: Refactoring (drag된 코드를 변수로 만들기, 함수로 만들기, 새로운 file로 옮기기, ...)
 - `F2`: Renaming (변수 이름 변경하기: 이 변수와 연관된 모든 다른 file에서 사용중인 변수명도 함께 바꿔준다.)
@@ -7335,14 +7351,16 @@ VSCode는 다양한 keyboard shortcut을 제공하기 때문에 마우스를 사
 - `shift + alt + (Up/Down)`: 한 줄을 아래줄에 복사후 붙여넣기 (Copy & Paste)
 - `shift + (Arrow)`: Arrow로 움직인 영역만큼만 drag
 - `shift + Ctrl + (Arrow)`: 단어 단위로 Arrow로 움직인 영역만큼만 drag
-- `Ctrl+ /`: Toggle line comment
-- `Ctrl+ (]/[)`: Indent/outdent line
+- `Ctrl+ /`: Toggle line comment (select하지 않을 경우 현재 cursor가 있는 line comment)
+- `Ctrl + [`: Indent a line or selected lines
+- `Ctrl + ]`: outdent a line or selected lines
 - `Terminal에서 (Up/Down)`: 이전에 Terminal에 입력했었던 command 보기
 - `Del`: 커서 뒤의 한 캐릭터 삭제
 - `Ctrl + Del`: 커서 뒤의 한 단어 삭제
 - `Ctrl + A`: 현재 파일의 모든 문장 drag
 - `Ctrl + ,`: Setting 열기
-- `Ctrl + space`: 자동완성제안 (현재치고 있는 코드의 자동완성 list를 보여줌)
+- `Ctrl + space`: Trigger suggestion 자동완성제안 (현재치고 있는 코드의 자동완성 list를 보여줌)
+  - One more `Ctrl + space`: Trigger detail suggestion
 - `Ctrl + shift + P`: Open Command Palette
 
   - Command Palette에 `@` 입력 (`Ctrl + P` + `@`): 현재 project에 define된 모든 classes, interfaces 반환
@@ -7361,10 +7379,16 @@ VSCode는 다양한 keyboard shortcut을 제공하기 때문에 마우스를 사
   - `Ctrl + K`: Cuttom key binding for toggling zen mode
     - Z key가 undo와 연결되어 있기 떄문에 개인적으로 `Ctrl + K`를 이용해 toggle zen mode한다.
 
-- `Ctrl + b`: toggle side-bar
+- `Ctrl + B`: toggle side-bar
 - `Ctrl + -`: zoom out
 - `Ctrl + +`: zoom in
-- `Ctrl + d`: find next match (현재 select된 단어와 일치하는 다음 위치 찾은 후 multi cursor)
+- `Ctrl + D`: find next match (현재 select된 단어와 일치하는 다음 위치 찾은 후 multi cursor)
+- `Ctrl + shift + D`: find all match (현재 select된 단어와 일치하는 모든 위치 찾은 후 multi cursor)
+- `Ctrl + shift + [`: Fold a block of code
+- `Ctrl + shift + ]`: Unfold a block of code
+- `Ctrl + alt + Up/Down`: Multi-cursor
+- `Ctrl + U`: Undo last Multi-cursor
+- `Ctrl + shift + T`: Reopen the last closed Tabs
 
 - `Alt + click`: Multi-cursor (Alt + Click를 여러 군데 찍으면, 한번에 여러 곳에 typing 할 수 있다).
 
@@ -7387,6 +7411,7 @@ VSCode는 다양한 keyboard shortcut을 제공하기 때문에 마우스를 사
 - `$ code .`: current directory를 vscode로 열기
 - `$ rm fileName`: remove file
 - `$ rm -r dirName`: remove directory
+- `$ rmdir dirName`: remove directory
 - `$ rm -f fileName`: force to remove file
 - `$ rm -rf dirName`: force to remove directory
 - `$ ./executableFile.exe`: execute the file
@@ -7403,7 +7428,8 @@ VSCode는 다양한 keyboard shortcut을 제공하기 때문에 마우스를 사
 - `$ echo + text >> fileName`: fileName에 text를 append
 - `$ vi fileName`: Vim editor로 fileName열기
 - `$ nano fileName`: nano editor로 fileName열기
-- `$ code fileName`: VSCode editor로 fileName열기$
+- `$ code fileName`: VSCode editor로 fileName열기
+- `$ code .`: VSCode editor로 현재 파일 열기
 - `$ ssh ...`: ssh로 remote server와 연결
 
 keyboard shortcut for terminal
@@ -7412,6 +7438,29 @@ keyboard shortcut for terminal
 - `Ctrl + (LeftArrow\RightArrow)`: 단어
 - `Ctrl + C`: terminate
 - `UpArrow/DownArrow`: 최근에 사용한 command 가져오기. Terminal history
+
+### MacOS VSCode Shortcuts
+
+- `Command (⌘ cmd) + shift + P`: Open Command Palette
+- `Command (⌘ cmd) + B`: Toggle side bar
+- `Command (⌘ cmd) + D`: Find next match (현재 select된 단어와 일치하는 다음 위치 찾은 후 multi cursor)
+- `Command (⌘ cmd) + shift + L`: Find all match (현재 select된 단어와 일치하는 모든 위치 찾은 후 multi cursor)
+- `FN + F2`: Rename (변수 이름 변경하기: 이 변수와 연관된 모든 다른 file에서 사용중인 변수명도 함께 바꿔준다.)
+- `Command (⌘ cmd) + Backtic`: Toggle terminal
+- `Command (⌘ cmd) + / (Slash)`: Toggle line comment (select하지 않을 경우 현재 cursor가 있는 line comment)
+- `Command (⌘ cmd) + space`: Trigger suggestion 자동완성제안 (현재치고 있는 코드의 자동완성 list를 보여줌)
+  - One more `Command (⌘ cmd) + space`: Trigger detail suggestion
+- `Command (⌘ cmd) + X`: Cut (select하지 않을 경우 현재 cursor가 있는 line 삭제)
+- `Command (⌘ cmd) + [`: Indent a line or selected lines
+- `Command (⌘ cmd) + ]`: outdent a line or selected lines
+- `Command (⌘ cmd) + Option (⌥ Alt) + [`: Fold a block of code
+- `Command (⌘ cmd) + Option (⌥ Alt) + ]`: Unfold a block of code
+- `Command (⌘ cmd) + ,`: Open VSCode Settings
+- `Command (⌘ cmd) + ,`: Open VSCode Settings
+- `Command (⌘ cmd) + Option (⌥ Alt) + Up/Down`: Multi-cursor
+- `Command (⌘ cmd) + U`: Undo last Multi-cursor
+- `Command (⌘ cmd) + W`: Close current tab
+- `Command (⌘ cmd) + shift + T`: Reopen the last closed Tabs
 
 ### Emmets
 
@@ -8183,9 +8232,10 @@ Node.js로 할 수 있는 대표적인 것은 **Web Server를 만드는 것**이
 > $ code .
 ```
 
-`package.json` 생성 (이 프로젝트가 사용하는 dependencies을 모아둔 파일)
+`npm init` 또는 `npm init -y`로 initial node.js project 생성.
 
-> `npm init`
+- `package.json`는 이 프로젝트가 사용하는 dependencies을 모아둔 파일
+- `npm init -y`는 yes for everyting. much simplier than `npm init`
 
 이러면, `node_modules`란 folder가 생성되는 데, 이 folder에는 다운 받은 packages의 실제 source code가 담겨있다.
 
@@ -9547,24 +9597,29 @@ https://velopert.com/3549
 
 ## [GraphQL](https://graphql.org/)
 
-GraphQL은 facebook사에서 REST api의 문제점을 해결하고자 등장한 개념이다. GraphQL을 배우고 나면 이제는 REST api를 사용할 때 문제점들이 보이고 다시는 REST api를 사용하고 싶지 않은 생각이 든다.
+GraphQL은 facebook사에서 REST api의 문제점을 해결하고자 만든 개념이다. GraphQL을 배우고 나면 이제는 REST API를 사용할 때 문제점들이 보이고 다시는 REST API를 사용하고 싶지 않은 생각이 든다.
 GraphQL은 이름에서도 나오다시피 **Query Language (QL)**이다. GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data.
 
-GraphQL은 단지 specification (spec), 즉 이론,일 뿐이고 진짜로 사용하기 위해서는 내가 사용하고자 하는 programming 언어로 GraphQl spec를 구현해야만 한다.
+GraphQL은 단지 specification (spec), 즉 이론일 뿐이고 진짜로 사용하기 위해서는 내가 사용하고자 하는 programming 언어로 GraphQL spec를 구현해야만 한다.
 
 Database를 공부할 때 배운 Select Query Language (SQL)와 이론은 똑같다.
 
-### GraphQL 장점
+### GraphQL vs REST API (GraphQL 장점)
 
-GraphQL 장점을 알려면 REST api의 단점을 보면 된다.
+GraphQL 장점을 알려면 REST API의 단점을 보면 된다.
 
-- Over Fetching의 문제 해결
+- **Over-Fetching의 문제 해결**
   - REST api는 요청한 모든 data를 보낸다. 이는 필요없는 data까지 보내기 때문에 로딩시간이 길어진다.
   - GraphQL은 Query Language (요청언어)이기 때문에, 내가 원하는 data만 요청하는 게 가능하다.
-- Under Fetching의 문제 해결
+- **Under-Fetching의 문제 해결**
   - REST api는 한번애 한 url에만 data를 요청할 수 있다. 그럼으로 2개 이상의 url에 data를 요청할 때는 여러번 요청해야 해서 로딩시간이 길어진다.
   - GraphQL에서는 한 번에 여러개의 api request를 하는 게 가능하다.
-- Database와 같이 특정 programming 언어에 종속된 개념이 아니기 때문에 모든 언어에서 GraphQL을 사용할 수 있다는 점이다.
+- Database와 같이 특정 programming 언어에 종속된 개념이 아니기 때문에, GraphQL spec만 구현하면 모든 언어에서 GraphQL을 사용할 수 있다는 점이다.
+- **GraphQL에서의 하나하나의 Type이 REST API에선 하나의 url가 된다.**
+  - REST API는 하나의 url에 GET, POST등 여러개의 HTTP resquest를 보낼 수 있지만,
+  - GraphQL에서는 HTTP resquest를 하지 않고, 하나의 Type에 **Queries and Mutation**을 이용하여 database와 data를 주고 받는다.
+
+### [GraphQL Schemas and Types](https://graphql.org/learn/schema/)
 
 ### GraphQL 예시
 
@@ -9588,9 +9643,9 @@ last: Int
 vs
 
 RESTAPI:
-- app/v1/films
-- app/v1/films/:id
-- app/v1/people/:id
+- GET app/v1/films
+- GET app/v1/films/:id
+- GET app/v1/people/:id
 ```
 
 GraphQL로 data 요청하기
@@ -9604,7 +9659,11 @@ last: Int
 ): FilmsConnection
 ```
 
-에서 `FilmsConnection`을 눌르면 `allFilms`가 줄 수 있는 모든 data를 표시해 준다.
+- 위의 link에서 `FilmsConnection`을 눌르면 `allFilms`가 줄 수 있는 모든 data를 볼 수 있다.
+- `allFilms`은 REST API에서 `GET app/v1/films`로 모든 `FilmsConnection`을 받는 것과 동일하다.
+- `FilmsConnection`은 User-defined Data Type (UDT)으로 사용자가 직접 정의한 데이터 타입이다.
+- `after: String, first: Int, before: String, last: Int`은 `allFilms`이 가질 수 있는 모든 parameters를 의미한다.
+  - 즉 다음의 parameter를 제공해서 원하는 data만 얻을 수 있다. You can filter the data with these parameters.
 
 ![FilmsConnection](./img/graphql-ex1.png)
 
@@ -9693,7 +9752,7 @@ allPeople에 있는 people array 중 name, hairColor, birthYear data만 줘
 }
 ```
 
-### [GraphQL API (Apollo)](https://www.apollographql.com/docs/apollo-server/)
+### [Apollo Server for GraphQL API](https://www.apollographql.com/docs/)
 
 GraphQL API를 Apollo server를 이용하여 만들어 볼 것이다. Apollo Server is an open-source, spec-compliant GraphQL server that's compatible with any GraphQL client, including Apollo Client. Apollo Server는 graphql specification을 구현해 graphql를 이해하는 서버이다.
 
@@ -9707,6 +9766,17 @@ You can use Apollo Server as:
 - A gateway for a federated graph
 
 Apollo server를 이용해서 GraphQL API 만들기 : https://www.apollographql.com/docs/apollo-server/getting-started#step-2-install-dependencies
+
+### [GraphQL Docstring](https://www.apollographql.com/docs/resources/graphql-glossary/#docstring)
+
+Provides the description of a type, field, or argument. Docstrings automatically appear in many common GraphQL tools, including the Apollo Studio Explorer. `type`, `field`, `argument` 등 database schema에 대한 자세한 설명을 제공한다. Docstring은 컴퓨터가 아니라 개발자들 사이에 이해를 돕기 위한 설명이다. Docstring은 Apollo Studio Explorer를 포함한 많은 일반적인 GraphQL 도구에 자동으로 나타난다.
+
+#### [Altair GraphQL Client](https://altair.sirmuel.design/)
+
+Altair GraphQL Client는 GraphQL queries 및 implementations을 test와 debugging 할 때 사용한다. (추가적으로 file upload 기능을 제공)
+Altair GraphQL Client는 **[Apollo Studio의 Apollo Sandbox](https://www.apollographql.com/docs/studio/explorer/sandbox)**와 동일한 기능을 제공한다.
+
+### Convert a REST API to GraphQL
 
 ## % 부록2: Amazon사의 cloud service인 AWS (Amazon Web Service) 사용하기 %
 

@@ -129,6 +129,12 @@ Idea는 다음을 포함해야 한다.
   - Window developer setup (+ WSL)
     - [Chocolatey (Window package manager)](https://chocolatey.org/)
 
+#### Windows File Explorer
+
+**Everything**이라는 app을 설치하면 Window가 기본으로 제공하는 file exploerer 보다 더 빠르게 검색이 가능하다.
+
+- Everything: https://www.voidtools.com/
+
 #### Windows Developer Setup (WSL)
 
 1. Microsoft Store에서 `Windows Terminal`와 `Ubuntu` 다운로드

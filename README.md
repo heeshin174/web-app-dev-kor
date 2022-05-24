@@ -329,6 +329,7 @@ React.js, Typescript 등등 external library/framework로 만들어 native HTML,
       - CSS Framework
         - react-bootstrap (components): https://react-bootstrap.github.io/getting-started/introduction
         - Material-UI (components): https://mui.com/
+        - Chakra-UI (components): https://chakra-ui.com/
       - Data Visualization
         - Victory: https://formidable.com/open-source/victory/
         - Apexchart: https://apexcharts.com/
@@ -473,6 +474,10 @@ Back-End은 사용자가 웹사이트를 방문시 서버쪽에서 실행 할 Us
   - concurrently (start client and server together): https://github.com/open-cli-tools/concurrently
   - axios (XMLHttpRequests): https://axios-http.com/docs/intro
   - bcrypt (hashing password): https://www.npmjs.com/package/bcryptjs
+  - node-argon2 (Better way to hashing password): https://github.com/ranisalt/node-argon2
+  - express-seesion (Keep users logged in): https://github.com/expressjs/session
+  - connect-redis (A Redis-based session store): https://github.com/tj/connect-redis
+    - redis is fast
   - crypto: https://cryptojs.gitbook.io/docs/
   - passport (social media login): https://www.passportjs.org/
   - webpack (bundle JavaScript files): https://webpack.js.org/
@@ -490,6 +495,7 @@ Back-End은 사용자가 웹사이트를 방문시 서버쪽에서 실행 할 Us
 - Cloudflare Images: https://www.cloudflare.com/products/cloudflare-images/
 - Paddle (payment): https://paddle.com/
 - Paddle developer (payment): https://developer.paddle.com/
+- Stripe (payment): https://stripe.com/docs/payments/accept-a-payment?platform=web
 - Apollo (transfer GraphQL data between server to the UI): https://www.apollographql.com/docs/
 - ⭐ **Graphql** (A query language for your API): https://graphql.org/
 - Wordpress: https://wordpress.com/
@@ -4738,6 +4744,240 @@ $ npm start
 $ npm run build
 ```
 
+### ReactJs Snippets
+
+#### ES7+ React/Redux/React-Native snippets
+
+VScode extension인 `ES7+ React/Redux/React-Native snippets`을 설치하면 `rafce`만 code에 입력하면 arrow function이 자동적으로 완성된다.
+React code, 특히 components를 작성할 떄, 매우 간편하게 사용할 수 있다.
+
+```
+// rafc
+import React from 'react';
+
+export const $1 = () => {
+  return <div>$0</div>;
+};
+
+// _rafc
+export const $1 = () => {
+  return <div>$0</div>;
+};
+
+// rafce
+import React from 'react';
+
+const $1 = () => {
+  return <div>$0</div>;
+};
+
+export default $1;
+
+// _rafce
+const $1 = () => {
+  return <div>$0</div>;
+};
+
+export default $1;
+```
+
+#### Custom Snippets for React
+
+위의 VSCode extensions을 설치하기 싫다면 다음과 같이 Custom Snippets를 작성한다.
+
+1. `Ctrl + Shift + P`로 Command Palette 열기
+
+- MacOS `Command (⌘ cmd) + shift + P`: Open Command Palette
+
+2. `Configure User Snippets` 검색
+3. `react` 검색
+4. 아래 코드 복사 후 붙혀넣기
+
+또는
+
+1. `File` 선택 후 `Preferences` 열기
+2. `User Snippets` 선택
+3. `react` 검색
+4. 아래 코드 복사 후 붙혀넣기
+
+- `snippets|javascriptreact.json` (JavaScript + React)
+  - `.js, .jsx` files
+
+```
+{
+  // Place your snippets for javascriptreact here. Each snippet is defined under a snippet name and has a prefix, body and
+  // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+  // same ids are connected.
+  // Example:
+  "Error Handler": {
+    "prefix": ["try", "trycatch"],
+    "body": [
+      "try {",
+      " $1",
+      "} catch (err) {",
+      " console.log(err.message);",
+      "}"
+    ],
+    "description": "Handle the error"
+  },
+  "Javascript React Function Component": {
+    "prefix": "rafc",
+    "body": [
+      "import React from 'react'",
+      "",
+      "export default $TM_FILENAME_BASE = () => {",
+      " $1",
+      " return ();",
+      "}"
+    ],
+    "description": "Javascript React Function Component"
+  },
+  "Javascript React Function Component w/o import": {
+    "prefix": "_rafc",
+    "body": [
+      "export default $TM_FILENAME_BASE = () => {",
+      " $1",
+      " return ();",
+      "}"
+    ],
+    "description": "Javascript React Function Component w/o import"
+  },
+  "h1 tag": {
+    "prefix": "h1",
+    "body": ["<h1 className='$1'></h1>"],
+    "description": "h1 tag"
+  },
+  "h2 tag": {
+    "prefix": "h2",
+    "body": ["<h2 className='$1'></h2>"],
+    "description": "h2 tag"
+  },
+  "h3 tag": {
+    "prefix": "h3",
+    "body": ["<h3 className='$1'></h3>"],
+    "description": "h3 tag"
+  },
+  "div tag": {
+    "prefix": "div",
+    "body": ["<div className='$1'></div>"],
+    "description": "div tag"
+  },
+  "p tag": {
+    "prefix": "p",
+    "body": ["<p className='$1'></p>"],
+    "description": "p tag"
+  },
+  "React Native StyleSheet": {
+    "prefix": "rnss",
+    "body": [
+      "import {StyleSheet} from 'react-native'",
+      "const styles = StyleSheet.create({",
+      "",
+      "});"
+    ],
+    "description": "React Native StyleSheet"
+  },
+  "console.log": {
+    "prefix": "cl",
+    "body": ["console.log($1)"],
+    "description": "console.log"
+  },
+  "className={classnames()}": {
+    "prefix": "cc",
+    "body": ["className={classnames('$1')}"],
+    "description": "tailwind react stuff"
+  }
+}
+```
+
+- `snippets|typescript.json` (TypeScript + React)
+  - `.ts, .tsx` files
+
+```
+{
+  // Place your snippets for typescriptreact here. Each snippet is defined under a snippet name and has a prefix, body and
+  // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+  // same ids are connected.
+  // Example:
+  "Error Handler": {
+    "prefix": ["try", "trycatch"],
+    "body": [
+      "try {",
+      " $1",
+      "} catch (err) {",
+      " console.log(err.message);",
+      "}"
+    ],
+    "description": "Handle the error"
+  },
+  "Twind": {
+    "prefix": "cc",
+    "body": ["className={tw`$1`}"],
+    "description": "Twind"
+  },
+
+  "Typescript React Function Component": {
+    "prefix": "rh",
+    "body": [
+      "import React from 'react'",
+      "",
+      "interface ${TM_FILENAME_BASE}Props {",
+      "$1",
+      "}",
+      "",
+      "export const $TM_FILENAME_BASE: React.FC<${TM_FILENAME_BASE}Props> = ({$2}) => {",
+      "\t\treturn ($3);",
+      "}"
+    ],
+    "description": "Typescript React Function Component"
+  },
+  "React Native StyleSheet": {
+    "prefix": "rnss",
+    "body": [
+      "import {StyleSheet} from 'react-native'",
+      "const styles = StyleSheet.create({",
+      "",
+      "});"
+    ],
+    "description": "React Native StyleSheet"
+  },
+  "Toggle State": {
+    "prefix": "tog",
+    "body": ["this.setState(state => ({", "\topen: !state.open", "}));"],
+    "description": "toggle state"
+  },
+  "console.log": {
+    "prefix": "cl",
+    "body": ["console.log($1)"],
+    "description": "console.log"
+  },
+  "className={classnames()}": {
+    "prefix": "cc",
+    "body": ["className={classnames('$1')}"],
+    "description": "tailwind react stuff"
+  },
+  "Apollo Query Component": {
+    "prefix": "apq",
+    "body": [
+      "interface Props {",
+      "  children: (data: QueryResult<$1, OperationVariables>) => JSX.Element;",
+      "}",
+      "",
+      "export class $2 extends React.PureComponent<Props> {",
+      "  render() {",
+      "    return (",
+      "     <Query<$1> query={$3}>{x => this.props.children(x)}</Query>",
+      "    );",
+      "  }",
+      "}"
+    ],
+    "description": "Apollo Query Component"
+  }
+}
+```
+
 ### JSX Extension
 
 React는 `.js` 대신 `.jsx` 라는 특수한 extension을 사용한다. JSX stands for **JavaScript XML**. It is simply a syntax extension of JavaScript.
@@ -7237,12 +7477,24 @@ VSCode는 다양한 keyboard shortcut을 제공하기 때문에 마우스를 사
 
 - `단어 + tab`: Snippets를 이용하여 자동완성 기능을 적극활용한다.
 - Debug tool를 이용하여 프로그램을 디버깅할 수 있다 (내가 확인하고 싶은 코드 line 옆에 빨간 점 breakpoint 생성 후 debug 실행).
+- Custom Snipppets 생성
+  - 각각의 프로그래밍 언어에 맞는 자주 쓰는 codes을 snippets로 저장해두면 쉽게 재사용이 가능하다.
+    - Javascript/TypeScript에서 `c1`만 치면 `console.log`를 자동완성 해주는 snippets 생성
+    - `c1` -> `console.log($1)`
+
+```
+"console.log": {
+    "prefix": "cl",
+    "body": ["console.log($1)"],
+    "description": "console.log"
+},
+```
 
 ### [VScode Extension](https://marketplace.visualstudio.com/)
 
 - `Prettier`: save시 auto code formatting.
 
-  1. `ctrl + ,`로 setting 열기
+  1. `Ctrl + ,`로 setting 열기
   2. `save` 검색 후 `format on save` 체크
   3. `prettier` 검색 후 `Prettier: Tab width`를 `2`로 변경
   4. `quote` 검색 후 `Javascript/Typescript > preferences: Quote style`을 `single`로 변경
@@ -7389,6 +7641,8 @@ VSCode는 다양한 keyboard shortcut을 제공하기 때문에 마우스를 사
 - `Ctrl + alt + Up/Down`: Multi-cursor
 - `Ctrl + U`: Undo last Multi-cursor
 - `Ctrl + shift + T`: Reopen the last closed Tabs
+- `Ctrl + .`: Toggle a light bulb or screwdriver (auto import)
+- `Ctrl + tab`: view a list of all files open in an editor group
 
 - `Alt + click`: Multi-cursor (Alt + Click를 여러 군데 찍으면, 한번에 여러 곳에 typing 할 수 있다).
 
@@ -7461,6 +7715,8 @@ keyboard shortcut for terminal
 - `Command (⌘ cmd) + U`: Undo last Multi-cursor
 - `Command (⌘ cmd) + W`: Close current tab
 - `Command (⌘ cmd) + shift + T`: Reopen the last closed Tabs
+- `Command (⌘ cmd) + .`: Toggle a light bulb or screwdriver (auto import)
+- `Command (⌘ cmd) + tab`: view a list of all files open in an editor group
 
 ### Emmets
 
@@ -7546,30 +7802,6 @@ We will add the following lines anywhere in this setting:
 ```
 
 이제 HTML, CSS뿐만 아니라 react js 개발환경에서도 Emmet을 사용할 수 있다.
-
-### ES7+ React/Redux/React-Native snippets
-
-VScode extension인 `ES7+ React/Redux/React-Native snippets`을 download하면 `rafce`만 code에 입력하면 arrow function이 자동적으로 완성된다.
-
-이는 React Js 코드, 특히 components를 작성할 떄, 매우 간편하게 사용할 수 있다.
-
-```
-// rafc
-import React from 'react';
-
-export const $1 = () => {
-  return <div>$0</div>;
-};
-
-// rafce
-import React from 'react';
-
-const $1 = () => {
-  return <div>$0</div>;
-};
-
-export default $1;
-```
 
 ## % 부록1: git으로 다른 programmer와 collaboration 하기 %
 
@@ -10051,6 +10283,10 @@ React-Navigation library는 react-native에서 화면간 이동 시 필요한 na
 등 여러 가지의 navigators를 제공한다.
 
 - [Combining Stack, Tab & Drawer Navigations in React Native With React Navigation 5](https://dev.to/easybuoy/combining-stack-tab-drawer-navigations-in-react-native-with-react-navigation-5-da)
+
+#### [React-Navigation Authentication flows](https://reactnavigation.org/docs/auth-flow/)
+
+### [Stripe (Payment)](https://stripe.com/docs/payments/accept-a-payment?platform=react-native)
 
 ## REFERENCES
 

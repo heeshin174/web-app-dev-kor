@@ -19,27 +19,27 @@
 
 ### 좋은 Idea와 좋은 Code Implementation
 
-실제로 project를 진행하다 보면, 사실은 **좋은 code보다 좋은 idea가 더 중요**하다. Idea가 좋지 않다면 code를 아무리 잘 작성했어도 좋은 project라고 할 수 없다. 그럼으로 **idea 60% + code 40%**로 이해할 수 있다.
+실제로 project를 진행하다 보면, 사실은 **좋은 code보다 좋은 idea가 더 중요**하다. Idea가 좋지 않다면 code를 아무리 잘 작성했어도 좋은 project라고 할 수 없다. 그럼으로 **좋은 idea 60% + 좋은 code 40%로** 이해할 수 있다.
 
 Idea는 다음을 포함해야 한다.
 
 - 사용자들이 접하는 문제점과 이를 해결할 해결방안
   - 내가 살면서 집적 겪는 문제점들 또는 있었으면 좋을 것들을 note에 적어놓고, 이에 대한 해결방안을 생각해 본다.
   - 문제점, 개선점을 documents로 정리할 땐, [A3 thinking](https://www.youtube.com/watch?v=rtyia0ci12I) 이라는 algorithm을 사용할 수 있다.
-- 제품의 명확한 사용법과 장점
+- 제품의 명확한 사용법과 장점 (Simple User Interface)
 - 기존의 제품들과의 차별점
   - 다른 제품말고 이 제품을 써야하는 이유
-  - 한 번 경험해보면, 다시는 기존의 제품들을 사용할 수 없을 정도의 편리성, 효율성
-  - 기존에 있는 제품들을 조금만 바꾸어서 만들기 보단 (모조품), 기존의 제품들을 사용해서 전혀다른 새로운 제품을 만들어 내는 것이 좋다.
+  - 한 번 경험해보면, 다시는 기존의 제품들을 사용할 수 없을 정도의 편리성과 효율성을 제공 (Great User Exerience)
+  - 기존에 있는 제품들을 조금만 바꾸어서 만들기 보단 (모조품), 기존의 제품들을 사용해서 전혀 다른 새로운 제품을 만들어 내야한다.
 
 ### 좋은 코드를 작성하는 기본원칙
 
-- DRY: Don't Repeat Yourself
+- **DRY**: Don't Repeat Yourself
   - 같은 코드가 반복될 경우, 함수로 만든다.
-- KISS: Keep It Simple and Stupid
+- **KISS**: Keep It Simple and Stupid
   - Functional programming의 기본 원칙으로 한 함수는 딱 한가지 일만 수행하도록 만든다.
     - 이 경우 bug가 생기기도 어렵고, debug하기도 매우 쉽다.
-- YANGI: You Are Not Gonna Need It
+- **YANGI**: You Are Not Gonna Need It
   - 지금 당장 필요하지 않는 미래지향적인 코드를 작성하지 않는다.
 
 ## Table of Contents
@@ -241,7 +241,7 @@ export NVM_DIR="$HOME/.nvm"
 즉 localhost로 연결되지 않는 경우, 코드를 local computer가 아닌 다른 곳에 작성 했다는 의미이고, localhost를 그에 맞게 변경한다.
 
 - To close server, type `Ctrl + C`
-- `$ wsl hostname -I`의 값은 상시 변하므로, local computer에서 RESTAPI test시 계속 변경해 주어야 한다.
+- `$ wsl hostname -I`의 값은 상시 변하므로, local computer에서 REST API test시 계속 변경해 주어야 한다.
 
 ```
 Window: GET http://localhost:5000/api/users/me
@@ -364,13 +364,14 @@ React.js, Typescript 등등 external library/framework로 만들어 native HTML,
 
 - REST API for FrontEnd
 - GraphQL for FrontEnd
+
   - Apollo Client: https://www.apollographql.com/docs/react
-- [PyScript (Run Python in Your HTML)](https://pyscript.net/)
+  - URQL (A highly customisable and versatile GraphQL client): https://formidable.com/open-source/urql/
+
+- PyScript (Run Python in Your HTML): https://pyscript.net/
 
 Front-End library/framework은 web application의 UI 부분을 더 쉽게 작성할 수 있게 만들어 준다.
-**Single Page Application** (SPA)는 body가 비어있는 하나의 HTML을 가지고 Javascript를 이용해서 그 안에 Data를 dynamic하게 할당한다.
-Server가 client에 javascript를 넘겨주면, client가 이를 가지고 HTML를 완성하기 때문에 Client Side Rendering (CSR)이라 한다. CSR에선 HTML이 비어있기 때문에 검색 엔진에 노출되어 검색되기 쉽지 않아 Search Engine Optimization (SEO)에 취약하다.
-SPA를 제공하는 frontend framework에는 크게 React, Vue, Angular가 있다. 이들은 사용방법이 거의 비슷하기 때문에 하나만 잘 이해하면, 나머지는 쉽게 사용할 수 있다.
+**Single Page Application(SPA)는** body가 비어있는 하나의 HTML을 가지고 Javascript를 이용해서 그 안에 Data를 dynamic하게 할당한다. Server가 client에 javascript를 넘겨주면, client가 이를 가지고 HTML를 완성하기 때문에 Client Side Rendering (CSR)이라 한다. CSR에선 HTML이 비어있기 때문에 검색 엔진에 노출되어 검색되기 쉽지 않아 Search Engine Optimization (SEO)에 취약하다. SPA를 제공하는 frontend framework에는 크게 React.js, Vue.js, Angular.js가 있다. 이들은 사용방법이 거의 비슷하기 때문에 하나만 잘 이해하면, 나머지는 쉽게 사용할 수 있다.
 
 - ⭐ **React.js**: React는 Meta사에서 만든 Javascript frontend web library로 computer에 최신 버전의 `Node.js`를 설치하면 누구나 사용할 수 있다.
 - **Vanilla.js** is just a way to refer to native (non-extended and standards-based) JavaScript.
@@ -381,7 +382,7 @@ SPA를 제공하는 frontend framework에는 크게 React, Vue, Angular가 있�
 - Adobe xd: https://www.adobe.com/products/photoshop
 - Adobe photoshop (image 선명도, 채광): https://www.adobe.com/products/photoshop
 
-Figma, Adobe xd로 web/mobile UI를 design하면, 쉽게 css를 얻을 수 있다. **image의 선명도는 매우 중요**하므로 Adobe photoshop의 curve 기술을 사용한다. Figma는 무료이다.
+Figma, Adobe xd로 web/mobile UI를 design하면, 쉽게 css를 얻을 수 있다. **image의 선명도는 매우 중요**하므로 Adobe photoshop의 curve 기능을 사용한다. Figma는 무료이다.
 
 - Web design 시 width를 보통: 1920px로 잡는다.
 - Title font size: `font-size: 30px;`
@@ -405,7 +406,7 @@ Figma, Adobe xd로 web/mobile UI를 design하면, 쉽게 css를 얻을 수 있�
   - plugin
     - Material design icons
 
-#### Front-End developer의 미래
+#### Front-End Developer의 미래
 
 2022년 기준으로 Front-End developer은 수익도 많이 벌 수 있고, IT회사에서 수요도 많은 편이다. 하지만, IT업종은 새로운 기술들이 굉장히 빨리 등장하고 언제 web browser와 Javascript가 없어지고 다른 기술이 이를 대체할 지 모른다. **중요한 점은 IT업종의 새로운 기술을 배우는 것을 멈추지 않는 것이다.**
 
@@ -415,9 +416,9 @@ Figma, Adobe xd로 web/mobile UI를 design하면, 쉽게 css를 얻을 수 있�
 
 Front-End의 진입장벽이 낮기 떄문에 많은 개발자들이 Front-End를 쉽게 도전하고 배울 수 있다. 그럼으로 경쟁력있는 Front-End developer가 되기 위해서는 다른 여러 능력들을 배우고 공부한다.
 
-**경쟁력있는 Front-End developer 되기**
+#### 경쟁력있는 Front-End Developer 되기
 
-- Web Design
+- **Web/App Design**
   - 예전에는 디자이너가 만든 웹 디자인을 받아 코드로 작성하는 게 Front-End developer의 일이였다면, 최근에는 web design과 web development의 경계가 많이 모호하다.
   - 그럼으로, 사용자 친화적인 디자인이 무엇인지, 미니멀한 디자인이 무엇인지 web design에 대해 공부한다.
     - font, layout 정도가 design의 기본기가 되고, 이 기본기를 잘 숙지해야 한다.
@@ -426,8 +427,8 @@ Front-End의 진입장벽이 낮기 떄문에 많은 개발자들이 Front-End�
 - Back-End Development + Database
   - 최근에는 Front-End로 할 수 있는 작업들이 매우 많아졌지만, database를 관리하고 사용자 정보를 관리하는 등의 일에 client의 접근을 허용할 수는 없다.
   - 그럼으로, Back-End Development에 대해 공부한다.
-    - 한국에서는 node.js보단 java의 spring framework가 취업하기에 유리하다.
-    - 이는 java가 뛰어나서라기 보단 이미 java를 사용하는 큰 community가 형성되었기 때문이다.
+    - 한국에서는 node.js보단 Java의 spring framework가 취업하기에 유리하다.
+      - 이는 Java가 뛰어나서라기 보단 이미 Java를 사용하는 큰 community가 형성되었기 때문이다.
 - Web Assembly
   - Web Assembly (`*.wasm`)는 web browser가 읽을 수 있는 파일로 javascript가 아닌 C, C++, Rust 등의 프로그래밍언어로 작성된 코드를 웹 브라우져에서 실행할 수 있다.
   - wasm 덕분에 Rust 언어가 주목받고 있다.
@@ -1871,7 +1872,7 @@ Javascript syntax를 배울 때 중요한 점은 **if, for, var, let, function, 
 </body>
 ```
 
-- `variable = value;`에서 `=`은 assgin (대입)이다. `<=`로 생각하면 이해하기 쉽다.
+- `variable = value;`에서 `=`은 assgin (대입)이다. `<-`로 생각하면 이해하기 쉽다.
 
 `age = 10; // age라는 variable에 숫자 10을 assgin한다.`
 
@@ -7629,6 +7630,7 @@ VSCode는 다양한 keyboard shortcut을 제공하기 때문에 마우스를 사
     - `Paste JSON as Types` 입력: JSON data를 code로 변환 (`Paste JSON as Types` extension 다운 후)
     - `Quokka.js` 입력 (`Quokka.js` extension 다운 후)
     - `Configure User Snippets` 입력: 나만의 code snippets를 만들 수 있다
+    - `Organize Imports` 입력 (Javascript/Typescript에서 사용 중이지 않은 import 삭제)
   - Command Palette에 `#` 입력: global symbol search. 현재 project에서 할 수 있는 모든 command 반환
   - Command Palette에 `:` 입력 (`Ctrl + G`): 이 파일 내에 Line 입력 후 이동 (파일 내 이동)
 

@@ -369,6 +369,7 @@ React.js, Typescript 등등 external library/framework로 만들어 native HTML,
   - URQL (A highly customisable and versatile GraphQL client): https://formidable.com/open-source/urql/
 
 - PyScript (Run Python in Your HTML): https://pyscript.net/
+- Stream (live chat + Feed): https://getstream.io/
 
 Front-End library/framework은 web application의 UI 부분을 더 쉽게 작성할 수 있게 만들어 준다.
 **Single Page Application(SPA)는** body가 비어있는 하나의 HTML을 가지고 Javascript를 이용해서 그 안에 Data를 dynamic하게 할당한다. Server가 client에 javascript를 넘겨주면, client가 이를 가지고 HTML를 완성하기 때문에 Client Side Rendering (CSR)이라 한다. CSR에선 HTML이 비어있기 때문에 검색 엔진에 노출되어 검색되기 쉽지 않아 Search Engine Optimization (SEO)에 취약하다. SPA를 제공하는 frontend framework에는 크게 React.js, Vue.js, Angular.js가 있다. 이들은 사용방법이 거의 비슷하기 때문에 하나만 잘 이해하면, 나머지는 쉽게 사용할 수 있다.
@@ -470,7 +471,8 @@ Back-End은 사용자가 웹사이트를 방문시 서버쪽에서 실행 할 Us
 
   - [REST API](https://github.com/heeshin174/Web_App_Dev_Kor#3-rest-representational-state-transfer-apis)
   - [GraphQL (Query Language for API)](https://github.com/heeshin174/Web_App_Dev_Kor#graphql) : https://graphql.org/
-
+  - GraphQL specification : https://github.com/graphql/graphql-spec
+  - GraphQL Implementation : https://graphql.org/code/
   - Apollo Server : https://www.apollographql.com/docs/apollo-server
 
 - Other Javascript Library/Framework
@@ -9833,39 +9835,85 @@ $ sls deploy
 $ http://xyz.amazonaws.com/function-name
 ```
 
-https://velopert.com/3549
+- https://velopert.com/3549
 
 ## [GraphQL](https://graphql.org/)
 
-GraphQL은 facebook사에서 REST api의 문제점을 해결하고자 만든 개념이다. GraphQL을 배우고 나면 이제는 REST API를 사용할 때 문제점들이 보이고 다시는 REST API를 사용하고 싶지 않은 생각이 든다.
-GraphQL은 이름에서도 나오다시피 **Query Language (QL)**이다. GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data.
+GraphQL은 Facebook사에서 REST API의 문제점을 해결하고자 만든 개념이다. GraphQL을 배우고 나면 이제는 REST API를 사용할 때 문제점들이 보이고 다시는 REST API를 사용하고 싶지 않은 생각이 든다. GraphQL은 이름에서도 나오다시피 **Query Language (QL)이다.** GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data.
 
-GraphQL은 단지 specification (spec), 즉 이론일 뿐이고 진짜로 사용하기 위해서는 내가 사용하고자 하는 programming 언어로 GraphQL spec를 구현해야만 한다.
+GraphQL은 단지 specification (spec), 즉 이론일 뿐이고 진짜로 사용하기 위해서는 내가 사용하고자 하는 programming 언어로 GraphQL spec를 구현해야만 한다. GraphQL spec은 2015년에 open source로 공개되었으며 현재 다양한 환경에서 사용할 수 있으며 모든 규모의 팀 (페이스북, 깃허브, 핀터레스트, 트위터, 페이팔 등)에서 사용하고 있다.
 
-Database를 공부할 때 배운 Select Query Language (SQL)와 이론은 똑같다.
+Database를 공부할 때 배운 Structured Query Language (SQL)와 이론은 똑같다.
 
 ### GraphQL vs REST API (GraphQL 장점)
 
 GraphQL 장점을 알려면 REST API의 단점을 보면 된다.
 
 - **Over-Fetching의 문제 해결**
-  - REST api는 요청한 모든 data를 보낸다. 이는 필요없는 data까지 보내기 때문에 로딩시간이 길어진다.
-  - GraphQL은 Query Language (요청언어)이기 때문에, 내가 원하는 data만 요청하는 게 가능하다.
+
+  - REST API는 요청한 모든 data를 보낸다. 이는 필요없는 data까지 보내기 때문에 로딩시간이 길어진다.
+  - GraphQL은 Query Language (요청언어)이기 때문에, GraphQL을 사용하면 API에 GraphQL query를 보내 필요한 data만 요청하는 게 가능하다.
+
 - **Under-Fetching의 문제 해결**
-  - REST api는 한번애 한 url에만 data를 요청할 수 있다. 그럼으로 2개 이상의 url에 data를 요청할 때는 여러번 요청해야 해서 로딩시간이 길어진다.
-  - GraphQL에서는 한 번에 여러개의 api request를 하는 게 가능하다.
-- Database와 같이 특정 programming 언어에 종속된 개념이 아니기 때문에, GraphQL spec만 구현하면 모든 언어에서 GraphQL을 사용할 수 있다는 점이다.
+
+  - REST API는 한번애 한 url에만 data를 요청할 수 있다. 그럼으로 2개 이상의 url에 data를 요청할 때는 여러번 요청해야 해서 로딩시간이 길어진다.
+  - GraphQL에서는 한 번에 여러개의 API request를 하는 게 가능하다.
+  - GraphQL API는 여러 data를 단일 request로 가져온다.
+  - GraphQL을 사용하는 App은 REST API를 사용하는 App보다 로딩이 빠르다.
+
+- GraphQL은 Database와 같이 특정 programming 언어에 종속된 개념이 아니기 때문에, GraphQL spec만 구현하면 모든 언어에서 GraphQL을 사용할 수 있다는 점이다.
+
+  - GraphQL can be used with any backend framework or programming language.
+
 - **GraphQL에서의 하나하나의 Type이 REST API에선 하나의 url가 된다.**
   - REST API는 하나의 url에 GET, POST등 여러개의 HTTP resquest를 보낼 수 있지만,
   - GraphQL에서는 HTTP resquest를 하지 않고, 하나의 Type에 **Queries and Mutation**을 이용하여 database와 data를 주고 받는다.
 
+### [GraphQL Queries and Mutations](https://graphql.org/learn/queries/)
+
 ### [GraphQL Schemas and Types](https://graphql.org/learn/schema/)
+
+Scalars are equivalent to primitive data types in a programming language. Scalar type은 가장 기본이 되는 data type이다.
+
+In GraphQL, there are five built-in scalar types that the type system provided.:
+
+- **Boolean** : return true or false
+- **Int** : a signed 32‐bit numeric non‐fractional value
+- **Float** : a signed double‐precision fractional values
+- **String** : a sequence of UTF‐8 characters
+- **ID** : a unique identifier
+
+#### Object types and fields
+
+The most basic components of a GraphQL schema are object types, which just represent a kind of object you can fetch from your service, and what fields it has.
+
+In the GraphQL schema language, we might represent it like this:
+
+```
+// GraphQL object type
+type Character {
+  name: String!
+  appearsIn: [Episode!]!
+}
+```
+
+- `Character` : a GraphQL Object Type. meaning it's a type with some fields. Most of the types in your schema will be object types.
+- `name` and `appearsIn` : fields on the type.
+- `String!` : **non-nullable String**. meaning that the GraphQL service promises to always give you a value when you query this field. In the type language, we'll represent those with an exclamation mark.
+- `[Episode!]!` : an array of Episode objects.
+  - `Episode` is not a scalar type. It's a user defined type (UDT).
+  - Since `[Episode]!` List is non-nullable, you can always expect an array (with zero or more items) when you query the field.
+  - Since `Episode!` is also non-nullable, you can always expect every item of the array to be an object.
+
+`Character` type의 `name`에 String 타입을 사용할 건데 느낌표 `!`를 추가하면 Non-Nullable Field가 된다. Non-Nullable Field이 되면 GraphQL server가 항상 이 필드에 대해 null이 아닌 값을 반환할 것으로 예상하여 null 값을 얻게 되면 error를 발생한다.
 
 ### GraphQL 예시
 
-GraphQL의 field 하나하나가 REST Api에서는 url이 된다.
+GraphQL의 field 하나하나가 REST API에서는 url이 된다.
 
-https://graphql.org/swapi-graphql
+**GraphiQL**은 GraphQL query를 작성, 검증 및 테스트하기 위한 sandbox, 도구이다.
+
+- Swapi-GraphQL : https://graphql.org/swapi-graphql
 
 위의 url에 접속해 `query: Root`를 눌르면 우리가 얻을 수 있는 모든 `Fields`를 볼 수 있다.
 
@@ -9892,16 +9940,16 @@ GraphQL로 data 요청하기
 
 ```
 allFilms (
-after: String
-first: Int
-before: String
-last: Int
+ after: String
+ first: Int
+ before: String
+ last: Int
 ): FilmsConnection
 ```
 
-- 위의 link에서 `FilmsConnection`을 눌르면 `allFilms`가 줄 수 있는 모든 data를 볼 수 있다.
-- `allFilms`은 REST API에서 `GET app/v1/films`로 모든 `FilmsConnection`을 받는 것과 동일하다.
+- 위의 link에서 `FilmsConnection`을 눌르면 `allFilms`이 줄 수 있는 모든 data를 볼 수 있다.
 - `FilmsConnection`은 User-defined Data Type (UDT)으로 사용자가 직접 정의한 데이터 타입이다.
+- `allFilms`은 REST API에서 `GET app/v1/films`로 모든 `FilmsConnection`을 힌번에 받는 것과 동일하다.
 - `after: String, first: Int, before: String, last: Int`은 `allFilms`이 가질 수 있는 모든 parameters를 의미한다.
   - 즉 다음의 parameter를 제공해서 원하는 data만 얻을 수 있다. You can filter the data with these parameters.
 

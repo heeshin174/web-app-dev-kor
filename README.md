@@ -11,15 +11,15 @@
 ## Web App 개발순서
 
 1. web app design하기
-   - Figma, Adobe XD등 다양한 tool 사용가능
-   - Client, Designer, User등 다양한 feedback를 받는 것이 중요하다.
+   - Figma, Adobe XD등 다양한 design tool 사용가능
+   - Client, Designer, User등으로 부터 다양한 feedback를 받기
 2. Design를 code로 implement하기
-   - 디자인이 요구하는 상황에 맞는 FrontEnd, BackEnd를 선택하는 것이 중요하다.
-3. 끊임없이 1,2를 update하기
+   - 디자인이 요구하는 상황에 맞는 FrontEnd, BackEnd를 선택
+3. 끊임없이 1, 2를 feedback, code review를 받아 update하기
 
 ### 좋은 Idea와 좋은 Code Implementation
 
-실제로 project를 진행하다 보면, 사실은 **좋은 code보다 좋은 idea가 더 중요**하다. Idea가 좋지 않다면 code를 아무리 잘 작성했어도 좋은 project라고 할 수 없다. 그럼으로 **좋은 idea 60% + 좋은 code 40%로** 이해할 수 있다.
+실제로 project를 진행하다 보면, 사실은 **좋은 code보다 좋은 idea가 더 중요**하다. Idea가 좋지 않다면 code를 아무리 잘 구현해도 좋은 project가 아니다. 그럼으로 **좋은 idea 60% + 좋은 code 40%로** 이해할 수 있다.
 
 Idea는 다음을 포함해야 한다.
 
@@ -86,7 +86,7 @@ Idea는 다음을 포함해야 한다.
 
 - Computer Operating System
   - MacOS
-  - Windows (+ ⭐ **WSL**: Window subsystem for Linux)
+  - Windows (+ WSL: Window subsystem for Linux)
   - Linux
 - Keyboard
   - tenkeyless keyboard
@@ -114,13 +114,14 @@ Idea는 다음을 포함해야 한다.
   - Emac
   - Vim
   - Atom
+  - Eclipse (JAVA)
 - Terminal
-  - **Window Terminal** (Windows, + Ubuntu)
+  - Window Terminal
   - **Iterm2** (MacOS)
   - Powershell (Windows)
   - Bash
 - Other Tools
-  - Programming Langauges (Node.js, Python, Java, C++, Rust, ...)
+  - Programming Langauges (Node.js, Python, Java, C, C++, Rust, ...)
   - Node Version Manager (NVM)
   - Git/Github cli (command line)
 - OS별 개발환경 세팅:
@@ -357,25 +358,23 @@ React.js, Typescript 등등 external library/framework로 만들어 native HTML,
         - Nuxt: https://nuxtjs.org/
       - CSS Framework
         - Vuetify: https://next.vuetifyjs.com
-    - Other Library/Framework
-      - redux (manage state): https://redux.js.org/introduction/getting-started
-      - multer (upload files): https://github.com/expressjs/multer
-      - electron (build a cross-platform desktop app): https://www.electronjs.org/
 
-- REST API for FrontEnd
+- redux (manage state): https://redux.js.org/introduction/getting-started
+- multer (upload files): https://github.com/expressjs/multer
+- electron (build a cross-platform desktop app): https://www.electronjs.org/
 - GraphQL for FrontEnd
 
   - Apollo Client: https://www.apollographql.com/docs/react
   - URQL (A highly customisable and versatile GraphQL client): https://formidable.com/open-source/urql/
 
 - PyScript (Run Python in Your HTML): https://pyscript.net/
+  - PyScript uses Web Assembly
 - Stream (live chat + Feed): https://getstream.io/
 
-Front-End library/framework은 web application의 UI 부분을 더 쉽게 작성할 수 있게 만들어 준다.
-**Single Page Application(SPA)는** body가 비어있는 하나의 HTML을 가지고 Javascript를 이용해서 그 안에 Data를 dynamic하게 할당한다. Server가 client에 javascript를 넘겨주면, client가 이를 가지고 HTML를 완성하기 때문에 Client Side Rendering (CSR)이라 한다. CSR에선 HTML이 비어있기 때문에 검색 엔진에 노출되어 검색되기 쉽지 않아 Search Engine Optimization (SEO)에 취약하다. SPA를 제공하는 frontend framework에는 크게 React.js, Vue.js, Angular.js가 있다. 이들은 사용방법이 거의 비슷하기 때문에 하나만 잘 이해하면, 나머지는 쉽게 사용할 수 있다.
+Front-End library/framework은 web application의 UI 부분을 더 쉽게 작성할 수 있게 만들어 준다. **Single Page Application (SPA)는** body가 비어있는 하나의 HTML을 가지고 Javascript를 이용해서 그 안에 Data를 dynamic하게 할당한다. Server가 client에 javascript를 넘겨주면, client가 이를 가지고 HTML를 완성하기 때문에 **Client Side Rendering (CSR)이라 한다.** CSR에선 HTML이 비어있기 때문에 검색 엔진에 노출되어 검색되기 쉽지 않아 Search Engine Optimization (SEO)에 취약하다. SPA를 제공하는 frontend framework에는 크게 React.js, Vue.js, Angular.js가 있다. 이들은 사용방법이 거의 비슷하기 때문에 하나만 잘 이해하면, 나머지는 쉽게 사용할 수 있다.
 
 - ⭐ **React.js**: React는 Meta사에서 만든 Javascript frontend web library로 computer에 최신 버전의 `Node.js`를 설치하면 누구나 사용할 수 있다.
-- **Vanilla.js** is just a way to refer to native (non-extended and standards-based) JavaScript.
+- **Vanilla.js**: just a way to refer to native (non-extended and standards-based) JavaScript.
 
 #### Design UI/UX Tool
 
@@ -470,10 +469,10 @@ Back-End은 사용자가 웹사이트를 방문시 서버쪽에서 실행 할 Us
 - Application Programming Interface (API or web API) that interacts with the database
 
   - [REST API](https://github.com/heeshin174/Web_App_Dev_Kor#3-rest-representational-state-transfer-apis)
-  - [GraphQL (Query Language for API)](https://github.com/heeshin174/Web_App_Dev_Kor#graphql) : https://graphql.org/
-  - GraphQL specification : https://github.com/graphql/graphql-spec
-  - GraphQL Implementation : https://graphql.org/code/
-  - Apollo Server : https://www.apollographql.com/docs/apollo-server
+  - [GraphQL (Query Language for API)](https://github.com/heeshin174/Web_App_Dev_Kor#graphql): https://graphql.org/
+  - GraphQL specification: https://github.com/graphql/graphql-spec
+  - GraphQL Implementation: https://graphql.org/code/
+  - Apollo Server: https://www.apollographql.com/docs/apollo-server
 
 - Other Javascript Library/Framework
 
@@ -1977,6 +1976,11 @@ Function Declaration의 장점:
 3. callback function으로 사용 가능하다. (다른 함수의 인자로 넘길 수 있음)
 
 그럼으로, 큰 차이는 없지만 Function Expressions보다는 Function Declaration을 지향하는 것이 좋다.
+
+- **parameter**: a variable in a function definition. It is a placeholder and hence does not have a concrete value.
+  - 함수를 정의할 때 사용한 argument의 placeholder.
+- **argument**: a value passed during function declaration.
+  - 함수에 넘겨지는 실제값
 
 #### Arrow Function
 
@@ -9841,7 +9845,7 @@ $ http://xyz.amazonaws.com/function-name
 
 GraphQL은 Facebook사에서 REST API의 문제점을 해결하고자 만든 개념이다. GraphQL을 배우고 나면 이제는 REST API를 사용할 때 문제점들이 보이고 다시는 REST API를 사용하고 싶지 않은 생각이 든다. GraphQL은 이름에서도 나오다시피 **Query Language (QL)이다.** GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data.
 
-GraphQL 자체로는 QL로 단지 specification (spec), 즉 이론일 뿐이고 진짜로 사용하기 위해서는 내가 사용하고자 하는 programming 언어로 GraphQL spec를 구현해야만 한다. 즉, GraphQL 자체는 개발 programming 언어와 사용 네트워크에 완전히 독립적이다. GraphQL spec은 2015년에 open source로 공개되었으며 현재 다양한 환경에서 사용할 수 있으며 모든 규모의 팀 (페이스북, 깃허브, 핀터레스트, 트위터, 페이팔 등)에서 사용하고 있다.
+GraphQL 자체는 QL로 단지 specification (spec), 즉 이론 (idae)일 뿐이고 진짜로 사용하기 위해서는 내가 사용하고자 하는 programming 언어로 GraphQL spec를 구현해야만 한다. 즉, GraphQL 자체는 개발 programming 언어와 사용 네트워크에 완전히 독립적이다. GraphQL spec은 2015년에 open source로 공개되고 현재 다양한 환경에서 사용할 수 있다.
 
 Database를 공부할 때 배운 Structured Query Language (SQL)와 같은 QL이지만 구조가 다르다.
 
@@ -9870,7 +9874,7 @@ GraphQL 장점을 알려면 REST API의 단점을 보면 된다.
   - GraphQL can be used with any backend framework or programming language.
   - GraphQL 자체는 개발 programming 언어와 사용 네트워크에 완전히 독립적이다.
 
-- **GraphQL에서의 하나하나의 Type이 REST API에선 하나의 url가 된다.**
+- **GraphQL에서의 하나의 Object type이 REST API에선 하나의 enpdpoint가 된다.**
 
   - REST API는 여러 endpoint에 GET/POST/PUT/DELETE requests을 보낸다.
   - GraphQL은 하나의 endpoint에 POST request을 보낸다.
@@ -9885,16 +9889,144 @@ GraphQL 장점을 알려면 REST API의 단점을 보면 된다.
 
 ### [GraphQL Queries and Mutations](https://graphql.org/learn/queries/)
 
-**GraphQL의 핵심 기능은 Query와 Mutation이다.** Query와 Mutation는 사실 내부적으로 들어가면 차이가 없다. 이는 GraphQL을 사용하는 사용자의 편의를 위해 Query와 Mutation으로 나눈 것이다.
+**GraphQL의 핵심 기능은 Query와 Mutation이다.** Query와 Mutation는 사실 내부적으론 차이가 없다. 이는 GraphQL 사용자의 편의를 위해 Query와 Mutation으로 나눈 것이다.
 
 CREATE/READ/UPDATE/DELETE (CRUD)
 
 - Query는 data를 읽는데 사용: READ
 - Mutation은 data를 조작하는데 사용: CREATE/UPDATE/DELETE
 
+#### Fields and Objects
+
+- **Field**: an object-specific attribute that holds a value.
+  - All fields have to resolve to some concrete data.
+  - Fields can also refer to Objects.
+- **Object**: A GraphQL object type has a name and fields
+  - The object’s parent type defines which fields an object must have.
+
+At its simplest, **GraphQL is about asking for specific fields on objects.**
+
+**GraphQL은 내가 원하는 object의 특정 fields에 대한 data를 요청하는 것이다.**
+
+GraphQL query: Database에서 `hero` field에 있는 object의 `name` field와, `hero` field의 object가 가지는 `friends` field에 있는 object의 `name` field를 요청.
+
+1. We start with a special "root" object
+2. We select the `hero` field on that
+3. For the object returned by `hero`, we select the `name` and `friends` fields
+4. For the object returned by `friends`, we select the `name` fields
+
+```
+{
+  hero {
+    name
+    # Queries can have comments!
+    friends {
+      name
+    }
+  }
+}
+```
+
+Query Result:
+
+```
+{
+  "data": {
+    "hero": {
+      "name": "R2-D2",
+      "friends": [
+        {
+          "name": "Luke Skywalker"
+        },
+        {
+          "name": "Han Solo"
+        },
+        {
+          "name": "Leia Organa"
+        }
+      ]
+    }
+  }
+}
+```
+
+#### Arguments
+
+일반적인 function과 마찬가지로 GraphQL statement에 arguments를 제공하는 것이 가능하다.
+
+- REST API: can only pass a single set of arguments.
+- GraphQL: every field and nested object can get its own set of arguments, making GraphQL a complete replacement for making multiple API fetches.
+  - You can even pass arguments into scalar fields (Int, String, ID, ...), to implement data transformations once on the server, instead of on every client separately.
+
+GraphQL qurey with arguments: Database에서 `human` field의 id가 1000인 object의 `name` field와, `height` field를 Foot unit으로 요청.
+
+1. We start with a special "root" object
+2. We select the `human` field with `id:'1000'` on that
+3. For the object returned by `human`, we select the `name` and `height` with `unit:FOOT` fields
+
+```
+{
+  human(id: "1000") {
+    name
+    height(unit: FOOT)
+  }
+}
+```
+
+Query Result:
+
+```
+{
+  "data": {
+    "human": {
+      "name": "Luke Skywalker",
+      "height": 5.6430448
+    }
+  }
+}
+```
+
+Arguments can be of many different types. In the above example, we have used an Enumeration type, which represents one of a finite set of options (in this case, units of length, either `METER` or `FOOT`). GraphQL comes with a default set of types, but a GraphQL server can also declare its own custom types, as long as they can be serialized into your transport format.
+
+#### Aliases
+
+Since the result object fields match the name of the field in the query but don't include arguments, you can't directly query for the same field with different arguments. That's why you need aliases.
+
+- they let you rename the result of a field to anything you want.
+
+GraphQL qurey with aliases: Database에서 `hero` field의 episode가 EMPIRE인 object의 `hero` field명을 `empireHero`로 재작명 후 `name` field을 요청하고, `hero` field의 episode가 JEDI인 object의 `hero` field명을 `jediHero`로 재작명 후 `name` field을 요청.
+
+```
+{
+  empireHero: hero(episode: EMPIRE) {
+    name
+  }
+  jediHero: hero(episode: JEDI) {
+    name
+  }
+}
+```
+
+Query Result:
+
+```
+{
+  "data": {
+    "empireHero": {
+      "name": "Luke Skywalker"
+    },
+    "jediHero": {
+      "name": "R2-D2"
+    }
+  }
+}
+```
+
+In the above example, the two `hero` fields would have conflicted, but since we can alias them to different names, we can get both results in one request.
+
 #### Operation name
 
-We omit both the `query` keyword and the `query name`, but in production apps it's useful to use these to make our code less ambiguous. Query는 `query` keyword와 `query name`을 생략해도 되지만, 실제 app을 만들 때에는 이 둘을 명시하는 게 유리하다.
+We omit both the `query` keyword and the `query name`, but in production apps it's useful to use these to make our code less ambiguous. Query를 할 때 `query` keyword와 `query name`을 생략해도 되지만, 실제 app을 만들 때에는 이 둘을 명시하는 게 유리하다.
 
 - Example that includes the keyword **`query` as operation type and `HeroNameAndFriends` as operation name**:
 
@@ -9914,7 +10046,7 @@ query HeroNameAndFriends($episode: Episode) {
   - operation type이 query일 경우에는 생략이 가능하지만, 나머지는 생략이 불가능하다.
 
 - **Operation name is a meaningful and explicit name for your operation.**
-  - Operation name은 함수명을 의미한다. 
+  - Operation name은 함수명을 의미한다.
   - It is only required in multi-operation documents, but its use is encouraged because it is very helpful for debugging and server-side logging.
   - When something goes wrong (you see errors either in your network logs, or in the logs of your GraphQL server) it is easier to identify a query in your codebase by name instead of trying to decipher the contents.
   - Think of this just like a function name in your favorite programming language.
@@ -10255,7 +10387,7 @@ $ npm start
 - `Button`은 a basic button component that should render nicely on any platform.
 - `StyleSheet`은 React-Native에서 css를 작성할 때 사용한다.
 - `TextInput`은 기본적인 HTMLInputElement와 동일하다. 사용자 input 받기
-- `Pressable`은 최근에 만들어진 component로 LTS이 보장된 interactive component이다.
+- `Pressable`은 최근에 만들어진 component로 Long-Term Support (LTS)이 보장된 interactive component이다.
 
 ```
 // Menu.js

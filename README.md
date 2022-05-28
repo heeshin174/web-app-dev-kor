@@ -7564,13 +7564,13 @@ VSCode는 다양한 keyboard shortcut을 제공하기 때문에 마우스를 사
   }
   ```
 
-### keyboard snippets
+### [keyboard snippets](https://code.visualstudio.com/docs/getstarted/keybindings)
 
 우리는 코드를 쓸 때, 마우스를 사용하지 않고 최대한 키보드를 사용하도록 해야 된다. keyboard snippets을 이용하면, 키보트만으로도 우리가 하고 싶은 것을 빠르게 할 수 있다.
 
 - In VScode, go to `Help > Keyboard Shortcuts References`. VScode에서 사용가능한 유용한 키보드 단축기들을 볼 수 있다.
 
-#### WindowOS Navigation
+#### [VSCode Keyboard Shortcuts for MacOS](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf)
 
 - `Ctrl + P`: 이 폴더 내에 다른 file name을 입력 후, 그 file로 이동 (파일간 이동)
 - `Ctrl + G`: 이 파일 내에 Line 입력 후 이동 (파일 내 이동)
@@ -7593,10 +7593,8 @@ VSCode는 다양한 keyboard shortcut을 제공하기 때문에 마우스를 사
 - `Alt + (1/2/3/...)`: 열려있는 여러 tab 중, 그곳으로 cursor 이동
 - `Ctrl + W\F4`: Close 현재 tap 또는 split editor
 
-- `Ctrl + click`: Go to definition
-- `Ctrl + hover`: peek definition
-
-#### WindowOS Basic Editing
+- `Ctrl + MouseClick`: Go to definition
+- `Ctrl + MouseHover`: peek definition
 
 - `tab`: 자동완성 (현재치고 있는 코드를 자동완성)
 - `Ctrl + X`: Cut (select하지 않을 경우 현재 cursor가 있는 line 삭제)
@@ -7636,7 +7634,7 @@ VSCode는 다양한 keyboard shortcut을 제공하기 때문에 마우스를 사
     - `Paste JSON as Types` 입력: JSON data를 code로 변환 (`Paste JSON as Types` extension 다운 후)
     - `Quokka.js` 입력 (`Quokka.js` extension 다운 후)
     - `Configure User Snippets` 입력: 나만의 code snippets를 만들 수 있다
-    - `Organize Imports` 입력 (Javascript/Typescript에서 사용 중이지 않은 import 삭제)
+    - `Organize Imports` 입력 (Javascript/Typescript file 내 사용 중이지 않은 import 삭제)
   - Command Palette에 `#` 입력: global symbol search. 현재 project에서 할 수 있는 모든 command 반환
   - Command Palette에 `:` 입력 (`Ctrl + G`): 이 파일 내에 Line 입력 후 이동 (파일 내 이동)
 
@@ -7707,8 +7705,9 @@ keyboard shortcut for terminal
 - `Ctrl + C`: terminate
 - `UpArrow/DownArrow`: 최근에 사용한 command 가져오기. Terminal history
 
-### MacOS VSCode Shortcuts
+### [VSCode Keyboard Shortcuts for MacOS](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf)
 
+- `Command (⌘ cmd) + P`: Go to File
 - `Command (⌘ cmd) + shift + P`: Open Command Palette
 - `Command (⌘ cmd) + B`: Toggle side bar
 - `Command (⌘ cmd) + D`: Find next match (현재 select된 단어와 일치하는 다음 위치 찾은 후 multi cursor)
@@ -7727,6 +7726,8 @@ keyboard shortcut for terminal
 - `Command (⌘ cmd) + ,`: Open VSCode Settings
 - `Command (⌘ cmd) + Option (⌥ Alt) + Up/Down`: Multi-cursor
 - `Command (⌘ cmd) + U`: Undo last Multi-cursor
+- `Command (⌘ cmd) + C`: Copy line
+- `Command (⌘ cmd) + V`: Paste line
 - `Command (⌘ cmd) + W`: Close current tab
 - `Command (⌘ cmd) + shift + T`: Reopen the last closed Tabs
 - `Command (⌘ cmd) + .`: Toggle a light bulb or screwdriver (auto import)
@@ -9901,8 +9902,27 @@ CREATE/READ/UPDATE/DELETE (CRUD)
 - **Field**: an object-specific attribute that holds a value.
   - All fields have to resolve to some concrete data.
   - Fields can also refer to Objects.
-- **Object**: A GraphQL object type has a name and fields
+- **Object**: A GraphQL object type has a name and fields.
   - The object’s parent type defines which fields an object must have.
+
+```
+# Fields
+allFilms(
+after: String
+first: Int
+before: String
+last: Int
+): FilmsConnection
+```
+
+- Field: `allFilms`
+- Object: `FilmsConnection`
+- Parameters: `after`, `first`, `before`, `last`
+  - `after`: only takes String data type
+  - `first`: only takes Int data type
+  - `before`: only takes String data type
+  - `last`: only takes Int data type
+- GraphQL queries to `allFilms` field will return `FilmsConnection` Object.
 
 At its simplest, **GraphQL is about asking for specific fields on objects.**
 
@@ -9950,7 +9970,7 @@ Query Result:
 }
 ```
 
-#### Arguments
+#### Arguments for query
 
 일반적인 function과 마찬가지로 GraphQL statement에 arguments를 제공하는 것이 가능하다.
 
@@ -9990,6 +10010,12 @@ Arguments can be of many different types. In the above example, we have used an 
 
 #### Aliases
 
+같은 field에 서로 다른 arguments로 query할 경우:
+
+1. 같은 field name에 서로 다른 data가 반환된다.
+2. 어느 data가 어느 argument의 반환값인지 알 수 없다.
+3. **Aliases**: 그럼으로 각각의 argumnt에 대한 field name을 변경하여 어느 data가 어느 argument의 반환값인지 알 수 있게 만든다.
+
 Since the result object fields match the name of the field in the query but don't include arguments, you can't directly query for the same field with different arguments. That's why you need aliases.
 
 - they let you rename the result of a field to anything you want.
@@ -10024,6 +10050,193 @@ Query Result:
 
 In the above example, the two `hero` fields would have conflicted, but since we can alias them to different names, we can get both results in one request.
 
+#### Fragments
+
+위의 Aliases의 예제와 같이 같은 field에 서로 다른 arguments로 query할 경우, we need to repeat the fields at least once to compare data.
+
+- Aliases의 예제: `name` field에 대한 query를 `empireHero`와 `jediHero` field에 반복해야 한다.
+
+1. 같은 field name에 서로 다른 data가 반환된다.
+2. 어느 data가 어느 argument의 반환값인지 알 수 없다.
+3. **Aliases**: 그럼으로 각각의 argument에 대한 field name을 변경하여 어느 data가 어느 argument의 반환값인지 알 수 있게 만든다.
+4. query가 길어질 경우 같은 query를 각각의 argument에 대한 field에 반복해야 한다.
+5. **Fragments**: 그럼으로 reusable units인 Fragments을 작성해 반복되는 query 작성을 피한다.
+
+Fragment는 단편, 파편 이라는 조작적인 형상의 의미를 가진다. Fragmentation은 단편화란 뜻으로 기억 장치 내의 자료, 공간 등이 여러 조각으로 나뉘는 것을 의미한다.
+
+- Fragments in GraphQL: reusable units
+  - Fragments let you construct sets of fields, and then include them in queries where you need to.
+
+GraphQL qurey with fragments: Database에서 `hero` field의 episode가 EMPIRE인 object의 `hero` field명을 `leftComparison`로 재작명 후 `comparisonFields` fragment에 정의된 fields들을 각각 요청하고, `hero` field의 episode가 JEDI인 object의 `hero` field명을 `rightComparison`로 재작명 후 `comparisonFields` fragment에 정의된 fields들을 각각 요청
+
+```
+# compareTwoHero.graphql
+{
+  leftComparison: hero(episode: EMPIRE) {
+    ...comparisonFields
+  }
+  rightComparison: hero(episode: JEDI) {
+    ...comparisonFields
+  }
+}
+
+# fragment field called comparisonFields on Character object
+fragment comparisonFields on Character {
+  name
+  appearsIn
+  friends {
+    name
+  }
+}
+```
+
+Query Result:
+
+```
+{
+  "data": {
+    "leftComparison": {
+      "name": "Luke Skywalker",
+      "appearsIn": [
+        "NEWHOPE",
+        "EMPIRE",
+        "JEDI"
+      ],
+      "friends": [
+        {
+          "name": "Han Solo"
+        },
+        {
+          "name": "Leia Organa"
+        },
+        {
+          "name": "C-3PO"
+        },
+        {
+          "name": "R2-D2"
+        }
+      ]
+    },
+    "rightComparison": {
+      "name": "R2-D2",
+      "appearsIn": [
+        "NEWHOPE",
+        "EMPIRE",
+        "JEDI"
+      ],
+      "friends": [
+        {
+          "name": "Luke Skywalker"
+        },
+        {
+          "name": "Han Solo"
+        },
+        {
+          "name": "Leia Organa"
+        }
+      ]
+    }
+  }
+}
+```
+
+위의 query에서 fragment field 앞에 `...` 을 붙히지 않으면 graphql은 `comparisonFields`라는 이름을 가진 field를 `hero` field가 return한 object에서 찾아볼 것이다. 당연하게 `comparisonFields`은 returned object 내에 정의되어 있지 않기 때문에 error를 발생한다. `...`은 spread syntax로 `comparisonFields` fragment에 정의된 `name`, `appearsIn`, and `name` in `friends` field를 개별 요소로 확장한다.
+
+- `comparisonFields` -> `comparisonFields` field itself
+- `...comparisonFields` -> `name`, `appearsIn` fields and `name` field in `friends` object.
+
+- The `spread syntax (...)` takes in an iterable (e.g an array) and expands it into individual elements.
+
+```
+const array1 = ['h', 'e', 'l', 'l', 'o'];
+console.log([...array1]);
+['h', 'e', 'l', 'l', 'o'] // output
+```
+
+#### Using variables inside fragments
+
+It is possible for fragments to access variables declared in the query or mutation.
+
+GraphQL query:
+
+```
+query HeroComparison($first: Int = 3) {
+  leftComparison: hero(episode: EMPIRE) {
+    ...comparisonFields
+  }
+  rightComparison: hero(episode: JEDI) {
+    ...comparisonFields
+  }
+}
+
+fragment comparisonFields on Character {
+  name
+  friendsConnection(first: $first) {
+    totalCount
+    edges {
+      node {
+        name
+      }
+    }
+  }
+}
+```
+
+Query Result:
+
+```
+{
+  "data": {
+    "leftComparison": {
+      "name": "Luke Skywalker",
+      "friendsConnection": {
+        "totalCount": 4,
+        "edges": [
+          {
+            "node": {
+              "name": "Han Solo"
+            }
+          },
+          {
+            "node": {
+              "name": "Leia Organa"
+            }
+          },
+          {
+            "node": {
+              "name": "C-3PO"
+            }
+          }
+        ]
+      }
+    },
+    "rightComparison": {
+      "name": "R2-D2",
+      "friendsConnection": {
+        "totalCount": 3,
+        "edges": [
+          {
+            "node": {
+              "name": "Luke Skywalker"
+            }
+          },
+          {
+            "node": {
+              "name": "Han Solo"
+            }
+          },
+          {
+            "node": {
+              "name": "Leia Organa"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
+```
+
 #### Operation name
 
 We omit both the `query` keyword and the `query name`, but in production apps it's useful to use these to make our code less ambiguous. Query를 할 때 `query` keyword와 `query name`을 생략해도 되지만, 실제 app을 만들 때에는 이 둘을 명시하는 게 유리하다.
@@ -10031,6 +10244,7 @@ We omit both the `query` keyword and the `query name`, but in production apps it
 - Example that includes the keyword **`query` as operation type and `HeroNameAndFriends` as operation name**:
 
 ```
+# HeroNameAndFriends.graphql
 query HeroNameAndFriends($episode: Episode) {
   hero(episode: $episode) {
     name
@@ -10055,7 +10269,7 @@ query HeroNameAndFriends($episode: Episode) {
 
 ### [GraphQL Schemas and Types](https://graphql.org/learn/schema/)
 
-Scalars are equivalent to primitive data types in a programming language. Scalar type은 가장 기본이 되는 data type이다.
+Scalars are equivalent to primitive data types in a programming language. Scalar type은 가장 기본이 되는 원시 data type이다.
 
 In GraphQL, there are five built-in scalar types that the type system provided.:
 
@@ -10065,14 +10279,31 @@ In GraphQL, there are five built-in scalar types that the type system provided.:
 - **String** : a sequence of UTF‐8 characters
 - **ID** : a unique identifier
 
+#### Type System
+
+**GraphQL Schema**: an exact description of the data we can ask for.
+
+- What fields can we select?
+- What kinds of objects might they return?
+- What fields are available on those sub-objects?
+
+Every GraphQL service defines a set of types which completely describe the set of possible data you can query on that service. Then, when queries come in, they are validated and executed against that schema.
+
+#### Type language
+
+GraphQL services can be written in any language. Since we can't rely on a specific programming language syntax, like JavaScript, to talk about GraphQL schemas, we'll define our own simple language. We'll use the "GraphQL schema language".
+
+- **GraphQL schema language**: our own simple language to talk about GraphQL schemas in a language-agnostic way.
+  - GraphQL services는 어떤 programming 언어로도 작성될 수 있기 때문에, 이 예제에서는 어떤 언어에도 구애받지 않는 간단한 GraphQL schema language을 사용할 것이다.
+
 #### Object types and fields
 
-The most basic components of a GraphQL schema are object types, which just represent a kind of object you can fetch from your service, and what fields it has.
+**The most basic components of a GraphQL schema are object types**, which just represent a kind of object you can fetch from your service, and what fields it has.
 
 In the GraphQL schema language, we might represent it like this:
 
 ```
-// GraphQL object type
+# GraphQL object type
 type Character {
   name: String!
   appearsIn: [Episode!]!
@@ -10082,20 +10313,35 @@ type Character {
 - `Character` : a GraphQL Object Type. meaning it's a type with some fields. Most of the types in your schema will be object types.
 - `name` and `appearsIn` : fields on the type.
 - `String!` : **non-nullable String**. meaning that the GraphQL service promises to always give you a value when you query this field. In the type language, we'll represent those with an exclamation mark.
+  - 무조건 String data type만 받는다.
 - `[Episode!]!` : an array of Episode objects.
   - `Episode` is not a scalar type. It's a user defined type (UDT).
   - Since `[Episode]!` List is non-nullable, you can always expect an array (with zero or more items) when you query the field.
   - Since `Episode!` is also non-nullable, you can always expect every item of the array to be an object.
+  - 무조건 `Episode` object로만 이루어진 하나의 array data type만 받는다.
 
-`Character` type의 `name`에 String 타입을 사용할 건데 느낌표 `!`를 추가하면 Non-Nullable Field가 된다. Non-Nullable Field이 되면 GraphQL server가 항상 이 필드에 대해 null이 아닌 값을 반환할 것으로 예상하여 null 값을 얻게 되면 error를 발생한다.
+`Character` type의 `name` field는 String 타입을 반환하는데, 느낌표 `!`를 추가하면 Non-Nullable Field가 된다. Non-Nullable Field이 되면 GraphQL server가 항상 이 필드에 대해 null이 아닌 값을 반환할 것으로 예상하여 null 값을 얻게 되면 error를 발생한다.
+
+#### Arguments for Schema
+
+Every field on a GraphQL object type can have zero or more arguments, for example the `length` field below:
+
+```
+type Starship {
+ id: ID!
+ name: String!
+ length(unit: LengthUnit = METER): Float
+}
+```
+
+All arguments are named. Unlike languages like JavaScript and Python where functions take a list of ordered arguments, all arguments in GraphQL are passed by name specifically. In this case, the `length` field has one defined argument, `unit`.
+
+Arguments can be either required or optional. When an argument is optional, we can define a default value - if the unit argument is not passed, it will be set to `METER` by default.
 
 ### GraphQL 예시
 
-GraphQL의 field 하나하나가 REST API에서는 url이 된다.
-
-**GraphiQL**은 GraphQL query를 작성, 검증 및 테스트하기 위한 sandbox, 도구이다.
-
-- Swapi-GraphQL : https://graphql.org/swapi-graphql
+- **GraphiQL**: GraphQL query를 작성, 검증 및 테스트하기 위한 sandbox, 도구이다.
+  - Swapi-GraphQL : https://graphql.org/swapi-graphql
 
 위의 url에 접속해 `query: Root`를 눌르면 우리가 얻을 수 있는 모든 `Fields`를 볼 수 있다.
 

@@ -9841,9 +9841,13 @@ $ http://xyz.amazonaws.com/function-name
 
 GraphQL은 Facebook사에서 REST API의 문제점을 해결하고자 만든 개념이다. GraphQL을 배우고 나면 이제는 REST API를 사용할 때 문제점들이 보이고 다시는 REST API를 사용하고 싶지 않은 생각이 든다. GraphQL은 이름에서도 나오다시피 **Query Language (QL)이다.** GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data.
 
-GraphQL은 단지 specification (spec), 즉 이론일 뿐이고 진짜로 사용하기 위해서는 내가 사용하고자 하는 programming 언어로 GraphQL spec를 구현해야만 한다. GraphQL spec은 2015년에 open source로 공개되었으며 현재 다양한 환경에서 사용할 수 있으며 모든 규모의 팀 (페이스북, 깃허브, 핀터레스트, 트위터, 페이팔 등)에서 사용하고 있다.
+GraphQL 자체로는 QL로 단지 specification (spec), 즉 이론일 뿐이고 진짜로 사용하기 위해서는 내가 사용하고자 하는 programming 언어로 GraphQL spec를 구현해야만 한다. 즉, GraphQL 자체는 개발 programming 언어와 사용 네트워크에 완전히 독립적이다. GraphQL spec은 2015년에 open source로 공개되었으며 현재 다양한 환경에서 사용할 수 있으며 모든 규모의 팀 (페이스북, 깃허브, 핀터레스트, 트위터, 페이팔 등)에서 사용하고 있다.
 
-Database를 공부할 때 배운 Structured Query Language (SQL)와 이론은 똑같다.
+Database를 공부할 때 배운 Structured Query Language (SQL)와 같은 QL이지만 구조가 다르다.
+
+- SQL은 주로 backend에서 작성하고 호출
+  - 사용자에게 database에 접근권한을 주면 안되기 때문에
+- GraphQL은 주로 frontend에서 작성하고 호출
 
 ### GraphQL vs REST API (GraphQL 장점)
 
@@ -9864,12 +9868,58 @@ GraphQL 장점을 알려면 REST API의 단점을 보면 된다.
 - GraphQL은 Database와 같이 특정 programming 언어에 종속된 개념이 아니기 때문에, GraphQL spec만 구현하면 모든 언어에서 GraphQL을 사용할 수 있다는 점이다.
 
   - GraphQL can be used with any backend framework or programming language.
+  - GraphQL 자체는 개발 programming 언어와 사용 네트워크에 완전히 독립적이다.
 
 - **GraphQL에서의 하나하나의 Type이 REST API에선 하나의 url가 된다.**
-  - REST API는 하나의 url에 GET, POST등 여러개의 HTTP resquest를 보낼 수 있지만,
-  - GraphQL에서는 HTTP resquest를 하지 않고, 하나의 Type에 **Queries and Mutation**을 이용하여 database와 data를 주고 받는다.
+
+  - REST API는 여러 endpoint에 GET/POST/PUT/DELETE requests을 보낸다.
+  - GraphQL은 하나의 endpoint에 POST request을 보낸다.
+    - GraphQL에서는 하나의 Type에 **Queries and Mutation**을 이용하여 database와 data를 주고 받는다.
+
+- REST API는 endpoint에 따라 데이터베이스의 query가 바뀌며, GraphQL은 schema에 따라 query가 바뀐다.
+
+- GraphQL은 query(left)와 response data(right)의 구조가 거의 일치하여 직관적이고 이해하기 쉽다.
+  - GraphQL query has exactly the same shape as the result.
+
+![graphql-query](./img/graphql-example.png)
 
 ### [GraphQL Queries and Mutations](https://graphql.org/learn/queries/)
+
+**GraphQL의 핵심 기능은 Query와 Mutation이다.** Query와 Mutation는 사실 내부적으로 들어가면 차이가 없다. 이는 GraphQL을 사용하는 사용자의 편의를 위해 Query와 Mutation으로 나눈 것이다.
+
+CREATE/READ/UPDATE/DELETE (CRUD)
+
+- Query는 data를 읽는데 사용: READ
+- Mutation은 data를 조작하는데 사용: CREATE/UPDATE/DELETE
+
+#### Operation name
+
+We omit both the `query` keyword and the `query name`, but in production apps it's useful to use these to make our code less ambiguous. Query는 `query` keyword와 `query name`을 생략해도 되지만, 실제 app을 만들 때에는 이 둘을 명시하는 게 유리하다.
+
+- Example that includes the keyword **`query` as operation type and `HeroNameAndFriends` as operation name**:
+
+```
+query HeroNameAndFriends($episode: Episode) {
+  hero(episode: $episode) {
+    name
+    friends {
+      name
+    }
+  }
+}
+```
+
+- **Operation type: Query, Mutation or subscription** and describes what type of operation you're intending to do.
+
+  - operation type이 query일 경우에는 생략이 가능하지만, 나머지는 생략이 불가능하다.
+
+- **Operation name is a meaningful and explicit name for your operation.**
+  - Operation name은 함수명을 의미한다. 
+  - It is only required in multi-operation documents, but its use is encouraged because it is very helpful for debugging and server-side logging.
+  - When something goes wrong (you see errors either in your network logs, or in the logs of your GraphQL server) it is easier to identify a query in your codebase by name instead of trying to decipher the contents.
+  - Think of this just like a function name in your favorite programming language.
+    - For example, in JavaScript we can easily work only with anonymous functions, but when we give a function a name, it's easier to track it down, debug our code, and log when it's called.
+    - In the same way, GraphQL query and mutation names, along with fragment names, can be a useful debugging tool on the server side to identify different GraphQL requests.
 
 ### [GraphQL Schemas and Types](https://graphql.org/learn/schema/)
 

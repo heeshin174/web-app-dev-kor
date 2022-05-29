@@ -10807,6 +10807,12 @@ React-Navigation library는 react-native에서 화면간 이동 시 필요한 na
 
 ### [Stripe (Payment)](https://stripe.com/docs/payments/accept-a-payment?platform=react-native)
 
+## 다른 개발자들의 Code Examples
+
+- [Fullstack] GraphQL (Relay), React, TypeScript: https://codesandbox.io/s/relay-sandbox-nxl7i?file=/src/TodoApp.tsx : GraphQL (Relay), React, TypeScript
+- [Fullstack] GraphQL (Apollo-Server), React (+ Next), TypeScript: https://github.com/benawad/lireddit
+- [Fullstack] MongoDB, React, Node (Express): https://github.com/bradtraversy/mern-tutorial
+
 ## REFERENCES
 
 - [Web Development In 2022 - A Practical Guide](https://www.youtube.com/watch?v=EqzUcMzfV1w)

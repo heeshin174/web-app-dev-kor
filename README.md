@@ -6,11 +6,11 @@
 
 - 개발자로서 하나의 blog를 가지고 있다면 본인이 배운 내용들을 정리하기에도 좋고, 취업할 때도 유리하게 작용할 수 있다.
   - medium (blog site): https://medium.com/
-  - 내 블로그 https://medium.com/@heeshin174/
+  - 내 블로그: https://medium.com/@heeshin174/
 
-## Web App 개발순서
+## Web/App 개발순서
 
-1. web app design하기
+1. web/app design
    - Figma, Adobe XD등 다양한 design tool 사용가능
    - Client, Designer, User등으로 부터 다양한 feedback를 받기
 2. Design를 code로 implement하기
@@ -28,16 +28,17 @@ Idea는 다음을 포함해야 한다.
   - 문제점, 개선점을 documents로 정리할 땐, [A3 thinking](https://www.youtube.com/watch?v=rtyia0ci12I) 이라는 algorithm을 사용할 수 있다.
 - 제품의 명확한 사용법과 장점 (Simple User Interface)
 - 기존의 제품들과의 차별점
-  - 다른 제품말고 이 제품을 써야하는 이유
-  - 한 번 경험해보면, 다시는 기존의 제품들을 사용할 수 없을 정도의 편리성과 효율성을 제공 (Great User Exerience)
-  - 기존에 있는 제품들을 조금만 바꾸어서 만들기 보단 (모조품), 기존의 제품들을 사용해서 전혀 다른 새로운 제품을 만들어 내야한다.
+  - 다른 제품말고 이 제품만 가지는 장점
+  - 한 번 경험해보면, 다시는 기존의 제품들을 사용할 수 없을 정도의 편리성과 효율성 제공 (Great User Exerience)
+  - 기존에 있는 제품들과 비슷한 기능을 가지는 app을 만들어 그들이 이미 선점한 시장에서 경쟁하기 보단, 기존의 제품들을 사용해서 전혀 다른 새로운 기능을 제공해야 한다.
 
 ### 좋은 코드를 작성하는 기본원칙
 
 - **DRY**: Don't Repeat Yourself
-  - 같은 코드가 반복될 경우, 함수로 만든다.
+  - 같은 코드가 반복되면 함수로 만든다.
+  - Fragment: Reusable Code Unit
 - **KISS**: Keep It Simple and Stupid
-  - Functional programming의 기본 원칙으로 한 함수는 딱 한가지 일만 수행하도록 만든다.
+  - Functional programming의 기본 원칙으로, 한 함수는 딱 한가지 일만 수행하도록 만든다.
     - 이 경우 bug가 생기기도 어렵고, debug하기도 매우 쉽다.
 - **YANGI**: You Are Not Gonna Need It
   - 지금 당장 필요하지 않는 미래지향적인 코드를 작성하지 않는다.
@@ -91,8 +92,8 @@ Idea는 다음을 포함해야 한다.
 - Keyboard
   - tenkeyless keyboard
     - A computer keyboard that does not have a 10-key numeric keypad on the right side.
-  - ⭐ split keyboard
-    - 둘로 분리된 키보드
+  - **split keyboard**
+    - 둘로 분리되는 키보드
     - **개인적으론 분리도 되고 붙이기도 되는 tenkeyless split keyboard 추천**
   - 기계식 키보드
     - **Red 적축**: 키압이 낮기때문에 끝까지 누르지 않아도 입력 가능
@@ -101,7 +102,7 @@ Idea는 다음을 포함해야 한다.
       - Anna Pro 2 Gatron Red 게이트론 적축
       - Leopold FC750R slient red
       - Keychron K7, 68 Keys Ultra-Slim Wireless Low-Profile Gateron Mechanical RGB
-      - ⭐ Mistel MD770 RGB Wired + Wireless Bluetooth TKL Split Mechanical Keyboard with Cherry MX Silent Red Switch
+      - Mistel MD770 RGB Wired + Wireless Bluetooth TKL Split Mechanical Keyboard with Cherry MX Silent Red Switch
   - Capacitive (무접점) Keyboard
 - Browser
   - **Chrome**
@@ -169,11 +170,9 @@ Node.js를 설치할 때에는 Long Time Support (LTS)가 붙어있는 최신버
 
 그외에 사용하고 싶은 프로그래밍 언어들도 Google에 검색 후, Linux환경으로 다운받으면 된다.
 
-6. Google에 `install zsh` 검색 후 download `zsh`
+6. Google에 _install zsh_ 검색 후 download zsh: `$ sudo apt install zsh`
 
-> $ `sudo apt install zsh`
-
-7. Google에 `install Oh my zsh` 검색 후 curl를 사용하여 download `Oh my zsh`
+7. Google에 `install Oh my zsh` 검색 후 curl를 사용하여 download _Oh my zsh_
 
 `Window Terminal`을 열고, `설정`을 선택, 그 후 `Json 파열 열기`을 클릭.
 `MesloLGS NF` font를 설치 후, 아래와 같이 추가.
@@ -251,8 +250,7 @@ WSL: GET http://172.29.69.223:5000/api/users/me
 
 ### 2. Front-End (Client Side)
 
-Front-End은 사용자가 웹사이트를 방문시 보게되는 화면, 즉 User Interface (UI)을 의미한다. Website에서 **Front-End의 기본은 HTML, CSS, Javascript 이다.** 이는 web browser가 읽을 수 있는 파일들이 이 세가지 밖에 없기 때문이다. 최근에는 `Web Assembly`까지 포함해 4가지를 읽을 수 있다.
-React.js, Typescript 등등 external library/framework로 만들어 native HTML, CSS, Javascript로 작성되지 않은 파일들은 browser가 읽을 수 없기 떄문에 마지막에는 이 세가지로 변환해주어야 한다.
+Front-End은 사용자가 웹사이트를 방문시 보게되는 화면, 즉 User Interface (UI)을 의미한다. Website에서 **Front-End의 기본은 HTML, CSS, Javascript 이다.** 이는 web browser가 읽을 수 있는 파일들이 이 세가지 밖에 없기 때문이다. 최근에는 *Web Assembly*까지 포함해 4가지를 읽을 수 있다. React.js, Typescript 등등 external library/framework로 만들어 native HTML, CSS, Javascript로 작성되지 않은 파일들은 browser가 읽을 수 없기 떄문에 마지막에는 이 세가지로 변환해주어야 한다.
 
 - **HTML**: Structural 뼈대
 - **CSS**: Presentational 살점
@@ -279,7 +277,7 @@ React.js, Typescript 등등 external library/framework로 만들어 native HTML,
     - styled-components: https://styled-components.com/docs
     - Postcss: https://postcss.org/
   - 기타
-    - headlessui ( React, Vue + Tailwindcss): https://headlessui.dev/
+    - headlessui (React, Vue + Tailwindcss): https://headlessui.dev/
     - heroicons (svg icons with React, Vue + Tailwindcss): https://heroicons.com/
     - FontAwesome (icons): https://fontawesome.com/
     - Devicon (icons representing programming tools): https://devicon.dev/
@@ -314,13 +312,13 @@ React.js, Typescript 등등 external library/framework로 만들어 native HTML,
     - Fetch API (+ Async/Await, Error handler)
   - ⭐ [**Typescript**](https://github.com/heeshin174/Web_App_Dev_Kor#4-typescript): https://www.typescriptlang.org/
     - Types
-    - Object-oriented Programming (OOP)
+    - Object-Oriented Programming (OOP)
   - FrontEnd Library & Framework
     - ⭐ [**React**](https://github.com/heeshin174/Web_App_Dev_Kor#5-reactjs): https://reactjs.org/
+      - React with Typescript: https://create-react-app.dev/docs/adding-typescript/
     - [Vue](https://github.com/heeshin174/Web_App_Dev_Kor#vuejs): https://vuejs.org/
     - Angular: https://angularjs.org/
     - Svelte: https://svelte.dev/docs
-    - React with Typescript: https://create-react-app.dev/docs/adding-typescript/
   - Meta Library & Meta Framework (Meta-Framework: 기존 framework 위에 만들어진 framework)
     - React based
       - [Server-Side Rendering (SSR) & Static Site Generators (SSG)](https://github.com/heeshin174/Web_App_Dev_Kor#client-side-rendering-csr-vs-server-side-rendering-ssr)
@@ -328,7 +326,7 @@ React.js, Typescript 등등 external library/framework로 만들어 native HTML,
         - Remix: https://remix.run/docs/en/v1
         - Gatsby: https://www.gatsbyjs.com/
       - Managing and centralizing application state
-        - ⭐ **redux-toolkit**: https://redux-toolkit.js.org/
+        - ⭐ [**redux-toolkit**](https://github.com/heeshin174/web-app-dev-kor#redux): https://redux-toolkit.js.org/
         - react-redux: https://react-redux.js.org/
         - redux-thunk: https://github.com/reduxjs/redux-thunk
         - recoil: https://recoiljs.org/
@@ -362,9 +360,11 @@ React.js, Typescript 등등 external library/framework로 만들어 native HTML,
 - redux (manage state): https://redux.js.org/introduction/getting-started
 - multer (upload files): https://github.com/expressjs/multer
 - electron (build a cross-platform desktop app): https://www.electronjs.org/
-- GraphQL for FrontEnd
+
+- GraphQL for FrontEnd: https://graphql.org/code/
 
   - Apollo Client: https://www.apollographql.com/docs/react
+  - Relay (Facebook사에서 만든 GraphQL client): https://relay.dev/
   - URQL (A highly customisable and versatile GraphQL client): https://formidable.com/open-source/urql/
 
 - PyScript (Run Python in Your HTML): https://pyscript.net/
@@ -373,7 +373,7 @@ React.js, Typescript 등등 external library/framework로 만들어 native HTML,
 
 Front-End library/framework은 web application의 UI 부분을 더 쉽게 작성할 수 있게 만들어 준다. **Single Page Application (SPA)는** body가 비어있는 하나의 HTML을 가지고 Javascript를 이용해서 그 안에 Data를 dynamic하게 할당한다. Server가 client에 javascript를 넘겨주면, client가 이를 가지고 HTML를 완성하기 때문에 **Client Side Rendering (CSR)이라 한다.** CSR에선 HTML이 비어있기 때문에 검색 엔진에 노출되어 검색되기 쉽지 않아 Search Engine Optimization (SEO)에 취약하다. SPA를 제공하는 frontend framework에는 크게 React.js, Vue.js, Angular.js가 있다. 이들은 사용방법이 거의 비슷하기 때문에 하나만 잘 이해하면, 나머지는 쉽게 사용할 수 있다.
 
-- ⭐ **React.js**: React는 Meta사에서 만든 Javascript frontend web library로 computer에 최신 버전의 `Node.js`를 설치하면 누구나 사용할 수 있다.
+- ⭐ **React.js**: React는 Meta사에서 만든 Javascript frontend web library로 computer에 최신 버전의 *Node.js*를 설치하면 누구나 사용할 수 있다.
 - **Vanilla.js**: just a way to refer to native (non-extended and standards-based) JavaScript.
 
 #### Design UI/UX Tool
@@ -472,7 +472,8 @@ Back-End은 사용자가 웹사이트를 방문시 서버쪽에서 실행 할 Us
   - [GraphQL (Query Language for API)](https://github.com/heeshin174/Web_App_Dev_Kor#graphql): https://graphql.org/
   - GraphQL specification: https://github.com/graphql/graphql-spec
   - GraphQL Implementation: https://graphql.org/code/
-  - Apollo Server: https://www.apollographql.com/docs/apollo-server
+  - Apollo Server (GraphQL Javascript server): https://www.apollographql.com/docs/apollo-server
+  - GraphQL.js (First built GraphQL Javascript server): https://graphql.org/graphql-js/
 
 - Other Javascript Library/Framework
 
@@ -8849,9 +8850,7 @@ Access-Control-Allow-Headers: preflight요청에 대한 응답으로 실제 요�
 
 ### 8. Express.js에서 CORS 사용하기
 
-Installation is done using the npm install command:
-
-> $ `npm i express cors`
+Installation is done using the npm install command: `$ npm i express cors`
 
 - Simple Usage in Express.js (Enable All CORS Requests)
 
@@ -10273,11 +10272,45 @@ Scalars are equivalent to primitive data types in a programming language. Scalar
 
 In GraphQL, there are five built-in scalar types that the type system provided.:
 
-- **Boolean** : return true or false
-- **Int** : a signed 32‐bit numeric non‐fractional value
-- **Float** : a signed double‐precision fractional values
-- **String** : a sequence of UTF‐8 characters
-- **ID** : a unique identifier
+- **Int** : A signed 32‐bit integer.
+- **Float** : A signed double-precision floating-point value.
+- **String** : A UTF‐8 character sequence.
+- **Boolean** : true or false
+- **ID** : a unique identifier.
+  - The ID scalar type represents a unique identifier, often used to refetch an object or as the key for a cache. The ID type is serialized in the same way as a String; however, defining it as an ID signifies that it is not intended to be human‐readable.
+
+In most GraphQL service implementations, there is also a way to specify custom scalar types. 사용자가 정의한 scalar types.
+
+For example, we could define a `Date` type: `scalar Date`
+
+Then it's up to our implementation to define how that type should be serialized, deserialized, and validated. For example, you could specify that the Date type should always be serialized into an integer timestamp, and your client should know to expect that format for any date fields.
+
+#### Enumeration types
+
+Also called _Enums_, enumeration types are a special kind of scalar that is restricted to a particular set of allowed values.
+
+This allows you to:
+
+- Validate that any arguments of this type are one of the allowed values
+- Communicate through the type system that a field will always be one of a finite set of values
+
+Here's what an enum definition might look like in the GraphQL schema language:
+
+```
+enum Episode {
+ NEWHOPE
+ EMPIRE
+ JEDI
+}
+```
+
+This means that wherever we use the type `Episode` in our schema, we expect it to be exactly one of `NEWHOPE`, `EMPIRE`, or `JEDI`.
+
+Note that GraphQL service implementations in various languages will have their own language-specific way to deal with enums.
+
+- In languages that support enums as a first-class citizen, the implementation might take advantage of that
+- In a language like JavaScript with no enum support, these values might be internally mapped to a set of integers.
+  - However, these details don't leak out to the client, which can operate entirely in terms of the string names of the enum values.
 
 #### Type System
 
@@ -10296,7 +10329,7 @@ GraphQL services can be written in any language. Since we can't rely on a specif
 - **GraphQL schema language**: our own simple language to talk about GraphQL schemas in a language-agnostic way.
   - GraphQL services는 어떤 programming 언어로도 작성될 수 있기 때문에, 이 예제에서는 어떤 언어에도 구애받지 않는 간단한 GraphQL schema language을 사용할 것이다.
 
-#### Object types and fields
+#### Object Types and Fields
 
 **The most basic components of a GraphQL schema are object types**, which just represent a kind of object you can fetch from your service, and what fields it has.
 
@@ -10375,8 +10408,8 @@ allFilms (
 ): FilmsConnection
 ```
 
-- 위의 link에서 `FilmsConnection`을 눌르면 `allFilms`이 줄 수 있는 모든 data를 볼 수 있다.
-- `FilmsConnection`은 User-defined Data Type (UDT)으로 사용자가 직접 정의한 데이터 타입이다.
+- 위의 link에서 `FilmsConnection`을 눌르면 `allFilms`이 줄 수 있는 모든 data fields를 볼 수 있다.
+- `FilmsConnection`은 `allFilms` field에 data를 요청 시 얻게 되는 object이다.
 - `allFilms`은 REST API에서 `GET app/v1/films`로 모든 `FilmsConnection`을 힌번에 받는 것과 동일하다.
 - `after: String, first: Int, before: String, last: Int`은 `allFilms`이 가질 수 있는 모든 parameters를 의미한다.
   - 즉 다음의 parameter를 제공해서 원하는 data만 얻을 수 있다. You can filter the data with these parameters.
@@ -10470,14 +10503,16 @@ allPeople에 있는 people array 중 name, hairColor, birthYear data만 줘
 
 ### [Apollo Server for GraphQL API](https://www.apollographql.com/docs/)
 
-GraphQL API를 Apollo server를 이용하여 만들어 볼 것이다. Apollo Server is an open-source, spec-compliant GraphQL server that's compatible with any GraphQL client, including Apollo Client. Apollo Server는 graphql specification을 구현해 graphql를 이해하는 서버이다.
+GraphQL service는 특정 programming 언어에 종속되어 있지 않아서, 구현만 되어 있다면 어느 언어를 사용해도 된다. 우리는 Web 개발을 공부하고 있기 때문에 JavaScript를 이용하여 GraphQL service를 만들어 볼 것이다. JavaScript로 구현된 GraphQL server 중 Apollo server를 이용하여 GraphQL API를 만들어 볼 것이다. Apollo Server is an open-source, spec-compliant GraphQL server that's compatible with any GraphQL client, including Apollo Client. Apollo Server는 graphql specification을 구현해 graphql를 이해하는 서버이다.
+
+- GraphQL이 구현된 다른 programming 언어 list: https://graphql.org/code/
 
 You can use Apollo Server as:
 
 - A stand-alone GraphQL server, including in a serverless environment
   - Apollo Server만 있어도 node.js server처럼 잘 작동한다.
 - An add-on to your application's existing Node.js middleware (such as Express or Fastify)
-  - Express나 Gastify 같은 node.js backend의 최상단에 Apollo server를 추가할 수 있다.
+  - Express나 Gastify 같은 node.js backend를 이미 사용하고 있으면, 그 위 최상단에 Apollo server를 추가할 수 있다.
   - 이미 REST api를 사용하는 Express backend가 있으면, 이를 GraphQL로 바꾸는 Middleware만 추가하면 된다.
 - A gateway for a federated graph
 
@@ -10485,9 +10520,9 @@ Apollo server를 이용해서 GraphQL API 만들기 : https://www.apollographql.
 
 ### [GraphQL Docstring](https://www.apollographql.com/docs/resources/graphql-glossary/#docstring)
 
-Provides the description of a type, field, or argument. Docstrings automatically appear in many common GraphQL tools, including the Apollo Studio Explorer. `type`, `field`, `argument` 등 database schema에 대한 자세한 설명을 제공한다. Docstring은 컴퓨터가 아니라 개발자들 사이에 이해를 돕기 위한 설명이다. Docstring은 Apollo Studio Explorer를 포함한 많은 일반적인 GraphQL 도구에 자동으로 나타난다.
+GraphQL Docstring provides the description of a type, field, or argument. Docstrings automatically appear in many common GraphQL tools, including the Apollo Studio Explorer. `type`, `field`, `argument` 등 database schema에 대한 자세한 설명을 제공한다. Docstring은 컴퓨터가 아니라 개발자들 사이에 이해를 돕기 위한 설명이다. Docstring은 Apollo Studio Explorer를 포함한 많은 일반적인 GraphQL 도구에 자동으로 나타난다.
 
-#### [Altair GraphQL Client](https://altair.sirmuel.design/)
+### [Altair GraphQL Client](https://altair.sirmuel.design/)
 
 Altair GraphQL Client는 GraphQL queries 및 implementations을 test와 debugging 할 때 사용한다. (추가적으로 file upload 기능을 제공)
 Altair GraphQL Client는 **[Apollo Studio의 Apollo Sandbox](https://www.apollographql.com/docs/studio/explorer/sandbox)**와 동일한 기능을 제공한다.
@@ -10775,4 +10810,4 @@ React-Navigation library는 react-native에서 화면간 이동 시 필요한 na
 ## REFERENCES
 
 - [Web Development In 2022 - A Practical Guide](https://www.youtube.com/watch?v=EqzUcMzfV1w)
-- [2022 웹개발 로드맵 총정리 (공부순서 알려드림) | 올해는 정말 해보자 🚀](https://www.youtube.com/watch?v=TTLHd3IyErM)-
+- [2022 웹개발 로드맵 총정리 (공부순서 알려드림) | 올해는 정말 해보자 🚀](https://www.youtube.com/watch?v=TTLHd3IyErM

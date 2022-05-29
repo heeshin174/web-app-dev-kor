@@ -313,6 +313,7 @@ Front-End은 사용자가 웹사이트를 방문시 보게되는 화면, 즉 Use
   - ⭐ [**Typescript**](https://github.com/heeshin174/Web_App_Dev_Kor#4-typescript): https://www.typescriptlang.org/
     - Types
     - Object-Oriented Programming (OOP)
+    - _tsconfig.json_ 설정 (React/Next/Node/React-Native 등 상황에 맞게 사용): https://github.com/benawad/tsconfig.json/tree/master/src/config
   - FrontEnd Library & Framework
     - ⭐ [**React**](https://github.com/heeshin174/Web_App_Dev_Kor#5-reactjs): https://reactjs.org/
       - React with Typescript: https://create-react-app.dev/docs/adding-typescript/
@@ -3762,12 +3763,11 @@ console.log([...new Set(array)]);
 TypeScript is a programming language developed and maintained by Microsoft. It is a strict syntactical **superset of JavaScript** and adds optional static typing to the language.
 Typescript는 Javascript의 superset으로 Java처럼 변수를 선언할 때, 그 변수의 type을 지정해 주어야만 한다.
 
-- `Typescript = Javascript + type`
+- **Typescript = Javascript + type**
 - TypeScript Compiler (TSC)가 complie 과정에서 Type Check를 통해 error 없이 안정성이 확보되면 지정해둔 Type들을 제거한 후 JavaScript 코드를 생성해준다.
 - 즉, TypeScript는 새로운 프로그래밍 언어가 아니다.
 
-그럼 그냥 Javascript를 쓰면 되는 데, 왜 browser가 인식도 못하는 Typescript를 사용하는 가?에 대한 의문이 든다.
-여기서 우리는 먼저 Javascript에 대한 이해가 필요하다.
+그럼 그냥 Javascript를 쓰면 되는 데, 왜 browser가 인식도 못하는 Typescript를 사용하는 가?에 대한 의문이 든다. 여기서 우리는 먼저 Javascript에 대한 이해가 필요하다.
 
 - JavaScript is a `dynamically typed language`이다.
   - JavaScript에서는 변수의 타입을 직접 지정해주지 않아도, 스스로 변수의 타입을 정한다.
@@ -3779,7 +3779,9 @@ Typescript는 Javascript의 superset으로 Java처럼 변수를 선언할 때, �
 
 ### Typescript 장점
 
-**Typescript를 이용하면, 변수의 type을 지정해 주어야만 하기 떄문에, 어디선가 error가 발생하면 꽤 자세하게 무엇이 잘 못 되었는 지 알려준다.**
+**Typescript를 이용하면, 변수의 type을 지정해 주어야만 하기 떄문에, 어디선가 error가 발생하면 어디서 무엇이 잘 못 되었는 지 꽤 자세하게 알려준다.**
+
+- 일반 JavaScript보다 친절한 compiler.
 
 ```
 let decimal: number = 6;
@@ -3789,12 +3791,27 @@ decimal = "Hello"; // error: decimal은 number만 가능
 
 ### Typescript 실행
 
-1. 최신 `node.js` 설치
-2. Typescript를 global로 설치
-   - `$npm i -g typescript`
-3. `*.ts` file과 `tsconfig.json` file 생성
+1. 최신 _node.js_ 설치
+   - `$ npm init -y`: _package.json_ 생성
+2. Typescript를 development dependencies로 설치
+   - `$ npm i -D @types/node typescript`
+   - server를 만드는 경우: `$ npm i -D nodemon`
+3. Configure typescript
+   - `$ tsc -init`: _tsconfig.json_ 생성
+   - React/Next/Node/React-Native 등 상황에 맞게 복사 후 붙혀넣기: https://github.com/benawad/tsconfig.json/tree/master/src/config
 4. Typescript를 Javascript로 complie
-   - `$ tsc -w`
+   - `$ tsc -w`: `-w`는 watch flag이다.
+
+```
+// _package.json_ file
+"scripts": {
+    "gen-env": "gen-env-types .env -o src/env.d.ts -e .",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "dev": "nodemon dist/index.js",
+    "start": "node dist/index.js",
+  },
+```
 
 ### Typescript Data Types
 
@@ -10809,7 +10826,7 @@ React-Navigation library는 react-native에서 화면간 이동 시 필요한 na
 
 ## 다른 개발자들의 Code Examples
 
-- [Fullstack] GraphQL (Relay), React, TypeScript: https://codesandbox.io/s/relay-sandbox-nxl7i?file=/src/TodoApp.tsx : GraphQL (Relay), React, TypeScript
+- [Fullstack] GraphQL (Relay), React, TypeScript: https://codesandbox.io/s/relay-sandbox-nxl7i?file=/src/TodoApp.tsx
 - [Fullstack] GraphQL (Apollo-Server), React (+ Next), TypeScript: https://github.com/benawad/lireddit
 - [Fullstack] MongoDB, React, Node (Express): https://github.com/bradtraversy/mern-tutorial
 

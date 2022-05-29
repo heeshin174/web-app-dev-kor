@@ -465,7 +465,8 @@ Back-End은 사용자가 웹사이트를 방문시 서버쪽에서 실행 할 Us
   - Firebase (backend as a service): https://firebase.google.com/
   - [Amazon Web Service (AWS)](https://github.com/heeshin174/Web_App_Dev_Kor#-%EB%B6%80%EB%A1%9D2-amazon%EC%82%AC%EC%9D%98-cloud-service%EC%9D%B8-aws-amazon-web-service-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-) : https://aws.amazon.com/
   - Micro-ORM (TypeScript ORM for Node.js based on Data Mapper, Unit of Work and Identity Map patterns): https://mikro-orm.io/
-    - Database 관련 코드를 작성하다 보면 반복되는 코드가 발생한다. 이때 **Object Relational Mapper (ORM)**이라는 Framework를 활용하면 database 처리 관련 코드가 많이 줄어들어 생산성을 향상시킬 수 있다. ORM 중에서 'Entity Framework'가 널리 사용된다. 하지만 내용이 많기 때문에 책에서는 'Dapper'를 사용한다.
+    - Database 관련 코드를 작성하다 보면 반복되는 코드가 발생한다. 이때 **Object Relational Mapper (ORM)**이라는 Framework를 활용하면 database 처리 관련 코드가 많이 줄어들어 생산성을 향상시킬 수 있다. ORM 중에서 'Entity Framework'가 널리 사용된다. 하지만 내용이 많기 때문에 'Dapper'를 사용한다.
+  - Type-ORM: https://typeorm.io/
 
 - Application Programming Interface (API or web API) that interacts with the database
 
@@ -475,6 +476,7 @@ Back-End은 사용자가 웹사이트를 방문시 서버쪽에서 실행 할 Us
   - GraphQL Implementation: https://graphql.org/code/
   - Apollo Server (GraphQL Javascript server): https://www.apollographql.com/docs/apollo-server
   - GraphQL.js (First built GraphQL Javascript server): https://graphql.org/graphql-js/
+  - type-graphql (Create GraphQL schema and resolvers with TypeScript, using classes and decorators): https://typegraphql.com/docs/
 
 - Other Javascript Library/Framework
 
@@ -1903,6 +1905,16 @@ name = "Shin"; // name is "Shin" here.
 const name = "Shin";
 console.log("Hello" + name + "!"); // Bad: Hello Shin
 console.log(`Hello ${name}!`); // Good: Hello Shin
+```
+
+Multi-line strings: Template Literal을 사용하면 여러 줄의 문자열도 나눠서 작성할 필요가 없습니다.
+
+```
+// Template Literal
+console.log(`string text line 1
+string text line 2
+string text line 3
+`);
 ```
 
 #### If statement
@@ -7868,7 +7880,7 @@ $ git remote add https://...
 $ git remote add origin
 ```
 
-*.gitignore* file은 git에 upload하지 않은 files을 적어두는 곳이다. *node_modules*,  *dist*, *.env*와 같이 development 시에만 필요한 파일들을 적으면 된다.
+_.gitignore_ file은 git에 upload하지 않은 files을 적어두는 곳이다. _node_modules_, _dist_, *.env*와 같이 development 시에만 필요한 파일들을 적으면 된다.
 
 ```
 $ mkdir .gitignore
@@ -9092,13 +9104,18 @@ Express.js는 Javascript Back-end Framework로, Web Server을 만들 때 사용�
 
 ### Setup flask Project
 
-Install Flask module
+```
+# Install Flask module:
+$ pip install Flask
 
-> $ `pip install Flask`
+# Create flask application working directory
+$ mkdir flaskapp
 
-Create flask application working directory
+# Change directory to flaskapp
+$ cd flaskapp
+```
 
-> $ `mkdir flaskapp`
+flaskWeb Working Design:
 
 ```
 flaskWeb/
@@ -9131,7 +9148,101 @@ Web context를 전부 모은 directory를 `Web Application Server`라고 부른�
 - `static` folder는 정적이라는 의미로 서비스를 운영하는 데 변하지 않는 것
   - server에 요청하면 연산이 없이 바로 나가는 것들, images, css, js등이 해당된다.
 
-여기서 중요한 점은 `flask`를 사용할 때 `"templates"`, `"static"`이라는 폴더명을 변경해선 안된다. `flask`는 framework이기 때문에 `flask`가 요구하는 틀을 따라야지만 제대로 작동한다.
+여기서 중요한 점은 *flask*를 사용할 때 _"templates"_, *"static"*이라는 폴더명을 변경해선 안된다. *flask*는 framework이기 때문에 *flask*가 요구하는 틀을 따라야지만 제대로 작동한다.
+
+### Python requirements.txt
+
+_requirements.txt_ file은 *node.js*에서의 *package.json*의 역할을 한다. 이 project를 실행하기 위해 필요한 external libraries/frameworks를 나열한 파일이다.
+
+```
+# local computer에 설치 된 모든 external libraries/frameworks를 requirements.txt로 나열
+# 현재 project에는 필요없는 external libraries/frameworks는 requirements.txt에서 직접 삭제하면 된다.
+pip freeze > requirements.txt
+
+# node에서 install dependencies for given project
+$ npm i
+
+# Python에서 install dependencies for given project
+pip install -r requirements.txt
+```
+
+*requirements.txt* 예시:
+
+```
+beautifulsoup4==4.9.3
+boto3==1.18.6
+botocore==1.21.6
+bs4==0.0.1
+et-xmlfile==1.1.0
+Flask==2.0.1
+Flask-SQLAlchemy==2.5.1
+Flask-WTF==0.15.1
+future==0.18.2
+graphviz==0.14.1
+greenlet==1.1.0
+idna==2.10
+imap-tools==0.41.0
+isort==5.4.2
+itsdangerous==2.0.1
+Jinja2==3.0.1
+jmespath==0.10.0
+kiwisolver==1.3.1
+lazy-object-proxy==1.4.3
+lxml==4.6.3
+MarkupSafe==2.0.1
+matplotlib==3.4.1
+mccabe==0.6.1
+MechanicalSoup==1.1.0
+meteostat==1.5.10
+MouseInfo==0.1.3
+numpy==1.19.4
+oauthlib==3.1.1
+opencv-python==4.5.2.52
+openpyxl==3.0.7
+pandas==1.3.4
+parse==1.19.0
+pefile==2019.4.18
+Pillow==8.2.0
+psycopg2==2.9.1
+PyAutoGUI==0.9.52
+pycodestyle==2.8.0
+pyee==8.1.0
+PyGetWindow==0.0.9
+pyinstaller==4.3
+pyinstaller-hooks-contrib==2021.1
+pylint==2.6.0
+PyMsgBox==1.0.9
+PyMySQL==1.0.2
+pyparsing==2.4.7
+pyperclip==1.8.2
+pyppeteer==0.2.5
+pyquery==1.4.3
+PyRect==0.1.4
+PyScreeze==0.1.27
+PySocks==1.7.1
+python-dateutil==2.8.1
+pytz==2021.3
+pywin32-ctypes==0.2.0
+requests==2.25.1
+requests-html==0.10.0
+requests-oauthlib==1.3.0
+s3transfer==0.5.0
+selenium==3.141.0
+six==1.15.0
+soupsieve==2.2.1
+SQLAlchemy==1.4.21
+toml==0.10.1
+tqdm==4.61.1
+tweepy==3.10.0
+twitter-scraper==0.4.4
+urllib3==1.26.4
+w3lib==1.22.0
+websockets==8.1
+Werkzeug==2.0.1
+wrapt==1.12.1
+WTForms==2.3.3
+```
+
 
 ## 4. [Postgresql](https://www.postgresql.org/docs/)
 
@@ -10838,7 +10949,7 @@ React-Navigation library는 react-native에서 화면간 이동 시 필요한 na
 ## 다른 개발자들의 Code Examples
 
 - [Fullstack] GraphQL (Relay), React, TypeScript: https://codesandbox.io/s/relay-sandbox-nxl7i?file=/src/TodoApp.tsx
-- [Fullstack] GraphQL (Apollo-Server), React (+ Next), TypeScript: https://github.com/benawad/lireddit
+- [Fullstack] GraphQL (Apollo-Server), React, Next, TypeScript: https://github.com/benawad/lireddit
 - [Fullstack] MongoDB, React, Node (Express): https://github.com/bradtraversy/mern-tutorial
 
 ## REFERENCES

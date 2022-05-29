@@ -7868,6 +7868,17 @@ $ git remote add https://...
 $ git remote add origin
 ```
 
+*.gitignore* file은 git에 upload하지 않은 files을 적어두는 곳이다. *node_modules*,  *dist*, *.env*와 같이 development 시에만 필요한 파일들을 적으면 된다.
+
+```
+$ mkdir .gitignore
+
+// .gitignore
+dist
+node_modules
+.env
+```
+
 ### Git workflow
 
 ![gitworkflow2](img/git-workflow-1.png)

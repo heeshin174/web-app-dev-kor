@@ -131,6 +131,38 @@ Idea는 다음을 포함해야 한다.
   - Window developer setup (+ WSL)
     - [Chocolatey (Window package manager)](https://chocolatey.org/)
 
+#### MacOS setup
+
+MacOS: intall [_Homebrew_](https://brew.sh/)
+
+- Download Applications: `--cask`
+
+  - `brew install --cask visual-studio-code google-chrome brave-browser slack iterm2 discord`
+    - _iterm2_: MacOS terminal
+    - _slack_: messaging program designed specifically for the workplace
+    - _discord_: messaging program
+    - _visual-studio-code_: code editor
+    - _google-chrome_: web browser
+    - _brave-browser_: web browser
+
+- Download Programs:
+
+  - `$ brew install python@3.9 pipenv go nvm gh rust`
+    - _gh_: github command-line interface (cli)
+    - _nvm_: node version manager
+    - _python@3.9_: python programming language
+      - Also known as: python, python3, python@3
+    - _pipenv_: Python dependency management tool
+    - _go_: go programming language
+    - _rust_: rust programming language
+
+- Show all available node versions: `$ nvm ls-remote`
+
+  - Install node v17.3.1: `$ nvm install 17.3.1`
+  - Switch node version to v16.13.2: `$ nvm use 16.13.2`
+
+- github login: `$ gh auth login`
+
 #### Windows File Explorer
 
 **Everything**이라는 app을 설치하면 Window가 기본으로 제공하는 file exploerer 보다 더 빠르게 검색이 가능하다.
@@ -358,6 +390,7 @@ Front-End은 사용자가 웹사이트를 방문시 보게되는 화면, 즉 Use
       - CSS Framework
         - Vuetify: https://next.vuetifyjs.com
 
+- chart.js (graph and chart): https://www.chartjs.org/
 - redux (manage state): https://redux.js.org/introduction/getting-started
 - multer (upload files): https://github.com/expressjs/multer
 - electron (build a cross-platform desktop app): https://www.electronjs.org/
@@ -446,7 +479,7 @@ Back-End은 사용자가 웹사이트를 방문시 서버쪽에서 실행 할 Us
   - [Javascript](https://github.com/heeshin174/Web_App_Dev_Kor#3-javascript)
     - [Express](https://github.com/heeshin174/Web_App_Dev_Kor#2-expressjs): https://expressjs.com/
     - [Nest](https://github.com/heeshin174/Web_App_Dev_Kor#nestjs): https://nestjs.com/
-  - Python
+  - [Python](https://github.com/heeshin174/Web_App_Dev_Kor#python)
     - [Flask](https://github.com/heeshin174/Web_App_Dev_Kor#3-flaskpy): https://flask.palletsprojects.com
     - Django: https://docs.djangoproject.com/en/4.0/
   - [Rust](https://github.com/heeshin174/Web_App_Dev_Kor#rust)
@@ -1770,6 +1803,16 @@ age = "Hello"; // age에 string이 들어오면서, age의 타입이 string로 �
 
 왜 Javascript가 비동기적 프로그래밍을 지원하는지 생각해보면, 만약에 Javascript가 동기적으로만 처리된다면 우리는 서버가 모든 데이터를 불러올 때까지 아무 버튼도 누를수 없다.
 즉, 사용자 경험인 User Experiecne (UX)를 신경쓰기 위한 방법이다.
+
+### JavaScript Set Up
+
+- MacOS: intall [_Homebrew_](https://brew.sh/)
+
+  - `$ brew install nvm`
+
+- Show all available node versions: `$ nvm ls-remote`
+  - Install node v17.3.1: `$ nvm install 17.3.1`
+  - Switch node version to v16.13.2: `$ nvm use 16.13.2`
 
 ### Web browser 동작원리
 
@@ -9096,59 +9139,37 @@ app.use(cors());
 
 Express.js는 Javascript Back-end Framework로, Web Server을 만들 때 사용한다.
 
-## 3. [FlaskPy](https://flask.palletsprojects.com)
+## Python
 
-### What is Flask?
+Python is a high-level, interpreted, general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation. Python is dynamically-typed and garbage-collected.
 
-`Flask` is a micro web framework written in Python. Flask는 Python으로 구동되는 Web Framework로, 간단하게 기능을 설명하면 내가 만든 program에 web server를 구동시켜주는 편한 코드 모음이라고 할 수 있다. 다른 python으로 작성된 web framework인 `Django` 보다 코드가 가볍기때문에 간단한 API서버 구축에 적합하다. By default, Flask runs on port 5000 in development mode.
+- python은 compiled language가 아니라 interpreted language이다.
+  - interpreted language: _PHP_, _Ruby_, _Python_, _JavaScript_.
+  - compiled language: _C_, _C++_, _Erlang_, _Haskell_, _Rust_, _Go_
+- python은 dynamically-typed 언어이다.
+  - Data type을 명시하지 않아도 interpreter가 알아서 결정해준다.
 
-### Setup flask Project
+### Python Set Up
 
-```
-# Install Flask module:
-$ pip install Flask
+- MacOS: intall [_Homebrew_](https://brew.sh/)
+  - `$ brew install python3 pipenv`
 
-# Create flask application working directory
-$ mkdir flaskapp
+### Useful Python libraries/frameworks
 
-# Change directory to flaskapp
-$ cd flaskapp
-```
-
-flaskWeb Working Design:
-
-```
-flaskWeb/
-├─ newFlaskApp/
-│  ├─ static/
-│  │  ├─ css/
-│  |  ├─ images
-│  |  ├─ js
-│  ├─ templates/
-│  │  ├─ index.html
-│  ├─ server.py
-├─ flaskapp/
-│  ├─ static/
-│  │  ├─ css/
-│  |  ├─ images
-│  |  ├─ js
-│  ├─ templates/
-│  │  ├─ index.html
-│  ├─ server.py
-```
-
-한 project를 모은 directory를 Web context라고 부르고,
-Web context를 전부 모은 directory를 `Web Application Server`라고 부른다.
-
-위의 tree 구조에서:
-
-- Web Application Server = `flaskWeb`
-- Web context = `newFlaskApp`, `flaskapp`
-- `templates` folder는 HTML files을 모아두는 곳이다.
-- `static` folder는 정적이라는 의미로 서비스를 운영하는 데 변하지 않는 것
-  - server에 요청하면 연산이 없이 바로 나가는 것들, images, css, js등이 해당된다.
-
-여기서 중요한 점은 *flask*를 사용할 때 _"templates"_, *"static"*이라는 폴더명을 변경해선 안된다. *flask*는 framework이기 때문에 *flask*가 요구하는 틀을 따라야지만 제대로 작동한다.
+- boto3 (AWS): https://boto3.amazonaws.com/v1/documentation/api/latest/index.html
+- beautifulsoup4 (정적 web crawling): https://beautiful-soup-4.readthedocs.io/en/latest/
+- selenium (동적 web crawling): https://www.selenium.dev/documentation/
+- requests (HTTP library): https://pypi.org/project/requests/
+- openpyxl (read/write Excel 2010 xlsx/xlsm/xltx/xltm files): https://pypi.org/project/openpyxl/
+- Flask (web server): https://flask.palletsprojects.com/en/2.1.x/
+- Jinja2 (web template engine for the Python): https://jinja.palletsprojects.com/en/3.1.x/
+- matplotlib (creating static, animated, and interactive visualizations): https://matplotlib.org/stable/index.html
+- numpy (N-dimensional array): https://numpy.org/
+- Pygame (Game developement): https://pypi.org/project/pygame/
+- pandas (Python data analysis toolkit): https://pypi.org/project/pandas/
+- opencv-python (Pre-built CPU-only OpenCV packages for Python): https://pypi.org/project/opencv-python/
+- ensorFlow (machine Learning): https://www.tensorflow.org/install
+- psycopg2 (PostgreSQL database adapter for the Python): https://pypi.org/project/psycopg2/
 
 ### Python requirements.txt
 
@@ -9166,7 +9187,7 @@ $ npm i
 pip install -r requirements.txt
 ```
 
-*requirements.txt* 예시:
+_requirements.txt_ 예시:
 
 ```
 beautifulsoup4==4.9.3
@@ -9243,6 +9264,86 @@ wrapt==1.12.1
 WTForms==2.3.3
 ```
 
+### Python Ternary Operator
+
+The ternary operator is a way of writing conditional statements in Python. As the name ternary suggests, this Python operator consists of three operands.
+
+![Ternary-Operator](./img/conditional-operator.jpg)
+
+- Python: `var = true_val if condition else false_val`
+- Javascript: `let var = condition ? true_val : false_val`
+
+```
+# syntax
+var = true_val if condition else false_val
+
+# USING TERNARY OPERATOR
+to_check = 6
+msg = "Even" if to_check % 2 == 0 else "Odd"
+print(msg)
+
+# USING USUAL IF-ELSE
+msg = ""
+if to_check % 2 == 0:
+  msg = "Even"
+else:
+  msg = "Odd"
+print(msg)
+```
+
+## 3. [FlaskPy](https://flask.palletsprojects.com)
+
+### What is Flask?
+
+`Flask` is a micro web framework written in Python. Flask는 Python으로 구동되는 Web Framework로, 간단하게 기능을 설명하면 내가 만든 program에 web server를 구동시켜주는 편한 코드 모음이라고 할 수 있다. 다른 python으로 작성된 web framework인 `Django` 보다 코드가 가볍기때문에 간단한 API서버 구축에 적합하다. By default, Flask runs on port 5000 in development mode.
+
+### Setup flask Project
+
+```
+# Install Flask module:
+$ pip install Flask
+
+# Create flask application working directory
+$ mkdir flaskapp
+
+# Change directory to flaskapp
+$ cd flaskapp
+```
+
+flaskWeb Working Design:
+
+```
+flaskWeb/
+├─ newFlaskApp/
+│  ├─ static/
+│  │  ├─ css/
+│  |  ├─ images
+│  |  ├─ js
+│  ├─ templates/
+│  │  ├─ index.html
+│  ├─ server.py
+├─ flaskapp/
+│  ├─ static/
+│  │  ├─ css/
+│  |  ├─ images
+│  |  ├─ js
+│  ├─ templates/
+│  │  ├─ index.html
+│  ├─ server.py
+```
+
+한 project를 모은 directory를 Web context라고 부르고,
+Web context를 전부 모은 directory를 `Web Application Server`라고 부른다.
+
+위의 tree 구조에서:
+
+- Web Application Server = `flaskWeb`
+- Web context = `newFlaskApp`, `flaskapp`
+- `templates` folder는 HTML files을 모아두는 곳이다.
+- `static` folder는 정적이라는 의미로 서비스를 운영하는 데 변하지 않는 것
+  - server에 요청하면 연산이 없이 바로 나가는 것들, images, css, js등이 해당된다.
+
+여기서 중요한 점은 *flask*를 사용할 때 _"templates"_, *"static"*이라는 폴더명을 변경해선 안된다. *flask*는 framework이기 때문에 *flask*가 요구하는 틀을 따라야지만 제대로 작동한다.
 
 ## 4. [Postgresql](https://www.postgresql.org/docs/)
 
@@ -9281,10 +9382,6 @@ Set User name & User password => Network access IP Address => Connect => "Connet
 - add `MONGO_URI` to `.env` file
 
 `MONGO_URI = mongodb+srv://Shin:<password>@cluster0.sjhvl.mongodb.net/<myfirstDatabase>?retryWrites=true&w=majority`
-
-## [RocketRs](https://rocket.rs/)
-
-Rocket is a web framework for Rust that makes it simple to write fast, secure web applications without sacrificing flexibility, usability, or type safety. Rocket은 Rust 프로그래밍언어로 작성된 서버 사이드 웹 framework이다
 
 ## [Rust](https://www.rust-lang.org/)
 
@@ -9625,6 +9722,10 @@ Emscripten 등의 도구를 사용하면, C/C++ 등의 언어로 작성된 progr
 - wasm-pack: wasm-bindgen 기반 Rust 프로젝트를 다른 JavaScript 기반 프로젝트에서 쉽게 쓸 수 있도록 패키징해주는 도구
 
 - https://developer.mozilla.org/en-US/docs/WebAssembly/Rust_to_wasm
+
+## [RocketRs](https://rocket.rs/)
+
+Rocket is a web framework for Rust that makes it simple to write fast, secure web applications without sacrificing flexibility, usability, or type safety. Rocket은 Rust 프로그래밍언어로 작성된 서버 사이드 웹 framework이다
 
 ## [NestJs](https://nestjs.com/)
 

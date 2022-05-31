@@ -1812,7 +1812,126 @@ age = "Hello"; // age에 string이 들어오면서, age의 타입이 string로 �
 
 - Show all available node versions: `$ nvm ls-remote`
   - Install node v17.3.1: `$ nvm install 17.3.1`
+  - Uninstall node v17.3.1: `$ nvm uninstall 17.3.1`
   - Switch node version to v16.13.2: `$ nvm use 16.13.2`
+
+#### Javascript Snippets
+
+VSCode custom user snippets
+
+- _File -> Preferences -> User Snippets_
+
+or
+
+- `Ctrl + shift + P` -> type _User Snippets_
+  - MacOS `Command (⌘ cmd) + shift + P`: Open Command Palette
+
+type _javascript.json_
+
+- **snippets|javascript.json** (Javascript)
+  - _.js_ files
+
+```
+{
+  "console.log": {
+    "prefix": "cl",
+    "body": ["console.log($1)"],
+    "description": "console.log"
+  },
+  "constant": {
+    "prefix": "ct",
+    "body": ["const ${1:NAME} = $2;"],
+    "description": "constant"
+  },
+  "Named Function": {
+    "prefix": "fn",
+    "body": ["function ${1:functionName}($2) {", "  $3", " return $4", "}"],
+    "description": "Named Function"
+  },
+  "Arrow Function": {
+    "prefix": ["arfn", "arrow"],
+    "body": ["const $1 = ($2) => {", "  $3", "}"],
+    "description": "Arrow Function"
+  },
+  "Util Function": {
+    "prefix": "ut",
+    "body": ["export const $TM_FILENAME_BASE = () => {", "", "}"],
+    "description": "Util Function"
+  },
+  "Array Method": {
+    "prefix": "arrmth",
+    "body": [
+      "${1|forEach,map,filter,reduce,some|}((${2:item}) => {",
+      "  $3",
+      "})"
+    ],
+    "description": "Array Method"
+  },
+  "Error Handler": {
+    "prefix": ["try", "trycatch", "tc"],
+    "body": [
+      "try {",
+      " $1",
+      "} catch (err) {",
+      " console.log(err.message);$2",
+      "}"
+    ],
+    "description": "Handle the error"
+  },
+  "Node Require": {
+    "prefix": "ndrq",
+    "body": "const ${1:import} = require('${module}');",
+    "description": "Require a Node.js module"
+  },
+  "Fetch Request": {
+    "prefix": ["fetch", "fcr"],
+    "body": [
+      "fetch('${1:url}')",
+      "  .then(res => res.json())",
+      "  .then(data => console.log(data)$2)",
+      "  .catch(err => console.log(err.message)$3);"
+    ],
+    "description": "Fetch Request"
+  },
+  "asfetchreq": {
+    "prefix": "aafetch",
+    "body": [
+      "const $1 = async () => {",
+      " try {",
+      "   const res = await fetch('${2:url}');",
+      "   const data = await res.json();$3",
+      "   console.log(data);",
+      " } catch (err) {",
+      "   console.error(err.message);$4",
+      " }",
+      "}"
+    ],
+    "description": "Fetch Async/Await"
+  },
+  "Express Server": {
+    "prefix": ["express", "expsrv"],
+    "body": [
+      "const express = require('express');",
+      "",
+      "const app = express();",
+      "",
+      "app.${1|get,post,put,delete|}('${2:route}', (req, res) => {",
+      "  $3",
+      "});",
+      "",
+      "const PORT = process.env.PORT || ${4|3000,5000,8000,8080|};",
+      "",
+      "app.listen(PORT, () => console.log(`Server Running On Port ${PORT}`));"
+    ],
+    "description": "Express Server"
+  },
+  "Express Route": {
+    "prefix": "exprt",
+    "body": "app.${1|get,post,put,delete|}('${3:/}', (req, res) => {});",
+    "description": "Express Route"
+  }
+}
+```
 
 ### Web browser 동작원리
 
@@ -3832,19 +3951,7 @@ Typescript는 Javascript의 superset으로 Java처럼 변수를 선언할 때, �
 
 즉, 큰 project을 만들 떈 Javascript가 제공하는 자유도 & 유연성은 오히려 안좋다. 그럼으로 Typescript를 사용해 자유도를 낮춰서 사용하는 것이다.
 
-### Typescript 장점
-
-**Typescript를 이용하면, 변수의 type을 지정해 주어야만 하기 떄문에, 어디선가 error가 발생하면 어디서 무엇이 잘 못 되었는 지 꽤 자세하게 알려준다.**
-
-- 일반 JavaScript보다 친절한 compiler.
-
-```
-let decimal: number = 6;
-// decimal에는 number data type만 오는 것이 가능하고, 6이란 값을 assign한다.
-decimal = "Hello"; // error: decimal은 number만 가능
-```
-
-### Typescript 실행
+### Typescript Set Up
 
 1. 최신 _node.js_ 설치
    - `$ npm init -y`: _package.json_ 생성
@@ -3866,6 +3973,122 @@ decimal = "Hello"; // error: decimal은 number만 가능
     "dev": "nodemon dist/index.js",
     "start": "node dist/index.js",
   },
+```
+
+#### Typescript Snippets
+
+VSCode custom user snippets
+
+- _File -> Preferences -> User Snippets_
+
+or
+
+- `Ctrl + shift + P` -> type _User Snippets_
+  - MacOS `Command (⌘ cmd) + shift + P`: Open Command Palette
+
+type _typescript.json_
+
+- **snippets|typescript.json** (Typescript)
+  - _.ts_ files
+
+```
+{
+  "console.log": {
+    "prefix": "cl",
+    "body": ["console.log($1)"],
+    "description": "console.log"
+  },
+  "constant": {
+    "prefix": "ct",
+    "body": ["const ${1:NAME} = $2;"],
+    "description": "constant"
+  },
+  "Named Function": {
+    "prefix": "fn",
+    "body": ["function ${1:functionName}($2) {", "  $3", " return $4", "}"],
+    "description": "Named Function"
+  },
+  "Arrow Function": {
+    "prefix": ["arfn", "arrow"],
+    "body": ["const $1 = ($2) => {", "  $3", "}"],
+    "description": "Arrow Function"
+  },
+  "Util Function": {
+    "prefix": "ut",
+    "body": ["export const $TM_FILENAME_BASE = () => {", "", "}"],
+    "description": "Util Function"
+  },
+  "Array Method": {
+    "prefix": "arrmth",
+    "body": [
+      "${1|forEach,map,filter,reduce,some|}((${2:item}) => {",
+      "  $3",
+      "})"
+    ],
+    "description": "Array Method"
+  },
+  "Error Handler": {
+    "prefix": ["try", "trycatch", "tc"],
+    "body": [
+      "try {",
+      " $1",
+      "} catch (err) {",
+      " console.log(err.message);$2",
+      "}"
+    ],
+    "description": "Handle the error"
+  },
+  "Fetch Request": {
+    "prefix": ["fetch", "fcr"],
+    "body": [
+      "fetch('${1:url}')",
+      "  .then(res => res.json())",
+      "  .then(data => console.log(data)$2)",
+      "  .catch(err => console.log(err.message)$3);"
+    ],
+    "description": "Fetch Request"
+  },
+  "asfetchreq": {
+    "prefix": "aafetch",
+    "body": [
+      "const $1 = async () => {",
+      " try {",
+      "   const res = await fetch('${2:url}');",
+      "   const data = await res.json();$3",
+      "   console.log(data);",
+      " } catch (err) {",
+      "   console.error(err.message);$4",
+      " }",
+      "}"
+    ],
+    "description": "Fetch Async/Await"
+  },
+  "Type GraphQL Resolver": {
+    "prefix": "resolver",
+    "body": [
+      "import { Resolver } from \"type-graphql\";",
+      "",
+      "@Resolver()",
+      "export class $1Resolver {",
+      "  @$2()",
+      "  async $3() {}",
+      "}"
+    ],
+    "description": "TypeGraphQL Resolver"
+  }
+}
+```
+
+### Typescript 장점
+
+**Typescript를 이용하면, 변수의 type을 지정해 주어야만 하기 떄문에, 어디선가 error가 발생하면 어디서 무엇이 잘 못 되었는 지 꽤 자세하게 알려준다.**
+
+- 일반 JavaScript보다 친절한 compiler.
+
+```
+let decimal: number = 6;
+// decimal에는 number data type만 오는 것이 가능하고, 6이란 값을 assign한다.
+decimal = "Hello"; // error: decimal은 number만 가능
 ```
 
 ### Typescript Data Types
@@ -4696,10 +4919,269 @@ React 말고도 Vue, Svelte나 Angular 등 다른 Web app를 만들 수 있는 f
 
 #### Web app을 만드는데 굳이 React를 사용하는 이유는 무엇인가?
 
-- A1. **React는 사용자가 가장 많은 library이기 때문에 교육자료도 많고, 참고할 자료도 매우 많다.**
+- **React는 사용자가 가장 많은 library이기 때문에 교육자료도 많고, 참고할 자료도 매우 많다.**
   - React가 web app을 만드는 library/framework들 중에 사용자가 가장 많아서 취업에도 유리하고, 교육용 자료들을 쉽게 찾을 수 있다.
-- A2. **다른 framework와 마찬가지로, React는 component단위로 Element를 관리하기 때문에, 이를 함수처럼 사용할 수 있고 재사용 (reusable)이 쉽다.**
-- A3. **핵심적으로 Javascript를 declarative way (선언형) 으로 작성할 수 있다.**
+- **다른 framework와 마찬가지로, React는 component단위로 Element를 관리하기 때문에, 이를 함수처럼 사용할 수 있고 재사용 (reusable)이 쉽다.**
+- **핵심적으로 Javascript를 declarative way (선언형) 으로 작성할 수 있다.**
+
+### React Set Up
+
+React를 사용하기 위해서는 최신 버전의 `node.js`가 필요하다.
+
+- Node.js
+  - `$ node -v` 입력 후 최신 버전이 설치되어 있는 지 확인한다.
+
+#### React Snippets
+
+VSCode custom user snippets
+
+- _File -> Preferences -> User Snippets_
+
+or
+
+- `Ctrl + shift + P` -> type _User Snippets_
+  - MacOS `Command (⌘ cmd) + shift + P`: Open Command Palette
+
+type _javascriptreact.json_
+
+- **snippets|javascriptreact.json** (JavaScript + React)
+  - _.js, .jsx_ files
+
+```
+{
+  "console.log": {
+    "prefix": "cl",
+    "body": ["console.log($1)"],
+    "description": "console.log"
+  },
+  "constant": {
+    "prefix": "ct",
+    "body": ["const ${1:NAME} = $2;"],
+    "description": "constant"
+  },
+  "Named Function": {
+    "prefix": "fn",
+    "body": ["function ${1:functionName}($2) {", "  $3", " return $4", "}"],
+    "description": "Named Function"
+  },
+  "Arrow Function": {
+    "prefix": ["arfn", "arrow"],
+    "body": ["const $1 = ($2) => {", "  $3", "}"],
+    "description": "Arrow Function"
+  },
+  "Util Function": {
+    "prefix": "ut",
+    "body": ["export const $TM_FILENAME_BASE = () => {", "", "}"],
+    "description": "Util Function"
+  },
+  "Array Method": {
+    "prefix": "arrmth",
+    "body": [
+      "${1|forEach,map,filter,reduce,some|}((${2:item}) => {",
+      "  $3",
+      "})"
+    ],
+    "description": "Array Method"
+  },
+  "Error Handler": {
+    "prefix": ["try", "trycatch", "tc"],
+    "body": [
+      "try {",
+      " $1",
+      "} catch (err) {",
+      " console.log(err.message);$2",
+      "}"
+    ],
+    "description": "Handle the error"
+  },
+  "Node Require": {
+    "prefix": "ndrq",
+    "body": "const ${1:import} = require('${module}');",
+    "description": "Require a Node.js module"
+  },
+  "Fetch Request": {
+    "prefix": ["fetch", "fcr"],
+    "body": [
+      "fetch('${1:url}')",
+      "  .then(res => res.json())",
+      "  .then(data => console.log(data)$2)",
+      "  .catch(err => console.log(err.message)$3);"
+    ],
+    "description": "Fetch Request"
+  },
+  "asfetchreq": {
+    "prefix": "aafetch",
+    "body": [
+      "const $1 = async () => {",
+      " try {",
+      "   const res = await fetch('${2:url}');",
+      "   const data = await res.json();$3",
+      "   console.log(data);",
+      " } catch (err) {",
+      "   console.error(err.message);$4",
+      " }",
+      "}"
+    ],
+    "description": "Fetch Async/Await"
+  },
+  "Express Server": {
+    "prefix": ["express", "expsrv"],
+    "body": [
+      "const express = require('express');",
+      "",
+      "const app = express();",
+      "",
+      "app.${1|get,post,put,delete|}('${2:route}', (req, res) => {",
+      "  $3",
+      "});",
+      "",
+      "const PORT = process.env.PORT || ${4|3000,5000,8000,8080|};",
+      "",
+      "app.listen(PORT, () => console.log(`Server Running On Port ${PORT}`));"
+    ],
+    "description": "Express Server"
+  },
+  "Express Route": {
+    "prefix": "exprt",
+    "body": "app.${1|get,post,put,delete|}('${3:/}', (req, res) => {});",
+    "description": "Express Route"
+  }
+}
+```
+
+type _typescriptreact.json_
+
+- **snippets|typescript.json** (TypeScript + React)
+  - _.ts, .tsx_ files
+
+```
+{
+  "console.log": {
+    "prefix": "cl",
+    "body": ["console.log($1)"],
+    "description": "console.log"
+  },
+  "constant": {
+    "prefix": "ct",
+    "body": ["const ${1:NAME} = $2;"],
+    "description": "constant"
+  },
+  "Named Function": {
+    "prefix": "fn",
+    "body": ["function ${1:functionName}($2) {", "  $3", " return $4", "}"],
+    "description": "Named Function"
+  },
+  "Arrow Function": {
+    "prefix": ["arfn", "arrow"],
+    "body": ["const $1 = ($2) => {", "  $3", "}"],
+    "description": "Arrow Function"
+  },
+  "Util Function": {
+    "prefix": "ut",
+    "body": ["export const $TM_FILENAME_BASE = () => {", "", "}"],
+    "description": "Util Function"
+  },
+  "Array Method": {
+    "prefix": "arrmth",
+    "body": [
+      "${1|forEach,map,filter,reduce,some|}((${2:item}) => {",
+      "  $3",
+      "})"
+    ],
+    "description": "Array Method"
+  },
+  "Error Handler": {
+    "prefix": ["try", "trycatch", "tc"],
+    "body": [
+      "try {",
+      " $1",
+      "} catch (err) {",
+      " console.log(err.message);$2",
+      "}"
+    ],
+    "description": "Handle the error"
+  },
+  "Fetch Request": {
+    "prefix": ["fetch", "fcr"],
+    "body": [
+      "fetch('${1:url}')",
+      "  .then(res => res.json())",
+      "  .then(data => console.log(data)$2)",
+      "  .catch(err => console.log(err.message)$3);"
+    ],
+    "description": "Fetch Request"
+  },
+  "asfetchreq": {
+    "prefix": "aafetch",
+    "body": [
+      "const $1 = async () => {",
+      " try {",
+      "   const res = await fetch('${2:url}');",
+      "   const data = await res.json();$3",
+      "   console.log(data);",
+      " } catch (err) {",
+      "   console.error(err.message);$4",
+      " }",
+      "}"
+    ],
+    "description": "Fetch Async/Await"
+  },
+  "Twind": {
+    "prefix": "cc",
+    "body": ["className={tw`$1`}"],
+    "description": "Twind"
+  },
+  "Typescript React Function Component": {
+    "prefix": "rh",
+    "body": [
+      "import React from 'react'",
+      "",
+      "interface ${TM_FILENAME_BASE}Props {",
+      "$1",
+      "}",
+      "",
+      "export const $TM_FILENAME_BASE: React.FC<${TM_FILENAME_BASE}Props> = ({$2}) => {",
+      "\t\treturn ($3);",
+      "}"
+    ],
+    "description": "Typescript React Function Component"
+  },
+  "React Native StyleSheet": {
+    "prefix": "rnss",
+    "body": [
+      "import {StyleSheet} from 'react-native'",
+      "const styles = StyleSheet.create({",
+      "",
+      "});"
+    ],
+    "description": "React Native StyleSheet"
+  },
+  "Toggle State": {
+    "prefix": "tog",
+    "body": ["this.setState(state => ({", "\topen: !state.open", "}));"],
+    "description": "toggle state"
+  },
+  "Apollo Query Component": {
+    "prefix": "apq",
+    "body": [
+      "interface Props {",
+      "  children: (data: QueryResult<$1, OperationVariables>) => JSX.Element;",
+      "}",
+      "",
+      "export class $2 extends React.PureComponent<Props> {",
+      "  render() {",
+      "    return (",
+      "     <Query<$1> query={$3}>{x => this.props.children(x)}</Query>",
+      "    );",
+      "  }",
+      "}"
+    ],
+    "description": "Apollo Query Component"
+  }
+}
+```
+
+- https://gist.github.com/benawad/1e9dd01994f78489306fbfd6f7b01cd3
 
 ### Imperative and Declarative Programming
 
@@ -4801,13 +5283,6 @@ const mydata = API()
 - Libraray: React.js, Bootstrap, ...
 - Framework: Vue.js, Flask.py, Django.py, Nest.js, Next.js, ...
 
-### React Set Up
-
-React를 사용하기 위해서는 최신 버전의 `node.js`가 필요하다.
-
-- Node.js
-  - `$ node --version` 입력 후 설치되어 있는 지 확인한다.
-
 #### React app 생성
 
 ```
@@ -4828,240 +5303,6 @@ $ npm start
 
 // code를 다 작성 후 deploy 할 때 사용할 static asset 생성
 $ npm run build
-```
-
-### ReactJs Snippets
-
-#### ES7+ React/Redux/React-Native snippets
-
-VScode extension인 `ES7+ React/Redux/React-Native snippets`을 설치하면 `rafce`만 code에 입력하면 arrow function이 자동적으로 완성된다.
-React code, 특히 components를 작성할 떄, 매우 간편하게 사용할 수 있다.
-
-```
-// rafc
-import React from 'react';
-
-export const $1 = () => {
-  return <div>$0</div>;
-};
-
-// _rafc
-export const $1 = () => {
-  return <div>$0</div>;
-};
-
-// rafce
-import React from 'react';
-
-const $1 = () => {
-  return <div>$0</div>;
-};
-
-export default $1;
-
-// _rafce
-const $1 = () => {
-  return <div>$0</div>;
-};
-
-export default $1;
-```
-
-#### Custom Snippets for React
-
-위의 VSCode extensions을 설치하기 싫다면 다음과 같이 Custom Snippets를 작성한다.
-
-1. `Ctrl + Shift + P`로 Command Palette 열기
-
-- MacOS `Command (⌘ cmd) + shift + P`: Open Command Palette
-
-2. `Configure User Snippets` 검색
-3. `react` 검색
-4. 아래 코드 복사 후 붙혀넣기
-
-또는
-
-1. `File` 선택 후 `Preferences` 열기
-2. `User Snippets` 선택
-3. `react` 검색
-4. 아래 코드 복사 후 붙혀넣기
-
-- `snippets|javascriptreact.json` (JavaScript + React)
-  - `.js, .jsx` files
-
-```
-{
-  // Place your snippets for javascriptreact here. Each snippet is defined under a snippet name and has a prefix, body and
-  // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
-  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
-  // same ids are connected.
-  // Example:
-  "Error Handler": {
-    "prefix": ["try", "trycatch"],
-    "body": [
-      "try {",
-      " $1",
-      "} catch (err) {",
-      " console.log(err.message);",
-      "}"
-    ],
-    "description": "Handle the error"
-  },
-  "Javascript React Function Component": {
-    "prefix": "rafc",
-    "body": [
-      "import React from 'react'",
-      "",
-      "export default $TM_FILENAME_BASE = () => {",
-      " $1",
-      " return ();",
-      "}"
-    ],
-    "description": "Javascript React Function Component"
-  },
-  "Javascript React Function Component w/o import": {
-    "prefix": "_rafc",
-    "body": [
-      "export default $TM_FILENAME_BASE = () => {",
-      " $1",
-      " return ();",
-      "}"
-    ],
-    "description": "Javascript React Function Component w/o import"
-  },
-  "h1 tag": {
-    "prefix": "h1",
-    "body": ["<h1 className='$1'></h1>"],
-    "description": "h1 tag"
-  },
-  "h2 tag": {
-    "prefix": "h2",
-    "body": ["<h2 className='$1'></h2>"],
-    "description": "h2 tag"
-  },
-  "h3 tag": {
-    "prefix": "h3",
-    "body": ["<h3 className='$1'></h3>"],
-    "description": "h3 tag"
-  },
-  "div tag": {
-    "prefix": "div",
-    "body": ["<div className='$1'></div>"],
-    "description": "div tag"
-  },
-  "p tag": {
-    "prefix": "p",
-    "body": ["<p className='$1'></p>"],
-    "description": "p tag"
-  },
-  "React Native StyleSheet": {
-    "prefix": "rnss",
-    "body": [
-      "import {StyleSheet} from 'react-native'",
-      "const styles = StyleSheet.create({",
-      "",
-      "});"
-    ],
-    "description": "React Native StyleSheet"
-  },
-  "console.log": {
-    "prefix": "cl",
-    "body": ["console.log($1)"],
-    "description": "console.log"
-  },
-  "className={classnames()}": {
-    "prefix": "cc",
-    "body": ["className={classnames('$1')}"],
-    "description": "tailwind react stuff"
-  }
-}
-```
-
-- `snippets|typescript.json` (TypeScript + React)
-  - `.ts, .tsx` files
-
-```
-{
-  // Place your snippets for typescriptreact here. Each snippet is defined under a snippet name and has a prefix, body and
-  // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
-  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
-  // same ids are connected.
-  // Example:
-  "Error Handler": {
-    "prefix": ["try", "trycatch"],
-    "body": [
-      "try {",
-      " $1",
-      "} catch (err) {",
-      " console.log(err.message);",
-      "}"
-    ],
-    "description": "Handle the error"
-  },
-  "Twind": {
-    "prefix": "cc",
-    "body": ["className={tw`$1`}"],
-    "description": "Twind"
-  },
-
-  "Typescript React Function Component": {
-    "prefix": "rh",
-    "body": [
-      "import React from 'react'",
-      "",
-      "interface ${TM_FILENAME_BASE}Props {",
-      "$1",
-      "}",
-      "",
-      "export const $TM_FILENAME_BASE: React.FC<${TM_FILENAME_BASE}Props> = ({$2}) => {",
-      "\t\treturn ($3);",
-      "}"
-    ],
-    "description": "Typescript React Function Component"
-  },
-  "React Native StyleSheet": {
-    "prefix": "rnss",
-    "body": [
-      "import {StyleSheet} from 'react-native'",
-      "const styles = StyleSheet.create({",
-      "",
-      "});"
-    ],
-    "description": "React Native StyleSheet"
-  },
-  "Toggle State": {
-    "prefix": "tog",
-    "body": ["this.setState(state => ({", "\topen: !state.open", "}));"],
-    "description": "toggle state"
-  },
-  "console.log": {
-    "prefix": "cl",
-    "body": ["console.log($1)"],
-    "description": "console.log"
-  },
-  "className={classnames()}": {
-    "prefix": "cc",
-    "body": ["className={classnames('$1')}"],
-    "description": "tailwind react stuff"
-  },
-  "Apollo Query Component": {
-    "prefix": "apq",
-    "body": [
-      "interface Props {",
-      "  children: (data: QueryResult<$1, OperationVariables>) => JSX.Element;",
-      "}",
-      "",
-      "export class $2 extends React.PureComponent<Props> {",
-      "  render() {",
-      "    return (",
-      "     <Query<$1> query={$3}>{x => this.props.children(x)}</Query>",
-      "    );",
-      "  }",
-      "}"
-    ],
-    "description": "Apollo Query Component"
-  }
-}
 ```
 
 ### JSX Extension

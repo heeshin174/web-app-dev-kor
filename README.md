@@ -893,9 +893,9 @@ Semantic elements = **tag을 사용하는 것만으로도 의미를 가지는 El
 
 ### Search Engine Optimazatoin (SEO)
 
-`Search Engine Optimazatoin (SEO)`는 내가 만든 web site가 Google, Naver와 같은 search engine에 많이 노출되게 하는 방법을 의미한다. 이 검색 엔진에 노출이 되려면, 서버가 가지고 있는 HTML이 텅 비어있으면 안된다. 이는 검색 엔진이 서버의 HTML파일을 확인하면서 검색 엔진에 노출시키는 구조이기 때문이다.
+**Search Engine Optimazatoin (SEO)는** 내가 만든 web site가 Google, Naver와 같은 search engine에 많이 노출되게 하는 방법을 의미한다. 이 검색 엔진에 노출이 되려면, 서버가 가지고 있는 HTML이 텅 비어있으면 안된다. 이는 검색 엔진이 서버의 HTML파일을 확인하면서 검색 엔진에 노출시키는 구조이기 때문이다.
 
-React.js, Vue.js와 같은 Frontend library/framework로 만들어진 사이트의 경우, Client-Side Rendering (CSR)을 이용한다. CSR에서 서버는 텅 빈 html을 가지고 있다가 사용자에게 넘겨주고, 사용자의 컴퓨터에서 HTML이 완성되기 때문에 검색엔진에 노출되기 어렵다. 그럼으로 Server-Side Rendering (SSR)을 지원하는 Next.js나 Nuxt.js 같은 meta-frameworks을 이용하여 검색 엔진에 많이 노출되게 만들 수 있다.
+_React.js_, *Vue.js*와 같은 Frontend library/framework로 만들어진 사이트의 경우, **Client-Side Rendering (CSR)을** 이용한다. CSR에서 서버는 텅 빈 html을 가지고 있다가 사용자에게 넘겨주고, 사용자의 컴퓨터에서 HTML이 완성되기 때문에 검색엔진에 노출되기 어렵다. 그럼으로 **Server-Side Rendering (SSR)을** 지원하는 *Next.js*나 _Nuxt.js_ 같은 meta-frameworks을 이용하여 검색 엔진에 많이 노출되게 만들 수 있다.
 
 ## 2. CSS
 
@@ -919,17 +919,17 @@ CSS can be added to HTML documents in 3 ways:
 <!DOCTYPE html>
 <html>
   <head>
-  <style>
-  body {
-    background-color: powderblue;
-  }
-  h1 {
-    color: blue;
-  }
-  p {
-    color: red;
-  }
-  </style>
+    <style>
+      body {
+        background-color: powderblue;
+      }
+      h1 {
+        color: blue;
+      }
+      p {
+        color: red;
+      }
+    </style>
   </head>
   <body>
     <h1>This is a heading</h1>
@@ -939,18 +939,18 @@ CSS can be added to HTML documents in 3 ways:
 ```
 
 3. External
-   - using a `<link>` element to link to an external CSS file
+   - using a `<link>` element on the `<head>` tag to link to an external CSS file
 
 ```
 <html>
 <head>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="./css/styles.css">
 </head>
 ...
 </html>
 ```
 
-**CSS사용법 예시:**
+### CSS 사용법
 
 - 자주 사용할 색상을 `:root`에 변수로 저장하면, 모든 Element에 다음의 색상을 쉽게 이용가능하다.
 
@@ -966,6 +966,7 @@ CSS can be added to HTML documents in 3 ways:
   --primary-mint: #11abb0;
 }
 
+/* col class 안의 h1 tag */
 .col h1 {
   color: var(--primary-white);
   width: 600px;
@@ -975,18 +976,17 @@ CSS can be added to HTML documents in 3 ways:
 /* line-height: 줄 사이 간격 */
 ```
 
-- body tag에는 `margin: 8px`이 default로 설정되어 있다. (Wild card/전체 선택: \*)
+- `<body>` tag에는 `margin: 8px`이 default로 설정되어 있다. (Wild card/전체 선택: \*)
 
 ```
-// 기본 설정 없애기
+/* body tag의 기본 설정 없애기 */
 * {
   margin:0;
   box-sizing: border-box;
 }
 ```
 
-- 사용할 font를 import하기 (Google-font)
-  - google에 `goole font` 입력 후 원하는 font를 import
+- 사용할 font를 import하기 (Google-font): google에 _google font_ 입력 후 원하는 font를 import
 
 ```
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;900&display=swap");
@@ -998,13 +998,12 @@ body {
 }
 ```
 
-`id`와 `class`의 다른점은 `id`는 한 element에게 고유한 값이고, `class`는 여러 element에게 같은 값을 설정할 수 있다.
-id가 class보다 우선 순위를 가진다.
+*id*와 *class*의 다른점은 *id*는 한 element에게 고유한 값이고, *class*는 여러 element에게 같은 값을 설정할 수 있다. id가 class보다 우선 순위를 가진다.
 
 - `id=box`인 HTMLElement의 style 변경 (**id selector: #**)
 
 ```
-#id {
+#box {
   /* background를 주어진 url로 교체 */
   background: url("../../img/istockphoto-1032782930-640x640.jpg") no-repeat;
   /* vh는 view height로 현재 보이는 화면의 90%를 채운다 */
@@ -1070,6 +1069,32 @@ id가 class보다 우선 순위를 가진다.
 - border (top/bottom/left/right)
 - padding (top/bottom/left/right)
 
+```
+// 모든 margin에 5px 추가
+margin: 5px;
+
+/* margin top과 bottom에는 5px,
+margin left와 right에는 10px 추가 */
+margin: 5px 10px;
+
+margin-top: 5px;
+margin-bottom: 5px;
+margin-left: 5px;
+margin-right: 5px;
+
+// 모든 padding에 5px 추가
+padding: 5px;
+
+/* padding top과 bottom에는 5px,
+padding left와 right에는 10px 추가 */
+padding: 5px 10px;
+
+padding-top: 5px;
+padding-bottom: 5px;
+padding-left: 5px;
+padding-right: 5px;
+```
+
 ![Styling](img/cssstyle.png)
 
 - `padding`은 content 안에 여백을 주고, `margin`은 content 외부에 여백을 준다.
@@ -1077,6 +1102,8 @@ id가 class보다 우선 순위를 가진다.
 - `border`는 테두리를 의미한다. border를 이용하면, 박스를 만들고 밑줄을 추가하는 등 여러가지를 할 수 있다.
 
   - `border-bottom: 5px`: content에 밑줄을 추가
+  - `border-radius: 10px`: content의 테두리 모서리를 10px만큼 둥글게 만들기
+  - `border-style: solid / dotted / double`
 
 - The `border` property is a shorthand property for:
 
@@ -1086,13 +1113,13 @@ border: border-width border-style (required) border-color
 * {
   border: 1px solid black
 }
-// is equivalent to
+
+/* is equivalent to */
 * {
   border-width: 1px
   border-style: solid
   border-color: black
 }
-// border-style: solid/dotted/double`
 ```
 
 ### Layouts
@@ -1225,7 +1252,7 @@ flex-wrap: wrap;
 
 #### Grid
 
-`Grid`에는 **grid container**와 **grid item**이 존재한다. grid container는 grid item들을 담는 박스가 된다.
+**Grid**에는 **grid container**와 **grid item**이 존재한다. grid container는 grid item들을 담는 박스가 된다.
 
 - `display: grid;`를 주면 그 HTMLElement는 grid container가 되고, 그 container의 직속 children들이 grid item이 된다.
 
@@ -1258,8 +1285,6 @@ Flexbox와 Grid의 큰 차이점은
     - 6개: 160px ((1080 -20 - 100) / 6)
 
 ![gridguide](img/gridguide.png)
-
-- [이번에야말로 CSS Grid를 익혀보자](https://studiomeal.com/archives/533)
 
 #### Table
 
@@ -11059,7 +11084,7 @@ Mobile App을 만들 때 Flutter나 Swift처럼 하나의 mobile os에 종속된
 - ios: Swift
 - 두 mobile os 동시 가능 (Crossover platform): React-native
 
-### Mobile Font-Size (24px - 40px)
+### Mobile Font-Size (24 ~ 40px)
 
 모바일에서는 font가 24px이면 매우 작은 사이즈이다. 24px는 사용자가 집중해서 보면 보이는 정도이다.
 
@@ -11282,19 +11307,59 @@ React-Navigation library는 react-native에서 화면간 이동 시 필요한 na
 
 등 여러 가지의 navigators를 제공한다.
 
-- [Combining Stack, Tab & Drawer Navigations in React Native With React Navigation 5](https://dev.to/easybuoy/combining-stack-tab-drawer-navigations-in-react-native-with-react-navigation-5-da)
+## 3. Web Design
 
-#### [React-Navigation Authentication flows](https://reactnavigation.org/docs/auth-flow/)
+Web Design은 element끼리의 Grouping이 중요하다. 묶여야 되는 것은 가까이, 구분되어야 되는 것은 멀리 배치한다.
 
-### [Stripe (Payment)](https://stripe.com/docs/payments/accept-a-payment?platform=react-native)
+- 한글 font: _noto sans cjk kr_
+- 영어 font: _Roboto_
+- lAl = -3
+  - `letter-spacing: -0.03em;`
+- 위아래 border A = 64 또는 22
+  - `line-height: 64px;`
+  - `line-height: 22px;`
+- Image background는 살짝 투명도를 줘 그 위의 text를 잘 보이게 한다.
+  - `opacity : 0.2 (20%)`
+- Desktop Full width: 1920px
 
-## 다른 개발자들의 Code Examples
+### Layout
 
-- [Fullstack] GraphQL (Relay), React, TypeScript: https://codesandbox.io/s/relay-sandbox-nxl7i?file=/src/TodoApp.tsx
-- [Fullstack] GraphQL (Apollo-Server), React, Next, TypeScript: https://github.com/benawad/lireddit
-- [Fullstack] MongoDB, React, Node (Express): https://github.com/bradtraversy/mern-tutorial
+- Web design시 width는 보통 1920px를 사용한다.
+- 그럴 경우 content witdh를 1320px, 1440px, 1080px, 1280px 로 잡아 grid를 나눈다.
+  - 1320px은 생각보다 넓은 grid이다.
+  - 1320px: 110px rectangle => 12개
+    - 110px: 20, 70, 20 또는 15, 80, 15
+    - 2개: 620px ((1320 - 40 - 40) / 2)
+    - 3개: 400px ((1320 - 40 - 80) / 3)
+    - 4개: 290px ((1320 - 40 - 120) / 4)
+    - 5개: 224px ((1320 - 40 - 160) / 5)
+    - 6개: 180px ((1320 - 40 - 200) / 6)
+  - 1080px: 90px rectangle => 12개
+    - 90px: 10, 70, 10
+    - 2개: 520px ((1080 -20 - 20) / 2)
+    - 3개: 340px ((1080 -20 - 40) / 3)
+    - 4개: 250px ((1080 -20 - 60) / 4)
+    - 5개: 196px ((1080 -20 - 80) / 5)
+    - 6개: 160px ((1080 -20 - 100) / 6)
+  - 1280px:
+    - 3개: 380px \ 70 \ 380px \ 70 \ 380px
 
-## REFERENCES
+![gridguide](img/gridguide.png)
 
-- [Web Development In 2022 - A Practical Guide](https://www.youtube.com/watch?v=EqzUcMzfV1w)
-- [2022 웹개발 로드맵 총정리 (공부순서 알려드림) | 올해는 정말 해보자 🚀](https://www.youtube.com/watch?v=TTLHd3IyErM
+### Font와 Color
+
+Font는 그렇게 클 필요가 없다. 중요하고 강조하고 싶은 문구는 엄청 크게, 그에 대한 설명은 엄청 작게 해서 대조를 주는 방법도 좋다.
+
+- 제목: 35 ~ 45px
+  - black: #000
+  - black_900: #191919
+  - black_800: #1d1d1f
+  - black_700: #333
+- 설명: 14 ~ 24px
+  - black_600: #424245
+  - black_500: #505050
+  - black_400: #767676
+  - gray: #999
+  - gray_200: #626273
+  - gray_100: #ccc
+  - black_700: #333

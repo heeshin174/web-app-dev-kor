@@ -1,25 +1,28 @@
 # Web Application Development Korean ver
 
-목표: Web Application Development을 이해하고 나만의 web app을 만들어보자.
+**목표: Web Application Development을 이해하고 나만의 web app을 만들어보자.**
 
-아래의 내용은 간단한 개념위주로, 개념만 공부해서는 이해하기 힘들다. **실제 project를 만들면서 필요한 부분들을 이 곳에서 참고히면 된다.**
+아래의 내용은 간단한 개념위주로, 개념만 공부해서는 전부를 이해하기 힘들다. **실제 project를 만들면서 필요한 부분들을 이 곳에서 참고히면 된다.**
 
 - 개발자로서 하나의 blog를 가지고 있다면 본인이 배운 내용들을 정리하기에도 좋고, 취업할 때도 유리하게 작용할 수 있다.
   - medium (blog site): https://medium.com/
   - 내 블로그: https://medium.com/@heeshin174/
 
-## Web/App 개발순서
+## Web App 개발순서
 
-1. web/app design
-   - Figma, Adobe XD등 다양한 design tool 사용가능
-   - Client, Designer, User등으로 부터 다양한 feedback를 받기
+1. Web/App design
+   - Design tool: Figma, Adobe XD 등
+   - Feedbacks: Client, Designer, User 등
 2. Design를 code로 implement하기
-   - 디자인이 요구하는 상황에 맞는 FrontEnd, BackEnd를 선택
-3. 끊임없이 1, 2를 feedback, code review를 받아 update하기
+   - 디자인이 요구하는 방향성에 맞는 FrontEnd, BackEnd libraries/frameworks를 선택
+   - Code review: 동료 개발자로 부터 내 code를 검증받기
+3. 끊임없이 1과 2를 반복한다.
 
 ### 좋은 Idea와 좋은 Code Implementation
 
-실제로 project를 진행하다 보면, 사실은 **좋은 code보다 좋은 idea가 더 중요**하다. Idea가 좋지 않다면 code를 아무리 잘 구현해도 좋은 project가 아니다. 그럼으로 **좋은 idea 60% + 좋은 code 40%로** 이해할 수 있다.
+실제로 project를 진행하다 보면, 사실은 **좋은 code보다 좋은 idea가 더 중요**하다. Idea가 좋지 않다면 code를 아무리 잘 구현해도 좋은 project가 아니다.
+
+- **좋은 project = 좋은 idea 60% + 좋은 code 40%**
 
 Idea는 다음을 포함해야 한다.
 
@@ -28,7 +31,7 @@ Idea는 다음을 포함해야 한다.
   - 문제점, 개선점을 documents로 정리할 땐, [A3 thinking](https://www.youtube.com/watch?v=rtyia0ci12I) 이라는 algorithm을 사용할 수 있다.
 - 제품의 명확한 사용법과 장점 (Simple User Interface)
 - 기존의 제품들과의 차별점
-  - 다른 제품말고 이 제품만 가지는 장점
+  - 다른 제품에는 없는, 이 제품만 가지는 장점
   - 한 번 경험해보면, 다시는 기존의 제품들을 사용할 수 없을 정도의 편리성과 효율성 제공 (Great User Exerience)
   - 기존에 있는 제품들과 비슷한 기능을 가지는 app을 만들어 그들이 이미 선점한 시장에서 경쟁하기 보단, 기존의 제품들을 사용해서 전혀 다른 새로운 기능을 제공해야 한다.
 
@@ -71,7 +74,10 @@ Idea는 다음을 포함해야 한다.
   9. [GraphQL](https://github.com/heeshin174/Web_App_Dev_Kor#graphql)
 
 - [MobileApp](https://github.com/heeshin174/Web_App_Dev_Kor#moblie-app-development)
+
   1. [React-Native](https://github.com/heeshin174/Web_App_Dev_Kor#react-native)
+
+- [Web Design](https://github.com/heeshin174/web-app-dev-kor#3-web-design)
 
 ## 0. Web Development Loadmap
 
@@ -106,9 +112,13 @@ Idea는 다음을 포함해야 한다.
   - Capacitive (무접점) Keyboard
 - Browser
   - **Chrome**
-  - Edge (WindowOS)
+    - 다른 broswer보다 무겁지만 다양한 기능을 제공한다.
+  - Edge
+    - Microsoft WindowOS
+    - 가볍
   - Safari (IOS)
   - **Brave browser (IOS)**
+    - Ad blocker를 기본으로 제공
 - Text Editor
   - ⭐ **VSCode** (+ Extensions)
   - IntelliJ
@@ -282,7 +292,7 @@ WSL: GET http://172.29.69.223:5000/api/users/me
 
 ### 2. Front-End (Client Side)
 
-Front-End은 사용자가 웹사이트를 방문시 보게되는 화면, 즉 User Interface (UI)을 의미한다. Website에서 **Front-End의 기본은 HTML, CSS, Javascript 이다.** 이는 web browser가 읽을 수 있는 파일들이 이 세가지 밖에 없기 때문이다. 최근에는 *Web Assembly*까지 포함해 4가지를 읽을 수 있다. React.js, Typescript 등등 external library/framework로 만들어 native HTML, CSS, Javascript로 작성되지 않은 파일들은 browser가 읽을 수 없기 떄문에 마지막에는 이 세가지로 변환해주어야 한다.
+**Front-End**은 사용자가 웹사이트를 방문시 보게되는 화면, 즉 User Interface (UI)을 의미한다. Web development에서 **Front-End의 기본은 HTML, CSS, Javascript 이다.** 이는 web browser가 읽을 수 있는 파일들이 이 세가지 밖에 없기 때문이다. 최근에는 *Web Assembly*까지 포함해 4가지를 읽을 수 있다. _React.js_, _Typescript_ 등등 external library/framework로 만들어 native HTML, CSS, Javascript로 작성되지 않은 파일들은 browser가 읽을 수 없기 떄문에 app을 완성하고 deploying할 때 마지막에는 이 세가지로 변환해주어야 한다.
 
 - **HTML**: Structural 뼈대
 - **CSS**: Presentational 살점
@@ -308,21 +318,6 @@ Front-End은 사용자가 웹사이트를 방문시 보게되는 화면, 즉 Use
     - Tailwindcss: https://tailwindcss.com/docs/installation
     - styled-components: https://styled-components.com/docs
     - Postcss: https://postcss.org/
-  - 기타
-    - headlessui (React, Vue + Tailwindcss): https://headlessui.dev/
-    - heroicons (svg icons with React, Vue + Tailwindcss): https://heroicons.com/
-    - FontAwesome (icons): https://fontawesome.com/
-    - Devicon (icons representing programming tools): https://devicon.dev/
-    - Google Font (text style): https://fonts.google.com/
-    - CSS Gradient: https://cssgradient.io/
-    - Color Space: https://mycolor.space/
-    - Shape Divider (SVG): https://www.shapedivider.app/
-    - Haikei (SVG): https://haikei.app/
-    - Cool Backgrounds: https://coolbackgrounds.io/
-    - Dribble: https://dribbble.com/
-    - postimages (Upload images on oneline): https://postimages.org/
-    - (Resize PNG images): https://onlinepngtools.com/resize-png
-    - (Remove white background): https://www.remove.bg/upload
 
 - [Javascript](https://github.com/heeshin174/Web_App_Dev_Kor#3-javascript)
 
@@ -409,36 +404,6 @@ Front-End library/framework은 web application의 UI 부분을 더 쉽게 작성
 
 - ⭐ **React.js**: React는 Meta사에서 만든 Javascript frontend web library로 computer에 최신 버전의 *Node.js*를 설치하면 누구나 사용할 수 있다.
 - **Vanilla.js**: just a way to refer to native (non-extended and standards-based) JavaScript.
-
-#### Design UI/UX Tool
-
-- Figma: https://www.figma.com/
-- Adobe xd: https://www.adobe.com/products/photoshop
-- Adobe photoshop (image 선명도, 채광): https://www.adobe.com/products/photoshop
-
-Figma, Adobe xd로 web/mobile UI를 design하면, 쉽게 css를 얻을 수 있다. **image의 선명도는 매우 중요**하므로 Adobe photoshop의 curve 기능을 사용한다. Figma는 무료이다.
-
-- Web design 시 width를 보통: 1920px로 잡는다.
-- Title font size: `font-size: 30px;`
-- 있어야 되지만 안중요한 내용 (최소크기 e.g. 작성날짜): `font-size: 13px;`
-- Sub-title/Nav-bar font size: `font-size: 15px;`
-- 본문 font size: `font-size: 18px;`
-- Icon font size: `font-size: 15px/30px/50px;`
-
-  - 또는 icon-container: 36px, icon: 26px,
-
-- Figma
-  - `Shift + R`: Ruler
-  - `o`: circle
-  - `r`: rectangle
-  - `t`: text
-  - `Ctrl + G`: Group Selection
-  - `Ctrl + /`: Command Palette
-  - `Shift + A`: Auto Layout
-  - prototype > interactions
-    - 버튼클릭등의 상호작용을 설정
-  - plugin
-    - Material design icons
 
 #### Front-End Developer의 미래
 
@@ -11363,3 +11328,29 @@ Font는 그렇게 클 필요가 없다. 중요하고 강조하고 싶은 문구�
   - gray_200: #626273
   - gray_100: #ccc
   - black_700: #333
+- 최소크기 (있어야 되지만 안중요한 내용 e.g. 작성날짜): 13px
+
+- Title font size: `font-size: 30px;`
+- Subtitle/Nav bar: `font-size: 15px;`
+- 본문: `font-size: 18px;`
+
+### Design UI/UX Tool
+
+- Figma: https://www.figma.com/
+- Adobe xd: https://www.adobe.com/products/photoshop
+- Adobe photoshop (image 선명도, 채광): https://www.adobe.com/products/photoshop
+
+Figma, Adobe xd로 web/mobile UI를 design하면, 쉽게 css를 얻을 수 있다. **image의 선명도는 매우 중요**하므로 Adobe photoshop의 curve 기능을 사용한다. Figma는 무료이다.
+
+- Figma
+  - `Shift + R`: Ruler
+  - `o`: circle
+  - `r`: rectangle
+  - `t`: text
+  - `Ctrl + G`: Group Selection / Grouping
+  - `Ctrl + /`: Command Palette
+  - `Shift + A`: Auto Layout
+  - prototype > interactions
+    - 버튼클릭등의 상호작용을 설정
+  - plugin
+    - Material design icons

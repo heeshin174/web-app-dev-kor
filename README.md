@@ -95,30 +95,6 @@ Idea는 다음을 포함해야 한다.
   - MacOS
   - Windows (+ WSL: Window subsystem for Linux)
   - Linux
-- Keyboard
-  - tenkeyless keyboard
-    - A computer keyboard that does not have a 10-key numeric keypad on the right side.
-  - **split keyboard**
-    - 둘로 분리되는 키보드
-    - **개인적으론 분리도 되고 붙이기도 되는 tenkeyless split keyboard 추천**
-  - 기계식 키보드
-    - **Red 적축**: 키압이 낮기때문에 끝까지 누르지 않아도 입력 가능
-    - Brown 갈축: 무거운 느낌
-    - Wireless 60%, 66% Mechanical Keyboard
-      - Anna Pro 2 Gatron Red 게이트론 적축
-      - Leopold FC750R slient red
-      - Keychron K7, 68 Keys Ultra-Slim Wireless Low-Profile Gateron Mechanical RGB
-      - Mistel MD770 RGB Wired + Wireless Bluetooth TKL Split Mechanical Keyboard with Cherry MX Silent Red Switch
-  - Capacitive (무접점) Keyboard
-- Browser
-  - **Chrome**
-    - 다른 broswer보다 무겁지만 다양한 기능을 제공한다.
-  - Edge
-    - Microsoft WindowOS
-    - 가볍
-  - Safari (IOS)
-  - **Brave browser (IOS)**
-    - Ad blocker를 기본으로 제공
 - Text Editor
   - ⭐ **VSCode** (+ Extensions)
   - IntelliJ
@@ -172,12 +148,6 @@ MacOS: intall [_Homebrew_](https://brew.sh/)
   - Switch node version to v16.13.2: `$ nvm use 16.13.2`
 
 - github login: `$ gh auth login`
-
-#### Windows File Explorer
-
-**Everything**이라는 app을 설치하면 Window가 기본으로 제공하는 file exploerer 보다 더 빠르게 검색이 가능하다.
-
-- Everything: https://www.voidtools.com/
 
 #### Windows Developer Setup (WSL)
 
